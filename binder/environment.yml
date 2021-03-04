@@ -1,0 +1,14 @@
+name: hds_code
+channels:
+  - conda-forge
+dependencies:
+  - jupyterlab=3.0.9
+  - matplotlib=3.3.4
+  - nodejs=10.13.0
+  - numpy=1.19.2
+  - pandas=1.2.3
+  - pip=21.0.1
+  - plotly=4.14.1
+  - python=3.8.8
+  - pip:
+    - scikit-learn==0.24.1
