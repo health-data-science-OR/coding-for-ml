@@ -1,16 +1,20 @@
-- file: README
-  numbered: true
+- file: content/front_page
+  numbered: false
 
-- part: Setup
+- part: Part 1. Setup
   chapters:
+  - file:  content/001_setup/git
   - file: content/001_setup/conda
   
-- part: Basic refresher in python
+- part: Part 2. Python pre-requisites
   chapters:
-  - file: content/002_basics/lab_wk1
+  - file: content/002_basics/01_basics
 
-- part: An Introduction to NumPy
+- part: Part 3. NumPy
   chapters:
   - file: content/02_numpy/02_numpy
-  - file: content/02_numpy/lectures/01_numpy_basics
-  - file: content/02_numpy/labs/02_lab1
+    sections:
+      - file: content/02_numpy/lectures/01_numpy_basics
+      - file: content/02_numpy/labs/02_lab1
+      
+     

@@ -2,9 +2,6 @@
 
 The code examples in this module have been created in using the conda virtual environment `hds_code`
 
-All source code, Jupyter notebooks is available from the authors repo:
-* https://github.com/health-data-science-OR/coding-for-ml
-
 To create the conda environment issues the following command on a terminal
 
 ```console
