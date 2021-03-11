@@ -13,10 +13,13 @@ execute:
   
 repository:
   url: https://github.com/health-data-science-OR/coding-for-ml
+  branch: main
   
 html:
   use_repository_button: true
+  use_issues_button: true
   
 # Configure your Binder links, such as the URL of the BinderHub.
 launch_buttons:
-  binderhub_url             : https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/HEAD
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
