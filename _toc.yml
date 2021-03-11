@@ -1,0 +1,14 @@
+- file: README
+  numbered: true
+
+- part: Basic refresher in python
+  chapters:
+  - file: content/00_basics/lab_wk1
+  - file: content/00_basics/string_manipulation
+
+- part: Efficient computation using NumPy
+  chapters:
+  - file: 02_numpy/lab_wk3
+    sections:
+      - file: 02_numpy/lab_wk3
+      - file: wk3_debug_challenge
