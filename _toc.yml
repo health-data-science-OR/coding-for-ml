@@ -1,0 +1,22 @@
+- file: content/front_page
+  numbered: false
+
+- part: Setup
+  chapters:
+  - file: content/001_setup/git
+  - file: content/001_setup/conda
+  - file: content/001_setup/docker
+  
+- part: Pre-requisite knowledge
+  chapters:
+  - file: content/002_basics/labs/01_basics
+  - file: content/002_basics/labs/02_basics
+  
+- part: Part 1. NumPy
+  chapters:
+  - file: content/02_numpy/02_numpy
+    sections:
+      - file: content/02_numpy/lectures/01_numpy_basics
+      - file: content/02_numpy/labs/02_lab1
+      
+     
