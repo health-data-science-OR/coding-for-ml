@@ -8,7 +8,6 @@
 
 - part: Efficient computation using NumPy
   chapters:
-  - file: 02_numpy/lab_wk3
+  - file: content/02_numpy/lab_wk3
     sections:
-      - file: 02_numpy/lab_wk3
-      - file: wk3_debug_challenge
+      - file: content/02_numpy/wk3_debug_challenge
