@@ -1,13 +1,16 @@
 - file: README
   numbered: true
 
+- part: Setup
+  chapters:
+  - file: content/001_setup/conda
+  
 - part: Basic refresher in python
   chapters:
-  - file: content/00_basics/lab_wk1
-  - file: content/00_basics/string_manipulation
+  - file: content/002_basics/lab_wk1
 
-- part: Efficient computation using NumPy
+- part: An Introduction to NumPy
   chapters:
-  - file: content/02_numpy/lab_wk3
-    sections:
-      - file: content/02_numpy/wk3_debug_challenge
+  - file: content/02_numpy/02_numpy
+  - file: content/02_numpy/lectures/01_numpy_basics
+  - file: content/02_numpy/labs/02_lab1
