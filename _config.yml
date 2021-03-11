@@ -10,3 +10,13 @@ only_build_toc_files: true
 execute:
   execute_notebooks: cache #cache output from .ipynb files for faster build
   timeout: -1 #no time restriction on notebook execution
+  
+repository:
+  url: https://github.com/health-data-science-OR/coding-for-ml
+  
+html:
+  use_repository_button: true
+  
+# Configure your Binder links, such as the URL of the BinderHub.
+launch_buttons:
+  binderhub_url             : https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/HEAD
