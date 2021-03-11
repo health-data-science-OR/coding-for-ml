@@ -8,8 +8,9 @@
   
 - part: Part 2. Python pre-requisites
   chapters:
-  - file: content/002_basics/01_basics
-
+  - file: content/002_basics/labs/01_basics
+  - file: content/002_basics/labs/02_basics
+  
 - part: Part 3. NumPy
   chapters:
   - file: content/02_numpy/02_numpy
