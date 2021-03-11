@@ -1,17 +1,18 @@
 - file: content/front_page
   numbered: false
 
-- part: Part 1. Setup
+- part: Setup
   chapters:
-  - file:  content/001_setup/git
+  - file: content/001_setup/git
   - file: content/001_setup/conda
+  - file: content/001_setup/docker
   
-- part: Part 2. Python pre-requisites
+- part: Pre-requisite knowledge
   chapters:
   - file: content/002_basics/labs/01_basics
   - file: content/002_basics/labs/02_basics
   
-- part: Part 3. NumPy
+- part: Part 1. NumPy
   chapters:
   - file: content/02_numpy/02_numpy
     sections:
