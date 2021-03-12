@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab: Intermediate NumPy &#8212; Coding for Machine Learning and Data Science</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Lab: Basic numpy techniques" href="02_lab1.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding for Machine Learning and Data Science</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Setup
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pre-requisite knowledge
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../002_basics/labs/01_basics.html">
+   Lab: Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../002_basics/labs/02_basics.html">
+   Lab: Conditionals and Loops
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part 1. Advanced Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_advanced_python/lecture/01_python_classes.html">
+   Lecture: Class coding basics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part 2. NumPy
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../02_numpy.html">
+   Introduction
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/01_numpy_101.html">
+     Lecture: NumPy 101
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_lab1.html">
+     Lab: Basic
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     techniques
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lab: Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/02_numpy/labs/02_lab2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/02_numpy/labs/02_lab2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=tree/content/02_numpy/labs/02_lab2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_numpy/labs/02_lab2.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-a-random-array">
+   Generating a random array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-minimum-value-of-an-array">
+   Finding the minimum value of an array
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-an-array-as-an-image">
+   Plotting an array as an image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-heat-map">
+   Exercise 1: Heat map
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-packing">
+   Exercise 2: Packing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-bottom-right-corner">
+   Exercise 3: Bottom-right-corner:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#week-4-self-learning-challenge">
+   Week 4: Self learning challenge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#week-4-debug-challenge">
+   Week 4: Debug challenge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-self-learning-challenge-2">
+   Extra: Self learning challenge 2
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-intermediate-numpy">
+<h1>Lab: Intermediate NumPy<a class="headerlink" href="#lab-intermediate-numpy" title="Permalink to this headline">¶</a></h1>
+<p>This week we are going to continue learning about <strong>NumPy</strong>, manipulating 2D NumPy arrays and have a brief introduction to plotting.  There is also a <em>debug</em> challenge and a ‘<em>self learning</em>’ challenge at the end of the lab.</p>
+<blockquote>
+<div><p>The lab assumes you are using the <code class="docutils literal notranslate"><span class="pre">hds_code</span></code> conda virtual environment.</p>
+<blockquote>
+<div><p>You should have complete the <strong>Intermediate NumPy</strong> lecture in the series before attempting this lab.</p>
+</div></blockquote>
+</div></blockquote>
+<hr class="docutils" />
+<div class="section" id="generating-a-random-array">
+<h2>Generating a random array<a class="headerlink" href="#generating-a-random-array" title="Permalink to this headline">¶</a></h2>
+<p>There is a numpy function designed to generate arrays with random numbers. These are very useful for some applications, for example when we want to test how an algorithm would behave in an uncertain situation. As usual, before using Numpy, we need to import it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can generate a 4x4 matrix with random integer numbers between 0 and 99:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">100</span></code> is not included, but <code class="docutils literal notranslate"><span class="pre">0</span></code> is. To find about these things, it’s always good to check the numpy help, which says that the second parameter is <em>exclusive</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function randint:
+
+randint(...) method of numpy.random.mtrand.RandomState instance
+    randint(low, high=None, size=None, dtype=int)
+    
+    Return random integers from `low` (inclusive) to `high` (exclusive).
+    
+    Return random integers from the &quot;discrete uniform&quot; distribution of
+    the specified dtype in the &quot;half-open&quot; interval [`low`, `high`). If
+    `high` is None (the default), then results are from [0, `low`).
+    
+    .. note::
+        New code should use the ``integers`` method of a ``default_rng()``
+        instance instead; please see the :ref:`random-quick-start`.
+    
+    Parameters
+    ----------
+    low : int or array-like of ints
+        Lowest (signed) integers to be drawn from the distribution (unless
+        ``high=None``, in which case this parameter is one above the
+        *highest* such integer).
+    high : int or array-like of ints, optional
+        If provided, one above the largest (signed) integer to be drawn
+        from the distribution (see above for behavior if ``high=None``).
+        If array-like, must contain integer values
+    size : int or tuple of ints, optional
+        Output shape.  If the given shape is, e.g., ``(m, n, k)``, then
+        ``m * n * k`` samples are drawn.  Default is None, in which case a
+        single value is returned.
+    dtype : dtype, optional
+        Desired dtype of the result. Byteorder must be native.
+        The default value is int.
+    
+        .. versionadded:: 1.11.0
+    
+    Returns
+    -------
+    out : int or ndarray of ints
+        `size`-shaped array of random integers from the appropriate
+        distribution, or a single such random int if `size` not provided.
+    
+    See Also
+    --------
+    random_integers : similar to `randint`, only for the closed
+        interval [`low`, `high`], and 1 is the lowest value if `high` is
+        omitted.
+    Generator.integers: which should be used for new code.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; np.random.randint(2, size=10)
+    array([1, 0, 0, 0, 1, 1, 0, 0, 1, 0]) # random
+    &gt;&gt;&gt; np.random.randint(1, size=10)
+    array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    
+    Generate a 2 x 4 array of ints between 0 and 4, inclusive:
+    
+    &gt;&gt;&gt; np.random.randint(5, size=(2, 4))
+    array([[4, 0, 2, 1], # random
+           [3, 2, 2, 0]])
+    
+    Generate a 1 x 3 array with 3 different upper bounds
+    
+    &gt;&gt;&gt; np.random.randint(1, [3, 5, 10])
+    array([2, 2, 9]) # random
+    
+    Generate a 1 by 3 array with 3 different lower bounds
+    
+    &gt;&gt;&gt; np.random.randint([1, 5, 7], 10)
+    array([9, 8, 7]) # random
+    
+    Generate a 2 by 4 array using broadcasting with dtype of uint8
+    
+    &gt;&gt;&gt; np.random.randint([1, 3, 5, 7], [[10], [20]], dtype=np.uint8)
+    array([[ 8,  6,  9,  7], # random
+           [ 1, 16,  9, 12]], dtype=uint8)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finding-the-minimum-value-of-an-array">
+<h2>Finding the minimum value of an array<a class="headerlink" href="#finding-the-minimum-value-of-an-array" title="Permalink to this headline">¶</a></h2>
+<p>Numpy provides many functions to investigate and manipulate the contents of an array.
+One of the most common is to find its minimum or maximum values. This can be done with <code class="docutils literal notranslate"><span class="pre">np.min</span></code> and <code class="docutils literal notranslate"><span class="pre">np.max</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum value of A is </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a_min</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tip: The format function can work with the numpy formula directly:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The maximum value of A is </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The maximum value of A is 98
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes it is important to know where the minimum (or maximum) value is located, rather than its value.
+In maths, this is called argmin. It turns out that Numpy has a function for this, called <code class="docutils literal notranslate"><span class="pre">np.argmin</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_min_loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum value of A is </span><span class="si">{0}</span><span class="s1">, and it is located at </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a_min</span><span class="p">,</span> <span class="n">a_min_loc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 2, and it is located at 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Surprisingly, <code class="docutils literal notranslate"><span class="pre">a_min_loc</span></code> has taken a single value rather than two indices.
+In this situation, we should turn to the help of the function and see why that was:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function argmin in module numpy:
+
+argmin(a, axis=None, out=None)
+    Returns the indices of the minimum values along an axis.
+    
+    Parameters
+    ----------
+    a : array_like
+        Input array.
+    axis : int, optional
+        By default, the index is into the flattened array, otherwise
+        along the specified axis.
+    out : array, optional
+        If provided, the result will be inserted into this array. It should
+        be of the appropriate shape and dtype.
+    
+    Returns
+    -------
+    index_array : ndarray of ints
+        Array of indices into the array. It has the same shape as `a.shape`
+        with the dimension along `axis` removed.
+    
+    See Also
+    --------
+    ndarray.argmin, argmax
+    amin : The minimum value along a given axis.
+    unravel_index : Convert a flat index into an index tuple.
+    take_along_axis : Apply ``np.expand_dims(index_array, axis)``
+                      from argmin to an array as if by calling min.
+    
+    Notes
+    -----
+    In case of multiple occurrences of the minimum values, the indices
+    corresponding to the first occurrence are returned.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; a = np.arange(6).reshape(2,3) + 10
+    &gt;&gt;&gt; a
+    array([[10, 11, 12],
+           [13, 14, 15]])
+    &gt;&gt;&gt; np.argmin(a)
+    0
+    &gt;&gt;&gt; np.argmin(a, axis=0)
+    array([0, 0, 0])
+    &gt;&gt;&gt; np.argmin(a, axis=1)
+    array([0, 0])
+    
+    Indices of the minimum elements of a N-dimensional array:
+    
+    &gt;&gt;&gt; ind = np.unravel_index(np.argmin(a, axis=None), a.shape)
+    &gt;&gt;&gt; ind
+    (0, 0)
+    &gt;&gt;&gt; a[ind]
+    10
+    
+    &gt;&gt;&gt; b = np.arange(6) + 10
+    &gt;&gt;&gt; b[4] = 10
+    &gt;&gt;&gt; b
+    array([10, 11, 12, 13, 10, 15])
+    &gt;&gt;&gt; np.argmin(b)  # Only the first occurrence is returned.
+    0
+    
+    &gt;&gt;&gt; x = np.array([[4,2,3], [1,0,3]])
+    &gt;&gt;&gt; index_array = np.argmin(x, axis=-1)
+    &gt;&gt;&gt; # Same as np.min(x, axis=-1, keepdims=True)
+    &gt;&gt;&gt; np.take_along_axis(x, np.expand_dims(index_array, axis=-1), axis=-1)
+    array([[2],
+           [0]])
+    &gt;&gt;&gt; # Same as np.max(x, axis=-1)
+    &gt;&gt;&gt; np.take_along_axis(x, np.expand_dims(index_array, axis=-1), axis=-1).squeeze(axis=-1)
+    array([2, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<p>It says that what it has returned is the index of the <code class="docutils literal notranslate"><span class="pre">flattened</span></code> array.
+That means that it is the index without considering the shape.
+However, in the <code class="docutils literal notranslate"><span class="pre">See</span> <span class="pre">also</span></code> section, it mentions another function, <code class="docutils literal notranslate"><span class="pre">unravel_index</span></code> which can
+convert this <em>flattened</em> index to an array of indices. At the bottom of the help, there is an example for this.</p>
+<p>If we use it, we obtain the expected result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_min_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">a_min_loc</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum value of A is </span><span class="si">{0}</span><span class="s1">, and it is located at </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a_min</span><span class="p">,</span> <span class="n">a_min_indices</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 2, and it is located at (0, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Tip:</strong> We can use this index to access the element directly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="n">a_min_indices</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-an-array-as-an-image">
+<h2>Plotting an array as an image<a class="headerlink" href="#plotting-an-array-as-an-image" title="Permalink to this headline">¶</a></h2>
+<p>Images are made of pixels, and each pixel is, in esence a number. That means we can plot any matrix as an image.
+We can do that with a function from <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> called <code class="docutils literal notranslate"><span class="pre">imshow</span></code>. First, we need to import the module, which is normally called <code class="docutils literal notranslate"><span class="pre">plt</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we are ready to plot the array <code class="docutils literal notranslate"><span class="pre">A</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[37 26  2  3]
+ [81 87 55 98]
+ [24 41 74 77]
+ [66 57 17 79]]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7d4668220&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_lab2_21_2.png" src="../../../_images/02_lab2_21_2.png" />
+</div>
+</div>
+<p>You can see that the smaller values get a darker colour, and the largest a lighter colour.
+This is because we are using the colourmap <code class="docutils literal notranslate"><span class="pre">'gray'</span></code>.
+There are many colourmaps you can use, for reference you can check
+<a href=https://matplotlib.org/examples/color/colormaps_reference.html >this link</a> to see them.</p>
+<p>If no colourmap is specified, the default is used:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7c78e71c0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_lab2_23_1.png" src="../../../_images/02_lab2_23_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercise-1-heat-map">
+<h2>Exercise 1: Heat map<a class="headerlink" href="#exercise-1-heat-map" title="Permalink to this headline">¶</a></h2>
+<p>Create a <em>function</em> called <code class="docutils literal notranslate"><span class="pre">heatmap_of_minima(trials,</span> <span class="pre">max_rand)</span></code> that takes as an argument an integer number <code class="docutils literal notranslate"><span class="pre">trials</span></code>. The purpose of the function is to plot a heatmap depicting how often the minimum of a random array is shown at each location, when generating <code class="docutils literal notranslate"><span class="pre">trial</span></code> random arrays.
+Your function should performs the following tasks:</p>
+<ul class="simple">
+<li><p>Generates an array of zeros with size 10x10 called <code class="docutils literal notranslate"><span class="pre">record</span></code> (<strong>Tip:</strong> use <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> for this)</p></li>
+<li><p>Starts a loop for <code class="docutils literal notranslate"><span class="pre">trial</span></code> number of iterations, and in each iteration does the following:</p>
+<ul>
+<li><p>Creates an array of size 10x10 with random integers between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">max_rand</span> <span class="pre">-</span> <span class="pre">1</span></code></p></li>
+<li><p>Finds the location of the minimum of this array</p></li>
+<li><p>Adds 1 in this location in the <code class="docutils literal notranslate"><span class="pre">record</span></code> array</p></li>
+</ul>
+</li>
+<li><p>Once the loop is finished, the function should plot the array <code class="docutils literal notranslate"><span class="pre">record</span></code> as an image</p></li>
+</ul>
+<p>When your function is ready, call it with the following commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">heatmap_of_minima(10000,</span> <span class="pre">25)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">heatmap_of_minima(10000,</span> <span class="pre">99999)</span></code></p></li>
+</ul>
+<p>What do you observe? Why do you think that happens?</p>
+</div>
+<div class="section" id="exercise-2-packing">
+<h2>Exercise 2: Packing<a class="headerlink" href="#exercise-2-packing" title="Permalink to this headline">¶</a></h2>
+<p>In this exercise we are going to code an algorithm that places a few pieces inside a rectangular container without overlapping them. Both the container and the pieces are represented by matrices with <code class="docutils literal notranslate"><span class="pre">0</span></code>and <code class="docutils literal notranslate"><span class="pre">1</span></code> values and will be very simple (think of Tetris-style shapes).</p>
+<p>This is one example of a piece:</p>
+<table>
+<tr>
+    <td>0</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td>1</td><td>1</td><td>1</td>
+</tr>
+</table>
+<p>Our algorithm is called <em>top-left-corner</em> as all is trying to do is to place the pieces as close as possible to the top of the container (The top is represented by the <code class="docutils literal notranslate"><span class="pre">0</span></code> coordinate) and then at the left-most possible position (again, left-most is the <code class="docutils literal notranslate"><span class="pre">0</span></code> coordinate). In a nutshell, the code consists of the following steps:</p>
+<ul class="simple">
+<li><p>Read a list of pieces into Numpy arrays</p></li>
+<li><p>Loop over the all the pieces. In each iteration do:</p>
+<ul>
+<li><p>Loop over the coordinate pairs of the container, starting from (0,0) and increasing first the x coordinate</p></li>
+<li><p>For each pair of coordiantes, check if it would be possible to place the piece</p></li>
+<li><p>If it is possible, place it and continue with the next piece</p></li>
+<li><p>If a piece cannot be placed anywhere, record this information and continue</p></li>
+</ul>
+</li>
+<li><p>Once all pieces are placed, plot the container with the pieces inside</p></li>
+</ul>
+<p>To help you develop this quickly, we have created a template with some useful functions defined. It is on the file <code class="docutils literal notranslate"><span class="pre">ex2_quickstart.py</span></code>, that contains structure necessary to code the <em>top-left-corner</em> algorithm.</p>
+<p><strong>Task 1:</strong> Open the file in Spyder 3. Once it is open, click “View”, “Panes”, “Outline”. A panel like the one below should appear in Spyder.</p>
+<p><img alt="outline_pane.PNG" src="content/02_numpy/labs/attachment:outline_pane.PNG" /></p>
+<p>(If it does not, please try one more time. It is only visible when there is a checkmark next to “Outline”)</p>
+<p>This panel helps you navigate the code easily. It shows a list of all the functions that have been defined in the code. Click in <code class="docutils literal notranslate"><span class="pre">main</span></code>, so the editor will reveal where it starts.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">main()</span></code> function, that is as follows:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39; Defines the main parameters and runs the algorithm</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;../data/pieces&#39;</span>
+    <span class="n">piece_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;p1.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;p2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;p3.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;p4.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;p5.csv&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;p6.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;p7.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;p8.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;p9.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;p10.csv&#39;</span><span class="p">]</span>
+
+    <span class="n">container_width</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">container_height</span> <span class="o">=</span> <span class="mi">12</span>
+
+    <span class="n">piece_list</span> <span class="o">=</span> <span class="n">read_pieces</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">piece_names</span><span class="p">)</span>
+
+    <span class="n">container</span><span class="p">,</span> <span class="n">packed_pieces</span> <span class="o">=</span> <span class="n">top_left_corner</span><span class="p">(</span><span class="n">piece_list</span><span class="p">,</span>
+                                               <span class="n">container_width</span><span class="p">,</span>
+                                               <span class="n">container_height</span><span class="p">)</span>
+    <span class="c1"># Show final packing</span>
+    <span class="n">plot_container</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+
+    <span class="c1"># See how many pieces could be packed:</span>
+    <span class="k">if</span> <span class="n">packed_pieces</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">piece_list</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNING: only </span><span class="si">{0}</span><span class="s1"> pieces were packed, out of </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span>
+              <span class="nb">format</span><span class="p">(</span><span class="n">packed_pieces</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">piece_list</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">main()</span></code> starts of defining some paramerers. First, it defines a directory where the pieces are saved (<strong>Tip:</strong> to say that a file is in a directory “above” the current one, we use <code class="docutils literal notranslate"><span class="pre">..</span></code> as if it were a folder). It also contains the name of the pieces and the container width and height as parameters. You have been provided with functions that read the pieces and plot the container, so you do not need to worry about these. In fact, if you run the code, the following image should show up:</p>
+<p><img alt="only_one_piece.png" src="content/02_numpy/labs/attachment:only_one_piece.png" /></p>
+<p>Note that (0,0) is the top left corner!</p>
+<p>Here, you see that the first piece has been located at the top left corner, but nothing else happens. This is because there is an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in the <code class="docutils literal notranslate"><span class="pre">top_left_corner</span></code> function, preventing the algorithm from placing more than one piece:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">piece_list</span><span class="p">:</span>
+
+
+        <span class="c1"># Remove if statement!!!</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">packed_pieces</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">break</span>
+        <span class="c1">###</span>
+</pre></div>
+</div>
+<p><strong>Task 2:</strong> Look for the above snipet in your code and remove the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. Run the code again. Now, all the pieces should be placed, but overlapping:</p>
+<p><img alt="all_overlap.png" src="content/02_numpy/labs/attachment:all_overlap.png" /></p>
+<p>The function that deals with the overlap <code class="docutils literal notranslate"><span class="pre">pieces_overlap(container,</span> <span class="pre">piece,</span> <span class="pre">x_coord,</span> <span class="pre">y_coord)</span></code> is currently empty. It only returns <code class="docutils literal notranslate"><span class="pre">False</span></code>, meaning that the piece is in a valid position, no matter what the values of <code class="docutils literal notranslate"><span class="pre">container</span></code>, <code class="docutils literal notranslate"><span class="pre">piece</span></code> and <code class="docutils literal notranslate"><span class="pre">x_coord</span></code> and <code class="docutils literal notranslate"><span class="pre">y_coord</span></code> are.</p>
+<p>In order to return <code class="docutils literal notranslate"><span class="pre">False</span></code>, the function should check three things:</p>
+<ol class="simple">
+<li><p>The piece does not go over the width of the container (right side)</p></li>
+<li><p>The piece does not go over the length of the container (bottom part)</p></li>
+<li><p>The piece is not sitting on top of another one</p></li>
+</ol>
+<p>Let’s focus in part <code class="docutils literal notranslate"><span class="pre">1.</span></code>. In order to check the boundaries, the first thing we need to retrieve is what is the width and length of both the piece and the container. This can be done with the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">p_x</span><span class="p">,</span> <span class="n">p_y</span> <span class="o">=</span> <span class="n">piece</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">c_x</span><span class="p">,</span> <span class="n">c_y</span> <span class="o">=</span> <span class="n">container</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+<p>Now, let’s check if the piece is “too much” to the right. The piece is going to be placed at <code class="docutils literal notranslate"><span class="pre">x_coord</span></code>, and it has a width of <code class="docutils literal notranslate"><span class="pre">p_x</span></code>; that means that the end of the piece will be at <code class="docutils literal notranslate"><span class="pre">x_coord</span> <span class="pre">+</span> <span class="pre">p_x</span></code>. Being “too much to the right” is equivalent to say that the end of the piece is somewhere over the right border of the container. The python statement that checks that is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">x_coord</span> <span class="o">+</span> <span class="n">p_x</span> <span class="o">&gt;</span> <span class="n">c_x</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>The statement to check the limits on the height is the same, but using <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinates.</p>
+<p><strong>Task 3:</strong> Complete parts 1. and 2. of the function <code class="docutils literal notranslate"><span class="pre">pieces_overlap(container,</span> <span class="pre">piece,</span> <span class="pre">x_coord,</span> <span class="pre">y_coord)</span></code> as instructed above. Run the code again. It should run with no errors, but still show overlap.</p>
+<p>Now that the boundaries are dealt with, we need to check overlap with previously placed pieces.
+There are a few options to do this, some more efficient (fast to compute) than others.
+We will do this in a simple way, which is not necessarily the most efficient,
+but makes use of some Numpy functions that we have studied.</p>
+<p>The idea is to check overlap in the following steps:</p>
+<ol class="simple">
+<li><p>Save a matrix with the area of the container where the piece will be placed.</p></li>
+<li><p>Add this matrix and the matrix of our piece.</p></li>
+<li><p>Calculate the maximum of the sum.</p></li>
+<li><p>If the maximum is greater than 2, there is overlap, otherwise there is not.</p></li>
+</ol>
+<p>The idea behind this function is that the parts of the pieces are represented by ones; if adding the container and the piece stays below two, it means we have not “overlapped” any positions.</p>
+<p>Let’s see how this is coded. For Step 1 we need to use Numpy slices. We are interested in the slice that goes from <code class="docutils literal notranslate"><span class="pre">x_coord</span></code> to <code class="docutils literal notranslate"><span class="pre">x_coord</span> <span class="pre">+</span> <span class="pre">px</span></code> in the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis and from <code class="docutils literal notranslate"><span class="pre">y_coord</span></code> to <code class="docutils literal notranslate"><span class="pre">y_coord</span> <span class="pre">+</span> <span class="pre">p_y</span></code> in the y axis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">container_bit</span> <span class="o">=</span> <span class="n">container</span><span class="p">[</span><span class="n">x_coord</span><span class="p">:</span><span class="n">x_coord</span> <span class="o">+</span> <span class="n">p_x</span><span class="p">,</span> <span class="n">y_coord</span><span class="p">:</span><span class="n">y_coord</span> <span class="o">+</span> <span class="n">p_y</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Because the slice is a “window” to the original container, we do not want to modify its contents at the moment. To avoid this, we can perform Step 2 and Step 3 together:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">max_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">container_bit</span> <span class="o">+</span> <span class="n">piece</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, Step 4 is a simple <code class="docutils literal notranslate"><span class="pre">if</span></code> statement that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">max_value</span></code> is over 2, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+<p><strong>Task 4:</strong> Complete parts the last part of the function <code class="docutils literal notranslate"><span class="pre">pieces_overlap(container,</span> <span class="pre">piece,</span> <span class="pre">x_coord,</span> <span class="pre">y_coord)</span></code> as instructed above.
+Run the code again. It should now produce the following image:</p>
+<p><img alt="valid_layout.png" src="content/02_numpy/labs/attachment:valid_layout.png" /></p>
+</div>
+<div class="section" id="exercise-3-bottom-right-corner">
+<h2>Exercise 3: Bottom-right-corner:<a class="headerlink" href="#exercise-3-bottom-right-corner" title="Permalink to this headline">¶</a></h2>
+<p>Let’s now modify the code from Exercise 2 to convert it to a <em>bottom-right-corner</em> algorithm.
+This means that the pieces will be placed at the lowest, right-most possible position.
+That means the highest coordinates in <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> first. To change this, you will have to modify the order in which positions are
+tested in the <code class="docutils literal notranslate"><span class="pre">top_left_corner(piece_list,</span> <span class="pre">container_width,</span> <span class="pre">container_height)</span></code> function.</p>
+<p>Remember that the <code class="docutils literal notranslate"><span class="pre">range</span></code> function works as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">[,</span> <span class="n">step</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 19 18 17 16 15 14 13 12 11 
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Task:</strong> Modify the <code class="docutils literal notranslate"><span class="pre">for</span></code> loops in the function <code class="docutils literal notranslate"><span class="pre">top_left_corner</span></code> in order to code the <em>bottom-right-corner</em> algorithm.</p>
+<p>The expected output is as follows:</p>
+<p><img alt="brb_sol.png" src="content/02_numpy/labs/attachment:brb_sol.png" /></p>
+<p>All done! Feel free to experiment with the order and quantity of the pieces, as well as container sizes and see what different outputs your algorithm can give. You might even create new pieces!</p>
+</div>
+<div class="section" id="week-4-self-learning-challenge">
+<h2>Week 4: Self learning challenge<a class="headerlink" href="#week-4-self-learning-challenge" title="Permalink to this headline">¶</a></h2>
+<p>You might have noticed that running our algorithm for Exercises 2 and 3 prints a message on the screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">:</span> <span class="n">only</span> <span class="mi">9</span> <span class="n">pieces</span> <span class="n">were</span> <span class="n">packed</span><span class="p">,</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>This means that the algorithm is not very good.
+One common approach to improve constructive packing algorithms is to pack the largest pieces first,
+as the smaller ones can find their way to the remaining gaps in the layout later on.</p>
+<p>Your task consists in sorting (automatically)
+the list of pieces by area (largest appears first), before the constructive algorithm runs.
+There are many ways of doing this, so we are providing you some guidance.</p>
+<p>The following steps might help you achieve this:</p>
+<ul class="simple">
+<li><p>It is not necessary to import any other module, Numpy is sufficient</p></li>
+<li><p>The area of a piece is equal to the number of elements in the matrix that take value <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>You should have one function that takes a piece as an input and returns the area</p></li>
+<li><p>You should have one function that sorts the piece list: piece_list = sort_piece_list_by_area(piece_list)</p></li>
+<li><p>We recommend that you learn about the Numpy <code class="docutils literal notranslate"><span class="pre">argsort()</span></code> function and use it for this challenge.</p></li>
+</ul>
+<p>Good luck!</p>
+</div>
+<div class="section" id="week-4-debug-challenge">
+<h2>Week 4: Debug challenge<a class="headerlink" href="#week-4-debug-challenge" title="Permalink to this headline">¶</a></h2>
+<p>In the file <code class="docutils literal notranslate"><span class="pre">lab4_debug_challenge.py</span></code> we have given you a code that is supposed to do the following tasks:</p>
+<ul class="simple">
+<li><p>Read a list of pieces (as in Exercise 2)</p></li>
+<li><p>For each piece on the list, show them on screen in the following ways:</p>
+<ul>
+<li><p>Original shape</p></li>
+<li><p>Rotated to the right by 90 deg</p></li>
+<li><p>Rotated to the right by 180 deg</p></li>
+<li><p>Rotated to the right by 270 deg</p></li>
+</ul>
+</li>
+</ul>
+<p>But it does not seem to be working at the moment! Can you make it work?</p>
+</div>
+<div class="section" id="extra-self-learning-challenge-2">
+<h2>Extra: Self learning challenge 2<a class="headerlink" href="#extra-self-learning-challenge-2" title="Permalink to this headline">¶</a></h2>
+<p>Can you import the rotate function from the debug challenge file into the (completed) Exercise 2 file?</p>
+<p>Once it is imported you will have access to the <code class="docutils literal notranslate"><span class="pre">rotate_right</span></code> function. Use it to randomly rotate some of the pieces and see how different are the results between runs.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02_numpy/labs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="02_lab1.html" title="previous page">Lab: Basic <code class="docutils literal notranslate"><span class="pre">numpy</span></code> techniques</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
