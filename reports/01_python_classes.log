@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/home/tom/anaconda3/envs/hds_code/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/tom/anaconda3/envs/hds_code/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/tom/anaconda3/envs/hds_code/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/tom/anaconda3/envs/hds_code/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/tom/anaconda3/envs/hds_code/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/tom/anaconda3/envs/hds_code/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/home/tom/anaconda3/envs/hds_code/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/tom/anaconda3/envs/hds_code/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+play_text_adventure(adventure)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[0;32m<ipython-input-4-a5d3e42aaa73>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mplay_text_adventure[0m[0;34m([0m[0madventure[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m<ipython-input-3-c5aad3c7a028>[0m in [0;36mplay_text_adventure[0;34m(adventure)[0m
+[1;32m      8[0m [0;34m[0m[0m
+[1;32m      9[0m     [0;32mwhile[0m [0madventure[0m[0;34m.[0m[0mactive[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 10[0;31m         [0muser_input[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m"\nWhat do you want to do? >>> "[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     11[0m         [0mresponse[0m [0;34m=[0m [0madventure[0m[0;34m.[0m[0mtake_action[0m[0;34m([0m[0muser_input[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     12[0m         [0mprint[0m[0;34m([0m[0mresponse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/anaconda3/envs/hds_code/lib/python3.8/site-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
+[1;32m    855[0m         """
+[1;32m    856[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 857[0;31m             raise StdinNotImplementedError(
+[0m[1;32m    858[0m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    859[0m             )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
+
