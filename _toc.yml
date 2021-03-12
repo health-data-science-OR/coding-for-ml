@@ -23,5 +23,6 @@
     sections:
       - file: content/02_numpy/lectures/01_numpy_101
       - file: content/02_numpy/labs/02_lab1
+      - file: content/02_numpy/labs/02_lab2
       
      
