@@ -18,12 +18,15 @@
   
   
 - part: Part 2. NumPy
-  chapters:
-  - file: content/02_numpy/02_numpy
+  chapters: 
+  - file: content/02_numpy/02_lectures_front_page
     sections:
       - file: content/02_numpy/lectures/01_numpy_101
-      - file: content/02_numpy/labs/02_lab1
       - file: content/02_numpy/lectures/02_intermediate_numpy
+  - file: content/02_numpy/02_labs_front_page
+    sections:
+      - file: content/02_numpy/labs/02_lab1
       - file: content/02_numpy/labs/02_lab2
+  
       
      
