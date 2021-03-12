@@ -11,12 +11,18 @@
   chapters:
   - file: content/002_basics/labs/01_basics
   - file: content/002_basics/labs/02_basics
+
+- part: Part 1. Advanced Python
+  chapters:
+  - file: content/01_advanced_python/lecture/01_python_classes
   
-- part: Part 1. NumPy
+  
+- part: Part 2. NumPy
   chapters:
   - file: content/02_numpy/02_numpy
     sections:
       - file: content/02_numpy/lectures/01_numpy_101
       - file: content/02_numpy/labs/02_lab1
+      - file: content/02_numpy/labs/02_lab2
       
      
