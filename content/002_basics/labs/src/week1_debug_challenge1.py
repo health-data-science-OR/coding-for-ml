@@ -17,8 +17,10 @@ Returns string split into two parts
 If the word's length is even the two parts have
 equal number of characters
 
-Keyword arguments:
-to_split -- the string to split int o
+Params:
+-------
+to_split: str 
+    the string to split int o
 """
 length = len(to_spit)
 half_length = length / 2

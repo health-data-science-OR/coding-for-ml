@@ -6,19 +6,27 @@
   - file: content/001_setup/git
   - file: content/001_setup/conda
   - file: content/001_setup/docker
-  
-- part: Pre-requisite knowledge
+
+- part: Revision
   chapters:
-  - file: content/002_basics/labs/01_basics
-  - file: content/002_basics/labs/02_basics
+    - file: content/002_basics/fp_lectures
+      sections:
+        - file: content/002_basics/lectures/Lecture1
+        - file: content/002_basics/lectures/Lecture2
+    - file : content/002_basics/fp_practicals
+      sections:
+        - file: content/002_basics/labs/01_basics
+        - file: content/002_basics/labs/debug1
+        - file: content/002_basics/labs/02_basics
+        - file: content/002_basics/labs/debug2
 
 - part: Part 1. Advanced Python
   chapters:
   - file: content/01_advanced_python/lecture/01_python_classes
-  
-  
+
+
 - part: Part 2. NumPy
-  chapters: 
+  chapters:
   - file: content/02_numpy/02_lectures_front_page
     sections:
       - file: content/02_numpy/lectures/01_numpy_101
@@ -30,6 +38,5 @@
   - file: content/02_numpy/02_debug_front_page
     sections:
       - file: content/02_numpy/debug_challenges/debug_challenge_2
-  
-      
-     
+
+
