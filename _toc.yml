@@ -38,5 +38,9 @@
   - file: content/02_numpy/02_debug_front_page
     sections:
       - file: content/02_numpy/debug_challenges/debug_challenge_2
+      
+- part: Part 3. Pandas
+  chapters:
+  - file: content/03_pandas/lectures/01_intro_pandas
 
 
