@@ -48,9 +48,9 @@
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="_static/searchtools.js"></script>
@@ -118,19 +118,57 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Pre-requisite knowledge
+  Revision
  </span>
 </p>
 <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="content/002_basics/labs/01_basics.html">
-   Lab: Introduction to Python
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="content/002_basics/fp_lectures.html">
+   Lectures
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/002_basics/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/002_basics/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="content/002_basics/labs/02_basics.html">
-   Lab: Conditionals and Loops
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="content/002_basics/fp_practicals.html">
+   Practicals
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/002_basics/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/002_basics/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/002_basics/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/002_basics/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -218,6 +256,30 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part 3. Pandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/03_pandas/lectures/01_intro_pandas.html">
+   Introduction to
+   <strong>
+    <code class="docutils literal notranslate">
+     <span class="pre">
+      pandas
+     </span>
+    </code>
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="content/03_pandas/lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
+   Reading data into pandas from a flat file
+  </a>
  </li>
 </ul>
 

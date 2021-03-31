@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab: Introduction to Python &#8212; Coding for Machine Learning and Data Science</title>
+    <title>Basic Python &#8212; Coding for Machine Learning and Data Science</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,17 +47,17 @@
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Lab: Conditionals and Loops" href="02_basics.html" />
-    <link rel="prev" title="Docker" href="../../001_setup/docker.html" />
+    <link rel="next" title="Debug challenge 1" href="debug1.html" />
+    <link rel="prev" title="Practicals" href="../fp_practicals.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -116,19 +116,57 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Pre-requisite knowledge
+  Revision
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Lab: Introduction to Python
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../fp_lectures.html">
+   Lectures
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_basics.html">
-   Lab: Conditionals and Loops
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../fp_practicals.html">
+   Practicals
   </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -180,7 +218,7 @@
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../02_numpy/02_labs_front_page.html">
-   Labs
+   Practicals
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -216,6 +254,30 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part 3. Pandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html">
+   Introduction to
+   <strong>
+    <code class="docutils literal notranslate">
+     <span class="pre">
+      pandas
+     </span>
+    </code>
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
+   Reading data into pandas from a flat file
+  </a>
  </li>
 </ul>
 
@@ -298,7 +360,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=tree/content/002_basics/labs/01_basics.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/002_basics/labs/01_basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -311,6 +373,9 @@
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -431,25 +496,13 @@
      Exercise 6: Marvel Comics
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#debug-challenge">
-   Debug Challenge
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#challenge-1">
-     Challenge 1:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#week-1-self-learning-challenge">
-     Week 1: Self learning challenge
+    <a class="reference internal nav-link" href="#lab-1-self-learning-challenge">
+     Lab 1: Self learning challenge
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
+      <a class="reference internal nav-link" href="#challenge-1">
        Challenge 1:
       </a>
      </li>
@@ -484,8 +537,8 @@
         
               <div>
                 
-  <div class="section" id="lab-introduction-to-python">
-<h1>Lab: Introduction to Python<a class="headerlink" href="#lab-introduction-to-python" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="basic-python">
+<h1>Basic Python<a class="headerlink" href="#basic-python" title="Permalink to this headline">¶</a></h1>
 <p>This is a pre-requisite lab that can be used to refresh your basic Python skills.</p>
 <blockquote>
 <div><p>This lab work assumes you are using the supplied <code class="docutils literal notranslate"><span class="pre">hds_code</span></code> conda virtual environment.</p>
@@ -1367,44 +1420,16 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 <li><p>delete “Iron-man”. Print the updated list</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="debug-challenge">
-<h2>Debug Challenge<a class="headerlink" href="#debug-challenge" title="Permalink to this headline">¶</a></h2>
-<p>Each laboratory will have a debug challenge.  You will be given a pre-existing script containing Python code. The catch is that the code doesn’t run!</p>
-<p>Your challenge is to find and correct the errors so that the script correctly executes.</p>
-<p>The challenges are based around common problems students have when writing code.  If you do the exercises it will help you debug your own code and maybe even avoid the mistakes in the first place!</p>
-<div class="section" id="challenge-1">
-<h3>Challenge 1:<a class="headerlink" href="#challenge-1" title="Permalink to this headline">¶</a></h3>
-<p>Instructions:</p>
-<ul class="simple">
-<li><p>open <code class="docutils literal notranslate"><span class="pre">week1_debug_challenge1.py</span></code> in <code class="docutils literal notranslate"><span class="pre">spyder</span> <span class="pre">3</span></code>.</p></li>
-<li><p>Attempt to run the code.</p></li>
-<li><p>Fix the bugs!</p></li>
-</ul>
-<p>Hints:</p>
-<ul class="simple">
-<li><p>Read the Python interpreter output.</p></li>
-<li><p>The errors reported can look confusing at first, but read them carefully and they will point you to the lines of code with problems.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">Spyder</span></code> IDE may give you some hints about formatting errors</p></li>
-<li><p>It can be useful to use <code class="docutils literal notranslate"><span class="pre">print()</span></code> to display intermediate calculations and variable values.</p></li>
-<li><p>Remember that <code class="docutils literal notranslate"><span class="pre">Spyder</span></code> has a variable viewer where you can look at the value of all variables created.</p></li>
-<li><p>There might be multiple bugs!  When you fix one and try to run the code you might find another!</p></li>
-</ul>
-<p>Have a go <strong>yourself</strong> and then watch our approach:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=XCuD59bYKx0">https://www.youtube.com/watch?v=XCuD59bYKx0</a></p></li>
-</ul>
-</div>
-<div class="section" id="week-1-self-learning-challenge">
-<h3>Week 1: Self learning challenge<a class="headerlink" href="#week-1-self-learning-challenge" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="lab-1-self-learning-challenge">
+<h3>Lab 1: Self learning challenge<a class="headerlink" href="#lab-1-self-learning-challenge" title="Permalink to this headline">¶</a></h3>
 <p>Each laboratory will challenge you to do something that we haven’t taught you before.</p>
 <p>No course can teach you everything you need for all programming problems.  Being a competent Python programmer means that you need to learn how to find solutions to problems yourself.  These challenges are designed to help you begin to use internet resources in order to solve your problem.</p>
 <p><strong>Before</strong> you try the challenges it it worth watching our video on using StackOverflow:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=9WziNfkTRZ0&amp;index=3&amp;list=PLU2JUjGUsUm7R-3VdQA5S6IIaTK6YN1xE">https://www.youtube.com/watch?v=9WziNfkTRZ0&amp;index=3&amp;list=PLU2JUjGUsUm7R-3VdQA5S6IIaTK6YN1xE</a></p></li>
 </ul>
-<div class="section" id="id1">
-<h4>Challenge 1:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="challenge-1">
+<h4>Challenge 1:<a class="headerlink" href="#challenge-1" title="Permalink to this headline">¶</a></h4>
 <p>You are given a unsorted <code class="docutils literal notranslate"><span class="pre">List</span></code> of integers.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> 
 </pre></div>
@@ -1499,7 +1524,6 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 <p>Download and open:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">string_manipulation.py</span></code> for detailed examples of how to manipulate and format Python strings.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">if_statement_preview.py</span></code> for a preview of if-statements that are covered in detail next week</p></li>
 </ul>
 </div>
 </div>
@@ -1508,8 +1532,8 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1529,8 +1553,8 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../../001_setup/docker.html" title="previous page">Docker</a>
-    <a class='right-next' id="next-link" href="02_basics.html" title="next page">Lab: Conditionals and Loops</a>
+    <a class='left-prev' id="prev-link" href="../fp_practicals.html" title="previous page">Practicals</a>
+    <a class='right-next' id="next-link" href="debug1.html" title="next page">Debug challenge 1</a>
 
         </div>
         
