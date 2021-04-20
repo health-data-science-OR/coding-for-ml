@@ -258,26 +258,49 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Part 3. Pandas
+  Part 3. Pandas and MatplotLib
  </span>
 </p>
 <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html">
-   Introduction to
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      pandas
-     </span>
-    </code>
-   </strong>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_pandas/03_lectures_front_page.html">
+   Lecture notes
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
+     Reading data into pandas from a flat file
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
-   Reading data into pandas from a flat file
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_pandas/03_labs_front_page.html">
+   Practicals
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/labs/nhs_synthetic_ed_download.html">
+     Accessing large remote datasets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
 
@@ -578,9 +601,9 @@ If we slice the array between item 3 and 5 we get [5 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6.91411939e-310 4.65070807e-310 1.96048754e+289 2.88968800e-188
- 6.02419906e+173 3.85758852e-188 1.31396346e-019 2.26883740e+289
- 8.03340734e-304 3.39394991e-111]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.64364675e-310 0.00000000e+000 0.00000000e+000 0.00000000e+000
+ 0.00000000e+000 4.89020456e-033 1.14195470e-071 6.86770264e-091
+ 2.12644776e+160 4.57490964e-315]
 &lt;class &#39;numpy.ndarray&#39;&gt;
 (10,)
 </pre></div>
@@ -762,7 +785,7 @@ If we add 10 to each element in data1 we get [10 11 12 13 14 15 16 17 18 19]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.013799999629200558, 1.0016463767245525, -2.3605818357252115, 2.292370711929962)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.013684817675242999, 1.0103986712581512, -2.352484609722259, 2.324202919987072)
 </pre></div>
 </div>
 </div>
@@ -839,7 +862,7 @@ If we add 10 to each element in data1 we get [10 11 12 13 14 15 16 17 18 19]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0244 0.0266
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0254 0.0265
 </pre></div>
 </div>
 </div>
@@ -895,7 +918,7 @@ Dep. Variable:                      y   R-squared:                       0.714
 Model:                            OLS   Adj. R-squared:                  0.710
 Method:                 Least Squares   F-statistic:                     194.6
 Date:                Thu, 11 Mar 2021   Prob (F-statistic):           6.80e-23
-Time:                        17:46:33   Log-Likelihood:                -945.02
+Time:                        14:16:20   Log-Likelihood:                -945.02
 No. Observations:                  80   AIC:                             1894.
 Df Residuals:                      78   BIC:                             1899.
 Df Model:                           1                                         

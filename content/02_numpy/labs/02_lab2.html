@@ -256,26 +256,49 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Part 3. Pandas
+  Part 3. Pandas and MatplotLib
  </span>
 </p>
 <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html">
-   Introduction to
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      pandas
-     </span>
-    </code>
-   </strong>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_pandas/03_lectures_front_page.html">
+   Lecture notes
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
+     Reading data into pandas from a flat file
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
-   Reading data into pandas from a flat file
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_pandas/03_labs_front_page.html">
+   Practicals
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/labs/nhs_synthetic_ed_download.html">
+     Accessing large remote datasets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
 
@@ -575,7 +598,7 @@ One of the most common is to find its minimum or maximum values. This can be don
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 13
 </pre></div>
 </div>
 </div>
@@ -588,7 +611,7 @@ One of the most common is to find its minimum or maximum values. This can be don
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The maximum value of A is 98
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The maximum value of A is 94
 </pre></div>
 </div>
 </div>
@@ -603,7 +626,7 @@ In maths, this is called argmin. It turns out that Numpy has a function for this
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 2, and it is located at 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 13, and it is located at 14
 </pre></div>
 </div>
 </div>
@@ -706,7 +729,7 @@ convert this <em>flattened</em> index to an array of indices. At the bottom of t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 2, and it is located at (0, 2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum value of A is 13, and it is located at (3, 2)
 </pre></div>
 </div>
 </div>
@@ -719,7 +742,7 @@ convert this <em>flattened</em> index to an array of indices. At the bottom of t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
 </div>
@@ -745,13 +768,13 @@ We can do that with a function from <code class="docutils literal notranslate"><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[37 26  2  3]
- [81 87 55 98]
- [24 41 74 77]
- [66 57 17 79]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[43 51 50 32]
+ [69 91 94 27]
+ [61 92 39 59]
+ [67 36 13 77]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7d4668220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f4b600a7d90&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/02_lab2_21_2.png" src="../../../_images/02_lab2_21_2.png" />
@@ -769,7 +792,7 @@ There are many colourmaps you can use, for reference you can check
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff7c78e71c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f4b52613e20&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/02_lab2_23_1.png" src="../../../_images/02_lab2_23_1.png" />

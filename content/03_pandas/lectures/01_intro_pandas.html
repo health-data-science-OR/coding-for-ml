@@ -54,7 +54,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="Debug Challenge 2" href="../../02_numpy/debug_challenges/debug_challenge_2.html" />
+    <link rel="next" title="Practicals" href="../03_labs_front_page.html" />
+    <link rel="prev" title="Lecture notes" href="../03_lectures_front_page.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -255,26 +256,49 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Part 3. Pandas
+  Part 3. Pandas and MatplotLib
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Introduction to
-   <strong>
-    <code class="docutils literal notranslate">
-     <span class="pre">
-      pandas
-     </span>
-    </code>
-   </strong>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../03_lectures_front_page.html">
+   Lecture notes
   </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#reading-data-into-pandas-from-a-flat-file">
+     Reading data into pandas from a flat file
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#reading-data-into-pandas-from-a-flat-file">
-   Reading data into pandas from a flat file
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_labs_front_page.html">
+   Practicals
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../labs/nhs_synthetic_ed_download.html">
+     Accessing large remote datasets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
 
@@ -524,7 +548,7 @@
 <p>We usually use the alias <code class="docutils literal notranslate"><span class="pre">pd</span></code> when import <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
@@ -532,14 +556,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2.3
-1.19.2
 </pre></div>
 </div>
 </div>
@@ -559,50 +577,26 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series</span>
 <span class="n">column1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;unique_id&#39;</span><span class="p">,</span> 
                     <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="n">column1</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
-1    2
-2    3
-3    4
-4    5
-5    6
-6    7
-7    8
-8    9
-Name: unique_id, dtype: uint8
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data type</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># data type</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">column1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape</span>
 <span class="n">column1</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9,)
 </pre></div>
 </div>
 </div>
@@ -613,23 +607,9 @@ Name: unique_id, dtype: uint8
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series just passing data.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series just passing data.</span>
 <span class="n">column2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="n">column2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
-1    2
-2    3
-3    4
-4    5
-5    6
-6    7
-7    8
-8    9
-dtype: int64
 </pre></div>
 </div>
 </div>
@@ -637,65 +617,33 @@ dtype: int64
 <p>In a data science application its likely you will have a very large column of data.  You can take a look at the head or tail of the <code class="docutils literal notranslate"><span class="pre">Series</span></code> by using the <code class="docutils literal notranslate"><span class="pre">.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail()</span></code> methods</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10,000 rows. uint16 = 0 - 65_535</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10,000 rows. uint16 = 0 - 65_535</span>
 <span class="n">column3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;longer&#39;</span><span class="p">,</span> 
                     <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
 <span class="n">column3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
-1    2
-2    3
-3    4
-4    5
-Name: longer, dtype: uint16
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To view more or less rows</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># To view more or less rows</span>
 <span class="n">column3</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
-1    2
-Name: longer, dtype: uint16
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">column3</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column3</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9994    9995
-9995    9996
-9996    9997
-9997    9998
-9998    9999
-Name: longer, dtype: uint16
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># side note: to drop to numpy</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># side note: to drop to numpy</span>
 <span class="n">column3</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   1,    2,    3, ..., 9997, 9998, 9999], dtype=uint16)
 </pre></div>
 </div>
 </div>
@@ -708,220 +656,64 @@ Name: longer, dtype: uint16
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create 5 x 4 matrix</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create 5 x 4 matrix</span>
 <span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">raw_data</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 4)
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2,  3],
-       [ 4,  5,  6,  7],
-       [ 8,  9, 10, 11],
-       [12, 13, 14, 15],
-       [16, 17, 18, 19]], dtype=uint8)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">([</span><span class="s1">&#39;col_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 5 entries, 0 to 4
-Data columns (total 4 columns):
- #   Column  Non-Null Count  Dtype
----  ------  --------------  -----
- 0   col_0   5 non-null      uint8
- 1   col_1   5 non-null      uint8
- 2   col_2   5 non-null      uint8
- 3   col_3   5 non-null      uint8
-dtypes: uint8(4)
-memory usage: 148.0 bytes
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># its a small matrix so lets view it all</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># its a small matrix so lets view it all</span>
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>col_0</th>
-      <th>col_1</th>
-      <th>col_2</th>
-      <th>col_3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>8</td>
-      <td>9</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>12</td>
-      <td>13</td>
-      <td>14</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>16</td>
-      <td>17</td>
-      <td>18</td>
-      <td>19</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#for bigger `DataFrames` use .head()/.tail()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#for bigger `DataFrames` use .head()/.tail()</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>col_0</th>
-      <th>col_1</th>
-      <th>col_2</th>
-      <th>col_3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># access a named column</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># access a named column</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col_3&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     3
-1     7
-2    11
-3    15
-4    19
-Name: col_3, dtype: uint8
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># alternative approach for accessing</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># alternative approach for accessing</span>
 <span class="n">df</span><span class="o">.</span><span class="n">col_3</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     3
-1     7
-2    11
-3    15
-4    19
-Name: col_3, dtype: uint8
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># side bar 1 - let&#39;s ignore the datatype. </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># side bar 1 - let&#39;s ignore the datatype. </span>
 <span class="c1"># the size in memory is almost double.</span>
 <span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
@@ -930,35 +722,11 @@ Name: col_3, dtype: uint8
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 5 entries, 0 to 4
-Data columns (total 4 columns):
- #   Column  Non-Null Count  Dtype
----  ------  --------------  -----
- 0   col_0   5 non-null      int64
- 1   col_1   5 non-null      int64
- 2   col_2   5 non-null      int64
- 3   col_3   5 non-null      int64
-dtypes: int64(4)
-memory usage: 288.0 bytes
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># side bar 2: drop to numpy</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># side bar 2: drop to numpy</span>
 <span class="n">df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2,  3],
-       [ 4,  5,  6,  7],
-       [ 8,  9, 10, 11],
-       [12, 13, 14, 15],
-       [16, 17, 18, 19]])
 </pre></div>
 </div>
 </div>
@@ -969,26 +737,17 @@ memory usage: 288.0 bytes
 <p>In the previous example we created a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.  But a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code>can be created from anything <em>array-like</em>.  So for example, we could work with one or more python lists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating an individual series</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating an individual series</span>
 <span class="n">thrash_metal_bands</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;metallica&#39;</span><span class="p">,</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">,</span>
                                 <span class="s1">&#39;anthrax&#39;</span><span class="p">])</span>
 <span class="n">thrash_metal_bands</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      pantera
-1    metallica
-2     megadeth
-3      anthrax
-dtype: object
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a full data frame</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a full data frame</span>
 
 <span class="c1"># each column is defined as a seperate list</span>
 <span class="n">band_name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;metallica&#39;</span><span class="p">,</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">,</span> <span class="s1">&#39;anthrax&#39;</span><span class="p">]</span>
@@ -1009,90 +768,18 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>band</th>
-      <th>n_albums</th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>pantera</td>
-      <td>9</td>
-      <td>1981</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>metallica</td>
-      <td>10</td>
-      <td>1981</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>megadeth</td>
-      <td>15</td>
-      <td>1983</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>anthrax</td>
-      <td>11</td>
-      <td>1981</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># take a look at the df summary information.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take a look at the df summary information.</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 4 entries, 0 to 3
-Data columns (total 4 columns):
- #   Column     Non-Null Count  Dtype 
----  ------     --------------  ----- 
- 0   band       4 non-null      object
- 1   n_albums   4 non-null      int64 
- 2   yr_formed  4 non-null      int64 
- 3   active     4 non-null      int64 
-dtypes: int64(3), object(1)
-memory usage: 256.0+ bytes
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># could also be specific about datatype using pd.Series </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># could also be specific about datatype using pd.Series </span>
 <span class="n">thrash_metal_bands</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="n">thrash_metal_bands</span><span class="p">[</span><span class="s1">&#39;band&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">band_name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
@@ -1104,21 +791,6 @@ memory usage: 256.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 4 entries, 0 to 3
-Data columns (total 4 columns):
- #   Column     Non-Null Count  Dtype 
----  ------     --------------  ----- 
- 0   band       4 non-null      object
- 1   n_albums   4 non-null      uint8 
- 2   yr_formed  4 non-null      uint16
- 3   active     4 non-null      bool  
-dtypes: bool(1), object(1), uint16(1), uint8(1)
-memory usage: 176.0+ bytes
-</pre></div>
-</div>
-</div>
 </div>
 <p>Note that in practice its also useful to know that you can create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a dict.  I often forget exactly what format my data need to be in, but luckily you can call the <code class="docutils literal notranslate"><span class="pre">.to_dict()</span></code> method of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to see what is required.</p>
 <blockquote>
@@ -1126,98 +798,28 @@ memory usage: 176.0+ bytes
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bands_dict</span> <span class="o">=</span> <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bands_dict</span> <span class="o">=</span> <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
 <span class="n">bands_dict</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;band&#39;: {0: &#39;pantera&#39;, 1: &#39;metallica&#39;, 2: &#39;megadeth&#39;, 3: &#39;anthrax&#39;},
- &#39;n_albums&#39;: {0: 9, 1: 10, 2: 15, 3: 11},
- &#39;yr_formed&#39;: {0: 1981, 1: 1981, 2: 1983, 3: 1981},
- &#39;active&#39;: {0: False, 1: True, 2: True, 3: True}}
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the code to use a dict looks like pandas code.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the code to use a dict looks like pandas code.</span>
 <span class="n">bands_dict</span><span class="p">[</span><span class="s1">&#39;band&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: &#39;pantera&#39;, 1: &#39;metallica&#39;, 2: &#39;megadeth&#39;, 3: &#39;anthrax&#39;}
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reverse engineer</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># reverse engineer</span>
 <span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">bands_dict</span><span class="p">)</span>
 <span class="n">new_df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>band</th>
-      <th>n_albums</th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>pantera</td>
-      <td>9</td>
-      <td>1981</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>metallica</td>
-      <td>10</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>megadeth</td>
-      <td>15</td>
-      <td>1983</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>anthrax</td>
-      <td>11</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 </div>
@@ -1226,83 +828,20 @@ memory usage: 176.0+ bytes
 <p>In each of the examples so far you will notice that the first (unlabelled) a column is a sequence of arbitrary numbers.  This is the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> index.  When we create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> manually an additional step is often to set the index to a column we have created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">index</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=4, step=1)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the index to &#39;band&#39; column</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the index to &#39;band&#39; column</span>
 <span class="c1"># note that this method returns a &#39;copy&#39; unless we set &#39;inplace=True&#39;</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;band&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">thrash_metal_bands</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n_albums</th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>band</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>pantera</th>
-      <td>9</td>
-      <td>1981</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>metallica</th>
-      <td>10</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>megadeth</th>
-      <td>15</td>
-      <td>1983</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>anthrax</th>
-      <td>11</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="accessing-elements-in-a-dataframe">
@@ -1314,32 +853,16 @@ memory usage: 176.0+ bytes
 <p>To access an individal row we can use the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> accessors.  The former of these references by <strong>name</strong> while the latter references by <strong>numeric index</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return the records for panteria</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># return the records for panteria</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n_albums         9
-yr_formed     1981
-active       False
-Name: pantera, dtype: object
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return the records the row at index 2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># return the records the row at index 2</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n_albums       15
-yr_formed    1983
-active       True
-Name: megadeth, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1347,226 +870,36 @@ Name: megadeth, dtype: object
 <p>Note that we can return multiple rows if we supply a list of indexes.  For example to find records for both pantera and megadeth:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_find</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">to_find</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">]</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">to_find</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n_albums</th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>band</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>pantera</th>
-      <td>9</td>
-      <td>1981</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>megadeth</th>
-      <td>15</td>
-      <td>1983</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Indexes can be sliced in a similar fashion to arrays</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All rows from index 2 onwards</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All rows from index 2 onwards</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n_albums</th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>band</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>megadeth</th>
-      <td>15</td>
-      <td>1983</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>anthrax</th>
-      <td>11</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rows 0 and 1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rows 0 and 1</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n_albums</th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>band</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>pantera</th>
-      <td>9</td>
-      <td>1981</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>metallica</th>
-      <td>10</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># slicing by name</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># slicing by name</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">:</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n_albums</th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>band</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>pantera</th>
-      <td>9</td>
-      <td>1981</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>metallica</th>
-      <td>10</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>megadeth</th>
-      <td>15</td>
-      <td>1983</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="accessing-columns">
@@ -1578,116 +911,22 @@ Name: megadeth, dtype: object
 <p>We can also select a multiple columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select yr_formed and active columns only</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># select yr_formed and active columns only</span>
 <span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;yr_formed&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">]</span>
 <span class="n">thrash_metal_bands</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>band</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>pantera</th>
-      <td>1981</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>metallica</th>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>megadeth</th>
-      <td>1983</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>anthrax</th>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>or restrict both columns and rows</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;yr_formed&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;yr_formed&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">]</span>
 <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;anthrax&#39;</span><span class="p">]</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">mask</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>band</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>pantera</th>
-      <td>1981</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>anthrax</th>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="selecting-individual-cells">
@@ -1695,97 +934,29 @@ Name: megadeth, dtype: object
 <p>To access an individual cell within a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> use the <code class="docutils literal notranslate"><span class="pre">.at</span></code> and <code class="docutils literal notranslate"><span class="pre">.iat</span></code> accessors.  The former uses the index row and column names while the latter is an integer based lookup.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lookup the year pantera was formed.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># lookup the year pantera was formed.</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;yr_formed&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1981
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look up the cell value in position (1, 1)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># look up the cell value in position (1, 1)</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1981
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to update the individual value</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to update the individual value</span>
 <span class="c1"># lookup the year pantera was formed.</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;yr_formed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9999</span>
 <span class="n">thrash_metal_bands</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n_albums</th>
-      <th>yr_formed</th>
-      <th>active</th>
-    </tr>
-    <tr>
-      <th>band</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>pantera</th>
-      <td>9</td>
-      <td>9999</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>metallica</th>
-      <td>10</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>megadeth</th>
-      <td>15</td>
-      <td>1983</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>anthrax</th>
-      <td>11</td>
-      <td>1981</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 </div>
@@ -1805,7 +976,7 @@ Name: megadeth, dtype: object
 <p>As an example let’s read in the famous <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29">Wisonsin Breast Cancer dataset</a> from Github.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wisconsin breast cancer dataset URL</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wisconsin breast cancer dataset URL</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
       <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/wisconsin.csv&#39;</span>
 
@@ -1817,268 +988,29 @@ Name: megadeth, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 569 entries, 842302 to 92751
-Data columns (total 32 columns):
- #   Column                   Non-Null Count  Dtype  
----  ------                   --------------  -----  
- 0   Unnamed: 0               569 non-null    int64  
- 1   diagnosis                569 non-null    object 
- 2   radius_mean              569 non-null    float64
- 3   texture_mean             569 non-null    float64
- 4   perimeter_mean           569 non-null    float64
- 5   area_mean                569 non-null    float64
- 6   smoothness_mean          569 non-null    float64
- 7   compactness_mean         569 non-null    float64
- 8   concavity_mean           569 non-null    float64
- 9   concave points_mean      569 non-null    float64
- 10  symmetry_mean            569 non-null    float64
- 11  fractal_dimension_mean   569 non-null    float64
- 12  radius_se                569 non-null    float64
- 13  texture_se               569 non-null    float64
- 14  perimeter_se             569 non-null    float64
- 15  area_se                  569 non-null    float64
- 16  smoothness_se            569 non-null    float64
- 17  compactness_se           569 non-null    float64
- 18  concavity_se             569 non-null    float64
- 19  concave points_se        569 non-null    float64
- 20  symmetry_se              569 non-null    float64
- 21  fractal_dimension_se     569 non-null    float64
- 22  radius_worst             569 non-null    float64
- 23  texture_worst            569 non-null    float64
- 24  perimeter_worst          569 non-null    float64
- 25  area_worst               569 non-null    float64
- 26  smoothness_worst         569 non-null    float64
- 27  compactness_worst        569 non-null    float64
- 28  concavity_worst          569 non-null    float64
- 29  concave points_worst     569 non-null    float64
- 30  symmetry_worst           569 non-null    float64
- 31  fractal_dimension_worst  569 non-null    float64
-dtypes: float64(30), int64(1), object(1)
-memory usage: 146.7+ KB
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(569, 32)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>diagnosis</th>
-      <th>radius_mean</th>
-      <th>texture_mean</th>
-      <th>perimeter_mean</th>
-      <th>area_mean</th>
-      <th>smoothness_mean</th>
-      <th>compactness_mean</th>
-      <th>concavity_mean</th>
-      <th>concave points_mean</th>
-      <th>...</th>
-      <th>radius_worst</th>
-      <th>texture_worst</th>
-      <th>perimeter_worst</th>
-      <th>area_worst</th>
-      <th>smoothness_worst</th>
-      <th>compactness_worst</th>
-      <th>concavity_worst</th>
-      <th>concave points_worst</th>
-      <th>symmetry_worst</th>
-      <th>fractal_dimension_worst</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>842302</th>
-      <td>0</td>
-      <td>M</td>
-      <td>17.99</td>
-      <td>10.38</td>
-      <td>122.80</td>
-      <td>1001.0</td>
-      <td>0.11840</td>
-      <td>0.27760</td>
-      <td>0.3001</td>
-      <td>0.14710</td>
-      <td>...</td>
-      <td>25.38</td>
-      <td>17.33</td>
-      <td>184.60</td>
-      <td>2019.0</td>
-      <td>0.1622</td>
-      <td>0.6656</td>
-      <td>0.7119</td>
-      <td>0.2654</td>
-      <td>0.4601</td>
-      <td>0.11890</td>
-    </tr>
-    <tr>
-      <th>842517</th>
-      <td>1</td>
-      <td>M</td>
-      <td>20.57</td>
-      <td>17.77</td>
-      <td>132.90</td>
-      <td>1326.0</td>
-      <td>0.08474</td>
-      <td>0.07864</td>
-      <td>0.0869</td>
-      <td>0.07017</td>
-      <td>...</td>
-      <td>24.99</td>
-      <td>23.41</td>
-      <td>158.80</td>
-      <td>1956.0</td>
-      <td>0.1238</td>
-      <td>0.1866</td>
-      <td>0.2416</td>
-      <td>0.1860</td>
-      <td>0.2750</td>
-      <td>0.08902</td>
-    </tr>
-    <tr>
-      <th>84300903</th>
-      <td>2</td>
-      <td>M</td>
-      <td>19.69</td>
-      <td>21.25</td>
-      <td>130.00</td>
-      <td>1203.0</td>
-      <td>0.10960</td>
-      <td>0.15990</td>
-      <td>0.1974</td>
-      <td>0.12790</td>
-      <td>...</td>
-      <td>23.57</td>
-      <td>25.53</td>
-      <td>152.50</td>
-      <td>1709.0</td>
-      <td>0.1444</td>
-      <td>0.4245</td>
-      <td>0.4504</td>
-      <td>0.2430</td>
-      <td>0.3613</td>
-      <td>0.08758</td>
-    </tr>
-    <tr>
-      <th>84348301</th>
-      <td>3</td>
-      <td>M</td>
-      <td>11.42</td>
-      <td>20.38</td>
-      <td>77.58</td>
-      <td>386.1</td>
-      <td>0.14250</td>
-      <td>0.28390</td>
-      <td>0.2414</td>
-      <td>0.10520</td>
-      <td>...</td>
-      <td>14.91</td>
-      <td>26.50</td>
-      <td>98.87</td>
-      <td>567.7</td>
-      <td>0.2098</td>
-      <td>0.8663</td>
-      <td>0.6869</td>
-      <td>0.2575</td>
-      <td>0.6638</td>
-      <td>0.17300</td>
-    </tr>
-    <tr>
-      <th>84358402</th>
-      <td>4</td>
-      <td>M</td>
-      <td>20.29</td>
-      <td>14.34</td>
-      <td>135.10</td>
-      <td>1297.0</td>
-      <td>0.10030</td>
-      <td>0.13280</td>
-      <td>0.1980</td>
-      <td>0.10430</td>
-      <td>...</td>
-      <td>22.54</td>
-      <td>16.67</td>
-      <td>152.20</td>
-      <td>1575.0</td>
-      <td>0.1374</td>
-      <td>0.2050</td>
-      <td>0.4000</td>
-      <td>0.1625</td>
-      <td>0.2364</td>
-      <td>0.07678</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 32 columns</p>
-</div></div></div>
 </div>
 <p>Now let’s read in the same file, but this time it is compressed in .zip format.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
       <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/wisconsin.zip&#39;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
 </pre></div>
@@ -2087,50 +1019,7 @@ memory usage: 146.7+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 569 entries, 842302 to 92751
-Data columns (total 32 columns):
- #   Column                   Non-Null Count  Dtype  
----  ------                   --------------  -----  
- 0   Unnamed: 0               569 non-null    int64  
- 1   diagnosis                569 non-null    object 
- 2   radius_mean              569 non-null    float64
- 3   texture_mean             569 non-null    float64
- 4   perimeter_mean           569 non-null    float64
- 5   area_mean                569 non-null    float64
- 6   smoothness_mean          569 non-null    float64
- 7   compactness_mean         569 non-null    float64
- 8   concavity_mean           569 non-null    float64
- 9   concave points_mean      569 non-null    float64
- 10  symmetry_mean            569 non-null    float64
- 11  fractal_dimension_mean   569 non-null    float64
- 12  radius_se                569 non-null    float64
- 13  texture_se               569 non-null    float64
- 14  perimeter_se             569 non-null    float64
- 15  area_se                  569 non-null    float64
- 16  smoothness_se            569 non-null    float64
- 17  compactness_se           569 non-null    float64
- 18  concavity_se             569 non-null    float64
- 19  concave points_se        569 non-null    float64
- 20  symmetry_se              569 non-null    float64
- 21  fractal_dimension_se     569 non-null    float64
- 22  radius_worst             569 non-null    float64
- 23  texture_worst            569 non-null    float64
- 24  perimeter_worst          569 non-null    float64
- 25  area_worst               569 non-null    float64
- 26  smoothness_worst         569 non-null    float64
- 27  compactness_worst        569 non-null    float64
- 28  concavity_worst          569 non-null    float64
- 29  concave points_worst     569 non-null    float64
- 30  symmetry_worst           569 non-null    float64
- 31  fractal_dimension_worst  569 non-null    float64
-dtypes: float64(30), int64(1), object(1)
-memory usage: 146.7+ KB
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2165,7 +1054,8 @@ memory usage: 146.7+ KB
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../../02_numpy/debug_challenges/debug_challenge_2.html" title="previous page">Debug Challenge 2</a>
+    <a class='left-prev' id="prev-link" href="../03_lectures_front_page.html" title="previous page">Lecture notes</a>
+    <a class='right-next' id="next-link" href="../03_labs_front_page.html" title="next page">Practicals</a>
 
         </div>
         
