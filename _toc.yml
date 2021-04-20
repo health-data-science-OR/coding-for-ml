@@ -39,8 +39,13 @@
     sections:
       - file: content/02_numpy/debug_challenges/debug_challenge_2
       
-- part: Part 3. Pandas
+- part: Part 3. Pandas and MatplotLib
   chapters:
-  - file: content/03_pandas/lectures/01_intro_pandas
+  - file: content/03_pandas/03_lectures_front_page
+    sections:
+      - file: content/03_pandas/lectures/01_intro_pandas
+  - file: content/03_pandas/03_labs_front_page
+    sections:
+      - file: content/03_pandas/labs/nhs_synthetic_ed_download
 
 

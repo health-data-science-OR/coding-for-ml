@@ -11,7 +11,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 only_build_toc_files: true
 
 execute:
-  execute_notebooks: cache #cache output from .ipynb files for faster build
+  execute_notebooks: off #cache output from .ipynb files for faster build
   timeout: -1 #no time restriction on notebook execution
   
 repository:
