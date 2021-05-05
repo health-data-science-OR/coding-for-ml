@@ -1,4 +1,6 @@
-# Welcome
+![title image](imgs/title_cropped.png)
+
+# Preface
 
 Data science and machine learning are exciting rapidly evolving disciplines that offer huge potential for the future of health care, medicine and wider areas of science.  To keep up with the pace of change a modern data scientist requires fundamental skills in coding.  This content of this book will: 
 
