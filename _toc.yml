@@ -7,19 +7,6 @@
   - file: content/001_setup/conda
   - file: content/001_setup/docker
 
-- part: Revision
-  chapters:
-    - file: content/002_basics/fp_lectures
-      sections:
-        - file: content/002_basics/lectures/Lecture1
-        - file: content/002_basics/lectures/Lecture2
-    - file : content/002_basics/fp_practicals
-      sections:
-        - file: content/002_basics/labs/01_basics
-        - file: content/002_basics/labs/debug1
-        - file: content/002_basics/labs/02_basics
-        - file: content/002_basics/labs/debug2
-
 - part: Part 1. Advanced Python
   chapters:
   - file: content/01_advanced_python/lecture/01_python_classes
@@ -48,5 +35,18 @@
   - file: content/03_pandas/03_labs_front_page
     sections:
       - file: content/03_pandas/labs/nhs_synthetic_ed_download
+      
+- part: Appendix -Basic Python
+  chapters:
+    - file: content/002_basics/fp_lectures
+      sections:
+        - file: content/002_basics/lectures/Lecture1
+        - file: content/002_basics/lectures/Lecture2
+    - file : content/002_basics/fp_practicals
+      sections:
+        - file: content/002_basics/labs/01_basics
+        - file: content/002_basics/labs/debug1
+        - file: content/002_basics/labs/02_basics
+        - file: content/002_basics/labs/debug2
 
 
