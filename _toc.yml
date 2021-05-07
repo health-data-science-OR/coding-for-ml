@@ -7,12 +7,13 @@
   - file: content/001_setup/conda
   - file: content/001_setup/docker
 
-- part: Part 1. Advanced Python
-  chapters:
-  - file: content/01_advanced_python/lecture/01_python_classes
-  - file: content/01_advanced_python/labs/01_refresher_problems 
-  - file: content/01_advanced_python/labs/02_oop
-
+- part: Algorithms and modelling
+  chapters: 
+  - file: content/01_algorithms/00_designing_with_oop
+    sections:
+      - file: content/01_algorithms/01_python_classes
+      - file: content/01_algorithms/02_oop_sim
+      - file: content/01_algorithms/exercises/01_science_funcs 
 
 - part: Part 2. NumPy
   chapters:
@@ -28,7 +29,7 @@
     sections:
       - file: content/02_numpy/debug_challenges/debug_challenge_2
       
-- part: Part 3. Pandas and MatplotLib
+- part: Part 3. Statistical Programming
   chapters:
   - file: content/03_pandas/03_lectures_front_page
     sections:
@@ -39,15 +40,15 @@
       
 - part: Appendix -Basic Python
   chapters:
-    - file: content/002_basics/fp_lectures
+    - file: content/appendix/fp_lectures
       sections:
-        - file: content/002_basics/lectures/Lecture1
-        - file: content/002_basics/lectures/Lecture2
-    - file : content/002_basics/fp_practicals
+        - file: content/appendix/lectures/Lecture1
+        - file: content/appendix/lectures/Lecture2
+    - file : content/appendix/fp_practicals
       sections:
-        - file: content/002_basics/labs/01_basics
-        - file: content/002_basics/labs/debug1
-        - file: content/002_basics/labs/02_basics
-        - file: content/002_basics/labs/debug2
+        - file: content/appendix/labs/01_basics
+        - file: content/appendix/labs/debug1
+        - file: content/appendix/labs/02_basics
+        - file: content/appendix/labs/debug2
 
 
