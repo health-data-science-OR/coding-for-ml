@@ -10,7 +10,8 @@
 - part: Part 1. Advanced Python
   chapters:
   - file: content/01_advanced_python/lecture/01_python_classes
-  - file: content/01_advanced_python/labs/01_refresher_problems  
+  - file: content/01_advanced_python/labs/01_refresher_problems 
+  - file: content/01_advanced_python/labs/02_oop
 
 
 - part: Part 2. NumPy
