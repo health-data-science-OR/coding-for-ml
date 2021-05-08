@@ -18,6 +18,12 @@
     sections:
       - file: content/01_algorithms/03_numpy/01_numpy_101
       - file: content/01_algorithms/03_numpy/02_intermediate_numpy
+  - file: content/01_algorithms/04_exercises
+    sections:
+      - file: content/01_algorithms/04_exercises/01_science_funcs
+  - file: content/01_algorithms/05_debug
+    sections:
+      - file: content/01_algorithms/05_debug/01_debug_numpy
 
 - part: Part 2. NumPy
   chapters:
