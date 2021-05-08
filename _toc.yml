@@ -9,18 +9,18 @@
 
 - part: Algorithms and modelling
   chapters: 
-  - file: content/01_algorithms/00_designing_with_oop
+  - file: content/01_algorithms/02_oop
     sections:
-      - file: content/01_algorithms/01_python_classes
-      - file: content/01_algorithms/02_oop_sim
+      - file: content/01_algorithms/02_oop/01_python_classes
+      - file: content/01_algorithms/02_oop/02_oop_sim
       - file: content/01_algorithms/exercises/01_science_funcs 
+  - file: content/01_algorithms/03_numpy
+    sections:
+      - file: content/01_algorithms/03_numpy/01_numpy_101
+      - file: content/01_algorithms/03_numpy/02_intermediate_numpy
 
 - part: Part 2. NumPy
   chapters:
-  - file: content/02_numpy/02_lectures_front_page
-    sections:
-      - file: content/02_numpy/lectures/01_numpy_101
-      - file: content/02_numpy/lectures/02_intermediate_numpy
   - file: content/02_numpy/02_labs_front_page
     sections:
       - file: content/02_numpy/labs/02_lab1
