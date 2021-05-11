@@ -21,21 +21,13 @@
   - file: content/01_algorithms/04_exercises
     sections:
       - file: content/01_algorithms/04_exercises/01_science_funcs
+      - file: content/01_algorithms/04_exercises/02_basic_numpy
+      - file: content/01_algorithms/04_exercises/03_int_numpy
   - file: content/01_algorithms/05_debug
     sections:
       - file: content/01_algorithms/05_debug/01_debug_numpy
-
-- part: Part 2. NumPy
-  chapters:
-  - file: content/02_numpy/02_labs_front_page
-    sections:
-      - file: content/02_numpy/labs/02_lab1
-      - file: content/02_numpy/labs/02_lab2
-  - file: content/02_numpy/02_debug_front_page
-    sections:
-      - file: content/02_numpy/debug_challenges/debug_challenge_2
       
-- part: Part 3. Statistical Programming
+- part: Statistical Programming
   chapters:
   - file: content/03_pandas/03_lectures_front_page
     sections:
