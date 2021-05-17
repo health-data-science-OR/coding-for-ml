@@ -8,7 +8,13 @@
   - file: content/001_setup/docker
 
 - part: Algorithms and modelling
-  chapters: 
+  chapters:
+  - file: content/01_algorithms/01_design
+    sections:
+      - file: content/01_algorithms/01_design/01_primes
+      - file: content/01_algorithms/01_design/02_better_design
+      - file: content/01_algorithms/01_design/03_micro_opt
+      - file: content/01_algorithms/01_design/04_summing_up
   - file: content/01_algorithms/02_oop
     sections:
       - file: content/01_algorithms/02_oop/01_python_classes
