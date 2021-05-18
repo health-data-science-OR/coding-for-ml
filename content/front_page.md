@@ -11,7 +11,7 @@ Data science and machine learning are exciting rapidly evolving disciplines that
 
 # Creative Commons¶
 
-This work is shared under CC BY 4.0.
+All content in this book (this includes all files and content in the [content/](https://github.com/health-data-science-OR/coding-for-ml/tree/main/content) folder) is shared under CC BY 4.0.
 
 You are free to:
 

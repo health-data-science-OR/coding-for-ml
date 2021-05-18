@@ -1,5 +1,5 @@
 - file: content/front_page
-  numbered: false
+  numbered: False
 
 - part: Data and software
   chapters:
