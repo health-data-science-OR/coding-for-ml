@@ -1,4 +1,4 @@
-# Debug Challenge 2
+# `numpy` debug
 
 ```{admonition} Challenge.
 

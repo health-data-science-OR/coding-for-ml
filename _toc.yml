@@ -1,7 +1,7 @@
 - file: content/front_page
   numbered: false
 
-- part: Setup
+- part: Data and software
   chapters:
   - file: content/001_setup/git
   - file: content/001_setup/conda

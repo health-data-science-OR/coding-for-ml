@@ -1,0 +1,209 @@
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/tom/anaconda3/envs/hds_code
+
+  added / updated specs:
+    - nodejs
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    alabaster-0.7.12           |     pyhd3eb1b0_0          16 KB
+    anyio-2.2.0                |   py38h06a4308_1         125 KB
+    arrow-1.1.0                |   py38h06a4308_0         126 KB
+    astroid-2.5                |   py38h06a4308_1         284 KB
+    attrs-21.2.0               |     pyhd3eb1b0_0          46 KB
+    babel-2.9.1                |     pyhd3eb1b0_0         5.5 MB
+    binaryornot-0.4.4          |     pyhd3eb1b0_1         351 KB
+    click-8.0.0                |     pyhd3eb1b0_0          79 KB
+    cloudpickle-1.6.0          |             py_0          30 KB
+    cookiecutter-1.7.2         |     pyhd3eb1b0_0          86 KB
+    cryptography-3.4.7         |   py38hd23ed53_0         913 KB
+    decorator-5.0.9            |     pyhd3eb1b0_0          12 KB
+    docutils-0.17.1            |   py38h06a4308_1         686 KB
+    future-0.18.2              |           py38_1         632 KB
+    importlib-metadata-3.10.0  |   py38h06a4308_0          33 KB
+    inflection-0.5.1           |   py38h06a4308_0          12 KB
+    ipython-7.22.0             |   py38hb070fc8_0         982 KB
+    jupyter_server-1.4.1       |   py38h06a4308_0         317 KB
+    jupyterlab_server-2.4.0    |     pyhd3eb1b0_0          37 KB
+    keyring-22.3.0             |   py38h06a4308_0          53 KB
+    libgcc-7.2.0               |       h69d50b8_2         269 KB
+    libspatialindex-1.9.3      |       h2531618_0         2.1 MB
+    mypy_extensions-0.4.3      |           py38_0           9 KB
+    nbclassic-0.2.6            |     pyhd3eb1b0_0          19 KB
+    nodejs-6.11.2              |       h3db8ef7_0         9.4 MB
+    notebook-6.3.0             |   py38h06a4308_0         4.1 MB
+    pillow-8.2.0               |   py38he98fc37_0         628 KB
+    pluggy-0.13.1              |   py38h06a4308_0          33 KB
+    poyo-0.5.0                 |     pyhd3eb1b0_0          17 KB
+    pycodestyle-2.6.0          |     pyhd3eb1b0_0          38 KB
+    pydocstyle-6.0.0           |     pyhd3eb1b0_0          35 KB
+    pyflakes-2.2.0             |     pyhd3eb1b0_0          56 KB
+    pylint-2.7.4               |   py38h06a4308_1         454 KB
+    pyls-black-0.4.6           |       hd3eb1b0_0           9 KB
+    pyls-spyder-0.3.2          |     pyhd3eb1b0_0          10 KB
+    python-language-server-0.36.2|     pyhd3eb1b0_0          41 KB
+    python-slugify-5.0.2       |     pyhd3eb1b0_0          13 KB
+    qdarkstyle-3.0.2           |     pyhd3eb1b0_0         337 KB
+    qstylizer-0.1.10           |     pyhd3eb1b0_0          17 KB
+    qtconsole-5.0.3            |     pyhd3eb1b0_0          97 KB
+    qtpy-1.9.0                 |             py_0          38 KB
+    scipy-1.6.2                |   py38h91f5cce_0        15.6 MB
+    secretstorage-3.3.1        |   py38h06a4308_0          24 KB
+    sphinx-4.0.1               |     pyhd3eb1b0_0         1.2 MB
+    spyder-kernels-2.0.1       |   py38h06a4308_0         102 KB
+    sqlite-3.35.4              |       hdfb4753_0         981 KB
+    terminado-0.9.4            |   py38h06a4308_0          25 KB
+    text-unidecode-1.3         |             py_0          66 KB
+    textdistance-4.2.1         |     pyhd3eb1b0_0          29 KB
+    three-merge-0.1.1          |     pyhd3eb1b0_0          10 KB
+    tinycss-0.4                |  pyhd3eb1b0_1002          39 KB
+    unidecode-1.2.0            |     pyhd3eb1b0_0         155 KB
+    watchdog-1.0.2             |   py38h06a4308_1          89 KB
+    whichcraft-0.6.1           |     pyhd3eb1b0_0          11 KB
+    wurlitzer-2.1.0            |   py38h06a4308_0          14 KB
+    yapf-0.31.0                |     pyhd3eb1b0_0         126 KB
+    zstd-1.4.9                 |       haebb681_0         480 KB
+    ------------------------------------------------------------
+                                           Total:        46.7 MB
+
+The following packages will be REMOVED:
+
+  dataclasses-0.8-pyhc8e2a94_1
+  libedit-3.1.20191231-h14c3975_1
+  libgfortran4-7.5.0-h14aa051_18
+
+The following packages will be UPDATED:
+
+  anyio              conda-forge::anyio-2.2.0-py38h578d9bd~ --> pkgs/main::anyio-2.2.0-py38h06a4308_1
+  arrow              conda-forge::arrow-1.0.3-py38h578d9bd~ --> pkgs/main::arrow-1.1.0-py38h06a4308_0
+  attrs                                 20.3.0-pyhd3eb1b0_0 --> 21.2.0-pyhd3eb1b0_0
+  babel                                  2.9.0-pyhd3eb1b0_0 --> 2.9.1-pyhd3eb1b0_0
+  ca-certificates    conda-forge::ca-certificates-2020.12.~ --> pkgs/main::ca-certificates-2021.4.13-h06a4308_1
+  click               conda-forge::click-7.1.2-pyh9f0ad1d_0 --> pkgs/main::click-8.0.0-pyhd3eb1b0_0
+  cryptography                         3.3.1-py38h3c74f83_1 --> 3.4.7-py38hd23ed53_0
+  decorator                              4.4.2-pyhd3eb1b0_0 --> 5.0.9-pyhd3eb1b0_0
+  defusedxml                             0.6.0-pyhd3eb1b0_0 --> 0.7.1-pyhd3eb1b0_0
+  docutils           conda-forge::docutils-0.15.2-py38h578~ --> pkgs/main::docutils-0.17.1-py38h06a4308_1
+  expat                                   2.2.10-he6710b0_2 --> 2.3.0-h2531618_2
+  glib                                    2.67.4-h36276a3_1 --> 2.68.1-h36276a3_0
+  importlib-metadata pkgs/main/noarch::importlib-metadata-~ --> pkgs/main/linux-64::importlib-metadata-3.10.0-py38h06a4308_0
+  importlib_metadata                                2.0.0-1 --> 3.10.0-hd3eb1b0_0
+  intel-openmp                                   2020.2-254 --> 2021.2.0-h06a4308_610
+  intervaltree         conda-forge::intervaltree-3.0.2-py_0 --> pkgs/main::intervaltree-3.1.0-py_0
+  ipython                             7.21.0-py38hb070fc8_0 --> 7.22.0-py38hb070fc8_0
+  jupyter_client                                 6.1.7-py_0 --> 6.1.12-pyhd3eb1b0_0
+  jupyterlab_server  conda-forge::jupyterlab_server-2.3.0-~ --> pkgs/main::jupyterlab_server-2.4.0-pyhd3eb1b0_0
+  keyring            conda-forge::keyring-21.2.1-py38h578d~ --> pkgs/main::keyring-22.3.0-py38h06a4308_0
+  lcms2                                     2.11-h396b838_0 --> 2.12-h3be6417_0
+  libllvm10          conda-forge::libllvm10-10.0.1-he513fc~ --> pkgs/main::libllvm10-10.0.1-hbcb73fb_5
+  nbformat                               5.1.2-pyhd3eb1b0_1 --> 5.1.3-pyhd3eb1b0_0
+  notebook                             6.2.0-py38h06a4308_0 --> 6.3.0-py38h06a4308_0
+  pandoc                                    2.11-hb0f4dca_0 --> 2.12-h06a4308_0
+  pillow                               8.1.1-py38he98fc37_0 --> 8.2.0-py38he98fc37_0
+  prometheus_client                      0.9.0-pyhd3eb1b0_0 --> 0.10.1-pyhd3eb1b0_0
+  prompt-toolkit                                 3.0.8-py_0 --> 3.0.17-pyh06a4308_0
+  pygments                               2.8.0-pyhd3eb1b0_0 --> 2.8.1-pyhd3eb1b0_0
+  pylint             conda-forge::pylint-2.7.2-py38h578d9b~ --> pkgs/main::pylint-2.7.4-py38h06a4308_1
+  python-slugify     conda-forge::python-slugify-4.0.1-pyh~ --> pkgs/main::python-slugify-5.0.2-pyhd3eb1b0_0
+  pyxdg                        conda-forge::pyxdg-0.26-py_0 --> pkgs/main::pyxdg-0.27-pyhd3eb1b0_0
+  pyyaml             conda-forge::pyyaml-5.3.1-py38h8df0ef~ --> pkgs/main::pyyaml-5.4.1-py38h27cfd23_1
+  scipy                                1.6.1-py38h91f5cce_0 --> 1.6.2-py38h91f5cce_0
+  sphinx             conda-forge::sphinx-3.5.4-pyh44b312d_0 --> pkgs/main::sphinx-4.0.1-pyhd3eb1b0_0
+  sqlite                                  3.33.0-h62c20be_0 --> 3.35.4-hdfb4753_0
+  terminado                            0.9.2-py38h06a4308_0 --> 0.9.4-py38h06a4308_0
+  urllib3                               1.26.3-pyhd3eb1b0_0 --> 1.26.4-pyhd3eb1b0_0
+  zeromq                                   4.3.3-he6710b0_3 --> 4.3.4-h2531618_0
+  zipp                                   3.4.0-pyhd3eb1b0_0 --> 3.4.1-pyhd3eb1b0_0
+  zstd                                     1.4.5-h9ceee32_0 --> 1.4.9-haebb681_0
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  alabaster              conda-forge::alabaster-0.7.12-py_0 --> pkgs/main::alabaster-0.7.12-pyhd3eb1b0_0
+  appdirs            conda-forge::appdirs-1.4.4-pyh9f0ad1d~ --> pkgs/main::appdirs-1.4.4-py_0
+  argh               conda-forge/noarch::argh-0.26.2-pyh9f~ --> pkgs/main/linux-64::argh-0.26.2-py38_0
+  astroid            conda-forge::astroid-2.5.6-py38h578d9~ --> pkgs/main::astroid-2.5-py38h06a4308_1
+  atomicwrites       conda-forge::atomicwrites-1.4.0-pyh9f~ --> pkgs/main::atomicwrites-1.4.0-py_0
+  binaryornot           conda-forge::binaryornot-0.4.4-py_1 --> pkgs/main::binaryornot-0.4.4-pyhd3eb1b0_1
+  black                      conda-forge::black-20.8b1-py_1 --> pkgs/main::black-19.10b0-py_0
+  certifi            conda-forge::certifi-2020.12.5-py38h5~ --> pkgs/main::certifi-2020.12.5-py38h06a4308_0
+  cloudpickle                                   conda-forge --> pkgs/main
+  colorama           conda-forge::colorama-0.4.4-pyh9f0ad1~ --> pkgs/main::colorama-0.4.4-pyhd3eb1b0_0
+  cookiecutter       conda-forge::cookiecutter-1.7.2-pyh9f~ --> pkgs/main::cookiecutter-1.7.2-pyhd3eb1b0_0
+  diff-match-patch   conda-forge::diff-match-patch-2020071~ --> pkgs/main::diff-match-patch-20200713-py_0
+  future             conda-forge::future-0.18.2-py38h578d9~ --> pkgs/main::future-0.18.2-py38_1
+  imagesize               conda-forge::imagesize-1.2.0-py_0 --> pkgs/main::imagesize-1.2.0-pyhd3eb1b0_0
+  inflection         conda-forge/noarch::inflection-0.5.1-~ --> pkgs/main/linux-64::inflection-0.5.1-py38h06a4308_0
+  isort               conda-forge::isort-5.8.0-pyhd8ed1ab_0 --> pkgs/main::isort-5.8.0-pyhd3eb1b0_0
+  jeepney            conda-forge::jeepney-0.6.0-pyhd8ed1ab~ --> pkgs/main::jeepney-0.6.0-pyhd3eb1b0_0
+  jupyter_server     conda-forge::jupyter_server-1.4.1-py3~ --> pkgs/main::jupyter_server-1.4.1-py38h06a4308_0
+  libgcc                                        conda-forge --> pkgs/main
+  libgfortran-ng     conda-forge::libgfortran-ng-7.5.0-h14~ --> pkgs/main::libgfortran-ng-7.3.0-hdf63c60_0
+  libspatialindex    conda-forge::libspatialindex-1.9.3-he~ --> pkgs/main::libspatialindex-1.9.3-h2531618_0
+  mccabe              conda-forge/noarch::mccabe-0.6.1-py_1 --> pkgs/main/linux-64::mccabe-0.6.1-py38_1
+  mypy_extensions    conda-forge::mypy_extensions-0.4.3-py~ --> pkgs/main::mypy_extensions-0.4.3-py38_0
+  nbclassic          conda-forge::nbclassic-0.2.6-pyhd8ed1~ --> pkgs/main::nbclassic-0.2.6-pyhd3eb1b0_0
+  nbconvert          conda-forge::nbconvert-6.0.7-py38h578~ --> pkgs/main::nbconvert-6.0.7-py38_0
+  nodejs                       conda-forge::nodejs-6.13.1-0 --> pkgs/main::nodejs-6.11.2-h3db8ef7_0
+  numpydoc                 conda-forge::numpydoc-1.1.0-py_1 --> pkgs/main::numpydoc-1.1.0-pyhd3eb1b0_1
+  pathspec           conda-forge::pathspec-0.8.1-pyhd3deb0~ --> pkgs/main::pathspec-0.7.0-py_0
+  patsy                conda-forge/noarch::patsy-0.5.1-py_0 --> pkgs/main/linux-64::patsy-0.5.1-py38_0
+  pluggy             conda-forge::pluggy-0.13.1-py38h578d9~ --> pkgs/main::pluggy-0.13.1-py38h06a4308_0
+  poyo                         conda-forge::poyo-0.5.0-py_0 --> pkgs/main::poyo-0.5.0-pyhd3eb1b0_0
+  pycodestyle        conda-forge::pycodestyle-2.6.0-pyh9f0~ --> pkgs/main::pycodestyle-2.6.0-pyhd3eb1b0_0
+  pydocstyle         conda-forge::pydocstyle-6.0.0-pyhd8ed~ --> pkgs/main::pydocstyle-6.0.0-pyhd3eb1b0_0
+  pyflakes           conda-forge::pyflakes-2.2.0-pyh9f0ad1~ --> pkgs/main::pyflakes-2.2.0-pyhd3eb1b0_0
+  pyls-black         conda-forge::pyls-black-0.4.6-pyh9f0a~ --> pkgs/main::pyls-black-0.4.6-hd3eb1b0_0
+  pyls-spyder        conda-forge::pyls-spyder-0.3.2-pyhd8e~ --> pkgs/main::pyls-spyder-0.3.2-pyhd3eb1b0_0
+  python-jsonrpc-se~ conda-forge::python-jsonrpc-server-0.~ --> pkgs/main::python-jsonrpc-server-0.4.0-py_0
+  python-language-s~ conda-forge::python-language-server-0~ --> pkgs/main::python-language-server-0.36.2-pyhd3eb1b0_0
+  qdarkstyle         conda-forge::qdarkstyle-3.0.2-pyhd8ed~ --> pkgs/main::qdarkstyle-3.0.2-pyhd3eb1b0_0
+  qstylizer          conda-forge::qstylizer-0.1.10-pyhd8ed~ --> pkgs/main::qstylizer-0.1.10-pyhd3eb1b0_0
+  qtawesome          conda-forge::qtawesome-1.0.2-pyhd8ed1~ --> pkgs/main::qtawesome-1.0.2-pyhd3eb1b0_0
+  qtconsole          conda-forge::qtconsole-5.0.3-pyhd8ed1~ --> pkgs/main::qtconsole-5.0.3-pyhd3eb1b0_0
+  qtpy                                          conda-forge --> pkgs/main
+  rope                conda-forge::rope-0.18.0-pyhd3deb0d_0 --> pkgs/main::rope-0.18.0-py_0
+  secretstorage      conda-forge::secretstorage-3.3.1-py38~ --> pkgs/main::secretstorage-3.3.1-py38h06a4308_0
+  snowballstemmer    conda-forge::snowballstemmer-2.1.0-py~ --> pkgs/main::snowballstemmer-2.1.0-pyhd3eb1b0_0
+  sortedcontainers   conda-forge::sortedcontainers-2.3.0-p~ --> pkgs/main::sortedcontainers-2.3.0-pyhd3eb1b0_0
+  sphinxcontrib-app~ conda-forge::sphinxcontrib-applehelp-~ --> pkgs/main::sphinxcontrib-applehelp-1.0.2-pyhd3eb1b0_0
+  sphinxcontrib-dev~ conda-forge::sphinxcontrib-devhelp-1.~ --> pkgs/main::sphinxcontrib-devhelp-1.0.2-pyhd3eb1b0_0
+  sphinxcontrib-htm~ conda-forge::sphinxcontrib-htmlhelp-1~ --> pkgs/main::sphinxcontrib-htmlhelp-1.0.3-pyhd3eb1b0_0
+  sphinxcontrib-jsm~ conda-forge::sphinxcontrib-jsmath-1.0~ --> pkgs/main::sphinxcontrib-jsmath-1.0.1-pyhd3eb1b0_0
+  sphinxcontrib-qth~ conda-forge::sphinxcontrib-qthelp-1.0~ --> pkgs/main::sphinxcontrib-qthelp-1.0.3-pyhd3eb1b0_0
+  sphinxcontrib-ser~ conda-forge::sphinxcontrib-serializin~ --> pkgs/main::sphinxcontrib-serializinghtml-1.1.4-pyhd3eb1b0_0
+  spyder-kernels     conda-forge::spyder-kernels-2.0.1-py3~ --> pkgs/main::spyder-kernels-2.0.1-py38h06a4308_0
+  text-unidecode                                conda-forge --> pkgs/main
+  textdistance       conda-forge::textdistance-4.2.1-pyhd8~ --> pkgs/main::textdistance-4.2.1-pyhd3eb1b0_0
+  three-merge        conda-forge::three-merge-0.1.1-pyh9f0~ --> pkgs/main::three-merge-0.1.1-pyhd3eb1b0_0
+  tinycss            conda-forge::tinycss-0.4-pyhd8ed1ab_1~ --> pkgs/main::tinycss-0.4-pyhd3eb1b0_1002
+  toml                conda-forge::toml-0.10.2-pyhd8ed1ab_0 --> pkgs/main::toml-0.10.2-pyhd3eb1b0_0
+  typing_extensions  conda-forge::typing_extensions-3.7.4.~ --> pkgs/main::typing_extensions-3.7.4.3-pyha847dfd_0
+  unidecode          conda-forge::unidecode-1.2.0-pyhd8ed1~ --> pkgs/main::unidecode-1.2.0-pyhd3eb1b0_0
+  watchdog           conda-forge::watchdog-1.0.2-py38h578d~ --> pkgs/main::watchdog-1.0.2-py38h06a4308_1
+  whichcraft             conda-forge::whichcraft-0.6.1-py_0 --> pkgs/main::whichcraft-0.6.1-pyhd3eb1b0_0
+  wrapt              conda-forge::wrapt-1.12.1-py38h25fe25~ --> pkgs/main::wrapt-1.12.1-py38h7b6447c_1
+  wurlitzer          conda-forge::wurlitzer-2.1.0-py38h578~ --> pkgs/main::wurlitzer-2.1.0-py38h06a4308_0
+  yaml                   conda-forge::yaml-0.2.5-h516909a_0 --> pkgs/main::yaml-0.2.5-h7b6447c_0
+  yapf                conda-forge::yapf-0.31.0-pyhd8ed1ab_0 --> pkgs/main::yapf-0.31.0-pyhd3eb1b0_0
+
+
+Proceed ([y]/n)? 
+
+Downloading and Extracting Packages
+spyder-kernels-2.0.1 | 102 KB    |            |   0% spyder-kernels-2.0.1 | 102 KB    | #5         |  16% spyder-kernels-2.0.1 | 102 KB    | ########## | 100% spyder-kernels-2.0.1 | 102 KB    | ########## | 100% 
+whichcraft-0.6.1     | 11 KB     |            |   0% whichcraft-0.6.1     | 11 KB     | ########## | 100% whichcraft-0.6.1     | 11 KB     | ########## | 100% 
+terminado-0.9.4      | 25 KB     |            |   0% terminado-0.9.4      | 25 KB     | ########## | 100% terminado-0.9.4      | 25 KB     | ########## | 100% 
+mypy_extensions-0.4. | 9 KB      |            |   0% mypy_extensions-0.4. | 9 KB      | ########## | 100% mypy_extensions-0.4. | 9 KB      | ########## | 100% 
+pyls-spyder-0.3.2    | 10 KB     |            |   0% pyls-spyder-0.3.2    | 10 KB     | ########## | 100% pyls-spyder-0.3.2    | 10 KB     | ########## | 100% 
+babel-2.9.1          | 5.5 MB    |            |   0% babel-2.9.1          | 5.5 MB    |            |   0% babel-2.9.1          | 5.5 MB    | 5          |   5% babel-2.9.1          | 5.5 MB    | 8          |   9% babel-2.9.1          | 5.5 MB    | #6         |  16% babel-2.9.1          | 5.5 MB    | ##3        |  23% babel-2.9.1          | 5.5 MB    | ###2       |  33% babel-2.9.1          | 5.5 MB    | ####1      |  41% babel-2.9.1          | 5.5 MB    | #####      |  51% babel-2.9.1          | 5.5 MB    | ######     |  61% babel-2.9.1          | 5.5 MB    | #######    |  70% babel-2.9.1          | 5.5 MB    | ########2  |  82% babel-2.9.1          | 5.5 MB    | #########4 |  94% babel-2.9.1          | 5.5 MB    | ########## | 100% 
+python-slugify-5.0.2 | 13 KB     |            |   0% python-slugify-5.0.2 | 13 KB     |            |   0% 
+decorator-5.0.9      | 12 KB     |            |   0% decorator-5.0.9      | 12 KB     | ########## | 100% decorator-5.0.9      | 12 KB     | ########## | 100% 
+scipy-1.6.2          | 15.6 MB   |            |   0% scipy-1.6.2          | 15.6 MB   | 1          |   2% scipy-1.6.2          | 15.6 MB   | 7          |   8% scipy-1.6.2          | 15.6 MB   | #3         |  14% scipy-1.6.2          | 15.6 MB   | #8         |  19% scipy-1.6.2          | 15.6 MB   | ##3        |  24% scipy-1.6.2          | 15.6 MB   | ##8        |  28% scipy-1.6.2          | 15.6 MB   | ###3       |  34% scipy-1.6.2          | 15.6 MB   | ###6       |  37% 
+pydocstyle-6.0.0     | 35 KB     |            |   0% pydocstyle-6.0.0     | 35 KB     | ####5      |  46% 
