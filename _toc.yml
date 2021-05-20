@@ -25,6 +25,8 @@
       - file: content/01_algorithms/03_numpy/01_performance
       - file: content/01_algorithms/03_numpy/02_vectors
       - file: content/01_algorithms/03_numpy/03_algebra
+      - file: content/01_algorithms/03_numpy/04_slicing
+      - file: content/01_algorithms/03_numpy/05_advanced_iter
       - file: content/01_algorithms/03_numpy/04_real
       - file: content/01_algorithms/03_numpy/05_primes
       - file: content/01_algorithms/03_numpy/01_numpy_101
