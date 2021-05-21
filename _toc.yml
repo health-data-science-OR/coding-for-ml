@@ -7,7 +7,7 @@
   - file: content/001_setup/conda
   - file: content/001_setup/docker
 
-- part: Algorithms and modelling
+- part: Algorithms and computational modelling
   chapters:
   - file: content/01_algorithms/01_design
     sections:
@@ -32,7 +32,7 @@
   - file: content/01_algorithms/04_exercises
     sections:
       - file: content/01_algorithms/04_exercises/01_science_funcs
-      - file: content/01_algorithms/04_exercises/02_basic_numpy
+      - file: content/01_algorithms/04_exercises/02_array
       - file: content/01_algorithms/04_exercises/03_int_numpy
   - file: content/01_algorithms/05_debug
     sections:
