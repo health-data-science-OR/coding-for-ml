@@ -29,8 +29,6 @@
       - file: content/01_algorithms/03_numpy/05_advanced_iter
       - file: content/01_algorithms/03_numpy/04_real
       - file: content/01_algorithms/03_numpy/05_primes
-      - file: content/01_algorithms/03_numpy/01_numpy_101
-      - file: content/01_algorithms/03_numpy/02_intermediate_numpy
   - file: content/01_algorithms/04_exercises
     sections:
       - file: content/01_algorithms/04_exercises/01_science_funcs
