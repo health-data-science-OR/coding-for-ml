@@ -27,9 +27,11 @@
       - file: content/01_algorithms/03_numpy/03_slicing
       - file: content/01_algorithms/03_numpy/04_algebra
       - file: content/01_algorithms/03_numpy/05_statistics
-      - file: content/01_algorithms/03_numpy/05_advanced_iter
-      - file: content/01_algorithms/03_numpy/04_real
-      - file: content/01_algorithms/03_numpy/05_primes
+      - file: content/01_algorithms/03_numpy/06_sampling
+      - file: content/01_algorithms/03_numpy/07_advanced_iter
+      - file: content/01_algorithms/03_numpy/08_cs1
+      - file: content/01_algorithms/03_numpy/09_cs2
+      - file: content/01_algorithms/03_numpy/10_cs3
   - file: content/01_algorithms/04_exercises
     sections:
       - file: content/01_algorithms/04_exercises/01_science_funcs
