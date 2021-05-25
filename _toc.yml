@@ -43,14 +43,14 @@
       
 - part: Statistical Programming
   chapters:
-  - file: content/03_pandas/03_lectures_front_page
+  - file: content/02_stat_prog/01_pandas_front_page
     sections:
-      - file: content/03_pandas/lectures/01_intro_pandas
-  - file: content/03_pandas/03_labs_front_page
-    sections:
-      - file: content/03_pandas/labs/nhs_synthetic_ed_download
-      
-- part: Appendix -Basic Python
+      - file: content/02_stat_prog/01_pandas/01_intro_pandas
+      - file: content/02_stat_prog/01_pandas/02_files
+      - file: content/02_stat_prog/01_pandas/03_non_standard_download
+      - file: content/02_stat_prog/01_pandas/04_datetimes
+
+- part: Appendix - Basic Python
   chapters:
     - file: content/appendix/fp_lectures
       sections:
