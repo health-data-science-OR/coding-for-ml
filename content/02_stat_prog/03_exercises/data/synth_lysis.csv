@@ -1,0 +1,2001 @@
+hospital,Male,Age,severity,stroke type,Comorbidity,S2RankinBeforeStroke,label
+Hosp_7,Y,65,Minor,clot,,0,N
+Hosp_8,N,99,Moderate to severe,clot,,3,N
+Hosp_8,N,49,,clot,,0,N
+Hosp_1,N,77,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,86,Minor,clot,Hypertension,0,N
+Hosp_8,N,79,,clot,Hypertension,0,Y
+Hosp_6,N,47,Severe,bleed,,2,N
+Hosp_8,N,65,Minor,clot,Hypertension,0,N
+Hosp_8,N,72,Moderate,,Hypertension;Atrial Fib,0,N
+Hosp_8,N,84,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,N,81,Moderate,clot,,0,Y
+Hosp_1,N,72,Moderate,clot,Diabetes;TIA,2,Y
+Hosp_8,N,40,Minor,clot,,0,Y
+Hosp_8,Y,64,Minor,clot,,0,N
+Hosp_8,N,80,Severe,clot,,0,Y
+Hosp_2,N,76,,clot,,0,N
+Hosp_8,N,73,Minor,clot,,0,N
+Hosp_8,Y,72,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_8,N,94,Moderate,clot,,1,N
+Hosp_8,Y,67,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,N,48,Severe,,,0,N
+Hosp_8,Y,81,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,76,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,76,Moderate to severe,clot,,0,Y
+Hosp_8,Y,58,Minor,clot,Hypertension,0,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_4,N,76,Moderate to severe,,,4,N
+Hosp_8,N,85,Moderate to severe,clot,,1,Y
+Hosp_8,N,74,Moderate,clot,Hypertension;Diabetes,0,Y
+Hosp_8,Y,72,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_4,Y,76,Moderate to severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_3,Y,63,Moderate to severe,clot,,0,Y
+Hosp_8,Y,85,Moderate to severe,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,91,Moderate,clot,TIA,2,N
+Hosp_1,N,79,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,83,Moderate,clot,,0,Y
+Hosp_8,Y,66,Severe,clot,Hypertension,0,Y
+Hosp_8,Y,79,Moderate,,,0,N
+Hosp_8,Y,75,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,58,Minor,clot,,0,N
+Hosp_7,Y,72,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_5,N,79,Severe,clot,Hypertension,0,Y
+Hosp_8,N,67,Minor,clot,,0,Y
+Hosp_8,Y,78,Moderate,clot,Hypertension,0,Y
+Hosp_3,N,79,Minor,clot,TIA,0,N
+Hosp_1,Y,62,Moderate,clot,,1,Y
+Hosp_8,N,58,Minor,clot,Hypertension,0,N
+Hosp_8,N,87,Minor,clot,Hypertension;Diabetes,3,N
+Hosp_1,Y,71,Moderate to severe,clot,,0,Y
+Hosp_6,Y,68,Moderate,,TIA,2,N
+Hosp_3,N,76,Moderate,clot,,0,Y
+Hosp_8,N,77,Moderate to severe,clot,,0,Y
+Hosp_1,N,86,Severe,clot,Hypertension,0,Y
+Hosp_8,Y,74,Minor,clot,Hypertension,0,N
+Hosp_8,Y,71,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,92,Moderate,clot,,0,Y
+Hosp_2,N,85,Moderate,clot,,0,Y
+Hosp_8,Y,76,Minor,clot,,0,N
+Hosp_8,N,94,Moderate,clot,TIA,2,N
+Hosp_8,Y,55,Minor,clot,,0,Y
+Hosp_8,Y,81,Moderate,clot,,0,N
+Hosp_8,Y,92,,clot,Atrial Fib,3,N
+Hosp_4,Y,73,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,66,,clot,,0,N
+Hosp_7,Y,68,Moderate,clot,,0,Y
+Hosp_8,N,75,Minor,clot,Hypertension;Atrial Fib;TIA,2,N
+Hosp_8,Y,74,Moderate,clot,Hypertension;TIA,4,N
+Hosp_8,N,89,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,87,Moderate,,Hypertension;TIA,0,N
+Hosp_8,N,87,Moderate to severe,clot,,0,Y
+Hosp_8,N,79,Moderate,clot,Atrial Fib;TIA,1,N
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_1,N,73,Minor,,Hypertension,0,N
+Hosp_8,N,81,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,81,Moderate,clot,Hypertension;TIA,0,N
+Hosp_8,Y,79,Moderate,clot,,0,Y
+Hosp_8,N,71,,bleed,,0,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,82,Moderate,clot,,0,Y
+Hosp_3,N,76,Severe,clot,,0,Y
+Hosp_4,Y,49,,clot,Hypertension,0,Y
+Hosp_3,N,63,Moderate,clot,,0,N
+Hosp_8,N,88,Severe,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,60,,clot,,0,N
+Hosp_8,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,75,Moderate to severe,clot,,0,Y
+Hosp_8,N,66,Moderate,clot,,0,Y
+Hosp_7,N,83,Moderate,clot,,0,Y
+Hosp_4,N,83,Moderate,clot,Hypertension;Diabetes,2,N
+Hosp_8,N,76,Moderate,bleed,,0,N
+Hosp_8,Y,65,Severe,clot,,0,Y
+Hosp_1,N,86,Moderate,clot,,0,Y
+Hosp_8,Y,64,,clot,,0,Y
+Hosp_8,N,72,Moderate to severe,,,0,N
+Hosp_8,N,82,Moderate,clot,,1,Y
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_1,N,58,Minor,clot,Diabetes,0,N
+Hosp_8,Y,83,,clot,,1,Y
+Hosp_8,Y,40,Moderate,clot,,0,Y
+Hosp_8,N,90,,clot,,1,N
+Hosp_8,Y,67,Minor,clot,Hypertension,0,N
+Hosp_8,N,91,Moderate to severe,clot,,1,N
+Hosp_3,N,69,Minor,clot,,0,N
+Hosp_8,Y,71,Moderate to severe,clot,Hypertension,0,Y
+Hosp_1,N,69,Moderate,clot,,0,N
+Hosp_8,Y,54,Moderate,clot,,0,Y
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,Y,70,Minor,clot,,0,N
+Hosp_8,N,70,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,N,47,Moderate,clot,,0,Y
+Hosp_8,N,83,Severe,,,0,N
+Hosp_4,N,92,,clot,Atrial Fib;TIA,3,N
+Hosp_8,Y,75,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_8,Y,83,Severe,clot,,0,Y
+Hosp_8,N,77,Moderate to severe,clot,,0,Y
+Hosp_8,N,68,Severe,bleed,Hypertension,0,N
+Hosp_8,Y,76,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,82,Moderate to severe,,,0,N
+Hosp_8,N,71,Moderate to severe,clot,TIA,0,Y
+Hosp_8,N,80,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,67,Moderate,clot,,0,Y
+Hosp_8,N,89,Severe,clot,,0,N
+Hosp_1,N,83,Severe,clot,,0,Y
+Hosp_8,Y,53,Moderate,clot,,0,Y
+Hosp_6,N,79,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,70,,clot,Atrial Fib,0,N
+Hosp_8,Y,71,Moderate,bleed,,0,N
+Hosp_8,Y,69,Moderate to severe,clot,,0,Y
+Hosp_8,N,45,,clot,,1,Y
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_2,N,85,Minor,clot,,0,N
+Hosp_8,N,78,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,66,,clot,,0,Y
+Hosp_8,N,61,Moderate,clot,,0,Y
+Hosp_8,N,74,Minor,clot,,0,N
+Hosp_8,N,79,Minor,clot,Hypertension;TIA,0,N
+Hosp_4,Y,62,Minor,clot,,0,N
+Hosp_3,N,69,Moderate,bleed,Hypertension,0,N
+Hosp_3,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,89,Moderate,,Hypertension,0,N
+Hosp_7,Y,68,Severe,bleed,,0,N
+Hosp_8,N,81,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,87,Minor,clot,Hypertension;TIA,1,N
+Hosp_8,Y,91,Moderate to severe,clot,,0,Y
+Hosp_8,N,56,Moderate,clot,,0,Y
+Hosp_7,N,40,Moderate,clot,,0,Y
+Hosp_7,N,82,Moderate,clot,Hypertension,1,Y
+Hosp_6,N,92,Moderate,bleed,,1,N
+Hosp_1,N,85,Severe,clot,,2,Y
+Hosp_6,N,82,Moderate to severe,,Hypertension,1,N
+Hosp_8,N,80,Severe,clot,Hypertension,0,Y
+Hosp_8,Y,78,Minor,clot,,1,N
+Hosp_4,Y,46,,clot,,0,Y
+Hosp_8,Y,78,Minor,clot,TIA,1,N
+Hosp_8,Y,64,Moderate,clot,,0,N
+Hosp_8,N,62,Moderate,clot,Diabetes,0,Y
+Hosp_8,N,79,Severe,clot,TIA,1,N
+Hosp_8,Y,74,Severe,clot,,0,Y
+Hosp_8,Y,64,,,,0,N
+Hosp_2,Y,91,Minor,clot,,0,N
+Hosp_8,Y,76,Minor,clot,TIA,2,N
+Hosp_8,N,80,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,84,Minor,clot,,0,N
+Hosp_8,Y,67,Moderate,clot,,0,Y
+Hosp_8,N,72,No stroke symtpoms,clot,,0,N
+Hosp_8,N,83,Moderate,clot,,0,Y
+Hosp_8,Y,51,Minor,clot,,0,Y
+Hosp_8,N,81,Minor,clot,TIA,2,N
+Hosp_8,Y,62,Moderate to severe,clot,,0,Y
+Hosp_8,N,77,Moderate,clot,,0,Y
+Hosp_8,Y,54,,clot,,0,Y
+Hosp_2,N,72,Minor,clot,Diabetes,0,N
+Hosp_8,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,81,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,86,Moderate,clot,,0,Y
+Hosp_8,N,72,Moderate,clot,,0,N
+Hosp_8,Y,63,Moderate,clot,,0,N
+Hosp_8,N,60,Moderate to severe,clot,,0,Y
+Hosp_8,Y,81,,clot,,0,N
+Hosp_8,N,85,,clot,Hypertension;Atrial Fib,0,Y
+Hosp_2,N,85,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,Hypertension;TIA,0,N
+Hosp_8,Y,74,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_8,N,81,Moderate,clot,Hypertension,0,Y
+Hosp_3,N,76,Moderate,clot,,0,Y
+Hosp_8,N,90,Severe,,Atrial Fib,0,N
+Hosp_8,Y,80,,clot,Hypertension,0,Y
+Hosp_1,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,79,,clot,Diabetes;TIA,2,N
+Hosp_8,N,60,Moderate,clot,TIA,0,N
+Hosp_8,N,41,Moderate,clot,,0,Y
+Hosp_8,N,68,Moderate,,Hypertension;TIA,3,N
+Hosp_8,N,92,Severe,clot,,1,N
+Hosp_8,N,66,,clot,,0,Y
+Hosp_8,N,73,Minor,clot,,0,N
+Hosp_8,N,79,Minor,clot,,0,N
+Hosp_8,N,72,Moderate,clot,Hypertension,0,N
+Hosp_2,N,96,Severe,clot,TIA,2,N
+Hosp_8,Y,64,Moderate to severe,clot,,0,Y
+Hosp_8,N,87,Minor,clot,Hypertension,0,N
+Hosp_8,N,59,,clot,TIA,0,N
+Hosp_8,Y,60,Minor,clot,Hypertension,0,Y
+Hosp_8,N,71,Minor,clot,Hypertension,0,N
+Hosp_3,Y,70,Moderate,bleed,Hypertension,0,N
+Hosp_8,Y,75,Moderate,clot,Hypertension,0,N
+Hosp_8,N,73,Moderate,clot,,0,Y
+Hosp_3,N,69,Moderate,bleed,Hypertension,0,N
+Hosp_8,N,73,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,83,Severe,clot,Atrial Fib,0,Y
+Hosp_8,N,65,Moderate,clot,,0,Y
+Hosp_8,N,52,Moderate to severe,clot,TIA,0,Y
+Hosp_8,N,67,Moderate,clot,Hypertension,0,Y
+Hosp_1,Y,60,Minor,clot,Hypertension,0,N
+Hosp_8,N,82,Minor,clot,Hypertension;Atrial Fib,1,N
+Hosp_3,N,77,Severe,clot,Atrial Fib;TIA,1,Y
+Hosp_8,Y,54,Moderate,clot,,0,Y
+Hosp_8,Y,66,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,83,,clot,,0,Y
+Hosp_7,N,72,Moderate,clot,Diabetes;TIA,2,Y
+Hosp_8,N,67,Minor,clot,,0,N
+Hosp_8,Y,91,Moderate to severe,clot,,0,Y
+Hosp_4,Y,91,,clot,,1,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,57,Moderate,bleed,,0,N
+Hosp_8,N,73,Minor,clot,,0,N
+Hosp_1,N,45,Moderate,clot,,0,Y
+Hosp_8,N,48,Minor,clot,,0,N
+Hosp_8,N,81,Moderate,clot,Hypertension,0,N
+Hosp_8,N,74,Minor,clot,,0,N
+Hosp_8,Y,57,Moderate,bleed,,0,N
+Hosp_8,Y,66,Minor,clot,,0,N
+Hosp_8,N,74,Moderate,,TIA,0,N
+Hosp_6,N,67,Minor,clot,Diabetes,0,Y
+Hosp_8,N,72,Minor,clot,,0,N
+Hosp_8,N,90,Severe,,,2,N
+Hosp_3,N,77,Minor,clot,,0,Y
+Hosp_8,N,75,Severe,clot,,0,Y
+Hosp_8,Y,80,Minor,clot,,1,N
+Hosp_2,N,90,Minor,clot,,0,N
+Hosp_8,N,65,Minor,clot,Hypertension,0,N
+Hosp_8,N,87,Moderate to severe,clot,Atrial Fib,1,N
+Hosp_8,N,75,,clot,Diabetes,0,Y
+Hosp_7,Y,84,Severe,,Atrial Fib,0,N
+Hosp_8,N,62,Moderate to severe,clot,,0,Y
+Hosp_8,N,80,Moderate,bleed,,0,N
+Hosp_8,N,61,Moderate to severe,clot,,0,Y
+Hosp_8,N,80,Moderate to severe,clot,,1,Y
+Hosp_8,N,67,Minor,clot,,0,N
+Hosp_8,N,66,Minor,,Hypertension,0,N
+Hosp_2,Y,89,Minor,clot,Hypertension,0,N
+Hosp_8,Y,72,Moderate to severe,clot,Hypertension,2,Y
+Hosp_7,N,79,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,79,Moderate to severe,clot,,0,N
+Hosp_8,N,69,Moderate to severe,clot,,0,Y
+Hosp_8,N,46,,clot,,0,N
+Hosp_1,N,73,Minor,,Hypertension,0,N
+Hosp_8,N,67,Moderate,clot,,0,Y
+Hosp_8,N,79,Moderate to severe,clot,,0,N
+Hosp_8,Y,84,,clot,,0,Y
+Hosp_8,N,72,Moderate,clot,Diabetes;TIA,2,Y
+Hosp_8,N,74,Moderate,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,75,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,76,Moderate,clot,,0,Y
+Hosp_8,N,81,Moderate,clot,,0,Y
+Hosp_3,Y,71,Moderate,clot,Atrial Fib;Diabetes,0,Y
+Hosp_1,N,86,Moderate,clot,,0,Y
+Hosp_8,Y,48,Minor,clot,,2,N
+Hosp_7,N,72,Moderate,clot,Diabetes;TIA,2,Y
+Hosp_3,Y,71,Moderate,clot,,0,Y
+Hosp_8,Y,61,Moderate to severe,,,0,N
+Hosp_1,N,77,,clot,Atrial Fib;TIA,0,N
+Hosp_8,N,77,Severe,,,0,N
+Hosp_8,N,75,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,75,Severe,clot,,0,N
+Hosp_4,Y,74,Moderate,clot,,0,Y
+Hosp_6,N,60,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,76,Moderate to severe,clot,Atrial Fib,0,Y
+Hosp_8,Y,72,Moderate,clot,TIA,0,Y
+Hosp_8,N,69,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,Y,75,Moderate,clot,Hypertension,0,N
+Hosp_8,N,84,Moderate,bleed,,0,N
+Hosp_7,Y,69,Severe,,Hypertension,2,N
+Hosp_8,N,92,Moderate,clot,,3,N
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_8,Y,78,Severe,clot,TIA,0,Y
+Hosp_2,N,89,Severe,,Hypertension,0,N
+Hosp_8,N,66,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_7,N,49,Minor,clot,,0,N
+Hosp_8,N,89,Moderate to severe,clot,,0,N
+Hosp_8,N,78,Moderate,clot,,0,Y
+Hosp_8,N,87,,clot,,0,Y
+Hosp_8,Y,44,Minor,clot,,0,Y
+Hosp_8,N,72,Minor,clot,Diabetes,0,N
+Hosp_8,N,51,Moderate to severe,clot,,0,Y
+Hosp_1,N,87,Moderate to severe,clot,,0,Y
+Hosp_1,Y,60,Minor,clot,Hypertension,0,N
+Hosp_8,Y,61,,clot,,0,Y
+Hosp_8,Y,69,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,86,Minor,clot,Hypertension,0,N
+Hosp_8,N,88,,clot,,0,N
+Hosp_8,N,80,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,80,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,57,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,82,Moderate,clot,Congestive HF;Atrial Fib;Diabetes,0,Y
+Hosp_8,Y,77,Minor,clot,Hypertension;Atrial Fib;Diabetes,0,N
+Hosp_8,N,91,Moderate,,Atrial Fib;TIA,2,N
+Hosp_8,N,52,,,,0,N
+Hosp_8,Y,67,Minor,clot,,0,N
+Hosp_8,N,81,Minor,clot,,3,N
+Hosp_8,Y,64,Moderate,clot,,0,Y
+Hosp_8,N,87,Moderate,clot,,0,Y
+Hosp_8,Y,87,Moderate to severe,,,0,N
+Hosp_8,N,65,,clot,Diabetes,0,Y
+Hosp_8,N,88,Moderate,clot,Hypertension,0,N
+Hosp_1,N,72,Moderate,clot,Diabetes;TIA,2,Y
+Hosp_8,N,75,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_7,Y,45,Moderate,bleed,,0,N
+Hosp_7,N,69,,bleed,,0,N
+Hosp_8,N,77,Moderate to severe,clot,,0,Y
+Hosp_8,Y,40,Moderate,clot,,0,Y
+Hosp_8,Y,78,Minor,clot,Hypertension,0,N
+Hosp_8,N,50,Minor,,Hypertension,0,N
+Hosp_8,N,89,Minor,clot,Hypertension;TIA,1,N
+Hosp_8,N,66,Moderate,,,0,N
+Hosp_8,N,58,Moderate to severe,clot,,0,Y
+Hosp_8,N,84,Moderate,,,3,N
+Hosp_8,N,58,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,44,Moderate,clot,TIA,0,N
+Hosp_8,N,78,Moderate to severe,clot,,0,Y
+Hosp_8,Y,73,Moderate,clot,Atrial Fib;TIA,3,N
+Hosp_8,N,66,Severe,clot,,0,Y
+Hosp_8,Y,79,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,81,Moderate,clot,,0,Y
+Hosp_8,N,71,Moderate,clot,,0,N
+Hosp_8,Y,89,Minor,clot,Hypertension;Atrial Fib,1,N
+Hosp_3,N,73,Moderate to severe,clot,Diabetes,0,Y
+Hosp_8,N,90,,clot,Hypertension;TIA,3,Y
+Hosp_8,N,40,,clot,,0,N
+Hosp_8,Y,69,Moderate,clot,,0,N
+Hosp_8,N,84,Moderate,clot,,0,Y
+Hosp_8,N,69,Severe,clot,,0,Y
+Hosp_7,Y,79,,clot,TIA,0,N
+Hosp_8,N,78,Moderate,clot,,0,Y
+Hosp_8,N,84,Severe,,Atrial Fib;TIA,0,N
+Hosp_3,Y,71,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,89,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,63,Moderate to severe,clot,TIA,0,Y
+Hosp_8,N,91,Moderate,,Atrial Fib;TIA,2,N
+Hosp_8,Y,58,Severe,,,0,N
+Hosp_3,N,83,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,91,Moderate,clot,,1,Y
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,N,89,Moderate,clot,,3,N
+Hosp_4,N,75,Moderate to severe,,TIA,2,N
+Hosp_1,N,55,Moderate,clot,,0,Y
+Hosp_8,N,73,Moderate,clot,,0,Y
+Hosp_8,N,75,Minor,clot,Hypertension,0,N
+Hosp_8,N,86,Moderate,,Atrial Fib,0,N
+Hosp_8,N,61,Moderate,,,0,N
+Hosp_8,N,93,Moderate,clot,,4,N
+Hosp_6,Y,80,,clot,,0,Y
+Hosp_1,N,67,Moderate,,,0,N
+Hosp_8,N,65,Moderate,clot,,0,Y
+Hosp_8,N,64,Moderate to severe,clot,,0,Y
+Hosp_2,Y,91,Minor,clot,,0,N
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,72,Moderate,clot,,0,N
+Hosp_7,N,86,Minor,clot,Hypertension,0,N
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_3,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,86,Minor,clot,,0,N
+Hosp_8,N,63,Severe,clot,,0,Y
+Hosp_8,N,82,Minor,clot,Hypertension,0,N
+Hosp_8,N,94,Moderate,clot,,3,Y
+Hosp_8,Y,83,Moderate to severe,,Hypertension,0,N
+Hosp_8,N,89,Severe,,Hypertension,1,N
+Hosp_8,Y,79,Severe,clot,Hypertension,0,Y
+Hosp_8,N,62,Moderate,clot,,0,N
+Hosp_8,N,73,Moderate,clot,,0,Y
+Hosp_8,Y,48,Minor,clot,,2,N
+Hosp_1,Y,58,,clot,,0,Y
+Hosp_8,N,81,Moderate,clot,Hypertension;Diabetes,0,Y
+Hosp_8,N,74,Severe,clot,,0,Y
+Hosp_8,N,92,Minor,clot,,0,N
+Hosp_2,N,88,Moderate,clot,TIA,4,N
+Hosp_8,N,76,Moderate,clot,Atrial Fib,2,Y
+Hosp_8,N,77,Moderate,clot,,0,Y
+Hosp_3,N,64,Moderate to severe,clot,Atrial Fib,0,Y
+Hosp_5,N,79,Moderate,clot,Atrial Fib;TIA,0,N
+Hosp_8,Y,87,Moderate,clot,,2,N
+Hosp_8,N,87,Moderate to severe,clot,Hypertension;Atrial Fib,2,N
+Hosp_8,N,69,Moderate to severe,clot,,0,Y
+Hosp_8,Y,80,Moderate,clot,,0,Y
+Hosp_8,N,86,Moderate,clot,,0,Y
+Hosp_8,N,70,Minor,clot,,0,N
+Hosp_8,N,81,,clot,,0,N
+Hosp_7,N,83,Moderate,clot,Atrial Fib;Diabetes,0,Y
+Hosp_8,N,97,Moderate,clot,,4,Y
+Hosp_8,N,84,Moderate,clot,,0,Y
+Hosp_8,N,73,Severe,clot,,0,Y
+Hosp_8,Y,66,Moderate,bleed,,0,N
+Hosp_8,N,91,Severe,clot,,3,N
+Hosp_8,N,64,Moderate,clot,,0,Y
+Hosp_8,Y,90,,clot,Hypertension,0,N
+Hosp_8,N,61,,clot,,5,Y
+Hosp_8,N,83,Moderate,clot,Hypertension,1,Y
+Hosp_8,Y,79,Moderate to severe,clot,,0,Y
+Hosp_8,N,77,Minor,clot,Hypertension,0,N
+Hosp_1,N,76,Moderate,clot,,0,Y
+Hosp_8,Y,65,Minor,clot,Hypertension,0,N
+Hosp_8,N,57,Moderate to severe,clot,,0,Y
+Hosp_8,N,81,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,88,Moderate to severe,clot,,0,Y
+Hosp_8,N,77,Minor,clot,,1,N
+Hosp_8,N,71,Minor,,Hypertension,0,N
+Hosp_8,N,52,Severe,clot,,0,Y
+Hosp_8,N,78,Moderate,clot,,2,Y
+Hosp_8,N,86,Moderate to severe,clot,Hypertension,0,Y
+Hosp_7,N,53,,clot,,0,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,N
+Hosp_3,N,88,Moderate,clot,,0,Y
+Hosp_8,N,75,Moderate to severe,clot,,0,Y
+Hosp_8,Y,83,Moderate to severe,,Hypertension,0,N
+Hosp_8,N,70,Moderate,clot,,0,N
+Hosp_3,Y,81,Minor,clot,,0,N
+Hosp_8,Y,67,Moderate,,,0,N
+Hosp_2,N,95,Moderate,clot,,1,Y
+Hosp_8,N,82,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_7,N,76,Moderate,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,Y,78,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,71,Minor,clot,TIA,0,N
+Hosp_8,Y,91,Minor,,,0,N
+Hosp_4,N,95,Severe,clot,TIA,0,N
+Hosp_8,N,78,Moderate,clot,,1,Y
+Hosp_8,Y,58,Moderate,clot,,0,Y
+Hosp_8,N,81,Severe,clot,Hypertension;Atrial Fib,0,Y
+Hosp_2,N,79,Minor,clot,TIA,0,N
+Hosp_8,N,84,Moderate to severe,,Hypertension;TIA,1,N
+Hosp_8,N,78,Moderate,clot,,0,Y
+Hosp_1,N,71,Moderate,clot,TIA,0,Y
+Hosp_8,Y,77,Moderate,clot,Hypertension,0,Y
+Hosp_2,N,81,Moderate,,Atrial Fib;TIA,0,N
+Hosp_8,N,79,Severe,clot,,0,Y
+Hosp_4,N,76,Moderate,clot,,0,N
+Hosp_8,N,83,Severe,clot,,0,Y
+Hosp_8,Y,69,Severe,clot,,0,N
+Hosp_8,N,78,Moderate to severe,,Diabetes,0,N
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_2,Y,81,Minor,,Hypertension,0,N
+Hosp_7,N,41,Moderate,clot,,0,Y
+Hosp_4,N,68,Moderate,clot,Congestive HF;Diabetes,0,N
+Hosp_3,Y,66,Minor,clot,,0,N
+Hosp_8,N,79,Moderate,clot,Hypertension;Diabetes,0,Y
+Hosp_8,Y,76,Moderate,clot,Diabetes,0,Y
+Hosp_8,N,93,Minor,clot,,1,N
+Hosp_8,N,92,Minor,clot,Hypertension;Diabetes,2,N
+Hosp_8,N,90,Minor,,Hypertension;Diabetes,4,N
+Hosp_8,N,86,Moderate,clot,,0,Y
+Hosp_8,N,54,Moderate,clot,,0,Y
+Hosp_3,N,91,Moderate,clot,,0,Y
+Hosp_8,N,86,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,Y,72,Moderate,clot,,0,Y
+Hosp_8,N,87,Minor,clot,Hypertension,3,N
+Hosp_8,N,74,Moderate,bleed,,0,N
+Hosp_8,N,83,Severe,clot,,0,Y
+Hosp_8,N,89,Severe,,,0,N
+Hosp_8,Y,72,Minor,clot,,0,N
+Hosp_7,N,86,Minor,clot,,2,N
+Hosp_4,N,75,Moderate to severe,bleed,,2,N
+Hosp_8,N,78,Moderate,clot,,3,Y
+Hosp_7,N,87,Minor,clot,,0,N
+Hosp_3,N,73,Moderate to severe,clot,Diabetes,0,Y
+Hosp_8,Y,82,,clot,,0,Y
+Hosp_4,Y,91,,clot,,1,N
+Hosp_8,Y,91,Minor,bleed,,2,N
+Hosp_8,N,94,Moderate to severe,clot,Hypertension,3,N
+Hosp_1,Y,58,,clot,,0,Y
+Hosp_8,N,74,Severe,clot,,0,Y
+Hosp_8,Y,84,Moderate,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,85,Moderate,clot,,0,Y
+Hosp_8,Y,58,Moderate,clot,,0,Y
+Hosp_7,N,88,,clot,Hypertension,1,Y
+Hosp_8,N,85,Severe,clot,Hypertension,0,Y
+Hosp_4,N,90,Minor,clot,Hypertension,2,N
+Hosp_8,N,84,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,76,Moderate,bleed,,0,N
+Hosp_8,N,76,Moderate to severe,bleed,,2,N
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_8,N,83,Moderate,,Hypertension,2,N
+Hosp_8,N,57,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,77,Moderate,clot,,0,Y
+Hosp_8,N,67,Minor,clot,Hypertension,0,N
+Hosp_8,Y,95,,clot,,0,Y
+Hosp_8,N,70,Moderate to severe,bleed,,0,N
+Hosp_8,N,79,Moderate,clot,TIA,3,N
+Hosp_8,N,73,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,75,,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,78,Minor,clot,Atrial Fib,0,Y
+Hosp_4,N,76,Moderate to severe,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension;Atrial Fib;TIA,0,Y
+Hosp_8,N,77,Moderate,clot,Hypertension;Diabetes,0,Y
+Hosp_8,Y,64,Minor,clot,Hypertension;Diabetes;TIA,0,N
+Hosp_8,N,91,Moderate,clot,Hypertension,0,N
+Hosp_8,N,57,Moderate to severe,clot,,0,Y
+Hosp_8,N,76,Moderate,clot,,0,Y
+Hosp_8,N,80,,bleed,Hypertension,0,N
+Hosp_8,Y,81,,,Diabetes;TIA,0,N
+Hosp_8,N,79,Severe,clot,,0,N
+Hosp_8,Y,80,Minor,clot,Hypertension;Diabetes;TIA,1,N
+Hosp_8,Y,78,Severe,clot,,0,Y
+Hosp_8,N,72,Minor,clot,Diabetes,0,N
+Hosp_8,Y,82,Moderate,clot,Atrial Fib;TIA,0,Y
+Hosp_8,N,75,Moderate,clot,TIA,0,Y
+Hosp_8,Y,74,,clot,,0,Y
+Hosp_8,N,68,Moderate,bleed,,0,N
+Hosp_8,N,69,Minor,clot,,0,N
+Hosp_1,Y,65,Moderate,,,0,N
+Hosp_8,N,89,Moderate,clot,,0,Y
+Hosp_8,Y,76,Moderate,clot,Hypertension,1,Y
+Hosp_8,Y,79,Moderate,clot,Hypertension,2,Y
+Hosp_8,N,87,Moderate,clot,Hypertension,3,Y
+Hosp_8,N,62,,,,0,N
+Hosp_7,Y,48,Minor,clot,Hypertension,0,N
+Hosp_8,N,72,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,N,81,,clot,,0,Y
+Hosp_4,N,68,Minor,clot,Atrial Fib,0,N
+Hosp_8,N,73,Minor,clot,Hypertension,0,N
+Hosp_8,N,88,Severe,,,0,N
+Hosp_8,N,77,Moderate,clot,,0,Y
+Hosp_8,N,73,Moderate,clot,,0,Y
+Hosp_8,N,91,Moderate to severe,clot,,0,N
+Hosp_8,N,71,,clot,,0,N
+Hosp_8,N,86,Minor,clot,Hypertension,0,N
+Hosp_8,Y,77,Moderate,clot,,0,Y
+Hosp_8,Y,65,Severe,clot,,0,Y
+Hosp_4,N,81,,,Atrial Fib,0,N
+Hosp_3,N,77,Minor,clot,Hypertension,0,Y
+Hosp_8,N,50,Minor,clot,,0,N
+Hosp_8,Y,65,Minor,clot,Hypertension,0,N
+Hosp_8,N,87,Minor,clot,,0,N
+Hosp_8,N,74,Severe,clot,,0,Y
+Hosp_8,N,81,Minor,,,0,N
+Hosp_3,N,87,Moderate,clot,,0,Y
+Hosp_8,N,68,Moderate,clot,,0,Y
+Hosp_8,N,78,Moderate,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,83,Minor,clot,Diabetes;TIA,2,N
+Hosp_8,Y,73,Minor,clot,Hypertension;TIA,1,N
+Hosp_8,N,77,No stroke symtpoms,clot,,0,N
+Hosp_8,N,90,Minor,clot,Hypertension,4,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,76,,bleed,Hypertension,0,N
+Hosp_8,N,82,Moderate to severe,clot,Hypertension;TIA,3,N
+Hosp_8,Y,83,Moderate to severe,clot,,0,Y
+Hosp_8,N,86,Severe,clot,Diabetes,2,N
+Hosp_8,N,53,Minor,clot,,0,N
+Hosp_8,N,83,Moderate,clot,Diabetes,0,Y
+Hosp_8,Y,82,Moderate,,Atrial Fib,0,N
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_8,N,84,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,N,52,,,,0,N
+Hosp_8,Y,67,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,71,Moderate,,Hypertension;Atrial Fib,0,N
+Hosp_8,N,83,,clot,,2,N
+Hosp_8,Y,66,Moderate,clot,,0,Y
+Hosp_8,Y,78,Moderate,clot,Hypertension,0,Y
+Hosp_7,N,85,Moderate to severe,,,0,N
+Hosp_8,Y,85,Moderate to severe,clot,Hypertension;TIA,0,N
+Hosp_8,N,77,Moderate,clot,,0,Y
+Hosp_8,Y,74,,clot,Hypertension;Diabetes,0,N
+Hosp_8,Y,76,Minor,clot,Hypertension;Atrial Fib;Diabetes,0,N
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,Y,46,Moderate,clot,,0,N
+Hosp_8,N,80,Moderate,,Hypertension,0,N
+Hosp_8,N,46,Moderate,clot,,0,Y
+Hosp_8,N,96,Severe,clot,,1,N
+Hosp_8,Y,58,,,,0,N
+Hosp_8,Y,86,Moderate to severe,clot,,1,Y
+Hosp_8,Y,73,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,62,Moderate to severe,clot,,0,Y
+Hosp_8,N,61,Moderate to severe,clot,,0,Y
+Hosp_8,Y,80,Moderate,clot,,0,Y
+Hosp_8,N,95,Severe,clot,TIA,0,N
+Hosp_8,Y,89,Moderate,,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,79,Moderate,clot,,0,N
+Hosp_8,N,55,Moderate,clot,,0,Y
+Hosp_8,N,76,Severe,,,0,N
+Hosp_8,N,72,Moderate,clot,Diabetes;TIA,1,Y
+Hosp_7,N,70,,bleed,,0,N
+Hosp_8,N,87,Moderate to severe,clot,,0,Y
+Hosp_8,N,90,Moderate,clot,,1,N
+Hosp_8,N,62,Moderate,clot,,0,N
+Hosp_4,N,72,Moderate,clot,Hypertension,1,Y
+Hosp_8,N,79,Moderate to severe,clot,,0,N
+Hosp_8,Y,80,Moderate,clot,Hypertension,0,N
+Hosp_7,N,77,Severe,clot,TIA,0,N
+Hosp_7,Y,64,,,,0,N
+Hosp_8,Y,72,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_1,N,64,Severe,clot,,0,Y
+Hosp_8,N,89,,bleed,,0,N
+Hosp_8,N,78,Severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,59,Moderate,clot,,0,Y
+Hosp_8,N,77,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,80,Minor,clot,Hypertension,0,N
+Hosp_8,Y,72,Moderate,clot,,0,Y
+Hosp_8,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,85,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,72,Moderate,clot,Diabetes;TIA,0,Y
+Hosp_8,N,91,Moderate to severe,clot,,0,N
+Hosp_8,N,78,Moderate,clot,,0,Y
+Hosp_8,N,83,Moderate to severe,clot,,0,Y
+Hosp_2,N,88,Moderate,clot,,1,N
+Hosp_3,N,74,Moderate to severe,clot,,0,Y
+Hosp_8,N,84,,clot,,0,Y
+Hosp_8,Y,68,Minor,clot,,0,N
+Hosp_8,Y,72,Moderate,clot,,0,Y
+Hosp_7,N,87,Minor,clot,,0,N
+Hosp_8,N,64,Moderate,clot,,0,Y
+Hosp_8,Y,78,Moderate,clot,,0,Y
+Hosp_8,N,86,Severe,clot,Hypertension,1,Y
+Hosp_4,N,75,Moderate to severe,clot,,0,Y
+Hosp_8,N,57,Moderate to severe,clot,,0,Y
+Hosp_8,N,66,Moderate,clot,,0,Y
+Hosp_8,N,84,,clot,,0,Y
+Hosp_8,N,73,Moderate,clot,Hypertension,0,Y
+Hosp_1,N,79,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,65,Severe,clot,,0,N
+Hosp_8,Y,68,Moderate,,TIA,1,N
+Hosp_8,N,65,Moderate,clot,,0,Y
+Hosp_1,N,91,Moderate,clot,Hypertension,1,Y
+Hosp_8,N,88,Moderate,clot,,0,Y
+Hosp_8,Y,65,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,79,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,83,Severe,clot,,0,Y
+Hosp_8,N,75,Moderate to severe,clot,Atrial Fib,0,Y
+Hosp_8,N,96,,clot,,3,N
+Hosp_1,N,83,Severe,clot,,0,Y
+Hosp_2,Y,69,,clot,,0,N
+Hosp_8,N,83,Moderate,clot,Hypertension;Atrial Fib,1,Y
+Hosp_8,Y,70,,,Atrial Fib,0,N
+Hosp_1,N,78,Severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_7,Y,81,Moderate,clot,,0,Y
+Hosp_8,N,77,Severe,,Diabetes,1,N
+Hosp_8,N,67,Moderate,clot,,0,Y
+Hosp_1,N,73,Minor,clot,Atrial Fib,0,Y
+Hosp_8,N,73,Moderate,clot,,0,Y
+Hosp_5,N,79,Moderate,clot,Atrial Fib;TIA,0,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_4,N,76,,,Hypertension,0,N
+Hosp_8,N,53,Minor,clot,,0,N
+Hosp_8,N,88,Moderate,clot,Hypertension,0,N
+Hosp_8,N,75,Minor,clot,Hypertension,0,N
+Hosp_8,Y,46,Moderate,bleed,,0,N
+Hosp_8,Y,75,Severe,clot,Diabetes,0,Y
+Hosp_8,N,87,Moderate,clot,,0,Y
+Hosp_7,N,81,Minor,clot,Hypertension,0,N
+Hosp_7,N,83,Moderate,clot,Hypertension,1,Y
+Hosp_8,N,82,Moderate,bleed,,0,N
+Hosp_7,N,72,Minor,clot,,0,Y
+Hosp_8,N,40,Moderate,clot,,0,N
+Hosp_8,N,91,Moderate,clot,TIA,3,N
+Hosp_8,N,87,Moderate,clot,,0,Y
+Hosp_8,N,78,,clot,TIA,0,Y
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_8,N,87,Moderate,clot,Hypertension;TIA,0,N
+Hosp_7,Y,79,Moderate,clot,Congestive HF;Hypertension,1,Y
+Hosp_8,N,85,Minor,clot,,0,N
+Hosp_8,Y,75,,clot,,0,Y
+Hosp_3,N,76,Moderate to severe,clot,,0,Y
+Hosp_7,N,86,Moderate,clot,,2,N
+Hosp_8,N,83,Moderate,clot,Atrial Fib,0,N
+Hosp_7,Y,65,,clot,,0,N
+Hosp_8,Y,70,Moderate,clot,Hypertension,0,Y
+Hosp_7,Y,78,Moderate,,,0,N
+Hosp_8,Y,61,,clot,Hypertension,0,N
+Hosp_8,N,75,Severe,clot,Hypertension,0,Y
+Hosp_8,N,77,Moderate,clot,,1,Y
+Hosp_8,N,84,Moderate to severe,clot,Hypertension,0,Y
+Hosp_7,N,91,Moderate,clot,,0,Y
+Hosp_8,N,55,Moderate to severe,clot,,0,Y
+Hosp_8,N,87,Moderate to severe,clot,Hypertension;Atrial Fib,2,N
+Hosp_8,Y,71,Moderate,clot,,0,Y
+Hosp_8,N,73,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,Y,61,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,82,Moderate,clot,Atrial Fib,0,Y
+Hosp_7,N,69,Moderate,clot,,0,Y
+Hosp_8,N,85,Minor,clot,,0,N
+Hosp_8,N,86,Moderate,,,0,N
+Hosp_8,N,82,,clot,Hypertension,3,Y
+Hosp_8,Y,56,Moderate,clot,,0,Y
+Hosp_8,Y,59,Minor,clot,,0,N
+Hosp_8,N,83,Minor,clot,,0,N
+Hosp_8,N,88,,clot,Hypertension;Atrial Fib,1,N
+Hosp_8,N,53,Minor,clot,,0,N
+Hosp_8,N,73,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,85,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_8,N,81,Minor,clot,,0,N
+Hosp_8,Y,85,Moderate,clot,,0,Y
+Hosp_4,N,83,Moderate,bleed,,0,N
+Hosp_8,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,58,Moderate,clot,,0,Y
+Hosp_8,N,62,Moderate,clot,,0,Y
+Hosp_7,Y,69,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_6,N,82,Moderate,clot,Hypertension,1,Y
+Hosp_8,Y,56,Moderate,clot,,0,Y
+Hosp_8,N,76,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,72,No stroke symtpoms,clot,,0,N
+Hosp_7,N,83,Moderate,,,3,N
+Hosp_7,Y,74,,clot,Hypertension,0,Y
+Hosp_8,Y,71,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,46,Moderate,clot,,0,Y
+Hosp_8,N,63,,,,0,N
+Hosp_3,Y,76,,,,0,N
+Hosp_4,N,85,Moderate to severe,clot,Hypertension;TIA,2,N
+Hosp_2,Y,74,Minor,clot,Hypertension;Diabetes;TIA,0,N
+Hosp_1,N,83,Severe,bleed,Hypertension,0,N
+Hosp_1,N,57,,clot,,0,N
+Hosp_8,N,78,,bleed,,1,N
+Hosp_8,Y,67,Moderate,clot,Hypertension,0,N
+Hosp_8,N,71,Severe,clot,,0,Y
+Hosp_8,Y,76,Severe,clot,,0,Y
+Hosp_8,Y,55,Moderate,clot,TIA,0,Y
+Hosp_8,N,76,Severe,clot,Hypertension,0,N
+Hosp_7,Y,70,Severe,,,0,N
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_7,N,77,,clot,,0,N
+Hosp_8,N,57,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,N,45,,clot,,0,Y
+Hosp_1,N,77,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,N,74,Minor,clot,,0,N
+Hosp_8,Y,40,Moderate,clot,,0,Y
+Hosp_8,N,56,Moderate,clot,,0,Y
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_8,Y,66,Moderate,,,0,N
+Hosp_8,N,91,Severe,,,0,N
+Hosp_8,N,81,Moderate,,,0,N
+Hosp_8,N,84,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,Y,55,Moderate,clot,,0,Y
+Hosp_4,Y,78,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,Y,65,Moderate to severe,clot,,0,Y
+Hosp_8,N,86,Moderate to severe,,Atrial Fib,0,N
+Hosp_8,Y,78,Minor,clot,TIA,1,N
+Hosp_8,Y,71,,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,70,Moderate to severe,clot,Diabetes,0,Y
+Hosp_8,N,91,,clot,,0,Y
+Hosp_8,N,91,Minor,,Hypertension,3,N
+Hosp_8,Y,67,Minor,clot,Hypertension,0,N
+Hosp_2,Y,85,Minor,clot,,0,N
+Hosp_8,N,77,Severe,,,0,N
+Hosp_8,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,91,,clot,Atrial Fib;TIA,2,N
+Hosp_8,N,69,Moderate,clot,,0,Y
+Hosp_8,Y,76,,clot,Hypertension,0,N
+Hosp_2,Y,88,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,93,Moderate,,,1,N
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,86,Moderate to severe,clot,Hypertension;TIA,2,N
+Hosp_8,Y,47,Minor,clot,,0,N
+Hosp_8,N,69,Minor,clot,,0,Y
+Hosp_8,Y,61,,clot,Hypertension,0,N
+Hosp_8,N,73,Severe,clot,Hypertension,0,Y
+Hosp_8,N,64,,clot,,0,Y
+Hosp_8,Y,75,Minor,clot,Hypertension,0,N
+Hosp_8,Y,64,,clot,,0,Y
+Hosp_3,N,75,Moderate to severe,,,0,N
+Hosp_8,Y,66,Minor,clot,,0,N
+Hosp_3,N,47,Minor,clot,,0,N
+Hosp_8,N,83,Moderate,clot,,0,Y
+Hosp_4,N,75,,clot,Congestive HF;Atrial Fib,0,N
+Hosp_8,Y,82,Moderate,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,Y,60,Moderate,clot,,0,Y
+Hosp_8,N,58,Moderate,clot,TIA,0,Y
+Hosp_8,Y,66,Moderate,bleed,,0,N
+Hosp_8,N,81,Moderate,clot,,0,Y
+Hosp_8,Y,68,Moderate,bleed,TIA,2,N
+Hosp_3,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,86,,clot,Hypertension,0,Y
+Hosp_3,N,76,Moderate to severe,clot,,0,Y
+Hosp_8,N,77,Moderate,clot,,1,Y
+Hosp_1,N,64,Severe,clot,,0,Y
+Hosp_8,N,92,Moderate,clot,Atrial Fib,1,Y
+Hosp_7,N,78,Moderate to severe,bleed,,1,N
+Hosp_1,N,76,Severe,,,0,N
+Hosp_6,Y,78,Moderate,clot,,0,Y
+Hosp_8,Y,79,Minor,clot,,0,N
+Hosp_8,N,76,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,79,Moderate,clot,,0,Y
+Hosp_8,N,87,Moderate to severe,clot,Atrial Fib,0,N
+Hosp_8,N,72,Moderate,clot,Diabetes;TIA,2,Y
+Hosp_1,N,79,Severe,clot,Hypertension,0,Y
+Hosp_8,N,82,Moderate,clot,Atrial Fib;TIA,0,Y
+Hosp_8,N,75,Moderate,bleed,,0,N
+Hosp_8,N,51,,clot,,0,Y
+Hosp_1,Y,71,Moderate to severe,clot,Hypertension,0,Y
+Hosp_6,Y,63,Moderate,clot,,0,Y
+Hosp_8,N,85,Moderate to severe,,,2,N
+Hosp_8,Y,69,Minor,clot,Hypertension,0,N
+Hosp_8,N,87,Moderate to severe,clot,Hypertension;TIA,3,N
+Hosp_8,Y,69,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,91,,clot,Atrial Fib,3,N
+Hosp_8,N,84,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,N,43,Minor,clot,,0,N
+Hosp_8,N,86,Severe,clot,Atrial Fib,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,91,Minor,,Hypertension;Diabetes,3,N
+Hosp_8,N,41,Severe,clot,,0,Y
+Hosp_2,Y,48,Moderate,clot,,0,Y
+Hosp_8,Y,76,Moderate,clot,,0,Y
+Hosp_8,N,63,Moderate to severe,clot,Hypertension,0,Y
+Hosp_3,N,93,Minor,clot,Hypertension,1,N
+Hosp_8,N,77,Moderate,,Hypertension;Atrial Fib,0,N
+Hosp_8,N,75,Minor,clot,,0,N
+Hosp_8,N,51,,clot,,0,Y
+Hosp_4,N,75,Minor,clot,TIA,0,N
+Hosp_8,N,76,Moderate,clot,,0,Y
+Hosp_8,Y,75,Moderate,clot,,0,Y
+Hosp_8,N,68,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,64,Minor,clot,Hypertension,0,N
+Hosp_1,N,79,Severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,N
+Hosp_8,N,67,Moderate,clot,,0,Y
+Hosp_8,N,69,No stroke symtpoms,clot,,0,N
+Hosp_1,N,87,Moderate,clot,,0,Y
+Hosp_8,Y,73,Minor,clot,Hypertension;TIA,1,N
+Hosp_8,Y,73,Minor,clot,,0,N
+Hosp_7,N,97,Moderate,clot,,0,N
+Hosp_8,Y,81,Moderate,clot,,0,N
+Hosp_8,N,79,Minor,clot,,0,N
+Hosp_8,N,87,Minor,clot,,0,N
+Hosp_8,N,71,Moderate,,Hypertension,0,N
+Hosp_8,N,61,Moderate,clot,Hypertension;TIA,1,Y
+Hosp_8,N,67,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,56,,clot,,0,Y
+Hosp_8,N,91,Moderate,clot,Hypertension;TIA,3,N
+Hosp_8,N,88,Moderate to severe,,,0,N
+Hosp_6,Y,73,Minor,clot,Diabetes;TIA,2,N
+Hosp_8,N,70,Moderate,,,0,N
+Hosp_8,N,73,Minor,clot,,0,N
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_8,N,77,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,Y,82,,clot,,0,Y
+Hosp_8,Y,57,Minor,clot,Hypertension,0,N
+Hosp_8,Y,61,Moderate to severe,clot,,0,Y
+Hosp_8,N,79,Minor,clot,Hypertension;TIA,0,N
+Hosp_7,N,40,Moderate,clot,,0,Y
+Hosp_8,N,66,Minor,,Hypertension;TIA,0,N
+Hosp_7,N,42,Minor,clot,,0,N
+Hosp_8,N,75,Moderate to severe,clot,Atrial Fib,0,N
+Hosp_3,N,75,,clot,Atrial Fib;TIA,0,Y
+Hosp_8,Y,54,Moderate,clot,,0,Y
+Hosp_8,Y,83,,,Hypertension,0,N
+Hosp_8,N,67,Moderate,clot,,0,Y
+Hosp_8,N,72,Moderate,clot,,0,N
+Hosp_8,Y,86,Moderate,clot,,0,Y
+Hosp_8,N,83,Moderate to severe,clot,,0,Y
+Hosp_8,Y,87,Moderate,clot,,2,Y
+Hosp_8,Y,84,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,87,Severe,clot,Hypertension;TIA,0,Y
+Hosp_6,N,76,Minor,clot,Hypertension,0,N
+Hosp_8,N,64,Moderate,clot,,0,Y
+Hosp_7,N,59,Moderate,clot,Hypertension,0,Y
+Hosp_7,N,85,Moderate,,,2,N
+Hosp_8,N,79,Moderate to severe,clot,,0,Y
+Hosp_8,Y,81,,clot,Hypertension;TIA,0,N
+Hosp_1,N,71,Moderate to severe,clot,,0,Y
+Hosp_3,Y,54,Minor,clot,,0,Y
+Hosp_8,N,48,,clot,,0,Y
+Hosp_8,N,67,Minor,clot,Hypertension,0,N
+Hosp_3,N,82,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,58,Moderate,,,0,N
+Hosp_4,N,84,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,79,Moderate,clot,Atrial Fib,3,N
+Hosp_8,Y,64,Moderate to severe,clot,,0,Y
+Hosp_2,N,90,,clot,,0,N
+Hosp_8,N,81,,clot,,0,N
+Hosp_1,N,73,Minor,clot,Atrial Fib,0,Y
+Hosp_8,Y,60,,clot,,0,Y
+Hosp_4,N,90,Minor,clot,Hypertension,2,N
+Hosp_8,N,93,,clot,,2,Y
+Hosp_8,Y,82,,clot,,0,Y
+Hosp_8,Y,82,Moderate,clot,Hypertension;Atrial Fib,0,Y
+Hosp_3,N,77,Moderate to severe,clot,,0,Y
+Hosp_8,N,71,No stroke symtpoms,,Diabetes,0,N
+Hosp_8,N,81,Moderate,clot,Hypertension,0,N
+Hosp_8,Y,92,Moderate to severe,clot,,0,Y
+Hosp_2,Y,85,Minor,clot,,0,N
+Hosp_8,Y,84,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,78,Moderate to severe,clot,,0,Y
+Hosp_8,N,60,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,53,Moderate,,Diabetes,0,N
+Hosp_4,Y,81,Minor,clot,Hypertension,0,N
+Hosp_8,N,74,,clot,,0,Y
+Hosp_8,N,77,Moderate to severe,clot,,0,Y
+Hosp_6,N,77,Moderate,clot,,0,Y
+Hosp_8,N,89,Minor,clot,Atrial Fib;TIA,0,N
+Hosp_8,N,80,Moderate,clot,,0,N
+Hosp_8,N,88,Moderate to severe,clot,,0,Y
+Hosp_7,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,60,Moderate,clot,TIA,0,N
+Hosp_8,N,83,Moderate,clot,,0,N
+Hosp_7,N,66,Minor,clot,TIA,4,N
+Hosp_4,N,96,Severe,clot,TIA,2,N
+Hosp_8,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,90,Moderate,clot,Hypertension,2,Y
+Hosp_2,N,84,Moderate,clot,,0,Y
+Hosp_8,N,99,,clot,,0,N
+Hosp_8,Y,67,Minor,clot,,0,N
+Hosp_8,Y,83,Moderate to severe,bleed,Hypertension,0,N
+Hosp_6,N,82,Moderate to severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,84,Moderate,clot,,0,Y
+Hosp_8,N,78,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,83,Severe,clot,Hypertension,0,Y
+Hosp_3,N,69,Moderate,clot,Hypertension,0,Y
+Hosp_2,N,71,Minor,,,0,N
+Hosp_2,Y,78,Minor,clot,TIA,0,N
+Hosp_8,N,93,Severe,clot,Atrial Fib;TIA,0,N
+Hosp_8,Y,66,Minor,clot,,0,N
+Hosp_2,N,72,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,83,Moderate,clot,Diabetes,0,Y
+Hosp_8,N,75,Minor,clot,Hypertension,0,N
+Hosp_8,N,77,Moderate,clot,,1,Y
+Hosp_8,Y,48,Moderate,clot,TIA,0,N
+Hosp_8,N,91,Severe,,,0,N
+Hosp_8,N,93,Moderate,,,3,N
+Hosp_8,N,72,,clot,Hypertension,0,Y
+Hosp_4,N,66,,clot,Hypertension,0,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,85,Severe,clot,Diabetes;TIA,3,N
+Hosp_8,N,72,Moderate,clot,Hypertension,0,N
+Hosp_8,N,70,Moderate,clot,,0,Y
+Hosp_8,N,87,Moderate,clot,,0,Y
+Hosp_8,Y,60,Minor,clot,Hypertension,0,Y
+Hosp_8,Y,74,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,Y,83,Severe,clot,,0,Y
+Hosp_8,N,63,Moderate to severe,clot,Hypertension,0,Y
+Hosp_6,Y,80,,clot,,1,Y
+Hosp_8,Y,64,Moderate,clot,,0,Y
+Hosp_8,Y,74,,clot,Hypertension;Diabetes,1,N
+Hosp_1,N,77,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,49,Moderate,bleed,,0,N
+Hosp_3,N,77,Minor,clot,Hypertension,0,Y
+Hosp_8,N,86,Moderate,,Atrial Fib,0,N
+Hosp_4,N,77,Moderate,clot,Hypertension,0,Y
+Hosp_7,N,75,Severe,clot,Hypertension,2,Y
+Hosp_8,Y,54,Minor,clot,,0,Y
+Hosp_8,N,88,,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,48,,clot,,0,Y
+Hosp_8,Y,71,Moderate,clot,Diabetes,0,Y
+Hosp_8,N,89,Minor,clot,Atrial Fib;TIA,0,N
+Hosp_1,Y,68,Minor,clot,,0,N
+Hosp_8,N,61,Moderate to severe,clot,,0,Y
+Hosp_7,N,76,Moderate,clot,,2,Y
+Hosp_8,N,88,Moderate,,Hypertension;Atrial Fib,0,N
+Hosp_2,N,89,,clot,,4,N
+Hosp_8,N,77,,clot,,0,Y
+Hosp_8,N,68,Moderate,clot,,0,Y
+Hosp_2,N,91,Minor,clot,Hypertension,0,N
+Hosp_8,Y,64,Minor,clot,Hypertension,0,N
+Hosp_8,Y,93,,clot,Atrial Fib,3,N
+Hosp_8,N,60,Moderate,clot,,0,Y
+Hosp_7,N,64,Minor,clot,,0,N
+Hosp_8,N,65,Severe,clot,Hypertension,0,Y
+Hosp_8,N,92,Moderate,clot,Hypertension,0,Y
+Hosp_2,N,91,Minor,clot,Hypertension,1,N
+Hosp_8,N,73,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,95,Moderate,clot,TIA,2,Y
+Hosp_8,N,91,Moderate,clot,Diabetes;TIA,3,N
+Hosp_8,N,74,,clot,Hypertension,0,Y
+Hosp_8,Y,67,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,77,Moderate,clot,,0,Y
+Hosp_3,Y,74,Minor,clot,,0,N
+Hosp_3,Y,86,Moderate,clot,Diabetes,0,Y
+Hosp_8,N,53,Minor,,,0,N
+Hosp_8,N,82,Moderate to severe,clot,Hypertension;Diabetes,0,Y
+Hosp_8,N,58,Minor,clot,Hypertension,0,N
+Hosp_8,N,56,Moderate,clot,,0,Y
+Hosp_6,N,60,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,63,Moderate,clot,,0,Y
+Hosp_7,Y,64,Severe,clot,,0,N
+Hosp_8,N,82,Moderate to severe,,,0,N
+Hosp_8,N,41,Moderate,clot,,0,Y
+Hosp_8,N,80,Moderate,clot,,0,N
+Hosp_8,Y,67,Minor,clot,,0,N
+Hosp_8,N,73,Moderate,bleed,Hypertension;Atrial Fib,0,N
+Hosp_8,N,82,Minor,clot,,0,N
+Hosp_7,Y,61,Moderate,,,2,N
+Hosp_3,N,67,Moderate,clot,,0,Y
+Hosp_8,N,46,,clot,,0,N
+Hosp_8,Y,71,Minor,clot,,0,N
+Hosp_8,N,76,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,54,Moderate,clot,,0,N
+Hosp_8,N,75,Moderate,clot,,0,Y
+Hosp_4,Y,76,Moderate to severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,78,Moderate to severe,clot,,0,Y
+Hosp_8,N,65,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,78,Moderate,clot,,0,Y
+Hosp_8,Y,79,,clot,,0,Y
+Hosp_8,Y,72,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_8,N,71,Minor,clot,Hypertension,0,N
+Hosp_8,N,67,Moderate,,,0,N
+Hosp_1,N,54,Moderate,clot,,0,Y
+Hosp_2,N,50,,clot,,0,N
+Hosp_8,N,64,Moderate,clot,,0,Y
+Hosp_8,Y,58,Minor,clot,Hypertension,0,N
+Hosp_3,N,74,Moderate to severe,clot,,0,Y
+Hosp_8,N,69,Minor,clot,Atrial Fib,0,N
+Hosp_8,N,51,Moderate to severe,clot,TIA,0,Y
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_5,N,79,Severe,clot,Hypertension,0,Y
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,78,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,87,Minor,clot,Hypertension,0,Y
+Hosp_8,N,81,Moderate,clot,Hypertension,4,Y
+Hosp_8,Y,61,Moderate,clot,TIA,0,Y
+Hosp_8,Y,66,,clot,,0,N
+Hosp_8,N,83,Moderate,clot,,0,Y
+Hosp_8,N,63,,,,0,N
+Hosp_8,N,88,Severe,,Diabetes,4,N
+Hosp_3,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,80,,clot,,3,N
+Hosp_8,N,64,Minor,,Hypertension,0,N
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_8,N,76,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,N,88,Moderate,,Atrial Fib,0,N
+Hosp_8,N,76,No stroke symtpoms,clot,Diabetes,0,N
+Hosp_8,N,66,Minor,clot,,0,N
+Hosp_1,N,52,Moderate,clot,,0,Y
+Hosp_8,N,77,Severe,clot,,0,N
+Hosp_8,N,82,Moderate,clot,TIA,2,Y
+Hosp_8,N,69,Moderate,clot,Hypertension;TIA,1,Y
+Hosp_7,N,86,Minor,clot,,0,N
+Hosp_4,N,80,Moderate to severe,clot,Atrial Fib,0,N
+Hosp_8,Y,58,,bleed,,0,N
+Hosp_8,N,86,Moderate,,Atrial Fib,0,N
+Hosp_8,N,81,Moderate,clot,,0,Y
+Hosp_7,N,65,Severe,,,1,N
+Hosp_8,Y,87,Moderate,,Hypertension;TIA,1,N
+Hosp_8,N,69,Moderate,clot,Hypertension;TIA,1,Y
+Hosp_8,N,86,Minor,clot,Hypertension,0,N
+Hosp_7,N,83,Moderate to severe,clot,,1,N
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,87,Moderate,clot,,0,Y
+Hosp_8,N,78,,clot,Hypertension;TIA,0,N
+Hosp_8,N,65,Moderate,clot,,0,Y
+Hosp_8,N,76,Moderate,clot,Hypertension,2,Y
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,75,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,68,Severe,clot,,0,N
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,N,62,,,,0,N
+Hosp_8,N,69,Moderate,bleed,Hypertension,0,N
+Hosp_8,N,76,Moderate to severe,clot,,0,Y
+Hosp_8,N,89,Minor,clot,Atrial Fib;TIA,0,N
+Hosp_8,N,93,Severe,clot,,1,N
+Hosp_8,Y,65,Moderate,clot,Hypertension,0,Y
+Hosp_3,N,88,Moderate,clot,,0,Y
+Hosp_7,N,65,Minor,clot,TIA,4,N
+Hosp_1,N,70,Moderate,clot,Diabetes,0,Y
+Hosp_8,Y,59,Moderate,clot,,0,Y
+Hosp_8,N,82,Minor,clot,,0,N
+Hosp_8,N,66,,clot,,0,N
+Hosp_7,Y,80,Minor,,Hypertension;TIA,0,N
+Hosp_8,N,50,,clot,,0,Y
+Hosp_4,N,89,Moderate,clot,,0,Y
+Hosp_8,N,85,Minor,clot,Hypertension,0,N
+Hosp_3,N,74,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,57,,clot,Diabetes,0,N
+Hosp_8,N,91,Severe,clot,Hypertension,0,Y
+Hosp_8,Y,89,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_3,N,59,Moderate,clot,,0,N
+Hosp_3,N,81,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,81,Minor,clot,,0,N
+Hosp_8,Y,75,Severe,clot,Diabetes,0,Y
+Hosp_8,N,74,Moderate,clot,,0,Y
+Hosp_3,N,74,Moderate to severe,clot,Diabetes,0,Y
+Hosp_8,N,48,Moderate,clot,,0,Y
+Hosp_8,N,87,Moderate to severe,clot,Atrial Fib,0,N
+Hosp_8,N,82,Severe,clot,,0,Y
+Hosp_8,Y,89,Moderate,,,3,N
+Hosp_8,N,89,,clot,Hypertension;Atrial Fib;TIA,1,N
+Hosp_8,N,91,Severe,clot,,0,Y
+Hosp_8,Y,79,Moderate,clot,,0,N
+Hosp_8,Y,85,Moderate,,Hypertension,1,N
+Hosp_8,Y,53,,clot,,0,N
+Hosp_8,N,76,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_8,Y,70,Moderate to severe,clot,Diabetes,0,Y
+Hosp_8,N,78,Moderate,clot,,2,Y
+Hosp_2,N,93,Severe,clot,,0,N
+Hosp_8,N,73,Minor,clot,,0,N
+Hosp_8,N,70,No stroke symtpoms,clot,,0,N
+Hosp_8,Y,64,Moderate,clot,,0,N
+Hosp_8,N,91,Moderate,clot,Hypertension,0,N
+Hosp_8,Y,60,,clot,,0,N
+Hosp_8,N,94,Moderate,clot,,2,Y
+Hosp_1,Y,62,,clot,Hypertension,0,N
+Hosp_8,Y,69,Minor,clot,Hypertension,0,N
+Hosp_8,N,97,Severe,clot,,1,N
+Hosp_8,N,67,Minor,clot,,0,N
+Hosp_5,N,79,Moderate,clot,Atrial Fib;TIA,0,N
+Hosp_8,N,91,Severe,clot,,4,N
+Hosp_7,Y,81,Moderate,clot,,0,Y
+Hosp_3,N,52,,clot,,0,Y
+Hosp_1,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,69,Moderate,,,0,N
+Hosp_5,N,84,Moderate to severe,clot,Hypertension;Diabetes,0,Y
+Hosp_8,N,81,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,61,Moderate,clot,TIA,0,N
+Hosp_8,N,81,,clot,,0,N
+Hosp_7,N,78,Minor,clot,,1,N
+Hosp_8,N,87,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,Y,67,Minor,clot,,0,N
+Hosp_8,N,70,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,84,,clot,,0,Y
+Hosp_8,N,59,Moderate,clot,,0,Y
+Hosp_7,N,88,Minor,clot,Hypertension;TIA,1,N
+Hosp_8,N,86,Moderate,clot,Atrial Fib,2,Y
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_1,Y,76,,clot,,0,N
+Hosp_8,N,77,Severe,,,0,N
+Hosp_8,Y,70,Minor,clot,,0,N
+Hosp_8,Y,52,,clot,,0,N
+Hosp_8,N,90,Moderate to severe,clot,Atrial Fib;TIA,0,N
+Hosp_4,N,86,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,53,Moderate,,,0,N
+Hosp_8,N,91,Moderate,clot,,1,Y
+Hosp_8,Y,62,Minor,clot,Hypertension,0,N
+Hosp_8,Y,84,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,Y,79,Moderate,clot,,0,Y
+Hosp_2,N,66,Minor,clot,,0,N
+Hosp_8,N,73,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,86,Moderate,clot,,0,Y
+Hosp_3,N,76,Severe,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,73,Moderate,clot,Hypertension,0,Y
+Hosp_1,N,89,Severe,,,0,N
+Hosp_8,N,72,Minor,clot,Diabetes;TIA,2,N
+Hosp_8,Y,81,Moderate,clot,,0,N
+Hosp_8,N,52,Minor,,,0,N
+Hosp_7,N,90,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,77,Moderate,,,1,N
+Hosp_8,Y,74,Severe,,,0,N
+Hosp_1,N,90,Moderate,clot,Hypertension,2,Y
+Hosp_8,N,87,Moderate,clot,,0,Y
+Hosp_2,N,92,Moderate,clot,Hypertension,1,N
+Hosp_4,N,79,Severe,,,0,N
+Hosp_8,Y,78,Moderate,clot,,0,Y
+Hosp_8,N,86,Minor,clot,,3,N
+Hosp_8,Y,80,Moderate,clot,,0,Y
+Hosp_8,N,64,Severe,,,0,N
+Hosp_8,Y,40,Moderate,clot,,0,Y
+Hosp_8,N,92,Minor,clot,,0,N
+Hosp_2,N,51,Minor,clot,,0,Y
+Hosp_3,Y,83,Moderate,clot,,0,N
+Hosp_1,N,77,Moderate,clot,,0,Y
+Hosp_8,Y,91,Minor,bleed,,1,N
+Hosp_6,Y,58,,,,0,N
+Hosp_8,Y,71,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,86,Moderate,clot,Hypertension;TIA,1,N
+Hosp_8,Y,69,Moderate to severe,clot,,0,Y
+Hosp_8,Y,59,Minor,clot,,0,Y
+Hosp_6,N,67,Minor,clot,Diabetes,0,Y
+Hosp_8,N,76,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,N,79,Minor,clot,Atrial Fib;TIA,1,N
+Hosp_3,Y,66,Minor,clot,,0,N
+Hosp_3,N,71,Moderate,,,0,N
+Hosp_8,N,69,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,68,Severe,clot,,0,N
+Hosp_8,Y,70,Severe,clot,Hypertension,0,Y
+Hosp_3,Y,78,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,86,Moderate to severe,,Atrial Fib,1,N
+Hosp_8,N,78,,clot,Hypertension,0,Y
+Hosp_8,Y,64,Moderate,clot,,2,N
+Hosp_8,Y,69,Severe,,Hypertension,0,N
+Hosp_8,N,57,Moderate,clot,,0,Y
+Hosp_8,N,86,Moderate to severe,clot,,0,Y
+Hosp_8,Y,86,Moderate,,Hypertension;TIA,1,N
+Hosp_8,N,93,Moderate to severe,clot,Hypertension,3,N
+Hosp_8,N,82,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,N,82,Moderate to severe,clot,,0,Y
+Hosp_8,N,69,Moderate,,,0,N
+Hosp_8,N,82,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_4,N,93,Severe,,,4,N
+Hosp_8,N,64,,,,0,N
+Hosp_8,N,72,Minor,clot,Hypertension,0,N
+Hosp_4,N,95,Severe,clot,TIA,2,N
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_1,N,77,Severe,,,0,N
+Hosp_5,N,71,Moderate,clot,,0,Y
+Hosp_8,N,88,Moderate,clot,Hypertension,0,N
+Hosp_8,Y,84,Moderate,clot,,0,Y
+Hosp_8,N,85,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,Y,64,,clot,,0,Y
+Hosp_8,Y,75,Minor,clot,,0,N
+Hosp_3,N,40,Moderate,clot,TIA,0,Y
+Hosp_8,N,73,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate,bleed,,0,N
+Hosp_8,N,78,Moderate to severe,clot,,0,Y
+Hosp_2,N,71,Moderate,clot,,0,Y
+Hosp_8,N,64,Minor,clot,Hypertension,0,N
+Hosp_8,N,52,Minor,clot,,0,Y
+Hosp_8,N,76,Moderate,clot,,0,Y
+Hosp_8,N,66,Minor,clot,,0,N
+Hosp_8,N,68,Moderate,clot,,0,Y
+Hosp_4,Y,77,Moderate to severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,90,Severe,clot,,0,N
+Hosp_3,Y,85,Moderate to severe,clot,,0,Y
+Hosp_8,N,83,Severe,clot,,0,Y
+Hosp_8,Y,79,Moderate,clot,Hypertension;Diabetes,2,N
+Hosp_8,N,79,,clot,,0,Y
+Hosp_8,Y,82,Moderate,clot,Atrial Fib;TIA,0,Y
+Hosp_8,N,68,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,52,,clot,,0,N
+Hosp_8,N,51,Minor,clot,,0,Y
+Hosp_8,N,92,Moderate,clot,,0,Y
+Hosp_3,N,75,Moderate,clot,,0,Y
+Hosp_8,N,84,Moderate to severe,clot,,0,Y
+Hosp_6,N,47,Severe,bleed,,2,N
+Hosp_8,N,60,Moderate,clot,,0,Y
+Hosp_8,N,74,Severe,clot,,0,Y
+Hosp_2,N,92,Moderate,clot,Hypertension,2,N
+Hosp_3,N,76,Moderate,clot,,0,Y
+Hosp_8,N,93,Minor,clot,Hypertension,0,N
+Hosp_8,Y,64,Moderate to severe,clot,,0,Y
+Hosp_8,N,47,,clot,,0,N
+Hosp_8,Y,60,Moderate,,Hypertension,0,N
+Hosp_8,N,80,Minor,clot,,1,N
+Hosp_8,N,73,Moderate,clot,Hypertension,0,Y
+Hosp_1,N,84,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,N,74,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_2,N,49,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,Hypertension;Diabetes,0,Y
+Hosp_8,N,90,Minor,,Hypertension;Diabetes,4,N
+Hosp_8,N,64,Minor,clot,Hypertension,0,N
+Hosp_8,N,84,Moderate,clot,Hypertension,1,Y
+Hosp_1,Y,70,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,Y,84,Moderate,clot,,0,Y
+Hosp_4,N,75,Minor,clot,TIA,0,N
+Hosp_7,N,68,,clot,,0,N
+Hosp_8,N,88,Minor,clot,TIA,0,N
+Hosp_6,N,65,,clot,,0,Y
+Hosp_8,N,65,Minor,clot,Hypertension,0,N
+Hosp_8,N,58,,clot,,2,Y
+Hosp_7,Y,72,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_8,N,87,,clot,TIA,4,N
+Hosp_8,N,89,Moderate,,,0,N
+Hosp_8,N,61,Moderate to severe,clot,,0,Y
+Hosp_8,N,76,Moderate,bleed,,0,N
+Hosp_8,N,86,Minor,clot,,0,N
+Hosp_8,N,62,Severe,,TIA,0,N
+Hosp_8,Y,72,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,82,Severe,clot,,0,Y
+Hosp_8,N,64,Moderate,clot,,0,Y
+Hosp_8,N,77,Moderate,clot,TIA,0,Y
+Hosp_8,Y,77,,clot,,0,N
+Hosp_8,Y,67,Severe,bleed,,0,N
+Hosp_3,N,71,Minor,clot,Hypertension,0,N
+Hosp_8,N,87,,clot,Diabetes;TIA,3,N
+Hosp_8,Y,87,Moderate,clot,,0,Y
+Hosp_8,Y,55,,clot,,0,Y
+Hosp_8,N,87,Minor,clot,,3,N
+Hosp_8,N,74,Moderate to severe,clot,,0,Y
+Hosp_8,Y,77,,clot,Hypertension,0,N
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_8,Y,69,Moderate,clot,Hypertension,0,N
+Hosp_8,N,78,Minor,clot,,0,N
+Hosp_8,N,80,Moderate,clot,,0,N
+Hosp_3,N,76,Moderate to severe,clot,,0,Y
+Hosp_8,Y,63,Moderate,clot,,0,Y
+Hosp_8,N,72,Minor,clot,Diabetes,0,N
+Hosp_8,N,90,,clot,,0,Y
+Hosp_8,N,62,,,Hypertension,0,N
+Hosp_8,N,70,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,77,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,81,Minor,clot,Hypertension;TIA,2,N
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_8,N,75,,clot,Hypertension;Diabetes,0,N
+Hosp_8,N,83,Moderate to severe,,Hypertension,0,N
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_8,N,84,Moderate,clot,Hypertension,0,Y
+Hosp_2,Y,69,Moderate,clot,,0,N
+Hosp_7,Y,40,Moderate,bleed,Hypertension,0,N
+Hosp_8,N,94,Severe,clot,Atrial Fib,1,N
+Hosp_8,Y,72,Minor,clot,Hypertension,0,N
+Hosp_8,N,99,,clot,,1,N
+Hosp_8,N,91,Severe,clot,Hypertension,0,Y
+Hosp_8,N,85,Severe,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,76,Moderate,clot,,0,Y
+Hosp_7,Y,63,Minor,clot,Hypertension,0,N
+Hosp_7,Y,40,Moderate,bleed,Hypertension,0,N
+Hosp_7,N,86,Minor,clot,,2,N
+Hosp_8,N,87,Moderate to severe,clot,Atrial Fib,0,N
+Hosp_8,N,70,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_7,N,87,Moderate,clot,Hypertension,2,Y
+Hosp_8,Y,65,,clot,Hypertension,0,Y
+Hosp_8,N,85,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,Y,53,Moderate,clot,,0,Y
+Hosp_8,N,74,Moderate,clot,Hypertension,0,N
+Hosp_8,Y,71,,clot,Hypertension,0,Y
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_4,N,73,Minor,clot,Congestive HF;Hypertension;TIA,0,N
+Hosp_8,Y,71,Moderate to severe,clot,,0,Y
+Hosp_8,N,70,Moderate,clot,,0,Y
+Hosp_8,N,83,Minor,clot,Hypertension;Atrial Fib,1,N
+Hosp_8,N,86,Minor,clot,Hypertension,0,N
+Hosp_8,Y,78,Minor,clot,,1,N
+Hosp_8,Y,77,,clot,,0,N
+Hosp_6,Y,85,Moderate,clot,,1,N
+Hosp_4,Y,71,Moderate to severe,clot,,0,Y
+Hosp_8,Y,76,Moderate,clot,,0,Y
+Hosp_8,Y,67,Moderate,clot,Hypertension,0,Y
+Hosp_1,N,82,,,Hypertension,0,N
+Hosp_8,N,68,,clot,,0,Y
+Hosp_8,N,84,,bleed,Atrial Fib,0,N
+Hosp_8,N,87,Moderate to severe,clot,,0,Y
+Hosp_7,N,93,,clot,,1,N
+Hosp_3,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,89,Severe,clot,Hypertension,0,N
+Hosp_8,N,67,Minor,clot,TIA,3,N
+Hosp_8,N,63,,clot,Hypertension,0,N
+Hosp_6,N,56,Moderate,clot,TIA,0,Y
+Hosp_8,Y,67,Minor,clot,,1,N
+Hosp_8,Y,63,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,73,No stroke symtpoms,clot,,0,N
+Hosp_8,N,70,Minor,clot,Hypertension,0,N
+Hosp_8,N,90,Moderate,clot,Hypertension;Diabetes,2,N
+Hosp_3,N,71,Minor,clot,,0,N
+Hosp_8,Y,82,Moderate,clot,,0,Y
+Hosp_8,Y,53,,clot,,0,N
+Hosp_8,N,98,,clot,,4,N
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_8,N,46,Minor,clot,,0,N
+Hosp_8,N,47,Moderate,clot,,0,Y
+Hosp_8,Y,54,,clot,,0,Y
+Hosp_8,N,89,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,80,Severe,clot,Hypertension,0,Y
+Hosp_8,N,88,Moderate,clot,Atrial Fib,1,Y
+Hosp_2,Y,57,Moderate,clot,,0,Y
+Hosp_6,N,79,Minor,,Hypertension,0,N
+Hosp_8,N,59,Moderate,clot,,0,Y
+Hosp_8,N,61,Moderate,clot,,0,Y
+Hosp_8,N,77,Severe,clot,,0,Y
+Hosp_8,N,67,Minor,clot,TIA,1,N
+Hosp_4,N,75,Moderate to severe,bleed,,2,N
+Hosp_8,N,77,,clot,,0,Y
+Hosp_8,Y,90,Moderate,clot,,0,Y
+Hosp_8,N,81,Minor,clot,TIA,3,N
+Hosp_8,Y,83,Moderate,clot,,0,Y
+Hosp_8,Y,75,Minor,clot,Atrial Fib,0,N
+Hosp_8,N,64,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,Y,79,Minor,clot,Diabetes,3,N
+Hosp_8,N,82,Moderate,clot,Hypertension,1,Y
+Hosp_8,N,77,Moderate,clot,TIA,0,Y
+Hosp_8,N,78,Minor,clot,Hypertension;TIA,2,N
+Hosp_8,N,70,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,N,76,Moderate,clot,Hypertension,0,Y
+Hosp_7,N,70,Minor,clot,Diabetes;TIA,2,N
+Hosp_8,Y,84,Moderate to severe,clot,,0,Y
+Hosp_8,N,78,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,69,Minor,clot,,0,N
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,82,Moderate,clot,,0,N
+Hosp_1,N,57,No stroke symtpoms,clot,,0,N
+Hosp_8,N,68,Moderate,bleed,,0,N
+Hosp_8,N,89,Severe,clot,Hypertension;TIA,4,N
+Hosp_7,N,74,Minor,clot,Hypertension,0,N
+Hosp_8,Y,90,Minor,,Hypertension,3,N
+Hosp_3,N,61,Moderate,clot,,0,N
+Hosp_8,N,75,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,62,Minor,clot,,0,N
+Hosp_8,N,97,Severe,clot,,2,N
+Hosp_3,Y,54,Moderate,clot,,0,Y
+Hosp_8,N,72,Minor,clot,,0,Y
+Hosp_8,N,80,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,74,Moderate to severe,clot,,0,Y
+Hosp_8,N,89,Severe,,,0,N
+Hosp_8,N,89,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,71,Moderate,clot,,1,Y
+Hosp_8,N,85,Moderate,clot,,0,Y
+Hosp_8,N,72,Moderate,clot,TIA,0,Y
+Hosp_4,N,80,Moderate,clot,,0,Y
+Hosp_8,N,81,Moderate,clot,Hypertension,0,N
+Hosp_2,N,63,Severe,,,0,N
+Hosp_8,N,72,Moderate to severe,,,0,N
+Hosp_8,N,63,Severe,,TIA,1,N
+Hosp_7,Y,47,Moderate,,,0,N
+Hosp_5,Y,56,Moderate,clot,,0,Y
+Hosp_8,Y,78,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,42,Minor,clot,,0,Y
+Hosp_8,N,53,Minor,clot,,2,N
+Hosp_8,N,92,Moderate,clot,Hypertension,2,N
+Hosp_8,N,91,Moderate,clot,TIA,1,N
+Hosp_8,N,67,Severe,clot,,0,Y
+Hosp_8,Y,81,Moderate,clot,Hypertension,0,N
+Hosp_8,N,74,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,65,Severe,clot,,0,Y
+Hosp_8,N,68,Severe,clot,,0,Y
+Hosp_1,N,83,Severe,bleed,,0,N
+Hosp_8,N,92,Minor,clot,Hypertension,1,N
+Hosp_8,Y,80,Minor,clot,,0,N
+Hosp_4,N,91,Minor,clot,Atrial Fib,2,N
+Hosp_1,N,79,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,77,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,Y,93,Moderate,clot,Hypertension,2,N
+Hosp_8,N,45,Moderate,clot,,0,Y
+Hosp_8,N,79,Moderate,clot,Hypertension,0,Y
+Hosp_6,Y,61,No stroke symtpoms,clot,Hypertension,0,N
+Hosp_8,N,91,Moderate to severe,clot,,0,Y
+Hosp_8,Y,94,,clot,,3,N
+Hosp_8,N,63,Minor,clot,,0,Y
+Hosp_6,N,78,Moderate,clot,Hypertension;Diabetes,0,Y
+Hosp_8,N,84,Severe,bleed,,0,N
+Hosp_8,N,93,Moderate to severe,clot,TIA,2,N
+Hosp_7,N,85,Minor,clot,Hypertension,0,N
+Hosp_8,Y,52,Minor,clot,,0,N
+Hosp_3,N,69,Moderate,clot,,0,N
+Hosp_4,N,92,Severe,clot,TIA,2,N
+Hosp_8,N,78,Moderate to severe,clot,,0,N
+Hosp_8,N,77,,clot,Hypertension,1,N
+Hosp_7,N,87,Minor,clot,,0,N
+Hosp_8,N,87,Moderate to severe,clot,Atrial Fib,3,N
+Hosp_8,N,92,Moderate to severe,clot,,2,N
+Hosp_4,N,75,,clot,Congestive HF;Atrial Fib,0,N
+Hosp_8,Y,82,Moderate,clot,,0,Y
+Hosp_8,N,85,Moderate to severe,clot,Hypertension,1,Y
+Hosp_8,N,74,Minor,clot,,0,N
+Hosp_2,N,88,Moderate,clot,Diabetes;TIA,4,N
+Hosp_8,Y,43,Moderate,clot,,0,Y
+Hosp_8,N,69,Minor,clot,,0,N
+Hosp_8,N,69,Moderate,clot,Hypertension,0,Y
+Hosp_4,N,76,Moderate to severe,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,86,Severe,clot,,4,N
+Hosp_7,N,76,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,91,Moderate,clot,Hypertension,3,N
+Hosp_8,N,68,Moderate,bleed,,0,N
+Hosp_8,Y,81,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,77,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,89,Severe,,Hypertension;Atrial Fib,0,N
+Hosp_8,N,67,Moderate,clot,,0,N
+Hosp_4,Y,68,,bleed,,0,N
+Hosp_8,Y,56,Moderate,clot,,0,Y
+Hosp_4,Y,71,,clot,,0,N
+Hosp_2,N,75,Moderate,bleed,Hypertension,0,N
+Hosp_8,N,83,Moderate,clot,Hypertension,2,N
+Hosp_8,Y,85,Moderate,bleed,Hypertension;TIA,1,N
+Hosp_7,Y,69,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,78,Moderate to severe,clot,,0,Y
+Hosp_8,Y,57,Minor,clot,Hypertension,0,N
+Hosp_8,N,86,Moderate,clot,,0,Y
+Hosp_8,N,65,Severe,,,0,N
+Hosp_8,N,75,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,61,Moderate,,,0,N
+Hosp_1,N,67,Minor,clot,Hypertension,0,N
+Hosp_8,N,70,Moderate,,,0,N
+Hosp_2,Y,43,Moderate,clot,,0,Y
+Hosp_8,N,64,Minor,clot,Hypertension,0,N
+Hosp_8,Y,72,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_8,N,65,Severe,clot,Hypertension,0,Y
+Hosp_8,Y,73,Minor,clot,Atrial Fib;Diabetes;TIA,2,N
+Hosp_8,N,80,Moderate to severe,clot,Hypertension,0,Y
+Hosp_6,N,66,Severe,clot,,0,Y
+Hosp_8,N,61,Moderate,clot,,0,Y
+Hosp_8,N,71,Moderate,clot,TIA,0,Y
+Hosp_2,Y,40,Moderate,clot,,0,Y
+Hosp_8,N,69,Minor,clot,Hypertension,0,N
+Hosp_8,N,76,Moderate,clot,,0,Y
+Hosp_8,Y,82,Moderate,clot,,0,Y
+Hosp_8,N,87,Moderate,clot,,0,Y
+Hosp_7,N,57,Moderate to severe,clot,,0,Y
+Hosp_3,N,75,Minor,clot,Hypertension;Atrial Fib,1,N
+Hosp_8,N,84,,bleed,Atrial Fib,0,N
+Hosp_8,N,70,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_1,N,89,Severe,,,0,N
+Hosp_8,N,75,Severe,clot,Hypertension,0,Y
+Hosp_8,N,75,Severe,clot,,0,Y
+Hosp_8,N,89,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,86,,clot,Diabetes;TIA,3,N
+Hosp_7,N,89,Minor,clot,TIA,1,N
+Hosp_8,N,78,Moderate,clot,Hypertension,0,Y
+Hosp_2,N,75,Moderate,bleed,Hypertension,0,N
+Hosp_3,Y,76,Moderate to severe,clot,,0,Y
+Hosp_8,Y,63,Minor,clot,,0,N
+Hosp_8,N,60,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,85,,clot,,0,Y
+Hosp_8,N,94,Severe,clot,Atrial Fib,1,N
+Hosp_3,Y,64,Moderate to severe,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,,0,N
+Hosp_8,N,71,Moderate,clot,TIA,2,Y
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_6,Y,62,Moderate,clot,Diabetes,0,Y
+Hosp_8,N,63,Severe,,TIA,1,N
+Hosp_8,N,76,Moderate,clot,,0,Y
+Hosp_8,N,96,Moderate to severe,clot,Hypertension,3,N
+Hosp_8,N,69,Moderate,clot,,0,N
+Hosp_8,N,88,Severe,clot,Hypertension,2,N
+Hosp_8,N,89,Minor,clot,Atrial Fib,1,N
+Hosp_8,Y,65,Severe,clot,,0,Y
+Hosp_8,N,52,Minor,,,0,N
+Hosp_8,N,92,Minor,clot,Atrial Fib,2,N
+Hosp_8,Y,81,Severe,clot,,0,Y
+Hosp_8,N,56,Moderate,clot,,0,Y
+Hosp_1,N,72,Moderate,clot,Diabetes;TIA,0,Y
+Hosp_2,N,85,Moderate,bleed,,0,N
+Hosp_8,Y,72,Minor,clot,Diabetes,0,N
+Hosp_3,Y,76,,,,0,N
+Hosp_8,N,77,Minor,clot,Hypertension,0,N
+Hosp_8,Y,74,,clot,Hypertension,0,N
+Hosp_8,N,89,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,Y,76,Minor,clot,,0,N
+Hosp_8,N,40,,clot,,0,N
+Hosp_8,N,66,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,67,Moderate,,Hypertension,0,N
+Hosp_2,N,50,,clot,,0,N
+Hosp_2,N,68,Minor,clot,,0,N
+Hosp_4,N,89,Moderate,clot,,0,Y
+Hosp_7,N,83,Moderate,clot,Hypertension,1,Y
+Hosp_7,Y,77,Moderate,,Hypertension,0,N
+Hosp_8,N,72,Minor,clot,Diabetes,0,N
+Hosp_1,N,54,Moderate,clot,,0,Y
+Hosp_8,N,88,Moderate,,,0,N
+Hosp_8,N,79,Minor,clot,Atrial Fib,0,Y
+Hosp_4,N,94,Severe,clot,TIA,2,N
+Hosp_8,N,92,Severe,clot,,4,N
+Hosp_8,Y,59,Moderate,clot,,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,71,,clot,,0,Y
+Hosp_8,N,72,Severe,,,0,N
+Hosp_8,N,82,Minor,,Hypertension;Atrial Fib,0,N
+Hosp_1,N,89,Moderate,clot,Hypertension,1,Y
+Hosp_8,N,58,Moderate,,,0,N
+Hosp_8,Y,65,Severe,clot,,0,N
+Hosp_8,N,89,,clot,,0,N
+Hosp_6,N,66,Moderate,,,0,N
+Hosp_1,N,80,Moderate,clot,Hypertension,0,N
+Hosp_1,N,79,Moderate,clot,,0,Y
+Hosp_7,N,79,Moderate,clot,Hypertension,2,Y
+Hosp_8,Y,82,Moderate,clot,,1,N
+Hosp_8,N,75,Moderate to severe,,TIA,0,N
+Hosp_7,Y,83,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,75,Minor,clot,Hypertension,0,N
+Hosp_8,N,91,Moderate,clot,Hypertension;TIA,1,N
+Hosp_8,Y,55,Moderate,clot,,0,Y
+Hosp_8,N,69,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,N,76,Moderate,clot,,0,Y
+Hosp_3,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,62,Minor,clot,,0,N
+Hosp_8,Y,75,Severe,clot,,0,Y
+Hosp_5,Y,71,Moderate,clot,Atrial Fib,1,N
+Hosp_8,N,79,Moderate,bleed,,0,N
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,N,46,Moderate,clot,,0,Y
+Hosp_8,Y,84,Moderate,clot,,0,Y
+Hosp_8,N,86,Minor,clot,Hypertension,0,N
+Hosp_8,Y,68,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,N,70,Moderate,clot,,0,Y
+Hosp_4,Y,56,Moderate,clot,,0,Y
+Hosp_8,N,92,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,70,Minor,clot,,0,N
+Hosp_8,Y,82,Moderate to severe,,Hypertension,0,N
+Hosp_8,N,77,Severe,clot,,0,N
+Hosp_8,Y,47,Minor,clot,,0,N
+Hosp_1,N,89,Moderate,clot,Hypertension,0,Y
+Hosp_1,Y,58,,clot,,0,Y
+Hosp_7,N,63,Minor,clot,,0,N
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,N,89,Severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,78,Moderate,clot,Atrial Fib;TIA,3,N
+Hosp_7,Y,69,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_8,N,68,Moderate,clot,Diabetes;TIA,2,N
+Hosp_8,N,79,Severe,clot,,0,N
+Hosp_8,Y,53,,clot,,0,N
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_3,N,71,Minor,clot,Hypertension,0,N
+Hosp_8,N,80,Moderate,clot,,0,N
+Hosp_8,Y,76,Minor,clot,TIA,2,N
+Hosp_4,N,74,Moderate,clot,Hypertension;Diabetes;TIA,3,N
+Hosp_4,Y,72,Minor,clot,Hypertension,0,N
+Hosp_2,Y,56,Moderate,clot,,0,Y
+Hosp_2,N,48,Moderate,clot,,0,Y
+Hosp_8,Y,69,,clot,Hypertension,0,N
+Hosp_8,Y,67,Moderate,clot,Hypertension;Diabetes,0,Y
+Hosp_8,N,62,Moderate to severe,clot,,0,Y
+Hosp_8,Y,49,Moderate,clot,,0,Y
+Hosp_8,N,84,Moderate,clot,,0,Y
+Hosp_8,Y,68,Moderate,,Congestive HF;Diabetes,0,N
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,79,Minor,clot,Hypertension,0,N
+Hosp_8,Y,92,,clot,Atrial Fib,3,N
+Hosp_8,N,67,Minor,clot,,0,Y
+Hosp_8,N,83,Severe,clot,Hypertension,0,Y
+Hosp_2,N,66,Moderate,clot,,0,Y
+Hosp_8,N,68,Moderate,clot,,0,Y
+Hosp_7,N,87,Minor,clot,,0,N
+Hosp_7,Y,86,Moderate,clot,Hypertension,1,Y
+Hosp_8,Y,85,Moderate,clot,,0,Y
+Hosp_1,N,60,Moderate,clot,,0,Y
+Hosp_8,Y,78,Moderate,,,0,N
+Hosp_4,N,81,Minor,clot,Hypertension,0,N
+Hosp_8,N,77,Severe,clot,Hypertension;Diabetes,2,N
+Hosp_8,N,82,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,65,Severe,clot,,0,Y
+Hosp_8,N,74,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,86,Moderate to severe,clot,,1,Y
+Hosp_8,Y,60,Minor,clot,,0,N
+Hosp_8,N,71,,clot,,0,Y
+Hosp_3,N,52,Moderate,clot,,0,Y
+Hosp_8,N,83,,clot,Hypertension;TIA,0,Y
+Hosp_4,N,75,Moderate,,,0,N
+Hosp_8,Y,68,Severe,,,0,N
+Hosp_8,Y,84,Moderate,clot,Hypertension,0,Y
+Hosp_3,N,88,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,Diabetes,0,Y
+Hosp_8,N,90,Severe,clot,,1,Y
+Hosp_8,N,87,Moderate to severe,clot,,0,Y
+Hosp_8,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,61,Moderate,clot,Hypertension,2,Y
+Hosp_7,Y,59,Minor,clot,,0,N
+Hosp_7,N,64,Minor,clot,,0,N
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_8,N,84,Moderate,,,3,N
+Hosp_8,N,67,Severe,clot,,0,Y
+Hosp_8,N,77,Moderate,clot,,1,N
+Hosp_8,N,72,Moderate to severe,clot,Diabetes,0,Y
+Hosp_8,N,81,Moderate,clot,,0,Y
+Hosp_8,N,67,Minor,clot,,0,N
+Hosp_7,N,59,Moderate,clot,,2,Y
+Hosp_8,N,96,Severe,clot,TIA,2,N
+Hosp_8,N,88,Moderate,,,0,N
+Hosp_7,N,80,Minor,clot,Atrial Fib;TIA,1,N
+Hosp_4,Y,76,,,,3,N
+Hosp_8,N,86,,clot,TIA,3,N
+Hosp_8,Y,66,Moderate,clot,,0,Y
+Hosp_1,N,42,,clot,,0,Y
+Hosp_8,N,78,Severe,,,0,N
+Hosp_8,Y,93,,clot,,0,Y
+Hosp_3,N,80,Minor,clot,,0,N
+Hosp_8,N,64,Minor,clot,Hypertension,0,N
+Hosp_8,N,41,Minor,clot,,0,N
+Hosp_8,N,82,,clot,Hypertension;Diabetes,0,N
+Hosp_8,N,53,Severe,clot,,0,Y
+Hosp_8,N,77,Moderate,clot,,0,Y
+Hosp_1,N,78,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_7,N,93,,clot,,1,N
+Hosp_8,N,69,Moderate,clot,,0,Y
+Hosp_8,N,74,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,90,Minor,clot,Hypertension,3,N
+Hosp_8,N,86,Moderate,clot,Hypertension;TIA,2,Y
+Hosp_4,N,72,Moderate,clot,,0,Y
+Hosp_2,N,71,Moderate,clot,,0,Y
+Hosp_8,N,92,,clot,,3,N
+Hosp_8,Y,58,Minor,clot,Hypertension,0,N
+Hosp_8,Y,78,Moderate,clot,,0,Y
+Hosp_8,N,89,Minor,clot,TIA,0,N
+Hosp_4,Y,78,Moderate to severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_3,N,48,,clot,,0,Y
+Hosp_3,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,96,Moderate,clot,,3,Y
+Hosp_8,Y,80,Minor,clot,,0,N
+Hosp_8,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,67,Moderate,clot,,0,Y
+Hosp_8,N,79,Moderate to severe,clot,,0,Y
+Hosp_8,N,78,Moderate,clot,,0,Y
+Hosp_4,N,83,Moderate,clot,Hypertension;Diabetes,2,N
+Hosp_8,N,70,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_8,N,88,Moderate to severe,clot,Hypertension;Atrial Fib;Diabetes;TIA,3,N
+Hosp_8,N,92,Moderate,,,2,N
+Hosp_8,N,78,Minor,clot,Hypertension,0,N
+Hosp_8,N,64,Moderate to severe,clot,Hypertension,0,Y
+Hosp_7,N,89,Moderate,clot,Atrial Fib,1,N
+Hosp_8,N,80,Minor,clot,Hypertension;TIA,0,N
+Hosp_5,Y,56,,clot,,0,N
+Hosp_8,N,80,Moderate,clot,,0,Y
+Hosp_1,N,77,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,56,,clot,,0,Y
+Hosp_8,N,83,Moderate,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,67,Moderate,clot,Hypertension;Diabetes,0,Y
+Hosp_8,N,80,Moderate,clot,Hypertension,0,N
+Hosp_8,N,78,,clot,TIA,2,N
+Hosp_8,Y,69,Moderate to severe,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,67,Severe,,,0,N
+Hosp_8,N,76,Moderate to severe,clot,,0,Y
+Hosp_8,N,60,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,72,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,86,Moderate to severe,,,3,N
+Hosp_8,N,65,Moderate,clot,,1,N
+Hosp_8,N,85,,clot,,0,Y
+Hosp_7,Y,65,,clot,Hypertension;Diabetes;TIA,0,N
+Hosp_8,N,81,Severe,clot,Hypertension,3,Y
+Hosp_8,N,79,Moderate,clot,,0,Y
+Hosp_8,N,97,,clot,Atrial Fib,1,Y
+Hosp_7,N,65,Minor,clot,Hypertension,0,N
+Hosp_8,Y,78,Moderate,clot,,0,Y
+Hosp_8,N,61,Moderate to severe,clot,,0,Y
+Hosp_1,N,88,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,53,Moderate to severe,clot,,0,Y
+Hosp_3,N,74,Moderate,bleed,,0,N
+Hosp_8,Y,71,Moderate,clot,,0,Y
+Hosp_8,Y,65,Moderate,clot,Hypertension,0,Y
+Hosp_4,N,83,Moderate,clot,Hypertension;Diabetes,2,N
+Hosp_1,N,57,Moderate,clot,,0,Y
+Hosp_8,N,90,,clot,Hypertension,3,Y
+Hosp_8,Y,84,Moderate to severe,clot,,0,Y
+Hosp_8,N,64,Minor,clot,,0,N
+Hosp_3,N,76,Moderate to severe,clot,,0,Y
+Hosp_8,Y,80,Moderate,clot,,0,Y
+Hosp_8,N,76,Severe,clot,Hypertension,1,Y
+Hosp_8,Y,74,Severe,bleed,,0,N
+Hosp_8,N,53,,clot,,0,N
+Hosp_3,Y,81,Minor,clot,,0,N
+Hosp_4,Y,68,,bleed,,0,N
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_8,N,73,Severe,clot,Hypertension,1,Y
+Hosp_8,N,76,,clot,,0,Y
+Hosp_8,N,59,Moderate to severe,,,0,N
+Hosp_8,N,79,Minor,clot,Atrial Fib,0,Y
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,68,Moderate,bleed,,0,N
+Hosp_1,N,86,Severe,clot,,0,N
+Hosp_8,N,48,,clot,,0,Y
+Hosp_8,Y,58,Moderate,clot,,0,Y
+Hosp_8,N,69,Severe,clot,,0,Y
+Hosp_8,Y,85,Severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,93,Moderate to severe,clot,TIA,2,N
+Hosp_1,N,55,Moderate,clot,,0,Y
+Hosp_3,N,82,Minor,clot,,0,N
+Hosp_8,Y,54,Moderate,clot,,0,Y
+Hosp_7,N,80,,clot,TIA,0,N
+Hosp_8,N,79,,clot,Hypertension,0,Y
+Hosp_8,N,75,Minor,clot,Atrial Fib;TIA,2,N
+Hosp_8,N,75,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,76,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,N,79,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,N,66,Minor,clot,,0,N
+Hosp_8,N,69,Minor,clot,,0,N
+Hosp_7,N,64,Minor,clot,Hypertension,0,N
+Hosp_8,Y,47,,clot,,0,N
+Hosp_8,N,78,Moderate to severe,clot,,0,N
+Hosp_3,Y,66,Minor,clot,,0,N
+Hosp_8,N,72,Moderate,clot,Diabetes;TIA,0,Y
+Hosp_8,N,76,Moderate to severe,clot,,0,Y
+Hosp_8,N,42,Minor,clot,,0,N
+Hosp_8,Y,92,Minor,,,4,N
+Hosp_8,N,66,Moderate,clot,,1,N
+Hosp_4,N,92,Moderate,clot,Hypertension,1,N
+Hosp_8,N,57,Moderate,clot,,0,Y
+Hosp_7,N,70,,,,0,N
+Hosp_8,Y,72,Moderate,clot,TIA,0,Y
+Hosp_8,N,87,Severe,,Diabetes,5,N
+Hosp_4,N,93,Severe,clot,Hypertension,4,N
+Hosp_8,Y,73,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_2,Y,80,Moderate,clot,,0,N
+Hosp_8,Y,86,Moderate to severe,clot,,0,Y
+Hosp_7,Y,79,Moderate,clot,,0,Y
+Hosp_7,Y,49,,clot,,0,N
+Hosp_8,N,66,Minor,,Hypertension,0,N
+Hosp_8,Y,75,Moderate,clot,,0,Y
+Hosp_8,N,86,,,,2,N
+Hosp_8,Y,40,Moderate,clot,,0,Y
+Hosp_8,Y,75,Minor,clot,Atrial Fib,0,N
+Hosp_7,Y,79,,clot,TIA,0,N
+Hosp_8,Y,72,Moderate to severe,clot,,0,Y
+Hosp_8,N,82,,clot,,0,N
+Hosp_8,N,50,Moderate,clot,,0,Y
+Hosp_8,N,52,Minor,clot,,0,N
+Hosp_8,N,84,Moderate,clot,,3,Y
+Hosp_8,Y,91,Moderate to severe,clot,,0,Y
+Hosp_3,N,81,,clot,,0,Y
+Hosp_8,N,40,Moderate,clot,,0,Y
+Hosp_8,N,63,,,,0,N
+Hosp_8,N,40,Moderate,clot,,1,Y
+Hosp_8,N,90,Minor,clot,Hypertension,3,N
+Hosp_4,N,92,Moderate,,,3,N
+Hosp_2,Y,89,Minor,clot,Hypertension,0,N
+Hosp_8,N,84,Moderate,bleed,,0,N
+Hosp_8,N,52,Minor,,,0,N
+Hosp_8,N,84,Severe,bleed,,1,N
+Hosp_8,N,74,Moderate to severe,clot,,0,Y
+Hosp_8,N,88,Moderate,clot,,0,Y
+Hosp_1,N,79,Moderate to severe,clot,Hypertension,0,Y
+Hosp_8,N,83,,clot,Hypertension;TIA,0,Y
+Hosp_8,N,99,,clot,,1,N
+Hosp_8,N,67,Moderate,,Hypertension,0,N
+Hosp_8,N,91,Moderate,clot,Hypertension,3,N
+Hosp_8,Y,74,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,71,Moderate to severe,clot,Atrial Fib,0,Y
+Hosp_8,N,71,Moderate,clot,Atrial Fib,0,Y
+Hosp_8,Y,83,Moderate,clot,,0,N
+Hosp_5,N,77,Severe,clot,Hypertension;TIA,0,Y
+Hosp_8,Y,86,Minor,clot,Hypertension,0,N
+Hosp_8,N,86,Moderate,clot,,0,Y
+Hosp_8,N,90,Moderate to severe,clot,,0,Y
+Hosp_8,N,74,Minor,clot,Hypertension,0,N
+Hosp_1,Y,70,Moderate to severe,clot,,0,Y
+Hosp_8,N,81,Minor,clot,Hypertension,0,N
+Hosp_8,N,52,Minor,,,0,N
+Hosp_8,N,88,Moderate to severe,clot,Hypertension;Atrial Fib;TIA,0,N
+Hosp_8,Y,95,Moderate,clot,,3,N
+Hosp_7,N,83,Moderate,clot,Hypertension,1,Y
+Hosp_8,N,79,Moderate,clot,,0,Y
+Hosp_7,N,65,Minor,clot,TIA,4,N
+Hosp_8,N,65,Severe,clot,,0,Y
+Hosp_8,Y,74,Minor,,Hypertension;TIA,0,N
+Hosp_8,Y,62,Moderate to severe,clot,,0,Y
+Hosp_8,Y,44,Moderate,,,0,N
+Hosp_8,N,62,Moderate,clot,,0,Y
+Hosp_8,N,81,Moderate,clot,,0,N
+Hosp_8,Y,77,Moderate,clot,Hypertension,1,Y
+Hosp_7,Y,86,Moderate,clot,Hypertension,1,Y
+Hosp_8,Y,66,Minor,clot,,0,N
+Hosp_8,N,82,Minor,clot,Atrial Fib,0,N
+Hosp_8,Y,78,Severe,clot,,0,Y
+Hosp_8,N,46,,clot,,0,N
+Hosp_3,Y,82,Minor,clot,Hypertension;Diabetes;TIA,1,N
+Hosp_7,N,81,Minor,,Hypertension;TIA,0,N
+Hosp_8,N,92,Moderate,clot,,4,N
+Hosp_8,N,41,Moderate,clot,,0,Y
+Hosp_8,N,62,Moderate to severe,clot,,0,Y
+Hosp_8,Y,77,,bleed,,0,N
+Hosp_8,Y,78,Moderate,clot,,0,Y
+Hosp_8,N,87,Moderate to severe,clot,TIA,0,Y
+Hosp_8,Y,70,Moderate,bleed,Hypertension,0,N
+Hosp_7,N,80,,clot,,2,N
+Hosp_8,Y,90,Moderate to severe,clot,,1,Y
+Hosp_8,Y,85,Moderate,bleed,Hypertension;TIA,0,N
+Hosp_8,Y,71,Moderate,clot,,0,Y
+Hosp_3,N,71,Minor,clot,Hypertension,0,N
+Hosp_8,N,77,No stroke symtpoms,clot,Hypertension,0,N
+Hosp_6,N,95,Moderate to severe,clot,Hypertension;Atrial Fib,3,N
+Hosp_8,N,92,,clot,,3,N
+Hosp_8,N,93,Moderate to severe,clot,TIA,2,N
+Hosp_3,Y,47,,clot,,0,N
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_7,N,84,Moderate,clot,,0,Y
+Hosp_8,Y,58,Minor,clot,,0,Y
+Hosp_8,Y,53,Moderate,clot,,0,N
+Hosp_8,Y,40,Moderate,clot,,0,Y
+Hosp_8,N,79,Minor,clot,Hypertension;TIA,0,N
+Hosp_4,N,72,Moderate,clot,,0,Y
+Hosp_8,N,77,Moderate,clot,Hypertension,1,Y
+Hosp_3,Y,74,Minor,clot,,0,N
+Hosp_8,N,82,Moderate to severe,clot,,0,Y
+Hosp_8,N,69,,clot,,0,Y
+Hosp_8,N,92,,clot,,3,N
+Hosp_8,N,65,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,Y,58,Moderate to severe,clot,,0,Y
+Hosp_8,N,78,Moderate to severe,clot,TIA,0,N
+Hosp_8,Y,68,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,62,Moderate to severe,clot,,4,Y
+Hosp_8,Y,84,Moderate,clot,,0,Y
+Hosp_8,Y,76,,clot,,0,Y
+Hosp_3,Y,78,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,57,,clot,Diabetes,0,N
+Hosp_8,N,67,Moderate,clot,Hypertension,0,Y
+Hosp_1,N,73,Minor,clot,Atrial Fib,0,Y
+Hosp_8,N,83,Moderate,bleed,,0,N
+Hosp_1,N,78,Severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,72,Moderate,clot,,0,Y
+Hosp_8,N,91,Moderate,clot,,1,Y
+Hosp_4,Y,46,,clot,,0,Y
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_3,N,86,Moderate,clot,,0,Y
+Hosp_8,N,66,Moderate,clot,,2,N
+Hosp_7,N,61,Moderate,clot,,0,N
+Hosp_8,N,91,Moderate,clot,Hypertension,1,Y
+Hosp_8,Y,70,Severe,clot,,0,N
+Hosp_8,N,77,Moderate,clot,TIA,0,Y
+Hosp_8,N,77,,clot,Hypertension;TIA,0,N
+Hosp_8,N,94,Moderate,clot,,3,N
+Hosp_7,N,88,,clot,Hypertension,0,Y
+Hosp_8,N,86,,clot,,3,N
+Hosp_8,N,87,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,88,Moderate,clot,,2,N
+Hosp_1,N,89,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,65,Minor,,Hypertension;TIA,1,N
+Hosp_8,N,93,Minor,clot,,2,N
+Hosp_8,N,74,Moderate,clot,,1,N
+Hosp_3,N,76,Moderate to severe,clot,,0,Y
+Hosp_8,N,86,Moderate,clot,,0,Y
+Hosp_8,Y,66,Severe,clot,,0,Y
+Hosp_7,Y,67,Minor,clot,TIA,1,N
+Hosp_4,N,75,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,75,Moderate,clot,,0,Y
+Hosp_3,N,65,Moderate,clot,,0,Y
+Hosp_8,N,54,Moderate,clot,,0,Y
+Hosp_1,N,75,Moderate,clot,Hypertension,0,Y
+Hosp_8,Y,80,,clot,Hypertension,0,N
+Hosp_1,Y,71,Moderate to severe,clot,,0,Y
+Hosp_8,N,84,Moderate,clot,Hypertension,1,Y
+Hosp_8,N,87,Moderate to severe,clot,Atrial Fib;TIA,3,N
+Hosp_8,N,71,Moderate,,,0,N
+Hosp_6,N,79,Moderate,bleed,,0,N
+Hosp_8,Y,85,Minor,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,Y,69,Severe,clot,,0,N
+Hosp_1,N,91,Moderate to severe,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_8,N,67,Moderate,clot,,0,Y
+Hosp_8,Y,65,Minor,clot,,0,N
+Hosp_2,N,80,Moderate,clot,,1,Y
+Hosp_8,N,59,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_8,N,76,Moderate,clot,Hypertension;Atrial Fib,0,Y
+Hosp_8,N,80,Moderate,clot,Hypertension,0,N
+Hosp_4,N,69,Minor,clot,Atrial Fib,0,N
+Hosp_8,N,68,Moderate,clot,,0,Y
+Hosp_8,N,80,Moderate,clot,TIA,2,N
+Hosp_8,Y,83,,clot,Atrial Fib;TIA,0,Y
+Hosp_8,N,71,Moderate,clot,,0,Y
+Hosp_8,Y,40,Moderate,clot,,0,Y
+Hosp_8,N,97,,clot,,3,Y
+Hosp_8,N,96,Severe,clot,TIA,2,N
+Hosp_8,Y,72,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate,clot,,3,N
+Hosp_8,N,65,Moderate,clot,,0,N
+Hosp_8,N,55,Moderate,clot,,0,N
+Hosp_8,N,88,Minor,clot,,0,N
+Hosp_2,Y,91,Minor,clot,,0,N
+Hosp_8,N,80,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,49,Severe,,,0,N
+Hosp_7,Y,64,Moderate,clot,,0,Y
+Hosp_8,N,79,Moderate to severe,clot,Atrial Fib,0,N
+Hosp_8,N,76,Moderate,clot,TIA,0,Y
+Hosp_7,Y,80,Minor,clot,,0,N
+Hosp_8,Y,78,Severe,clot,Hypertension,0,Y
+Hosp_4,Y,68,Moderate,,,0,N
+Hosp_3,N,66,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate to severe,clot,,1,Y
+Hosp_8,N,82,Moderate,clot,,0,Y
+Hosp_7,N,93,Moderate,clot,,4,N
+Hosp_8,N,64,,,Hypertension,0,N
+Hosp_8,N,90,Moderate to severe,,Hypertension,0,N
+Hosp_8,N,79,Minor,clot,Hypertension;TIA,0,N
+Hosp_8,Y,70,,clot,Atrial Fib,0,N
+Hosp_8,Y,78,Moderate,clot,Hypertension,0,Y
+Hosp_7,N,70,Severe,,,0,N
+Hosp_8,Y,78,Moderate to severe,clot,,0,Y
+Hosp_8,N,80,Minor,clot,TIA,0,N
+Hosp_8,N,65,Minor,clot,Hypertension,0,N
+Hosp_7,N,88,Moderate,clot,Hypertension;Atrial Fib,4,N
+Hosp_8,Y,80,Minor,clot,Hypertension,0,N
+Hosp_8,N,48,Moderate,clot,,0,Y
+Hosp_8,N,86,Moderate,,Hypertension;TIA,0,N
+Hosp_2,N,79,Moderate,clot,Hypertension,0,N
+Hosp_1,N,96,Severe,clot,,0,N
+Hosp_8,Y,74,Moderate to severe,bleed,,0,N
+Hosp_7,N,62,Moderate to severe,clot,,0,Y
+Hosp_8,N,81,Moderate to severe,clot,Hypertension;Atrial Fib,0,N
+Hosp_8,N,90,Severe,clot,,1,Y
+Hosp_8,N,91,Moderate to severe,clot,Hypertension;TIA,3,N
+Hosp_1,N,72,Moderate,clot,Diabetes;TIA,1,Y
+Hosp_8,N,72,Minor,clot,Diabetes,0,N
+Hosp_8,N,45,Severe,clot,,0,Y
+Hosp_4,N,83,,clot,TIA,3,N
+Hosp_8,Y,76,Moderate to severe,clot,,0,N
+Hosp_8,N,71,Minor,clot,,0,N
+Hosp_1,N,40,Moderate,clot,,0,Y
+Hosp_3,Y,86,Moderate,clot,Hypertension,0,Y
+Hosp_8,N,91,,clot,,0,Y
+Hosp_8,N,73,Minor,clot,,0,N
+Hosp_8,Y,64,Severe,clot,,0,Y
+Hosp_8,Y,79,,clot,TIA,0,N
+Hosp_8,Y,80,Moderate,clot,Hypertension,3,Y
+Hosp_8,Y,75,Minor,clot,Hypertension;Diabetes,0,N
+Hosp_4,Y,68,,bleed,,0,N
+Hosp_7,Y,70,Minor,clot,Hypertension,0,N
+Hosp_8,N,91,Severe,clot,,3,N
+Hosp_8,N,78,,clot,,0,N
+Hosp_8,N,90,Minor,clot,Hypertension,2,N
+Hosp_8,N,68,Moderate,clot,,0,Y
+Hosp_8,N,82,Moderate to severe,clot,,0,Y
+Hosp_7,Y,75,Moderate,clot,,0,Y
+Hosp_8,N,65,Moderate,clot,,0,Y
+Hosp_8,N,74,Moderate,clot,Hypertension;TIA,0,Y
+Hosp_7,N,79,Moderate,clot,Hypertension,2,Y
+Hosp_8,N,51,Minor,clot,,0,Y
+Hosp_8,N,90,Severe,clot,Atrial Fib,0,N
+Hosp_8,Y,80,Moderate,clot,Hypertension,0,Y
+Hosp_7,N,83,Moderate,clot,,4,N
+Hosp_8,N,69,Moderate,,Hypertension,2,N
+Hosp_5,N,71,Moderate,clot,,0,Y
+Hosp_1,N,83,Moderate,clot,,1,N
+Hosp_3,Y,63,Severe,clot,Atrial Fib,0,Y
+Hosp_8,N,62,Moderate,clot,Diabetes,0,Y
+Hosp_3,N,79,,clot,,0,Y
+Hosp_8,N,47,Moderate,bleed,,0,N
+Hosp_3,Y,69,Moderate,clot,,0,Y
+Hosp_8,N,50,Moderate,clot,,0,Y
