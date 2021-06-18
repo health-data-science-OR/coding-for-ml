@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conda virtual environment &#8212; Coding for Machine Learning and Data Science</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Conda virtual environment &#8212; Python for health data science.</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -25,8 +26,8 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -36,17 +37,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -74,8 +75,10 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../index.html">
   
+  <img src="../../_static/title_cropped.png" class="logo" alt="logo">
   
-  <h1 class="site-logo" id="site-title">Coding for Machine Learning and Data Science</h1>
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -86,13 +89,13 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../front_page.html">
-   Welcome
+   Preface
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Setup
+  Data and software
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -114,23 +117,38 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Revision
+  Algorithms and computational modelling
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../002_basics/fp_lectures.html">
-   Lectures
+  <a class="reference internal" href="../01_algorithms/01_design.html">
+   The importance of design
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../002_basics/lectures/Lecture1.html">
-     Python Basics
+    <a class="reference internal" href="../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../002_basics/lectures/Lecture2.html">
-     Conditionals and Loops
+    <a class="reference internal" href="../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/01_design/04_summing_up.html">
+     Summing up
     </a>
    </li>
   </ul>
@@ -138,76 +156,18 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../002_basics/fp_practicals.html">
-   Practicals
+  <a class="reference internal" href="../01_algorithms/02_oop.html">
+   Designing using objects
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../002_basics/labs/01_basics.html">
-     Basic Python
+    <a class="reference internal" href="../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../002_basics/labs/debug1.html">
-     Debug challenge 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../002_basics/labs/02_basics.html">
-     Conditionals and Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../002_basics/labs/debug2.html">
-     Debug challenge 2
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Part 1. Advanced Python
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01_advanced_python/lecture/01_python_classes.html">
-   Lecture: Class coding basics
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Part 2. NumPy
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../02_numpy/02_lectures_front_page.html">
-   Lecture notes
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_numpy/lectures/01_numpy_101.html">
-     Basic
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_numpy/lectures/02_intermediate_numpy.html">
-     Intermediate
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
+    <a class="reference internal" href="../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
     </a>
    </li>
   </ul>
@@ -215,23 +175,91 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../02_numpy/02_labs_front_page.html">
-   Practicals
+  <a class="reference internal" href="../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../02_numpy/labs/02_lab1.html">
-     Basic
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-     techniques
+    <a class="reference internal" href="../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02_numpy/labs/02_lab2.html">
+    <a class="reference internal" href="../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_algorithms/04_exercises/03_int_numpy.html">
      Intermediate NumPy
     </a>
    </li>
@@ -240,13 +268,18 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../02_numpy/02_debug_front_page.html">
+  <a class="reference internal" href="../01_algorithms/05_debug.html">
    Debug challenges
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../02_numpy/debug_challenges/debug_challenge_2.html">
-     Debug Challenge 2
+    <a class="reference internal" href="../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
     </a>
    </li>
   </ul>
@@ -256,17 +289,17 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Part 3. Pandas and MatplotLib
+  Statistical Programming
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../03_pandas/03_lectures_front_page.html">
-   Lecture notes
+  <a class="reference internal" href="../02_stat_prog/01_pandas_front_page.html">
+   Data wrangling
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_pandas/lectures/01_intro_pandas.html">
+    <a class="reference internal" href="../02_stat_prog/01_pandas/01_intro_pandas.html">
      Introduction to
      <strong>
       <code class="docutils literal notranslate">
@@ -278,8 +311,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_pandas/lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
-     Reading data into pandas from a flat file
+    <a class="reference internal" href="../02_stat_prog/01_pandas/02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_stat_prog/01_pandas/03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_stat_prog/01_pandas/04_datetimes.html">
+     Managing time series
     </a>
    </li>
   </ul>
@@ -287,13 +330,123 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../03_pandas/03_labs_front_page.html">
+  <a class="reference internal" href="../02_stat_prog/02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_stat_prog/02_matplotlib/02_plotting_time_series.html">
+     Exploring Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_stat_prog/03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_stat_prog/03_exercises/01_data_wrangling_solutions.html">
+     Stroke thrombolysis - data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_stat_prog/03_exercises/01_data_wrangling_solutions.html#exercise-6-encoding-fields-with-2-categories">
+     Exercise 6: Encoding fields with &gt; 2 categories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_stat_prog/03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_stat_prog/03_exercises/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data (SOLUTIONS)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_mgt/03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_mgt/03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_mgt/03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../appendix/fp_practicals.html">
    Practicals
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_pandas/labs/nhs_synthetic_ed_download.html">
-     Accessing large remote datasets
+    <a class="reference internal" href="../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../appendix/labs/debug2.html">
+     Debug challenge 2
     </a>
    </li>
   </ul>
@@ -389,7 +542,7 @@
         
               <div>
                 
-  <div class="section" id="conda-virtual-environment">
+  <section id="conda-virtual-environment">
 <h1>Conda virtual environment<a class="headerlink" href="#conda-virtual-environment" title="Permalink to this headline">¶</a></h1>
 <p>The code examples in this module have been created in using the conda virtual environment <code class="docutils literal notranslate"><span class="pre">hds_code</span></code></p>
 <p>To create the conda environment issues the following command on a terminal</p>
@@ -400,7 +553,7 @@
 <span class="go">conda activate hds_code</span>
 </pre></div>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

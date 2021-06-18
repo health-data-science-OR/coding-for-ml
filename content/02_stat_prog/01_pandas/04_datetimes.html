@@ -1,0 +1,1213 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Managing time series &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Visualising data" href="../02_visual_front_page.html" />
+    <link rel="prev" title="Case study: a large remote dataset" href="03_non_standard_download.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Managing time series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_matplotlib/02_plotting_time_series.html">
+     Exploring Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/01_data_wrangling_solutions.html">
+     Stroke thrombolysis - data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/01_data_wrangling_solutions.html#exercise-6-encoding-fields-with-2-categories">
+     Exercise 6: Encoding fields with &gt; 2 categories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data (SOLUTIONS)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/02_stat_prog/01_pandas/04_datetimes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/02_stat_prog/01_pandas/04_datetimes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/01_pandas/04_datetimes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/01_pandas/04_datetimes.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-datatime64">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy.datatime64
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#static-arrays-of-datetime64">
+     Static arrays of
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       datetime64
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-creation-of-date-arrays-using-np-arange">
+     Quick creation of date arrays using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.arange
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#date-time-index-in-pandas">
+   Date Time Index in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#static-creation">
+     Static creation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-data-from-a-csv-file">
+   Importing data from a CSV file
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="managing-time-series">
+<h1>Managing time series<a class="headerlink" href="#managing-time-series" title="Permalink to this headline">¶</a></h1>
+<p>Time series data (and time series data science problems) involve the observation of one or more variables over time. Time series data are highly prevalent in electronic health records held by health delivery organisations such as the UK NHS and they frequently make analysis more difficult! Here are a few example data science problems you might encounter which are going to require you to work with one or more time series.</p>
+<ul class="simple">
+<li><p>Evaluating if a change to a service improved the performance of an emergency department.</p></li>
+<li><p>Forecasting the weekly demand that a outpatient clinic will experience over the next 3 months</p></li>
+<li><p>Predicting an child’s length of stay in critical care based on vital sign observations and interventions they underwent during their journey to hospital.</p></li>
+</ul>
+<p>If not done correctly, dates and times can be painful to use in coding!  The good news is the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> make handling dates the easiest it has ever been.</p>
+<p>In this section we will learn how:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> store date time data of different frequencies;</p></li>
+<li><p>to manipulate dates and times in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+<li><p>to quickly read time series data into <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></p></li>
+<li><p>to setup a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> with a <code class="docutils literal notranslate"><span class="pre">DataTimeIndex</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="numpy-datatime64">
+<h2><code class="docutils literal notranslate"><span class="pre">numpy.datatime64</span></code><a class="headerlink" href="#numpy-datatime64" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> data type to manage datetimes is called <code class="docutils literal notranslate"><span class="pre">datetime64</span></code>.</p>
+<section id="static-arrays-of-datetime64">
+<h3>Static arrays of <code class="docutils literal notranslate"><span class="pre">datetime64</span></code><a class="headerlink" href="#static-arrays-of-datetime64" title="Permalink to this headline">¶</a></h3>
+<p>To create an array containing date time data statically is very straightforward.  We use the normal array syntax and include date in YYYY-MM-DD format.  You also need to specify the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> as <code class="docutils literal notranslate"><span class="pre">'datetime64'</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;2019-07-11&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-12&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-13&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-14&#39;</span><span class="p">],</span> 
+         <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2019-07-11&#39;, &#39;2019-07-12&#39;, &#39;2019-07-13&#39;, &#39;2019-07-14&#39;],
+      dtype=&#39;datetime64[D]&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> has dtype=<code class="docutils literal notranslate"><span class="pre">datetime64[D]</span></code>.  The ‘D’ stands for the minimum unit of days.</p>
+<p>Consider an alternative where we include hours.  You need to include the letter ‘T’ (for timestamp) in string pass to the <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;2019-07-11T01&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-12T02&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-13T03&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-14T17&#39;</span><span class="p">],</span> 
+         <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2019-07-11T01&#39;, &#39;2019-07-12T02&#39;, &#39;2019-07-13T03&#39;, &#39;2019-07-14T17&#39;],
+      dtype=&#39;datetime64[h]&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>That time the dtype=<code class="docutils literal notranslate"><span class="pre">datetime64[h]</span></code> where ‘h’ stands for hours.  We can go further and try minutes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;2019-07-11T00:13&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-12T00:15&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-13T00:15&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-14T00:05&#39;</span><span class="p">],</span> 
+         <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2019-07-11T00:13&#39;, &#39;2019-07-12T00:15&#39;, &#39;2019-07-13T00:15&#39;,
+       &#39;2019-07-14T00:05&#39;], dtype=&#39;datetime64[m]&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now try seconds</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;2019-07-11T00:13:59&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-12T00:15:30&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-13T00:15:20&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;2019-07-14T00:05:15&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2019-07-11T00:13:59&#39;, &#39;2019-07-12T00:15:30&#39;,
+       &#39;2019-07-13T00:15:20&#39;, &#39;2019-07-14T00:05:15&#39;],
+      dtype=&#39;datetime64[s]&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>and miliseconds</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;2019-07-11T00:13:59.100&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-12T00:15:30.189&#39;</span><span class="p">],</span> 
+         <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2019-07-11T00:13:59.100&#39;, &#39;2019-07-12T00:15:30.189&#39;],
+      dtype=&#39;datetime64[ms]&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="quick-creation-of-date-arrays-using-np-arange">
+<h3>Quick creation of date arrays using <code class="docutils literal notranslate"><span class="pre">np.arange</span></code><a class="headerlink" href="#quick-creation-of-date-arrays-using-np-arange" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">np.arange(start,stop,step)</span></code> (where stop is <em>exclusive</em>) is commonly used to produce an array of integers can be used to produce an array of evenly-spaced integers (particularly good for generating synthetic testing data).</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.arange</span></code> can also be used to generate a range of date time stamps. For example:</p>
+<blockquote>
+<div><p>To experiment try changing the step argument to a different value</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="s1">&#39;2019-07-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-31&#39;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[D]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2019-07-01&#39;, &#39;2019-07-04&#39;, &#39;2019-07-07&#39;, &#39;2019-07-10&#39;,
+       &#39;2019-07-13&#39;, &#39;2019-07-16&#39;, &#39;2019-07-19&#39;, &#39;2019-07-22&#39;,
+       &#39;2019-07-25&#39;, &#39;2019-07-28&#39;], dtype=&#39;datetime64[D]&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a bigger array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="s1">&#39;2019-07-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-31&#39;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[m]&#39;</span><span class="p">)</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6172,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get all values in between two dates then <em>omit</em> the step argument.  The below generates days between 1st and 10th August</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="s1">&#39;2019-07-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-10&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[D]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2019-07-01&#39;, &#39;2019-07-02&#39;, &#39;2019-07-03&#39;, &#39;2019-07-04&#39;,
+       &#39;2019-07-05&#39;, &#39;2019-07-06&#39;, &#39;2019-07-07&#39;, &#39;2019-07-08&#39;,
+       &#39;2019-07-09&#39;], dtype=&#39;datetime64[D]&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="date-time-index-in-pandas">
+<h2>Date Time Index in <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#date-time-index-in-pandas" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> uses a <code class="docutils literal notranslate"><span class="pre">DateTimeIndex</span></code> that builds on numpy <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> data type.  <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is definitely the easiest way to work with time series data in Python.  One of the reasons for this is that pandas can detect and handle different formats of date strings in input files.  Always watch out for problems with US -&gt; UK dates and vice versa.</p>
+<section id="static-creation">
+<h3>Static creation<a class="headerlink" href="#static-creation" title="Permalink to this headline">¶</a></h3>
+<p>If you need to create some synthetic data for testing then you can use the <code class="docutils literal notranslate"><span class="pre">pandas.date_range</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#note that by default pandas will assume the below is MM/DD/YYY</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/3/2019&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-01-03&#39;, &#39;2019-01-04&#39;, &#39;2019-01-05&#39;, &#39;2019-01-06&#39;,
+               &#39;2019-01-07&#39;, &#39;2019-01-08&#39;, &#39;2019-01-09&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A hourly date range</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2019&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-01-01 00:00:00&#39;, &#39;2019-01-01 01:00:00&#39;,
+               &#39;2019-01-01 02:00:00&#39;, &#39;2019-01-01 03:00:00&#39;,
+               &#39;2019-01-01 04:00:00&#39;, &#39;2019-01-01 05:00:00&#39;,
+               &#39;2019-01-01 06:00:00&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;H&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A ‘monthly start’ range.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2019&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-01-01&#39;, &#39;2019-02-01&#39;, &#39;2019-03-01&#39;, &#39;2019-04-01&#39;,
+               &#39;2019-05-01&#39;, &#39;2019-06-01&#39;, &#39;2019-07-01&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;MS&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Convert a list to datetime index</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1/1/2019&#39;</span><span class="p">,</span> <span class="s1">&#39;2/1/2019&#39;</span><span class="p">,</span> <span class="s1">&#39;3/1/2019&#39;</span><span class="p">]</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-01-01&#39;, &#39;2019-02-01&#39;, &#39;2019-03-01&#39;], dtype=&#39;datetime64[ns]&#39;, freq=None)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>US to UK problems</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1/1/2019&#39;</span><span class="p">,</span> <span class="s1">&#39;2/1/2019&#39;</span><span class="p">,</span> <span class="s1">&#39;3/1/2019&#39;</span><span class="p">]</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-01-01&#39;, &#39;2019-01-02&#39;, &#39;2019-01-03&#39;], dtype=&#39;datetime64[ns]&#39;, freq=None)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Convert numpy array to datetime index</strong></p>
+<p>For data manipulation and analysis I often find myself moving between NumPy arrays and pandas DataFrames.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr_dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;2019-07-11&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-12&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-13&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64&#39;</span><span class="p">)</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">arr_dates</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-07-11&#39;, &#39;2019-07-12&#39;, &#39;2019-07-13&#39;], dtype=&#39;datetime64[ns]&#39;, freq=None)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that in the example above the frequency is <strong>None</strong>.  That’s annoying and there are some forecasting tools in Python that will insist on having a frequency.  There are two ways to sort this out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pass in the frequency argument</span>
+<span class="n">arr_dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;2019-07-11&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-12&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-13&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64&#39;</span><span class="p">)</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">arr_dates</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-07-11&#39;, &#39;2019-07-12&#39;, &#39;2019-07-13&#39;], dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#set the frequency post-hoc</span>
+<span class="n">arr_dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;2019-07-11&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-12&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-07-13&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64&#39;</span><span class="p">)</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">arr_dates</span><span class="p">)</span>
+<span class="n">index</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-07-11&#39;, &#39;2019-07-12&#39;, &#39;2019-07-13&#39;], dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Finding the min|max andin a date time index and accessing a TimeStamp</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2019-07-11 00:00:00&#39;, freq=&#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2019-07-13 00:00:00&#39;, freq=&#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019
+7
+31
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="importing-data-from-a-csv-file">
+<h2>Importing data from a CSV file<a class="headerlink" href="#importing-data-from-a-csv-file" title="Permalink to this headline">¶</a></h2>
+<p>First create a synthetic data set and save to csv</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LAMBDA</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">PERIODS</span> <span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2018-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">PERIODS</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="c1"># representing a count variable of sales og widgets with mean LAMBDA.</span>
+<span class="n">sales</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">LAMBDA</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">PERIODS</span><span class="p">)</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sales&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;date&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sales</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-01-01</th>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>2018-01-02</th>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2018-01-03</th>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>2018-01-04</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>2018-01-05</th>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/example_data1.csv&#39;</span><span class="p">)</span> <span class="c1"># save to file</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now read in the data and let pandas know that the index is a date field using the <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code> argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/example_data1.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#you have to set this manually</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2018-01-01&#39;, &#39;2018-01-02&#39;, &#39;2018-01-03&#39;, &#39;2018-01-04&#39;,
+               &#39;2018-01-05&#39;, &#39;2018-01-06&#39;, &#39;2018-01-07&#39;, &#39;2018-01-08&#39;,
+               &#39;2018-01-09&#39;, &#39;2018-01-10&#39;,
+               ...
+               &#39;2019-12-22&#39;, &#39;2019-12-23&#39;, &#39;2019-12-24&#39;, &#39;2019-12-25&#39;,
+               &#39;2019-12-26&#39;, &#39;2019-12-27&#39;, &#39;2019-12-28&#39;, &#39;2019-12-29&#39;,
+               &#39;2019-12-30&#39;, &#39;2019-12-31&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;date&#39;, length=730, freq=&#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sales</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-01-01</th>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>2018-01-02</th>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>2018-01-03</th>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>2018-01-04</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>2018-01-05</th>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>2018-01-06</th>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>2018-01-07</th>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>2018-01-08</th>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2018-01-09</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>2018-01-10</th>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02_stat_prog/01_pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="03_non_standard_download.html" title="previous page">Case study: a large remote dataset</a>
+    <a class='right-next' id="next-link" href="../02_visual_front_page.html" title="next page">Visualising data</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

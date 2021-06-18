@@ -1,0 +1,1548 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding algorithms - solutions &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Class coding basics" href="../lecture/01_python_classes.html" />
+    <link rel="prev" title="Docker" href="../../001_setup/docker.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Setup
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Algorithms and modelling
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Coding algorithms - solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lecture/01_python_classes.html">
+   Class coding basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_oop.html">
+   OOP Exercises
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part 2. NumPy
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_numpy/02_lectures_front_page.html">
+   Lecture notes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_numpy/lectures/01_numpy_101.html">
+     Basic
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_numpy/lectures/02_intermediate_numpy.html">
+     Intermediate
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_numpy/02_labs_front_page.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_numpy/labs/02_lab1.html">
+     Basic
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     techniques
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_numpy/labs/02_lab2.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_numpy/02_debug_front_page.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_numpy/debug_challenges/debug_challenge_2.html">
+     Debug Challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part 3. Statistical Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_pandas/03_lectures_front_page.html">
+   Lecture notes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
+     Reading data into pandas from a flat file
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_pandas/03_labs_front_page.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_pandas/labs/nhs_synthetic_ed_download.html">
+     Accessing large remote datasets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix -Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../002_basics/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../002_basics/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../002_basics/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../002_basics/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../002_basics/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../002_basics/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../002_basics/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../002_basics/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/01_advanced_python/labs/01_refresher_problems.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/01_advanced_python/labs/01_refresher_problems.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/01_advanced_python/labs/01_refresher_problems.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/01_advanced_python/labs/01_refresher_problems.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-solution">
+     Example solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Example solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3">
+   Exercise 3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Example solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   Exercise 4
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Example solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5">
+   Exercise 5
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Example solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-n">
+   Exercise
+   <strong>
+    n
+   </strong>
+   :
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Example solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="coding-algorithms-solutions">
+<h1>Coding algorithms - solutions<a class="headerlink" href="#coding-algorithms-solutions" title="Permalink to this headline">¶</a></h1>
+<p>The exercises in this lab are designed to refresh and in some cases challenge your python knowlege and problem solving skills.  They are a mix of classic scientific coding problems and coding interview type questions found on sites such as <a class="reference external" href="https://www.hackerrank.com">HackerRank</a>.</p>
+<blockquote>
+<div><p><strong>Note</strong> that the solutions to these exercises are in <strong>standard</strong> Python.  If you have knowledge of scientific python libraries such as <code class="docutils literal notranslate"><span class="pre">numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">scipy</span></code> and are <strong>confident</strong> in using them to complete the exercises then that is fine.  However, don’t feel you need to overcomplicate your code.  We will study scientific libraries later in the course.</p>
+</div></blockquote>
+<p>Even if you are confident in your basic python skills try to work through all of the questions.</p>
+<blockquote>
+<div><p>In general the complexity of questions increases as you progress through the questions.</p>
+</div></blockquote>
+<p><strong>Some extra challenges relevant to data science and ML:</strong></p>
+<ul class="simple">
+<li><p>Aim to produce efficient solutions to problems i.e. those that require a minimal amount of memory, computations and run time.  I have provided example solutions, but maybe you can do better!</p></li>
+<li><p>Time your solutions to identify if you have improved run time.</p></li>
+<li><p>Keep your solutions readable.  Write good quality human readable code and give your functions PEP8 docstrings.</p></li>
+<li><p>Test your problems with more than one data input - this can help identify weaknesses and errors in your code.</p></li>
+<li><p>Add some defensive error checking and/or exception handling for function inputs.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pythonic cross platform approach for HTTPS request</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
+<p>Given five positive integers, find the minimum and maximum values that can be calculated by <strong>summing exactly four of the five integers</strong>. Print the respective minimum and maximum values.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">16</span>
+<span class="mi">24</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution</span>
+<span class="k">def</span> <span class="nf">sum_smallest_n</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Return the sum of the smallest n of an array</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    -------</span>
+<span class="sd">    arr: list</span>
+<span class="sd">        assumes list of numerical data </span>
+<span class="sd">    </span>
+<span class="sd">    n: int, optional (default=4)</span>
+<span class="sd">        Number of items to return </span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">)[:</span><span class="n">n</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">sum_largest_n</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Return the sum of the largest n of an array</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    -------</span>
+<span class="sd">    arr: list</span>
+<span class="sd">        assumes list of numerical data </span>
+<span class="sd">    </span>
+<span class="sd">    n: int, optional (default=4)</span>
+<span class="sd">        Number of items to return </span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="n">n</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_smallest_n</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_largest_n</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h2>
+<p>The inverse of a 2×2 matrix <span class="math notranslate nohighlight">\(A = \begin{pmatrix}
+a &amp; b\\
+c &amp; d
+\end{pmatrix}\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A^{-1} = \dfrac{1}{ad - bc}
+\begin{pmatrix}
+d &amp; -b\\
+-c &amp; a
+\end{pmatrix}\end{split}\]</div>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Code a function that, given a 2D array A = [[a,b],[c,d]], prints out the 2x2 inverse matrix.</p></li>
+<li><p>Do not use the built in inversion functions.</p></li>
+</ul>
+<p><strong>Test data:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">]]</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">]]</span> 
+
+</pre></div>
+</div>
+<p><strong>Hints:</strong></p>
+<ul class="simple">
+<li><p>How do I represent a matrix in standard python?</p>
+<ul>
+<li><p>For example the matrix <span class="math notranslate nohighlight">\(A = \begin{pmatrix}
+1 &amp; 2\\
+3 &amp; 4
+\end{pmatrix}\)</span> would be list of lists <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">[[1,</span> <span class="pre">2],</span> <span class="pre">[3,</span> <span class="pre">4]]</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="example-solution">
+<h3>Example solution<a class="headerlink" href="#example-solution" title="Permalink to this headline">¶</a></h3>
+<p>There are several ways you might implement this equation in standard python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inverse_2x2_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Calculate and return the inverse of a 2x2.</span>
+<span class="sd">    Uses standard python.  Lowest overhead of all answers I can think of!</span>
+<span class="sd">        </span>
+<span class="sd">    Given matrix A = [[a, b], [d, c]]</span>
+<span class="sd">    </span>
+<span class="sd">    det A = ad - bc</span>
+<span class="sd"> </span>
+<span class="sd">    A^-1 = (1 / det A) * [[d, -b], [-c, a]]</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    -------</span>
+<span class="sd">    matrix: array-like</span>
+<span class="sd">        assumes 2x2 list i.e. [[a, b], [c, d]]</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    ------</span>
+<span class="sd">    list of lists</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">det</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[[(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">det</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">det</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="n">b</span><span class="p">],</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">det</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">det</span><span class="p">)</span> <span class="o">*</span> <span class="n">a</span><span class="p">]]</span>
+
+
+<span class="k">def</span> <span class="nf">inverse_2x2_matrix_map</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Calculate and return the inverse of a 2x2.</span>
+<span class="sd">    Uses standard python + lambda expression + map </span>
+<span class="sd">    </span>
+<span class="sd">    Given matrix A [[a, b], [d, c]]</span>
+<span class="sd">    </span>
+<span class="sd">    det A = ad - bc</span>
+<span class="sd">    inverse = (1 / det A) * [[d, -b], [-c, a]]</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    -------</span>
+<span class="sd">    matrix: array-like</span>
+<span class="sd">        assumes 2x2 matrix i.e. [[a, b], [c, d]]</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    ------</span>
+<span class="sd">    list of lists</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">det</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">det</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">row</span><span class="p">))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="p">[[</span><span class="n">d</span><span class="p">,</span> <span class="o">-</span><span class="n">b</span><span class="p">],</span> 
+                                                                <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">]]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#nice example as determinant = -1</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">7.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">]]</span>
+
+<span class="n">inverse_2x2_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3.0, 2.0], [-7.0, -5.0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inverse_2x2_matrix_map</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3.0, 2.0], [-7.0, -5.0]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>Exercise 2<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>A left rotation operation on an array shifts each of the array’s elements unit to the left.</p>
+<p><strong>Example 1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># original list</span>
+<span class="n">to_roll</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1">#number of rotations/rolls left</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1">#call the function that rotates the array.</span>
+<span class="n">roll_left</span><span class="p">(</span><span class="n">to_roll</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that the lowest index item moves to the highest index in a rotation. This is called a <em>circular array.</em></p>
+<p><strong>Example 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># original list</span>
+<span class="n">to_roll</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1">#number of rotations/rolls left</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="c1"># call the function that rotates the array.</span>
+<span class="n">roll_left</span><span class="p">(</span><span class="n">to_roll</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>output:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Given an array of integers and a number, perform left rotations on the array.</p></li>
+<li><p>Return the updated array and print to screen.</p></li>
+</ul>
+<p><strong>Test data</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test 1</span>
+<span class="n">to_roll</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">7</span> 
+<span class="n">expected</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># test 2</span>
+<span class="n">to_roll</span> <span class="o">=</span> <span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> 
+           <span class="mi">10</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">51</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="p">[</span><span class="mi">77</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> 
+            <span class="mi">58</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">77</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Example solution<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">roll_left</span><span class="p">(</span><span class="n">to_roll</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Circular rolling of a python list to the left using</span>
+<span class="sd">    the modulo operator and list slicing.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns a new list that has been rolled left.</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    ------</span>
+<span class="sd">    to_roll: list</span>
+<span class="sd">        The python list to roll</span>
+<span class="sd">        </span>
+<span class="sd">    n: int</span>
+<span class="sd">        The number of rolls</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    list</span>
+<span class="sd">    </span>
+<span class="sd">    Example usage:</span>
+<span class="sd">    --------------</span>
+<span class="sd">    ```python</span>
+<span class="sd">    &gt;&gt;&gt; to_roll = [1, 2, 3, 4, 5]</span>
+<span class="sd">    &gt;&gt;&gt; roll_left(to_rotate, 1)</span>
+<span class="sd">    [2, 3, 4, 5, 1]</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; to_roll = [1, 2, 3, 4, 5]</span>
+<span class="sd">    &gt;&gt;&gt; roll_left(to_rotate, 3)</span>
+<span class="sd">    [4, 5, 1, 2, 3]</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; to_roll = [1, 2, 3, 4, 5]</span>
+<span class="sd">    &gt;&gt;&gt; roll_left(to_rotate, 6)</span>
+<span class="sd">    [2, 3, 4, 5, 1]</span>
+<span class="sd">    ```</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">split_index</span> <span class="o">=</span>  <span class="n">n</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">to_roll</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">to_roll</span><span class="p">[</span><span class="n">split_index</span><span class="p">:]</span> <span class="o">+</span> <span class="n">to_roll</span><span class="p">[:</span><span class="n">split_index</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_roll</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">roll_left</span><span class="p">(</span><span class="n">to_roll</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_roll</span> <span class="o">=</span> <span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> 
+           <span class="mi">10</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">51</span><span class="p">]</span>
+<span class="n">roll_left</span><span class="p">(</span><span class="n">to_roll</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h2>
+<p>The Fibonacci numbers, denoted <span class="math notranslate nohighlight">\(F_n\)</span>, form a sequence, called the <strong>Fibonacci sequence</strong>, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is</p>
+<p><span class="math notranslate nohighlight">\(F_{0}=0, F_{1}=1\)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(F_{n}=F_{n-1}+F_{n-2}\)</span>  for <span class="math notranslate nohighlight">\(n &gt; 1\)</span>.</p>
+<p>The beginning of the sequence is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, … 
+</pre></div>
+</div>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Code a function called <code class="docutils literal notranslate"><span class="pre">fib(n)</span></code>.</p></li>
+<li><p>The parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> represents the Fibaonacci number that will be generated.</p></li>
+<li><p>For example, the value when <code class="docutils literal notranslate"><span class="pre">fib(50)</span></code> returns <code class="docutils literal notranslate"><span class="pre">12_586_269_025</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Example solution<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>For this exercise there are several options you can implement.  You will get good performance from a basic <code class="docutils literal notranslate"><span class="pre">for</span></code> loop iteration, but you could also opt for recursive solution.  Although the latter will need to be augmented by memoization for it to be efficient.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_iter</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Generate nth fibonacci number though iteration.</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    ------</span>
+<span class="sd">    n: int</span>
+<span class="sd">        The number in the sequence to generate.</span>
+<span class="sd">        Assumes n &gt; 1</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nxt</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">last</span><span class="p">,</span> <span class="n">nxt</span> <span class="o">=</span> <span class="n">nxt</span><span class="p">,</span> <span class="n">last</span><span class="o">+</span><span class="n">nxt</span>
+    <span class="k">return</span> <span class="n">nxt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expected</span> <span class="o">=</span> <span class="mi">12_586_269_025</span>
+<span class="n">fib_iter</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As an alternative you could implement a solution using <strong>recursion</strong>.  Given the mathematical formula for the fibonnaci sequence you would forgiven for thinking this is the obvious way to solve it.  However, note that with recursion we end up <strong>duplicating</strong> computational effort.  I.e. we repeated resolve the same problem.  We can manage this using <strong>memoization</strong> where we cache fibonnaci numbers already solved (in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> for fast lookup).  The solution below implements this using a custom python decorator, but you could also use <code class="docutils literal notranslate"><span class="pre">functools.lru_cache</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Memoization Decorator.  </span>
+<span class="sd">    Creates a cache (lookup) of the historical calls to @func.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns @func wrapped in with a memory to avoid recalling func for </span>
+<span class="sd">    cached values.</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    ------</span>
+<span class="sd">    func: object</span>
+<span class="sd">        Python function to decorate</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    function: cache decorator</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">def</span> <span class="nf">cache_decorator</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">history</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+            <span class="n">history</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="k">return</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="n">cache_decorator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@cache</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Calculates the nth fibinaci number using recursion.</span>
+<span class="sd">    </span>
+<span class="sd">    Note this function is extremely slow for n &gt; 35 unless</span>
+<span class="sd">    memoization is used.</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    ------</span>
+<span class="sd">    n: int</span>
+<span class="sd">        Assumes &gt;= 1</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expected</span> <span class="o">=</span> <span class="mi">12586269025</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12586269025
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
+<p>Given a 6x6 matrix <span class="math notranslate nohighlight">\(A\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">4</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>An hourglass is a subset of values with indices falling in this pattern in <span class="math notranslate nohighlight">\(A\)</span>’s graphical representation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="n">b</span> <span class="n">c</span>
+  <span class="n">d</span> 
+<span class="n">e</span> <span class="n">f</span> <span class="n">g</span>
+</pre></div>
+</div>
+<p>In total, there are 16 hourglasses in <span class="math notranslate nohighlight">\(A\)</span>. An hourglass sum is the sum of all the values it contains.</p>
+<p>For example the first and second hour glasses in <span class="math notranslate nohighlight">\(A\)</span> are therefore.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>    <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+  <span class="mi">1</span>        <span class="mi">0</span>
+<span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>    <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>subset 1 total = 1+1+1+1+1+1+1 = 7</p>
+<p>subset 2 total = 1+1+0+0+1+1+0 = 4</p>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Code a function that accepts an matrix as a parameter (you can assume it is always 6x6)</p></li>
+<li><p>The function must calculate all hourglass sums and return the <strong>maximum</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>).</p></li>
+</ul>
+<p><strong>Test data</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># expected answer = 19</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+
+
+<span class="c1"># expected answer = 13</span>
+<span class="n">matrix2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Example solution<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">matrix2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_hourglass_sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    For 6 x 6 array calculates all the 3 x 3 hourglass sums</span>
+<span class="sd">    and returns the maximum.</span>
+<span class="sd">    </span>
+<span class="sd">    E.g. Given the 6x6 matrix $A$</span>
+<span class="sd">    </span>
+<span class="sd">    1 1 1 0 0 0</span>
+<span class="sd">    0 1 0 0 0 0</span>
+<span class="sd">    1 1 1 0 0 0</span>
+<span class="sd">    0 0 2 4 4 0</span>
+<span class="sd">    0 0 0 2 0 0</span>
+<span class="sd">    0 0 1 2 4 0</span>
+<span class="sd">    </span>
+<span class="sd">    The first and second hourglasses are</span>
+<span class="sd">    </span>
+<span class="sd">    1 1 1    1 1 0</span>
+<span class="sd">      1        0</span>
+<span class="sd">    1 1 1    1 1 0</span>
+<span class="sd">    </span>
+<span class="sd">    subset_1 total = 1+1+1+1+1+1+1 = 7</span>
+<span class="sd">    subset_2 total = 1+1+0+0+1+1+0 = 4</span>
+<span class="sd">       </span>
+<span class="sd">    Params:</span>
+<span class="sd">    ------</span>
+<span class="sd">    matrix: list</span>
+<span class="sd">        A 6 x 6 matrix implemented as a list of lists</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    int</span>
+<span class="sd">    </span>
+<span class="sd">    Example usage:</span>
+<span class="sd">    -------------</span>
+<span class="sd">    ```python</span>
+<span class="sd">    &gt;&gt;&gt; matrix = [[1, 1, 1, 0, 0, 0],</span>
+<span class="sd">    ...           [0, 1, 0, 0, 0, 0],</span>
+<span class="sd">    ...           [1, 1, 1, 0, 0, 0],</span>
+<span class="sd">    ...           [0, 0, 2, 4, 4, 0],</span>
+<span class="sd">    ...           [0, 0, 0, 2, 0, 0],</span>
+<span class="sd">    ...           [0, 0, 1, 2, 4, 0]]</span>
+<span class="sd">    &gt;&gt;&gt; max_hourglass_sum(matrix)</span>
+<span class="sd">    19</span>
+<span class="sd">    ```</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">n_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">n_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+            
+            <span class="c1"># hourglass subset</span>
+            <span class="n">top</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">:</span><span class="n">col</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">middle</span> <span class="o">=</span> <span class="p">[</span><span class="n">matrix</span><span class="p">[</span><span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">col</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">bottom</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">row</span><span class="o">+</span><span class="mi">2</span><span class="p">][</span><span class="n">col</span><span class="p">:</span><span class="n">col</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
+            
+            <span class="n">subset_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">top</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="n">bottom</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">subset_sum</span> <span class="o">&gt;</span> <span class="n">maximum</span><span class="p">:</span>
+                <span class="n">maximum</span> <span class="o">=</span> <span class="n">subset_sum</span>
+
+    <span class="k">return</span> <span class="n">maximum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">max_hourglass_sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_hourglass_sum</span><span class="p">(</span><span class="n">matrix2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise-5">
+<h2>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h2>
+<p>The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence’s elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible.</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Given the vector <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">1,</span> <span class="pre">8,</span> <span class="pre">2,</span> <span class="pre">5]</span></code> the longest increasing subsequence is <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">5]</span></code> and has length 3.</p></li>
+<li><p>Given the vector <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">2,</span> <span class="pre">8,</span> <span class="pre">6,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9,</span> <span class="pre">5]</span></code> the longest increasing subsequence is <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9]</span></code> and has length 4</p></li>
+</ul>
+<p><strong>Task</strong></p>
+<ul class="simple">
+<li><p>Code a function that accepts a sequence as parameter.  The function should return the <strong>length</strong> of the longest increasing subsequence.</p></li>
+</ul>
+<p><strong>Hints</strong>:</p>
+<ul class="simple">
+<li><p>You are being asked to return the <strong>length not the actual subsequence</strong>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Example solution<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">longest_inc_subseq</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Solve the longest increasing subsequence (lis) problem in a single pass and</span>
+<span class="sd">    return its length.</span>
+<span class="sd">    </span>
+<span class="sd">    Uses a memory recording the longest increasing subsequence up to that point.</span>
+<span class="sd">    This is a dynamic programming solution to the problem.</span>
+<span class="sd">    </span>
+<span class="sd">    A nice video on this is here: </span>
+<span class="sd">    https://www.youtube.com/watch?v=aPQY__2H3tE&amp;t=162s</span>
+<span class="sd">    </span>
+<span class="sd">    Given a list of values A then the lis up to item n is   </span>
+<span class="sd">    </span>
+<span class="sd">    memory[n] = 1 + max([memory[k] for k in range(n) if A[k] &lt; A[n]])</span>
+<span class="sd">    </span>
+<span class="sd">    Example:</span>
+<span class="sd">    </span>
+<span class="sd">    Given the sequence [3, 1, 8, 2, 5] then the iterations are:</span>
+<span class="sd">   </span>
+<span class="sd">    0: memory[0] = 1 </span>
+<span class="sd">    1: memory[1] = 1 + max(0) = 1 + 0 = 1</span>
+<span class="sd">    2: memory[2] = 1 + max(0, memory[0], memory[1]) = 1 + 1 = 2</span>
+<span class="sd">    3. memory[3] = 1 + max(0, memory[1]) = 1 + 1 = 2</span>
+<span class="sd">    4. memory[4] = 1 + max(0, memory[0], memory[1], memory[3]) = 1 + 2 = 3</span>
+<span class="sd">   </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    int</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># memory of lis up to that element in the list</span>
+    <span class="n">memory</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">memory</span><span class="p">)):</span>
+        <span class="c1"># select the subproblems where value in seq &lt; current value </span>
+        <span class="n">subproblems</span> <span class="o">=</span> <span class="p">[</span><span class="n">memory</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="n">seq</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        
+        <span class="c1"># save the lis up to this point - 0 added in as default case.</span>
+        <span class="n">memory</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">subproblems</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">memory</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seqs</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="n">longest_inc_subseq</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">seqs</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exercise-n">
+<h2>Exercise <strong>n</strong>:<a class="headerlink" href="#exercise-n" title="Permalink to this headline">¶</a></h2>
+<p>A string is said to be a special string if either of two conditions is met:</p>
+<ul class="simple">
+<li><p>All of the characters are the same, e.g. aaa.</p></li>
+<li><p>All characters except the middle one are the same, e.g. aadaa.</p></li>
+</ul>
+<p>A special substring is any substring of a string which meets one of those criteria. Given a string, determine how many special substrings can be formed from it.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;mnonopoo&#39;</span>
+</pre></div>
+</div>
+<p>s contains the following 12 special substrings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;non&#39;</span><span class="p">,</span> <span class="s1">&#39;ono&#39;</span><span class="p">,</span> <span class="s1">&#39;opo&#39;</span><span class="p">,</span> <span class="s1">&#39;oo&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Write a function called <code class="docutils literal notranslate"><span class="pre">substr_count(s)</span></code> that accepts a <code class="docutils literal notranslate"><span class="pre">str</span></code> parameter <code class="docutils literal notranslate"><span class="pre">s</span></code> and calculates the number of instances of a special string within it.</p></li>
+<li><p>Use the example above and the test data below to test your function.</p></li>
+<li><p><strong>Extra Challenge</strong>: can you solve this problem efficiently with only one or two passes of s?</p></li>
+</ul>
+<p><strong>Test data</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># expected answer = 7</span>
+<span class="c1"># {&#39;a&#39;, &#39;s&#39;, &#39;a&#39;, &#39;s&#39;, &#39;d&#39;, &#39;asa&#39;, &#39;sas&#39;}</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;asasd&#39;</span>
+
+<span class="c1"># expected answer = 10</span>
+<span class="c1"># {&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;b&#39;, &#39;a&#39;, &#39;b&#39;, &#39;a&#39;. &#39;bcb&#39;, &#39;bab&#39;, &#39;aba&#39;}</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abcbaba&#39;</span>
+
+<span class="c1"># expected answer = 10</span>
+<span class="c1"># {&#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;aa&#39;, &#39;aa&#39;, &#39;aa&#39;, &#39;aaa&#39;, &#39;aaa&#39;, &#39;aaaa&#39;}</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;aaaa&#39;</span>
+
+<span class="c1"># expected answer = 393074</span>
+<span class="c1"># len(big_s) = 327308 (!)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;big_special_str.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">big_s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>I have provided the code below to download the instance of big s for you</strong></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RESPONSE_SUCCESS</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">BIG_S_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
+  <span class="o">+</span> <span class="s1">&#39;coding-for-ml/main/content/01_advanced_python/labs/big_special_str.txt&#39;</span>
+
+<span class="k">def</span> <span class="nf">get_big_s</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    downloads large test problem</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">BIG_S_URL</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">RESPONSE_SUCCESS</span><span class="p">:</span>
+
+        <span class="c1"># write to file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;big_special_str.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">big_s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;connection error for big s&#39;</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">big_s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># test data</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mnonopoo&#39;</span><span class="p">,</span> <span class="s1">&#39;asasd&#39;</span><span class="p">,</span> <span class="s1">&#39;abcbaba&#39;</span><span class="p">,</span> <span class="s1">&#39;aaaa&#39;</span><span class="p">,</span> <span class="n">get_big_s</span><span class="p">()]</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">393074</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Example solution<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution...</span>
+<span class="k">def</span> <span class="nf">compact_format</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Converts a string into a compact list format </span>
+<span class="sd">    that includes the letter and an integer indicating</span>
+<span class="sd">    the number of times is appears consecutively before</span>
+<span class="sd">    a charactor change.</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    ------</span>
+<span class="sd">    s: str</span>
+<span class="sd">        A string to convert</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    ------</span>
+<span class="sd">    list</span>
+<span class="sd">    </span>
+<span class="sd">    Example usage:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    </span>
+<span class="sd">    ```python</span>
+<span class="sd">    &gt;&gt;&gt; s = &#39;asasd&#39;</span>
+<span class="sd">    &gt;&gt;&gt; compact_format(s)</span>
+<span class="sd">    [[&#39;a&#39;, 1], [&#39;s&#39;, 1], [&#39;a&#39;, 1], [&#39;s&#39;, 1], [&#39;d&#39;, 1]]</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; s = &#39;aaaa&#39;</span>
+<span class="sd">    &gt;&gt;&gt; compact_format(s)</span>
+<span class="sd">   [[&#39;a&#39;, 4]]</span>
+<span class="sd">    ```</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">current_char</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">compact</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">current_char</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">compact</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">current_char</span><span class="p">,</span> <span class="n">count</span><span class="p">])</span>
+            <span class="n">current_char</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1">#final letter</span>
+    <span class="n">compact</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">current_char</span><span class="p">,</span> <span class="n">count</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">compact</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairwise_comparisons</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    The number of all pairwise combinations that can be performed.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(((</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">substr_count</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Count the special substring instances in the string</span>
+<span class="sd">    </span>
+<span class="sd">    e.g. &#39;aaaa&#39; = {&#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;aa&#39;, &#39;aa&#39;, &#39;aa&#39;, &#39;aaa&#39;, &#39;aaa&#39;, &#39;aaaa&#39;}</span>
+<span class="sd">    </span>
+<span class="sd">    function returns = 10</span>
+<span class="sd">    </span>
+<span class="sd">    e.g. &#39;abcbaba&#39; = {&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;b&#39;, &#39;a&#39;, &#39;b&#39;, &#39;a&#39;. &#39;bcb&#39;, &#39;bab&#39;, &#39;aba&#39;}</span>
+
+<span class="sd">    function returns = 10</span>
+<span class="sd">    </span>
+<span class="sd">    Function performs a single pass of s and then a second pass of a smaller</span>
+<span class="sd">    compact representation.  Technically this could all be achieved in a single</span>
+<span class="sd">    pass.  This solution is slightly more readable at the loss of a bit of </span>
+<span class="sd">    efficiency.</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    -------</span>
+<span class="sd">    s: str</span>
+<span class="sd">        The string to parse.  </span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    int</span>
+<span class="sd">    </span>
+<span class="sd">    Example usage:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    </span>
+<span class="sd">    ```python</span>
+<span class="sd">    &gt;&gt;&gt; s = &#39;aaaa&#39;</span>
+<span class="sd">    &gt;&gt;&gt; substr_count(s)</span>
+<span class="sd">    10</span>
+<span class="sd">    ```</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+     
+    <span class="c1"># pre-processing of string into compact format</span>
+    <span class="n">cs</span> <span class="o">=</span> <span class="n">compact_format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+    <span class="c1"># loop comparison of s[1] to s[n-1]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">pairwise_comparisons</span><span class="p">(</span><span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        
+        <span class="c1">#only 1 middle char + same char in head &amp; tail</span>
+        <span class="k">if</span> <span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span> 
+            <span class="c1"># e.g.1 cacc.  Therefore count + 1 (cac)</span>
+            <span class="c1"># e.g.2 cccacc  add 2 (ccacc and cac)</span>
+            <span class="c1"># e.g.3 ccccacc add 2 (ccacc and cac)</span>
+            <span class="c1"># this is the minimum of each of the two </span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="nb">min</span><span class="p">(</span><span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+            
+    <span class="c1"># first and last missed in above loop</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="n">pairwise_comparisons</span><span class="p">(</span><span class="n">cs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">pairwise_comparisons</span><span class="p">(</span><span class="n">cs</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is what compact format outputs</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;asasd&#39;</span>
+<span class="n">compact_format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># test function</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mnonopoo&#39;</span><span class="p">,</span> <span class="s1">&#39;asasd&#39;</span><span class="p">,</span> <span class="s1">&#39;abcbaba&#39;</span><span class="p">,</span> <span class="s1">&#39;aaaa&#39;</span><span class="p">,</span> <span class="n">get_big_s</span><span class="p">()]</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">393074</span><span class="p">]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">substr_count</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">test_data</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">expected</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/01_advanced_python/labs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../../001_setup/docker.html" title="previous page">Docker</a>
+    <a class='right-next' id="next-link" href="../lecture/01_python_classes.html" title="next page">Class coding basics</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

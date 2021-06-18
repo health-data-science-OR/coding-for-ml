@@ -1,0 +1,908 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Accessing large remote datasets &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Lectures" href="../../appendix/fp_lectures.html" />
+    <link rel="prev" title="Practicals" href="../03_labs_front_page.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_lectures_front_page.html">
+   Lecture notes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/01_intro_pandas.html#reading-data-into-pandas-from-a-flat-file">
+     Reading data into pandas from a flat file
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../03_labs_front_page.html">
+   Practicals
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Accessing large remote datasets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix -Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/02_stat_prog/labs/nhs_synthetic_ed_download.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/02_stat_prog/labs/nhs_synthetic_ed_download.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/labs/nhs_synthetic_ed_download.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/labs/nhs_synthetic_ed_download.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complications-in-use-of-the-full-dataset">
+   Complications in use of the full dataset.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compression-format">
+     Compression format
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#memory-requirements">
+     Memory requirements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pip-installs">
+   pip installs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#helper-functions">
+   Helper functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-code">
+   Download code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decompress-7z-archive-and-read-into-pandas">
+   Decompress .7z archive and read into
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas.
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test">
+   Test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#end">
+   End
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="accessing-large-remote-datasets">
+<h1>Accessing large remote datasets<a class="headerlink" href="#accessing-large-remote-datasets" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>Here we will download and extract a remote NHS Synthetic Data that uses a non-standard compression.</p>
+</div></blockquote>
+<p>NHS England publishes a fantastic <a class="reference external" href="https://data.england.nhs.uk/dataset/a-e-synthetic-data">synthetic dataset</a> for Accident and Emergency departments in England.  This is a relatively large clean dataset that contains over 65M rows.</p>
+<p><strong>In this worked example you will learn:</strong></p>
+<ul class="simple">
+<li><p>How do download a remote data source</p></li>
+<li><p>How to use third party libraries to decompress a .7z archive.</p></li>
+<li><p>How to reduce the size of a large <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> in memory.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="complications-in-use-of-the-full-dataset">
+<h2>Complications in use of the full dataset.<a class="headerlink" href="#complications-in-use-of-the-full-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Even though this dataset is sanitised and pre-cleaned there are two complications if you are new to data science.</p>
+<section id="compression-format">
+<h3>Compression format<a class="headerlink" href="#compression-format" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The public URL for this dataset provides access to the data in <strong>7zip</strong> format (.7z). The .7z format offers a good compression ratio (4.5GB compresses to 630MB), but at the cost of using a non-standard (and to be honest Microsoft Windows OS centric) format.</p></li>
+<li><p>Ideally all machine learning studies have a reproducible pipeline from raw data at source through final analysis and results. At the time of writing <code class="docutils literal notranslate"><span class="pre">pandas</span></code> does not natively deal with .7z and a third party dependency is needed or it must be extracted outside of the python environment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> can handle other formats; for example, <strong>.zip</strong> and <strong>.tar</strong></p></li>
+</ul>
+<blockquote>
+<div><p>Here we will focus on how to decompress .7z within python using a third party dependency.</p>
+</div></blockquote>
+</section>
+<section id="memory-requirements">
+<h3>Memory requirements<a class="headerlink" href="#memory-requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>This notebook demonstrates how to download the NHS England hosted dataset. This is a large dataset to download: 630MB compressed and 4.5GB uncompressed.</p></li>
+<li><p>If read directly into <code class="docutils literal notranslate"><span class="pre">pandas</span></code> without considering datatypes of each column the size in memory is 8.8GB.  Depending on your machine this may be extremely problematic (it is even problematic using the generous memory provided by Google Colab in the cloud).  One solution is to make use of a third party scheduling tool such as <strong>Dask</strong>. If pandas datatypes are specified the size is reduced to ~2.3GB in memory.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pip-installs">
+<h2>pip installs<a class="headerlink" href="#pip-installs" title="Permalink to this headline">¶</a></h2>
+<p>This notebook can be run using the <code class="docutils literal notranslate"><span class="pre">hds_code</span></code> environment.  Outside of this environment you will need to install <code class="docutils literal notranslate"><span class="pre">py7zr</span></code> using the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+  <span class="c1"># This is the package that can extract .7z </span>
+  <span class="o">!</span>pip install <span class="nv">py7zr</span><span class="o">==</span><span class="m">0</span>.14.1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># used for extracting .7z</span>
+<span class="kn">import</span> <span class="nn">py7zr</span>
+
+<span class="c1"># pythonic cross platform approach for HTTPS request</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="helper-functions">
+<h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
+<p>We define the following helper functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">as_dtype_dict</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Converts a `DataFrame` of column names</span>
+<span class="sd">    and datatypes to a dict suitable for importing data.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    ------</span>
+<span class="sd">    dict</span>
+<span class="sd">    </span>
+<span class="sd">    {column_name: data_type}</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">as_list</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s1">&#39;split&#39;</span><span class="p">)[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">as_list</span> <span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">read_ed_data</span><span class="p">(</span><span class="n">data_types</span><span class="p">,</span> <span class="n">archive</span><span class="p">,</span> <span class="n">nhs_fname</span><span class="p">,</span> <span class="n">clean_fname</span><span class="p">,</span>
+                 <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Reads data in from the compressed file.</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    -------</span>
+<span class="sd">    data_types: dict</span>
+<span class="sd">        dict linking column names to data types</span>
+
+<span class="sd">    archive: str</span>
+<span class="sd">      name of the archive file in .7z format</span>
+
+<span class="sd">    nhs_name: str</span>
+<span class="sd">        The NHS file name for the extracted file</span>
+<span class="sd">        </span>
+<span class="sd">    clean_name: str</span>
+<span class="sd">        A more usable and cleaned up filename if needed.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># extract synthetic data preread into pandas</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;extracting =&gt;&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">py7zr</span><span class="o">.</span><span class="n">SevenZipFile</span><span class="p">(</span><span class="n">archive</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">z</span><span class="p">:</span>
+        <span class="n">z</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+    <span class="c1"># rename .7z file to cleaner format</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">nhs_fname</span><span class="p">,</span> <span class="n">clean_fname</span><span class="p">)</span>
+
+    <span class="c1"># read into pandas</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;reading CSV =&gt;&#39;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">clean_fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">data_types</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+
+    <span class="c1"># cleans up uncompressed file as &gt; 4.5GB in size.</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">clean_fname</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">file_size</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Returns remote file size in MB</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+  <span class="n">conversion</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+  <span class="n">fsize</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Content-Length&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">conversion</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File size: </span><span class="si">{</span><span class="n">fsize</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> MB&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>All of the data used in this notebook is held remotely.</p>
+<ul class="simple">
+<li><p>The first url <code class="docutils literal notranslate"><span class="pre">DATA_URL</span></code> is the location of the compressed NHS Synthetic A&amp;E dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">META_URL</span></code> is a link to a Comma Separated Value (CSV) file in GitHub that contains meta data about the NHS dataset (user defined). There are two columns: field names and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data types.</p></li>
+</ul>
+<p>We also have some parameters to clean up:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NHS_FNAME</span></code>: when decompressed the NHS file name contains both whitespace and the charactor ‘&amp;’.  This is bad practice so we rename the file to:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLEAN_FNAME</span></code>: a more standard file name for the CSV.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLEAN_ARCHIVE_NAME</span></code>: when downloaded the arhive has an unusual file name and extension.  We rename this to make it easier to work with.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLEAN_UP_WHEN_DONE</span></code>: If true the download .7z file is deleted from the local machines harddrive when the analysis is complete.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RESPONSE_SUCCESS</span></code>: a constant. The value 200 is returned if the dataset downloads successfully.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NHS data url</span>
+<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s1">&#39;https://nhsengland-direct-uploads.s3-eu-west-1.amazonaws.com/&#39;</span> \
+             <span class="o">+</span> <span class="s1">&#39;A</span><span class="si">%26E</span><span class="s1">+Synthetic+Data.7z?versionId=null&#39;</span>
+
+<span class="c1"># meta data (created by me - contains pandas data types for columns)</span>
+<span class="n">META_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
+                <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/synthetic_ed_meta_data.csv&#39;</span>
+
+<span class="c1"># renaming info for file names</span>
+<span class="n">NHS_FNAME</span> <span class="o">=</span> <span class="s1">&#39;A&amp;E Synthetic Data.csv&#39;</span>
+<span class="n">CLEAN_FNAME</span> <span class="o">=</span> <span class="s1">&#39;ed_synthetic.csv&#39;</span>
+<span class="n">CLEAN_ARCHIVE_NAME</span> <span class="o">=</span> <span class="s1">&#39;ed_synthetic.7z&#39;</span>
+
+<span class="c1"># delete the downloaded file when done.</span>
+<span class="n">CLEAN_UP_WHEN_DONE</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1">#download successful</span>
+<span class="n">RESPONSE_SUCCESS</span> <span class="o">=</span> <span class="mi">200</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="download-code">
+<h2>Download code<a class="headerlink" href="#download-code" title="Permalink to this headline">¶</a></h2>
+<p>There are multiple ways to download the dataset.  Here we will request the file in python using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library.  This file is 630MB in size and download time will vary depending on your connection.</p>
+<p>Lets test and see this in action.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># download file headers and report file size</span>
+<span class="n">file_size</span><span class="p">(</span><span class="n">DATA_URL</span><span class="p">)</span>
+
+<span class="c1"># download the file...(only needs to be done once).</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;downloading =&gt;&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">DATA_URL</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">RESPONSE_SUCCESS</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;successful&#39;</span><span class="p">)</span>
+
+    <span class="c1"># write to file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">CLEAN_ARCHIVE_NAME</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;file not found.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="decompress-7z-archive-and-read-into-pandas">
+<h2>Decompress .7z archive and read into <code class="docutils literal notranslate"><span class="pre">pandas.</span></code><a class="headerlink" href="#decompress-7z-archive-and-read-into-pandas" title="Permalink to this headline">¶</a></h2>
+<p>The synthetic A&amp;E dataset is a big file when extracted &gt; 4.5GB and will take 5-7 minutes to read into pandas.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">read_ed_data</span></code> will first decompress the .7z file and then read it into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  The code automatically cleans up the decompressed file afterwards (deletes).  This is an optional step and if you need to re-read the data multiple times in your analysis code you may wish to keep it in its decompressed form until the end.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Read in the data, with specified column data types.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">  -------</span>
+<span class="sd">  pd.DataFrame</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="c1"># read data types for each column of synthetic ED data</span>
+  <span class="n">data_types</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">META_URL</span><span class="p">)</span>
+
+  <span class="c1"># extract and read</span>
+  <span class="n">df</span> <span class="o">=</span> <span class="n">read_ed_data</span><span class="p">(</span><span class="n">as_dtype_dict</span><span class="p">(</span><span class="n">data_types</span><span class="p">),</span> 
+                    <span class="n">CLEAN_ARCHIVE_NAME</span><span class="p">,</span> 
+                    <span class="n">NHS_FNAME</span><span class="p">,</span> <span class="n">CLEAN_FNAME</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="test">
+<h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># second not ignoring data types</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cleans up</span>
+<span class="k">if</span> <span class="n">CLEAN_UP_WHEN_DONE</span><span class="p">:</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">CLEAN_ARCHIVE_NAME</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="end">
+<h2>End<a class="headerlink" href="#end" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02_stat_prog/labs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../03_labs_front_page.html" title="previous page">Practicals</a>
+    <a class='right-next' id="next-link" href="../../appendix/fp_lectures.html" title="next page">Lectures</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

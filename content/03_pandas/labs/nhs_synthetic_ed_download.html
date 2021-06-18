@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accessing large remote datasets &#8212; Coding for Machine Learning and Data Science</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Accessing large remote datasets &#8212; Python for health data science.</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -25,8 +26,8 @@
     href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -36,17 +37,17 @@
     
   <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -54,6 +55,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Lectures" href="../../appendix/fp_lectures.html" />
     <link rel="prev" title="Practicals" href="../03_labs_front_page.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -73,8 +75,10 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../../index.html">
   
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
   
-  <h1 class="site-logo" id="site-title">Coding for Machine Learning and Data Science</h1>
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -85,13 +89,13 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../front_page.html">
-   Welcome
+   Preface
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Setup
+  Data and software
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -113,23 +117,38 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Revision
+  Algorithms and computational modelling
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../002_basics/fp_lectures.html">
-   Lectures
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/lectures/Lecture1.html">
-     Python Basics
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/lectures/Lecture2.html">
-     Conditionals and Loops
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
     </a>
    </li>
   </ul>
@@ -137,76 +156,18 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../002_basics/fp_practicals.html">
-   Practicals
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/labs/01_basics.html">
-     Basic Python
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/labs/debug1.html">
-     Debug challenge 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/labs/02_basics.html">
-     Conditionals and Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/labs/debug2.html">
-     Debug challenge 2
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Part 1. Advanced Python
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../01_advanced_python/lecture/01_python_classes.html">
-   Lecture: Class coding basics
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Part 2. NumPy
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../02_numpy/02_lectures_front_page.html">
-   Lecture notes
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/lectures/01_numpy_101.html">
-     Basic
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/lectures/02_intermediate_numpy.html">
-     Intermediate
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
     </a>
    </li>
   </ul>
@@ -214,23 +175,91 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../02_numpy/02_labs_front_page.html">
-   Practicals
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/labs/02_lab1.html">
-     Basic
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-     techniques
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/labs/02_lab2.html">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
      Intermediate NumPy
     </a>
    </li>
@@ -239,13 +268,18 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../02_numpy/02_debug_front_page.html">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
    Debug challenges
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/debug_challenges/debug_challenge_2.html">
-     Debug Challenge 2
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
     </a>
    </li>
   </ul>
@@ -255,7 +289,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Part 3. Pandas and MatplotLib
+  Statistical Programming
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -293,6 +327,61 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Accessing large remote datasets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix -Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
     </a>
    </li>
   </ul>
@@ -485,7 +574,7 @@
         
               <div>
                 
-  <div class="section" id="accessing-large-remote-datasets">
+  <section id="accessing-large-remote-datasets">
 <h1>Accessing large remote datasets<a class="headerlink" href="#accessing-large-remote-datasets" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>Here we will download and extract a remote NHS Synthetic Data that uses a non-standard compression.</p>
@@ -498,10 +587,10 @@
 <li><p>How to reduce the size of a large <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> in memory.</p></li>
 </ul>
 <hr class="docutils" />
-<div class="section" id="complications-in-use-of-the-full-dataset">
+<section id="complications-in-use-of-the-full-dataset">
 <h2>Complications in use of the full dataset.<a class="headerlink" href="#complications-in-use-of-the-full-dataset" title="Permalink to this headline">¶</a></h2>
 <p>Even though this dataset is sanitised and pre-cleaned there are two complications if you are new to data science.</p>
-<div class="section" id="compression-format">
+<section id="compression-format">
 <h3>Compression format<a class="headerlink" href="#compression-format" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The public URL for this dataset provides access to the data in <strong>7zip</strong> format (.7z). The .7z format offers a good compression ratio (4.5GB compresses to 630MB), but at the cost of using a non-standard (and to be honest Microsoft Windows OS centric) format.</p></li>
@@ -511,36 +600,36 @@
 <blockquote>
 <div><p>Here we will focus on how to decompress .7z within python using a third party dependency.</p>
 </div></blockquote>
-</div>
-<div class="section" id="memory-requirements">
+</section>
+<section id="memory-requirements">
 <h3>Memory requirements<a class="headerlink" href="#memory-requirements" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>This notebook demonstrates how to download the NHS England hosted dataset. This is a large dataset to download: 630MB compressed and 4.5GB uncompressed.</p></li>
 <li><p>If read directly into <code class="docutils literal notranslate"><span class="pre">pandas</span></code> without considering datatypes of each column the size in memory is 8.8GB.  Depending on your machine this may be extremely problematic (it is even problematic using the generous memory provided by Google Colab in the cloud).  One solution is to make use of a third party scheduling tool such as <strong>Dask</strong>. If pandas datatypes are specified the size is reduced to ~2.3GB in memory.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="pip-installs">
+<section id="pip-installs">
 <h2>pip installs<a class="headerlink" href="#pip-installs" title="Permalink to this headline">¶</a></h2>
 <p>This notebook can be run using the <code class="docutils literal notranslate"><span class="pre">hds_code</span></code> environment.  Outside of this environment you will need to install <code class="docutils literal notranslate"><span class="pre">py7zr</span></code> using the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import sys
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
-if &#39;google.colab&#39; in sys.modules:
-  # This is the package that can extract .7z 
-  !pip install py7zr==0.14.1
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+  <span class="c1"># This is the package that can extract .7z </span>
+  <span class="o">!</span>pip install <span class="nv">py7zr</span><span class="o">==</span><span class="m">0</span>.14.1
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="imports">
+</section>
+<section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -553,13 +642,13 @@ if &#39;google.colab&#39; in sys.modules:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="helper-functions">
+</section>
+<section id="helper-functions">
 <h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
 <p>We define the following helper functions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">as_dtype_dict</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">as_dtype_dict</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Converts a `DataFrame` of column names</span>
 <span class="sd">    and datatypes to a dict suitable for importing data.</span>
@@ -630,9 +719,9 @@ if &#39;google.colab&#39; in sys.modules:
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
+<section id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>All of the data used in this notebook is held remotely.</p>
 <ul class="simple">
@@ -649,7 +738,7 @@ if &#39;google.colab&#39; in sys.modules:
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># NHS data url</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NHS data url</span>
 <span class="n">DATA_URL</span> <span class="o">=</span> <span class="s1">&#39;https://nhsengland-direct-uploads.s3-eu-west-1.amazonaws.com/&#39;</span> \
              <span class="o">+</span> <span class="s1">&#39;A</span><span class="si">%26E</span><span class="s1">+Synthetic+Data.7z?versionId=null&#39;</span>
 
@@ -671,15 +760,15 @@ if &#39;google.colab&#39; in sys.modules:
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="download-code">
+<section id="download-code">
 <h2>Download code<a class="headerlink" href="#download-code" title="Permalink to this headline">¶</a></h2>
 <p>There are multiple ways to download the dataset.  Here we will request the file in python using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library.  This file is 630MB in size and download time will vary depending on your connection.</p>
 <p>Lets test and see this in action.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># download file headers and report file size</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># download file headers and report file size</span>
 <span class="n">file_size</span><span class="p">(</span><span class="n">DATA_URL</span><span class="p">)</span>
 
 <span class="c1"># download the file...(only needs to be done once).</span>
@@ -698,15 +787,15 @@ if &#39;google.colab&#39; in sys.modules:
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="decompress-7z-archive-and-read-into-pandas">
+<section id="decompress-7z-archive-and-read-into-pandas">
 <h2>Decompress .7z archive and read into <code class="docutils literal notranslate"><span class="pre">pandas.</span></code><a class="headerlink" href="#decompress-7z-archive-and-read-into-pandas" title="Permalink to this headline">¶</a></h2>
 <p>The synthetic A&amp;E dataset is a big file when extracted &gt; 4.5GB and will take 5-7 minutes to read into pandas.</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">read_ed_data</span></code> will first decompress the .7z file and then read it into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  The code automatically cleans up the decompressed file afterwards (deletes).  This is an optional step and if you need to re-read the data multiple times in your analysis code you may wish to keep it in its decompressed form until the end.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Read in the data, with specified column data types.</span>
 
@@ -726,12 +815,12 @@ if &#39;google.colab&#39; in sys.modules:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="test">
+</section>
+<section id="test">
 <h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># second not ignoring data types</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># second not ignoring data types</span>
 <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
@@ -742,25 +831,25 @@ if &#39;google.colab&#39; in sys.modules:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># cleans up</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cleans up</span>
 <span class="k">if</span> <span class="n">CLEAN_UP_WHEN_DONE</span><span class="p">:</span>
   <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">CLEAN_ARCHIVE_NAME</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="end">
+</section>
+<section id="end">
 <h2>End<a class="headerlink" href="#end" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -788,6 +877,7 @@ if &#39;google.colab&#39; in sys.modules:
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../03_labs_front_page.html" title="previous page">Practicals</a>
+    <a class='right-next' id="next-link" href="../../appendix/fp_lectures.html" title="next page">Lectures</a>
 
         </div>
         

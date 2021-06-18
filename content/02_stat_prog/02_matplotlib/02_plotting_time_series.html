@@ -1,0 +1,1109 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Exploring Time Series &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercises" href="../03_exercises_front_page.html" />
+    <link rel="prev" title="Visualising data" href="../02_visual_front_page.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/04_datetimes.html">
+     Managing time series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exploring Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/01_data_wrangling_solutions.html">
+     Stroke thrombolysis - data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/01_data_wrangling_solutions.html#exercise-6-encoding-fields-with-2-categories">
+     Exercise 6: Encoding fields with &gt; 2 categories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data (SOLUTIONS)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/02_stat_prog/02_matplotlib/02_plotting_time_series.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/02_stat_prog/02_matplotlib/02_plotting_time_series.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/02_matplotlib/02_plotting_time_series.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/02_matplotlib/02_plotting_time_series.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploring-add-plotting-before-forecasting">
+   Exploring add plotting before forecasting.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-ed-arrivals-dataset">
+   The ED arrivals dataset.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-use-pandas-and-matplotlib-to-visualise-a-time-series">
+     How to use Pandas and Matplotlib to visualise a time series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#improving-the-appearance-of-your-time-series-plot">
+     Improving the appearance of your time series plot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-seaborn">
+       Using Seaborn
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualising-monthly-data-after-adjusting-for-days-in-the-month">
+     Visualising monthly data after adjusting for days in the month
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-a-smoother-through-the-time-series">
+   Run a smoother through the time series.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#breaking-a-times-series-up-into-its-trend-and-seasonal-components">
+     Breaking a times series up into its trend and seasonal components.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#additive-decomposition">
+       Additive decomposition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiplicative-decomposition">
+       Multiplicative decomposition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-the-components">
+       Plotting the components
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="exploring-time-series">
+<h1>Exploring Time Series<a class="headerlink" href="#exploring-time-series" title="Permalink to this headline">¶</a></h1>
+<section id="exploring-add-plotting-before-forecasting">
+<h2>Exploring add plotting before forecasting.<a class="headerlink" href="#exploring-add-plotting-before-forecasting" title="Permalink to this headline">¶</a></h2>
+<p>Before any forecasting is attempted it is important to understand a time series.</p>
+<p>In this notebook you will learn how to:</p>
+<ul class="simple">
+<li><p>Plot a time series</p></li>
+<li><p>Adjust monthly time series to account for the different number of days</p></li>
+<li><p>Run a smoother through the time series to assess trend.</p></li>
+<li><p>Break a time series into its trend and seasonal components.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<span class="kn">import</span> <span class="nn">matplotlib.style</span> <span class="k">as</span> <span class="nn">style</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">seasonal_decompose</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.11.1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-ed-arrivals-dataset">
+<h2>The ED arrivals dataset.<a class="headerlink" href="#the-ed-arrivals-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The dataset we will use represent monthly adult (age &gt; 18) arrivals to an Emergency Department.  The observations are between April 2009 and May 2017.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../../data/ed_mth_ts.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ed_month</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;MS&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first thing you should do when exploring a time series is check its length and duration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This tells us how many months are in the ts</span>
+<span class="n">ed_month</span><span class="o">.</span><span class="n">shape</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(98, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#the minimum date</span>
+<span class="n">ed_month</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2009-04-01 00:00:00&#39;, freq=&#39;MS&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#the maximum date</span>
+<span class="n">ed_month</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2017-05-01 00:00:00&#39;, freq=&#39;MS&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="how-to-use-pandas-and-matplotlib-to-visualise-a-time-series">
+<h3>How to use Pandas and Matplotlib to visualise a time series<a class="headerlink" href="#how-to-use-pandas-and-matplotlib-to-visualise-a-time-series" title="Permalink to this headline">¶</a></h3>
+<p>Pandas implements matplotlib functionality as part of its <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. The quickest way to visualise a time series in Python is therefore to call the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method takes a tuple parameter called <code class="docutils literal notranslate"><span class="pre">figsize</span></code>. The tuple represents the (length, height) of the image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa883e15f10&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_11_1.png" src="../../../_images/02_plotting_time_series_11_1.png" />
+</div>
+</div>
+<p>You can then easily to save a high resolution image to file if you would like to use it in a report.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;images/explore.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02_plotting_time_series_13_0.png" src="../../../_images/02_plotting_time_series_13_0.png" />
+</div>
+</div>
+</section>
+<section id="improving-the-appearance-of-your-time-series-plot">
+<h3>Improving the appearance of your time series plot<a class="headerlink" href="#improving-the-appearance-of-your-time-series-plot" title="Permalink to this headline">¶</a></h3>
+<p>Matplotlib is very flexible. The full functionality is beyond the scope of this tutorial and it is recommended to review the matplotlib site for examples.  Here we recommend the following parameters to help manipulate your plot.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> e.g. ‘green’, ‘blue’ or ‘orange’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code> e.g. ‘–’ for dashed, ‘-.’ for dash-dot, or ‘’ for none.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code> - a number - typically 1, 1.5 or 2 will do.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code> - e.g. ‘o’ for dots, ‘+’ for crosses, ‘^’ for triangle, and ‘’ for none.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa88463e410&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_16_1.png" src="../../../_images/02_plotting_time_series_16_1.png" />
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">plot</span></code> method returns an <code class="docutils literal notranslate"><span class="pre">axis</span></code> object. You can use this to manipulate the plot.  The following is often useful for time series plots.</p>
+<ul class="simple">
+<li><p>The y and x scale</p></li>
+<li><p>The y and x label.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;attendances&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12_000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 12000.0)
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_18_1.png" src="../../../_images/02_plotting_time_series_18_1.png" />
+</div>
+</div>
+<section id="using-seaborn">
+<h4>Using Seaborn<a class="headerlink" href="#using-seaborn" title="Permalink to this headline">¶</a></h4>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package to improve the default appearance of your charts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa884caa350&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_21_1.png" src="../../../_images/02_plotting_time_series_21_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="visualising-monthly-data-after-adjusting-for-days-in-the-month">
+<h3>Visualising monthly data after adjusting for days in the month<a class="headerlink" href="#visualising-monthly-data-after-adjusting-for-days-in-the-month" title="Permalink to this headline">¶</a></h3>
+<p>When you are working with monthly data, some of the noise you are seeing the time series is due to months having a different number of days.  This makes forecasting harder than it needs to be.  Adjusting the time series by dividing by the number of days per month removes that noise.</p>
+<p>This is very straightforward in pandas, using the built in property <code class="docutils literal notranslate"><span class="pre">DateTimeIndex.days_in_month</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arrival_rate</span> <span class="o">=</span> <span class="n">ed_month</span><span class="p">[</span><span class="s1">&#39;arrivals&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">ed_month</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">days_in_month</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arrival_rate</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>date
+2009-04-01    298.266667
+2009-05-01    305.709677
+2009-06-01    313.900000
+2009-07-01    306.967742
+2009-08-01    281.612903
+Freq: MS, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>arrivals</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2009-04-01</th>
+      <td>8948</td>
+    </tr>
+    <tr>
+      <th>2009-05-01</th>
+      <td>9477</td>
+    </tr>
+    <tr>
+      <th>2009-06-01</th>
+      <td>9417</td>
+    </tr>
+    <tr>
+      <th>2009-07-01</th>
+      <td>9516</td>
+    </tr>
+    <tr>
+      <th>2009-08-01</th>
+      <td>8730</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Note that the units of the time series are now ‘<em>attendances / per day</em>’.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa884d788d0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_28_1.png" src="../../../_images/02_plotting_time_series_28_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arrival_rate</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa884f39590&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_29_1.png" src="../../../_images/02_plotting_time_series_29_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="run-a-smoother-through-the-time-series">
+<h2>Run a smoother through the time series.<a class="headerlink" href="#run-a-smoother-through-the-time-series" title="Permalink to this headline">¶</a></h2>
+<p>Time series are subject to seasonal patterns and noise.  To help explore the trend in the data you can smooth the time series using a moving average.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">rolling()</span></code> method of a pandas dataframe to create a moving average.</p>
+<p>We will run a 12 month moving average through the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma12</span> <span class="o">=</span> <span class="n">arrival_rate</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">arrival_rate</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;observations&#39;</span><span class="p">)</span>
+<span class="n">ma12</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Smoothed Observations (MA_12)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;attends/day&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;attends/day&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_32_1.png" src="../../../_images/02_plotting_time_series_32_1.png" />
+</div>
+</div>
+<section id="breaking-a-times-series-up-into-its-trend-and-seasonal-components">
+<h3>Breaking a times series up into its trend and seasonal components.<a class="headerlink" href="#breaking-a-times-series-up-into-its-trend-and-seasonal-components" title="Permalink to this headline">¶</a></h3>
+<p>To help visualise and understand trend and seasonality in a time series we can use seasonal decomposition.</p>
+<p>This is a model based approach that breaks the time series into three components.  The basic approach to seasonal decomposition has two forms: additive and multiplicative.</p>
+<section id="additive-decomposition">
+<h4>Additive decomposition<a class="headerlink" href="#additive-decomposition" title="Permalink to this headline">¶</a></h4>
+<p>If we assume that an observation at time t <span class="math notranslate nohighlight">\(Y_t\)</span> is the additive sum of trend <span class="math notranslate nohighlight">\(T_t\)</span>, seasonality <span class="math notranslate nohighlight">\(S_t\)</span> and random error <span class="math notranslate nohighlight">\(E_t\)</span>.  then we have the following model.</p>
+<p><span class="math notranslate nohighlight">\(Y_t = T_t + S_t + E_t\)</span></p>
+<p>We then to make this assumption when the seasonal fluctuations are constant across the time series.  This looks like a reasonable assumption in the case of the ED data.</p>
+</section>
+<section id="multiplicative-decomposition">
+<h4>Multiplicative decomposition<a class="headerlink" href="#multiplicative-decomposition" title="Permalink to this headline">¶</a></h4>
+<p>If the seasonal fluctuations of the data grow over time then it is best to a multiplicative model. Where an observation at time t <span class="math notranslate nohighlight">\(Y_t\)</span> is the product of multiply the trend <span class="math notranslate nohighlight">\(T_t\)</span>, seasonality <span class="math notranslate nohighlight">\(S_t\)</span> and random error <span class="math notranslate nohighlight">\(E_t\)</span></p>
+<p><span class="math notranslate nohighlight">\(Y_t = T_t \cdot  S_t \cdot  E_t\)</span></p>
+<p>Python has a built in seasonal decomposition method for you to use.  It can be imported from <code class="docutils literal notranslate"><span class="pre">statsmodels.tsa.seasonal.seasonal_decompose</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#its easy to use. Pass in the ts and specify the model</span>
+<span class="n">decomp</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">arrival_rate</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;additive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-the-components">
+<h4>Plotting the components<a class="headerlink" href="#plotting-the-components" title="Permalink to this headline">¶</a></h4>
+<p>The results of the seasonal decomposition include dataframes containing the trend and seasonality components.  As they are dataframe they can be plotted in the same manner as the raw data.</p>
+<p><strong>Plotting Trend</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decomp</span><span class="o">.</span><span class="n">trend</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa8858d82d0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_36_1.png" src="../../../_images/02_plotting_time_series_36_1.png" />
+</div>
+</div>
+<p><strong>Plotting Seasonality</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decomp</span><span class="o">.</span><span class="n">seasonal</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa885a4a6d0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_38_1.png" src="../../../_images/02_plotting_time_series_38_1.png" />
+</div>
+</div>
+<p><strong>Residuals (error)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decomp</span><span class="o">.</span><span class="n">resid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa885b9f0d0&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/02_plotting_time_series_40_1.png" src="../../../_images/02_plotting_time_series_40_1.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02_stat_prog/02_matplotlib"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../02_visual_front_page.html" title="previous page">Visualising data</a>
+    <a class='right-next' id="next-link" href="../03_exercises_front_page.html" title="next page">Exercises</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

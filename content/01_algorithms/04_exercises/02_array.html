@@ -1,0 +1,1155 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Working with an np.ndarray &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Intermediate NumPy" href="03_int_numpy.html" />
+    <link rel="prev" title="Coding scientific functions" href="01_science_funcs.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../04_exercises.html">
+   Exercises
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/04_datetimes.html">
+     Managing time series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">
+     Exploring Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_solutions.html">
+     Stroke thrombolysis - data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_solutions.html#exercise-6-encoding-fields-with-2-categories">
+     Exercise 6: Encoding fields with &gt; 2 categories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data (SOLUTIONS)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/01_algorithms/04_exercises/02_array.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/01_algorithms/04_exercises/02_array.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/01_algorithms/04_exercises/02_array.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/01_algorithms/04_exercises/02_array.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3">
+   Exercise 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   Exercise 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5">
+   Exercise 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6">
+   Exercise 6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-7">
+   Exercise 7
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-8">
+   Exercise 8
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="working-with-an-np-ndarray">
+<h1>Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code><a class="headerlink" href="#working-with-an-np-ndarray" title="Permalink to this headline">¶</a></h1>
+<p>These exercises and drills aim to build your experience of using an <code class="docutils literal notranslate"><span class="pre">np.ndarry</span></code> as opposed to a standard python list.  Try to work through them all without looking at the answers first.</p>
+<div class="alert alert-block alert-info"><b>Tip:</b> If I am stuck with how to implement a model or algorithm efficiently in `numpy` it often helps to implement it first in standard python.  I can then at least check my `numpy` code is reproducing the standard python results and it is more efficient. </div>
+<p>In practice you will come across complex problems that will make you scratch you head!  If you are struggling with arrays then small steps will help!</p>
+<hr class="docutils" />
+<p><strong>Remember for any code where you wish to use numpy you need to import it:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Create two numpy arrays of size 10;</p></li>
+<li><p>The first array should be called <code class="docutils literal notranslate"><span class="pre">array_1</span></code> have all zero <strong>integer</strong> values;</p></li>
+<li><p>The second array <code class="docutils literal notranslate"><span class="pre">array_2</span></code> should be a sequence of integers from 90 to 99;</p></li>
+<li><p>Print the arrays.</p></li>
+</ul>
+<p>The expected output of your code is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="p">[</span><span class="mi">90</span> <span class="mi">91</span> <span class="mi">92</span> <span class="mi">93</span> <span class="mi">94</span> <span class="mi">95</span> <span class="mi">96</span> <span class="mi">97</span> <span class="mi">98</span> <span class="mi">99</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution</span>
+<span class="n">array_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">array_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 0 0 0 0 0 0 0 0 0]
+[90 91 92 93 94 95 96 97 98 99]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Continue to use <code class="docutils literal notranslate"><span class="pre">array_1</span></code> and <code class="docutils literal notranslate"><span class="pre">array_2</span></code> from exercise 1.</p></li>
+<li><p>Create a slice of <code class="docutils literal notranslate"><span class="pre">array_1</span></code> to access the last 5 elements of the array;</p></li>
+<li><p>Add the value 10 to each of the elements in the slice.</p></li>
+<li><p>Now multiply the two arrays together and print out the result;</p></li>
+</ul>
+<p>The expected result is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">950</span><span class="p">,</span> <span class="mi">960</span><span class="p">,</span> <span class="mi">970</span><span class="p">,</span> <span class="mi">980</span><span class="p">,</span> <span class="mi">990</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">array_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+
+<span class="c1"># slice array and add 10</span>
+<span class="n">array_1</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">10</span>
+
+<span class="n">array_3</span> <span class="o">=</span> <span class="n">array_1</span> <span class="o">*</span> <span class="n">array_2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  0   0   0   0   0 950 960 970 980 990]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h2>
+<p>You are given the following system of equations</p>
+<div class="math notranslate nohighlight">
+\[x  +  y + z = 6\]</div>
+<div class="math notranslate nohighlight">
+\[2y + 5z = −4\]</div>
+<div class="math notranslate nohighlight">
+\[2x + 5y − z = 27\]</div>
+<p>The matrix form of these equations is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix} 1 &amp; 1 &amp; 1\\ 0 &amp; 2 &amp; 5 \\ 2 &amp; 5 &amp; -1 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix}= \begin{bmatrix} 6\\ -4\\ 27 \end{bmatrix}\end{split}\]</div>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>If we denote the two matricies containing numeric data as
+$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; 1 &amp; -1\\ 2 &amp; 5 &amp; -4 \\ 2 &amp; 5 &amp; -1 \end{bmatrix}\)</span>$</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \begin{bmatrix} 6\\ -4\\ 27 \end{bmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p>Represent <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> as seperate arrays.</p></li>
+<li><p>Print the arrays to the screen.</p></li>
+<li><p>Print the shape of the arrays.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">27</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  1  1]
+ [ 0  2  5]
+ [ 2  5 -1]] (3, 3)
+[ 6 -4 27] (3,)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
+<p>To solve for the unknowns <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> we need to take the <strong>dot product</strong> of the <strong>inverse of <span class="math notranslate nohighlight">\(A\)</span></strong> and <span class="math notranslate nohighlight">\(B\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 1 &amp; 1 &amp; 1\\ 0 &amp; 2 &amp; 5 \\ 2 &amp; 5 &amp; -1 \end{bmatrix}^{-1} \begin{bmatrix} 6\\ -4\\ 27 \end{bmatrix}\end{split}\]</div>
+<p>There are number of ways we can solve this in <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.  One option is to use the <code class="docutils literal notranslate"><span class="pre">np.dot</span></code> function to take the dot product.  This can be combined with <code class="docutils literal notranslate"><span class="pre">np.linalg.inv</span></code> to take the inverse of a matrix.  Or more generally we can call <code class="docutils literal notranslate"><span class="pre">np.linalg.solve()</span></code> to solve a system of linear equations.</p>
+<p><strong>Task</strong></p>
+<ul class="simple">
+<li><p>Using the matricies constructed in exercise 3 and the functions described above, solve for <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution 1</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 5.,  3., -2.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution 2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 5.,  3., -2.])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5">
+<h2>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h2>
+<p>The code below generates a 1D array <code class="docutils literal notranslate"><span class="pre">vector</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(15,)</span></code>.  It is a sequence of numbers from 0 to 14.</p>
+<p><strong>Task</strong>:</p>
+<ul class="simple">
+<li><p>Reshape the 1d array into a 2d array with shape <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">3)</span></code></p></li>
+</ul>
+<p>The expected result is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span> <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">2</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">9</span> <span class="mi">10</span> <span class="mi">11</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">vector</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(15,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution</span>
+<span class="n">matrix_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix_2d</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix_2d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 3)
+[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]
+ [12 13 14]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6">
+<h2>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Use the 2 dimensional matrix that is the answer to exercise 5;</p></li>
+<li><p>Slice the array to return elements 1 to 3 of the first <strong>column</strong>.</p></li>
+</ul>
+<p>The expected output is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">3</span> <span class="mi">6</span> <span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example answer</span>
+<span class="n">first_column_slice</span> <span class="o">=</span> <span class="n">matrix_2d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;First column: </span><span class="si">{</span><span class="n">first_column</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7">
+<h2>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h2>
+<p>The code below generates a 1D array <code class="docutils literal notranslate"><span class="pre">vector</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(100,)</span></code>.  It is a sequence of numbers from 0 to 99.</p>
+<p><strong>Task</strong>:</p>
+<ul class="simple">
+<li><p>Reshape the 1d array into a 3d array with shape <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">10,</span> <span class="pre">5)</span></code></p></li>
+</ul>
+<p>When printed to the screen the expected array should take the form</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[[</span> <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
+  <span class="p">[</span> <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">20</span> <span class="mi">21</span> <span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">25</span> <span class="mi">26</span> <span class="mi">27</span> <span class="mi">28</span> <span class="mi">29</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">30</span> <span class="mi">31</span> <span class="mi">32</span> <span class="mi">33</span> <span class="mi">34</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">35</span> <span class="mi">36</span> <span class="mi">37</span> <span class="mi">38</span> <span class="mi">39</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">40</span> <span class="mi">41</span> <span class="mi">42</span> <span class="mi">43</span> <span class="mi">44</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">45</span> <span class="mi">46</span> <span class="mi">47</span> <span class="mi">48</span> <span class="mi">49</span><span class="p">]]</span>
+
+ <span class="p">[[</span><span class="mi">50</span> <span class="mi">51</span> <span class="mi">52</span> <span class="mi">53</span> <span class="mi">54</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">55</span> <span class="mi">56</span> <span class="mi">57</span> <span class="mi">58</span> <span class="mi">59</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">60</span> <span class="mi">61</span> <span class="mi">62</span> <span class="mi">63</span> <span class="mi">64</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">65</span> <span class="mi">66</span> <span class="mi">67</span> <span class="mi">68</span> <span class="mi">69</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">70</span> <span class="mi">71</span> <span class="mi">72</span> <span class="mi">73</span> <span class="mi">74</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">75</span> <span class="mi">76</span> <span class="mi">77</span> <span class="mi">78</span> <span class="mi">79</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">80</span> <span class="mi">81</span> <span class="mi">82</span> <span class="mi">83</span> <span class="mi">84</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">85</span> <span class="mi">86</span> <span class="mi">87</span> <span class="mi">88</span> <span class="mi">89</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">90</span> <span class="mi">91</span> <span class="mi">92</span> <span class="mi">93</span> <span class="mi">94</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">95</span> <span class="mi">96</span> <span class="mi">97</span> <span class="mi">98</span> <span class="mi">99</span><span class="p">]]]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vector</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example answer ...</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">matrix_3d</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix_3d</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix_3d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 10, 5)
+[[[ 0  1  2  3  4]
+  [ 5  6  7  8  9]
+  [10 11 12 13 14]
+  [15 16 17 18 19]
+  [20 21 22 23 24]
+  [25 26 27 28 29]
+  [30 31 32 33 34]
+  [35 36 37 38 39]
+  [40 41 42 43 44]
+  [45 46 47 48 49]]
+
+ [[50 51 52 53 54]
+  [55 56 57 58 59]
+  [60 61 62 63 64]
+  [65 66 67 68 69]
+  [70 71 72 73 74]
+  [75 76 77 78 79]
+  [80 81 82 83 84]
+  [85 86 87 88 89]
+  [90 91 92 93 94]
+  [95 96 97 98 99]]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-8">
+<h2>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">¶</a></h2>
+<p>You can think of the 3 dimensional array constructed in the last exercise as an array of two <span class="math notranslate nohighlight">\(10 \times 2\)</span> sub-matricies (indexed 0 to 1).  Each matrix is comprised of 10 sub vectors (indexed 0 to 9).</p>
+<p>Using the 3 dimensional array constructed in exercise 7 take the following <strong>slices</strong> and if necessary make the updates to the <strong>original</strong> data:</p>
+<ul class="simple">
+<li><p>The second (i.e. index = 1) sub vector of each matrix.  The expected answer is:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span> <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">55</span> <span class="mi">56</span> <span class="mi">57</span> <span class="mi">58</span> <span class="mi">59</span><span class="p">]]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Elements 1 to 3 of the fifth subvector in each matrix.  The expected answer is:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">21</span> <span class="mi">22</span> <span class="mi">23</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">71</span> <span class="mi">72</span> <span class="mi">73</span><span class="p">]]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Create a slice of elements at index 2 through the end of the sub vector at index 3 in he sub matrix at index 1.</p>
+<ul>
+<li><p>Using the slice update the values in the <strong>original data</strong> to 9999;</p></li>
+<li><p>Now slice the 3D array to obtain the final 3 <strong>columns</strong> of the sub matrix at index 0.</p></li>
+<li><p>Expected output is:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span>   <span class="mi">2</span>    <span class="mi">7</span>   <span class="mi">12</span> <span class="mi">9999</span>   <span class="mi">22</span>   <span class="mi">27</span>   <span class="mi">32</span>   <span class="mi">37</span>   <span class="mi">42</span>   <span class="mi">47</span><span class="p">]</span>
+ <span class="p">[</span>   <span class="mi">3</span>    <span class="mi">8</span>   <span class="mi">13</span> <span class="mi">9999</span>   <span class="mi">23</span>   <span class="mi">28</span>   <span class="mi">33</span>   <span class="mi">38</span>   <span class="mi">43</span>   <span class="mi">48</span><span class="p">]</span>
+ <span class="p">[</span>   <span class="mi">4</span>    <span class="mi">9</span>   <span class="mi">14</span> <span class="mi">9999</span>   <span class="mi">24</span>   <span class="mi">29</span>   <span class="mi">34</span>   <span class="mi">39</span>   <span class="mi">44</span>   <span class="mi">49</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p><strong>Hints</strong>:</p>
+<ul class="simple">
+<li><p>To transpose an array you can call <code class="docutils literal notranslate"><span class="pre">.T</span></code> from an array. E.g.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="go">[[0 1 2 3 4]</span>
+<span class="go"> [5 6 7 8 9]]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+<span class="go">[[0 5]</span>
+<span class="go"> [1 6]</span>
+<span class="go"> [2 7]</span>
+<span class="go"> [3 8]</span>
+<span class="go"> [4 9]]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example solutions</span>
+
+<span class="c1"># The first sub vector of each matrix.</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">matrix_3d</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix_3d</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 5  6  7  8  9]
+ [55 56 57 58 59]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Elements 1 to 3 of the fifth subvector in each matrix.</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">matrix_3d</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix_3d</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[21 22 23]
+ [71 72 73]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">matrix_3d</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># remember that slicing is a view of the original data.</span>
+<span class="n">matrix_3d</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">9999</span>
+
+<span class="c1"># slice and transpose</span>
+<span class="n">column_slice</span> <span class="o">=</span> <span class="n">matrix_3d</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">T</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">column_slice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[   2    7   12 9999   22   27   32   37   42   47]
+ [   3    8   13 9999   23   28   33   38   43   48]
+ [   4    9   14 9999   24   29   34   39   44   49]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 9</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/01_algorithms/04_exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01_science_funcs.html" title="previous page">Coding scientific functions</a>
+    <a class='right-next' id="next-link" href="03_int_numpy.html" title="next page">Intermediate NumPy</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

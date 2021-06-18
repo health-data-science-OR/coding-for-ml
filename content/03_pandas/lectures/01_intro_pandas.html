@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to pandas &#8212; Coding for Machine Learning and Data Science</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to pandas &#8212; Python for health data science.</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -25,8 +26,8 @@
     href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -36,17 +37,17 @@
     
   <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -74,8 +75,10 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../../../index.html">
   
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
   
-  <h1 class="site-logo" id="site-title">Coding for Machine Learning and Data Science</h1>
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -86,13 +89,13 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../front_page.html">
-   Welcome
+   Preface
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Setup
+  Data and software
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -114,23 +117,38 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Revision
+  Algorithms and computational modelling
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../002_basics/fp_lectures.html">
-   Lectures
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/lectures/Lecture1.html">
-     Python Basics
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/lectures/Lecture2.html">
-     Conditionals and Loops
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
     </a>
    </li>
   </ul>
@@ -138,76 +156,18 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../002_basics/fp_practicals.html">
-   Practicals
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/labs/01_basics.html">
-     Basic Python
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/labs/debug1.html">
-     Debug challenge 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/labs/02_basics.html">
-     Conditionals and Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../002_basics/labs/debug2.html">
-     Debug challenge 2
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Part 1. Advanced Python
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../01_advanced_python/lecture/01_python_classes.html">
-   Lecture: Class coding basics
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Part 2. NumPy
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../02_numpy/02_lectures_front_page.html">
-   Lecture notes
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/lectures/01_numpy_101.html">
-     Basic
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/lectures/02_intermediate_numpy.html">
-     Intermediate
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
     </a>
    </li>
   </ul>
@@ -215,23 +175,91 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../02_numpy/02_labs_front_page.html">
-   Practicals
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/labs/02_lab1.html">
-     Basic
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-     techniques
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/labs/02_lab2.html">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
      Intermediate NumPy
     </a>
    </li>
@@ -240,13 +268,18 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../02_numpy/02_debug_front_page.html">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
    Debug challenges
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../02_numpy/debug_challenges/debug_challenge_2.html">
-     Debug Challenge 2
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
     </a>
    </li>
   </ul>
@@ -256,7 +289,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Part 3. Pandas and MatplotLib
+  Statistical Programming
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -294,6 +327,61 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../labs/nhs_synthetic_ed_download.html">
      Accessing large remote datasets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix -Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
     </a>
    </li>
   </ul>
@@ -533,7 +621,7 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-pandas">
+  <section id="introduction-to-pandas">
 <h1>Introduction to <strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong><a class="headerlink" href="#introduction-to-pandas" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> is a data science package orignally developed by <a class="reference external" href="https://wesmckinney.com/"><strong>Wes McKinney</strong></a>.  It builds on top of <code class="docutils literal notranslate"><span class="pre">numpy</span></code> to provide a higher level API for wrangling, analysing and visualising data.  It is also closely coupled to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> with a number of shorthand methods to create plots of data.</p>
 <p>In practice, I often use <strong>both</strong> <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for <strong>data wrangling</strong>: switching between them (which is straightforward) when needed as each offers different benefits.</p>
@@ -543,12 +631,12 @@
 <div><p>The higher level API offered by <code class="docutils literal notranslate"><span class="pre">pandas</span></code> comes at the cost of efficency i.e. execution speed.  <strong>This statement is relative to <code class="docutils literal notranslate"><span class="pre">numpy</span></code></strong> which approaches the speed of <code class="docutils literal notranslate"><span class="pre">C</span></code>. I emphasise that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is still fast especially compared Microsoft Excel. However, in general <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is not recommended for implementing high performance computational algorithms over and above <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
 </div></blockquote>
 <hr class="docutils" />
-<div class="section" id="imports">
+<section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
 <p>We usually use the alias <code class="docutils literal notranslate"><span class="pre">pd</span></code> when import <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
@@ -556,17 +644,17 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-pd-series-and-pd-dataframe-classes">
+</section>
+<section id="the-pd-series-and-pd-dataframe-classes">
 <h2>The <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code> and <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> classes<a class="headerlink" href="#the-pd-series-and-pd-dataframe-classes" title="Permalink to this headline">¶</a></h2>
 <p>The central contribution of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package to data science in python are the <code class="docutils literal notranslate"><span class="pre">Series</span></code> and <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> class.  These provide the high level abstraction of data.</p>
-<div class="section" id="pd-series">
+<section id="pd-series">
 <h3><strong><code class="docutils literal notranslate"><span class="pre">pd.Series</span></code></strong><a class="headerlink" href="#pd-series" title="Permalink to this headline">¶</a></h3>
 <p>If you are familiar with analysing tabular data in a software package like <em>stata</em>, <em>spss</em> or <em>Excel</em> then you can think of a series as a column of data.</p>
 <p>The example below:</p>
@@ -577,7 +665,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series</span>
 <span class="n">column1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;unique_id&#39;</span><span class="p">,</span> 
                     <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
 <span class="n">column1</span>
@@ -587,7 +675,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># data type</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data type</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">column1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -595,7 +683,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape</span>
 <span class="n">column1</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -607,7 +695,7 @@
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series just passing data.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a series just passing data.</span>
 <span class="n">column2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="n">column2</span>
 </pre></div>
@@ -617,7 +705,7 @@
 <p>In a data science application its likely you will have a very large column of data.  You can take a look at the head or tail of the <code class="docutils literal notranslate"><span class="pre">Series</span></code> by using the <code class="docutils literal notranslate"><span class="pre">.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail()</span></code> methods</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10,000 rows. uint16 = 0 - 65_535</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10,000 rows. uint16 = 0 - 65_535</span>
 <span class="n">column3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;longer&#39;</span><span class="p">,</span> 
                     <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
 <span class="n">column3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -627,7 +715,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># To view more or less rows</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To view more or less rows</span>
 <span class="n">column3</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -635,14 +723,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">column3</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column3</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># side note: to drop to numpy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># side note: to drop to numpy</span>
 <span class="n">column3</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -656,7 +744,7 @@
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create 5 x 4 matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create 5 x 4 matrix</span>
 <span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">raw_data</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
@@ -665,14 +753,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">([</span><span class="s1">&#39;col_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
@@ -681,7 +769,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># its a small matrix so lets view it all</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># its a small matrix so lets view it all</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -689,7 +777,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#for bigger `DataFrames` use .head()/.tail()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#for bigger `DataFrames` use .head()/.tail()</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -697,7 +785,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># access a named column</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># access a named column</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col_3&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -705,7 +793,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># alternative approach for accessing</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># alternative approach for accessing</span>
 <span class="n">df</span><span class="o">.</span><span class="n">col_3</span>
 </pre></div>
 </div>
@@ -713,7 +801,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># side bar 1 - let&#39;s ignore the datatype. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># side bar 1 - let&#39;s ignore the datatype. </span>
 <span class="c1"># the size in memory is almost double.</span>
 <span class="n">raw_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
@@ -725,19 +813,19 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># side bar 2: drop to numpy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># side bar 2: drop to numpy</span>
 <span class="n">df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-a-pd-dataframe-from-python-lists">
+</section>
+<section id="creating-a-pd-dataframe-from-python-lists">
 <h3>Creating a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> from python lists<a class="headerlink" href="#creating-a-pd-dataframe-from-python-lists" title="Permalink to this headline">¶</a></h3>
 <p>In the previous example we created a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> from a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.  But a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code>can be created from anything <em>array-like</em>.  So for example, we could work with one or more python lists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating an individual series</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating an individual series</span>
 <span class="n">thrash_metal_bands</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;metallica&#39;</span><span class="p">,</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">,</span>
                                 <span class="s1">&#39;anthrax&#39;</span><span class="p">])</span>
 <span class="n">thrash_metal_bands</span>
@@ -747,7 +835,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a full data frame</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a full data frame</span>
 
 <span class="c1"># each column is defined as a seperate list</span>
 <span class="n">band_name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;metallica&#39;</span><span class="p">,</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">,</span> <span class="s1">&#39;anthrax&#39;</span><span class="p">]</span>
@@ -771,7 +859,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take a look at the df summary information.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># take a look at the df summary information.</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -779,7 +867,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># could also be specific about datatype using pd.Series </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># could also be specific about datatype using pd.Series </span>
 <span class="n">thrash_metal_bands</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="n">thrash_metal_bands</span><span class="p">[</span><span class="s1">&#39;band&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">band_name</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
@@ -798,7 +886,7 @@
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bands_dict</span> <span class="o">=</span> <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bands_dict</span> <span class="o">=</span> <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
 <span class="n">bands_dict</span>
 </pre></div>
 </div>
@@ -806,7 +894,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># the code to use a dict looks like pandas code.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the code to use a dict looks like pandas code.</span>
 <span class="n">bands_dict</span><span class="p">[</span><span class="s1">&#39;band&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -814,28 +902,28 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># reverse engineer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reverse engineer</span>
 <span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">bands_dict</span><span class="p">)</span>
 <span class="n">new_df</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="dataframe-indexes">
+</section>
+</section>
+<section id="dataframe-indexes">
 <h2><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> Indexes<a class="headerlink" href="#dataframe-indexes" title="Permalink to this headline">¶</a></h2>
 <p>In each of the examples so far you will notice that the first (unlabelled) a column is a sequence of arbitrary numbers.  This is the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> index.  When we create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> manually an additional step is often to set the index to a column we have created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the index to &#39;band&#39; column</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the index to &#39;band&#39; column</span>
 <span class="c1"># note that this method returns a &#39;copy&#39; unless we set &#39;inplace=True&#39;</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;band&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">thrash_metal_bands</span>
@@ -843,17 +931,17 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="accessing-elements-in-a-dataframe">
+</section>
+<section id="accessing-elements-in-a-dataframe">
 <h2>Accessing elements in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#accessing-elements-in-a-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>In nearly all data wrangling and analysis projects, you will want to explore subsets of your data.  This might be, for example, to eyeball the data close up or to calculate summary statistics for particular populations.  To do that in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> we need to understand how we access individual and subsets or rows and columns in our <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>For simplicity, we will again use <code class="docutils literal notranslate"><span class="pre">thrash_metal_bands</span></code>.</p>
-<div class="section" id="accessing-rows">
+<section id="accessing-rows">
 <h3>Accessing Rows<a class="headerlink" href="#accessing-rows" title="Permalink to this headline">¶</a></h3>
 <p>To access an individal row we can use the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> accessors.  The former of these references by <strong>name</strong> while the latter references by <strong>numeric index</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># return the records for panteria</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return the records for panteria</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -861,7 +949,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># return the records the row at index 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return the records the row at index 2</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -870,7 +958,7 @@
 <p>Note that we can return multiple rows if we supply a list of indexes.  For example to find records for both pantera and megadeth:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">to_find</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_find</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">]</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">to_find</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -879,7 +967,7 @@
 <p>Indexes can be sliced in a similar fashion to arrays</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All rows from index 2 onwards</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All rows from index 2 onwards</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
 </pre></div>
 </div>
@@ -887,7 +975,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rows 0 and 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rows 0 and 1</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -895,14 +983,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># slicing by name</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># slicing by name</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">:</span> <span class="s1">&#39;megadeth&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="accessing-columns">
+</section>
+<section id="accessing-columns">
 <h3>Accessing columns<a class="headerlink" href="#accessing-columns" title="Permalink to this headline">¶</a></h3>
 <p>We have already seen that accessing a column is done as so</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;column_name&#39;</span><span class="p">]</span>
@@ -911,7 +999,7 @@
 <p>We can also select a multiple columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># select yr_formed and active columns only</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select yr_formed and active columns only</span>
 <span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;yr_formed&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">]</span>
 <span class="n">thrash_metal_bands</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 </pre></div>
@@ -921,20 +1009,20 @@
 <p>or restrict both columns and rows</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;yr_formed&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;yr_formed&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">]</span>
 <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;anthrax&#39;</span><span class="p">]</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">mask</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="selecting-individual-cells">
+</section>
+<section id="selecting-individual-cells">
 <h3>Selecting individual cells<a class="headerlink" href="#selecting-individual-cells" title="Permalink to this headline">¶</a></h3>
 <p>To access an individual cell within a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> use the <code class="docutils literal notranslate"><span class="pre">.at</span></code> and <code class="docutils literal notranslate"><span class="pre">.iat</span></code> accessors.  The former uses the index row and column names while the latter is an integer based lookup.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># lookup the year pantera was formed.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lookup the year pantera was formed.</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;yr_formed&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -942,7 +1030,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># look up the cell value in position (1, 1)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look up the cell value in position (1, 1)</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -950,7 +1038,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># to update the individual value</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to update the individual value</span>
 <span class="c1"># lookup the year pantera was formed.</span>
 <span class="n">thrash_metal_bands</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="s1">&#39;pantera&#39;</span><span class="p">,</span> <span class="s1">&#39;yr_formed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9999</span>
 <span class="n">thrash_metal_bands</span>
@@ -958,10 +1046,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="reading-data-into-pandas-from-a-flat-file">
+</section>
+</section>
+</section>
+<section id="reading-data-into-pandas-from-a-flat-file">
 <h1>Reading data into pandas from a flat file<a class="headerlink" href="#reading-data-into-pandas-from-a-flat-file" title="Permalink to this headline">¶</a></h1>
 <p>A common task is to work with data stored in one or more files. For example in a Comma Seperated Value (CSV) or other type of delimited (e.g. tab or pipe) file.</p>
 <p>There are a number of scenarios you may encounter:</p>
@@ -976,7 +1064,7 @@
 <p>As an example let’s read in the famous <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29">Wisonsin Breast Cancer dataset</a> from Github.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wisconsin breast cancer dataset URL</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wisconsin breast cancer dataset URL</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
       <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/wisconsin.csv&#39;</span>
 
@@ -988,21 +1076,21 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1010,7 +1098,7 @@
 <p>Now let’s read in the same file, but this time it is compressed in .zip format.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
       <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/wisconsin.zip&#39;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1019,15 +1107,15 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="end">
+<section id="end">
 <h2>End<a class="headerlink" href="#end" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

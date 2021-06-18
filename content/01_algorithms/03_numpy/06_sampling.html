@@ -1,0 +1,948 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Random variables and simulation &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Advanced Array Iteration" href="07_advanced_iter.html" />
+    <link rel="prev" title="Statistical procedures" href="05_statistics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/04_datetimes.html">
+     Managing time series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">
+     Exploring Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_solutions.html">
+     Stroke thrombolysis - data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_solutions.html#exercise-6-encoding-fields-with-2-categories">
+     Exercise 6: Encoding fields with &gt; 2 categories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data (SOLUTIONS)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/01_algorithms/03_numpy/06_sampling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/01_algorithms/03_numpy/06_sampling.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/01_algorithms/03_numpy/06_sampling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/01_algorithms/03_numpy/06_sampling.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uniform-distribution">
+   Uniform distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-distribution">
+   Exponential distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-distribution">
+   Normal distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controlling-sampling-in-simulations">
+   Controlling sampling in simulations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-repeatability">
+     Problem 1: repeatability
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-2-streams">
+   Problem 2: streams
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="random-variables-and-simulation">
+<h1>Random variables and simulation<a class="headerlink" href="#random-variables-and-simulation" title="Permalink to this headline">¶</a></h1>
+<p>If you are working in computational modelling its highly likely that you will need to make use of the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> namespace.  This provides a variety of distributions that you can use for efficient sampling.  Let’s take a look at a few example distributions. For example generating 100,000 samples from the uniform, exponential distributions and normal distributions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distribution_plot</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    helper function to visualise the distributions</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">hist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span> 
+                        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hist</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;p(x)&#39;</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="uniform-distribution">
+<h2>Uniform distribution<a class="headerlink" href="#uniform-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100_000</span><span class="p">)</span>
+<span class="n">distribution_plot</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/06_sampling_4_0.png" src="../../../_images/06_sampling_4_0.png" />
+</div>
+</div>
+</section>
+<section id="exponential-distribution">
+<h2>Exponential distribution<a class="headerlink" href="#exponential-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100_000</span><span class="p">)</span>
+<span class="n">distribution_plot</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/06_sampling_6_0.png" src="../../../_images/06_sampling_6_0.png" />
+</div>
+</div>
+</section>
+<section id="normal-distribution">
+<h2>Normal distribution<a class="headerlink" href="#normal-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">25.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100_000</span><span class="p">)</span>
+<span class="n">distribution_plot</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/06_sampling_8_0.png" src="../../../_images/06_sampling_8_0.png" />
+</div>
+</div>
+</section>
+<section id="controlling-sampling-in-simulations">
+<h2>Controlling sampling in simulations<a class="headerlink" href="#controlling-sampling-in-simulations" title="Permalink to this headline">¶</a></h2>
+<p>A Professor of Computer Simulation once told me ‘<em>remember that a stochastic simulation is not a random game against nature - you are in control</em>’.  This has always stuck with me.  What the famous Prof was referring to is that in a simulation we can control the streams of psuedo random numbers and hence make our results repeatable.</p>
+<blockquote>
+<div><p>In case you are wondering <strong>stochastic</strong> here refers to a model that is probabilistic.  This means that a single run of a model does not provide an accurate picture of model performance/behaviour.  You need to run the model multiple times to generate a distribution.</p>
+</div></blockquote>
+<p>The best way to explain the idea of streams and repeatability is by demonstrating with a simple model.  We’ll first need to properly introduce a <code class="docutils literal notranslate"><span class="pre">numpy.random.Generator</span></code> that I used above.</p>
+<p>```{tip} <code class="docutils literal notranslate"><span class="pre">numpy</span></code> also provides <code class="docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code> objects for sampling.  <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> is a legacy implementation included for backwards compatibility with older code.  For new and updated code bases you should make use of <code class="docutils literal notranslate"><span class="pre">numpy.random.Generator</span></code>.  You might also encountered code that samples directly from <code class="docutils literal notranslate"><span class="pre">random</span></code> for example <code class="docutils literal notranslate"><span class="pre">np.random.randint(...)</span></code>.  This is still using a RandomState object and should be avoided for newer code.  Lot’s of code on the web will make use of <code class="docutils literal notranslate"><span class="pre">RandomState</span></code>.  If you implement it update it!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>To create a <code class="docutils literal notranslate"><span class="pre">Generator</span></code> use the <code class="docutils literal notranslate"><span class="pre">default_rng()</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Consider a project where you are modelling a simple two stage patient pathway.</p>
+<ul class="simple">
+<li><p>In the first stage of the pathway patients undergo a procedure that requires on average a 3 day spell in hospital.</p></li>
+<li><p>In the second stage the patient undergoes therapy at home.  On average a patient requires home therapy for 7 days.</p></li>
+<li><p>A hospital is interested in what would happen to resource requirements if an intervention they have planned reduced demand on the service.</p></li>
+</ul>
+<p>Let’s test out a simple model where we sample patients length of stay and home therapy durations.  We will model the length of stay variables as exponential distribution.</p>
+<p>The first problem will encounter is repeatability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_patient_details</span><span class="p">(</span><span class="n">acute</span><span class="p">,</span> <span class="n">home</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Helper function.</span>
+<span class="sd">    Formats length of stay in data frame</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#pd.set_option(&#39;precision&#39;, 2)</span>
+    <span class="c1">#df = pd.DataFrame(np.vstack([sample_acute, sample_home])).T</span>
+    <span class="c1">#df.columns = [&#39;acute&#39;, &#39;home&#39;]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">acute</span><span class="p">,</span> <span class="n">home</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;patient</span><span class="se">\t</span><span class="s1">acute</span><span class="se">\t</span><span class="s1">home</span><span class="se">\n</span><span class="s1">--------------------&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_PATIENTS</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1">#create two random generator objects</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+
+<span class="c1"># scale parameter = mean</span>
+<span class="n">sample_acute</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N_PATIENTS</span><span class="p">)</span>
+<span class="n">sample_home</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N_PATIENTS</span><span class="p">)</span>
+
+<span class="c1"># display patient details</span>
+<span class="n">print_patient_details</span><span class="p">(</span><span class="n">sample_acute</span><span class="p">,</span> <span class="n">sample_home</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>patient	acute	home
+--------------------
+0	2.05	1.0 
+1	0.79	9.44 
+2	4.09	4.66 
+3	5.0	2.18 
+4	2.12	1.75 
+</pre></div>
+</div>
+</div>
+</div>
+<section id="problem-1-repeatability">
+<h3>Problem 1: repeatability<a class="headerlink" href="#problem-1-repeatability" title="Permalink to this headline">¶</a></h3>
+<p>The first problem we encounter is repeatability. Each time you run the code above you will get a different result.  For any scientific study we produce or publish we want the results to be repeatable.  On a practical level the lack of repeatability makes debugging, testing and fixing code very difficult. We can solve this problem using a random seed.  This is just a parameter you pass to <code class="docutils literal notranslate"><span class="pre">default_rng</span></code>.  Try running the code below multiple times you shoud get the same results each run.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_PATIENTS</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">SEED</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="c1">#create two random generator objects</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="c1"># scale parameter = mean</span>
+<span class="n">sample_acute</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N_PATIENTS</span><span class="p">)</span>
+<span class="n">sample_home</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N_PATIENTS</span><span class="p">)</span>
+
+<span class="c1"># display patient details</span>
+<span class="n">print_patient_details</span><span class="p">(</span><span class="n">sample_acute</span><span class="p">,</span> <span class="n">sample_home</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>patient	acute	home
+--------------------
+0	7.21	10.17 
+1	7.01	9.87 
+2	7.15	21.87 
+3	0.84	0.56 
+4	0.26	7.33 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="problem-2-streams">
+<h2>Problem 2: streams<a class="headerlink" href="#problem-2-streams" title="Permalink to this headline">¶</a></h2>
+<p>Streaming psuedo random numbers presents itself in a much more subtle manner.  To see its effect we will test out the simple model. We will use a random number seed and run two scenarios.  In the first scenario we will test sample 5 patients.  In the second we will sample 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">sample_acute</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_patients</span><span class="p">)</span>
+    <span class="n">sample_home</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_patients</span><span class="p">)</span>
+    <span class="n">print_patient_details</span><span class="p">(</span><span class="n">sample_acute</span><span class="p">,</span> <span class="n">sample_home</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>patient	acute	home
+--------------------
+0	7.21	10.17 
+1	7.01	9.87 
+2	7.15	21.87 
+3	0.84	0.56 
+4	0.26	7.33 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>patient	acute	home
+--------------------
+0	7.21	16.69 
+1	7.01	1.96 
+</pre></div>
+</div>
+</div>
+</div>
+<p>When the number of patients is reduced from 5 to 2 we get different sample values for the home therapy durations.  This is problematic because if we are not careful we may attribute improvements or lack of improvements between designs simply due to sampling variation.  We may also induce a correlation between the two random variables.</p>
+<p>We get this result because both distributions are using the same single stream of pseudo random numbers.  One way to solve this problem is therefore to give each distribution its <strong>own stream</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">updated_scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="p">,</span> <span class="n">seeds</span><span class="o">=</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">101</span><span class="p">)):</span>
+    <span class="n">rng_acute</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seeds</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">rng_home</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seeds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">sample_acute</span> <span class="o">=</span> <span class="n">rng_acute</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_patients</span><span class="p">)</span>
+    <span class="n">sample_home</span> <span class="o">=</span> <span class="n">rng_home</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_patients</span><span class="p">)</span>
+    <span class="n">print_patient_details</span><span class="p">(</span><span class="n">sample_acute</span><span class="p">,</span> <span class="n">sample_home</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">updated_scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>patient	acute	home
+--------------------
+0	7.21	28.63 
+1	7.01	4.05 
+2	7.15	6.69 
+3	0.84	7.23 
+4	0.26	4.48 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">updated_scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>patient	acute	home
+--------------------
+0	7.21	28.63 
+1	7.01	4.05 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/01_algorithms/03_numpy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="05_statistics.html" title="previous page">Statistical procedures</a>
+    <a class='right-next' id="next-link" href="07_advanced_iter.html" title="next page">Advanced Array Iteration</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

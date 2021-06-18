@@ -1,0 +1,1625 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Case study: ABS &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Scientific coding in numpy" href="../03_numpy.html" />
+    <link rel="prev" title="A world of objects" href="01_python_classes.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/04_datetimes.html">
+     Managing time series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">
+     Exploring Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_solutions.html">
+     Stroke thrombolysis - data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_solutions.html#exercise-6-encoding-fields-with-2-categories">
+     Exercise 6: Encoding fields with &gt; 2 categories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data (SOLUTIONS)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/01_algorithms/02_oop/02_oop_sim.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/01_algorithms/02_oop/02_oop_sim.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/01_algorithms/02_oop/02_oop_sim.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/01_algorithms/02_oop/02_oop_sim.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coding-problem-oh-data-scientists-can-t-you-all-just-get-along">
+   Coding Problem: ‘Oh data scientists - can’t you all just get along!’
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#designing-your-code">
+   Designing your code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agents">
+     Agents
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#environment">
+     Environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-main-loop">
+     The main loop
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coding-the-abs-using-oop-techniques">
+   Coding the ABS using OOP techniques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imports">
+     Imports
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constants-and-default-parameter-values">
+     Constants and default parameter values
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-datascientist-class">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DataScientist
+    </span>
+   </code>
+   class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-gridworld-class">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     GridWorld
+    </span>
+   </code>
+   class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialising-gridworld">
+     Initialising
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GridWorld
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gridworld-get-neighbours-self-row-col-method">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GridWorld.get_neighbours(self,
+      </span>
+      <span class="pre">
+       row,
+      </span>
+      <span class="pre">
+       col)
+      </span>
+     </code>
+     method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gridworld-relocate-self-agent-method">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       GridWorld.relocate(self,
+      </span>
+      <span class="pre">
+       agent)
+      </span>
+     </code>
+     method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-preliminary-check-of-gridworld-and-datascientist-work">
+   A preliminary check of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     GridWorld
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DataScientist
+    </span>
+   </code>
+   work.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-model-class-and-main-loop">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Model
+    </span>
+   </code>
+   class and main loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-full-simulation">
+   Running the full simulation
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="case-study-abs">
+<h1>Case study: ABS<a class="headerlink" href="#case-study-abs" title="Permalink to this headline">¶</a></h1>
+<p>As you have learned, Python is an <strong>Object Orientated Progamming (OOP) language</strong>.  We can follow the standard paradigm of OOP in python by creating <strong>classes</strong> and then instantiating an instance of the class called an <strong>object</strong>.  A class offers a higher level of abstraction for your code than functions alone.  One of the key benefits for data science is that you can design your algorithms to be resuable and composed from multiple classes.</p>
+<p><strong>In this section you will learn:</strong></p>
+<ul class="simple">
+<li><p>How to do define a class in Python</p></li>
+<li><p>Apply basic object orientated techniques to build an agent based simulation.</p></li>
+</ul>
+<blockquote>
+<div><p>To help visualise our problem we are going to use a package called <strong>MatPlotLib</strong>.  We will cover this in detail later, but for now you just need to know that it allows us to create charts from our data.  The code is provided.</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="coding-problem-oh-data-scientists-can-t-you-all-just-get-along">
+<h2>Coding Problem: ‘Oh data scientists - can’t you all just get along!’<a class="headerlink" href="#coding-problem-oh-data-scientists-can-t-you-all-just-get-along" title="Permalink to this headline">¶</a></h2>
+<p>To apply the basics of OOP you will create an <strong>Agent Based Simulation</strong> (ABS).  ABS is a popular methodology in data science for modelling emergent behaviour when a group of simple <strong>agents</strong> interact with each other within an <strong>environment</strong>.  Agents can be thought of an object with state and behaviour.  That lends itself nicely to the concept of a class from OOP. The concept of emergence is important in ABS as we are not coding the outcome of the modelling.  We are instead coding some behavioural interaction rules between the agents and exploring what happens when we run the model and set the agents loose.</p>
+<blockquote>
+<div><p>A full treatment ABS is out of scope for this course, but it is used a lot in health data science. You may have seen a number of ABS models used to model the epidemiology of COVID-19.</p>
+</div></blockquote>
+<p><strong>Here’s a description of our problem:</strong></p>
+<ul class="simple">
+<li><p>Data scientists live in a 2 dimensional gridword. That is a (n X m) grid of cells.  Each cell can only be inhabited by a single data scientist.</p></li>
+<li><p>In grid world data scientists either favour Python or R.</p></li>
+<li><p>A Data Scientist has a similarity threshold where they desire a % of their neighbours to code in their favourite language too!</p></li>
+<li><p>If the agents neighbours are not similar enough the data scientist becomes unhappy and moves to a random empty location in the world!</p></li>
+<li><p>The simulation will run for a maximum number of iterations.  If all agents are happy in any iteration then the simulation terminates early.</p></li>
+<li><p>Agents make decisions about moving based on the state of the environment in the current iteration.  That is they have no knowledge if other data scientists are happy or unhappy.</p></li>
+</ul>
+<blockquote>
+<div><p>This problem is actually a classic ABS modelling study by Schelling that studied the dynamics of segregation in populations.</p>
+</div></blockquote>
+</section>
+<section id="designing-your-code">
+<h2>Designing your code<a class="headerlink" href="#designing-your-code" title="Permalink to this headline">¶</a></h2>
+<p>Before you write any code take a momemt to think about what the basic class structure of your code might look like.</p>
+<section id="agents">
+<h3>Agents<a class="headerlink" href="#agents" title="Permalink to this headline">¶</a></h3>
+<p>The most obvious class we could include represents an <strong>Agent</strong>.  In some applications, you may want multiple types of agent class, but here their general behaviour is the same i.e. they become unhappy when they are not surrounded by enough of their fellow coding peers.  So here we you can simply define a single agent class and give it the attribute <code class="docutils literal notranslate"><span class="pre">language</span></code> of type <code class="docutils literal notranslate"><span class="pre">str</span></code> that determines the agents preference for Python or R.</p>
+<p>Remember that in the simulation we will be creating multiple objects of type <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code>.  This is your <strong>population</strong>.  The skeleton code for <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code>.</p>
+<blockquote>
+<div><p>Reminder: we have overloaded the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method when creating an instance of <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code>.  This is used to <strong>parameterise</strong> the agent.  Here we pass in a unique id, the coordinates in gridworld, the prefered coding language, the environment and the similarity threshold.</p>
+</div></blockquote>
+<p>The method <code class="docutils literal notranslate"><span class="pre">is_unsatisified_with_neighbours</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when an agent is unhappy with similarity of its neighbours in a grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DataScientist</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unqiue_id</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">is_unsatisified_with_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="environment">
+<h3>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h3>
+<p>After agents the decision making about what classes to include becomes a bit more fuzzy.  You could code the whole simulation to work with a single agent class and complete the rest using functions.  However, an environment object is a useful level of abstraction when creating a framework for running your model.  The code will also be much more readable.  Another benefit is that in a more complicated problem you might need to include multiple environments type classes (e.g. interacting wards or even whole hospitals containing agents).</p>
+<p>Here you will define a class called <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> that contains a population of <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> objects.  We will take a look how these agents are stored internally shortly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GridWorld</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="n">n_empty</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">get_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">relocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-main-loop">
+<h3>The main loop<a class="headerlink" href="#the-main-loop" title="Permalink to this headline">¶</a></h3>
+<p>The simulation consists of a main loop that either runs for a maximum number of iterations or terminates early if all agents are happy.  Again you could just implement this as a function.  However, you may want to explore multiple <strong>scenarios</strong> with the model.  A scenario for example might explore a different similarity thresholds or ration of ‘Python’ coders to ‘R’ coders (for example what happens in a world where all all coders use Python and none use R!?).  For this reason you will create a simple <code class="docutils literal notranslate"><span class="pre">Model</span></code> class.  This will include a <code class="docutils literal notranslate"><span class="pre">run()</span></code> method that will start the main loop and the simulation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Model</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environment</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="coding-the-abs-using-oop-techniques">
+<h2>Coding the ABS using OOP techniques<a class="headerlink" href="#coding-the-abs-using-oop-techniques" title="Permalink to this headline">¶</a></h2>
+<section id="imports">
+<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h3>
+<p>You will mostly be using standard python in this example, but you will also make use of the following libraries:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">itertools</span></code>: we will use the <code class="docutils literal notranslate"><span class="pre">product</span></code> function to help use quickly generate a large number of coordinate pairs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random</span></code>: the movement of agents in gridworld is stochastic.  We use the the <code class="docutils literal notranslate"><span class="pre">choice</span></code> function to select a random location for movement of unhappy agents.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code>: for fun we will time our code to see how long it take to execute a model (using the imaginitiviely titled <code class="docutils literal notranslate"><span class="pre">time.time()</span></code> function.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplolib.pyplot</span></code>: used to plot a gridworld.  We will use circles of different colours to represent agents.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="constants-and-default-parameter-values">
+<h3>Constants and default parameter values<a class="headerlink" href="#constants-and-default-parameter-values" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># grid defaults</span>
+<span class="n">N_ROWS</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">N_COLS</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">N_CELLS</span> <span class="o">=</span> <span class="n">N_ROWS</span> <span class="o">*</span> <span class="n">N_COLS</span>
+
+<span class="c1"># coder language constants</span>
+<span class="n">LANG_PYTHON</span> <span class="o">=</span> <span class="s1">&#39;PYTHON&#39;</span>
+<span class="n">LANG_R</span> <span class="o">=</span> <span class="s1">&#39;R&#39;</span>
+
+<span class="c1"># default simulation parameters</span>
+<span class="n">RATIO_R_TO_PYTHON</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">PERCENT_EMPTY</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">SIMILARITY_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">MAX_ITER</span> <span class="o">=</span> <span class="mi">500</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-datascientist-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> class<a class="headerlink" href="#the-datascientist-class" title="Permalink to this headline">¶</a></h2>
+<p>When creating a new <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> we will use the following syntax</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an new data scientist agent that prefers python</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">DataScientist</span><span class="p">(</span><span class="n">unique_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">LANG_PYTHON</span><span class="p">,</span> 
+                      <span class="n">env</span><span class="o">=</span><span class="n">grid_env</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">SIMILARITY_THRESHOLD</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>In the above code snippet <code class="docutils literal notranslate"><span class="pre">grid_env</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> class where an agent lives and interacts with other agents.</p>
+</div></blockquote>
+<p>As you have already learned <code class="docutils literal notranslate"><span class="pre">agent</span></code> is an <strong>instance</strong> of the class <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code>.  At this stage all the code has done is parameterise the agent and position it in the grid environment.  The code below demonstrates how you would store these parameters as class attributes using <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DataScientist</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unqiue_id</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
+                 <span class="n">threshold</span><span class="o">=</span><span class="n">SIMILARITY_THRESHOLD</span><span class="p">):</span>
+        <span class="c1"># store the class attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">row</span> <span class="o">=</span> <span class="n">row</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="n">col</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">threshold</span>
+        
+        
+    <span class="k">def</span> <span class="nf">is_unsatisified_with_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>The only public method that <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> makes available is <code class="docutils literal notranslate"><span class="pre">is_unsatisified_with_neighbours()</span></code>.  For the agent to makes its decision it must first gather its neighbours.  This can be done by calling <code class="docutils literal notranslate"><span class="pre">GridWorld.get_neighbours(row,</span> <span class="pre">col)</span></code>.  A <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> agent contains the attribute <code class="docutils literal notranslate"><span class="pre">self.env</span></code> which is a reference to the grid world.  You can therefore access the agent’s neighbours like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neighbours</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We haven’t implemented the <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> class yet, but for now you can note that <code class="docutils literal notranslate"><span class="pre">get_neighbours</span></code> returns a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> objects that live in the neighbouring cells to the agent. Note this list is of variable length and depending on the number of empty cells next to an agent. From here it is straightforward to calculate the percentage of neighbours that use the same coding language.  As an example code could:</p>
+<ul class="simple">
+<li><p>Calculate the number of neighbours by taking the <code class="docutils literal notranslate"><span class="pre">len</span></code> of the returned list.</p></li>
+<li><p>Calculate the number of similar neighbours using a loop or list comprehension.</p></li>
+<li><p>Check for the special case where the number of neighbours is zero and return False.</p></li>
+<li><p>Calculate the proportion of similar neighbours and check if this is less than the agent’s similarity threshold.</p></li>
+</ul>
+<p>An example implementation of the method <code class="docutils literal notranslate"><span class="pre">is_unsatisified_with_neighbours</span></code> is given in the code listing below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DataScientist</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unqiue_id</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
+                 <span class="n">threshold</span><span class="o">=</span><span class="n">SIMILARITY_THRESHOLD</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">row</span> <span class="o">=</span> <span class="n">row</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="n">col</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">threshold</span>
+        
+        
+    <span class="k">def</span> <span class="nf">is_unsatisified_with_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">neighbours</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">n_similar</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbours</span> <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">language</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbours</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n_similar</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">neighbours</span><span class="p">)))</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To improve the usability of our class let’s add a class <strong>property</strong> <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> that provides a simple interface to get and set the <code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">col</span></code> attributes.</p>
+<p>There are different ways to implement properties in python.  We have already come across the decorator <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code>.  We will use that in a slightly more explicit way here.  First we will create two private methods (names prefixed by <code class="docutils literal notranslate"><span class="pre">_</span></code>) for getting and setting repectively. Take a look at how these method are implemented and note that <code class="docutils literal notranslate"><span class="pre">_set_coordinates</span></code> includes some validation of the input (a useful feature!).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">_get_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">tuple</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Coordinartes should be (int, int)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To create a simple interface for coorinates we then pass both methods to the property decorator <code class="docutils literal notranslate"><span class="pre">coordinates</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_coordinates</span><span class="p">,</span> <span class="n">_set_coordinates</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full code listing for <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> is provided below.  Make sure you note the indentation levels of the methods and <code class="docutils literal notranslate"><span class="pre">coordinates</span></code>.  I’ve also included some PEP8 style docstrings with the code.  This is good practice and although sometimes a pain it is an effient way to document your code within the python ecosystem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DataScientist</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Encapsulates a coder agents attributes and behaviour</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
+                 <span class="n">threshold</span><span class="o">=</span><span class="n">SIMILARITY_THRESHOLD</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        DataScientist</span>
+
+<span class="sd">        Params:</span>
+<span class="sd">        ------</span>
+<span class="sd">        id: int</span>
+<span class="sd">            unique id</span>
+<span class="sd">        row: int</span>
+<span class="sd">            row in gridworld</span>
+<span class="sd">        col: int</span>
+<span class="sd">            col in gridworld</span>
+<span class="sd">        language: str</span>
+<span class="sd">            preference for python or R</span>
+<span class="sd">        env: GridWorld</span>
+<span class="sd">            environment in which the Data Scientist lives and</span>
+<span class="sd">            interacts with other agents</span>
+<span class="sd">        threshold: float</span>
+<span class="sd">            similarity threshold for immediate neighbourhood.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">row</span> <span class="o">=</span> <span class="n">row</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="n">col</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">threshold</span>
+
+    <span class="k">def</span> <span class="nf">_get_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Get the coordinates of the agent in gridworld</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        -------</span>
+<span class="sd">        tuple (row, col)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Set coordinates of the agent in gridworld</span>
+
+<span class="sd">        Params:</span>
+<span class="sd">        ------</span>
+<span class="sd">        coords: (int, int)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">tuple</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Coordinartes should be (int, int)&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">is_unsatified_with_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Does the data scientists neighbourhood violate</span>
+<span class="sd">        its similarity constraint?</span>
+<span class="sd">        I.e. is the number of neighbours below similarity threshold.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">neighbours</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+        <span class="n">n_similar</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbours</span> <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">language</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbours</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n_similar</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">neighbours</span><span class="p">)))</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span>
+
+    <span class="n">coordinates</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_coordinates</span><span class="p">,</span> <span class="n">_set_coordinates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-gridworld-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> class<a class="headerlink" href="#the-gridworld-class" title="Permalink to this headline">¶</a></h2>
+<p>To create a new instance of <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> the following interface applies:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">GridWorld</span><span class="p">(</span><span class="n">n_rows</span><span class="o">=</span><span class="n">N_ROWS</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="n">N_COLS</span><span class="p">,</span>
+                <span class="n">n_empty</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">PERCENT_EMPTY</span> <span class="o">*</span> <span class="n">N_CELLS</span><span class="p">),</span>
+                <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I.e. we specify the number of rows and columns, the number of cells that are empty at any one time and optionally a random seed to allow for a repeatable run of the stochastic model.</p>
+<section id="initialising-gridworld">
+<h3>Initialising <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code><a class="headerlink" href="#initialising-gridworld" title="Permalink to this headline">¶</a></h3>
+<p>The parameters we pass to <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> are processed in its <code class="docutils literal notranslate"><span class="pre">__init__</span></code> constructor method.  We need to:</p>
+<ul class="simple">
+<li><p>Create a total of <code class="docutils literal notranslate"><span class="pre">N_CELL</span> <span class="pre">-</span> <span class="pre">n_empty</span></code> agents with the correct ratio of python to R preferences.</p></li>
+<li><p>Place these agents in random coordinates in the grid.</p></li>
+</ul>
+<p>To do this we will create three simple data structures.</p>
+<ol class="simple">
+<li><p>a list of lists <code class="docutils literal notranslate"><span class="pre">self.grid</span></code> that is our 2D representation.  This allows us to efficiently return the neighbours of a <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> simply by specifying row and column indicies.</p></li>
+<li><p>a list <code class="docutils literal notranslate"><span class="pre">self.agents</span></code> so that we can efficiently loop through all agents without worry about empty cells.</p></li>
+<li><p>a list <code class="docutils literal notranslate"><span class="pre">self.empty</span></code> that keeps track of empty cells and allows us to efficiently select one at random.</p></li>
+</ol>
+<p>To create a list of lists we could use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, but because it is slightly faster and also simple to read here we will use a list comprehension.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>We then need to randomly add a total of <code class="docutils literal notranslate"><span class="pre">N_CELL</span> <span class="pre">-</span> <span class="pre">n_empty</span></code> agents to this grid.  The way we do this efficiently might seem a bit odd at first.  Essentially we generate a list of all ordered coordinate pairs.  We then shuffle this list and take the first <code class="docutils literal notranslate"><span class="pre">N_CELL</span> <span class="pre">-</span> <span class="pre">n_empty</span></code> items.  This gives us our random locations for agents.</p>
+<p>Let’s tackle generating the coordiate pairs first.  The library <code class="docutils literal notranslate"><span class="pre">itertools</span></code> provides a function called <code class="docutils literal notranslate"><span class="pre">product</span></code>.  We pass in a enumeration of the rows and columns and it returns a <strong>generator</strong> object that we can use to create all coordinate pairs. By enumeration I mean a construct like <code class="docutils literal notranslate"><span class="pre">range(10)</span></code>.  From your for-loop experience you know that this enumerates all numbers 0 to 9.   The code looks like the below (you might want to try running this independent of any class implementation to see what it returns).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)))</span>
+<span class="n">coords</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 0), (0, 1), (1, 0), (1, 1)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Randomising this array is as simple as calling the <code class="docutils literal notranslate"><span class="pre">random.shuffle</span></code> function (note this operation is doine inplace)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is now trivial to create our agents and randomly allocate them to cells in our gridworld.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="c1"># create agents in correct proportion of R to Python.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span> <span class="o">=</span> <span class="n">N_CELLS</span> <span class="o">-</span> <span class="n">n_empty</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span> <span class="o">*</span> <span class="n">RATIO_R_TO_PYTHON</span><span class="p">):</span>
+                <span class="n">lang</span> <span class="o">=</span> <span class="n">LANG_R</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lang</span> <span class="o">=</span> <span class="n">LANG_PYTHON</span>
+
+            <span class="c1"># create agent and store in list of agents and grid</span>
+            <span class="c1"># remember that coords has been shuffled (randomised) beforehand</span>
+            <span class="n">agent</span> <span class="o">=</span> <span class="n">DataScientist</span><span class="p">(</span><span class="n">unique_id</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                                  <span class="n">language</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+            
+            <span class="c1"># place agent in grid</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">row</span><span class="p">][</span><span class="n">agent</span><span class="o">.</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">agent</span>
+            <span class="c1"># also track agents in a seperate list for efficient iteration.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Our final data struture tracks empty cells in grid world (empty cells are presented by <code class="docutils literal notranslate"><span class="pre">None</span></code>).  We simple use the remaining coordinate pairs i.e. <code class="docutils literal notranslate"><span class="pre">coords[n_agents:]</span></code> as our random empty cells.  Note that <code class="docutils literal notranslate"><span class="pre">self.empty_cells</span></code> is therefore a list of tuples (row, col) coordinates.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span><span class="p">:]]</span>
+</pre></div>
+</div>
+<p>The updated code listing is below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GridWorld</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="n">n_empty</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Number of agents to create</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span> <span class="o">=</span> <span class="n">N_CELLS</span> <span class="o">-</span> <span class="n">n_empty</span>
+        <span class="c1"># 1. grid world represented as list of lists - all cells empty on init</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)]</span>
+        <span class="c1"># 2d grid coordinates</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)))</span>
+        <span class="c1"># shuffle coordinates to use to place agents</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+        <span class="c1"># create agents in correct proportion of R to Python.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span> <span class="o">*</span> <span class="n">RATIO_R_TO_PYTHON</span><span class="p">):</span>
+                <span class="n">lang</span> <span class="o">=</span> <span class="n">LANG_R</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lang</span> <span class="o">=</span> <span class="n">LANG_PYTHON</span>
+
+            <span class="c1"># create agent and store in list of agents and grid</span>
+            <span class="c1"># remember that coords has been shuffled (randomised) beforehand</span>
+            <span class="n">agent</span> <span class="o">=</span> <span class="n">DataScientist</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                                  <span class="n">language</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">row</span><span class="p">][</span><span class="n">agent</span><span class="o">.</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">agent</span>
+            <span class="c1"># its useful to have a seperate list of agents</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+
+        <span class="c1"># the empty cells in the gridworld</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span><span class="p">:]]</span>
+    
+    <span class="k">def</span> <span class="nf">get_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">relocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gridworld-get-neighbours-self-row-col-method">
+<h3><code class="docutils literal notranslate"><span class="pre">GridWorld.get_neighbours(self,</span> <span class="pre">row,</span> <span class="pre">col)</span></code> method<a class="headerlink" href="#gridworld-get-neighbours-self-row-col-method" title="Permalink to this headline">¶</a></h3>
+<p>Remember that an agents neighbours are the surrounding cells that contain other agents.  This can be a minimum of 0 and maximum of 8 agents.</p>
+<p>The get neighbours method is actually quite simple.  There are - as always - several ways you might implement it.  Here we will aim to construct reasonably efficient code that is also readable.</p>
+<p>We will take the following approach:</p>
+<ol class="simple">
+<li><p>Create a tuple called <code class="docutils literal notranslate"><span class="pre">coords</span></code> that contains the 8 possible coordinates of neighbours.  For agents living at the borders of gridworld this will include infeasible coordinates.  (e.g. row &lt; 0).</p></li>
+<li><p>We will iterate of <code class="docutils literal notranslate"><span class="pre">coords</span></code> and append agents from all feasible coordiate pairs to a list called <code class="docutils literal notranslate"><span class="pre">feasible</span></code>. Empty cells will be ignored.</p></li>
+</ol>
+<p>Creating our candidate coordinate array is simple. As its only 8 locations I’ll hardcode it for readability.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coordinates of neighbours (some may be infeasible)</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="p">((</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="p">(</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">),</span>
+          <span class="p">(</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">),</span>
+          <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We’ll then use a list comprehension to create the <code class="docutils literal notranslate"><span class="pre">feasible</span></code> list of neighbours.  We can check the row and col are between 0 and their limits on each iteration and also check that the coordinates are not in <code class="docutils literal notranslate"><span class="pre">self.empty</span></code>.  This latter check makes sure we don’t accidently include ‘None’ in our list of neighbours.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert feasible non empty coordinates into list of agents</span>
+<span class="n">feasible</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coords</span>
+            <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+            <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">N_ROWS</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">N_COLS</span>
+            <span class="ow">and</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The updated code listing for <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> is below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GridWorld</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="n">n_empty</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Number of agents to create</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span> <span class="o">=</span> <span class="n">N_CELLS</span> <span class="o">-</span> <span class="n">n_empty</span>
+        <span class="c1"># 1. grid world represented as list of lists - all cells empty on init</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)]</span>
+        <span class="c1"># 2d grid coordinates</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)))</span>
+        <span class="c1"># shuffle coordinates to use to place agents</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+        <span class="c1"># create agents in correct proportion of R to Python.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span> <span class="o">*</span> <span class="n">RATIO_R_TO_PYTHON</span><span class="p">):</span>
+                <span class="n">lang</span> <span class="o">=</span> <span class="n">LANG_R</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lang</span> <span class="o">=</span> <span class="n">LANG_PYTHON</span>
+
+            <span class="c1"># create agent and store in list of agents and grid</span>
+            <span class="c1"># remember that coords has been shuffled (randomised) beforehand</span>
+            <span class="n">agent</span> <span class="o">=</span> <span class="n">DataScientist</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                                  <span class="n">language</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">row</span><span class="p">][</span><span class="n">agent</span><span class="o">.</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">agent</span>
+            <span class="c1"># its useful to have a seperate list of agents</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+
+        <span class="c1"># the empty cells in the gridworld</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span><span class="p">:]]</span>
+    
+    <span class="k">def</span> <span class="nf">get_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+        <span class="c1"># coordinates of neighbours (some may be infeasible)</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="p">((</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># convert feasible non empty coordinates into list of agents</span>
+        <span class="n">feasible</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coords</span>
+                    <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+                    <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">N_ROWS</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">N_COLS</span>
+                    <span class="ow">and</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">feasible</span>
+    
+    <span class="k">def</span> <span class="nf">relocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gridworld-relocate-self-agent-method">
+<h3><code class="docutils literal notranslate"><span class="pre">GridWorld.relocate(self,</span> <span class="pre">agent)</span></code> method<a class="headerlink" href="#gridworld-relocate-self-agent-method" title="Permalink to this headline">¶</a></h3>
+<p>Almost there!  The final method to implement swaps the position of an agent with an empty cell.</p>
+<p>First we need to select a random empty location in the grid. Let’s create its own method (this is for readability - its actually only 1 line of code).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_random_empty_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Return a random empty cell</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can now perform the swap and update our data structures that track the state of gridworld.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="n">new_loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_random_empty_cell</span><span class="p">()</span>
+        <span class="n">old_loc</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">coordinates</span>
+
+        <span class="c1"># swap locations in grid and update agents coordinates.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">new_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">new_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">agent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">old_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">old_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="c1"># swap empty and full coords in lookup</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">new_loc</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">old_loc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Excellent.  The final code listing for <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> is below.  Again I’ve added PEP8 docstrings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GridWorld</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Encapsulates a gridworld environment for coders to live in.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_rows</span><span class="p">,</span> <span class="n">n_cols</span><span class="p">,</span> <span class="n">n_empty</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        GridWorld - a 2D grid environment containing data scientists</span>
+<span class="sd">        who code in either Python or R and are intolerant to each</span>
+<span class="sd">        other!</span>
+
+<span class="sd">        Params:</span>
+<span class="sd">        ------</span>
+<span class="sd">        n_rows: int</span>
+<span class="sd">            Number of rows in the grid</span>
+
+<span class="sd">        n_cols: int</span>
+<span class="sd">            Number of cols in the grid</span>
+
+<span class="sd">        n_empty: int</span>
+<span class="sd">            Number of cells in the grid that remain empty</span>
+<span class="sd">            at any one time</span>
+
+<span class="sd">        random_seed: int, optional (default=None)</span>
+<span class="sd">            Control the randomisation for a repeatable</span>
+<span class="sd">            run of the simulation.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># initial grid is all empty -</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span> <span class="o">=</span> <span class="n">N_CELLS</span> <span class="o">-</span> <span class="n">n_empty</span>
+        <span class="c1"># grid world represented as list of lists - all cells empty on init</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">)]</span>
+        <span class="c1"># 2d grid coordinates</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_rows</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cols</span><span class="p">)))</span>
+        <span class="c1"># shuffle coordinates to use to place agents</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+        <span class="c1"># create agents</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span> <span class="o">*</span> <span class="n">RATIO_R_TO_PYTHON</span><span class="p">):</span>
+                <span class="n">lang</span> <span class="o">=</span> <span class="n">LANG_R</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lang</span> <span class="o">=</span> <span class="n">LANG_PYTHON</span>
+
+            <span class="c1"># create agent and store in list of agents and grid</span>
+            <span class="c1"># remember that coords has been shuffled (randomised) beforehand</span>
+            <span class="n">agent</span> <span class="o">=</span> <span class="n">DataScientist</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">col</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                                  <span class="n">language</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">row</span><span class="p">][</span><span class="n">agent</span><span class="o">.</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">agent</span>
+            <span class="c1"># its useful to have a seperate list of agents</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+
+        <span class="c1"># the empty cells in the gridworld</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">n_agents</span><span class="p">:]]</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;empty cells: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="p">)</span><span class="si">}</span><span class="s1">, expected: </span><span class="si">{</span><span class="n">n_empty</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;agents: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grid size: </span><span class="si">{</span><span class="n">N_CELLS</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_neighbours</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Return the feasible neighbours for row and col</span>
+
+<span class="sd">        Params:</span>
+<span class="sd">        -------</span>
+<span class="sd">        row: int</span>
+<span class="sd">            The row in gridworld</span>
+
+<span class="sd">        col: int</span>
+<span class="sd">            The column in gridworld</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        --------</span>
+<span class="sd">        list</span>
+<span class="sd">            List of agents in current neighbourhood of</span>
+<span class="sd">            row and col parameters</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># coordinates of neighbours (some may be infeasible)</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="p">((</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">),</span>
+                  <span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># convert feasible non empty coordinates into list of agents</span>
+        <span class="n">feasible</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coords</span>
+                    <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+                    <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">N_ROWS</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">N_COLS</span>
+                    <span class="ow">and</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">feasible</span>
+
+    <span class="k">def</span> <span class="nf">relocate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Stochastic movement of an agent to a unused location</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">new_loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_random_empty_cell</span><span class="p">()</span>
+        <span class="n">old_loc</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">coordinates</span>
+
+        <span class="c1"># swap locations in grid and update agents coordinates.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">new_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">new_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">agent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="n">old_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">old_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="c1"># swap empty and full coords in lookup</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">new_loc</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">old_loc</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_random_empty_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Return a random empty cell</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">empty_cells</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="a-preliminary-check-of-gridworld-and-datascientist-work">
+<h2>A preliminary check of <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> and <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> work.<a class="headerlink" href="#a-preliminary-check-of-gridworld-and-datascientist-work" title="Permalink to this headline">¶</a></h2>
+<p>Before we code our <code class="docutils literal notranslate"><span class="pre">Model</span></code> class let’s check that our agent and environment classes are working as expected.  To test we will create an instance of <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> and plot the environment using <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. We will color python agents blue and R agents red. If everything has worked okay there should be no patterns in the location of agents (i.e. random) and we should have the correct number of each.</p>
+<p>We haven’t covered <code class="docutils literal notranslate"><span class="pre">MatPlotLib</span></code> yet so for now you’ll have to take my word that the code below plots the environment.  I’ve added some comments so you can work through how it works if you are keen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_gridworld</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Plot agents gridworld a 2d scatter plot chart</span>
+<span class="sd">    using matplotlib.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    agents - list</span>
+<span class="sd">        A list of `DataScientist` agent objects</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="c1"># create the &#39;axis&#39; object we will plot on.</span>
+    <span class="c1"># it also returns a figure object, but we don&#39;t need that here.</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    
+    <span class="c1"># a dictionary containing our colours. </span>
+    <span class="n">agent_colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">LANG_PYTHON</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">LANG_R</span><span class="p">:</span> <span class="s1">&#39;r&#39;</span><span class="p">}</span>
+    
+    <span class="c1"># loop through each agent and add to scatter  </span>
+    <span class="c1"># select colour using the dict and agent.language</span>
+    <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="n">agent</span><span class="o">.</span><span class="n">col</span><span class="p">,</span>
+                   <span class="n">color</span><span class="o">=</span><span class="n">agent_colors</span><span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">language</span><span class="p">])</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code below creates our gridworld and then plots it.  All going well you should get a similar plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">GridWorld</span><span class="p">(</span><span class="n">n_rows</span><span class="o">=</span><span class="n">N_ROWS</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="n">N_COLS</span><span class="p">,</span>
+                <span class="n">n_empty</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">PERCENT_EMPTY</span> <span class="o">*</span> <span class="n">N_CELLS</span><span class="p">),</span>
+                <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>empty cells: 204, expected: 204
+agents: 820
+grid size: 1024
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_gridworld</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02_oop_sim_29_0.png" src="../../../_images/02_oop_sim_29_0.png" />
+</div>
+</div>
+</section>
+<section id="the-model-class-and-main-loop">
+<h2>The <code class="docutils literal notranslate"><span class="pre">Model</span></code> class and main loop<a class="headerlink" href="#the-model-class-and-main-loop" title="Permalink to this headline">¶</a></h2>
+<p>Let’s get the model running by implementing our final class.  Remember <code class="docutils literal notranslate"><span class="pre">Model</span></code> contains a single method <code class="docutils literal notranslate"><span class="pre">run</span></code>that is the main loop of our simulation.  We will run the simulation to <code class="docutils literal notranslate"><span class="pre">MAX_ITER</span></code> unless we find all agents are satisified with their neighbours and then we will terminate early.</p>
+<p>As we don’t know how many iterations will make (other than a maximum) we will implement the main loop as a <strong>while</strong>.  A skeleton of the code looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">converged</span> <span class="ow">and</span> <span class="n">iteration</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_iter</span><span class="p">:</span>
+    <span class="n">converged</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">iteration</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># do work to simulate world ...</span>
+    
+    <span class="c1"># check for convergence ...</span>
+</pre></div>
+</div>
+<p>So what happens in each iteration?  Well the first thing we need to do is loop through each agent and check if it is happy or unhappy.  If the agent isn’t satisified with their current neighbours we will make a note of it.  Once all agents have been checked we will randomly move the unhappy agents.  If anyone has moved then we know that we haven’t converged yet and we will continue to loop.</p>
+<p>Breaking that up a bit the first thing we need to do is loop through the agents and check if they are unhappy.  We do the tracking in a local scope list called <code class="docutils literal notranslate"><span class="pre">to_move</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">to_move</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">agent</span><span class="o">.</span><span class="n">is_unsatified_with_neighbours</span><span class="p">():</span>
+        <span class="c1"># store a reference to the disatisified agent.</span>
+        <span class="n">to_move</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>if <code class="docutils literal notranslate"><span class="pre">to_move</span></code> is empty we know the simulation has not converged to a solution and we can terminate the loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">to_move</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>To relocate agents in the environment we simply call the environments <code class="docutils literal notranslate"><span class="pre">relocate</span></code> method and pass in the agent.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># relocate the agents</span>
+<span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">to_move</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That’s pretty much it.  A full implementation is included below.  I’ve added a few extra bits and pieces here including some calls to <code class="docutils literal notranslate"><span class="pre">print()</span></code> to display the current state of the simulation every 20 iterations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Model</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Data Scientist Python-R segregation model.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environment</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="n">MAX_ITER</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">environment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_iter</span> <span class="o">=</span> <span class="n">max_iter</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Run the segregation simulation model</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;iterations: &#39;</span><span class="p">)</span>
+        <span class="n">converged</span><span class="p">,</span> <span class="n">iteration</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">converged</span> <span class="ow">and</span> <span class="n">iteration</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_iter</span><span class="p">:</span>
+            <span class="n">converged</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">iteration</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1"># agents that are disatisified</span>
+            <span class="n">to_move</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">agent</span><span class="o">.</span><span class="n">is_unsatified_with_neighbours</span><span class="p">():</span>
+                    <span class="c1"># store a reference to the disatisified agent</span>
+                    <span class="n">to_move</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">to_move</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1"># relocated the agents</span>
+            <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">to_move</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">relocate</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+
+            <span class="c1"># report every 20 iterations</span>
+            <span class="k">if</span> <span class="n">iteration</span> <span class="o">%</span> <span class="mi">20</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">iteration</span><span class="si">}</span><span class="s1">: proportion population moved: &#39;</span>
+                      <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">to_move</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Simulation completed after </span><span class="si">{</span><span class="n">iteration</span><span class="si">}</span><span class="s1"> iterations&#39;</span><span class="p">)</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Runtime = </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="running-the-full-simulation">
+<h2>Running the full simulation<a class="headerlink" href="#running-the-full-simulation" title="Permalink to this headline">¶</a></h2>
+<p>We now have full implementations of <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code>, <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> and <code class="docutils literal notranslate"><span class="pre">Model</span></code>.  To run our object based simulation model let’s create a function called <code class="docutils literal notranslate"><span class="pre">main()</span></code> that creates and run’s a <code class="docutils literal notranslate"><span class="pre">Model</span></code>.  At the end of the run we will plot the position of all agents in the world.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Main routine. Creates a gridworld and runs a segregation model</span>
+<span class="sd">    Plots reults in 2d matplotlib chart</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Running Data Scientist Segregation Model&#39;</span><span class="p">)</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">GridWorld</span><span class="p">(</span><span class="n">n_rows</span><span class="o">=</span><span class="n">N_ROWS</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="n">N_COLS</span><span class="p">,</span>
+                    <span class="n">n_empty</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">PERCENT_EMPTY</span> <span class="o">*</span> <span class="n">N_CELLS</span><span class="p">),</span>
+                    <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="c1"># plot the results</span>
+    <span class="n">plot_gridworld</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running Data Scientist Segregation Model
+empty cells: 204, expected: 204
+agents: 820
+grid size: 1024
+iterations: 
+
+Simulation completed after 8 iterations
+Runtime = 0.23
+</pre></div>
+</div>
+<img alt="../../../_images/02_oop_sim_34_1.png" src="../../../_images/02_oop_sim_34_1.png" />
+</div>
+</div>
+<p>Well done! You have your first full simulation model built using OOP.  What you should see is that we get segregated data scientist communities even with a fairly low similarity threshold of 30%.  Of course this is a big simplication of reality.  Data scientisits are not opinionated about coding at all!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/01_algorithms/02_oop"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01_python_classes.html" title="previous page">A world of objects</a>
+    <a class='right-next' id="next-link" href="../03_numpy.html" title="next page">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
