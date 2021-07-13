@@ -1,0 +1,1224 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Matplotlib &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exploring Time Series" href="02_plotting_time_series.html" />
+    <link rel="prev" title="Visualising data" href="../02_visual_front_page.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/04_datetimes.html">
+     Managing time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/05_analysing.html">
+     Analysing real data sets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_plotting_time_series.html">
+     Exploring Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/01_data_wrangling_solutions.html">
+     Stroke thrombolysis - data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/01_data_wrangling_solutions.html#exercise-6-encoding-fields-with-2-categories">
+     Exercise 6: Encoding fields with &gt; 2 categories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data (SOLUTIONS)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/02_stat_prog/02_matplotlib/01_matplotlib.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/02_stat_prog/02_matplotlib/01_matplotlib.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/02_matplotlib/01_matplotlib.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/02_matplotlib/01_matplotlib.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-online-messy-world-of-matplotlib">
+   The online messy world of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing">
+   Importing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-dataset-for-plotting">
+   Example dataset for plotting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-simple-plotting-example">
+   A simple plotting example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helping-the-reader">
+     Helping the reader
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-multiple-variables-and-using-legends">
+   Plotting multiple variables and using legends.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-a-high-quality-image">
+   Saving a high quality image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#you-have-learnt-useful-things-here">
+   You have learnt useful things here!
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="introduction-to-matplotlib">
+<h1>Introduction to <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code><a class="headerlink" href="#introduction-to-matplotlib" title="Permalink to this headline">¶</a></h1>
+<p>It is sometime hard to know where to start with when teaching <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.  This is because the library is very large and while easy to use it has a lot of fine tune control of plotting involved.  In this first look at <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>  I am going to introduce:</p>
+<ul class="simple">
+<li><p>The matplotlib object orientated API</p></li>
+<li><p>The components of a plot including figure and axis objects</p></li>
+<li><p>How to plot a single variable on a chart</p></li>
+<li><p>How to plot multiple variables on a chart and how to skillfully control the legend.</p></li>
+<li><p>How to output a high resolution image file.</p></li>
+</ul>
+<section id="the-online-messy-world-of-matplotlib">
+<h2>The online messy world of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#the-online-messy-world-of-matplotlib" title="Permalink to this headline">¶</a></h2>
+<p>It is worth understanding that there multiple ways to use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.  This flexibility, in my opinion, has led to a problematic and confusing mix of documentation and examples online.  For our learning purposes, I am going to focus on using the object orientated interface to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.  The abstraction offered via the OOP interface is the most pythonic, cleanest and easiest to follow (again in my opinion).  Once you have a good grasp of the approaches here I suspect you won’t look back, but you will also be able to understand the, sometimes messy, examples you find in blogs and documentation online.</p>
+</section>
+<section id="importing">
+<h2>Importing<a class="headerlink" href="#importing" title="Permalink to this headline">¶</a></h2>
+<p>We’ll need both <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for our examples here. We also need to import <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. The standard way to import <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-dataset-for-plotting">
+<h2>Example dataset for plotting<a class="headerlink" href="#example-dataset-for-plotting" title="Permalink to this headline">¶</a></h2>
+<p>We will again use the Covid-19 database from the Netherlands.  As a reminder this contains a time series of deaths, hospital admissions and reported cases.  We will reuse the cleaning code we developed in an earlier section.</p>
+<blockquote>
+<div><blockquote>
+<div><p>De Bruin, J, Voorvaart, R, Menger, V, Kocken, I, &amp; Phil, T. (2020). Novel Coronavirus (COVID-19) Cases in The Netherlands (Version v2020.11.17) [Data set]. Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.4278891">http://doi.org/10.5281/zenodo.4278891</a></p>
+</div></blockquote>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DATA_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
+            <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/RIVM_NL_provincial.csv&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_covid_dataset</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Helper function to clean the netherlands covid dataset</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    -------</span>
+<span class="sd">    csv_path: str</span>
+<span class="sd">        Path to Dutch Covid CSV file</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.Dataframe</span>
+<span class="sd">        Cleaned covid dataset in wide format</span>
+<span class="sd">    &#39;&#39;&#39;</span>    
+    
+    <span class="n">translated_names</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Datum&#39;</span><span class="p">:</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> 
+                        <span class="s1">&#39;Provincienaam&#39;</span><span class="p">:</span><span class="s1">&#39;province&#39;</span><span class="p">,</span> 
+                        <span class="s1">&#39;Provinciecode&#39;</span><span class="p">:</span><span class="s1">&#39;province_code&#39;</span><span class="p">,</span> 
+                        <span class="s1">&#39;Type&#39;</span><span class="p">:</span><span class="s1">&#39;metric&#39;</span><span class="p">,</span> 
+                        <span class="s1">&#39;Aantal&#39;</span><span class="p">:</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> 
+                        <span class="s1">&#39;AantalCumulatief&#39;</span><span class="p">:</span><span class="s1">&#39;n_cum&#39;</span><span class="p">}</span>
+
+    <span class="n">translated_metrics</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;metric&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Overleden&#39;</span><span class="p">:</span><span class="s1">&#39;deaths&#39;</span><span class="p">,</span>
+                                     <span class="s1">&#39;Totaal&#39;</span><span class="p">:</span><span class="s1">&#39;total_cases&#39;</span><span class="p">,</span>
+                                     <span class="s1">&#39;Ziekenhuisopname&#39;</span><span class="p">:</span><span class="s1">&#39;hosp_admit&#39;</span><span class="p">}}</span>
+    
+    <span class="c1"># method chaining solution.  Can be more readable</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">translated_names</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">translated_metrics</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;n_cum&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;province&#39;</span><span class="p">:</span> <span class="s1">&#39;overall&#39;</span><span class="p">})</span>
+            <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="s1">&#39;n_cum&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">})</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]),</span>
+                    <span class="n">metric</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]))</span>
+            <span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;province_code&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">],</span> 
+                         <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;province&#39;</span><span class="p">,</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+    <span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neth_covid</span> <span class="o">=</span> <span class="n">clean_covid_dataset</span><span class="p">(</span><span class="n">DATA_URL</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-simple-plotting-example">
+<h2>A simple plotting example<a class="headerlink" href="#a-simple-plotting-example" title="Permalink to this headline">¶</a></h2>
+<p>Let’s create a plot of positive cases reported in the Netherlands.  The first thing we need to do is create a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object.  The constructor takes a number of parameters, but for our purposes the most useful on is <code class="docutils literal notranslate"><span class="pre">figsize</span></code> which sizes the plots using a 2d tuple.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an instance of matplotlib.figure.Figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Now we have a figure we can create an <code class="docutils literal notranslate"><span class="pre">AxesSubplot</span></code> object.  This has lots of useful methods attached to it that all us to visualise datasets and customise the plot.  We create an axes object by calling a method from the <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an AxesSubplot</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You now have a figure <code class="docutils literal notranslate"><span class="pre">fig</span></code> and an axis subplot <code class="docutils literal notranslate"><span class="pre">ax</span></code>.  Try to get into the habbit of creating your plots this way.  These objects will come in very handy!  Put these two lines of code together and you get a blank plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_8_0.png" src="../../../_images/01_matplotlib_8_0.png" />
+</div>
+</div>
+<p>Let’s assume we have the following dataset:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To plot this data we can intuitively call the <code class="docutils literal notranslate"><span class="pre">plot</span></code> method of <code class="docutils literal notranslate"><span class="pre">ax</span></code> like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># plot in this case returns a 2D line plot object</span>
+<span class="n">line_plot</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_10_0.png" src="../../../_images/01_matplotlib_10_0.png" />
+</div>
+</div>
+<p>The good news is that there is no real difference between plotting our simple data and a proper health data set.  For example to plot positive cases in <code class="docutils literal notranslate"><span class="pre">Groningen</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+<span class="c1"># using indexing to select gronigen and the daily number of cases</span>
+<span class="n">line_plot</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Groningen&#39;</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_12_0.png" src="../../../_images/01_matplotlib_12_0.png" />
+</div>
+</div>
+<p>It is bad practice to exclude axis labels.  In true pythonic style setting the x and y labels is a simple operation.  We simply add the following code to our listing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set x axis label</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+
+<span class="c1"># set y axis label</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Positive cases&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Positive cases&quot;</span><span class="p">)</span>
+<span class="n">line_plot</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Groningen&#39;</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_14_0.png" src="../../../_images/01_matplotlib_14_0.png" />
+</div>
+</div>
+<section id="helping-the-reader">
+<h3>Helping the reader<a class="headerlink" href="#helping-the-reader" title="Permalink to this headline">¶</a></h3>
+<p>Let’s make a few final tweaks to our plot to help readability.</p>
+<ul class="simple">
+<li><p>Increase the font size of axis labels and ticks to 12</p></li>
+<li><p>Add in x, y grid lines</p></li>
+<li><p>Increase the line width of the plot</p></li>
+</ul>
+<p>Increasing the font size of the x and y axis labels requires us to add a <code class="docutils literal notranslate"><span class="pre">fontsize</span></code> parameter when they are set.  For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The command is a little less obvious for the tick labels themselves (tick labels are the values on the axis). We need to use a seperate method called <code class="docutils literal notranslate"><span class="pre">tick_params</span></code>.  To set both tick label sizes to 12 we use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There might be instances where you only need to set the tick label size on one axis.  For example, to set only for the x or y axis use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As this is quite a long plot its useful to add grid lines to the help a reader.  We can do this by calling the axis grid method</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>By default that will provide solid black grid lines.  We can vary the style by passing parameters to the command.  For example, to change the line style to ‘–’ we can</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We will also increase the line width using the <code class="docutils literal notranslate"><span class="pre">lw</span></code> parameter of the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method.  You might need to experiment with different widths in practice.  Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line_plot</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Groningen&#39;</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The full modified code listing is below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+<span class="c1"># add in fontsize parameter</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Positive cases&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># include x, y grid </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># set size of x, y ticks</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># add `lw=2.0` to increase line width (default = ~1.5)</span>
+<span class="n">line_plot</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Groningen&#39;</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+
+<span class="c1"># remove any cell padding</span>
+<span class="c1">#fig.tight_layout()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_16_0.png" src="../../../_images/01_matplotlib_16_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="plotting-multiple-variables-and-using-legends">
+<h2>Plotting multiple variables and using legends.<a class="headerlink" href="#plotting-multiple-variables-and-using-legends" title="Permalink to this headline">¶</a></h2>
+<p>Let’s modify our plot above so we can explore multiple provinces at the same time.  I’ve chosen a stacked line.  We will put the plotting code in a function called <code class="docutils literal notranslate"><span class="pre">plot_stacked_cases</span></code>.  We can pass the subgroups we wish to explore, their labels (that we will include in a legend) and the y axis label.</p>
+<blockquote>
+<div><p>We include a stacked plot by calling the method <code class="docutils literal notranslate"><span class="pre">ax.stackplot()</span></code></p>
+</div></blockquote>
+<p>We will first plot ‘Groningen’, ‘Utrecht’, ‘Gelderland’, and ‘Drenthe’.  To understand the plot we will need to include a <strong>legend</strong>.  <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> can help with positioning the legend, but we can also fine tune its position, fontsize and number of columns.</p>
+<p>The basic command to include a legend is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># equivalent to ...</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By default <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> chooses the so called best position for the legends location. Let’s test that out to see how it looks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">y_label</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="c1"># include x, y grid </span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+    <span class="c1"># set size of x, y ticks</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="c1"># create stacked plot</span>
+    <span class="n">stk_plt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">stackplot</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+
+    <span class="c1"># add legend - matplotlib decides placement</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">leg_loc</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="n">n_cols</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select the analysis sub group and store in list. (exclude overall)</span>
+<span class="n">provinces</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Groningen&#39;</span><span class="p">,</span> <span class="s1">&#39;Utrecht&#39;</span><span class="p">,</span> <span class="s1">&#39;Gelderland&#39;</span><span class="p">,</span> <span class="s1">&#39;Drenthe&#39;</span><span class="p">]</span>
+<span class="n">subgroups</span> <span class="o">=</span> <span class="p">[</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">provinces</span><span class="p">]</span>   
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_stacked_cases</span><span class="p">(</span><span class="n">subgroups</span><span class="p">,</span> <span class="n">provinces</span><span class="p">,</span> <span class="s2">&quot;Positive cases&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_19_0.png" src="../../../_images/01_matplotlib_19_0.png" />
+</div>
+</div>
+<p>For simple plots you should hopefully find ‘best’ works well, but in our case, with four series, its end ups not being ideally positioned.  The first thing we can tweak is its position using the <code class="docutils literal notranslate"><span class="pre">loc</span></code> parameter</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># include after a call to .plot()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are multiple values you might try (default is <code class="docutils literal notranslate"><span class="pre">best</span></code> or<code class="docutils literal notranslate"><span class="pre">0</span></code>).</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Location String</p></th>
+<th class="text-align:center head"><p>Location Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>‘best’</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>‘upper right’</p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>‘upper left’</p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>‘lower left’</p></td>
+<td class="text-align:center"><p>3</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>‘lower right’</p></td>
+<td class="text-align:center"><p>4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>‘right’</p></td>
+<td class="text-align:center"><p>5</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>‘center left’</p></td>
+<td class="text-align:center"><p>6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>‘center right’</p></td>
+<td class="text-align:center"><p>7</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>‘lower center’</p></td>
+<td class="text-align:center"><p>8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>‘upper center’</p></td>
+<td class="text-align:center"><p>9</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>‘center’</p></td>
+<td class="text-align:center"><p>10</p></td>
+</tr>
+</tbody>
+</table>
+<p>It is usual to try out a few of these options when deciding on how to present a figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select the analysis sub group and store in list. (exclude overall)</span>
+<span class="n">provinces</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Groningen&#39;</span><span class="p">,</span> <span class="s1">&#39;Utrecht&#39;</span><span class="p">,</span> <span class="s1">&#39;Gelderland&#39;</span><span class="p">,</span> <span class="s1">&#39;Drenthe&#39;</span><span class="p">]</span>
+<span class="n">subgroups</span> <span class="o">=</span> <span class="p">[</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">provinces</span><span class="p">]</span>   
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_stacked_cases</span><span class="p">(</span><span class="n">subgroups</span><span class="p">,</span> <span class="n">provinces</span><span class="p">,</span> <span class="s2">&quot;Positive cases&quot;</span><span class="p">,</span> 
+                             <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_21_0.png" src="../../../_images/01_matplotlib_21_0.png" />
+</div>
+</div>
+<p>By default the legend is presented as a single column.  We can increase the number of columns by setting the <code class="docutils literal notranslate"><span class="pre">ncol</span></code> parameter.  For example to set this to 4 and locate the legend upper centre:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select the analysis sub group and store in list. (exclude overall)</span>
+<span class="n">provinces</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Groningen&#39;</span><span class="p">,</span> <span class="s1">&#39;Utrecht&#39;</span><span class="p">,</span> <span class="s1">&#39;Gelderland&#39;</span><span class="p">,</span> <span class="s1">&#39;Drenthe&#39;</span><span class="p">]</span>
+<span class="n">subgroups</span> <span class="o">=</span> <span class="p">[</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">provinces</span><span class="p">]</span>   
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_stacked_cases</span><span class="p">(</span><span class="n">subgroups</span><span class="p">,</span> <span class="n">provinces</span><span class="p">,</span> <span class="s2">&quot;Positive cases&quot;</span><span class="p">,</span> 
+                             <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_23_0.png" src="../../../_images/01_matplotlib_23_0.png" />
+</div>
+</div>
+<p>Note that we have called the legend method of the <code class="docutils literal notranslate"><span class="pre">ax</span></code> object.  I’ve found this to be the simplest approachin practice, but sometimes I need to position the legend outside of the central plotting area.  To do this you can call the the method from the <code class="docutils literal notranslate"><span class="pre">fig</span></code> object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper center&#39;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using the code above you should find that the the legend appears above the plotting area in the figure.  This might sense if you needed to include a higher number of subgroups, for example all of the provinces in a single plot.</p>
+<p>Let’s first look at what the plot looks like with our original implementation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop the index and get the unique provinces.</span>
+<span class="n">provinces</span> <span class="o">=</span> <span class="n">neth_covid</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s1">&#39;province&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># get all subgroups and exclude overall.</span>
+<span class="n">subgroups</span> <span class="o">=</span> <span class="p">[</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">provinces</span> 
+             <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="s1">&#39;overall&#39;</span><span class="p">]</span>   
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_stacked_cases</span><span class="p">(</span><span class="n">subgroups</span><span class="p">,</span> <span class="n">provinces</span><span class="p">,</span> <span class="s2">&quot;Positive cases&quot;</span><span class="p">,</span> 
+                             <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_25_0.png" src="../../../_images/01_matplotlib_25_0.png" />
+</div>
+</div>
+<p>That works okay, but its not ideal that the central plotting area contains a very large legend.  Now let’s modify <code class="docutils literal notranslate"><span class="pre">plot_stacked_cases</span></code> to call <code class="docutils literal notranslate"><span class="pre">fig.legend()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">y_label</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="c1"># include x, y grid </span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+    <span class="c1"># set size of x, y ticks</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="c1"># create stacked plot</span>
+    <span class="n">stk_plt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">stackplot</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+
+    <span class="c1"># add legend - matplotlib decides placement</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">leg_loc</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="n">n_cols</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop the index and get the unique provinces.</span>
+<span class="n">provinces</span> <span class="o">=</span> <span class="n">neth_covid</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s1">&#39;province&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># get all subgroups and exclude overall.</span>
+<span class="n">subgroups</span> <span class="o">=</span> <span class="p">[</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">provinces</span> 
+             <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="s1">&#39;overall&#39;</span><span class="p">]</span>   
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_stacked_cases</span><span class="p">(</span><span class="n">subgroups</span><span class="p">,</span> <span class="n">provinces</span><span class="p">,</span> <span class="s2">&quot;Positive cases&quot;</span><span class="p">,</span> 
+                             <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_28_0.png" src="../../../_images/01_matplotlib_28_0.png" />
+</div>
+</div>
+<p>Using the code above, try a few different location parameters.  In most cases the legend ends up overlapping part of an axis or the plot line.  <strong>That is quite frustrating!</strong>  A further level of fine tuning is needed.  To do this we can employ the <code class="docutils literal notranslate"><span class="pre">bbox_to_anchor</span></code> parameter.  This takes a tuple of the form <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">width,</span> <span class="pre">height)</span></code>.  To begin with I’d recommend just using the <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> approach; when calling from <code class="docutils literal notranslate"><span class="pre">fig</span></code> <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are figure coordinate positions.  The value <code class="docutils literal notranslate"><span class="pre">(0.5,</span> <span class="pre">0.5)</span></code> <strong>places the corner specified by <code class="docutils literal notranslate"><span class="pre">loc</span></code></strong> of in the centre of the plot.  For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># add legend.  Upper left corner at centre of figure.</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+               
+    <span class="c1"># add legend.  lower centre corner at centre of figure.</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower centre&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+               
+    <span class="c1"># add legend.  lower centre corner at left centre of figure.</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower centre&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>In general, I think you will need to do a bit of trial and error to get the positioning just as you want it. This should also help you understand how the <code class="docutils literal notranslate"><span class="pre">bbox_to_anchor</span></code> and <code class="docutils literal notranslate"><span class="pre">loc</span></code> parameters work together. Its worth knowing that (1.0, 1.0) is the top right of the figure, and (0.0, 0.0) is bottom left.  You can of course go above and below these values.</p>
+</div></blockquote>
+<p>Here’s a final version of <code class="docutils literal notranslate"><span class="pre">plot_stacked_cases</span></code> that let’s you control <code class="docutils literal notranslate"><span class="pre">bbox_to_anchor</span></code> and some code that places a legend outside the main plotting area.  Try a few parameter combinations to build an understanding of how it works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                       <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)):</span>
+    
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">y_label</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="c1"># include x, y grid </span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+    <span class="c1"># set size of x, y ticks</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="c1"># create stacked plot</span>
+    <span class="n">stk_plt</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">stackplot</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+
+    <span class="c1"># add legend</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">leg_loc</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="n">n_cols</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="n">bbox_to_anchor</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_stacked_cases</span><span class="p">(</span><span class="n">subgroups</span><span class="p">,</span> <span class="n">provinces</span><span class="p">,</span> <span class="s2">&quot;Positive cases&quot;</span><span class="p">,</span> 
+                             <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">),</span>
+                             <span class="n">n_cols</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_31_0.png" src="../../../_images/01_matplotlib_31_0.png" />
+</div>
+</div>
+</section>
+<section id="saving-a-high-quality-image">
+<h2>Saving a high quality image<a class="headerlink" href="#saving-a-high-quality-image" title="Permalink to this headline">¶</a></h2>
+<p>If you are working outside of a Jupyter notebook, for example, for a publication or report, then you will need to save your chart as a high resolution image.  This is achieved with the <code class="docutils literal notranslate"><span class="pre">.savefig()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">fig</span></code> object. I recommend that you make use of the <code class="docutils literal notranslate"><span class="pre">dpi</span></code> or dots per inch parameter (e.g. set to 300 for a academic publication) and set <code class="docutils literal notranslate"><span class="pre">bbox_inches='tight'</span></code> which removes the padding around the image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_stacked_cases</span><span class="p">(</span><span class="n">subgroups</span><span class="p">,</span> <span class="n">provinces</span><span class="p">,</span> <span class="s2">&quot;Positive cases&quot;</span><span class="p">,</span> 
+                             <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">),</span>
+                             <span class="n">n_cols</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;stacked.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_matplotlib_33_0.png" src="../../../_images/01_matplotlib_33_0.png" />
+</div>
+</div>
+</section>
+<section id="you-have-learnt-useful-things-here">
+<h2>You have learnt useful things here!<a class="headerlink" href="#you-have-learnt-useful-things-here" title="Permalink to this headline">¶</a></h2>
+<p>You may not realise it from our simple example, but you have learnt a lot about <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.  You now have some code that can be reused to create and manipulate a large number of plots. Yes, there are many types of different plots you can create and they are not covered here.  For help with those I recommend you check out the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> official documentation and its example <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">gallary</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02_stat_prog/02_matplotlib"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../02_visual_front_page.html" title="previous page">Visualising data</a>
+    <a class='right-next' id="next-link" href="02_plotting_time_series.html" title="next page">Exploring Time Series</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
