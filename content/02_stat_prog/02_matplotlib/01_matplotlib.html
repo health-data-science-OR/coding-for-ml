@@ -55,7 +55,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Exploring Time Series" href="02_plotting_time_series.html" />
+    <link rel="next" title="Multiple subplots" href="02_matplotlib2.html" />
     <link rel="prev" title="Visualising data" href="../02_visual_front_page.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -350,8 +350,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="02_matplotlib2.html">
+     Multiple subplots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_cs_hm.html">
+     Case study: heat map
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="02_plotting_time_series.html">
-     Exploring Time Series
+     Case Study: ED Time Series
     </a>
    </li>
   </ul>
@@ -868,9 +878,6 @@
 
 <span class="c1"># add `lw=2.0` to increase line width (default = ~1.5)</span>
 <span class="n">line_plot</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">neth_covid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Groningen&#39;</span><span class="p">][</span><span class="s1">&#39;n&#39;</span><span class="p">][</span><span class="s1">&#39;total_cases&#39;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
-
-<span class="c1"># remove any cell padding</span>
-<span class="c1">#fig.tight_layout()</span>
 </pre></div>
 </div>
 </div>
@@ -1193,7 +1200,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../02_visual_front_page.html" title="previous page">Visualising data</a>
-    <a class='right-next' id="next-link" href="02_plotting_time_series.html" title="next page">Exploring Time Series</a>
+    <a class='right-next' id="next-link" href="02_matplotlib2.html" title="next page">Multiple subplots</a>
 
         </div>
         

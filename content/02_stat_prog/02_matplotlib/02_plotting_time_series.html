@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exploring Time Series &#8212; Python for health data science.</title>
+    <title>Case Study: ED Time Series &#8212; Python for health data science.</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -58,7 +58,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Exercises" href="../03_exercises_front_page.html" />
-    <link rel="prev" title="Introduction to Matplotlib" href="01_matplotlib.html" />
+    <link rel="prev" title="Case study: heat map" href="03_cs_hm.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -351,9 +351,19 @@
      </code>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_matplotlib2.html">
+     Multiple subplots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_cs_hm.html">
+     Case study: heat map
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Exploring Time Series
+     Case Study: ED Time Series
     </a>
    </li>
   </ul>
@@ -657,12 +667,12 @@
         
               <div>
                 
-  <section id="exploring-time-series">
-<h1>Exploring Time Series<a class="headerlink" href="#exploring-time-series" title="Permalink to this headline">¶</a></h1>
+  <section id="case-study-ed-time-series">
+<h1>Case Study: ED Time Series<a class="headerlink" href="#case-study-ed-time-series" title="Permalink to this headline">¶</a></h1>
 <section id="exploring-add-plotting-before-forecasting">
 <h2>Exploring add plotting before forecasting.<a class="headerlink" href="#exploring-add-plotting-before-forecasting" title="Permalink to this headline">¶</a></h2>
-<p>Before any forecasting is attempted it is important to understand a time series.</p>
-<p>In this notebook you will learn how to:</p>
+<p>Let’s assume you are interested in forecasting the daily number of emergency department attendences at a hospital.  Before that is attempted it is important to understand a time series.  Exploring the time series using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is a good way to gain an understanding.</p>
+<p>In this case study you will learn how to:</p>
 <ul class="simple">
 <li><p>Plot a time series</p></li>
 <li><p>Adjust monthly time series to account for the different number of days</p></li>
@@ -681,32 +691,15 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels</span> <span class="k">as</span> <span class="nn">sm</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="o">.</span><span class="n">__version__</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.11.1&#39;
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="the-ed-arrivals-dataset">
 <h2>The ED arrivals dataset.<a class="headerlink" href="#the-ed-arrivals-dataset" title="Permalink to this headline">¶</a></h2>
-<p>The dataset we will use represent monthly adult (age &gt; 18) arrivals to an Emergency Department.  The observations are between April 2009 and May 2017.</p>
+<p>The dataset we will use represent monthly adult (age &gt; 18) arrivals to an Emergency Department.  The synthetic observations are based on real data between April 2009 and May 2017.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../../data/ed_mth_ts.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DATA_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
+            <span class="o">+</span> <span class="s1">&#39;hpdm097-datasets/master/ed_mth_ts.csv&#39;</span>
+<span class="n">ed_month</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_URL</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ed_month</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;MS&#39;</span>
 </pre></div>
 </div>
@@ -763,22 +756,22 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa883e15f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;date&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/02_plotting_time_series_11_1.png" src="../../../_images/02_plotting_time_series_11_1.png" />
+<img alt="../../../_images/02_plotting_time_series_9_1.png" src="../../../_images/02_plotting_time_series_9_1.png" />
 </div>
 </div>
 <p>You can then easily to save a high resolution image to file if you would like to use it in a report.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;images/explore.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;explore.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/02_plotting_time_series_13_0.png" src="../../../_images/02_plotting_time_series_13_0.png" />
+<img alt="../../../_images/02_plotting_time_series_11_0.png" src="../../../_images/02_plotting_time_series_11_0.png" />
 </div>
 </div>
 </section>
@@ -793,15 +786,16 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> 
+              <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa88463e410&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;date&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/02_plotting_time_series_16_1.png" src="../../../_images/02_plotting_time_series_16_1.png" />
+<img alt="../../../_images/02_plotting_time_series_14_1.png" src="../../../_images/02_plotting_time_series_14_1.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">plot</span></code> method returns an <code class="docutils literal notranslate"><span class="pre">axis</span></code> object. You can use this to manipulate the plot.  The following is often useful for time series plots.</p>
@@ -812,21 +806,18 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;attendances&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12_000</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;attendances&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12_000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 12000.0)
-</pre></div>
-</div>
-<img alt="../../../_images/02_plotting_time_series_18_1.png" src="../../../_images/02_plotting_time_series_18_1.png" />
+<img alt="../../../_images/02_plotting_time_series_16_0.png" src="../../../_images/02_plotting_time_series_16_0.png" />
 </div>
 </div>
 <section id="using-seaborn">
 <h4>Using Seaborn<a class="headerlink" href="#using-seaborn" title="Permalink to this headline">¶</a></h4>
-<p>You can also use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package to improve the default appearance of your charts.</p>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package to improve the default appearance of your <code class="docutils literal notranslate"><span class="pre">maplotlib</span></code> charts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -837,15 +828,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa884caa350&gt;
-</pre></div>
-</div>
-<img alt="../../../_images/02_plotting_time_series_21_1.png" src="../../../_images/02_plotting_time_series_21_1.png" />
+<img alt="../../../_images/02_plotting_time_series_19_0.png" src="../../../_images/02_plotting_time_series_19_0.png" />
 </div>
 </div>
 </section>
@@ -939,28 +927,22 @@ Freq: MS, dtype: float64
 <p><strong>Note that the units of the time series are now ‘<em>attendances / per day</em>’.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">ed_month</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa884d788d0&gt;
-</pre></div>
-</div>
-<img alt="../../../_images/02_plotting_time_series_28_1.png" src="../../../_images/02_plotting_time_series_28_1.png" />
+<img alt="../../../_images/02_plotting_time_series_26_0.png" src="../../../_images/02_plotting_time_series_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arrival_rate</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">arrival_rate</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa884f39590&gt;
-</pre></div>
-</div>
-<img alt="../../../_images/02_plotting_time_series_29_1.png" src="../../../_images/02_plotting_time_series_29_1.png" />
+<img alt="../../../_images/02_plotting_time_series_27_0.png" src="../../../_images/02_plotting_time_series_27_0.png" />
 </div>
 </div>
 </section>
@@ -981,16 +963,13 @@ Freq: MS, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">arrival_rate</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;observations&#39;</span><span class="p">)</span>
 <span class="n">ma12</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Smoothed Observations (MA_12)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;attends/day&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;attends/day&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;attends/day&#39;)
-</pre></div>
-</div>
-<img alt="../../../_images/02_plotting_time_series_32_1.png" src="../../../_images/02_plotting_time_series_32_1.png" />
+<img alt="../../../_images/02_plotting_time_series_30_0.png" src="../../../_images/02_plotting_time_series_30_0.png" />
 </div>
 </div>
 <section id="breaking-a-times-series-up-into-its-trend-and-seasonal-components">
@@ -1028,10 +1007,10 @@ Freq: MS, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa8858d82d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;date&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/02_plotting_time_series_36_1.png" src="../../../_images/02_plotting_time_series_36_1.png" />
+<img alt="../../../_images/02_plotting_time_series_34_1.png" src="../../../_images/02_plotting_time_series_34_1.png" />
 </div>
 </div>
 <p><strong>Plotting Seasonality</strong></p>
@@ -1042,10 +1021,10 @@ Freq: MS, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa885a4a6d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;date&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/02_plotting_time_series_38_1.png" src="../../../_images/02_plotting_time_series_38_1.png" />
+<img alt="../../../_images/02_plotting_time_series_36_1.png" src="../../../_images/02_plotting_time_series_36_1.png" />
 </div>
 </div>
 <p><strong>Residuals (error)</strong></p>
@@ -1056,10 +1035,10 @@ Freq: MS, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa885b9f0d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;date&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/02_plotting_time_series_40_1.png" src="../../../_images/02_plotting_time_series_40_1.png" />
+<img alt="../../../_images/02_plotting_time_series_38_1.png" src="../../../_images/02_plotting_time_series_38_1.png" />
 </div>
 </div>
 </section>
@@ -1092,7 +1071,7 @@ Freq: MS, dtype: float64
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="01_matplotlib.html" title="previous page">Introduction to <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a>
+    <a class='left-prev' id="prev-link" href="03_cs_hm.html" title="previous page">Case study: heat map</a>
     <a class='right-next' id="next-link" href="../03_exercises_front_page.html" title="next page">Exercises</a>
 
         </div>
