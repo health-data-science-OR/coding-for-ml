@@ -54,6 +54,7 @@
     sections:
       - file: content/02_stat_prog/02_matplotlib/01_matplotlib
       - file: content/02_stat_prog/02_matplotlib/02_matplotlib2
+      - file: content/02_stat_prog/02_matplotlib/03_cs_hm
       - file: content/02_stat_prog/02_matplotlib/02_plotting_time_series
   - file: content/02_stat_prog/03_exercises_front_page
     sections:
