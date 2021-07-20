@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Local python packages &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Deployment via PyPi" href="../03_pypi/01_pypi.html" />
+    <link rel="prev" title="Managing Data Science Projects" href="../03_mgt_front_page.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/04_datetimes.html">
+     Managing time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/05_analysing.html">
+     Analysing real data sets
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">
+     Introduction to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_matplotlib2.html">
+     Multiple subplots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/03_cs_hm.html">
+     Case study: heat map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">
+     Case Study: ED Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_matplotlib.html">
+     ED data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/02_stroke_data_wrangling.html">
+     Stroke data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">
+   Solutions
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions.html">
+     ED Data Wrangling Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions.html">
+     Stroke data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data (SOLUTIONS)
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Local python packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/03_mgt/02_packaging/01_python_packages.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/03_mgt/02_packaging/01_python_packages.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/03_mgt/02_packaging/01_python_packages.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/03_mgt/02_packaging/01_python_packages.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-simple-skeleton-package">
+   A simple skeleton package
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-package-name">
+     The package name
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-init-py-file">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       __init__.py
+      </span>
+     </code>
+     file
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#side-bar-package-versions">
+       Side bar: package versions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sub-modules">
+     Sub-modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#including-a-package-data-dir">
+     Including a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       package_data
+      </span>
+     </code>
+     dir
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-does-a-local-package-live">
+     Where does a local package live?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example-package">
+   An example package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#local-package-imports-from-ts-emergency">
+   Local package imports from
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ts_emergency
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package-information">
+   Package information.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-docstrings-for-built-in-help">
+   Using docstrings for built in help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-imported-package-functions">
+   Using the imported package functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packages-summing-up">
+   Packages - summing up
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="local-python-packages">
+<h1>Local python packages<a class="headerlink" href="#local-python-packages" title="Permalink to this headline">¶</a></h1>
+<p>In my day job as a health data scientist, I’ve often found that for a given project it is useful to <strong>package</strong> up the project code into a reusable toolkit.  Packages open up a cleaner and more maintainable route to sharing code with collaborators, students and clients.  It also forces me to think about code/module design and testing more than just using a simple module.</p>
+<p>A local <strong>python or module package</strong> is in its essense a directory of modules that represents a python namespace.  In classic python text books, packages are often treated as an advanced topic.  I don’t particularly agree with this classification. I will acknowledge that it is slightly more manual than other languages I have used, but note that it is less so than some others!  There’s also a bit of a legacy hangover from python 2.x in my opinion. I think for the most part its best try creating one for yourself. Be prepared to make a few mistakes and take copious notes in order to avoid making those mistakes again in future projects. Here we will look at a basic package to get you started.  There’s definitely more to learn about packages, and I encourage you to read more specialised (standard python) texts on packages. I expect the content here should help you with 90-95% of the use cases you will need (do tell me if you think I am wrong!).</p>
+<p>I’ve created local python packages to help me organise and reuse code in a variety of areas.  It is an eclectic mix - here are a few:</p>
+<ul class="simple">
+<li><p>A toolkit that provides custom ensemble forecasting models for ambulance services</p></li>
+<li><p>A time series toolkit to support the UK’s NHS with the fundamental’s of forecasting.</p></li>
+<li><p>A meta-heuristic framework to support students learning about analysing logistic problems in health services</p></li>
+<li><p>A package of reinforcement learning agents to solve stochastic multi-arm bandit problems</p></li>
+<li><p>A framework for simulation based ranking and selection</p></li>
+<li><p>A toolkit for pre-processing high frequency vital sign observations from critically ill children</p></li>
+</ul>
+<p>Sometimes a local package can be useful for providing a higher level, convenience, special case, or extended API for one or more existing data science packages (such as <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>, <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, or <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>). That is the use case we will explore here.  We will build a simple local package that provides a specialised interface for plotting health service time series. We won’t make this an extensive package, but you will learn the tools we need to create future more comprehensive packages.</p>
+<section id="a-simple-skeleton-package">
+<h2>A simple skeleton package<a class="headerlink" href="#a-simple-skeleton-package" title="Permalink to this headline">¶</a></h2>
+<p>The template below represents a very simple analysis package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>my_package_name
+├── __init__.py
+├── module_1.py
+├── module_2.py
+├── package_data
+│   ├── example_dataset_1.csv
+│   ├── example_dataset_2.csv
+</pre></div>
+</div>
+<section id="the-package-name">
+<h3>The package name<a class="headerlink" href="#the-package-name" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">my_package_name</span></code> is a directory and the name of your package.  Its the name that goes after <code class="docutils literal notranslate"><span class="pre">import</span></code> when you want to use it in your code.  Personally, I find choosing a meaningful and snappy name difficult! In fact, I might change my mind once or twice during its development.  Don’t worry too much about this, but just be aware that the longer a package name is in place the more code you are likely to have to check and update after you change it!</p>
+<p>As an example, my code package for meta-heuristics is called <code class="docutils literal notranslate"><span class="pre">metapy</span></code>  it is a mash up of <strong>meta</strong>-heuristics and <strong>py</strong>thon.  (It perhaps isn’t perfect!).  My package to support the NHS with the forecasting process is called <code class="docutils literal notranslate"><span class="pre">forecast-tools</span></code>.  This one went through a few iterations before I settled on it (I will space you the horrible names I chose before!).</p>
+</section>
+<section id="the-init-py-file">
+<h3>The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file<a class="headerlink" href="#the-init-py-file" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file sits within the <code class="docutils literal notranslate"><span class="pre">my_package_name</span></code> directory.  The file let’s the python interpretor know that <code class="docutils literal notranslate"><span class="pre">my_package_name</span></code> is a python package that can be imported.  The file <strong>can</strong> be completely empty if required.  However, at a minimum I would recommend including a version number and author.  For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;0.1.0&#39;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Tom Monks&#39;</span>
+</pre></div>
+</div>
+<section id="side-bar-package-versions">
+<h4>Side bar: package versions<a class="headerlink" href="#side-bar-package-versions" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">__version__</span></code> attribute is really useful to you and helps you (or a collaborator) check the version or release number of the code you are using (as this will incrementally change over the lifetime of the package). <code class="docutils literal notranslate"><span class="pre">__version__</span></code> uses the format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">&lt;</span><span class="n">major</span><span class="o">&gt;.&lt;</span><span class="n">minor</span><span class="o">&gt;.&lt;</span><span class="n">patch</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>When I first create a package it is conventional to build minor features incrementally up to a point where you have your first major release.  If we had v0.1.0 this would usually signifiy a very early version of the package with very limited functionality.</p>
+<p>When you are using and developing v0.2.0 of the package you might find a bug that you missed in v0.1.0.  You might want or need to solve that in a patch.  So you would have v0.1.1 of the code.  Note that no new functionality was added in v0.1.1 - it simply patched (fixed a bug in) existing functionalty.</p>
+<p>Finally you might have a shiney first milestone version of the code available.  This would be your v1.0.0</p>
+<blockquote>
+<div><p>Sometimes it can take packages many years to get to this point.  For example, a favourite package of many health data scientist is <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.  At the time of writing in 2021 this is at version 0.24!</p>
+</div></blockquote>
+</section>
+</section>
+<section id="sub-modules">
+<h3>Sub-modules<a class="headerlink" href="#sub-modules" title="Permalink to this headline">¶</a></h3>
+<p>The two modules included in the skeleton example contain related python variables (constants), classes, and functions. In other words they contain the code that does all the work in your package. For example we might have a module <code class="docutils literal notranslate"><span class="pre">datasets</span></code> used for loading one or more example data sets included in the package and <code class="docutils literal notranslate"><span class="pre">plotting</span></code> that provides high level factory type functions for specialised <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> charts (e.g. regression diagnostics).  We import these namespaces as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_package_name.plotting</span>
+<span class="kn">import</span> <span class="nn">my_package_name.datasets</span>
+</pre></div>
+</div>
+<p>If we assume <code class="docutils literal notranslate"><span class="pre">plotting</span></code> contains a function called <code class="docutils literal notranslate"><span class="pre">plt_diagnostics()</span></code> we import it as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">my_package_name.plotting</span> <span class="kn">import</span> <span class="n">plt_diagostics</span>
+</pre></div>
+</div>
+</section>
+<section id="including-a-package-data-dir">
+<h3>Including a <code class="docutils literal notranslate"><span class="pre">package_data</span></code> dir<a class="headerlink" href="#including-a-package-data-dir" title="Permalink to this headline">¶</a></h3>
+<p>It is sometimes helpful to include a sub directory within the package that contains a <strong>small</strong> dataset file (e.g. a Comma Seperated Value file; .csv).  This would include a real or synthetic dataset file that can be used in a tutorial for your package.  For health data science, I recommend synthetic data modelled (or based) on real data.  I also emphasise that the dataset should be small in order to avoid a package MBs (or sometimes GBs) in size.</p>
+<p>If you include data within your project then you might also want to follow the package pattern below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>my_package_name
+├── __init__.py
+├── module_1.py
+├── ...
+├── module_n.py
+├── datasets.py
+├── package_data
+│   ├── example_dataset_1.csv
+│   ├── example_dataset_2.csv
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">datasets</span></code> contains the functions needed to load the dataset from file and return it in a suitable format.  It’s worth noting that major data science packages opt for this approach.  For example <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="c1"># note that if provides a __version__</span>
+<span class="n">sm</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.12.2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the breast cancer dataset as a pandas dataframe</span>
+<span class="c1"># a slight difference is that in sm each data set has its own sub module </span>
+<span class="n">breast_cancer</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">cancer</span><span class="o">.</span><span class="n">load_pandas</span><span class="p">()</span>
+<span class="n">breast_cancer</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cancer</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>445.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>559.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="where-does-a-local-package-live">
+<h3>Where does a local package live?<a class="headerlink" href="#where-does-a-local-package-live" title="Permalink to this headline">¶</a></h3>
+<p>A local python package is effectively a sub-directory of code that needs to use it.  Here’s an example.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analysis_notebook.ipynb
+cmdline_program.py
+my_package_name
+├── __init__.py
+├── module_1.py
+├── ...
+├── module_n.py
+├── datasets.py
+├── package_data
+│   ├── example_dataset_1.csv
+│   ├── example_dataset_2.csv
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">analysis_notebook.ipynb</span></code> is a Jupyter notebook and <code class="docutils literal notranslate"><span class="pre">cmdline_program.py</span></code> is a python program run from the command line (e.g. <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">cmdline_program.py</span></code>).  These files import and execute code from the <code class="docutils literal notranslate"><span class="pre">my_package_name</span></code> namespaces.</p>
+</section>
+</section>
+<section id="an-example-package">
+<h2>An example package<a class="headerlink" href="#an-example-package" title="Permalink to this headline">¶</a></h2>
+<p>Let’s create a simple example package called <code class="docutils literal notranslate"><span class="pre">ts_emergency</span></code>.  Its purpose is to provide high level and convenient plotting functionality for emergency department time series data.  We will include some example data in <code class="docutils literal notranslate"><span class="pre">ed_ts_mth.csv</span></code> that we can use for plotting.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ts_emergency
+├── __init__.py
+├── plotting.py
+├── datasets.py
+├── data
+│   ├── ed_ts_mth.csv
+</pre></div>
+</div>
+<p>A GitHub repo with this structure and code can be found here: <a class="reference external" href="https://github.com/health-data-science-OR/ts-emergency">https://github.com/health-data-science-OR/ts-emergency</a></p>
+</section>
+<section id="local-package-imports-from-ts-emergency">
+<h2>Local package imports from <code class="docutils literal notranslate"><span class="pre">ts_emergency</span></code><a class="headerlink" href="#local-package-imports-from-ts-emergency" title="Permalink to this headline">¶</a></h2>
+<p>These are usually found after the standard imports such as <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code></p>
+<p>One option is to import the how package and - optionally - provide it an alias (as you would do for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ts_emergency</span> <span class="k">as</span> <span class="nn">tse</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively you can use the <strong>from</strong> statement to import a package.  This is a stylistic choice, but one benefit of using from is that you don’t need to retype the full path each time you use a function. That may or may not be important for you application.  Another more subtle benefit I’ve found is that when first designing a package I tend to rename modules and sometimes change package structure.  Importing using <code class="docutils literal notranslate"><span class="pre">from</span></code> statement means I only need to update the import section of my code - as opposed to all individual calls to a function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ts_emergency.datasets</span> <span class="kn">import</span> <span class="n">load_ed_ts</span>
+<span class="kn">from</span> <span class="nn">ts_emergency.plotting</span> <span class="kn">import</span> <span class="p">(</span><span class="n">plot_single_ed</span><span class="p">,</span> <span class="n">plot_eds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="package-information">
+<h2>Package information.<a class="headerlink" href="#package-information" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">tse</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tse</span><span class="o">.</span><span class="n">__author__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1.0
+Tom Monks
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-docstrings-for-built-in-help">
+<h2>Using docstrings for built in help<a class="headerlink" href="#using-docstrings-for-built-in-help" title="Permalink to this headline">¶</a></h2>
+<p>When you are using an IDE such as spyder, vscode or Jupyter you can use intellisense to dynamically view docstrings of modules, class and functions included in a package.  But you can also use classic the <code class="docutils literal notranslate"><span class="pre">help</span></code> built-in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">tse</span><span class="o">.</span><span class="n">datasets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on module ts_emergency.datasets in ts_emergency:
+
+NAME
+    ts_emergency.datasets
+
+DESCRIPTION
+    Functions to load built in datasets for ts_emergency.
+    Datasets are downloaded from an external github repo.
+    
+    The key loading function is load_ed_ts
+
+FUNCTIONS
+    load_ed_ts(data_format=&#39;wide&#39;, as_pandas=True)
+        Load the built-in ED dataset
+        
+        Params:
+        ------
+        data_format: str
+            &#39;Wide&#39; or &#39;long&#39; format.  Wide format provides hospital columns.
+            Long format provides a categorical hospital column and single attends
+            column.
+            
+        as_pandas: bool, optional (default = True)
+            Return as `pandas.Dataframe`.  If False then `numpy.ndarray`
+            
+        Returns:
+        -------
+        pandas.Dataframe or if `as_pandas=False` then returns `numpy.ndarray`
+
+DATA
+    LONG_URL = &#39;https://raw.githubusercontent.com/health-data-science-OR/h...
+    WIDE_URL = &#39;https://raw.githubusercontent.com/health-data-science-OR/h...
+
+FILE
+    /home/tom/Documents/code/coding-for-ml/content/03_mgt/02_packaging/ts_emergency/datasets.py
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-the-imported-package-functions">
+<h2>Using the imported package functions<a class="headerlink" href="#using-the-imported-package-functions" title="Permalink to this headline">¶</a></h2>
+<p>Once you have imported the package functions then it is just standard python to call them and pass parameters.  For example using the functions in the <code class="docutils literal notranslate"><span class="pre">ts_emergency_datasets</span></code> namespace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># directly imported function</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_ed_ts</span><span class="p">(</span><span class="n">data_format</span><span class="o">=</span><span class="s1">&#39;wide&#39;</span><span class="p">,</span> <span class="n">as_pandas</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hosp_1</th>
+      <th>hosp_2</th>
+      <th>hosp_3</th>
+      <th>hosp_4</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2014-04-01</th>
+      <td>331</td>
+      <td>287</td>
+      <td>195</td>
+      <td>184</td>
+    </tr>
+    <tr>
+      <th>2014-04-02</th>
+      <td>340</td>
+      <td>293</td>
+      <td>177</td>
+      <td>181</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># full package path to function</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">tse</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">load_ed_ts</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hosp_1</th>
+      <th>hosp_2</th>
+      <th>hosp_3</th>
+      <th>hosp_4</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2014-04-01</th>
+      <td>331</td>
+      <td>287</td>
+      <td>195</td>
+      <td>184</td>
+    </tr>
+    <tr>
+      <th>2014-04-02</th>
+      <td>340</td>
+      <td>293</td>
+      <td>177</td>
+      <td>181</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Using functions in the <code class="docutils literal notranslate"><span class="pre">ts_emergency.plotting</span></code> namespace</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_single_ed</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;hosp_1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_python_packages_18_0.png" src="../../../_images/01_python_packages_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_eds</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/01_python_packages_19_0.png" src="../../../_images/01_python_packages_19_0.png" />
+</div>
+</div>
+</section>
+<section id="packages-summing-up">
+<h2>Packages - summing up<a class="headerlink" href="#packages-summing-up" title="Permalink to this headline">¶</a></h2>
+<p>Just to repeat, there is definitely more to python packages than I can cover here.  For the interested reader I would recommend checking out Lutz’s: Learning Python. Relative imports inside of packages is a particular area I would recommend.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/03_mgt/02_packaging"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../03_mgt_front_page.html" title="previous page">Managing Data Science Projects</a>
+    <a class='right-next' id="next-link" href="../03_pypi/01_pypi.html" title="next page">Deployment via PyPi</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
