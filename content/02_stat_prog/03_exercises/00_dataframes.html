@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Working with files &#8212; Python for health data science.</title>
+    <title>Working with a pandas.Dataframe &#8212; Python for health data science.</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Case study: a large remote dataset" href="03_non_standard_download.html" />
-    <link rel="prev" title="Introduction to pandas" href="01_intro_pandas.html" />
+    <link rel="next" title="ED data wrangling" href="01_data_wrangling_matplotlib.html" />
+    <link rel="prev" title="Exercises" href="../03_exercises_front_page.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -293,13 +293,13 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../01_pandas_front_page.html">
    Data wrangling
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="01_intro_pandas.html">
+    <a class="reference internal" href="../01_pandas/01_intro_pandas.html">
      Introduction to
      <strong>
       <code class="docutils literal notranslate">
@@ -310,28 +310,28 @@
      </strong>
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_pandas/02_files.html">
      Working with files
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_non_standard_download.html">
+    <a class="reference internal" href="../01_pandas/03_non_standard_download.html">
      Case study: a large remote dataset
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_datetimes.html">
+    <a class="reference internal" href="../01_pandas/04_datetimes.html">
      Managing time series
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05_analysing.html">
+    <a class="reference internal" href="../01_pandas/05_analysing.html">
      Analysing real data sets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="06_cs_combining.html">
+    <a class="reference internal" href="../01_pandas/06_cs_combining.html">
      Case study: Combining multiple sources
     </a>
    </li>
@@ -373,13 +373,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../03_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_exercises/00_dataframes.html">
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Working with a
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -389,17 +389,17 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_exercises/01_data_wrangling_matplotlib.html">
+    <a class="reference internal" href="01_data_wrangling_matplotlib.html">
      ED data wrangling
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_exercises/02_stroke_data_wrangling.html">
+    <a class="reference internal" href="02_stroke_data_wrangling.html">
      Stroke data wrangling
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_exercises/03_visualise_ts.html">
+    <a class="reference internal" href="03_visualise_ts.html">
      Visualising time series data
     </a>
    </li>
@@ -595,7 +595,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/02_stat_prog/01_pandas/02_files.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/content/02_stat_prog/03_exercises/00_dataframes.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -615,7 +615,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/02_stat_prog/01_pandas/02_files.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/02_stat_prog/03_exercises/00_dataframes.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -636,7 +636,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/01_pandas/02_files.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/03_exercises/00_dataframes.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -644,7 +644,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/01_pandas/02_files.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/03_exercises/00_dataframes.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -668,8 +668,43 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reading-data-into-pandas-from-a-flat-file">
-   Reading data into pandas from a flat file
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3">
+   Exercise 3:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   Exercise 4:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5">
+   Exercise 5:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6">
+   Exercise 6:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-7">
+   Exercise 7
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-8">
+   Exercise 8
   </a>
  </li>
 </ul>
@@ -684,158 +719,238 @@
         
               <div>
                 
-  <div class="cell docutils container">
+  <section id="working-with-a-pandas-dataframe">
+<h1>Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code><a class="headerlink" href="#working-with-a-pandas-dataframe" title="Permalink to this headline">¶</a></h1>
+<p>These exercises and drills aim to build your experience of using an <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.    Try to work through them all without looking at the answers first.</p>
+<div class="alert alert-block alert-info"><b>Tip:</b> Undoutedly in practice you will work with more complex examples and data than those found here.  These exercises are a very gentle introduction to the syntax of `pandas`.  But don't worry we have some more complicated data wrangling examples coming up!</div>
+<hr class="docutils" />
+<p><strong>Remember for any code where you wish to use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> you need to import it.  We will also import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> to help us generate some synthetic data to use.</strong></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="working-with-files">
-<h1>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
-<section id="reading-data-into-pandas-from-a-flat-file">
-<h2>Reading data into pandas from a flat file<a class="headerlink" href="#reading-data-into-pandas-from-a-flat-file" title="Permalink to this headline">¶</a></h2>
-<p>A common task is to work with data stored in one or more files. For example in a Comma Seperated Value (CSV) or other type of delimited (e.g. tab or pipe) file.</p>
-<p>There are a number of scenarios you may encounter:</p>
-<ol class="simple">
-<li><p>The data file is held locally on your machine (or network drive)</p></li>
-<li><p>The data file is accessed via a URL (e.g. it is located in GitHub or hosted on a third party website.)</p></li>
-<li><p>The data file is compressed e.g. in a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> format</p></li>
-</ol>
-<blockquote>
-<div><p>The good news is that reading from a local directory and reading from a remote URL is identical in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.  In both cases we can use the <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> function specifying either the local path to the file or the url.</p>
-</div></blockquote>
-<p>As an example let’s read in the famous <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29">Wisonsin Breast Cancer dataset</a> from Github.</p>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code> named “number” with numbers from 1 to 10,000 inclusive.</p></li>
+<li><p>The datatype of the series should be <code class="docutils literal notranslate"><span class="pre">np.uint32</span></code></p></li>
+<li><p>Check the length of the <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
+<li><p>View the head and tail of the series to quickly validate your code has worked.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wisconsin breast cancer dataset URL</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
-      <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/wisconsin.csv&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Task</strong>:</p>
+<ul class="simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> with 5 rows and 5 columns.</p></li>
+<li><p>The data contained in each columns should all be of type int64.</p></li>
+<li><p>Columns should be titled “col_1”, “col_2” … “col_5”</p></li>
+<li><p>Check the datatype, shape and column names using <code class="docutils literal notranslate"><span class="pre">.info()</span></code></p></li>
+<li><p>View the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
+<li><p>View only the first 2 rows in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
+<li><p>Create a new variable <code class="docutils literal notranslate"><span class="pre">col_4</span></code> of type <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code> that only the data in <code class="docutils literal notranslate"><span class="pre">col_4</span></code></p></li>
+</ul>
+<p><strong>Hints</strong>:</p>
+<ul class="simple">
+<li><p>Data and can take any valid int64 value.</p></li>
+<li><p>One option is to generate a random matrix using a <code class="docutils literal notranslate"><span class="pre">numpy.random.Generator</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3">
+<h2>Exercise 3:<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h2>
+<p>The data below represents outpatient bookings for a hospital.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>unique_id</p></th>
+<th class="text-align:left head"><p>surname</p></th>
+<th class="text-align:right head"><p>age</p></th>
+<th class="text-align:left head"><p>female</p></th>
+<th class="text-align:left head"><p>first_appoint</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>het1m</p></td>
+<td class="text-align:left"><p>Hetfield</p></td>
+<td class="text-align:right"><p>50</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:left"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>ulr33f</p></td>
+<td class="text-align:left"><p>Ulrich</p></td>
+<td class="text-align:right"><p>89</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:left"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>ham1f</p></td>
+<td class="text-align:left"><p>Hammett</p></td>
+<td class="text-align:right"><p>32</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:left"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>tru4m</p></td>
+<td class="text-align:left"><p>Trujillo</p></td>
+<td class="text-align:right"><p>65</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:left"><p>True</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Using a method of your choice create a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> that represents the patient bookings.</p></li>
+<li><p>You should set the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> index to be <code class="docutils literal notranslate"><span class="pre">unique_id</span></code> (assume it is unique)</p></li>
+<li><p>Filter the dataset for just the <code class="docutils literal notranslate"><span class="pre">ham1f</span></code> booking</p></li>
+<li><p>Filer the dataset for the ‘tru4m’ and ‘ulr33f’ bookings.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4">
+<h2>Exercise 4:<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
+<p>The data contained in <code class="docutils literal notranslate"><span class="pre">sw_imaging.csv</span></code> is based on data taken from <a class="reference external" href="https://www.england.nhs.uk/statistics/statistical-work-areas/diagnostic-imaging-dataset/">NHS England’s open diagnostic imaging dataset from 2019/20.</a>.</p>
+<p>This subset contains information on the number of patients referred for imaging, the median waiting time for the imaging and the median waiting time between the imaging and the report.  Results are broken down by provider and imaging type.</p>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Read the CSV data into an appropriately named <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>(data URL provided below)</p></li>
+<li><p>View the <strong>information</strong> about the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
+<li><p>View the <strong>shape</strong> of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
+<li><p>View the first two rows in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here...</span>
 
-<span class="c1"># read into dataframe</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
+            <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/sw_imaging.csv&#39;</span>
 </pre></div>
 </div>
 </div>
+</div>
+</section>
+<section id="exercise-5">
+<h2>Exercise 5:<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h2>
+<p>Continue to work with the South West imaging dataset from <strong>exercise 4.</strong></p>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Filter the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to only show results for “Magnetic Resonance Imaging”</p></li>
+<li><p>Filter the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to only show results for  “Computerized Axial Tomography”</p></li>
+<li><p>Filter the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to only show results for the “Royal Devon and Exeter NHS Foundation Trust”</p></li>
+<li><p>Filer the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to only show results for “Magnetic Resonance Imaging” at the “Royal Devon and Exeter NHS Foundation Trust”</p></li>
+</ul>
+<p><strong>Hints:</strong></p>
+<ul class="simple">
+<li><p>The type of imaging is a <code class="docutils literal notranslate"><span class="pre">str</span></code> held in the column <code class="docutils literal notranslate"><span class="pre">imaging_type</span></code></p></li>
+<li><p>The provider of the imaging is a <code class="docutils literal notranslate"><span class="pre">str</span></code> held in the column <code class="docutils literal notranslate"><span class="pre">provider</span></code></p></li>
+<li><p>The final filter is a bit more tricky to get right first time.   Let’s assume you need to find “Diagnostic Ultrasonography” figures for <code class="docutils literal notranslate"><span class="pre">org_code</span></code> “RK9”.  This would be solved as follows:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># assume your `DataFrame` is called sw_imaging</span>
+<span class="n">sw_imaging</span><span class="p">[(</span><span class="n">sw_imaging</span><span class="p">[</span><span class="s1">&#39;org_code&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;RK9&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+           <span class="p">(</span><span class="n">sw_imaging</span><span class="p">[</span><span class="s1">&#39;imaging_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Diagnostic Ultrasonography&#39;</span><span class="p">)]</span>
+</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 569 entries, 842302 to 92751
-Data columns (total 32 columns):
- #   Column                   Non-Null Count  Dtype  
----  ------                   --------------  -----  
- 0   Unnamed: 0               569 non-null    int64  
- 1   diagnosis                569 non-null    object 
- 2   radius_mean              569 non-null    float64
- 3   texture_mean             569 non-null    float64
- 4   perimeter_mean           569 non-null    float64
- 5   area_mean                569 non-null    float64
- 6   smoothness_mean          569 non-null    float64
- 7   compactness_mean         569 non-null    float64
- 8   concavity_mean           569 non-null    float64
- 9   concave points_mean      569 non-null    float64
- 10  symmetry_mean            569 non-null    float64
- 11  fractal_dimension_mean   569 non-null    float64
- 12  radius_se                569 non-null    float64
- 13  texture_se               569 non-null    float64
- 14  perimeter_se             569 non-null    float64
- 15  area_se                  569 non-null    float64
- 16  smoothness_se            569 non-null    float64
- 17  compactness_se           569 non-null    float64
- 18  concavity_se             569 non-null    float64
- 19  concave points_se        569 non-null    float64
- 20  symmetry_se              569 non-null    float64
- 21  fractal_dimension_se     569 non-null    float64
- 22  radius_worst             569 non-null    float64
- 23  texture_worst            569 non-null    float64
- 24  perimeter_worst          569 non-null    float64
- 25  area_worst               569 non-null    float64
- 26  smoothness_worst         569 non-null    float64
- 27  compactness_worst        569 non-null    float64
- 28  concavity_worst          569 non-null    float64
- 29  concave points_worst     569 non-null    float64
- 30  symmetry_worst           569 non-null    float64
- 31  fractal_dimension_worst  569 non-null    float64
-dtypes: float64(30), int64(1), object(1)
-memory usage: 146.7+ KB
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="exercise-6">
+<h2>Exercise 6:<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h2>
+<p>Continue to work with the South West imaging dataset from <strong>exercise 4.</strong></p>
+<p>We will now look at combining both a logical <strong>and</strong> with a logical <strong>or</strong> when selecting rows from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p><strong>Task:</strong></p>
+<ul class="simple">
+<li><p>Filter the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to return both Magnetic Resonance Imaging and Computerized Axial Tomography undertaken at <code class="docutils literal notranslate"><span class="pre">org_code</span></code>=’REF’ (cornwall)</p></li>
+</ul>
+<p><strong>Hints</strong>:</p>
+<ul class="simple">
+<li><p>Think carefully about how to express the above task logically.</p>
+<ul>
+<li><p>You need results when the <code class="docutils literal notranslate"><span class="pre">(org_code</span> <span class="pre">==</span> <span class="pre">&lt;code&gt;)</span> <span class="pre">AND</span> <span class="pre">((imaging_type</span> <span class="pre">==</span> <span class="pre">&lt;type_1&gt;)</span> <span class="pre">OR</span> <span class="pre">(imaging_type</span> <span class="pre">==</span> <span class="pre">&lt;type_2&gt;))</span></code></p></li>
+</ul>
+</li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code> logical AND is represented by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and OR by <code class="docutils literal notranslate"><span class="pre">|</span></code></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(569, 32)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now let’s read in the same file, but this time it is compressed in .zip format.</p>
+</section>
+<section id="exercise-7">
+<h2>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h2>
+<p>Continue to work with the South West imaging dataset from <strong>exercise 4.</strong></p>
+<p><strong>Task</strong>:</p>
+<ul class="simple">
+<li><p>Filter the data set for all records where <code class="docutils literal notranslate"><span class="pre">n_referrals</span></code> is greater than 100,000</p></li>
+<li><p>Filter the results for all records where <code class="docutils literal notranslate"><span class="pre">mdn_days_rtt</span></code> is greater than 30</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
-      <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/wisconsin.zip&#39;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="exercise-8">
+<h2>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">¶</a></h2>
+<p>Continue to work with the South West imaging dataset from <strong>exercise 4.</strong></p>
+<p><strong>Task</strong>:</p>
+<ul class="simple">
+<li><p>What is the total number of imaging referrals made to each trust?</p></li>
+<li><p>Save the total number of referrals to a file called <code class="docutils literal notranslate"><span class="pre">total_referrals.csv</span></code></p></li>
+<li><p>Write code to return the <code class="docutils literal notranslate"><span class="pre">provider</span></code> with the highest number of referrals.</p></li>
+</ul>
+<p><strong>Hints:</strong></p>
+<p>To solve the first part of this exercise you can make use of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> method called <code class="docutils literal notranslate"><span class="pre">groupby()</span></code>.  This will allow you to group results by <code class="docutils literal notranslate"><span class="pre">provider</span></code>.  For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sw_imaging</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;provider&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This code returns  <code class="docutils literal notranslate"><span class="pre">DataFrameGroupby</span></code> object.  You can then <strong>limit it</strong> to a specific column like so.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a `SeriesGroupBy` object</span>
+<span class="n">sw_imaging</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;provider&#39;</span><span class="p">)[</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can then use on of the standard <code class="docutils literal notranslate"><span class="pre">pandas</span></code> statistical operations on group by object to return a <code class="docutils literal notranslate"><span class="pre">Series</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">.sum()</span></code>, or <code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># returns a `Series` containing your group by results summed.</span>
+<span class="n">sw_imaging</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;provider&#39;</span><span class="p">)[</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Groupby is a very powerful feature of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Full documentation is <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">here</a></p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 569 entries, 842302 to 92751
-Data columns (total 32 columns):
- #   Column                   Non-Null Count  Dtype  
----  ------                   --------------  -----  
- 0   Unnamed: 0               569 non-null    int64  
- 1   diagnosis                569 non-null    object 
- 2   radius_mean              569 non-null    float64
- 3   texture_mean             569 non-null    float64
- 4   perimeter_mean           569 non-null    float64
- 5   area_mean                569 non-null    float64
- 6   smoothness_mean          569 non-null    float64
- 7   compactness_mean         569 non-null    float64
- 8   concavity_mean           569 non-null    float64
- 9   concave points_mean      569 non-null    float64
- 10  symmetry_mean            569 non-null    float64
- 11  fractal_dimension_mean   569 non-null    float64
- 12  radius_se                569 non-null    float64
- 13  texture_se               569 non-null    float64
- 14  perimeter_se             569 non-null    float64
- 15  area_se                  569 non-null    float64
- 16  smoothness_se            569 non-null    float64
- 17  compactness_se           569 non-null    float64
- 18  concavity_se             569 non-null    float64
- 19  concave points_se        569 non-null    float64
- 20  symmetry_se              569 non-null    float64
- 21  fractal_dimension_se     569 non-null    float64
- 22  radius_worst             569 non-null    float64
- 23  texture_worst            569 non-null    float64
- 24  perimeter_worst          569 non-null    float64
- 25  area_worst               569 non-null    float64
- 26  smoothness_worst         569 non-null    float64
- 27  compactness_worst        569 non-null    float64
- 28  concavity_worst          569 non-null    float64
- 29  concave points_worst     569 non-null    float64
- 30  symmetry_worst           569 non-null    float64
- 31  fractal_dimension_worst  569 non-null    float64
-dtypes: float64(30), int64(1), object(1)
-memory usage: 146.7+ KB
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
 </pre></div>
 </div>
 </div>
@@ -856,7 +971,7 @@ memory usage: 146.7+ KB
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/02_stat_prog/01_pandas"
+            path: "./content/02_stat_prog/03_exercises"
         },
         predefinedOutput: true
     }
@@ -868,8 +983,8 @@ memory usage: 146.7+ KB
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="01_intro_pandas.html" title="previous page">Introduction to <strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong></a>
-    <a class='right-next' id="next-link" href="03_non_standard_download.html" title="next page">Case study: a large remote dataset</a>
+    <a class='left-prev' id="prev-link" href="../03_exercises_front_page.html" title="previous page">Exercises</a>
+    <a class='right-next' id="next-link" href="01_data_wrangling_matplotlib.html" title="next page">ED data wrangling</a>
 
         </div>
         

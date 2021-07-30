@@ -1,0 +1,1427 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Case study: Combining multiple sources &#8212; Python for health data science.</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Visualising data" href="../02_visual_front_page.html" />
+    <link rel="prev" title="Analysing real data sets" href="05_analysing.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../front_page.html">
+   Preface
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Data and software
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001_setup/docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
+     A more efficient algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
+     Intermediate NumPy
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
+   Debug challenges
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_datetimes.html">
+     Managing time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_analysing.html">
+     Analysing real data sets
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Case study: Combining multiple sources
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_visual_front_page.html">
+   Visualising data
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_matplotlib/01_matplotlib.html">
+     Introduction to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_matplotlib/02_matplotlib2.html">
+     Multiple subplots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_matplotlib/03_cs_hm.html">
+     Case study: heat map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_matplotlib/02_plotting_time_series.html">
+     Case Study: ED Time Series
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/00_dataframes.html">
+     Working with a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas.Dataframe
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/01_data_wrangling_matplotlib.html">
+     ED data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/02_stroke_data_wrangling.html">
+     Stroke data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../04_solutions_front_page.html">
+   Solutions
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_solutions/00_dataframes.html">
+     Working with a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas.Dataframe
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_solutions/01_data_wrangling_matplotlib_solutions.html">
+     ED Data Wrangling Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_solutions/02_stroke_data_wrangling_solutions.html">
+     Stroke data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_solutions/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
+   Managing Data Science Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/02_packaging/01_python_packages.html">
+     Local python packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
+     Deployment via PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html#building-publishing-into-your-workflow-with-github-actions">
+     Building publishing into your workflow with GitHub Actions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">
+   Exercises
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/04_exercises/01_python_packages.html">
+     Python package exercise
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">
+   Solutions
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/05_solutions/01_python_packages_solutions.html">
+     Python package exercise
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent" role="heading">
+ <span class="caption-text">
+  Appendix - Basic Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/02_stat_prog/01_pandas/06_cs_combining.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/02_stat_prog/01_pandas/06_cs_combining.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/01_pandas/06_cs_combining.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/01_pandas/06_cs_combining.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#helper-functions">
+   Helper functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-urls">
+   Data URLS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-look-at-the-individual-datasets">
+   A look at the individual datasets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-and-pre-processing-code">
+   Download and pre-processing code.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-referrals">
+     Number of referrals.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#request-to-diagnostic-imaging">
+     Request to diagnostic imaging.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imaging-to-reporting-of-results">
+     Imaging to reporting of results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combine-the-three-sources">
+   Combine the three sources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-south-west-dataset">
+   Create South West dataset
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="case-study-combining-multiple-sources">
+<h1>Case study: Combining multiple sources<a class="headerlink" href="#case-study-combining-multiple-sources" title="Permalink to this headline">¶</a></h1>
+<p>This case study will work with data taken from <a class="reference external" href="https://www.england.nhs.uk/statistics/statistical-work-areas/diagnostic-imaging-dataset/">NHS England’s open diagnostic imaging dataset from 2019/20.</a></p>
+<p><strong>We will use three datasets</strong></p>
+<ul class="simple">
+<li><p>Diagnostic imaging referrals by provider</p></li>
+<li><p>Diagnostic imaging waiting times by provider</p></li>
+<li><p>Diagnostic imaging report times by provider.</p></li>
+</ul>
+<p>We are only interested in the annual figures and will combine these into a single dataset.  The formatting in the datasets also has a few minor (and annoying) issues, including how missing data is stored, that we will need to sort out before we can combine.  The good news is that <code class="docutils literal notranslate"><span class="pre">pandas</span></code> makes this relatively painless.</p>
+<p>After the preprocessing we will create a subset of the data for the South West of England and save it to file.</p>
+<p>We will use method chaining to create and preprocess the various <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> we will use.</p>
+<blockquote>
+<div><p>One area we can exploit here is that the datasets are ordered the same.  So the same provider and diagnostic imaging type appears in the same row across the datasets.  So the task is one of preprocessing and then <strong>concatenation</strong> by row.</p>
+</div></blockquote>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="helper-functions">
+<h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
+<p>As method chaining will be used and also that we need to limit the data extracted from each dataframe two helper functions will be created.  These accept a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as a parameter and returns a subset of columns.</p>
+<blockquote>
+<div><p>In method chaining we will use these with the method <code class="docutils literal notranslate"><span class="pre">.pipe()</span></code>.  Don’t worry all should become clear when you see the code.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_index_plus_annual_column</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;org_code&#39;</span><span class="p">,</span> <span class="s1">&#39;provider&#39;</span><span class="p">,</span> <span class="s1">&#39;imaging_type&#39;</span><span class="p">,</span> <span class="s1">&#39;n_referrals&#39;</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">extract_annual_column</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39; Year &#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-urls">
+<h2>Data URLS<a class="headerlink" href="#data-urls" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NREFS_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR&#39;</span> \
+            <span class="o">+</span> <span class="s1">&#39;/hpdm139-datasets/main/di_counts.csv&#39;</span>
+<span class="n">TEST_WAIT_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR&#39;</span> \
+                <span class="o">+</span> <span class="s1">&#39;/hpdm139-datasets/main/di_rq_to_test.csv&#39;</span>
+<span class="n">REPT_WAIT_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR&#39;</span> \
+                <span class="o">+</span> <span class="s1">&#39;/hpdm139-datasets/main/di_test_to_report.csv&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-look-at-the-individual-datasets">
+<h2>A look at the individual datasets<a class="headerlink" href="#a-look-at-the-individual-datasets" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_refs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NREFS_URL</span><span class="p">)</span>
+<span class="n">n_refs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Region</th>
+      <th>Org Code</th>
+      <th>Provider name</th>
+      <th>Modality</th>
+      <th>Apr</th>
+      <th>May</th>
+      <th>Jun</th>
+      <th>Jul</th>
+      <th>Aug</th>
+      <th>Sep</th>
+      <th>Oct</th>
+      <th>Nov</th>
+      <th>Dec</th>
+      <th>Jan</th>
+      <th>Feb</th>
+      <th>Mar</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Computerized Axial Tomography</td>
+      <td>495</td>
+      <td>440</td>
+      <td>495</td>
+      <td>445</td>
+      <td>400</td>
+      <td>400</td>
+      <td>475</td>
+      <td>425</td>
+      <td>390</td>
+      <td>450</td>
+      <td>420</td>
+      <td>310</td>
+      <td>5,145</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Diagnostic Ultrasonography</td>
+      <td>155</td>
+      <td>170</td>
+      <td>120</td>
+      <td>225</td>
+      <td>265</td>
+      <td>220</td>
+      <td>215</td>
+      <td>255</td>
+      <td>230</td>
+      <td>260</td>
+      <td>240</td>
+      <td>135</td>
+      <td>2,495</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Magnetic Resonance Imaging</td>
+      <td>1,480</td>
+      <td>1,480</td>
+      <td>1,365</td>
+      <td>1,520</td>
+      <td>1,530</td>
+      <td>1,485</td>
+      <td>1,645</td>
+      <td>1,575</td>
+      <td>1,515</td>
+      <td>1,870</td>
+      <td>1,755</td>
+      <td>1,515</td>
+      <td>18,740</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Nuclear Medicine Procedure</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>*</td>
+      <td>.</td>
+      <td>.</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Plain Radiography</td>
+      <td>65</td>
+      <td>105</td>
+      <td>60</td>
+      <td>75</td>
+      <td>85</td>
+      <td>135</td>
+      <td>105</td>
+      <td>65</td>
+      <td>75</td>
+      <td>100</td>
+      <td>85</td>
+      <td>45</td>
+      <td>990</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="download-and-pre-processing-code">
+<h2>Download and pre-processing code.<a class="headerlink" href="#download-and-pre-processing-code" title="Permalink to this headline">¶</a></h2>
+<section id="number-of-referrals">
+<h3>Number of referrals.<a class="headerlink" href="#number-of-referrals" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># organisation info and num referrals</span>
+<span class="n">n_refs</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NREFS_URL</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39; Year &#39;</span><span class="p">:</span> <span class="s1">&#39;n_referrals&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;Region&#39;</span><span class="p">:</span> <span class="s1">&#39;region&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;Org Code&#39;</span><span class="p">:</span> <span class="s1">&#39;org_code&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;Provider name&#39;</span><span class="p">:</span> <span class="s1">&#39;provider&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;Modality&#39;</span><span class="p">:</span> <span class="s1">&#39;imaging_type&#39;</span><span class="p">})</span>
+            <span class="c1"># strip out white space</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">org_code</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;org_code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+                    <span class="n">imaging_type</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;imaging_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+                    <span class="n">provider</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;provider&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+                    <span class="n">region</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">extract_index_plus_annual_column</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39; Year &#39;</span><span class="p">:</span> <span class="s1">&#39;n_referrals&#39;</span><span class="p">})</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39; * &#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n_referrals</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n_referrals</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+            <span class="c1"># deal with NaN -&gt; to float and then nullable int (or keep float)</span>
+            <span class="c1"># NaN is a float.  Nullable int use pd.Int64Dtype()</span>
+            <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">})</span>
+            <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Int32Dtype</span><span class="p">()})</span>
+         <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_refs</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>region</th>
+      <th>org_code</th>
+      <th>provider</th>
+      <th>imaging_type</th>
+      <th>n_referrals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Computerized Axial Tomography</td>
+      <td>5145</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Diagnostic Ultrasonography</td>
+      <td>2495</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="request-to-diagnostic-imaging">
+<h3>Request to diagnostic imaging.<a class="headerlink" href="#request-to-diagnostic-imaging" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># days from request to imaging</span>
+<span class="n">rtt</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">TEST_WAIT_URL</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">extract_annual_column</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39; Year &#39;</span><span class="p">:</span> <span class="s1">&#39;mdn_days_rtt&#39;</span><span class="p">})</span>
+         <span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39; * &#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;mdn_days_rtt&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">})</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rtt</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mdn_days_rtt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="imaging-to-reporting-of-results">
+<h3>Imaging to reporting of results<a class="headerlink" href="#imaging-to-reporting-of-results" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># days from imaging to report</span>
+<span class="n">ttr</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">REPT_WAIT_URL</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">extract_annual_column</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39; Year &#39;</span><span class="p">:</span> <span class="s1">&#39;mdn_days_ttr&#39;</span><span class="p">})</span>
+         <span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39; * &#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;mdn_days_ttr&#39;</span><span class="p">:</span> <span class="s1">&#39;float&#39;</span><span class="p">})</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ttr</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mdn_days_ttr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="combine-the-three-sources">
+<h2>Combine the three sources<a class="headerlink" href="#combine-the-three-sources" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># combined dataset</span>
+<span class="n">imaging_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">counts</span><span class="p">,</span> <span class="n">rtt</span><span class="p">,</span> <span class="n">ttr</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">imaging_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>region</th>
+      <th>org_code</th>
+      <th>provider</th>
+      <th>imaging_type</th>
+      <th>n_referrals</th>
+      <th>mdn_days_rtt</th>
+      <th>mdn_days_ttr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Computerized Axial Tomography</td>
+      <td>5145</td>
+      <td>1.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Diagnostic Ultrasonography</td>
+      <td>2495</td>
+      <td>10.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Magnetic Resonance Imaging</td>
+      <td>18740</td>
+      <td>6.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Nuclear Medicine Procedure</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Y56</td>
+      <td>NT9</td>
+      <td>Alliance Medical</td>
+      <td>Plain Radiography</td>
+      <td>990</td>
+      <td>50.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imaging_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1325 entries, 0 to 1324
+Data columns (total 7 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   region        1325 non-null   object 
+ 1   org_code      1325 non-null   object 
+ 2   provider      1325 non-null   object 
+ 3   imaging_type  1325 non-null   object 
+ 4   n_referrals   1303 non-null   Int32  
+ 5   mdn_days_rtt  1273 non-null   float64
+ 6   mdn_days_ttr  1281 non-null   float64
+dtypes: Int32(1), float64(2), object(4)
+memory usage: 68.7+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imaging_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1325, 7)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-south-west-dataset">
+<h2>Create South West dataset<a class="headerlink" href="#create-south-west-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">south_west</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;RB2&#39;</span><span class="p">,</span> <span class="s1">&#39;RK9&#39;</span><span class="p">,</span> <span class="s1">&#39;RA9&#39;</span><span class="p">,</span> <span class="s1">&#39;REF&#39;</span><span class="p">,</span> <span class="s1">&#39;RH8&#39;</span><span class="p">]</span>
+<span class="n">sw_imaging</span> <span class="o">=</span> <span class="n">imaging_df</span><span class="p">[</span><span class="n">imaging_df</span><span class="p">[</span><span class="s1">&#39;org_code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">south_west</span><span class="p">)]</span>
+<span class="n">sw_imaging</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>region</th>
+      <th>org_code</th>
+      <th>provider</th>
+      <th>imaging_type</th>
+      <th>n_referrals</th>
+      <th>mdn_days_rtt</th>
+      <th>mdn_days_ttr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>275</th>
+      <td>Y58</td>
+      <td>REF</td>
+      <td>Royal Cornwall Hospitals NHS Trust</td>
+      <td>Computerized Axial Tomography</td>
+      <td>46160</td>
+      <td>3.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>Y58</td>
+      <td>REF</td>
+      <td>Royal Cornwall Hospitals NHS Trust</td>
+      <td>Diagnostic Ultrasonography</td>
+      <td>72985</td>
+      <td>14.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>277</th>
+      <td>Y58</td>
+      <td>REF</td>
+      <td>Royal Cornwall Hospitals NHS Trust</td>
+      <td>Fluoroscopy</td>
+      <td>12320</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sw_imaging</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(31, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sw_imaging</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;sw_imaging.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02_stat_prog/01_pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="05_analysing.html" title="previous page">Analysing real data sets</a>
+    <a class='right-next' id="next-link" href="../02_visual_front_page.html" title="next page">Visualising data</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Monks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
