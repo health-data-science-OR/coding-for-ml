@@ -1,0 +1,32 @@
+region,org_code,provider,imaging_type,n_referrals,mdn_days_rtt,mdn_days_ttr
+Y58,REF,Royal Cornwall Hospitals NHS Trust,Computerized Axial Tomography,46160,3.0,0.0
+Y58,REF,Royal Cornwall Hospitals NHS Trust,Diagnostic Ultrasonography,72985,14.0,0.0
+Y58,REF,Royal Cornwall Hospitals NHS Trust,Fluoroscopy,12320,0.0,0.0
+Y58,REF,Royal Cornwall Hospitals NHS Trust,Magnetic Resonance Imaging,27535,40.0,5.0
+Y58,REF,Royal Cornwall Hospitals NHS Trust,Nuclear Medicine Procedure,4245,28.0,1.0
+Y58,REF,Royal Cornwall Hospitals NHS Trust,Plain Radiography,198295,0.0,1.0
+Y58,REF,Royal Cornwall Hospitals NHS Trust,Single Photon Emission Computerized Tomography,425,28.0,0.0
+Y58,RH8,Royal Devon and Exeter NHS Foundation Trust,Computerized Axial Tomography,40870,3.0,0.0
+Y58,RH8,Royal Devon and Exeter NHS Foundation Trust,Diagnostic Ultrasonography,40070,14.0,0.0
+Y58,RH8,Royal Devon and Exeter NHS Foundation Trust,Fluoroscopy,4745,16.0,0.0
+Y58,RH8,Royal Devon and Exeter NHS Foundation Trust,Magnetic Resonance Imaging,22380,23.0,7.0
+Y58,RH8,Royal Devon and Exeter NHS Foundation Trust,Nuclear Medicine Procedure,3465,14.0,1.0
+Y58,RH8,Royal Devon and Exeter NHS Foundation Trust,Plain Radiography,161850,0.0,1.0
+Y58,RH8,Royal Devon and Exeter NHS Foundation Trust,Positron Emission Tomography,1000,9.0,4.0
+Y58,RH8,Royal Devon and Exeter NHS Foundation Trust,Single Photon Emission Computerized Tomography,545,17.0,2.0
+Y58,RA9,Torbay and South Devon NHS Foundation Trust,Computerized Axial Tomography,31165,3.0,0.0
+Y58,RA9,Torbay and South Devon NHS Foundation Trust,Diagnostic Ultrasonography,42690,13.0,0.0
+Y58,RA9,Torbay and South Devon NHS Foundation Trust,Fluoroscopy,8230,0.0,0.0
+Y58,RA9,Torbay and South Devon NHS Foundation Trust,Magnetic Resonance Imaging,14730,14.0,2.0
+Y58,RA9,Torbay and South Devon NHS Foundation Trust,Nuclear Medicine Procedure,1975,20.0,1.0
+Y58,RA9,Torbay and South Devon NHS Foundation Trust,Plain Radiography,110505,0.0,0.0
+Y58,RA9,Torbay and South Devon NHS Foundation Trust,Positron Emission Tomography,810,14.0,2.0
+Y58,RA9,Torbay and South Devon NHS Foundation Trust,Single Photon Emission Computerized Tomography,90,33.0,5.5
+Y58,RK9,University Hospitals Plymouth NHS Trust,Computerized Axial Tomography,54575,2.0,0.0
+Y58,RK9,University Hospitals Plymouth NHS Trust,Diagnostic Ultrasonography,89160,2.0,0.0
+Y58,RK9,University Hospitals Plymouth NHS Trust,Fluoroscopy,11500,0.0,0.0
+Y58,RK9,University Hospitals Plymouth NHS Trust,Magnetic Resonance Imaging,27210,30.0,3.0
+Y58,RK9,University Hospitals Plymouth NHS Trust,Nuclear Medicine Procedure,5030,23.0,0.0
+Y58,RK9,University Hospitals Plymouth NHS Trust,Plain Radiography,188830,0.0,3.0
+Y58,RK9,University Hospitals Plymouth NHS Trust,Positron Emission Tomography,270,14.0,1.0
+Y58,RK9,University Hospitals Plymouth NHS Trust,Single Photon Emission Computerized Tomography,1285,0.0,0.0

@@ -50,6 +50,7 @@
       - file: content/02_stat_prog/01_pandas/03_non_standard_download
       - file: content/02_stat_prog/01_pandas/04_datetimes
       - file: content/02_stat_prog/01_pandas/05_analysing
+      - file: content/02_stat_prog/01_pandas/06_cs_combining
   - file: content/02_stat_prog/02_visual_front_page
     sections:
       - file: content/02_stat_prog/02_matplotlib/01_matplotlib
@@ -58,12 +59,14 @@
       - file: content/02_stat_prog/02_matplotlib/02_plotting_time_series
   - file: content/02_stat_prog/03_exercises_front_page
     sections:
+      - file: content/02_stat_prog/03_exercises/00_dataframes
       - file: content/02_stat_prog/03_exercises/01_data_wrangling_matplotlib
       - file: content/02_stat_prog/03_exercises/02_stroke_data_wrangling
       - file: content/02_stat_prog/03_exercises/03_visualise_ts
       - file: content/02_stat_prog/03_exercises/03_visualise_ts_SOLUTIONS
   - file: content/02_stat_prog/04_solutions_front_page
     sections:
+      - file: content/02_stat_prog/04_solutions/00_dataframes
       - file: content/02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions
       - file: content/02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions
       - file: content/02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS
