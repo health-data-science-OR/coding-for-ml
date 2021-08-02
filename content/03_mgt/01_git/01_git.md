@@ -1,0 +1,9 @@
+# Version control
+
+```{admonition} "Wait.. you DON'T use version control for your code?!"
+I'm going to be very honest and say that I find it odd that I still need to have a conversation with people who code about basic version control. I can't really understand why it isn't taught routinely and second nature to everyone. Its actually best not to admit you don't use it when I'm in the room.  
+
+I'm old, and in my professional career, I can't remember a time I didn't use version control software. I think its so important for data science that I'm going to admit a few embarrassing (in a geeky sort of way) things about my history with version control. My first admission is that I first ventured into the world of version control in the summer of 2001 for a summer VB6(!) coding job. At the time I was doing my undergrad in Computer Science and let me tell you - I made a lot of mistakes in my coding!  My second admission is that I used to be an avid MS Windows user (so sorry Stallman) and from around 2003-2008 I used TortoiseSVN. This is a GUI extension of the excellent subversion software for version control. I switched to equally excellent Git after I returned to university to study for a PhD (introduced courtesy of the Warwick Computing Society) where I used it to control R, S-PLUS(!), and C# code. It was not until June 28th 2011 that I pushed my first commit to the now famous GitHub (some dodgy C# code to automate a commerical simulation package via the Windows Common Object Model - yuk!).  
+
+You don't need to remember any of that, just take home the message, that I'm pro version control for one single reason. Part of any data science study is carefully controlling and managing your code. If you don't then you will fail to get it producing the same results or perhaps even working again in 6 months time! **You should view your code as a first class citizen in data science.  Do your code, yourself and others a favour - use version control.**
+```
