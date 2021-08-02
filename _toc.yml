@@ -77,6 +77,7 @@
   - file: content/03_mgt/03_mgt_front_page
     sections:
       - file: content/03_mgt/01_git/01_why
+      - file: content/03_mgt/01_git/02_git
       - file: content/03_mgt/02_packaging/01_python_packages
       - file: content/03_mgt/03_pypi/01_pypi
   - file: content/03_mgt/04_exercises_front_page
