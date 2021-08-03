@@ -117,8 +117,10 @@ if __name__ = '__main__':
 
 > This is what is called a **hard** reset.  In practice, for a bug, you may want to do a **soft** reset.  In contrast a soft reset will roll back the last commit, but the files in your local repository will still be modified.  You can then edit them to fix a bug (test it works!), restage and then commit.   
 
-### Distributed?
+## Distributed?
 
 A defining feature of Git is that it is **distributed**.  This means that each git **repository** is a complete history of a project and that multiple users are required to merge their changes together.   
 
+## Other Git resources
 
+In addition to the resources in this book I very much recommend taking a exploring the Git material provided by [Software Carpentry](https://swcarpentry.github.io/git-novice/).  This is wonderful novice friendly material that is open and free to use.
