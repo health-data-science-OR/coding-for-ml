@@ -123,4 +123,4 @@ A defining feature of Git is that it is **distributed**.  This means that each g
 
 ## Other Git resources
 
-In addition to the resources in this book I very much recommend taking a exploring the Git material provided by [Software Carpentry](https://swcarpentry.github.io/git-novice/).  This is wonderful novice friendly material that is open and free to use.
+In addition to the resources in this book I very much recommend exploring the Git material provided by [Software Carpentry](https://swcarpentry.github.io/git-novice/).  This is wonderful novice friendly material that is open and free to use.
