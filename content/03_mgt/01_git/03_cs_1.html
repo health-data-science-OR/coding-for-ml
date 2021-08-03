@@ -702,6 +702,11 @@
    </code>
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-view-the-diff">
+   Step 8: View the diff
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -716,13 +721,13 @@
                 
   <section id="case-study-basic-use-of-git">
 <h1>Case study: Basic use of Git<a class="headerlink" href="#case-study-basic-use-of-git" title="Permalink to this headline">¶</a></h1>
-<p>This case study will take you through the setup and commands needed to reproduce the introductory example.  Note that as you work through this example the dates, username and email address will appear different from mine (so don’t panic).</p>
+<p>This case study will take you through the setup and commands needed to create and use a local git repository.  Note that as you work through this example the dates, username and email address will appear different from mine (so don’t panic).</p>
 <blockquote>
 <div><p>The material here assumes you have Git installed on your machine.</p>
 </div></blockquote>
 <section id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
-<p>You are writing a new analysis programme for your healthcare organisation.  Its a complicated task so you have decided to use Git to manage and version control your code.</p>
+<p>You are writing a new analysis programme for your healthcare organisation.  Its a complicated task so you have decided to use Git to manage and version control your code. This is the first time you have used Git.</p>
 </section>
 <section id="step-1-setup-git">
 <h2>Step 1: Setup Git<a class="headerlink" href="#step-1-setup-git" title="Permalink to this headline">¶</a></h2>
@@ -875,6 +880,37 @@ Untracked files:
 git commit -m <span class="s2">&quot;SETUP: .gitignore + *.log&quot;</span>
 </pre></div>
 </div>
+</section>
+<section id="step-8-view-the-diff">
+<h2>Step 8: View the diff<a class="headerlink" href="#step-8-view-the-diff" title="Permalink to this headline">¶</a></h2>
+<p>We now have a couple of commits.  Taking a look at the log we have</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>commit 250435844c4d13c08cc34045d0be9f31e0b76ebd <span class="o">(</span>HEAD -&gt; master<span class="o">)</span>
+Author: Tom Monks &lt;email_I_use_for_github@gmail.com&gt;
+Date:   Tue Aug <span class="m">3</span> <span class="m">16</span>:04:03 <span class="m">2021</span> +0100
+
+    SETUP: .gitignore + *.log
+
+commit 6b91b6a06a2e624e8fd8a61b0fb50b46e7c994c3
+Author: Tom Monks &lt;email_I_use_for_github@gmail.com&gt;
+Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span class="m">2021</span> +0100
+</pre></div>
+</div>
+<p>Each of these commit’s has a (rather long) identifier.  We can view the changes between two commits using the <strong>diff</strong> command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git diff 6b91..2504
+</pre></div>
+</div>
+<p>Notice that I did need to specify the full commit id (although you could copy paste).  Instead git allowed me to specify a enough charactors of each so that they were identifiable.  The diff reported by git is as expected:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>diff --git a/.gitignore b/.gitignore
+new file mode <span class="m">100644</span>
+index <span class="m">0000000</span>..5281d88
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,2 @@
++# analysis log files
++*.log
+</pre></div>
+</div>
+<p>This tells us that <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> was added including what it contained.</p>
 </section>
 </section>
 
