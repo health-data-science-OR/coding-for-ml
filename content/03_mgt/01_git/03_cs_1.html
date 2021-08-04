@@ -707,6 +707,16 @@
    Step 8: View the diff
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-9-add-readme-md">
+   Step 9: Add
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     readme.md
+    </span>
+   </code>
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -821,7 +831,7 @@ Changes to be committed:
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;INIT: add main.py&quot;</span>
 </pre></div>
 </div>
-<p>The option <code class="docutils literal notranslate"><span class="pre">-m</span></code> just let’s us add a short descriptive message the commit.  A tactic a collegue recommended to me was to divide a commit message into two parts: the commit type and a description of changes. <code class="docutils literal notranslate"><span class="pre">INIT</span></code> tells me and others the type of commit or feature it is targeting. In this case its the the initial commit.  The remaining text <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">main.py</span></code> is just referring to the file that has been added.</p>
+<p>The option <code class="docutils literal notranslate"><span class="pre">-m</span></code> just let’s us add a short descriptive message the commit.  A useful tactic a very bright colleague recommended to me was to divide a commit message into two parts: the commit type and a description of changes. <code class="docutils literal notranslate"><span class="pre">INIT</span></code> tells me and others the type of commit or feature it is targeting. In this case its the the initial commit.  The remaining text <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">main.py</span></code> is just referring to the file that has been added.</p>
 <p>If we now follow this with the log command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log
 </pre></div>
@@ -833,6 +843,20 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span c
 
     INIT: add main.py
 </pre></div>
+</div>
+<div class="admonition-commit-message-tips admonition">
+<p class="admonition-title">Commit message tips</p>
+<ul class="simple">
+<li><p>TEST -testing code</p></li>
+<li><p>DOCS - documentation (or README if limited to that)</p></li>
+<li><p>PATCH - bug fix (or FIX)</p></li>
+</ul>
+<p>When I am working on a ‘feature’ I also sometimes use a shorthand.  For example, on the markdown on this page I was using `GIT:’. Here are a few real commits I made</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GIT:</span> <span class="pre">case</span> <span class="pre">study</span> <span class="pre">1</span> <span class="pre">steps</span> <span class="pre">1-7</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GIT:</span> <span class="pre">+</span> <span class="pre">commit</span> <span class="pre">message</span> <span class="pre">tips</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GIT:</span> <span class="pre">case</span> <span class="pre">study</span> <span class="pre">1</span> <span class="pre">typo</span> <span class="pre">fix</span></code></p></li>
+</ul>
 </div>
 </section>
 <section id="step-7-add-a-gitignore">
@@ -899,7 +923,7 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span c
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git diff 6b91..2504
 </pre></div>
 </div>
-<p>Notice that I did need to specify the full commit id (although you could copy paste).  Instead git allowed me to specify a enough charactors of each so that they were identifiable.  The diff reported by git is as expected:</p>
+<p>Notice that I did not need to specify the full commit id (although you could copy paste).  Instead git allowed me to specify a enough charactors of each so that they were identifiable.  The diff reported by git is as expected:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>diff --git a/.gitignore b/.gitignore
 new file mode <span class="m">100644</span>
 index <span class="m">0000000</span>..5281d88
@@ -911,6 +935,46 @@ index <span class="m">0000000</span>..5281d88
 </pre></div>
 </div>
 <p>This tells us that <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> was added including what it contained.</p>
+</section>
+<section id="step-9-add-readme-md">
+<h2>Step 9: Add <code class="docutils literal notranslate"><span class="pre">readme.md</span></code><a class="headerlink" href="#step-9-add-readme-md" title="Permalink to this headline">¶</a></h2>
+<p>Finally let’s add some basic documentation to the project.  We will do this using a markdown file called <code class="docutils literal notranslate"><span class="pre">readme.md</span></code>.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Uber important health data science project</span>
+
+To run the code open a terminal and enter
+
+<span class="sb">`python3 main.py`</span>
+</pre></div>
+</div>
+<p>Once we have added the docs we can check the status of the repo, stage the changes, check that the changes have been successfully stage, and commit to the repo.  After this we will look at the last two commits in the log to check everything has worked.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+git add *.md
+git status
+git commit -m <span class="s2">&quot;DOCS: run instructions&quot;</span>
+git log -2
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>commit f732e5c1302c0f467853b1b256fcd4a4625b1a76 <span class="o">(</span>HEAD -&gt; master<span class="o">)</span>
+Author: Tom Monks &lt;email_I_use_for_github@gmail.com&gt;
+Date:   Wed Aug <span class="m">4</span> <span class="m">10</span>:39:06 <span class="m">2021</span> +0100
+
+    DOCS: +run instructions
+
+commit 250435844c4d13c08cc34045d0be9f31e0b76ebd
+Author: Tom Monks &lt;email_I_use_for_github@gmail.com&gt;
+Date:   Tue Aug <span class="m">3</span> <span class="m">16</span>:04:03 <span class="m">2021</span> +0100
+
+    SETUP: .gitignore + *.log
+</pre></div>
+</div>
+<p>The final project folder looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analysis_code
+├── main.py
+├── readme.md
+├── run_1.log
+└── run_2.log
+</pre></div>
+</div>
 </section>
 </section>
 
