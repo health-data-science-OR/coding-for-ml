@@ -25,7 +25,7 @@ main module
 def do_something():
     pass
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     do_something()
 ```
 
@@ -45,7 +45,7 @@ def do_something():
 def do_something_else():
     pass
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     do_something()
     do_something_else()
 ```
@@ -83,7 +83,7 @@ index 38056d8..431d04e 100644
 +def do_something_else():
 +    pass
 +
- if __name__ = '__main__':
+ if __name__ == '__main__':
      do_something()
 +    do_something_else()
 
