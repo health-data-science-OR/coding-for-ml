@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Case study: Basic use of Git" href="03_cs_1.html" />
-    <link rel="prev" title="The case for version control" href="01_why.html" />
+    <link rel="prev" title="Version control" href="../03_vc_front_page.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -449,15 +449,10 @@
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../03_mgt_front_page.html">
-   Managing Data Science Projects
+  <a class="reference internal" href="../03_vc_front_page.html">
+   Version control
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_why.html">
-     The case for version control
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Introducing Git
@@ -468,6 +463,25 @@
      Case study: Basic use of Git
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_cs_2.html">
+     Case study: roll back and bug fix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_cs_3.html">
+     Case study: Branching and merging
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_mgt_front_page.html">
+   Deployment
+  </a>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../02_packaging/01_python_packages.html">
      Local python packages
@@ -686,7 +700,7 @@
                 
   <section id="introducing-git">
 <h1>Introducing Git<a class="headerlink" href="#introducing-git" title="Permalink to this headline">¶</a></h1>
-<p>Congratualations, you have reached <strong>a very important topic</strong> in your data science studies!  Before we get into <strong>Git</strong> I want to acknowledge there other high quality version control tools available for your python or code in any other language; for example, subversion.</p>
+<p>Congratulations, you have reached <strong>a very important topic</strong> in your data science studies!  Before we get into <strong>Git</strong> I want to acknowledge there other high quality version control tools available for your python or code in any other language; for example, subversion.</p>
 <p>Git is a distributed version control system for files.  Git was originally developed by Linus Torvolds (who famously created the <strong>Linux kernel</strong>).</p>
 <blockquote>
 <div><p>The origin of the name Git is quite amusing.  I will leave you to look these stories up and enjoy!</p>
@@ -707,7 +721,7 @@
 <span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
     <span class="k">pass</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">=</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -724,7 +738,7 @@
 <span class="k">def</span> <span class="nf">do_something_else</span><span class="p">():</span>
     <span class="k">pass</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">=</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
     <span class="n">do_something_else</span><span class="p">()</span>
 </pre></div>
@@ -756,7 +770,7 @@ index 38056d8..431d04e <span class="m">100644</span>
 +def do_something_else<span class="o">()</span>:
 +    pass
 +
- <span class="k">if</span> <span class="nv">__name__</span> <span class="o">=</span> <span class="s1">&#39;__main__&#39;</span>:
+ <span class="k">if</span> <span class="nv">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span>:
      do_something<span class="o">()</span>
 +    do_something_else<span class="o">()</span>
 </pre></div>
@@ -785,7 +799,7 @@ Date:   Mon Aug <span class="m">2</span> <span class="m">16</span>:11:58 <span c
 </pre></div>
 </div>
 <blockquote>
-<div><p>This is what is called a <strong>hard</strong> reset.  In practice, for a bug, you may want to do a <strong>soft</strong> reset.  In contrast a soft reset will roll back the last commit, but the files in your local repository will still be modified.  You can then edit them to fix a bug (test it works!), restage and then commit.</p>
+<div><p>There are various ways to rollback. In this case I’ve demoed what is called a a <strong>hard</strong> reset.  In practice, for a bug, you may want to do a <strong>soft</strong> reset or even safer a <strong>revert + restore</strong>.</p>
 </div></blockquote>
 </section>
 <section id="distributed">
@@ -794,7 +808,7 @@ Date:   Mon Aug <span class="m">2</span> <span class="m">16</span>:11:58 <span c
 </section>
 <section id="other-git-resources">
 <h2>Other Git resources<a class="headerlink" href="#other-git-resources" title="Permalink to this headline">¶</a></h2>
-<p>In addition to the resources in this book I very much recommend exploring the Git material provided by <a class="reference external" href="https://swcarpentry.github.io/git-novice/">Software Carpentry</a>.  This is wonderful novice friendly material that is open and free to use.</p>
+<p>In addition to the resources in this book I very much recommend exploring the Git material provided by <a class="reference external" href="https://swcarpentry.github.io/git-novice/">Software Carpentry</a>.  This is wonderful novice friendly material that is open and free to use.  There’s also the main <a class="reference external" href="https://git-scm.com/">git website</a> which includes a free copy of an excellent git book.</p>
 </section>
 </section>
 
@@ -823,7 +837,7 @@ Date:   Mon Aug <span class="m">2</span> <span class="m">16</span>:11:58 <span c
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="01_why.html" title="previous page">The case for version control</a>
+    <a class='left-prev' id="prev-link" href="../03_vc_front_page.html" title="previous page">Version control</a>
     <a class='right-next' id="next-link" href="03_cs_1.html" title="next page">Case study: Basic use of Git</a>
 
         </div>

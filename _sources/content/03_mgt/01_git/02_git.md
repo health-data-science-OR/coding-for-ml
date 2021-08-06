@@ -1,6 +1,6 @@
 # Introducing Git
 
-Congratualations, you have reached **a very important topic** in your data science studies!  Before we get into **Git** I want to acknowledge there other high quality version control tools available for your python or code in any other language; for example, subversion.
+Congratulations, you have reached **a very important topic** in your data science studies!  Before we get into **Git** I want to acknowledge there other high quality version control tools available for your python or code in any other language; for example, subversion.
 
 Git is a distributed version control system for files.  Git was originally developed by Linus Torvolds (who famously created the **Linux kernel**).
 
@@ -25,7 +25,7 @@ main module
 def do_something():
     pass
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     do_something()
 ```
 
@@ -45,7 +45,7 @@ def do_something():
 def do_something_else():
     pass
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     do_something()
     do_something_else()
 ```
@@ -83,7 +83,7 @@ index 38056d8..431d04e 100644
 +def do_something_else():
 +    pass
 +
- if __name__ = '__main__':
+ if __name__ == '__main__':
      do_something()
 +    do_something_else()
 
@@ -115,7 +115,7 @@ if __name__ = '__main__':
     do_something()
 ```
 
-> This is what is called a **hard** reset.  In practice, for a bug, you may want to do a **soft** reset.  In contrast a soft reset will roll back the last commit, but the files in your local repository will still be modified.  You can then edit them to fix a bug (test it works!), restage and then commit.   
+> There are various ways to rollback. In this case I've demoed what is called a a **hard** reset.  In practice, for a bug, you may want to do a **soft** reset or even safer a **revert + restore**.  
 
 ## Distributed?
 
@@ -123,4 +123,6 @@ A defining feature of Git is that it is **distributed**.  This means that each g
 
 ## Other Git resources
 
-In addition to the resources in this book I very much recommend exploring the Git material provided by [Software Carpentry](https://swcarpentry.github.io/git-novice/).  This is wonderful novice friendly material that is open and free to use.
+In addition to the resources in this book I very much recommend exploring the Git material provided by [Software Carpentry](https://swcarpentry.github.io/git-novice/).  This is wonderful novice friendly material that is open and free to use.  There's also the main [git website](https://git-scm.com/) which includes a free copy of an excellent git book.
+
+

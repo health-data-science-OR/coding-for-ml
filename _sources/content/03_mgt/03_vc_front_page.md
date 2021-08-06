@@ -1,4 +1,10 @@
-# The case for version control
+# Version control
+
+So you now know how to code in Python and a few of its data science and machine learning extensions. Congratualations! The truth is, however, that this is only the beginning of your journey in health data science. When you start your first job, perhaps in genomics or building machine learning models for a big company, you need to know how to manage and deploy code.  
+
+In the first part of this topic we will look at version control for source code.
+
+## The case for version control
 
 ```{admonition} "Wait.. you DON'T use version control for your code?!"
 I'm going to be very honest and say that I find it odd that I still need to have a conversation with people who code about basic version control. I can't really understand why it isn't taught routinely and second nature to everyone. Its actually best not to admit you don't use it when I'm in the room.  
@@ -18,10 +24,10 @@ Consider a scenario where you take up a position as a data scientist in a govern
 uber_import_gov_proj
 ├── 20190320_main_v2.py
 ├── archive
-│   ├── 20190504_v3_main_not_final.py
-│   ├── tests_before_fix.py
-│   ├── v1_main.py
-│   └── v3_main_final.py
+│   ├── 20190504_v3_main_not_final.py
+│   ├── tests_before_fix.py
+│   ├── v1_main.py
+│   └── v3_main_final.py
 ├── v2_main_20190320.py
 ├── v3_main_final.py
 ├── v2v3_main_final_TM_MP_MA_DC(MA_conflicted_copy).py
@@ -50,3 +56,10 @@ Even though the code is a complete mess, you are still working for that governme
 Before you laugh again this is actually a situation I found myself in many years ago. It wasn't fun (at all - especially as I had lots of people checking if "I'd fixed it yet?" quite frequently). It did turn out that a change had introduced the bug under a given set of conditions. So, after quite a while, I fixed what turned out to be an extremely important piece of code for the organisation.  There was no version control system in place so I carefully documented the changes both in the code via comments and in external documentation. 
 
 Can you think of any software that's open source and free that would have made this a bit easier?
+
+
+
+
+
+
+

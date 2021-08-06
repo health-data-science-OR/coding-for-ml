@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercises &#8212; Python for health data science.</title>
+    <title>Version control &#8212; Python for health data science.</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python package exercise" href="04_exercises/01_python_packages.html" />
-    <link rel="prev" title="Deployment via PyPi" href="03_pypi/01_pypi.html" />
+    <link rel="next" title="Introducing Git" href="01_git/02_git.html" />
+    <link rel="prev" title="Visualising time series data" href="../02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -448,8 +448,8 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="03_vc_front_page.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="current reference internal" href="#">
    Version control
   </a>
   <ul class="collapse-ul">
@@ -501,8 +501,8 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="04_exercises_front_page.html">
    Exercises
   </a>
   <ul class="collapse-ul">
@@ -624,7 +624,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/03_mgt/04_exercises_front_page.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/03_mgt/03_vc_front_page.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -644,7 +644,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/03_mgt/04_exercises_front_page.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/03_mgt/03_vc_front_page.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -665,6 +665,38 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-case-for-version-control">
+   The case for version control
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-use-version-control">
+   Why use version control?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-1">
+     Scenario 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-2">
+     Scenario 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -673,11 +705,62 @@
         
               <div>
                 
-  <section id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p>Managing python data science projects - exercises.</p>
+  <section id="version-control">
+<h1>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h1>
+<p>So you now know how to code in Python and a few of its data science and machine learning extensions. Congratualations! The truth is, however, that this is only the beginning of your journey in health data science. When you start your first job, perhaps in genomics or building machine learning models for a big company, you need to know how to manage and deploy code.</p>
+<p>In the first part of this topic we will look at version control for source code.</p>
+<section id="the-case-for-version-control">
+<h2>The case for version control<a class="headerlink" href="#the-case-for-version-control" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-wait-you-don-t-use-version-control-for-your-code admonition">
+<p class="admonition-title">“Wait.. you DON’T use version control for your code?!”</p>
+<p>I’m going to be very honest and say that I find it odd that I still need to have a conversation with people who code about basic version control. I can’t really understand why it isn’t taught routinely and second nature to everyone. Its actually best not to admit you don’t use it when I’m in the room.</p>
+<p>I’m old, and in my professional career, I can’t remember a time I didn’t use version control software. I think its so important for data science that I’m going to admit a few embarrassing (in a geeky sort of way) things about my history with version control. My first admission is that I first ventured into the world of version control in the summer of 2001 for a summer VB6(!) coding job. At the time I was doing my undergrad in Computer Science and let me tell you - I made a lot of mistakes in my coding!  My second admission is that I used to be an avid MS Windows user (so sorry Stallman) and from around 2003-2008 I used TortoiseSVN. This is a GUI extension of the excellent subversion software for version control. I switched to equally excellent Git after I returned to university to study for a PhD (introduced courtesy of the Warwick Computing Society) where I used it to control R, S-PLUS(!), and C# code. It was not until June 28th 2011 that I pushed my first commit to the now famous GitHub (some dodgy C# code to automate a commercial simulation package via the Windows Common Object Model - yuk!).</p>
+<p>You don’t need to remember any of that, just take home the message, that I’m pro version control for one single reason. Part of any data science study is carefully controlling and managing your code. If you don’t then you will fail to get it producing the same results or perhaps even working again in 6 months time! <strong>You should view your code as a first class citizen in data science.  Do your code, yourself and others a favour - use version control.</strong></p>
+</div>
+</section>
+<section id="why-use-version-control">
+<h2>Why use version control?<a class="headerlink" href="#why-use-version-control" title="Permalink to this headline">¶</a></h2>
+<section id="scenario-1">
+<h3>Scenario 1<a class="headerlink" href="#scenario-1" title="Permalink to this headline">¶</a></h3>
+<p>Consider a scenario where you take up a position as a data scientist in a government organisation.  On your first day you are told that your predecessor has left already, but all code needed for your job is saved to the server.  You log in and have a look in the directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>uber_import_gov_proj
+├── 20190320_main_v2.py
+├── archive
+│   ├── 20190504_v3_main_not_final.py
+│   ├── tests_before_fix.py
+│   ├── v1_main.py
+│   └── v3_main_final.py
+├── v2_main_20190320.py
+├── v3_main_final.py
+├── v2v3_main_final_TM_MP_MA_DC(MA_conflicted_copy).py
+└── v3_main_final_TMonks_Conflicted_Copy.py
+</pre></div>
+</div>
+<p>Take a moment to take in the mess of this project.  Perhaps you can laugh about it.  The questions you should be asking yourself are:</p>
+<ul class="simple">
+<li><p>have you ever ended up in a mess like this even though you have had the most noble of intentions at the start of a project?</p></li>
+<li><p>have you ever worked with someone who has managed work in this way?</p></li>
+</ul>
+<p>In my experience this sort of structure turns up surprisingly often, for all sorts of data science and non-data science projects.  It is certainly more common than a cleanly organised data science project.  This is a totally unnecessary situation.  With version control we actually only need this structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>uber_import_gov_proj
+├── main.py
+</pre></div>
+</div>
+</section>
+<section id="scenario-2">
+<h3>Scenario 2<a class="headerlink" href="#scenario-2" title="Permalink to this headline">¶</a></h3>
+<p>Even though the code is a complete mess, you are still working for that government organisation several months later.  It is a Monday morning and you stroll into work with the intention of trying again to work out if you should run the analysis code in <code class="docutils literal notranslate"><span class="pre">v3_main_final.py</span></code> or <code class="docutils literal notranslate"><span class="pre">archive/v3_main_final.py</span></code>.  But alas your plans are interrupted!  Some organisation critical code originally written years ago, by an analyst long since departed, failed to run over the weekend. It’s your job to fix it!  You open up the code and after the initial horror of finding its a single ‘god function’ with a repeating verbose code, begin to try and make sense of the problem.  Your initial findings are:</p>
+<ul class="simple">
+<li><p>Its clear from comments in the code that it has been modified by several people over the years, but it is not clear how many times, who the coders were, what the changes were made and in what order.</p></li>
+<li><p>There’s no ‘archive’ folder listing older versions of the code and no documentation.  So there’s no way to roll back changes.</p></li>
+<li><p>There’s no code to test if the main analysis code runs as expected.</p></li>
+</ul>
+<p>Before you laugh again this is actually a situation I found myself in many years ago. It wasn’t fun (at all - especially as I had lots of people checking if “I’d fixed it yet?” quite frequently). It did turn out that a change had introduced the bug under a given set of conditions. So, after quite a while, I fixed what turned out to be an extremely important piece of code for the organisation.  There was no version control system in place so I carefully documented the changes both in the code via comments and in external documentation.</p>
+<p>Can you think of any software that’s open source and free that would have made this a bit easier?</p>
 <div class="toctree-wrapper compound">
 </div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -705,8 +788,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="03_pypi/01_pypi.html" title="previous page">Deployment via PyPi</a>
-    <a class='right-next' id="next-link" href="04_exercises/01_python_packages.html" title="next page">Python package exercise</a>
+    <a class='left-prev' id="prev-link" href="../02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS.html" title="previous page">Visualising time series data</a>
+    <a class='right-next' id="next-link" href="01_git/02_git.html" title="next page">Introducing Git</a>
 
         </div>
         

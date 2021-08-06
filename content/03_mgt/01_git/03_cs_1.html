@@ -55,7 +55,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Local python packages" href="../02_packaging/01_python_packages.html" />
+    <link rel="next" title="Case study: roll back and bug fix" href="04_cs_2.html" />
     <link rel="prev" title="Introducing Git" href="02_git.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -449,15 +449,10 @@
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../03_mgt_front_page.html">
-   Managing Data Science Projects
+  <a class="reference internal" href="../03_vc_front_page.html">
+   Version control
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_why.html">
-     The case for version control
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_git.html">
      Introducing Git
@@ -468,6 +463,25 @@
      Case study: Basic use of Git
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_cs_2.html">
+     Case study: roll back and bug fix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_cs_3.html">
+     Case study: Branching and merging
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../03_mgt_front_page.html">
+   Deployment
+  </a>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../02_packaging/01_python_packages.html">
      Local python packages
@@ -717,6 +731,11 @@
    </code>
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-step-10-tag-the-last-commit-as-v1-0-0">
+   (Optional) Step 10: Tag the last commit as v1.0.0
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -737,7 +756,7 @@
 </div></blockquote>
 <section id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
-<p>You are writing a new analysis programme for your healthcare organisation.  Its a complicated task so you have decided to use Git to manage and version control your code. This is the first time you have used Git.</p>
+<p>You are writing a new analysis program for your healthcare organisation.  Its a complicated task so you have decided to use Git to manage and version control your code. This is the first time you have used Git.</p>
 </section>
 <section id="step-1-setup-git">
 <h2>Step 1: Setup Git<a class="headerlink" href="#step-1-setup-git" title="Permalink to this headline">¶</a></h2>
@@ -780,7 +799,7 @@ git config --global user.email <span class="s2">&quot;email_I_use_for_github@gma
 </section>
 <section id="step-5-check-the-status-of-the-git-repo">
 <h2>Step 5: Check the status of the git repo<a class="headerlink" href="#step-5-check-the-status-of-the-git-repo" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>status</strong> command is something I would recomend using frequently.  It let’s you know the status of the repo.</p>
+<p>The <strong>status</strong> command is something I would recommend using frequently.  It let’s you know the status of the repo.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
 </pre></div>
 </div>
@@ -797,10 +816,10 @@ Untracked files:
 </section>
 <section id="step-5-stage-the-changes">
 <h2>Step 5: Stage the changes<a class="headerlink" href="#step-5-stage-the-changes" title="Permalink to this headline">¶</a></h2>
-<p>Now we need to <strong>stage</strong> (add) the changes.  Staging a file tells git that you want to include it in the next <strong>commit</strong> to the repository. There are many file types that you do not want to track in a respository.  For example, python IDE’s such as VSCode or Jupyter produce additional files to support the experience of using them (for code analysis or checkpoints). These types of file clutter a repo, increase its size and are not needed to run the code within them.</p>
+<p>Now we need to <strong>stage</strong> (add) the changes.  Staging a file tells git that you want to include it in the next <strong>commit</strong> to the repository. There are many file types that you do not want to track in a repository.  For example, python IDE’s such as VSCode or Jupyter produce additional files to support the experience of using them (for code analysis or checkpoints). These types of file clutter a repo, increase its size and are not needed to run the code within them.</p>
 <div class="admonition-becareful-of-what-you-commit admonition">
 <p class="admonition-title">Becareful of what you commit</p>
-<p>I advise you always look at what you have staged before you commit. Don’t commit any sensitive information such as password or personally identifable data.</p>
+<p>I advise you always look at what you have staged before you commit. Don’t commit any sensitive information such as password or personally identifiable data.</p>
 </div>
 <p>Git is very flexible in how you stage changes. We could for example add all modified or untracked files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add .
@@ -861,7 +880,7 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span c
 </section>
 <section id="step-7-add-a-gitignore">
 <h2>Step 7: Add a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#step-7-add-a-gitignore" title="Permalink to this headline">¶</a></h2>
-<p>To help avoid staging and committing files that you do not want to you get include <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (a git ignore file).  This is just a list of file types and directories that Git will ignore when staging changes.  For example, let’s assume you <code class="docutils literal notranslate"><span class="pre">main.py</span></code> generates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that reports how intermediate results from the analysis code. There is no value in commiting this data to a repo as it varies on each run and increases the size of the repo.  For this example let’s manually create a few log files and add them to the directory.  We will also create a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
+<p>To help avoid staging and committing files that you do not want to you get include <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (a git ignore file).  This is just a list of file types and directories that Git will ignore when staging changes.  For example, let’s assume you <code class="docutils literal notranslate"><span class="pre">main.py</span></code> generates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that reports how intermediate results from the analysis code. There is no value in committing this data to a repo as it varies on each run and increases the size of the repo.  For this example let’s manually create a few log files and add them to the directory.  We will also create a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analysis_code
 ├── main.py
 ├── run_1.log
@@ -919,11 +938,11 @@ Author: Tom Monks &lt;email_I_use_for_github@gmail.com&gt;
 Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span class="m">2021</span> +0100
 </pre></div>
 </div>
-<p>Each of these commit’s has a (rather long) identifier.  We can view the changes between two commits using the <strong>diff</strong> command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git diff 6b91..2504
+<p>Each of these commit’s has a (rather long) identifier that we will call a hash.  We can view the changes between two commits using the <strong>diff</strong> command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git diff 6b91b6a..2504358
 </pre></div>
 </div>
-<p>Notice that I did not need to specify the full commit id (although you could copy paste).  Instead git allowed me to specify a enough charactors of each so that they were identifiable.  The diff reported by git is as expected:</p>
+<p>Notice that I did not need to specify the full commit id (although you could copy paste).  Instead git allowed me to specify a enough characters of each so that they were identifiable (typically 7).  The diff reported by git is as expected:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>diff --git a/.gitignore b/.gitignore
 new file mode <span class="m">100644</span>
 index <span class="m">0000000</span>..5281d88
@@ -935,6 +954,9 @@ index <span class="m">0000000</span>..5281d88
 </pre></div>
 </div>
 <p>This tells us that <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> was added including what it contained.</p>
+<blockquote>
+<div><p>A tip is use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span></code>  This will provide a one line summary of each commit including the shortened commit hash.</p>
+</div></blockquote>
 </section>
 <section id="step-9-add-readme-md">
 <h2>Step 9: Add <code class="docutils literal notranslate"><span class="pre">readme.md</span></code><a class="headerlink" href="#step-9-add-readme-md" title="Permalink to this headline">¶</a></h2>
@@ -976,6 +998,18 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">16</span>:04:03 <span c
 </pre></div>
 </div>
 </section>
+<section id="optional-step-10-tag-the-last-commit-as-v1-0-0">
+<h2>(Optional) Step 10: Tag the last commit as v1.0.0<a class="headerlink" href="#optional-step-10-tag-the-last-commit-as-v1-0-0" title="Permalink to this headline">¶</a></h2>
+<p>It is sometimes useful to tag a commit when it represents a milestone.  This gives it a specific version number, for example v0.1.0, v1.0.0, v1.1.0 or v2.0.0, along with additional descriptive meta data.  The formatting of the tags typically used is <code class="docutils literal notranslate"><span class="pre">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</span></code>.  I find it very useful to think in terms of version numbers and milestones as opposed to individual commits (I’m sure I’m not alone there).  Tags are stored in the git repo along with meta data.  To tag the last commit we use</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git tag -a v1.0.0 f732e5c -m <span class="s2">&quot;Analysis of full patient cohort&quot;</span>
+</pre></div>
+</div>
+<p>You can view the tag via <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">show</span> <span class="pre">v1.0.0</span></code> and view all tags via <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code>.</p>
+<div class="admonition-i-don-t-often-include-a-tagging-step-in-my-local-workflow admonition">
+<p class="admonition-title">I don’t often include a tagging step in my local workflow.</p>
+<p>The reason for that is tags are not automatically pushed to a remote repo (for example on GitHub).  In fact I tend to create tagged releases on Github itself.  That allows collaborators to download a milestone version of the code and provides an shared language when talking about versions/milestones with others.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1004,7 +1038,7 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">16</span>:04:03 <span c
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="02_git.html" title="previous page">Introducing Git</a>
-    <a class='right-next' id="next-link" href="../02_packaging/01_python_packages.html" title="next page">Local python packages</a>
+    <a class='right-next' id="next-link" href="04_cs_2.html" title="next page">Case study: roll back and bug fix</a>
 
         </div>
         
