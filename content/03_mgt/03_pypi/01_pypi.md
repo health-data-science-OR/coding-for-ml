@@ -1,24 +1,30 @@
 # Deployment via PyPi
 
+If you want to deploy a python package professionally, sustainably, and easily to colleagues, clients or just everyone in general then a great way to do it is using PyPi and `pip`.  In this chapter we will learn how to setup a python package so that it is ready to be uploaded to PyPi and also how to use `setup-tools` and `twine`.
+
 ## What is pip?
 
-A package management system for installing python packages from the Python package index (PyPi - pronouced Pie Pie).  Example usage:
+A package management system for installing **local packages and python packages from the Python package index (PyPi - pronounced Pie Pie)**.  Example usage:
 
-`pip install numpy`
+`$ pip install numpy`
 
 or
 
-`pip install numpy==1.18.0`
+`$ pip install numpy==1.18.0`
+
+I recommend exploring what packages are available on [PiPy](https://pypi.org/).  The chances are when you get stuck in data science project there will be a package on pypi to help you.  For example, if you need to solve some really complex multi-objective optimisation problems you could pip install [DEAP](https://pypi.org/project/deap/).  Obviously you need to have an up-to-date version of `pip` before you can install anything.  If you are using an Anaconda distribution or conda environment  (for example, `hds_code` provided with this book) you should already have it. If you are stuck there are some instructions [here](https://packaging.python.org/tutorials/installing-packages/)
 
 ## Why use PyPi for your own projects?
 
-It is useful if you want to use a package in multiple projects without including the full source code.  
+In summary, it is useful if you want to use a package in multiple projects without asking the user to manage the source code (or binaries) themselves. This can, of course, be managed in various ways, but I've found that people I work with have had an easier time when the software is managed by pip.  For example, we haven't manually managed the source for `pandas`, `matplotlib` or `numpy` in this book.  That's dar too complicated `pip` (and other package managers) make the packages accessible to others.  That's a great thing for **open science** and health data science.
 
-The obvious use if you want others to be able to easily install and use your software/project in their own work.  I use it for educational software for students at the moment.  Its something they can use after they leave as well.
+So the obvious use case for pip in health data science is if you want others to be able to easily install and use your software/project in their own work.  I use it a lot for educational software for students.  I like the idea that students can use course learning software after they leave a University and access updated versions of it if they want to refresh their skills.  
+
+>  I also recommend making your source code open via a cloud based version control system such as GitHub.  In fact, you can link to this from your PyPi project page.
 
 ## Setting up a git repo for a PyPi project.
 
-I've used this structure on a previous project and it other projects I found use similar variations.  
+I don't want to be too prescriptive here.  It really is up to you and your collaborators how you organise your own code.  There are many suggestions online as well. The structure I am going to introduce here is a simple one I use in my own projects.  You will see variations of it online.  Here's the template repo.  We will then take a look at the elements individually.   You can view the template repository and the code it contains on [GitHub](https://github.com/health-data-science-OR/pypi-template)
 
 ```
 pypi_template
@@ -34,17 +40,74 @@ pypi_template
 └── setup.py
 ```
 
-### environment.yml
+### `environment.yml`
 
-One thing I learnt from attending the Open Source project sessions at SciPy 2019 was that it is useful to include a conda environment for developers.  That is what is in `environment.yml`. One ommision in the template repo is that it is useful to install your package into the dev environment!  See for example:  https://github.com/TomMonks/forecast-tools 
+One thing I have learnt from the Open Source community is it is useful to include a virtual conda environment for yourself and developers who contribute to the library.  That is what is in `environment.yml`. One omission in the template repo is that it is useful to **install the latest version of your own package into the dev environment!**  This means you can create example Jupyter notebooks where other data scientists can learn how to use your package.  See for example:  https://github.com/TomMonks/forecast-tools 
 
-### setup.py
+```yaml
+name: pypi_package_dev
+channels:
+  - defaults
+dependencies:
+  - jupyterlab=1.2.6
+  - matplotlib=3.1.3
+  - numpy=1.18.1
+  - pandas=1.0.1
+  - pip=20.0.2
+  - pytest=5.3.5
+  - python=3.8.1
+```
 
-This controls the installation of your package.  I've included a template in the repo.  We need to use the `setuptools` PyPI package to do the installation.  I've included `setuptools` in the dev environment, but you can install it manually:
+### `setup.py`
+
+This is the important file for `pip`.  `setup.py `controls the installation of your package.  I've included a template in the repo.  We need to use the `setuptools` PyPI package to do the installation.  I've included `setuptools` in the dev environment, but you can install it manually:
 
 `pip install setuptools`
 
-Take a look at setup.py for details.
+Here is what I have included in `setup.py`
+
+```python
+import setuptools
+from test_package import __version__
+
+# Read in the requirements.txt file
+with open("requirements.txt") as f:
+    requirements = []
+    for library in f.read().splitlines():
+        requirements.append(library)
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="pypi-template",
+    version=__version__,
+    author="Thomas Monks",
+    # I've created a specific email account before and forwarded to my own.
+    author_email="generic@genericemail.com",
+    license="The MIT License (MIT)",
+    description="A short, but useful description to appear on pypi",
+    # read in from readme.md and will appear on PyPi
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/health-data-science-OR/pypi-template",
+    packages=setuptools.find_packages(),
+    # if true look in MANIFEST.in for data files to include
+    include_package_data=True,
+    # 2nd approach to include data is include_package_data=False
+    package_data={"test_package": ["data/*.csv"]},
+    # these are for documentation 
+    classifiers=[
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.6.9',
+    install_requires=requirements,
+)
+```
 
 ### Managing the versioning your package
 
@@ -57,39 +120,36 @@ All python packages should behave in this way:
 ```
 So we need an __init__.py file for our package to reference a version number AND we need to include a version number in the setup script.
 
-As far as I can tell there is no ideal way to set this up. See PEP 396 for discussion
+> There is no ideal way to set this up. See PEP 396 for [discussion](https://www.python.org/dev/peps/pep-0396/#examples)
 
-* https://www.python.org/dev/peps/pep-0396/#examples 
-
-For simpler packages like small scientific ones I am aiming to produce I have opted for the following pattern:
+For simpler packages like small scientific ones we are aiming to produce I have opted for the following pattern:
 
 1. Keep the version numbering external to the setup script.
 2. In the package __init__.py include a `__version__` string attribute and set that to the version number
 3. In setup.py I include the following code
 
 ```python
-#import the version
+# import the version
 from test_package import __version__
 ```
+Note that you need to be careful about version numbering here: It has to be managed manually.  One way to handle that is via some testing before updating a package on pypi.
 
-This doesn't include any auto tick up on the version number!
+### Including data in your package
 
-### including data in your package
-
-For data science project you may want to include some example or test data within your package. 
+For a data science project you may want to include some example or test data within your package. 
 
 As an example, the package in the template repo includes a subdirectory `test_package/data` containing a single (dummy) CSV.
 
 One thing I learnt **the hard and annoying way** is that data is not included in your python package by default!  
 
-To make sure data is included I took two steps
+To make sure data is included you can take two steps:
 
 #### Tell `setup()` that it is expecting data
 
-There are a couple of options here.  The way I have implemented this elsewhere is:
+There are a couple of options here.  Here's the firs:
 
 ```python
-    #Tells setup to look in MANIFEST.in
+    # Tells setup to look in MANIFEST.in
     include_package_data=True,
 ```
 
@@ -103,35 +163,35 @@ recursive-include test_package/data *.csv
 As an alternative you can use:
 
 ```python
-    #can instead of MANIFEST.in
+    # use instead of MANIFEST.in
     package_data={"test_package": ["data/*.csv"]},
 ```
 
-I've found that this only works if `include_package_data=False`
+Note that the second way I've described requires you to set `include_package_data=False`
 
-* RTM: https://setuptools.readthedocs.io/en/latest/userguide/datafiles.html 
+* Some extra help can be found here in the setup tools manual: https://setuptools.readthedocs.io/en/latest/userguide/datafiles.html 
 
-### local installing and uninstalling your package
+### local installation and uninstallation of your package
 
-Now that we have a setup.py and have installed `setuptools` we can use them to install our package locally!  Navigate to the repo on your local machine and run the command below.
+Now that we have a `setup.py` and have installed `setuptools` we can use them to install our package locally!  Navigate to the repo on your local machine and run the command below.
 
 `pip install .`
 
 **Exercise**: Test out your install by launching the python interpreter.
 
 ```python
-#this should work!
+# this should work!
 import test_package
 print(test_package.__version__)
 ```
 
-If you have used the default package settings then you will have installed a package called `pypi-template` (version =0.1).  To uninstall use the package name:
+If you have used the default package settings then you will have installed a package called `pypi-template` (version = 0.1).  To uninstall use the package name:
 
 `pip uninstall pypi-template`
 
 ## Publishing your package on PyPI
 
-The first thing to say is that there is a PyPI test site!  This was incredibly helpful as I found that I made mistakes the first couple of times I tried to get this to work e.g. no data was included in my package.  Once it is published on the testpypi site you can install it!
+The first thing to say is that **there is a PyPI test site!**  This is incredibly helpful.  I found that I made mistakes the first couple of times I tried to get this to work e.g. no data was included in my package.  Once it is published on the testpypi site you can install it!
 
 You need to go to https://testpypi.python.org and create an account.  
 
