@@ -1,6 +1,6 @@
-# Deployment via PyPi
+# PyPi
 
-If you want to deploy a python package professionally, sustainably, and easily to colleagues, clients or just everyone in general then a great way to do it is using PyPi and `pip`.  In this chapter we will learn how to setup a python package so that it is ready to be uploaded to PyPi and also how to use `setup-tools` and `twine`.
+If you want to deploy a python package professionally, sustainably, and easily to colleagues, clients or just everyone in general then a great way to do it is using the Python Package Index (PyPi) and `pip`.  In this chapter we will learn how to setup a python package so that it is ready to be uploaded to PyPi and also how to use `setup-tools` and `twine`.
 
 ## What is pip?
 
@@ -171,7 +171,7 @@ Note that the second way I've described requires you to set `include_package_dat
 
 * Some extra help can be found here in the setup tools manual: https://setuptools.readthedocs.io/en/latest/userguide/datafiles.html 
 
-### local installation and uninstallation of your package
+### Local installation and uninstallation of your package
 
 Now that we have a `setup.py` and have installed `setuptools` we can use them to install our package locally!  Navigate to the repo on your local machine and run the command below.
 
@@ -197,28 +197,24 @@ You need to go to https://testpypi.python.org and create an account.
 
 ### Including source and wheel distributions
 
-It is recommended that you include both a **source** and **wheel** distribution in your python package.  
-
-> It took me a while to get my head around what a wheel distribution actually is and why it is useful!  A nice phrase I came across is that '*wheels make things go faster*' I'm yet to fully master them and particularly need to research platform specific wheels.  
-
-This site has a nice explanation: https://realpython.com/python-wheels/
+It is recommended that you include both a **source** and **wheel** distribution in your python package on pypi. Wheels are an advanced topic and it took me a while to get my head around what a wheel distribution actually is and why it is useful!  A nice phrase I came across is that '*wheels make things go faster*'
 
 * A source is just what you think it is.  It is your source code!
 
-* A wheel (.whl) is a ready-to-install python package i.e. no build stage is required. This is very useful for example if you have written custom C extensions for python. The wheel contains your extensions compiled and hence skips the build step.  Wheel's therefore make installation more efficient.  
+* A wheel (.whl) is a ready-to-install python package i.e. no build stage is required. This is very useful for example if you have written custom C or Rust extensions for python. The wheel contains your extensions compiled and hence skips the build step.  Wheel's therefore make installation more efficient.  
 
 > You can create universal wheel's i.e. applicable to both python 2 and 3 or pure python wheels i.e. applicable to only python 3 or python 2, but not both.
 
 To install wheel use
 
-```
-pip install wheel
+```bash
+$ pip install wheel
 ```
 
 To produce the source and the wheel run 
 
-```
-python setup.py sdist bdist_wheel
+```bash
+$ python setup.py sdist bdist_wheel
 ```
 
 * Now take a look in ./dist.  You should see both a zip file containing the source code and a .whl file containing the wheel.
@@ -229,49 +225,53 @@ A .whl file is named as follows:
 {dist}-{version}-{build}-{python}-{abi}-{platform}.whl
 ```
 
+For additional information on wheels I recommend checking out [https://realpython.com/python-wheels/](https://realpython.com/python-wheels/)
+
 ### Using twine and testpypi
 
-To publish on pypi and testpypi we need to install `twine`
+To publish on pypi and testpypi we need to install an simple to use piece of software called `twine`
 
-```
-pip install twine
+```bash
+$ pip install twine
 ```
 
 It is sensible to check for any errors before publishing!  To do this run the code below
 
-```
-twine check dist/*
+```bash
+$ twine check dist/*
 ```
 This will check your source and wheel distributions for errors and report any issues.
 
-> Before we push to testpypi you need to have a unique name for your package! For this tutorial I recommend 'pypi_template_{random_number}. Set this in setup.py. Check if it has been created and exists on testpypi first!
+> Before you push to testpypi you need to have a unique name for your package!  I recommend making up your own name, but if you are feeling particularly unimaginative then use `pypi_template_{random_number}`. Set this in `setup.py`. **Check if it has been created and exists on testpypi first!**
 
-Let's push to testpypi.  The code below will prompt you for your username and password.
+To publish on testpypi is simple.  The code below will prompt you for your username and password.
 
-```
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-
-```
-Pip install from testpypi as follows:
-
-```
-pip install -i https://test.pypi.org/simple/ pypi-template-2222==0.1.0
+```bash 
+$ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 ```
 
+If this uploads successfully you can then `pip` install from testpypi as follows.  The URL for your package is available on the project page for testpypi.
 
-### Publish on full fat pypi
-
-You will need a seperate account for PyPI.  (Let's not publish our test template there!)
-
-```
-twine upload dist/*
+```bash
+$ pip install -i https://test.pypi.org/simple/{your_package_name}==0.1.0
 ```
 
-# Building publishing into your workflow with GitHub Actions
+### Publish on pypi production
 
-* Github now provides template actions
-* I use the publish to PyPI action when code is merge into the 'main' branch.
-* For forecast-tools I created a maintainer account for PyPI called `forecast-tools-admin` rather than giving my main PyPI credentials to GitHub.  I'm not sure if this matters in practice or not.
+First I just want to say that you shouldn't really publish on the main production pypi site for unless you need to.  Use it when necessary to help your own research, work or colleagues, but not for testing purposes: use testpypi instead.  **You will need a separate account for PyPI.**.  If you intend to publish to pypi I recommend searching the index first in order to identify any potential name clashes.  
+
+When you are ready you can upload use `twine`
+
+```bash
+$ twine upload dist/*
+```
+
+## Building publishing into your workflow with GitHub Actions
+
+The manual steps I've outlined here are somewhat historical.  Most modern projects make use of version control in the cloud such as GitLab or GitHub.  These include ways to automatically publish updates to pypi.  One such way is with GitHub actions.  For example, I use **the publish to pypi action** when code is merge into the 'main' branch.
+
+To set this up you will need to supply GitHub with a username and password for pypi.  Its stored securely, but you may rightly have concerns about privacy and security. My approach has been to create a secondary maintainer account for pypi rather than storing my main PyPI credentials to GitHub. I will leave it up to you to make a decision about if you feel this is necessary.  It can always be updated at a later date.
+
+You can read more about Github actions [here](https://docs.github.com/en/actions)
 
 
-https://pypi.org/project/forecast-tools/#description
