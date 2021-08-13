@@ -87,7 +87,8 @@
   - file: content/03_mgt/04_exercises_front_page
     sections:
       - file: content/03_mgt/04_exercises/01_python_packages
-      - file: content/03_mgt/04_exercises/02_binder
+      - file: content/03_mgt/04_exercises/02_conda
+      - file: content/03_mgt/04_exercises/03_binder
   - file: content/03_mgt/05_solutions_front_page
     sections:
       - file: content/03_mgt/05_solutions/01_python_packages_solutions
