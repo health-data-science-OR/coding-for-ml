@@ -511,6 +511,21 @@
      Python package exercise
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/02_conda.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/03_binder.html">
+     Binderhub exercises
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -692,8 +707,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-5-check-the-status-of-the-git-repo">
-   Step 5: Check the status of the git repo
+  <a class="reference internal nav-link" href="#step-4-check-the-status-of-the-git-repo">
+   Step 4: Check the status of the git repo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -764,19 +779,19 @@
 <blockquote>
 <div><p>In a later section we will use Github for remote version control, collaboration, and sharing. I very much recommend using the email address you would normally use to sign up to an online service like GitHub. If you have privacy concerns then GitHub has a <a class="reference external" href="https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address">solution</a>.</p>
 </div></blockquote>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;Tom Monks&quot;</span>
-git config --global user.email <span class="s2">&quot;email_I_use_for_github@gmail.com&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;Tom Monks&quot;</span>
+$ git config --global user.email <span class="s2">&quot;email_I_use_for_github@gmail.com&quot;</span>
 </pre></div>
 </div>
 <p>You can check your config via</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --list
 </pre></div>
 </div>
 </section>
 <section id="step-2-initialise-the-git-repository">
 <h2>Step 2: Initialise the Git repository<a class="headerlink" href="#step-2-initialise-the-git-repository" title="Permalink to this headline">¶</a></h2>
 <p>Navigate to the directory on your machine where you want to store your code.  If you need to create a new directory for example <code class="docutils literal notranslate"><span class="pre">analysis_code</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git init
 </pre></div>
 </div>
 <p>When you issue the <code class="docutils literal notranslate"><span class="pre">init</span></code> command your terminal should return the following <code class="docutils literal notranslate"><span class="pre">Initialised</span> <span class="pre">empty</span> <span class="pre">Git</span> <span class="pre">repository</span> <span class="pre">in</span> <span class="pre">&lt;path</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">directory/analysis_code/.git&gt;</span></code>  This means there is a hidden directory called <code class="docutils literal notranslate"><span class="pre">.git</span></code> within your <code class="docutils literal notranslate"><span class="pre">analysis_code</span></code> directory.  This is the git <strong>repository</strong> (I’ll shorten this to <strong>repo</strong> from now on).</p>
@@ -792,15 +807,15 @@ git config --global user.email <span class="s2">&quot;email_I_use_for_github@gma
 <span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
     <span class="k">pass</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">=</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">do_something</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
-<section id="step-5-check-the-status-of-the-git-repo">
-<h2>Step 5: Check the status of the git repo<a class="headerlink" href="#step-5-check-the-status-of-the-git-repo" title="Permalink to this headline">¶</a></h2>
+<section id="step-4-check-the-status-of-the-git-repo">
+<h2>Step 4: Check the status of the git repo<a class="headerlink" href="#step-4-check-the-status-of-the-git-repo" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>status</strong> command is something I would recommend using frequently.  It let’s you know the status of the repo.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
 </pre></div>
 </div>
 <p>After steps 1-4 git reports that we are on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch (please note that future releases of git will migrate from <code class="docutils literal notranslate"><span class="pre">master</span></code> to <code class="docutils literal notranslate"><span class="pre">main</span></code> branch); there are no commits yet and we have one untracked file: <code class="docutils literal notranslate"><span class="pre">main.py</span></code></p>
@@ -822,15 +837,15 @@ Untracked files:
 <p>I advise you always look at what you have staged before you commit. Don’t commit any sensitive information such as password or personally identifiable data.</p>
 </div>
 <p>Git is very flexible in how you stage changes. We could for example add all modified or untracked files:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add .
 </pre></div>
 </div>
 <p>That has the downside of being a kitchen sink approach and may include files you do not wish to commit in the staging.  An alternative is to add all python files only</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add *.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add *.py
 </pre></div>
 </div>
 <p>or add the specific python file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add main.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add main.py
 </pre></div>
 </div>
 <p>If we follow any of these commands with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> then git tells which files are to be committed.</p>
@@ -846,13 +861,13 @@ Changes to be committed:
 </section>
 <section id="step-6-commit-the-changes">
 <h2>Step 6: Commit the changes<a class="headerlink" href="#step-6-commit-the-changes" title="Permalink to this headline">¶</a></h2>
-<p>We are not ready to commit our code to the repository.  A commit also contains meta-data describing the commit.  Writing a good commit message is a bit of an art.  Before I give you some tips let’s have a look at the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;INIT: add main.py&quot;</span>
+<p>We are now ready to commit our code to the repository.  A commit also contains meta-data describing the commit.  Writing a good commit message is a bit of an art.  Before I give you some tips let’s have a look at the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;INIT: add main.py&quot;</span>
 </pre></div>
 </div>
 <p>The option <code class="docutils literal notranslate"><span class="pre">-m</span></code> just let’s us add a short descriptive message the commit.  A useful tactic a very bright colleague recommended to me was to divide a commit message into two parts: the commit type and a description of changes. <code class="docutils literal notranslate"><span class="pre">INIT</span></code> tells me and others the type of commit or feature it is targeting. In this case its the the initial commit.  The remaining text <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">main.py</span></code> is just referring to the file that has been added.</p>
 <p>If we now follow this with the log command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log
 </pre></div>
 </div>
 <p>We can see the commit history</p>
@@ -880,7 +895,7 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span c
 </section>
 <section id="step-7-add-a-gitignore">
 <h2>Step 7: Add a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#step-7-add-a-gitignore" title="Permalink to this headline">¶</a></h2>
-<p>To help avoid staging and committing files that you do not want to you get include <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (a git ignore file).  This is just a list of file types and directories that Git will ignore when staging changes.  For example, let’s assume you <code class="docutils literal notranslate"><span class="pre">main.py</span></code> generates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that reports how intermediate results from the analysis code. There is no value in committing this data to a repo as it varies on each run and increases the size of the repo.  For this example let’s manually create a few log files and add them to the directory.  We will also create a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
+<p>To help avoid staging and committing files that you do not want you need to include <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (a git ignore file).  This is just a list of file types and directories that Git will ignore when staging changes.  For example, let’s assume the analysis code in<code class="docutils literal notranslate"><span class="pre">main.py</span></code> generates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that reports intermediate results and if the run was successful. There is no value in committing this data to a repo as it varies on each run and increases the size of the repo.  For this example let’s manually create a few log files and add them to the directory.  We will also create a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analysis_code
 ├── main.py
 ├── run_1.log
@@ -890,7 +905,7 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span c
 </pre></div>
 </div>
 <p>Before you add anything to <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> issue a <strong>status command</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
 </pre></div>
 </div>
 <p>The output will include both of the log files as untracked file to be staged.</p>
@@ -908,7 +923,7 @@ Untracked files:
 </pre></div>
 </div>
 <p>Now rerun the <strong>status</strong> command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
 </pre></div>
 </div>
 <p>and you will find that both log files have been ignored.</p>
@@ -919,8 +934,8 @@ Untracked files:
 </pre></div>
 </div>
 <p>So we now need to stage <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> and add an appropriate commit message.  For my commit message I’ve chosen to use <code class="docutils literal notranslate"><span class="pre">SETUP</span></code> as the commit type as I am changing the setup of my git repo (another option might be <code class="docutils literal notranslate"><span class="pre">CONFIG</span></code>).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add .gitignore
-git commit -m <span class="s2">&quot;SETUP: .gitignore + *.log&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add .gitignore
+$ git commit -m <span class="s2">&quot;SETUP: .gitignore + *.log&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -939,7 +954,7 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span c
 </pre></div>
 </div>
 <p>Each of these commit’s has a (rather long) identifier that we will call a hash.  We can view the changes between two commits using the <strong>diff</strong> command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git diff 6b91b6a..2504358
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git diff 6b91b6a..2504358
 </pre></div>
 </div>
 <p>Notice that I did not need to specify the full commit id (although you could copy paste).  Instead git allowed me to specify a enough characters of each so that they were identifiable (typically 7).  The diff reported by git is as expected:</p>
@@ -969,11 +984,11 @@ To run the code open a terminal and enter
 </pre></div>
 </div>
 <p>Once we have added the docs we can check the status of the repo, stage the changes, check that the changes have been successfully stage, and commit to the repo.  After this we will look at the last two commits in the log to check everything has worked.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
-git add *.md
-git status
-git commit -m <span class="s2">&quot;DOCS: run instructions&quot;</span>
-git log -2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+$ git add *.md
+$ git status
+$ git commit -m <span class="s2">&quot;DOCS: run instructions&quot;</span>
+$ git log -2
 </pre></div>
 </div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>commit f732e5c1302c0f467853b1b256fcd4a4625b1a76 <span class="o">(</span>HEAD -&gt; master<span class="o">)</span>
