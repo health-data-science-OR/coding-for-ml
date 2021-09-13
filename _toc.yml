@@ -40,6 +40,10 @@
   - file: content/01_algorithms/05_debug
     sections:
       - file: content/01_algorithms/05_debug/01_debug_numpy
+  - file: content/01_algorithms/06_solutions
+    sections:
+      - file: content/01_algorithms/06_solutions/01_science_funcs
+      - file: content/01_algorithms/06_solutions/02_array
       
 - part: Statistical Programming
   chapters:
