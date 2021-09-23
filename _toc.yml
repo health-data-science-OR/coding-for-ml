@@ -1,114 +1,107 @@
-- file: content/front_page
-  numbered: False
-
-- part: Data and software
+format: jb-book
+root: content/front_page
+parts:
+- caption: Data and software
   chapters:
   - file: content/001_setup/git
   - file: content/001_setup/conda
   - file: content/001_setup/docker
-
-- part: Algorithms and computational modelling
+- caption: Algorithms and computational modelling
   chapters:
   - file: content/01_algorithms/01_design
     sections:
-      - file: content/01_algorithms/01_design/01_primes
-      - file: content/01_algorithms/01_design/02_better_design
-      - file: content/01_algorithms/01_design/03_micro_opt
-      - file: content/01_algorithms/01_design/04_summing_up
+    - file: content/01_algorithms/01_design/01_primes
+    - file: content/01_algorithms/01_design/02_better_design
+    - file: content/01_algorithms/01_design/03_micro_opt
+    - file: content/01_algorithms/01_design/04_summing_up
   - file: content/01_algorithms/02_oop
     sections:
-      - file: content/01_algorithms/02_oop/01_python_classes
-      - file: content/01_algorithms/02_oop/02_oop_sim
-      - file: content/01_algorithms/exercises/01_science_funcs 
+    - file: content/01_algorithms/02_oop/01_python_classes
+    - file: content/01_algorithms/02_oop/02_oop_sim
+    - file: content/01_algorithms/exercises/01_science_funcs
   - file: content/01_algorithms/03_numpy
     sections:
-      - file: content/01_algorithms/03_numpy/01_performance
-      - file: content/01_algorithms/03_numpy/02_vectors
-      - file: content/01_algorithms/03_numpy/03_slicing
-      - file: content/01_algorithms/03_numpy/04_algebra
-      - file: content/01_algorithms/03_numpy/05_statistics
-      - file: content/01_algorithms/03_numpy/06_sampling
-      - file: content/01_algorithms/03_numpy/07_advanced_iter
-      - file: content/01_algorithms/03_numpy/08_cs1
-      - file: content/01_algorithms/03_numpy/09_cs2
-      - file: content/01_algorithms/03_numpy/10_cs3
+    - file: content/01_algorithms/03_numpy/01_performance
+    - file: content/01_algorithms/03_numpy/02_vectors
+    - file: content/01_algorithms/03_numpy/03_slicing
+    - file: content/01_algorithms/03_numpy/04_algebra
+    - file: content/01_algorithms/03_numpy/05_statistics
+    - file: content/01_algorithms/03_numpy/06_sampling
+    - file: content/01_algorithms/03_numpy/07_advanced_iter
+    - file: content/01_algorithms/03_numpy/08_cs1
+    - file: content/01_algorithms/03_numpy/09_cs2
+    - file: content/01_algorithms/03_numpy/10_cs3
   - file: content/01_algorithms/04_exercises
     sections:
-      - file: content/01_algorithms/04_exercises/01_science_funcs
-      - file: content/01_algorithms/04_exercises/02_array
-      - file: content/01_algorithms/04_exercises/03_int_numpy
+    - file: content/01_algorithms/04_exercises/01_science_funcs
+    - file: content/01_algorithms/04_exercises/02_basic_oop
+    - file: content/01_algorithms/04_exercises/02_array
   - file: content/01_algorithms/05_debug
     sections:
-      - file: content/01_algorithms/05_debug/01_debug_numpy
+    - file: content/01_algorithms/05_debug/01_debug_numpy
   - file: content/01_algorithms/06_solutions
     sections:
-      - file: content/01_algorithms/06_solutions/01_science_funcs
-      - file: content/01_algorithms/06_solutions/02_array
-      
-- part: Statistical Programming
+    - file: content/01_algorithms/06_solutions/01_science_funcs
+    - file: content/01_algorithms/06_solutions/02_basic_oop
+    - file: content/01_algorithms/06_solutions/02_array
+- caption: Statistical Programming
   chapters:
   - file: content/02_stat_prog/01_pandas_front_page
     sections:
-      - file: content/02_stat_prog/01_pandas/01_intro_pandas
-      - file: content/02_stat_prog/01_pandas/02_files
-      - file: content/02_stat_prog/01_pandas/03_non_standard_download
-      - file: content/02_stat_prog/01_pandas/04_datetimes
-      - file: content/02_stat_prog/01_pandas/05_analysing
-      - file: content/02_stat_prog/01_pandas/06_cs_combining
+    - file: content/02_stat_prog/01_pandas/01_intro_pandas
+    - file: content/02_stat_prog/01_pandas/02_files
+    - file: content/02_stat_prog/01_pandas/03_non_standard_download
+    - file: content/02_stat_prog/01_pandas/04_datetimes
+    - file: content/02_stat_prog/01_pandas/05_analysing
+    - file: content/02_stat_prog/01_pandas/06_cs_combining
   - file: content/02_stat_prog/02_visual_front_page
     sections:
-      - file: content/02_stat_prog/02_matplotlib/01_matplotlib
-      - file: content/02_stat_prog/02_matplotlib/02_matplotlib2
-      - file: content/02_stat_prog/02_matplotlib/03_cs_hm
-      - file: content/02_stat_prog/02_matplotlib/02_plotting_time_series
+    - file: content/02_stat_prog/02_matplotlib/01_matplotlib
+    - file: content/02_stat_prog/02_matplotlib/02_matplotlib2
+    - file: content/02_stat_prog/02_matplotlib/03_cs_hm
+    - file: content/02_stat_prog/02_matplotlib/02_plotting_time_series
   - file: content/02_stat_prog/03_exercises_front_page
     sections:
-      - file: content/02_stat_prog/03_exercises/00_dataframes
-      - file: content/02_stat_prog/03_exercises/01_data_wrangling_matplotlib
-      - file: content/02_stat_prog/03_exercises/02_stroke_data_wrangling
-      - file: content/02_stat_prog/03_exercises/03_visualise_ts
+    - file: content/02_stat_prog/03_exercises/00_dataframes
+    - file: content/02_stat_prog/03_exercises/01_data_wrangling_matplotlib
+    - file: content/02_stat_prog/03_exercises/02_stroke_data_wrangling
+    - file: content/02_stat_prog/03_exercises/03_visualise_ts
   - file: content/02_stat_prog/04_solutions_front_page
     sections:
-      - file: content/02_stat_prog/04_solutions/00_dataframes
-      - file: content/02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions
-      - file: content/02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions
-      - file: content/02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS
-  
-      
-- part: Managing Data Science Projects
+    - file: content/02_stat_prog/04_solutions/00_dataframes
+    - file: content/02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions
+    - file: content/02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions
+    - file: content/02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS
+- caption: Managing Data Science Projects
   chapters:
   - file: content/03_mgt/03_vc_front_page
     sections:
-      - file: content/03_mgt/01_git/02_git
-      - file: content/03_mgt/01_git/03_cs_1
-      - file: content/03_mgt/01_git/04_cs_2
-      - file: content/03_mgt/01_git/05_cs_3
+    - file: content/03_mgt/01_git/02_git
+    - file: content/03_mgt/01_git/03_cs_1
+    - file: content/03_mgt/01_git/04_cs_2
+    - file: content/03_mgt/01_git/05_cs_3
   - file: content/03_mgt/03_mgt_front_page
     sections:
-      - file: content/03_mgt/02_packaging/01_python_packages
-      - file: content/03_mgt/03_pypi/01_pypi
-      - file: content/03_mgt/04_binder/01_binder
+    - file: content/03_mgt/02_packaging/01_python_packages
+    - file: content/03_mgt/03_pypi/01_pypi
+    - file: content/03_mgt/04_binder/01_binder
   - file: content/03_mgt/04_exercises_front_page
     sections:
-      - file: content/03_mgt/04_exercises/01_python_packages
-      - file: content/03_mgt/04_exercises/02_conda
-      - file: content/03_mgt/04_exercises/03_binder
+    - file: content/03_mgt/04_exercises/01_python_packages
+    - file: content/03_mgt/04_exercises/02_conda
+    - file: content/03_mgt/04_exercises/03_binder
   - file: content/03_mgt/05_solutions_front_page
     sections:
-      - file: content/03_mgt/05_solutions/01_python_packages_solutions
-
-
-- part: Appendix - Basic Python
+    - file: content/03_mgt/05_solutions/01_python_packages_solutions
+- caption: Appendix - Basic Python
   chapters:
-    - file: content/appendix/fp_lectures
-      sections:
-        - file: content/appendix/lectures/Lecture1
-        - file: content/appendix/lectures/Lecture2
-    - file : content/appendix/fp_practicals
-      sections:
-        - file: content/appendix/labs/01_basics
-        - file: content/appendix/labs/debug1
-        - file: content/appendix/labs/02_basics
-        - file: content/appendix/labs/debug2
-
-
+  - file: content/appendix/fp_lectures
+    sections:
+    - file: content/appendix/lectures/Lecture1
+    - file: content/appendix/lectures/Lecture2
+  - file: content/appendix/fp_practicals
+    sections:
+    - file: content/appendix/labs/01_basics
+    - file: content/appendix/labs/debug1
+    - file: content/appendix/labs/02_basics
+    - file: content/appendix/labs/debug2
