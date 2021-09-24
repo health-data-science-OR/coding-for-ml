@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BinderHub &#8212; Python for health data science.</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -20,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -35,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -57,14 +53,14 @@
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Exercises" href="../04_exercises_front_page.html" />
     <link rel="prev" title="PyPi" href="../03_pypi/01_pypi.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -73,32 +69,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../index.html">
-  
-  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../front_page.html">
    Preface
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Data and software
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../001_setup/git.html">
    GitHub
@@ -115,25 +115,25 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Algorithms and computational modelling
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/01_design.html">
    The importance of design
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
      Computing prime numbers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
-     A more efficient algorithm
     </a>
    </li>
    <li class="toctree-l2">
@@ -152,14 +152,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/02_oop.html">
    Designing using objects
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
      A world of objects
@@ -171,10 +174,8 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/03_numpy.html">
    Scientific coding in
    <code class="docutils literal notranslate">
@@ -183,7 +184,12 @@
     </span>
    </code>
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
      Arrays versus lists
@@ -235,17 +241,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/04_exercises.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
      Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_basic_oop.html">
+     Basic Object Orientated Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -258,20 +272,18 @@
      </code>
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
-     Intermediate NumPy
-    </a>
-   </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/05_debug.html">
    Debug challenges
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
      <code class="docutils literal notranslate">
@@ -283,17 +295,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/06_solutions.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/06_solutions/01_science_funcs.html">
      Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/06_solutions/02_basic_oop.html">
+     Basic Object Orientated Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,21 +327,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Statistical Programming
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
    Data wrangling
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
      Introduction to
@@ -360,14 +383,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
    Visualising data
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">
      Introduction to
@@ -394,14 +420,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">
      Working with a
@@ -428,14 +457,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">
      Working with a
@@ -462,21 +494,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Managing Data Science Projects
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03_vc_front_page.html">
    Version control
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_git/02_git.html">
      Introducing Git
@@ -498,14 +533,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../03_mgt_front_page.html">
    Deployment
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../02_packaging/01_python_packages.html">
      Local python packages
@@ -522,14 +560,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_exercises/01_python_packages.html">
      Python package exercise
@@ -551,35 +592,41 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05_solutions_front_page.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_solutions/01_python_packages_solutions.html">
      Python package exercise
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Appendix - Basic Python
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/fp_lectures.html">
    Lectures
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
      Python Basics
@@ -591,14 +638,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/fp_practicals.html">
    Practicals
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../appendix/labs/01_basics.html">
      Basic Python
@@ -620,11 +670,10 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -690,12 +739,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -704,12 +753,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-binderhub">
    What is BinderHub
@@ -754,8 +802,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -764,43 +811,43 @@
         
               <div>
                 
-  <section id="binderhub">
+  <div class="section" id="binderhub">
 <h1>BinderHub<a class="headerlink" href="#binderhub" title="Permalink to this headline">¶</a></h1>
 <p>I want to briefly teach you about another neat way to share your work via BinderHub. It is an approach that I use nearly all the time in my work. In fact I often go a lot further to make my code runnable by others, but Binder is always my default.</p>
 <p>What I like about BinderHub is that is is very simple and elegant solution to sharing scientific work that is integrated to cloud based version control (such as GitHub and GitLab), and Jupyter Notebooks.  It also forces you to implement a reproducible python environment (I like this a lot).  The public BinderHub does have it limitations in terms of compute (as you should expect), but I’m confident you will think it is fantastic, and like me, you will use it all the time.</p>
-<section id="what-is-binderhub">
+<div class="section" id="what-is-binderhub">
 <h2>What is BinderHub<a class="headerlink" href="#what-is-binderhub" title="Permalink to this headline">¶</a></h2>
 <p>To put it in simple terms: BinderHub provides you a Jupyter like environment in the cloud that others can use to run your code in a linked repository from GitHub (or GitLab!).  Before we talk a little more about how this works let’s consider a couple of use cases:</p>
-<section id="use-case-1-previewing-packages-for-potential-users">
+<div class="section" id="use-case-1-previewing-packages-for-potential-users">
 <h3>Use case 1: previewing packages for potential users<a class="headerlink" href="#use-case-1-previewing-packages-for-potential-users" title="Permalink to this headline">¶</a></h3>
 <p>Let’s say, for example, that you have developed a local python package to augment datasets of MRI images.  BinderHub makes it easy for potential users of your package to test it out without going through any installation, source, or dependency management. One way to achieve that would be to provide one or more Jupyter notebooks in a GitHub repo that demonstrates your package’s capabilities using public MRI images.  Using BinderHub, potential users access the repository, including package source code, and example notebook via a URL.  Like magic the notebook “just runs!”.  Whats more it is interactive, just like a normal notebook, and users can edit the code and see its effect.  This is far more effective (and fun!) than documentation alone.</p>
-</section>
-<section id="use-case-2-sharing-runnable-code-with-an-organisation-that-cannot-run-python">
+</div>
+<div class="section" id="use-case-2-sharing-runnable-code-with-an-organisation-that-cannot-run-python">
 <h3>Use case 2: sharing runnable code with an organisation that cannot run python!<a class="headerlink" href="#use-case-2-sharing-runnable-code-with-an-organisation-that-cannot-run-python" title="Permalink to this headline">¶</a></h3>
 <p>Believe it or not there are many organisations that worry about IT and IT security.  Python and other free and open software are sometimes viewed with suspicion by IT departments and cannot be installed on a collaborators machine.  For example, I have previously encountered problems with collaborating with the UK’s National Health Service (NHS) on research projects.  It’s nearly always good to show your workings with collaborators, and BinderHub allows them to view where particular charts or tables come from without the need to install anything locally.</p>
 <div class="admonition-excel-is-a-statistical-analysis-package-you-should-use-that-instead admonition">
 <p class="admonition-title">“Excel is a statistical analysis package; you should use that instead”</p>
 <p>I’m going to be quite blunt that I don’t really like using Excel for data science and particularly for sharing models. But I do appreciate the difficulty some organisations face (particularly public sector) in adopting culture of open science and sharing.  Free and open solutions are often viewed through the lens of suspicion, IT security, and loss of centralised corporate control. Indeed, I can vividly recall a conversation with an IT manager about my request to install R on my UK government issued laptop to enable me to code a model. After his blood pressure returned to normal, and a he stopped giving me a look that made me feel like I said something very inappropriate, I was told that the corporate approach is to use Excel.  Indeed to quote him ‘Excel is a statistical analysis software’. Excel is a lot of things, but it definitely isn’t statistical analysis software. But a far worse crime is that it is the most dreadful way to share scientific models, algorithms, analysis and manage dependencies. Try writing a data science solution for the NHS in Excel.  I guarantee it will either break due to a dependency issue or versioning problem within a short space of time (if not immediately).</p>
 </div>
-</section>
-<section id="use-case-3-making-the-results-of-a-publication-repeatable">
+</div>
+<div class="section" id="use-case-3-making-the-results-of-a-publication-repeatable">
 <h3>Use case 3: making the results of a publication repeatable<a class="headerlink" href="#use-case-3-making-the-results-of-a-publication-repeatable" title="Permalink to this headline">¶</a></h3>
 <p>In science, particularly within computational science, there’s a lofty concept called the <strong>reproducibility crisis</strong>.  In academic language this is a problem with understanding how results of a particular study were generated, and an inability to (fully) reproduce (repeat) the results with the same code and data.  In lay terms it means that most academic authors write a nicely crafted paper that doesn’t manage to fully reveal how they got the figures they reported in their earth shattering data science study. There’s nothing sinister going on here.  To be clear, most modern data science projects are complicated - there’s lots of moving parts in machine learning! - and writing up a brief summary of methods usually doesn’t help anyone that wants to reuse, needs to verify, or is just interested in understanding how it all really worked.  A more open way of working is important, even if it it can’t fully reproduce the results of a study due to data confidentiality.  In some cases it might reveals mistakes.  For example, in the UK there has been a lot of debate about the value of following a policy of austerity on the economy.  A policy of austerity was strongly supported by results in a paper called <a class="reference external" href="https://scholar.harvard.edu/files/rogoff/files/growth_in_time_debt_aer.pdf">‘Growth in the time of debt’</a>.  Well… it was until three years later a bright student attempted to replicate the analysis using his own materials and couldn’t obtain anywhere near the same results.  The student chased the authors who, to their credit, shared their Excel spreadsheet (the horror) containing the analysis.  Cutting a long story short, the bright student found that the original authors had used the wrong column of data in their analysis leading to an erroneous conclusion about the magnitude of the benefit of austerity on economic growth (did I say data science was complicated?  Well in this case not really, but mistakes still crept in).</p>
 <p>Now imagine a world where a data scientist could pin point the austerity coding mistake at review time and rectify it quickly.  BinderHub would have made this simplicity itself. In fact, if the authors had used a friendly data science language like Python, Julia or R to share their work I’m confident they wouldn’t have made the mistake they did.  Calculations are far easier to verify in a language such as Python than in Excel.</p>
-</section>
-<section id="binderhub-implementation">
+</div>
+<div class="section" id="binderhub-implementation">
 <h3>BinderHub implementation<a class="headerlink" href="#binderhub-implementation" title="Permalink to this headline">¶</a></h3>
 <p>The more complex your data science study or software the more complex it becomes for others to install it.  This “installation” problem is not unique and has been a major problem in the software industry. BinderHub makes use of a fantastic deployment tool that solves the installation problem called a <strong>docker container</strong>. A container packages up code and all of its dependencies so that a model can run in another computing environment.  Its worth noting that you don’t get full control in BinderHub as if you had used docker directly, but it is still pretty fantastic (and simpler).  As an example, consider an algorithm that was developed using using python <code class="docutils literal notranslate"><span class="pre">3.8.8</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> 1.20.0, and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 1.3.1. BinderHub builds a docker image, using a linux OS, and includes the exact versions of code (+ any other dependencies) needed.</p>
-</section>
-</section>
-<section id="an-example-using-binderhub">
+</div>
+</div>
+<div class="section" id="an-example-using-binderhub">
 <h2>An example using BinderHub<a class="headerlink" href="#an-example-using-binderhub" title="Permalink to this headline">¶</a></h2>
 <p>Consider the <code class="docutils literal notranslate"><span class="pre">ts_emergency</span></code> package we developed in the local python package chapter. This is hosted on <a class="reference external" href="https://github.com/health-data-science-OR/ts-emergency">GitHub</a>. If you navigate to the main repo page and scroll down to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file display you will notice the following badge link.</p>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/health-data-science-OR/ts-emergency/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <p>This badge is just a link to the following mybinder url:</p>
 <p>If you click on the launch Binder badge you will be taken to a online version of the repo. This will take a few seconds to build and load. You can watch the build stages online to understand what it is doing if you are interested.  Once built you can navigate the repo, view the package and importantly can open <code class="docutils literal notranslate"><span class="pre">example.ipynb</span></code> and run and edit the code remotely.  Note that any changes you make are not saved back to GitHub.  Try is an enjoy the magic!</p>
-</section>
-<section id="using-binderhub">
+</div>
+<div class="section" id="using-binderhub">
 <h2>Using BinderHub<a class="headerlink" href="#using-binderhub" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ts_emergency</span></code> <a class="reference external" href="https://github.com/health-data-science-OR/ts-emergency">repo</a> is structured as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ts_emergency
@@ -848,12 +895,12 @@
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>[<span class="nt">![Binder</span>](<span class="na">https://mybinder.org/badge_logo.svg</span>)](https://mybinder.org/v2/gh/health-data-science-OR/ts-emergency/HEAD)
 </pre></div>
 </div>
-</section>
-<section id="limitations-of-binder">
+</div>
+<div class="section" id="limitations-of-binder">
 <h2>Limitations of Binder<a class="headerlink" href="#limitations-of-binder" title="Permalink to this headline">¶</a></h2>
 <p>BinderHub is a free service.  The providers are fantastic, but money and resource are not infinite.  So you should not expect a great deal of computational power or memory available.  For big data projects or extremely computationally expensive ones you might find it doesn’t meet your needs. If your code relies heavily on parallel processing you will encounter some performance issues. Still for many applications it is one of the most useful tools for sharing of health data science.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -878,22 +925,42 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../03_pypi/01_pypi.html" title="previous page">PyPi</a>
-    <a class='right-next' id="next-link" href="../04_exercises_front_page.html" title="next page">Exercises</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../03_pypi/01_pypi.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">PyPi</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../04_exercises_front_page.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Exercises</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Thomas Monks<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -902,11 +969,9 @@
 
       </div>
     </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

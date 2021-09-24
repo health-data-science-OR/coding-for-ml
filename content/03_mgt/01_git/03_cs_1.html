@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Case study: Basic use of Git &#8212; Python for health data science.</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -20,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -35,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -57,14 +53,14 @@
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Case study: roll back and bug fix" href="04_cs_2.html" />
     <link rel="prev" title="Introducing Git" href="02_git.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -73,32 +69,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../index.html">
-  
-  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../front_page.html">
    Preface
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Data and software
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../001_setup/git.html">
    GitHub
@@ -115,25 +115,25 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Algorithms and computational modelling
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/01_design.html">
    The importance of design
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
      Computing prime numbers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
-     A more efficient algorithm
     </a>
    </li>
    <li class="toctree-l2">
@@ -152,14 +152,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/02_oop.html">
    Designing using objects
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
      A world of objects
@@ -171,10 +174,8 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/03_numpy.html">
    Scientific coding in
    <code class="docutils literal notranslate">
@@ -183,7 +184,12 @@
     </span>
    </code>
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
      Arrays versus lists
@@ -235,17 +241,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/04_exercises.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
      Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_basic_oop.html">
+     Basic Object Orientated Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -258,20 +272,18 @@
      </code>
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
-     Intermediate NumPy
-    </a>
-   </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/05_debug.html">
    Debug challenges
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
      <code class="docutils literal notranslate">
@@ -283,17 +295,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/06_solutions.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/06_solutions/01_science_funcs.html">
      Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/06_solutions/02_basic_oop.html">
+     Basic Object Orientated Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,21 +327,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Statistical Programming
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
    Data wrangling
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
      Introduction to
@@ -360,14 +383,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
    Visualising data
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">
      Introduction to
@@ -394,14 +420,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">
      Working with a
@@ -428,14 +457,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">
      Working with a
@@ -462,21 +494,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Managing Data Science Projects
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../03_vc_front_page.html">
    Version control
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="02_git.html">
      Introducing Git
@@ -498,14 +533,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03_mgt_front_page.html">
    Deployment
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02_packaging/01_python_packages.html">
      Local python packages
@@ -522,14 +560,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_exercises/01_python_packages.html">
      Python package exercise
@@ -551,35 +592,41 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05_solutions_front_page.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_solutions/01_python_packages_solutions.html">
      Python package exercise
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Appendix - Basic Python
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/fp_lectures.html">
    Lectures
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
      Python Basics
@@ -591,14 +638,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/fp_practicals.html">
    Practicals
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../appendix/labs/01_basics.html">
      Basic Python
@@ -620,11 +670,10 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -690,12 +739,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -704,12 +753,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scenario">
    Scenario
@@ -777,8 +825,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -787,17 +834,17 @@
         
               <div>
                 
-  <section id="case-study-basic-use-of-git">
+  <div class="section" id="case-study-basic-use-of-git">
 <h1>Case study: Basic use of Git<a class="headerlink" href="#case-study-basic-use-of-git" title="Permalink to this headline">¶</a></h1>
 <p>This case study will take you through the setup and commands needed to create and use a local git repository.  Note that as you work through this example the dates, username and email address will appear different from mine (so don’t panic).</p>
 <blockquote>
 <div><p>The material here assumes you have Git installed on your machine.</p>
 </div></blockquote>
-<section id="scenario">
+<div class="section" id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
 <p>You are writing a new analysis program for your healthcare organisation.  Its a complicated task so you have decided to use Git to manage and version control your code. This is the first time you have used Git.</p>
-</section>
-<section id="step-1-setup-git">
+</div>
+<div class="section" id="step-1-setup-git">
 <h2>Step 1: Setup Git<a class="headerlink" href="#step-1-setup-git" title="Permalink to this headline">¶</a></h2>
 <p>The first time you use Git you need to setup the username and email address that you are going to use.  <strong>When you do this make sure that you select your own username and email address and not mine!</strong></p>
 <blockquote>
@@ -811,16 +858,16 @@ $ git config --global user.email <span class="s2">&quot;email_I_use_for_github@g
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --list
 </pre></div>
 </div>
-</section>
-<section id="step-2-initialise-the-git-repository">
+</div>
+<div class="section" id="step-2-initialise-the-git-repository">
 <h2>Step 2: Initialise the Git repository<a class="headerlink" href="#step-2-initialise-the-git-repository" title="Permalink to this headline">¶</a></h2>
 <p>Navigate to the directory on your machine where you want to store your code.  If you need to create a new directory for example <code class="docutils literal notranslate"><span class="pre">analysis_code</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git init
 </pre></div>
 </div>
 <p>When you issue the <code class="docutils literal notranslate"><span class="pre">init</span></code> command your terminal should return the following <code class="docutils literal notranslate"><span class="pre">Initialised</span> <span class="pre">empty</span> <span class="pre">Git</span> <span class="pre">repository</span> <span class="pre">in</span> <span class="pre">&lt;path</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">directory/analysis_code/.git&gt;</span></code>  This means there is a hidden directory called <code class="docutils literal notranslate"><span class="pre">.git</span></code> within your <code class="docutils literal notranslate"><span class="pre">analysis_code</span></code> directory.  This is the git <strong>repository</strong> (I’ll shorten this to <strong>repo</strong> from now on).</p>
-</section>
-<section id="step-3-add-some-code">
+</div>
+<div class="section" id="step-3-add-some-code">
 <h2>Step 3: Add some code<a class="headerlink" href="#step-3-add-some-code" title="Permalink to this headline">¶</a></h2>
 <p>Within <code class="docutils literal notranslate"><span class="pre">analysis_code</span></code> we create a file <code class="docutils literal notranslate"><span class="pre">main.py</span></code> that contains the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
@@ -835,8 +882,8 @@ $ git config --global user.email <span class="s2">&quot;email_I_use_for_github@g
     <span class="n">do_something</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="step-4-check-the-status-of-the-git-repo">
+</div>
+<div class="section" id="step-4-check-the-status-of-the-git-repo">
 <h2>Step 4: Check the status of the git repo<a class="headerlink" href="#step-4-check-the-status-of-the-git-repo" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>status</strong> command is something I would recommend using frequently.  It let’s you know the status of the repo.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
@@ -852,8 +899,8 @@ Untracked files:
 	main.py
 </pre></div>
 </div>
-</section>
-<section id="step-5-stage-the-changes">
+</div>
+<div class="section" id="step-5-stage-the-changes">
 <h2>Step 5: Stage the changes<a class="headerlink" href="#step-5-stage-the-changes" title="Permalink to this headline">¶</a></h2>
 <p>Now we need to <strong>stage</strong> (add) the changes.  Staging a file tells git that you want to include it in the next <strong>commit</strong> to the repository. There are many file types that you do not want to track in a repository.  For example, python IDE’s such as VSCode or Jupyter produce additional files to support the experience of using them (for code analysis or checkpoints). These types of file clutter a repo, increase its size and are not needed to run the code within them.</p>
 <div class="admonition-becareful-of-what-you-commit admonition">
@@ -882,8 +929,8 @@ Changes to be committed:
 	new file:   main.py
 </pre></div>
 </div>
-</section>
-<section id="step-6-commit-the-changes">
+</div>
+<div class="section" id="step-6-commit-the-changes">
 <h2>Step 6: Commit the changes<a class="headerlink" href="#step-6-commit-the-changes" title="Permalink to this headline">¶</a></h2>
 <p>We are now ready to commit our code to the repository.  A commit also contains meta-data describing the commit.  Writing a good commit message is a bit of an art.  Before I give you some tips let’s have a look at the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;INIT: add main.py&quot;</span>
@@ -916,8 +963,8 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">15</span>:48:11 <span c
 <li><p><code class="docutils literal notranslate"><span class="pre">GIT:</span> <span class="pre">case</span> <span class="pre">study</span> <span class="pre">1</span> <span class="pre">typo</span> <span class="pre">fix</span></code></p></li>
 </ul>
 </div>
-</section>
-<section id="step-7-add-a-gitignore">
+</div>
+<div class="section" id="step-7-add-a-gitignore">
 <h2>Step 7: Add a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#step-7-add-a-gitignore" title="Permalink to this headline">¶</a></h2>
 <p>To help avoid staging and committing files that you do not want you need to include <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (a git ignore file).  This is just a list of file types and directories that Git will ignore when staging changes.  For example, let’s assume the analysis code in<code class="docutils literal notranslate"><span class="pre">main.py</span></code> generates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that reports intermediate results and if the run was successful. There is no value in committing this data to a repo as it varies on each run and increases the size of the repo.  For this example let’s manually create a few log files and add them to the directory.  We will also create a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analysis_code
@@ -962,8 +1009,8 @@ Untracked files:
 $ git commit -m <span class="s2">&quot;SETUP: .gitignore + *.log&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="step-8-view-the-diff">
+</div>
+<div class="section" id="step-8-view-the-diff">
 <h2>Step 8: View the diff<a class="headerlink" href="#step-8-view-the-diff" title="Permalink to this headline">¶</a></h2>
 <p>We now have a couple of commits.  Taking a look at the log we have</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>commit 250435844c4d13c08cc34045d0be9f31e0b76ebd <span class="o">(</span>HEAD -&gt; master<span class="o">)</span>
@@ -996,8 +1043,8 @@ index <span class="m">0000000</span>..5281d88
 <blockquote>
 <div><p>A tip is use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span></code>  This will provide a one line summary of each commit including the shortened commit hash.</p>
 </div></blockquote>
-</section>
-<section id="step-9-add-readme-md">
+</div>
+<div class="section" id="step-9-add-readme-md">
 <h2>Step 9: Add <code class="docutils literal notranslate"><span class="pre">readme.md</span></code><a class="headerlink" href="#step-9-add-readme-md" title="Permalink to this headline">¶</a></h2>
 <p>Finally let’s add some basic documentation to the project.  We will do this using a markdown file called <code class="docutils literal notranslate"><span class="pre">readme.md</span></code>.</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Uber important health data science project</span>
@@ -1036,8 +1083,8 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">16</span>:04:03 <span c
 └── run_2.log
 </pre></div>
 </div>
-</section>
-<section id="optional-step-10-tag-the-last-commit-as-v1-0-0">
+</div>
+<div class="section" id="optional-step-10-tag-the-last-commit-as-v1-0-0">
 <h2>(Optional) Step 10: Tag the last commit as v1.0.0<a class="headerlink" href="#optional-step-10-tag-the-last-commit-as-v1-0-0" title="Permalink to this headline">¶</a></h2>
 <p>It is sometimes useful to tag a commit when it represents a milestone.  This gives it a specific version number, for example v0.1.0, v1.0.0, v1.1.0 or v2.0.0, along with additional descriptive meta data.  The formatting of the tags typically used is <code class="docutils literal notranslate"><span class="pre">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</span></code>.  I find it very useful to think in terms of version numbers and milestones as opposed to individual commits (I’m sure I’m not alone there).  Tags are stored in the git repo along with meta data.  To tag the last commit we use</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git tag -a v1.0.0 f732e5c -m <span class="s2">&quot;Analysis of full patient cohort&quot;</span>
@@ -1048,8 +1095,8 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">16</span>:04:03 <span c
 <p class="admonition-title">I don’t often include a tagging step in my local workflow.</p>
 <p>The reason for that is tags are not automatically pushed to a remote repo (for example on GitHub).  In fact I tend to create tagged releases on Github itself.  That allows collaborators to download a milestone version of the code and provides an shared language when talking about versions/milestones with others.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1074,22 +1121,42 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">16</span>:04:03 <span c
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02_git.html" title="previous page">Introducing Git</a>
-    <a class='right-next' id="next-link" href="04_cs_2.html" title="next page">Case study: roll back and bug fix</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="02_git.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Introducing Git</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="04_cs_2.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Case study: roll back and bug fix</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Thomas Monks<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1098,11 +1165,9 @@ Date:   Tue Aug <span class="m">3</span> <span class="m">16</span>:04:03 <span c
 
       </div>
     </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

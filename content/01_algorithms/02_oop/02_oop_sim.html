@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Case study: ABS &#8212; Python for health data science.</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -20,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -35,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -57,14 +53,14 @@
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Scientific coding in numpy" href="../03_numpy.html" />
     <link rel="prev" title="A world of objects" href="01_python_classes.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -73,32 +69,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../index.html">
-  
-  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../front_page.html">
    Preface
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Data and software
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../001_setup/git.html">
    GitHub
@@ -115,25 +115,25 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Algorithms and computational modelling
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01_design.html">
    The importance of design
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_design/01_primes.html">
      Computing prime numbers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_design/01_primes.html#a-more-efficient-algorithm">
-     A more efficient algorithm
     </a>
    </li>
    <li class="toctree-l2">
@@ -152,14 +152,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../02_oop.html">
    Designing using objects
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01_python_classes.html">
      A world of objects
@@ -171,10 +174,8 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03_numpy.html">
    Scientific coding in
    <code class="docutils literal notranslate">
@@ -183,7 +184,12 @@
     </span>
    </code>
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03_numpy/01_performance.html">
      Arrays versus lists
@@ -235,17 +241,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04_exercises.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_exercises/01_science_funcs.html">
      Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/02_basic_oop.html">
+     Basic Object Orientated Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -258,20 +272,18 @@
      </code>
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_exercises/03_int_numpy.html">
-     Intermediate NumPy
-    </a>
-   </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05_debug.html">
    Debug challenges
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_debug/01_debug_numpy.html">
      <code class="docutils literal notranslate">
@@ -283,17 +295,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06_solutions.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_solutions/01_science_funcs.html">
      Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_solutions/02_basic_oop.html">
+     Basic Object Orientated Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,21 +327,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Statistical Programming
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
    Data wrangling
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
      Introduction to
@@ -360,14 +383,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
    Visualising data
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">
      Introduction to
@@ -394,14 +420,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">
      Working with a
@@ -428,14 +457,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">
      Working with a
@@ -462,21 +494,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Managing Data Science Projects
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../03_mgt/03_vc_front_page.html">
    Version control
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../03_mgt/01_git/02_git.html">
      Introducing Git
@@ -498,14 +533,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
    Deployment
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../03_mgt/02_packaging/01_python_packages.html">
      Local python packages
@@ -522,14 +560,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../03_mgt/04_exercises/01_python_packages.html">
      Python package exercise
@@ -551,35 +592,41 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../03_mgt/05_solutions/01_python_packages_solutions.html">
      Python package exercise
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Appendix - Basic Python
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/fp_lectures.html">
    Lectures
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
      Python Basics
@@ -591,14 +638,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/fp_practicals.html">
    Practicals
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../appendix/labs/01_basics.html">
      Basic Python
@@ -620,11 +670,10 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -690,12 +739,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -729,12 +778,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#coding-problem-oh-data-scientists-can-t-you-all-just-get-along">
    Coding Problem: ‘Oh data scientists - can’t you all just get along!’
@@ -877,8 +925,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -887,7 +934,7 @@
         
               <div>
                 
-  <section id="case-study-abs">
+  <div class="section" id="case-study-abs">
 <h1>Case study: ABS<a class="headerlink" href="#case-study-abs" title="Permalink to this headline">¶</a></h1>
 <p>As you have learned, Python is an <strong>Object Orientated Progamming (OOP) language</strong>.  We can follow the standard paradigm of OOP in python by creating <strong>classes</strong> and then instantiating an instance of the class called an <strong>object</strong>.  A class offers a higher level of abstraction for your code than functions alone.  One of the key benefits for data science is that you can design your algorithms to be resuable and composed from multiple classes.</p>
 <p><strong>In this section you will learn:</strong></p>
@@ -899,7 +946,7 @@
 <div><p>To help visualise our problem we are going to use a package called <strong>MatPlotLib</strong>.  We will cover this in detail later, but for now you just need to know that it allows us to create charts from our data.  The code is provided.</p>
 </div></blockquote>
 <hr class="docutils" />
-<section id="coding-problem-oh-data-scientists-can-t-you-all-just-get-along">
+<div class="section" id="coding-problem-oh-data-scientists-can-t-you-all-just-get-along">
 <h2>Coding Problem: ‘Oh data scientists - can’t you all just get along!’<a class="headerlink" href="#coding-problem-oh-data-scientists-can-t-you-all-just-get-along" title="Permalink to this headline">¶</a></h2>
 <p>To apply the basics of OOP you will create an <strong>Agent Based Simulation</strong> (ABS).  ABS is a popular methodology in data science for modelling emergent behaviour when a group of simple <strong>agents</strong> interact with each other within an <strong>environment</strong>.  Agents can be thought of an object with state and behaviour.  That lends itself nicely to the concept of a class from OOP. The concept of emergence is important in ABS as we are not coding the outcome of the modelling.  We are instead coding some behavioural interaction rules between the agents and exploring what happens when we run the model and set the agents loose.</p>
 <blockquote>
@@ -917,11 +964,11 @@
 <blockquote>
 <div><p>This problem is actually a classic ABS modelling study by Schelling that studied the dynamics of segregation in populations.</p>
 </div></blockquote>
-</section>
-<section id="designing-your-code">
+</div>
+<div class="section" id="designing-your-code">
 <h2>Designing your code<a class="headerlink" href="#designing-your-code" title="Permalink to this headline">¶</a></h2>
 <p>Before you write any code take a momemt to think about what the basic class structure of your code might look like.</p>
-<section id="agents">
+<div class="section" id="agents">
 <h3>Agents<a class="headerlink" href="#agents" title="Permalink to this headline">¶</a></h3>
 <p>The most obvious class we could include represents an <strong>Agent</strong>.  In some applications, you may want multiple types of agent class, but here their general behaviour is the same i.e. they become unhappy when they are not surrounded by enough of their fellow coding peers.  So here we you can simply define a single agent class and give it the attribute <code class="docutils literal notranslate"><span class="pre">language</span></code> of type <code class="docutils literal notranslate"><span class="pre">str</span></code> that determines the agents preference for Python or R.</p>
 <p>Remember that in the simulation we will be creating multiple objects of type <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code>.  This is your <strong>population</strong>.  The skeleton code for <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code>.</p>
@@ -941,8 +988,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="environment">
+</div>
+<div class="section" id="environment">
 <h3>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h3>
 <p>After agents the decision making about what classes to include becomes a bit more fuzzy.  You could code the whole simulation to work with a single agent class and complete the rest using functions.  However, an environment object is a useful level of abstraction when creating a framework for running your model.  The code will also be much more readable.  Another benefit is that in a more complicated problem you might need to include multiple environments type classes (e.g. interacting wards or even whole hospitals containing agents).</p>
 <p>Here you will define a class called <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> that contains a population of <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> objects.  We will take a look how these agents are stored internally shortly.</p>
@@ -961,8 +1008,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="the-main-loop">
+</div>
+<div class="section" id="the-main-loop">
 <h3>The main loop<a class="headerlink" href="#the-main-loop" title="Permalink to this headline">¶</a></h3>
 <p>The simulation consists of a main loop that either runs for a maximum number of iterations or terminates early if all agents are happy.  Again you could just implement this as a function.  However, you may want to explore multiple <strong>scenarios</strong> with the model.  A scenario for example might explore a different similarity thresholds or ration of ‘Python’ coders to ‘R’ coders (for example what happens in a world where all all coders use Python and none use R!?).  For this reason you will create a simple <code class="docutils literal notranslate"><span class="pre">Model</span></code> class.  This will include a <code class="docutils literal notranslate"><span class="pre">run()</span></code> method that will start the main loop and the simulation.</p>
 <div class="cell docutils container">
@@ -977,11 +1024,11 @@
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="coding-the-abs-using-oop-techniques">
+</div>
+</div>
+<div class="section" id="coding-the-abs-using-oop-techniques">
 <h2>Coding the ABS using OOP techniques<a class="headerlink" href="#coding-the-abs-using-oop-techniques" title="Permalink to this headline">¶</a></h2>
-<section id="imports">
+<div class="section" id="imports">
 <h3>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h3>
 <p>You will mostly be using standard python in this example, but you will also make use of the following libraries:</p>
 <ul class="simple">
@@ -1000,8 +1047,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="constants-and-default-parameter-values">
+</div>
+<div class="section" id="constants-and-default-parameter-values">
 <h3>Constants and default parameter values<a class="headerlink" href="#constants-and-default-parameter-values" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1023,9 +1070,9 @@
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="the-datascientist-class">
+</div>
+</div>
+<div class="section" id="the-datascientist-class">
 <h2>The <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> class<a class="headerlink" href="#the-datascientist-class" title="Permalink to this headline">¶</a></h2>
 <p>When creating a new <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> we will use the following syntax</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an new data scientist agent that prefers python</span>
@@ -1187,8 +1234,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="the-gridworld-class">
+</div>
+<div class="section" id="the-gridworld-class">
 <h2>The <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> class<a class="headerlink" href="#the-gridworld-class" title="Permalink to this headline">¶</a></h2>
 <p>To create a new instance of <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> the following interface applies:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">GridWorld</span><span class="p">(</span><span class="n">n_rows</span><span class="o">=</span><span class="n">N_ROWS</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="n">N_COLS</span><span class="p">,</span>
@@ -1197,7 +1244,7 @@
 </pre></div>
 </div>
 <p>I.e. we specify the number of rows and columns, the number of cells that are empty at any one time and optionally a random seed to allow for a repeatable run of the stochastic model.</p>
-<section id="initialising-gridworld">
+<div class="section" id="initialising-gridworld">
 <h3>Initialising <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code><a class="headerlink" href="#initialising-gridworld" title="Permalink to this headline">¶</a></h3>
 <p>The parameters we pass to <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> are processed in its <code class="docutils literal notranslate"><span class="pre">__init__</span></code> constructor method.  We need to:</p>
 <ul class="simple">
@@ -1302,8 +1349,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="gridworld-get-neighbours-self-row-col-method">
+</div>
+<div class="section" id="gridworld-get-neighbours-self-row-col-method">
 <h3><code class="docutils literal notranslate"><span class="pre">GridWorld.get_neighbours(self,</span> <span class="pre">row,</span> <span class="pre">col)</span></code> method<a class="headerlink" href="#gridworld-get-neighbours-self-row-col-method" title="Permalink to this headline">¶</a></h3>
 <p>Remember that an agents neighbours are the surrounding cells that contain other agents.  This can be a minimum of 0 and maximum of 8 agents.</p>
 <p>The get neighbours method is actually quite simple.  There are - as always - several ways you might implement it.  Here we will aim to construct reasonably efficient code that is also readable.</p>
@@ -1391,8 +1438,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="gridworld-relocate-self-agent-method">
+</div>
+<div class="section" id="gridworld-relocate-self-agent-method">
 <h3><code class="docutils literal notranslate"><span class="pre">GridWorld.relocate(self,</span> <span class="pre">agent)</span></code> method<a class="headerlink" href="#gridworld-relocate-self-agent-method" title="Permalink to this headline">¶</a></h3>
 <p>Almost there!  The final method to implement swaps the position of an agent with an empty cell.</p>
 <p>First we need to select a random empty location in the grid. Let’s create its own method (this is for readability - its actually only 1 line of code).</p>
@@ -1541,9 +1588,9 @@
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="a-preliminary-check-of-gridworld-and-datascientist-work">
+</div>
+</div>
+<div class="section" id="a-preliminary-check-of-gridworld-and-datascientist-work">
 <h2>A preliminary check of <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> and <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code> work.<a class="headerlink" href="#a-preliminary-check-of-gridworld-and-datascientist-work" title="Permalink to this headline">¶</a></h2>
 <p>Before we code our <code class="docutils literal notranslate"><span class="pre">Model</span></code> class let’s check that our agent and environment classes are working as expected.  To test we will create an instance of <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> and plot the environment using <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. We will color python agents blue and R agents red. If everything has worked okay there should be no patterns in the location of agents (i.e. random) and we should have the correct number of each.</p>
 <p>We haven’t covered <code class="docutils literal notranslate"><span class="pre">MatPlotLib</span></code> yet so for now you’ll have to take my word that the code below plots the environment.  I’ve added some comments so you can work through how it works if you are keen.</p>
@@ -1605,8 +1652,8 @@ grid size: 1024
 <img alt="../../../_images/02_oop_sim_29_0.png" src="../../../_images/02_oop_sim_29_0.png" />
 </div>
 </div>
-</section>
-<section id="the-model-class-and-main-loop">
+</div>
+<div class="section" id="the-model-class-and-main-loop">
 <h2>The <code class="docutils literal notranslate"><span class="pre">Model</span></code> class and main loop<a class="headerlink" href="#the-model-class-and-main-loop" title="Permalink to this headline">¶</a></h2>
 <p>Let’s get the model running by implementing our final class.  Remember <code class="docutils literal notranslate"><span class="pre">Model</span></code> contains a single method <code class="docutils literal notranslate"><span class="pre">run</span></code>that is the main loop of our simulation.  We will run the simulation to <code class="docutils literal notranslate"><span class="pre">MAX_ITER</span></code> unless we find all agents are satisified with their neighbours and then we will terminate early.</p>
 <p>As we don’t know how many iterations will make (other than a maximum) we will implement the main loop as a <strong>while</strong>.  A skeleton of the code looks like:</p>
@@ -1689,8 +1736,8 @@ grid size: 1024
 </div>
 </div>
 </div>
-</section>
-<section id="running-the-full-simulation">
+</div>
+<div class="section" id="running-the-full-simulation">
 <h2>Running the full simulation<a class="headerlink" href="#running-the-full-simulation" title="Permalink to this headline">¶</a></h2>
 <p>We now have full implementations of <code class="docutils literal notranslate"><span class="pre">DataScientist</span></code>, <code class="docutils literal notranslate"><span class="pre">GridWorld</span></code> and <code class="docutils literal notranslate"><span class="pre">Model</span></code>.  To run our object based simulation model let’s create a function called <code class="docutils literal notranslate"><span class="pre">main()</span></code> that creates and run’s a <code class="docutils literal notranslate"><span class="pre">Model</span></code>.  At the end of the run we will plot the position of all agents in the world.</p>
 <div class="cell docutils container">
@@ -1735,8 +1782,8 @@ Runtime = 0.23
 </div>
 </div>
 <p>Well done! You have your first full simulation model built using OOP.  What you should see is that we get segregated data scientist communities even with a fairly low similarity threshold of 30%.  Of course this is a big simplication of reality.  Data scientisits are not opinionated about coding at all!</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1761,22 +1808,42 @@ Runtime = 0.23
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="01_python_classes.html" title="previous page">A world of objects</a>
-    <a class='right-next' id="next-link" href="../03_numpy.html" title="next page">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="01_python_classes.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">A world of objects</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../03_numpy.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Thomas Monks<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1785,11 +1852,9 @@ Runtime = 0.23
 
       </div>
     </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

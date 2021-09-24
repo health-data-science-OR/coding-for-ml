@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PyPi &#8212; Python for health data science.</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -20,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -35,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -57,14 +53,14 @@
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="BinderHub" href="../04_binder/01_binder.html" />
     <link rel="prev" title="Local python packages" href="../02_packaging/01_python_packages.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -73,32 +69,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../../index.html">
-  
-  <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Python for health data science.</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/title_cropped.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../front_page.html">
    Preface
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Data and software
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../001_setup/git.html">
    GitHub
@@ -115,25 +115,25 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Algorithms and computational modelling
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/01_design.html">
    The importance of design
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
      Computing prime numbers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html#a-more-efficient-algorithm">
-     A more efficient algorithm
     </a>
    </li>
    <li class="toctree-l2">
@@ -152,14 +152,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/02_oop.html">
    Designing using objects
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
      A world of objects
@@ -171,10 +174,8 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/03_numpy.html">
    Scientific coding in
    <code class="docutils literal notranslate">
@@ -183,7 +184,12 @@
     </span>
    </code>
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
      Arrays versus lists
@@ -235,17 +241,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/04_exercises.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
      Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_basic_oop.html">
+     Basic Object Orientated Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -258,20 +272,18 @@
      </code>
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01_algorithms/04_exercises/03_int_numpy.html">
-     Intermediate NumPy
-    </a>
-   </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/05_debug.html">
    Debug challenges
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
      <code class="docutils literal notranslate">
@@ -283,17 +295,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01_algorithms/06_solutions.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../01_algorithms/06_solutions/01_science_funcs.html">
      Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/06_solutions/02_basic_oop.html">
+     Basic Object Orientated Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -307,21 +327,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Statistical Programming
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
    Data wrangling
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
      Introduction to
@@ -360,14 +383,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
    Visualising data
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">
      Introduction to
@@ -394,14 +420,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">
      Working with a
@@ -428,14 +457,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">
      Working with a
@@ -462,21 +494,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Managing Data Science Projects
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03_vc_front_page.html">
    Version control
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01_git/02_git.html">
      Introducing Git
@@ -498,14 +533,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../03_mgt_front_page.html">
    Deployment
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../02_packaging/01_python_packages.html">
      Local python packages
@@ -522,14 +560,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04_exercises_front_page.html">
    Exercises
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_exercises/01_python_packages.html">
      Python package exercise
@@ -551,35 +592,41 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05_solutions_front_page.html">
    Solutions
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_solutions/01_python_packages_solutions.html">
      Python package exercise
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent" role="heading">
+<p class="caption">
  <span class="caption-text">
   Appendix - Basic Python
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/fp_lectures.html">
    Lectures
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
      Python Basics
@@ -591,14 +638,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../appendix/fp_practicals.html">
    Practicals
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../appendix/labs/01_basics.html">
      Basic Python
@@ -620,11 +670,10 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -690,12 +739,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -704,12 +753,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-pip">
    What is pip?
@@ -802,8 +850,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -812,26 +859,26 @@
         
               <div>
                 
-  <section id="pypi">
+  <div class="section" id="pypi">
 <h1>PyPi<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h1>
 <p>If you want to deploy a python package professionally, sustainably, and easily to colleagues, clients or just everyone in general then a great way to do it is using the Python Package Index (PyPi) and <code class="docutils literal notranslate"><span class="pre">pip</span></code>.  In this chapter we will learn how to setup a python package so that it is ready to be uploaded to PyPi and also how to use <code class="docutils literal notranslate"><span class="pre">setup-tools</span></code> and <code class="docutils literal notranslate"><span class="pre">twine</span></code>.</p>
-<section id="what-is-pip">
+<div class="section" id="what-is-pip">
 <h2>What is pip?<a class="headerlink" href="#what-is-pip" title="Permalink to this headline">¶</a></h2>
 <p>A package management system for installing <strong>local packages and python packages from the Python package index (PyPi - pronounced Pie Pie)</strong>.  Example usage:</p>
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code></p>
 <p>or</p>
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy==1.18.0</span></code></p>
 <p>I recommend exploring what packages are available on <a class="reference external" href="https://pypi.org/">PiPy</a>.  The chances are when you get stuck in data science project there will be a package on pypi to help you.  For example, if you need to solve some really complex multi-objective optimisation problems you could pip install <a class="reference external" href="https://pypi.org/project/deap/">DEAP</a>.  Obviously you need to have an up-to-date version of <code class="docutils literal notranslate"><span class="pre">pip</span></code> before you can install anything.  If you are using an Anaconda distribution or conda environment  (for example, <code class="docutils literal notranslate"><span class="pre">hds_code</span></code> provided with this book) you should already have it. If you are stuck there are some instructions <a class="reference external" href="https://packaging.python.org/tutorials/installing-packages/">here</a></p>
-</section>
-<section id="why-use-pypi-for-your-own-projects">
+</div>
+<div class="section" id="why-use-pypi-for-your-own-projects">
 <h2>Why use PyPi for your own projects?<a class="headerlink" href="#why-use-pypi-for-your-own-projects" title="Permalink to this headline">¶</a></h2>
 <p>In summary, it is useful if you want to use a package in multiple projects without asking the user to manage the source code (or binaries) themselves. This can, of course, be managed in various ways, but I’ve found that people I work with have had an easier time when the software is managed by pip.  For example, we haven’t manually managed the source for <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> or <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in this book.  That’s dar too complicated <code class="docutils literal notranslate"><span class="pre">pip</span></code> (and other package managers) make the packages accessible to others.  That’s a great thing for <strong>open science</strong> and health data science.</p>
 <p>So the obvious use case for pip in health data science is if you want others to be able to easily install and use your software/project in their own work.  I use it a lot for educational software for students.  I like the idea that students can use course learning software after they leave a University and access updated versions of it if they want to refresh their skills.</p>
 <blockquote>
 <div><p>I also recommend making your source code open via a cloud based version control system such as GitHub.  In fact, you can link to this from your PyPi project page.</p>
 </div></blockquote>
-</section>
-<section id="setting-up-a-git-repo-for-a-pypi-project">
+</div>
+<div class="section" id="setting-up-a-git-repo-for-a-pypi-project">
 <h2>Setting up a git repo for a PyPi project.<a class="headerlink" href="#setting-up-a-git-repo-for-a-pypi-project" title="Permalink to this headline">¶</a></h2>
 <p>I don’t want to be too prescriptive here.  It really is up to you and your collaborators how you organise your own code.  There are many suggestions online as well. The structure I am going to introduce here is a simple one I use in my own projects.  You will see variations of it online.  Here’s the template repo.  We will then take a look at the elements individually.   You can view the template repository and the code it contains on <a class="reference external" href="https://github.com/health-data-science-OR/pypi-template">GitHub</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pypi_template
@@ -847,7 +894,7 @@
 └── setup.py
 </pre></div>
 </div>
-<section id="environment-yml">
+<div class="section" id="environment-yml">
 <h3><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code><a class="headerlink" href="#environment-yml" title="Permalink to this headline">¶</a></h3>
 <p>One thing I have learnt from the Open Source community is it is useful to include a virtual conda environment for yourself and developers who contribute to the library.  That is what is in <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. One omission in the template repo is that it is useful to <strong>install the latest version of your own package into the dev environment!</strong>  This means you can create example Jupyter notebooks where other data scientists can learn how to use your package.  See for example:  <a class="reference external" href="https://github.com/TomMonks/forecast-tools">https://github.com/TomMonks/forecast-tools</a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pypi_package_dev</span>
@@ -863,8 +910,8 @@
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python=3.8.1</span>
 </pre></div>
 </div>
-</section>
-<section id="setup-py">
+</div>
+<div class="section" id="setup-py">
 <h3><code class="docutils literal notranslate"><span class="pre">setup.py</span></code><a class="headerlink" href="#setup-py" title="Permalink to this headline">¶</a></h3>
 <p>This is the important file for <code class="docutils literal notranslate"><span class="pre">pip</span></code>.  <code class="docutils literal notranslate"><span class="pre">setup.py</span> </code>controls the installation of your package.  I’ve included a template in the repo.  We need to use the <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> PyPI package to do the installation.  I’ve included <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> in the dev environment, but you can install it manually:</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">setuptools</span></code></p>
@@ -911,8 +958,8 @@
 <span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="managing-the-versioning-your-package">
+</div>
+<div class="section" id="managing-the-versioning-your-package">
 <h3>Managing the versioning your package<a class="headerlink" href="#managing-the-versioning-your-package" title="Permalink to this headline">¶</a></h3>
 <p>All python packages should behave in this way:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">test_package</span>
@@ -935,14 +982,14 @@
 </pre></div>
 </div>
 <p>Note that you need to be careful about version numbering here: It has to be managed manually.  One way to handle that is via some testing before updating a package on pypi.</p>
-</section>
-<section id="including-data-in-your-package">
+</div>
+<div class="section" id="including-data-in-your-package">
 <h3>Including data in your package<a class="headerlink" href="#including-data-in-your-package" title="Permalink to this headline">¶</a></h3>
 <p>For a data science project you may want to include some example or test data within your package.</p>
 <p>As an example, the package in the template repo includes a subdirectory <code class="docutils literal notranslate"><span class="pre">test_package/data</span></code> containing a single (dummy) CSV.</p>
 <p>One thing I learnt <strong>the hard and annoying way</strong> is that data is not included in your python package by default!</p>
 <p>To make sure data is included you can take two steps:</p>
-<section id="tell-setup-that-it-is-expecting-data">
+<div class="section" id="tell-setup-that-it-is-expecting-data">
 <h4>Tell <code class="docutils literal notranslate"><span class="pre">setup()</span></code> that it is expecting data<a class="headerlink" href="#tell-setup-that-it-is-expecting-data" title="Permalink to this headline">¶</a></h4>
 <p>There are a couple of options here.  Here’s the firs:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Tells setup to look in MANIFEST.in</span>
@@ -963,9 +1010,9 @@
 <ul class="simple">
 <li><p>Some extra help can be found here in the setup tools manual: <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/userguide/datafiles.html">https://setuptools.readthedocs.io/en/latest/userguide/datafiles.html</a></p></li>
 </ul>
-</section>
-</section>
-<section id="local-installation-and-uninstallation-of-your-package">
+</div>
+</div>
+<div class="section" id="local-installation-and-uninstallation-of-your-package">
 <h3>Local installation and uninstallation of your package<a class="headerlink" href="#local-installation-and-uninstallation-of-your-package" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and have installed <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> we can use them to install our package locally!  Navigate to the repo on your local machine and run the command below.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code></p>
@@ -977,13 +1024,13 @@
 </div>
 <p>If you have used the default package settings then you will have installed a package called <code class="docutils literal notranslate"><span class="pre">pypi-template</span></code> (version = 0.1).  To uninstall use the package name:</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">pypi-template</span></code></p>
-</section>
-</section>
-<section id="publishing-your-package-on-pypi">
+</div>
+</div>
+<div class="section" id="publishing-your-package-on-pypi">
 <h2>Publishing your package on PyPI<a class="headerlink" href="#publishing-your-package-on-pypi" title="Permalink to this headline">¶</a></h2>
 <p>The first thing to say is that <strong>there is a PyPI test site!</strong>  This is incredibly helpful.  I found that I made mistakes the first couple of times I tried to get this to work e.g. no data was included in my package.  Once it is published on the testpypi site you can install it!</p>
 <p>You need to go to <a class="reference external" href="https://testpypi.python.org">https://testpypi.python.org</a> and create an account.</p>
-<section id="including-source-and-wheel-distributions">
+<div class="section" id="including-source-and-wheel-distributions">
 <h3>Including source and wheel distributions<a class="headerlink" href="#including-source-and-wheel-distributions" title="Permalink to this headline">¶</a></h3>
 <p>It is recommended that you include both a <strong>source</strong> and <strong>wheel</strong> distribution in your python package on pypi. Wheels are an advanced topic and it took me a while to get my head around what a wheel distribution actually is and why it is useful!  A nice phrase I came across is that ‘<em>wheels make things go faster</em>’</p>
 <ul class="simple">
@@ -1009,8 +1056,8 @@
 </pre></div>
 </div>
 <p>For additional information on wheels I recommend checking out <a class="reference external" href="https://realpython.com/python-wheels/">https://realpython.com/python-wheels/</a></p>
-</section>
-<section id="using-twine-and-testpypi">
+</div>
+<div class="section" id="using-twine-and-testpypi">
 <h3>Using twine and testpypi<a class="headerlink" href="#using-twine-and-testpypi" title="Permalink to this headline">¶</a></h3>
 <p>To publish on pypi and testpypi we need to install an simple to use piece of software called <code class="docutils literal notranslate"><span class="pre">twine</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install twine
@@ -1032,23 +1079,23 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -i https://test.pypi.org/simple/<span class="o">{</span>your_package_name<span class="o">}==</span><span class="m">0</span>.1.0
 </pre></div>
 </div>
-</section>
-<section id="publish-on-pypi-production">
+</div>
+<div class="section" id="publish-on-pypi-production">
 <h3>Publish on pypi production<a class="headerlink" href="#publish-on-pypi-production" title="Permalink to this headline">¶</a></h3>
 <p>First I just want to say that you shouldn’t really publish on the main production pypi site for unless you need to.  Use it when necessary to help your own research, work or colleagues, but not for testing purposes: use testpypi instead.  <strong>You will need a separate account for PyPI.</strong>.  If you intend to publish to pypi I recommend searching the index first in order to identify any potential name clashes.</p>
 <p>When you are ready you can upload use <code class="docutils literal notranslate"><span class="pre">twine</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ twine upload dist/*
 </pre></div>
 </div>
-</section>
-</section>
-<section id="building-publishing-into-your-workflow-with-github-actions">
+</div>
+</div>
+<div class="section" id="building-publishing-into-your-workflow-with-github-actions">
 <h2>Building publishing into your workflow with GitHub Actions<a class="headerlink" href="#building-publishing-into-your-workflow-with-github-actions" title="Permalink to this headline">¶</a></h2>
 <p>The manual steps I’ve outlined here are somewhat historical.  Most modern projects make use of version control in the cloud such as GitLab or GitHub.  These include ways to automatically publish updates to pypi.  One such way is with GitHub actions.  For example, I use <strong>the publish to pypi action</strong> when code is merge into the ‘main’ branch.</p>
 <p>To set this up you will need to supply GitHub with a username and password for pypi.  Its stored securely, but you may rightly have concerns about privacy and security. My approach has been to create a secondary maintainer account for pypi rather than storing my main PyPI credentials to GitHub. I will leave it up to you to make a decision about if you feel this is necessary.  It can always be updated at a later date.</p>
 <p>You can read more about Github actions <a class="reference external" href="https://docs.github.com/en/actions">here</a></p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1073,22 +1120,42 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../02_packaging/01_python_packages.html" title="previous page">Local python packages</a>
-    <a class='right-next' id="next-link" href="../04_binder/01_binder.html" title="next page">BinderHub</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../02_packaging/01_python_packages.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Local python packages</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../04_binder/01_binder.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">BinderHub</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Thomas Monks<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -1097,11 +1164,9 @@
 
       </div>
     </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
