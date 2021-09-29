@@ -767,6 +767,11 @@
    Creative Commons¶
   </a>
   <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-mit-licensed">
+     Code: MIT Licensed
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -783,17 +788,26 @@
   <p><img alt="title image" src="../_images/title_cropped.png" /></p>
 <div class="section" id="preface">
 <h1>Preface<a class="headerlink" href="#preface" title="Permalink to this headline">¶</a></h1>
-<p>Data science and machine learning are exciting rapidly evolving disciplines that offer huge potential for the future of health care, medicine and wider areas of science.  To keep up with the pace of change a modern data scientist requires fundamental skills in coding.  This content of this book will:</p>
-<ul class="simple">
-<li><p>Boost your Python coding skills to a level where they are ready to undertake research and applied projects in data science and machine learning in health, medicine and general industry.</p></li>
-<li><p>Introduce you to the complexity of working with real world data in a health and medicine context.</p></li>
-<li><p>Introduce key machine learning concepts in supervised learning including an introduction to deep learning.</p></li>
-<li><p>Teach you coding skills that are transferable outside of health and medicine.</p></li>
-</ul>
+<p>Welcome to my online textbook for learning enough python to be a credible data scientist.</p>
+<p>The book was written with three audiences in mind</p>
+<ol class="simple">
+<li><p>Post-graduate students studying or researching a health data science related topic</p></li>
+<li><p>My MSc students in <a class="reference external" href="https://www.exeter.ac.uk/postgraduate/courses/medicine/healthdatasciencemsc/">health data science</a> at the University of Exeter.  Indeed I use this book in the module coding for ML and data science.</p></li>
+<li><p>Health service analysts (particularly in the UK’s NHS) who are looking to boost their python skills to be a more rounded data scientist.</p></li>
+</ol>
+<p>The book aims to support these groups because data science is a rapidly evolving discipline that offers huge potential for the future of health care, medicine and wider areas of science. I’m very exited about health data science using python and you should be too. We now have wonderful python machine learning packages such as <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>, <code class="docutils literal notranslate"><span class="pre">keras</span></code> + <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>. These packages are very easy to use and scripting in them can be learnt using more online tutorials than you can count. For that reason I am not going to write about these popular machine learning packages in this book. I don’t really care if you can write an sklearn script. Instead I’m going to focus on making you a more rounded data scientist that can write code that’s going to stand the test of time. My aim is that, by the end of the book, you will be able to write clean code that can be <strong>confidently</strong> published alongside your research, can be run by others and can be returned to by yourself in 5-10 years and still understood (the person most likely to reuse your work is you!). By the end of the book you will be a health data scientist and a “coder” (or if you are old like me a “programmer”) and view code as a first class citizen in your data science projects. You will be able to focus on the data science as opposed to getting bogged down in the frequent coding problems you will face in real studies. This means we are going to focus a bit on code design, a bit on scientific problems, a bit on statistical programming and a bit on the management and deployment of data science code projects.</p>
+<p>This all sounds a bit pretentious doesn’t it?  Well perhaps a bit, but it comes from a good place. Through my work I regularly meet people and students within the data science discipline who can use a package such as <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>, but can’t implement a very basic algorithm in python (or anything else), control code dependencies and versioning, and (to my horror) have manual (or semi-manual) pipelines for wrangling their data in shape. These data scientists would be far more employable and useful to an organisation if they took their coding to the next level.  To be more blunt kids there’s money, kudos, better science, and real benefits for society that are up for grabs if people were willing to put in the effort.</p>
+<p>The book is powered by <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a>. This means that the parts of the book containing code (with a few minor caveats) are executable online using <a class="reference external" href="https://binderhub.readthedocs.io/en/latest/index.html">BinderHub</a> or the free version of Google Colabratory.  To use Google Colab you will need to login to a Google account.  BinderHub does not require a login.  You can also download sections of the book as Jupyter notebooks (.ipynb) that you can run locally and with higher performance in Jupyter-Lab or Notebook.</p>
+<p>My decision to make the textbook entirely open and free is influenced by three factors. The first is Dr Michael Allen and his, relentless, crusade to make science more open and democratic in our discipline. Over time it appears some of his philosophy has rubbed off on me as well; or he has shamelessly brainwashed me. Either way I agree that data science and the knowledge that underpins it should be free to all. The second influence was Rob J Hyndman’s and George Athanasopoulos’ fantastic and hugely successful online textbook <a class="reference external" href="https://otexts.com/fpp3/">forecasting: principles and practice</a>. After reading an early edition of this many years ago I was immediately convinced of the benefit of sharing and updating knowledge in this way. I’ve partly modelled the book on these ideas and content will be continually updated to remove errors and expanded WITHOUT needing to purchase a new edition. I’ll archive all editions permanently at <a class="reference external" href="https://zenodo.org/">Cern via Zenodo</a> (I’m confident this is a good place and will make it to the heat death of the universe). Finally, when I saw the wonderful <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book project</a> I knew immediately this was the right tool to create a book of my own. The team that develop Jupyter book are so fantastic I even forgive them for changing the way Juypter Book table of content pages work between versions 0.10 and 0.11. As I write this the book is served up for free via Microsoft’s <a class="reference external" href="https://pages.github.com/">GitHub pages</a> and provides interactive code for you to run in the cloud.</p>
+<p>I don’t have a copy editor…sorry.  Instructions for reporting mistakes and any garbage is here.</p>
+<p>I hope the book is useful to you whatever area of data science you are working in.  I’ll admit that I’ve not been able to cover everything I had originally planned for this first edition.  If you have content ideas do let me know via the GitHub repo issues and you might find them, along with credit, in a future release!</p>
+<p>Work hard and code every day!</p>
+<p><strong>Tom Monks</strong>
+September 2021.</p>
 </div>
 <div class="section" id="creative-commons">
 <h1>Creative Commons¶<a class="headerlink" href="#creative-commons" title="Permalink to this headline">¶</a></h1>
-<p>All content in this book (this includes all files and content in the <a class="reference external" href="https://github.com/health-data-science-OR/coding-for-ml/tree/main/content">content/</a> folder) is shared under CC BY 4.0.</p>
+<p>All written content in this book (this includes all files and content in the <a class="reference external" href="https://github.com/health-data-science-OR/coding-for-ml/tree/main/content">content/</a> folder) is shared under CC BY 4.0.</p>
 <p>You are free to:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Share - copy and redistribute the material in any medium or format
 
@@ -802,6 +816,10 @@ Adapt - remix, transform, and build upon the material for any purpose, even comm
 </div>
 <p>You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</p>
 <p>License info: <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+<div class="section" id="code-mit-licensed">
+<h2>Code: MIT Licensed<a class="headerlink" href="#code-mit-licensed" title="Permalink to this headline">¶</a></h2>
+<p>All code in this book is licensed under a <a class="reference external" href="https://github.com/health-data-science-OR/coding-for-ml/blob/main/LICENSE">MIT permissive license</a></p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
