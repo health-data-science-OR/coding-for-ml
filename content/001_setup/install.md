@@ -13,7 +13,7 @@ https://www.anaconda.com/download/
 Anaconda includes 'conda' (a package manager).  An optional step is to follow our notes to use [conda](conda.md) to create a virtual environment that includes python 3.8.8 and Jupyter-Lab 3.x
 ```
 
-```{admonition} My personal preference
+```{admonition} My personal preferences
 :class: tip
 Alternatively (and my preference) you can install substantially smaller [Miniconda](https://docs.conda.io/en/latest/miniconda.html) and install the packages you need using the provided conda environment or by selecting them yourself.  I tend to use packages installed from [conda-forge](https://conda-forge.org/), but the packages in the Anaconda channel (defaults) are equally good.
 ```
