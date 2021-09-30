@@ -1,4 +1,4 @@
-![title image](imgs/title_cropped.png)
+![title image](imgs/logo_v1.png)
 
 # Preface
 
