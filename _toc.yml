@@ -4,6 +4,7 @@ parts:
 - caption: Introduction
   chapters:
   - file: content/001_setup/contributing
+  - file: content/001_setup/install
   - file: content/001_setup/git
   - file: content/001_setup/conda
   - file: content/001_setup/docker
