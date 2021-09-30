@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="book_title_page_log.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="386.78741"
+     inkscape:cy="175.00893"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="1920"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-others="true"
+     inkscape:snap-nodes="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid20368" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient25919">
+      <stop
+         style="stop-color:#ffcc00;stop-opacity:1"
+         offset="0"
+         id="stop25915" />
+      <stop
+         style="stop-color:#ffcc00;stop-opacity:1"
+         offset="1"
+         id="stop25917" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient25286">
+      <stop
+         style="stop-color:#3771c8;stop-opacity:1;"
+         offset="0"
+         id="stop25282" />
+      <stop
+         style="stop-color:#00112b;stop-opacity:1"
+         offset="1"
+         id="stop25284" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient25286"
+       id="linearGradient25288"
+       x1="505.11343"
+       y1="40.125202"
+       x2="534.79218"
+       y2="69.738693"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient25919"
+       id="linearGradient25921"
+       x1="514.87939"
+       y1="50.11903"
+       x2="544.75647"
+       y2="79.953682"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#ececec;fill-opacity:1;stroke-width:0.250452"
+       id="rect26612"
+       width="146.09862"
+       height="31.728382"
+       x="29.116817"
+       y="5.5954285"
+       rx="0.13229166"
+       ry="0.13229166"
+       inkscape:export-filename="/home/tom/Pictures/test_logo.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.4779px;line-height:1.25;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#241c1c;fill-opacity:1;stroke:none;stroke-width:0.261947"
+       x="52.556374"
+       y="21.122257"
+       id="text1310"
+       transform="scale(1.0100637,0.99003659)"
+       inkscape:export-filename="/home/tom/Pictures/test_logo.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan1308"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5735px;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#241c1c;stroke-width:0.261947"
+         x="52.556374"
+         y="21.122257">PYTHON FOR HEALTH DATA SCIENCE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;line-height:1.25;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.25957"
+       x="52.000504"
+       y="30.489756"
+       id="text16378"
+       transform="scale(1.0193137,0.98105226)"
+       inkscape:export-filename="/home/tom/Pictures/test_logo.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan16376"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'League Gothic';-inkscape-font-specification:'League Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.25957"
+         x="52.000504"
+         y="30.489756">A hands-on introduction</tspan></text>
+    <g
+       id="g26508"
+       transform="matrix(1.8708808,0,0,1.8708808,-218.55254,-7.9467249)"
+       inkscape:export-filename="/home/tom/Pictures/test_logo.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <path
+         id="rect20392"
+         style="fill:url(#linearGradient25288);fill-opacity:1;stroke-width:0.986018"
+         d="m 520,40 c -2.76998,0 -5,2.229999 -5,5 v 4 h 9.5 c 0.27704,0 0.5,0.222991 0.5,0.5 0,0.277002 -0.223,0.5 -0.5,0.5 H 520.11523 515 510.11523 c -2.76997,0 -5,2.230003 -5,5 v 10 c 0,2.770001 2.23003,5 5,5 h 3.99219 v -5.595703 c 0,-2.769997 2.22999,-5 5,-5 h 0.25586 c 0.2087,0.02634 0.42065,0.04102 0.63672,0.04102 h 10 c 2.77002,0 5,-2.229999 5,-5 V 45 c 0,-2.770001 -2.22998,-5 -5,-5 z"
+         transform="scale(0.26458333)" />
+      <path
+         id="path22419"
+         style="fill:url(#linearGradient25921);fill-opacity:1;stroke-width:0.986018"
+         d="m 535.96094,50.027344 v 5.595703 c 0,2.769997 -2.22999,5 -5,5 h -0.25391 c -0.20901,-0.02642 -0.42031,-0.04102 -0.63672,-0.04102 h -10 c -2.77001,0 -5,2.230003 -5,5 v 9.445313 c 0,2.769997 2.22999,5 5,5 h 10 c 2.77002,0 5,-2.230003 5,-5 v -4 h -9.5 c -0.27704,0 -0.5,-0.222995 -0.5,-0.5 0,-0.277002 0.22296,-0.5 0.5,-0.5 h 4.38281 5.11719 4.88281 c 2.76998,0 5.00001,-2.230003 5,-5 v -10 c 0,-2.770001 -2.23002,-5 -5,-5 z"
+         transform="scale(0.26458333)" />
+      <ellipse
+         style="opacity:1;fill:#ffffff;stroke-width:0.103629"
+         id="path22495"
+         cx="137.58482"
+         cy="11.906759"
+         rx="0.26335111"
+         ry="0.26331633" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.103629"
+         id="path22495-9"
+         cx="140.22546"
+         cy="19.840998"
+         rx="0.26335111"
+         ry="0.26331633" />
+    </g>
+  </g>
+</svg>
