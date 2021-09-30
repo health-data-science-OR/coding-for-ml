@@ -1,8 +1,9 @@
 format: jb-book
 root: content/front_page
 parts:
-- caption: Data and software
+- caption: Introduction
   chapters:
+  - file: content/001_setup/contributing
   - file: content/001_setup/git
   - file: content/001_setup/conda
   - file: content/001_setup/docker
