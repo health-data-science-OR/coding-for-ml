@@ -1,12 +1,11 @@
 # book settings
-title: Python for health data science.
+title: #Python for health data science.
 author: Thomas Monks
-#logo: images/logo.png
 email: t.m.w.monks@exeter.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   Learning materials for Coding for Machine Learning and Data Science.
-logo: content/imgs/title_cropped.png
-
+logo: content/imgs/small_logo.png
+#logo: content/imgs/logo_v1.png
 
 #only build files specified in table of contents file
 only_build_toc_files: true
