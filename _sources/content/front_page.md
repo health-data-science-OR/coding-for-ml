@@ -28,7 +28,7 @@ Work hard and code every day!
 September 2021.
 
 
-# Creative Commons¶
+## Creative Commons License¶
 
 All written content in this book (this includes all files and content in the [content/](https://github.com/health-data-science-OR/coding-for-ml/tree/main/content) folder) is shared under CC BY 4.0.
 
