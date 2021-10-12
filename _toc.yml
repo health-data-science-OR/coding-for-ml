@@ -20,7 +20,7 @@ parts:
     sections:
     - file: content/01_algorithms/02_oop/01_python_classes
     - file: content/01_algorithms/02_oop/02_oop_sim
-    - file: content/01_algorithms/exercises/01_science_funcs
+    - file: content/01_algorithms/02_oop/03_oop_cv
   - file: content/01_algorithms/03_numpy
     sections:
     - file: content/01_algorithms/03_numpy/01_performance
@@ -95,7 +95,10 @@ parts:
   - file: content/03_mgt/05_solutions_front_page
     sections:
     - file: content/03_mgt/05_solutions/01_python_packages_solutions
-- caption: Appendix - Basic Python
+- caption: Appendix
+  chapters:
+    - file: content/appendix/acknowledge
+- caption: Appendix Basic Python
   chapters:
   - file: content/appendix/fp_lectures
     sections:
