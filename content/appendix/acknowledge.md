@@ -1,4 +1,4 @@
-# Aknowledgements
+# Acknowledgements
 
 I'd like to extend my thanks to the following people for their contributions to the book.  All contributions no matter the size are welcome.
 
