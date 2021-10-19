@@ -287,6 +287,16 @@
      </code>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -337,6 +347,16 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_solutions/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
       </span>
      </code>
     </a>
@@ -634,7 +654,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../appendix/acknowledge.html">
-   Aknowledgements
+   Acknowledgements
   </a>
  </li>
 </ul>
@@ -1149,7 +1169,7 @@ Second columns: [2 4 6]
 </div>
 <p>Note how there are three indicies in the notation <code class="docutils literal notranslate"><span class="pre">td[i,</span> <span class="pre">j,</span> <span class="pre">k]</span></code>.  To get all of the rows we specified <code class="docutils literal notranslate"><span class="pre">i</span></code> as <code class="docutils literal notranslate"><span class="pre">:</span></code>.  To select the 2nd array in each row we set <code class="docutils literal notranslate"><span class="pre">j=1</span></code>.  At this stage we have selected <code class="docutils literal notranslate"><span class="pre">[13</span> <span class="pre">14]</span></code>, <code class="docutils literal notranslate"><span class="pre">[23</span> <span class="pre">24]</span></code>, and <code class="docutils literal notranslate"><span class="pre">[33</span> <span class="pre">34]</span></code>.  We then set <code class="docutils literal notranslate"><span class="pre">k=0</span></code> to get the first element of these arrays.</p>
 <p><strong>Task:</strong> Modify this slice to select from only the first two rows.</p>
-<p>We start with <code class="docutils literal notranslate"><span class="pre">td[:2,</span> <span class="pre">1,</span> <span class="pre">0]</span></code> that we know gives us <code class="docutils literal notranslate"><span class="pre">[13,</span> <span class="pre">12,</span> <span class="pre">33]</span></code>.  We selected all rows by setting <code class="docutils literal notranslate"><span class="pre">i=:</span></code>.  Imagine for a moment that <code class="docutils literal notranslate"><span class="pre">td</span></code> is actually only a 1D array. What would you do to slice an array to get the first two elements only?  You would use <code class="docutils literal notranslate"><span class="pre">td[:2]</span></code>.  Therefore our 3D equivalent is:</p>
+<p>We start with <code class="docutils literal notranslate"><span class="pre">td[:,</span> <span class="pre">1,</span> <span class="pre">0]</span></code> that we know gives us <code class="docutils literal notranslate"><span class="pre">[13,</span> <span class="pre">12,</span> <span class="pre">33]</span></code>.  We selected all rows by setting <code class="docutils literal notranslate"><span class="pre">i=:</span></code>.  Imagine for a moment that <code class="docutils literal notranslate"><span class="pre">td</span></code> is actually only a 1D array. What would you do to slice an array to get the first two elements only?  You would use <code class="docutils literal notranslate"><span class="pre">td[:2]</span></code>.  Therefore our 3D equivalent is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">td</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -1338,7 +1358,7 @@ sub vector: [8 6 3]
 <span class="n">sub_matrix</span> <span class="o">=</span> <span class="n">complete_matrix</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> 
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;original matrix: </span><span class="se">\n</span><span class="si">{</span><span class="n">complete_matrix</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;sub matrix: </span><span class="se">\n</span><span class="si">{</span><span class="n">sliced_matrix</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;sub matrix: </span><span class="se">\n</span><span class="si">{</span><span class="n">sub_matrix</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1348,7 +1368,7 @@ sub vector: [8 6 3]
  [3 4 5]
  [6 7 8]]
 sub matrix: 
-[10  4  8]
+[2 4 8]
 </pre></div>
 </div>
 </div>

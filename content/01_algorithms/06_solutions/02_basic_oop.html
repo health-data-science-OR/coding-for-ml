@@ -285,6 +285,16 @@
      </code>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,6 +345,16 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
       </span>
      </code>
     </a>
@@ -632,7 +652,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../appendix/acknowledge.html">
-   Aknowledgements
+   Acknowledgements
   </a>
  </li>
 </ul>
@@ -906,6 +926,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ward</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ward_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ward_id</span> <span class="o">=</span> <span class="n">ward_id</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">patients</span> <span class="o">=</span> <span class="p">[]</span>
         
     <span class="k">def</span> <span class="nf">add_patient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient</span><span class="p">):</span> 
@@ -991,7 +1012,7 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 4
-76
+67
 </pre></div>
 </div>
 </div>
@@ -1020,7 +1041,8 @@
 <span class="sd">    Encapsulates a hosptial made up of wards...</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_patients</span><span class="p">,</span> <span class="n">age_ranges</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wards</span> <span class="o">=</span> <span class="p">[</span><span class="n">new_ward</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n_patients</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">age_ranges</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_patients</span><span class="p">))]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wards</span> <span class="o">=</span> <span class="p">[</span><span class="n">new_ward</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n_patients</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">age_ranges</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
+                               <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_patients</span><span class="p">))]</span>
     
     <span class="k">def</span> <span class="nf">add_patient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ward_id</span><span class="p">,</span> <span class="n">patient</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wards</span><span class="p">[</span><span class="n">ward_id</span><span class="p">]</span><span class="o">.</span><span class="n">add_patient</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>

@@ -285,6 +285,16 @@
      </code>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,6 +345,16 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_solutions/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
       </span>
      </code>
     </a>
@@ -632,7 +652,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../appendix/acknowledge.html">
-   Aknowledgements
+   Acknowledgements
   </a>
  </li>
 </ul>
@@ -929,9 +949,9 @@
 <div><p>In case you are wondering <strong>stochastic</strong> here refers to a model that is probabilistic.  This means that a single run of a model does not provide an accurate picture of model performance/behaviour.  You need to run the model multiple times to generate a distribution.</p>
 </div></blockquote>
 <p>The best way to explain the idea of streams and repeatability is by demonstrating with a simple model.  We’ll first need to properly introduce a <code class="docutils literal notranslate"><span class="pre">numpy.random.Generator</span></code> that I used above.</p>
-<p>```{tip} <code class="docutils literal notranslate"><span class="pre">numpy</span></code> also provides <code class="docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code> objects for sampling.  <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> is a legacy implementation included for backwards compatibility with older code.  For new and updated code bases you should make use of <code class="docutils literal notranslate"><span class="pre">numpy.random.Generator</span></code>.  You might also encountered code that samples directly from <code class="docutils literal notranslate"><span class="pre">random</span></code> for example <code class="docutils literal notranslate"><span class="pre">np.random.randint(...)</span></code>.  This is still using a RandomState object and should be avoided for newer code.  Lot’s of code on the web will make use of <code class="docutils literal notranslate"><span class="pre">RandomState</span></code>.  If you implement it update it!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<div class="tip admonition">
+<p class="admonition-title">tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> also provides <code class="docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code> objects for sampling.  <code class="docutils literal notranslate"><span class="pre">RandomState</span></code> is a legacy implementation included for backwards compatibility with older code.  For new and updated code bases you should make use of <code class="docutils literal notranslate"><span class="pre">numpy.random.Generator</span></code>.  You might also encountered code that samples directly from <code class="docutils literal notranslate"><span class="pre">random</span></code> for example <code class="docutils literal notranslate"><span class="pre">np.random.randint(...)</span></code>.  This is still using a RandomState object and should be avoided for newer code.  Lot’s of code on the web will make use of <code class="docutils literal notranslate"><span class="pre">RandomState</span></code>.  If you implement it update it!</p>
 </div>
 <p>To create a <code class="docutils literal notranslate"><span class="pre">Generator</span></code> use the <code class="docutils literal notranslate"><span class="pre">default_rng()</span></code> function</p>
 <div class="cell docutils container">

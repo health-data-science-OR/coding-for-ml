@@ -285,6 +285,16 @@
      </code>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_exercises/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,6 +345,16 @@
      <code class="docutils literal notranslate">
       <span class="pre">
        np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_solutions/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
       </span>
      </code>
     </a>
@@ -632,7 +652,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../appendix/acknowledge.html">
-   Aknowledgements
+   Acknowledgements
   </a>
  </li>
 </ul>
@@ -833,18 +853,18 @@
 <h1>Summing up<a class="headerlink" href="#summing-up" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-else-might-you-do">
 <h2>What else might you do?<a class="headerlink" href="#what-else-might-you-do" title="Permalink to this headline">¶</a></h2>
-<p>We chose a particular algorithm to improve on trial and error in the computation of primes.  So the big questions are</p>
+<p>We chose a particular algorithm to improve on trial and error in the computation of primes.  So the big questions are:</p>
 <ul class="simple">
 <li><p>are there other algorithms and options that might reduce runtime?</p></li>
 <li><p>is this good performance good enough or a problem for our study?</p></li>
 <li><p>are we missing any obvious big ticket design changes?</p></li>
 </ul>
-<p>There are in fact other algorithms which are more efficient at computing larger primes than our sieve, but our sieve is reasonably good for the small primes we have computed.  Could we make further improvements in its basic design? Yes we can.  For instance.  We know that all even numbers above two cannot be primes.  We therefore don’t even need to consider these in our algorithm.  This not only reduces computation, but we can also half the size of our data structure (you might try this an exercise).</p>
+<p>There are in fact other algorithms which are more efficient at computing larger primes than our sieve, but our sieve is reasonably good for the small primes we have computed.  Could we make further improvements in its basic design? Yes we can.  For instance, we know that all even numbers above two cannot be primes.  We therefore don’t even need to consider these in our algorithm.  This not only reduces computation, but we can also half the size of our data structure (you might try this an exercise).</p>
 <p>Another option that we will explore in a later section is <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.  This provides some very fast optimised data structures and procedures that we will compare to standard python.</p>
 </div>
 <div class="section" id="conclusions">
 <h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
-<p>We’ve seen that a good algorithm makes a huge difference to what is feasible to compute.  A trial and error approach to computing primes prevented us from even finding relatively small prime numbers in a reasonable time frame.  The <strong>Sieve of Eratosthenes</strong> made the unfeasible suddenly feasible.  We’ve also seen that the design of code can also effect execution time by an order of magnitude.  But not all optimisations will have a huge impact on performance and some optimisation may scale with our problem size.</p>
+<p>We’ve seen that a good algorithm makes a huge difference to what is feasible to compute.  A trial and error approach to computing primes prevented us from even finding relatively small prime numbers in a reasonable time frame.  The <strong>Sieve of Eratosthenes</strong> made the unfeasible suddenly feasible.  We’ve also seen that the design of code can also affect execution time by an order of magnitude.  But not all optimisations will have a huge impact on performance and some optimisation may scale with our problem size.</p>
 </div>
 </div>
 
