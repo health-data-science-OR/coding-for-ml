@@ -28,6 +28,7 @@ parts:
     - file: content/01_algorithms/03_numpy/03_slicing
     - file: content/01_algorithms/03_numpy/04_algebra
     - file: content/01_algorithms/03_numpy/05_statistics
+    - file: content/01_algorithms/03_numpy/05a_regression
     - file: content/01_algorithms/03_numpy/06_sampling
     - file: content/01_algorithms/03_numpy/07_advanced_iter
     - file: content/01_algorithms/03_numpy/08_cs1
