@@ -959,7 +959,7 @@
 <div class="section" id="the-package-name">
 <h3>The package name<a class="headerlink" href="#the-package-name" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">my_package_name</span></code> is a directory and the name of your package.  Its the name that goes after <code class="docutils literal notranslate"><span class="pre">import</span></code> when you want to use it in your code.  Personally, I find choosing a meaningful and snappy name difficult! In fact, I might change my mind once or twice during its development.  Don’t worry too much about this, but just be aware that the longer a package name is in place the more code you are likely to have to check and update after you change it!</p>
-<p>As an example, my code package for meta-heuristics is called <code class="docutils literal notranslate"><span class="pre">metapy</span></code>  it is a mash up of <strong>meta</strong>-heuristics and <strong>py</strong>thon.  (It perhaps isn’t perfect!).  My package to support the NHS with the forecasting process is called <code class="docutils literal notranslate"><span class="pre">forecast-tools</span></code>.  This one went through a few iterations before I settled on it (I will space you the horrible names I chose before!).</p>
+<p>As an example, my code package for meta-heuristics is called <code class="docutils literal notranslate"><span class="pre">metapy</span></code>  it is a mash up of <strong>meta</strong>-heuristics and <strong>py</strong>thon.  (It perhaps isn’t perfect!).  My package to support the NHS with the forecasting process is called <code class="docutils literal notranslate"><span class="pre">forecast-tools</span></code>.  This one went through a few iterations before I settled on it (I will spare you the horrible names I chose before!).</p>
 </div>
 <div class="section" id="the-init-py-file">
 <h3>The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file<a class="headerlink" href="#the-init-py-file" title="Permalink to this headline">¶</a></h3>
@@ -1108,7 +1108,7 @@ my_package_name
 <div class="section" id="local-package-imports-from-ts-emergency">
 <h2>Local package imports from <code class="docutils literal notranslate"><span class="pre">ts_emergency</span></code><a class="headerlink" href="#local-package-imports-from-ts-emergency" title="Permalink to this headline">¶</a></h2>
 <p>These are usually found after the standard imports such as <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code></p>
-<p>One option is to import the how package and - optionally - provide it an alias (as you would do for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code>)</p>
+<p>One option is to import the whole package and - optionally - provide it an alias (as you would do for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ts_emergency</span> <span class="k">as</span> <span class="nn">tse</span>
@@ -1116,7 +1116,7 @@ my_package_name
 </div>
 </div>
 </div>
-<p>Alternatively you can use the <strong>from</strong> statement to import a package.  This is a stylistic choice, but one benefit of using from is that you don’t need to retype the full path each time you use a function. That may or may not be important for you application.  Another more subtle benefit I’ve found is that when first designing a package I tend to rename modules and sometimes change package structure.  Importing using <code class="docutils literal notranslate"><span class="pre">from</span></code> statement means I only need to update the import section of my code - as opposed to all individual calls to a function.</p>
+<p>Alternatively you can use the <strong>from</strong> statement to import a package.  This is a stylistic choice, but one benefit of using from is that you don’t need to retype the full path each time you use a function. That may or may not be important for your application.  Another more subtle benefit I’ve found is that when first designing a package I tend to rename modules and sometimes change package structure.  Importing using <code class="docutils literal notranslate"><span class="pre">from</span></code> statement means I only need to update the import section of my code - as opposed to all individual calls to a function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ts_emergency.datasets</span> <span class="kn">import</span> <span class="n">load_ed_ts</span>

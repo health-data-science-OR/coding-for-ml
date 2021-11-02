@@ -838,6 +838,16 @@
    Reading data into pandas from a flat file
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#describing-features-and-making-selections">
+   Describing features and making selections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-a-subset-of-the-dataframe">
+   Selecting a subset of the DataFrame
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -858,6 +868,7 @@
 </div>
 <div class="section" id="working-with-files">
 <h1>Working with files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
+<p>For most of your health data science work you will be working with larger datasets contains tens or hundreds of features.  Unless your dataset is very large the storage medium is likely to be a file.  Here we will take a look at how to read in the file from both a local storage, URLs and compressed archives.  We’ll then take a short look at how to summarise whole or subsets of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
 <div class="section" id="reading-data-into-pandas-from-a-flat-file">
 <h2>Reading data into pandas from a flat file<a class="headerlink" href="#reading-data-into-pandas-from-a-flat-file" title="Permalink to this headline">¶</a></h2>
 <p>A common task is to work with data stored in one or more files. For example in a Comma Seperated Value (CSV) or other type of delimited (e.g. tab or pipe) file.</p>
@@ -951,13 +962,7 @@ memory usage: 146.7+ KB
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
       <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/wisconsin.zip&#39;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1004,6 +1009,1128 @@ memory usage: 146.7+ KB
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="describing-features-and-making-selections">
+<h2>Describing features and making selections<a class="headerlink" href="#describing-features-and-making-selections" title="Permalink to this headline">¶</a></h2>
+<p>Now that you are working with a larger dataset you will want to summarise it.  Good news <code class="docutils literal notranslate"><span class="pre">pandas</span></code> makes this very easy! You can use <code class="docutils literal notranslate"><span class="pre">Dataframe.describe()</span></code> to quickly summarise data.  The result of the method <code class="docutils literal notranslate"><span class="pre">.decribe()</span></code> is a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that contains summary statistics or each variable.  By default the index of the results <code class="docutils literal notranslate"><span class="pre">Dataframe</span></code> is the summary statistic descriptor.</p>
+<p>Before we do that we will drop the ‘unnamed: 0’ column as it is not useful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop the &#39;unnamed&#39; column; axis = 1 for columns.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>radius_mean</th>
+      <th>texture_mean</th>
+      <th>perimeter_mean</th>
+      <th>area_mean</th>
+      <th>smoothness_mean</th>
+      <th>compactness_mean</th>
+      <th>concavity_mean</th>
+      <th>concave points_mean</th>
+      <th>symmetry_mean</th>
+      <th>fractal_dimension_mean</th>
+      <th>...</th>
+      <th>radius_worst</th>
+      <th>texture_worst</th>
+      <th>perimeter_worst</th>
+      <th>area_worst</th>
+      <th>smoothness_worst</th>
+      <th>compactness_worst</th>
+      <th>concavity_worst</th>
+      <th>concave points_worst</th>
+      <th>symmetry_worst</th>
+      <th>fractal_dimension_worst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>...</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>14.127292</td>
+      <td>19.289649</td>
+      <td>91.969033</td>
+      <td>654.889104</td>
+      <td>0.096360</td>
+      <td>0.104341</td>
+      <td>0.088799</td>
+      <td>0.048919</td>
+      <td>0.181162</td>
+      <td>0.062798</td>
+      <td>...</td>
+      <td>16.269190</td>
+      <td>25.677223</td>
+      <td>107.261213</td>
+      <td>880.583128</td>
+      <td>0.132369</td>
+      <td>0.254265</td>
+      <td>0.272188</td>
+      <td>0.114606</td>
+      <td>0.290076</td>
+      <td>0.083946</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.524049</td>
+      <td>4.301036</td>
+      <td>24.298981</td>
+      <td>351.914129</td>
+      <td>0.014064</td>
+      <td>0.052813</td>
+      <td>0.079720</td>
+      <td>0.038803</td>
+      <td>0.027414</td>
+      <td>0.007060</td>
+      <td>...</td>
+      <td>4.833242</td>
+      <td>6.146258</td>
+      <td>33.602542</td>
+      <td>569.356993</td>
+      <td>0.022832</td>
+      <td>0.157336</td>
+      <td>0.208624</td>
+      <td>0.065732</td>
+      <td>0.061867</td>
+      <td>0.018061</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>6.981000</td>
+      <td>9.710000</td>
+      <td>43.790000</td>
+      <td>143.500000</td>
+      <td>0.052630</td>
+      <td>0.019380</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.106000</td>
+      <td>0.049960</td>
+      <td>...</td>
+      <td>7.930000</td>
+      <td>12.020000</td>
+      <td>50.410000</td>
+      <td>185.200000</td>
+      <td>0.071170</td>
+      <td>0.027290</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.156500</td>
+      <td>0.055040</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>11.700000</td>
+      <td>16.170000</td>
+      <td>75.170000</td>
+      <td>420.300000</td>
+      <td>0.086370</td>
+      <td>0.064920</td>
+      <td>0.029560</td>
+      <td>0.020310</td>
+      <td>0.161900</td>
+      <td>0.057700</td>
+      <td>...</td>
+      <td>13.010000</td>
+      <td>21.080000</td>
+      <td>84.110000</td>
+      <td>515.300000</td>
+      <td>0.116600</td>
+      <td>0.147200</td>
+      <td>0.114500</td>
+      <td>0.064930</td>
+      <td>0.250400</td>
+      <td>0.071460</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>13.370000</td>
+      <td>18.840000</td>
+      <td>86.240000</td>
+      <td>551.100000</td>
+      <td>0.095870</td>
+      <td>0.092630</td>
+      <td>0.061540</td>
+      <td>0.033500</td>
+      <td>0.179200</td>
+      <td>0.061540</td>
+      <td>...</td>
+      <td>14.970000</td>
+      <td>25.410000</td>
+      <td>97.660000</td>
+      <td>686.500000</td>
+      <td>0.131300</td>
+      <td>0.211900</td>
+      <td>0.226700</td>
+      <td>0.099930</td>
+      <td>0.282200</td>
+      <td>0.080040</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>15.780000</td>
+      <td>21.800000</td>
+      <td>104.100000</td>
+      <td>782.700000</td>
+      <td>0.105300</td>
+      <td>0.130400</td>
+      <td>0.130700</td>
+      <td>0.074000</td>
+      <td>0.195700</td>
+      <td>0.066120</td>
+      <td>...</td>
+      <td>18.790000</td>
+      <td>29.720000</td>
+      <td>125.400000</td>
+      <td>1084.000000</td>
+      <td>0.146000</td>
+      <td>0.339100</td>
+      <td>0.382900</td>
+      <td>0.161400</td>
+      <td>0.317900</td>
+      <td>0.092080</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>28.110000</td>
+      <td>39.280000</td>
+      <td>188.500000</td>
+      <td>2501.000000</td>
+      <td>0.163400</td>
+      <td>0.345400</td>
+      <td>0.426800</td>
+      <td>0.201200</td>
+      <td>0.304000</td>
+      <td>0.097440</td>
+      <td>...</td>
+      <td>36.040000</td>
+      <td>49.540000</td>
+      <td>251.200000</td>
+      <td>4254.000000</td>
+      <td>0.222600</td>
+      <td>1.058000</td>
+      <td>1.252000</td>
+      <td>0.291000</td>
+      <td>0.663800</td>
+      <td>0.207500</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 30 columns</p>
+</div></div></div>
+</div>
+<p>When there is a large number of features pandas might not be able to show the full summary to you.  There’s a few ways to get sub-summary’s if needed. The first is to transpose the results of describe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>radius_mean</th>
+      <td>569.0</td>
+      <td>14.127292</td>
+      <td>3.524049</td>
+      <td>6.981000</td>
+      <td>11.700000</td>
+      <td>13.370000</td>
+      <td>15.780000</td>
+      <td>28.11000</td>
+    </tr>
+    <tr>
+      <th>texture_mean</th>
+      <td>569.0</td>
+      <td>19.289649</td>
+      <td>4.301036</td>
+      <td>9.710000</td>
+      <td>16.170000</td>
+      <td>18.840000</td>
+      <td>21.800000</td>
+      <td>39.28000</td>
+    </tr>
+    <tr>
+      <th>perimeter_mean</th>
+      <td>569.0</td>
+      <td>91.969033</td>
+      <td>24.298981</td>
+      <td>43.790000</td>
+      <td>75.170000</td>
+      <td>86.240000</td>
+      <td>104.100000</td>
+      <td>188.50000</td>
+    </tr>
+    <tr>
+      <th>area_mean</th>
+      <td>569.0</td>
+      <td>654.889104</td>
+      <td>351.914129</td>
+      <td>143.500000</td>
+      <td>420.300000</td>
+      <td>551.100000</td>
+      <td>782.700000</td>
+      <td>2501.00000</td>
+    </tr>
+    <tr>
+      <th>smoothness_mean</th>
+      <td>569.0</td>
+      <td>0.096360</td>
+      <td>0.014064</td>
+      <td>0.052630</td>
+      <td>0.086370</td>
+      <td>0.095870</td>
+      <td>0.105300</td>
+      <td>0.16340</td>
+    </tr>
+    <tr>
+      <th>compactness_mean</th>
+      <td>569.0</td>
+      <td>0.104341</td>
+      <td>0.052813</td>
+      <td>0.019380</td>
+      <td>0.064920</td>
+      <td>0.092630</td>
+      <td>0.130400</td>
+      <td>0.34540</td>
+    </tr>
+    <tr>
+      <th>concavity_mean</th>
+      <td>569.0</td>
+      <td>0.088799</td>
+      <td>0.079720</td>
+      <td>0.000000</td>
+      <td>0.029560</td>
+      <td>0.061540</td>
+      <td>0.130700</td>
+      <td>0.42680</td>
+    </tr>
+    <tr>
+      <th>concave points_mean</th>
+      <td>569.0</td>
+      <td>0.048919</td>
+      <td>0.038803</td>
+      <td>0.000000</td>
+      <td>0.020310</td>
+      <td>0.033500</td>
+      <td>0.074000</td>
+      <td>0.20120</td>
+    </tr>
+    <tr>
+      <th>symmetry_mean</th>
+      <td>569.0</td>
+      <td>0.181162</td>
+      <td>0.027414</td>
+      <td>0.106000</td>
+      <td>0.161900</td>
+      <td>0.179200</td>
+      <td>0.195700</td>
+      <td>0.30400</td>
+    </tr>
+    <tr>
+      <th>fractal_dimension_mean</th>
+      <td>569.0</td>
+      <td>0.062798</td>
+      <td>0.007060</td>
+      <td>0.049960</td>
+      <td>0.057700</td>
+      <td>0.061540</td>
+      <td>0.066120</td>
+      <td>0.09744</td>
+    </tr>
+    <tr>
+      <th>radius_se</th>
+      <td>569.0</td>
+      <td>0.405172</td>
+      <td>0.277313</td>
+      <td>0.111500</td>
+      <td>0.232400</td>
+      <td>0.324200</td>
+      <td>0.478900</td>
+      <td>2.87300</td>
+    </tr>
+    <tr>
+      <th>texture_se</th>
+      <td>569.0</td>
+      <td>1.216853</td>
+      <td>0.551648</td>
+      <td>0.360200</td>
+      <td>0.833900</td>
+      <td>1.108000</td>
+      <td>1.474000</td>
+      <td>4.88500</td>
+    </tr>
+    <tr>
+      <th>perimeter_se</th>
+      <td>569.0</td>
+      <td>2.866059</td>
+      <td>2.021855</td>
+      <td>0.757000</td>
+      <td>1.606000</td>
+      <td>2.287000</td>
+      <td>3.357000</td>
+      <td>21.98000</td>
+    </tr>
+    <tr>
+      <th>area_se</th>
+      <td>569.0</td>
+      <td>40.337079</td>
+      <td>45.491006</td>
+      <td>6.802000</td>
+      <td>17.850000</td>
+      <td>24.530000</td>
+      <td>45.190000</td>
+      <td>542.20000</td>
+    </tr>
+    <tr>
+      <th>smoothness_se</th>
+      <td>569.0</td>
+      <td>0.007041</td>
+      <td>0.003003</td>
+      <td>0.001713</td>
+      <td>0.005169</td>
+      <td>0.006380</td>
+      <td>0.008146</td>
+      <td>0.03113</td>
+    </tr>
+    <tr>
+      <th>compactness_se</th>
+      <td>569.0</td>
+      <td>0.025478</td>
+      <td>0.017908</td>
+      <td>0.002252</td>
+      <td>0.013080</td>
+      <td>0.020450</td>
+      <td>0.032450</td>
+      <td>0.13540</td>
+    </tr>
+    <tr>
+      <th>concavity_se</th>
+      <td>569.0</td>
+      <td>0.031894</td>
+      <td>0.030186</td>
+      <td>0.000000</td>
+      <td>0.015090</td>
+      <td>0.025890</td>
+      <td>0.042050</td>
+      <td>0.39600</td>
+    </tr>
+    <tr>
+      <th>concave points_se</th>
+      <td>569.0</td>
+      <td>0.011796</td>
+      <td>0.006170</td>
+      <td>0.000000</td>
+      <td>0.007638</td>
+      <td>0.010930</td>
+      <td>0.014710</td>
+      <td>0.05279</td>
+    </tr>
+    <tr>
+      <th>symmetry_se</th>
+      <td>569.0</td>
+      <td>0.020542</td>
+      <td>0.008266</td>
+      <td>0.007882</td>
+      <td>0.015160</td>
+      <td>0.018730</td>
+      <td>0.023480</td>
+      <td>0.07895</td>
+    </tr>
+    <tr>
+      <th>fractal_dimension_se</th>
+      <td>569.0</td>
+      <td>0.003795</td>
+      <td>0.002646</td>
+      <td>0.000895</td>
+      <td>0.002248</td>
+      <td>0.003187</td>
+      <td>0.004558</td>
+      <td>0.02984</td>
+    </tr>
+    <tr>
+      <th>radius_worst</th>
+      <td>569.0</td>
+      <td>16.269190</td>
+      <td>4.833242</td>
+      <td>7.930000</td>
+      <td>13.010000</td>
+      <td>14.970000</td>
+      <td>18.790000</td>
+      <td>36.04000</td>
+    </tr>
+    <tr>
+      <th>texture_worst</th>
+      <td>569.0</td>
+      <td>25.677223</td>
+      <td>6.146258</td>
+      <td>12.020000</td>
+      <td>21.080000</td>
+      <td>25.410000</td>
+      <td>29.720000</td>
+      <td>49.54000</td>
+    </tr>
+    <tr>
+      <th>perimeter_worst</th>
+      <td>569.0</td>
+      <td>107.261213</td>
+      <td>33.602542</td>
+      <td>50.410000</td>
+      <td>84.110000</td>
+      <td>97.660000</td>
+      <td>125.400000</td>
+      <td>251.20000</td>
+    </tr>
+    <tr>
+      <th>area_worst</th>
+      <td>569.0</td>
+      <td>880.583128</td>
+      <td>569.356993</td>
+      <td>185.200000</td>
+      <td>515.300000</td>
+      <td>686.500000</td>
+      <td>1084.000000</td>
+      <td>4254.00000</td>
+    </tr>
+    <tr>
+      <th>smoothness_worst</th>
+      <td>569.0</td>
+      <td>0.132369</td>
+      <td>0.022832</td>
+      <td>0.071170</td>
+      <td>0.116600</td>
+      <td>0.131300</td>
+      <td>0.146000</td>
+      <td>0.22260</td>
+    </tr>
+    <tr>
+      <th>compactness_worst</th>
+      <td>569.0</td>
+      <td>0.254265</td>
+      <td>0.157336</td>
+      <td>0.027290</td>
+      <td>0.147200</td>
+      <td>0.211900</td>
+      <td>0.339100</td>
+      <td>1.05800</td>
+    </tr>
+    <tr>
+      <th>concavity_worst</th>
+      <td>569.0</td>
+      <td>0.272188</td>
+      <td>0.208624</td>
+      <td>0.000000</td>
+      <td>0.114500</td>
+      <td>0.226700</td>
+      <td>0.382900</td>
+      <td>1.25200</td>
+    </tr>
+    <tr>
+      <th>concave points_worst</th>
+      <td>569.0</td>
+      <td>0.114606</td>
+      <td>0.065732</td>
+      <td>0.000000</td>
+      <td>0.064930</td>
+      <td>0.099930</td>
+      <td>0.161400</td>
+      <td>0.29100</td>
+    </tr>
+    <tr>
+      <th>symmetry_worst</th>
+      <td>569.0</td>
+      <td>0.290076</td>
+      <td>0.061867</td>
+      <td>0.156500</td>
+      <td>0.250400</td>
+      <td>0.282200</td>
+      <td>0.317900</td>
+      <td>0.66380</td>
+    </tr>
+    <tr>
+      <th>fractal_dimension_worst</th>
+      <td>569.0</td>
+      <td>0.083946</td>
+      <td>0.018061</td>
+      <td>0.055040</td>
+      <td>0.071460</td>
+      <td>0.080040</td>
+      <td>0.092080</td>
+      <td>0.20750</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If there are common strings in the column labels you can use the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> method to restrict your results summary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="s1">&#39;worst&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>radius_worst</th>
+      <td>569.0</td>
+      <td>16.27</td>
+      <td>4.83</td>
+      <td>7.93</td>
+      <td>13.01</td>
+      <td>14.97</td>
+      <td>18.79</td>
+      <td>36.04</td>
+    </tr>
+    <tr>
+      <th>texture_worst</th>
+      <td>569.0</td>
+      <td>25.68</td>
+      <td>6.15</td>
+      <td>12.02</td>
+      <td>21.08</td>
+      <td>25.41</td>
+      <td>29.72</td>
+      <td>49.54</td>
+    </tr>
+    <tr>
+      <th>perimeter_worst</th>
+      <td>569.0</td>
+      <td>107.26</td>
+      <td>33.60</td>
+      <td>50.41</td>
+      <td>84.11</td>
+      <td>97.66</td>
+      <td>125.40</td>
+      <td>251.20</td>
+    </tr>
+    <tr>
+      <th>area_worst</th>
+      <td>569.0</td>
+      <td>880.58</td>
+      <td>569.36</td>
+      <td>185.20</td>
+      <td>515.30</td>
+      <td>686.50</td>
+      <td>1084.00</td>
+      <td>4254.00</td>
+    </tr>
+    <tr>
+      <th>smoothness_worst</th>
+      <td>569.0</td>
+      <td>0.13</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>0.12</td>
+      <td>0.13</td>
+      <td>0.15</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>compactness_worst</th>
+      <td>569.0</td>
+      <td>0.25</td>
+      <td>0.16</td>
+      <td>0.03</td>
+      <td>0.15</td>
+      <td>0.21</td>
+      <td>0.34</td>
+      <td>1.06</td>
+    </tr>
+    <tr>
+      <th>concavity_worst</th>
+      <td>569.0</td>
+      <td>0.27</td>
+      <td>0.21</td>
+      <td>0.00</td>
+      <td>0.11</td>
+      <td>0.23</td>
+      <td>0.38</td>
+      <td>1.25</td>
+    </tr>
+    <tr>
+      <th>concave points_worst</th>
+      <td>569.0</td>
+      <td>0.11</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.06</td>
+      <td>0.10</td>
+      <td>0.16</td>
+      <td>0.29</td>
+    </tr>
+    <tr>
+      <th>symmetry_worst</th>
+      <td>569.0</td>
+      <td>0.29</td>
+      <td>0.06</td>
+      <td>0.16</td>
+      <td>0.25</td>
+      <td>0.28</td>
+      <td>0.32</td>
+      <td>0.66</td>
+    </tr>
+    <tr>
+      <th>fractal_dimension_worst</th>
+      <td>569.0</td>
+      <td>0.08</td>
+      <td>0.02</td>
+      <td>0.06</td>
+      <td>0.07</td>
+      <td>0.08</td>
+      <td>0.09</td>
+      <td>0.21</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>radius_mean</th>
+      <td>569.0</td>
+      <td>14.13</td>
+      <td>3.52</td>
+      <td>6.98</td>
+      <td>11.70</td>
+      <td>13.37</td>
+      <td>15.78</td>
+      <td>28.11</td>
+    </tr>
+    <tr>
+      <th>texture_mean</th>
+      <td>569.0</td>
+      <td>19.29</td>
+      <td>4.30</td>
+      <td>9.71</td>
+      <td>16.17</td>
+      <td>18.84</td>
+      <td>21.80</td>
+      <td>39.28</td>
+    </tr>
+    <tr>
+      <th>perimeter_mean</th>
+      <td>569.0</td>
+      <td>91.97</td>
+      <td>24.30</td>
+      <td>43.79</td>
+      <td>75.17</td>
+      <td>86.24</td>
+      <td>104.10</td>
+      <td>188.50</td>
+    </tr>
+    <tr>
+      <th>area_mean</th>
+      <td>569.0</td>
+      <td>654.89</td>
+      <td>351.91</td>
+      <td>143.50</td>
+      <td>420.30</td>
+      <td>551.10</td>
+      <td>782.70</td>
+      <td>2501.00</td>
+    </tr>
+    <tr>
+      <th>smoothness_mean</th>
+      <td>569.0</td>
+      <td>0.10</td>
+      <td>0.01</td>
+      <td>0.05</td>
+      <td>0.09</td>
+      <td>0.10</td>
+      <td>0.11</td>
+      <td>0.16</td>
+    </tr>
+    <tr>
+      <th>compactness_mean</th>
+      <td>569.0</td>
+      <td>0.10</td>
+      <td>0.05</td>
+      <td>0.02</td>
+      <td>0.06</td>
+      <td>0.09</td>
+      <td>0.13</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>concavity_mean</th>
+      <td>569.0</td>
+      <td>0.09</td>
+      <td>0.08</td>
+      <td>0.00</td>
+      <td>0.03</td>
+      <td>0.06</td>
+      <td>0.13</td>
+      <td>0.43</td>
+    </tr>
+    <tr>
+      <th>concave points_mean</th>
+      <td>569.0</td>
+      <td>0.05</td>
+      <td>0.04</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.03</td>
+      <td>0.07</td>
+      <td>0.20</td>
+    </tr>
+    <tr>
+      <th>symmetry_mean</th>
+      <td>569.0</td>
+      <td>0.18</td>
+      <td>0.03</td>
+      <td>0.11</td>
+      <td>0.16</td>
+      <td>0.18</td>
+      <td>0.20</td>
+      <td>0.30</td>
+    </tr>
+    <tr>
+      <th>fractal_dimension_mean</th>
+      <td>569.0</td>
+      <td>0.06</td>
+      <td>0.01</td>
+      <td>0.05</td>
+      <td>0.06</td>
+      <td>0.06</td>
+      <td>0.07</td>
+      <td>0.10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="selecting-a-subset-of-the-dataframe">
+<h2>Selecting a subset of the DataFrame<a class="headerlink" href="#selecting-a-subset-of-the-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Let’s assume, for example, that you need to take a closer look at the <strong>smoothness</strong> statistics for samples where the <strong>area_mean</strong> is above the 3rd quartile (782).</p>
+<p>The first step is to create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> (here called <code class="docutils literal notranslate"><span class="pre">extremes</span></code>) that contains the subset of data where <strong>area_mean</strong> &gt; the 3rd quartile.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the threshold (could be hard coded as 782 as an alternative)</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;area_mean&#39;</span><span class="p">][</span><span class="s1">&#39;75%&#39;</span><span class="p">]</span>
+
+<span class="c1"># get the extremes of the dataset</span>
+<span class="n">extremes</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;area_mean&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">]</span>
+<span class="n">extremes</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(142, 31)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given the naming convention in the dataset we can the <code class="docutils literal notranslate"><span class="pre">.filter</span></code> for columns containing the string <strong>smoothness</strong> and call the decribe method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extremes</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="s1">&#39;smoothness&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smoothness_mean</th>
+      <th>smoothness_se</th>
+      <th>smoothness_worst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>142.000000</td>
+      <td>142.000000</td>
+      <td>142.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.100433</td>
+      <td>0.006653</td>
+      <td>0.138356</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.011829</td>
+      <td>0.003180</td>
+      <td>0.018561</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.073710</td>
+      <td>0.002667</td>
+      <td>0.087740</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.092672</td>
+      <td>0.004951</td>
+      <td>0.124750</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.099985</td>
+      <td>0.006106</td>
+      <td>0.139950</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.107775</td>
+      <td>0.007547</td>
+      <td>0.150150</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.144700</td>
+      <td>0.031130</td>
+      <td>0.187300</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>An alternative is to specify the list of columns you want to summarise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_select</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;smoothness_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothness_se&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothness_worst&#39;</span><span class="p">]</span>
+<span class="n">extremes</span><span class="p">[</span><span class="n">to_select</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smoothness_mean</th>
+      <th>smoothness_se</th>
+      <th>smoothness_worst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>142.000000</td>
+      <td>142.000000</td>
+      <td>142.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.100433</td>
+      <td>0.006653</td>
+      <td>0.138356</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.011829</td>
+      <td>0.003180</td>
+      <td>0.018561</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.073710</td>
+      <td>0.002667</td>
+      <td>0.087740</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.092672</td>
+      <td>0.004951</td>
+      <td>0.124750</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.099985</td>
+      <td>0.006106</td>
+      <td>0.139950</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.107775</td>
+      <td>0.007547</td>
+      <td>0.150150</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.144700</td>
+      <td>0.031130</td>
+      <td>0.187300</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>

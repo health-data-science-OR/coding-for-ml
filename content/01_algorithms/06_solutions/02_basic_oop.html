@@ -925,7 +925,6 @@
 <p><strong>Hints:</strong></p>
 <ul class="simple">
 <li><p>Don’t forget the <code class="docutils literal notranslate"><span class="pre">self</span></code> parameter in the method!</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Patient.Age</span></code> can be a random number or a constant, up to you!</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -950,12 +949,23 @@
 </div>
 <div class="section" id="exercise-3">
 <h2>Exercise 3:<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h2>
+<p>You will now test the <code class="docutils literal notranslate"><span class="pre">Ward</span></code> class by generating a number of patients and adding them to a ward object.</p>
 <p><strong>Task:</strong></p>
 <ul class="simple">
-<li><p>Code a function that creates first creates a <code class="docutils literal notranslate"><span class="pre">Ward</span></code> object and then adds a user specified number of <code class="docutils literal notranslate"><span class="pre">Patient</span></code> instances via the <code class="docutils literal notranslate"><span class="pre">add_patient</span></code> function.</p></li>
+<li><p>Code a function that first creates a <code class="docutils literal notranslate"><span class="pre">Ward</span></code> object and then adds a user specified number of <code class="docutils literal notranslate"><span class="pre">Patient</span></code> instances via the <code class="docutils literal notranslate"><span class="pre">add_patient</span></code> function.</p></li>
 <li><p>The function must return the ward object.</p></li>
 <li><p>Test your function with 5 patients.</p></li>
 </ul>
+<p><strong>Hints</strong>:</p>
+<ul class="simple">
+<li><p>You will need to design the function so that it allocates a patient an age.  One option is to randomly generate an age in a given range.  You could achieve this using the <code class="docutils literal notranslate"><span class="pre">random.randint()</span></code> function.  E.g.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">95</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
+
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here ...</span>
@@ -1017,7 +1027,7 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 4
-67
+87
 </pre></div>
 </div>
 </div>
