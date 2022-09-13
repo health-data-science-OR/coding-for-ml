@@ -8,6 +8,7 @@ parts:
   - file: content/001_setup/git
   - file: content/001_setup/conda
   - file: content/001_setup/docker
+  - file: content/001_setup/prereq
 - caption: Algorithms and computational modelling
   chapters:
   - file: content/01_algorithms/01_design
