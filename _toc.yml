@@ -12,6 +12,7 @@ parts:
     sections:
     - file: content/001_setup/prereq/01_list_comp
     - file: content/001_setup/prereq/02_dicts
+    - file: content/001_setup/prereq/04_scope
 - caption: Algorithms and computational modelling
   chapters:
   - file: content/01_algorithms/01_design
