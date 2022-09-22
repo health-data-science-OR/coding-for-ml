@@ -1,0 +1,1474 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Coding Standards &#8212; Python for health data science.</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="The importance of design" href="../../01_algorithms/01_design.html" />
+    <link rel="prev" title="Variable Scope" href="04_scope.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/small_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../front_page.html">
+                    Preface
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributing.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../install.html">
+   Install python and an IDE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../git.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conda.html">
+   Conda virtual environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docker.html">
+   Docker
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../prereq.html">
+   Python Prerequisites
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_list_comp.html">
+     List comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_dicts.html">
+     Dictionarys
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_scope.html">
+     Variable Scope
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Coding Standards
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms and computational modelling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01_algorithms/01_design.html">
+   The importance of design
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">
+     Computing prime numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">
+     Improving the prime sieve code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">
+     Do micro-optimisations matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">
+     Summing up
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01_algorithms/02_oop.html">
+   Designing using objects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">
+     A world of objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">
+     Case study: ABS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/02_oop/03_oop_cv.html">
+     Case study: Cross-validation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01_algorithms/03_numpy.html">
+   Scientific coding in
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">
+     Arrays versus lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">
+     Vectors and matricies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">
+     Array slicing and indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">
+     Array algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">
+     Statistical procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/05a_regression.html">
+     Regression using arrays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">
+     Random variables and simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">
+     Advanced Array Iteration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">
+     Case study 1: a bootstrap routine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">
+     Case study 2: prime sieve
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">
+     Case study 3: online statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01_algorithms/04_exercises.html">
+   Exercises
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_basic_oop.html">
+     Basic Object Orientated Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/04_exercises/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01_algorithms/05_debug.html">
+   Debug challenges
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     debug
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01_algorithms/06_solutions.html">
+   Solutions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/06_solutions/01_science_funcs.html">
+     Coding scientific functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/06_solutions/02_basic_oop.html">
+     Basic Object Orientated Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/06_solutions/02_array.html">
+     Working with an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01_algorithms/06_solutions/04_numpy_stats.html">
+     Statistical procedures in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical Programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
+   Data wrangling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
+     Introduction to
+     <strong>
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pandas
+       </span>
+      </code>
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">
+     Working with files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">
+     Case study: a large remote dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/04_datetimes.html">
+     Managing time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/05_analysing.html">
+     Analysing real data sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/01_pandas/06_cs_combining.html">
+     Case study: Combining multiple sources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
+   Visualising data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">
+     Introduction to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_matplotlib2.html">
+     Multiple subplots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/03_cs_hm.html">
+     Case study: heat map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">
+     Case Study: ED Time Series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
+   Exercises
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">
+     Working with a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas.Dataframe
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_matplotlib.html">
+     ED data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/02_stroke_data_wrangling.html">
+     Stroke data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">
+     Visualising time series data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">
+   Solutions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">
+     Working with a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas.Dataframe
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions.html">
+     ED Data Wrangling Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions.html">
+     Stroke data wrangling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS.html">
+     Visualising time series data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Managing Data Science Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03_mgt/03_vc_front_page.html">
+   Version control
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/01_git/02_git.html">
+     Introducing Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/01_git/03_cs_1.html">
+     Case study: Basic use of Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/01_git/04_cs_2.html">
+     Case study: roll back and bug fix
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/01_git/05_cs_3.html">
+     Case study: Branching and merging
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
+   Deployment
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/02_packaging/01_python_packages.html">
+     Local python packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
+     PyPi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/04_binder/01_binder.html">
+     BinderHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">
+   Exercises
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/04_exercises/01_python_packages.html">
+     Python package exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/04_exercises/02_conda.html">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/04_exercises/03_binder.html">
+     Binderhub exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">
+   Solutions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_mgt/05_solutions/01_python_packages_solutions.html">
+     Python package exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../appendix/acknowledge.html">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix Basic Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../appendix/fp_lectures.html">
+   Lectures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
+     Python Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
+     Conditionals and Loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../appendix/fp_practicals.html">
+   Practicals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/01_basics.html">
+     Basic Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug1.html">
+     Debug challenge 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/02_basics.html">
+     Conditionals and Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../appendix/labs/debug2.html">
+     Debug challenge 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/001_setup/prereq/05_pep8.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/001_setup/prereq/05_pep8.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/health-data-science-OR/coding-for-ml"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/001_setup/prereq/05_pep8.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/content/001_setup/prereq/05_pep8.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-wins-for-coding-standards">
+   Quick Wins for coding standards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-naming">
+   Variable naming
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#give-variables-meaningful-names">
+     Give variables meaningful names
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-length">
+   Line length
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docstrings">
+     Docstrings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linting-python-code">
+   Linting python code
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Coding Standards</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-wins-for-coding-standards">
+   Quick Wins for coding standards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-naming">
+   Variable naming
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#give-variables-meaningful-names">
+     Give variables meaningful names
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-length">
+   Line length
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#docstrings">
+     Docstrings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linting-python-code">
+   Linting python code
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="coding-standards">
+<h1>Coding Standards<a class="headerlink" href="#coding-standards" title="Permalink to this headline">#</a></h1>
+<p>Learning to code is hard.  Learning to code to a level suitable for industry, research, and publication is harder.</p>
+<p>When you work in a health data science job you will quickly find that sloppy, inconsistent or confused code isn’t acceptable to your fellow data scientists.  Unclean code that does not follow a common style leads to (more) mistakes, difficulties in others understanding your aim(s), and hampers the ability for others (and yourself) to maintain the code base longer term.</p>
+<p>Python is no exception.  I encourage you to look at and use Python’s <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8 guidelines</a> coding standards.  Where I can I try to follow PEP8 standards with my own code.  I’m not always successful.  If you see any code in this book that you think falls short of a good standard then do let me know and I will revise it!</p>
+<p>To help you on your clean code journal I’ll summarise a few of the quick wins here.  If you follow these I guarantee it will help clean up your code.</p>
+<section id="quick-wins-for-coding-standards">
+<h2>Quick Wins for coding standards<a class="headerlink" href="#quick-wins-for-coding-standards" title="Permalink to this headline">#</a></h2>
+<p>As noted I strongly recommend checking out PEP8 in detail.  However, here are a few quick wins to get you started:</p>
+</section>
+<section id="variable-naming">
+<h2>Variable naming<a class="headerlink" href="#variable-naming" title="Permalink to this headline">#</a></h2>
+<p>We want to be able to store data and results of calculations in ways we can re-use. For this we define variables names. In python variables names can only contain letters, numbers, and underscores.</p>
+<p>In python we tend to prefer using variables names that are all lower case with under scores.Here is a simple pythonic versus non-pythonic style example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># preferred style</span>
+<span class="n">hospital_id</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># not pythonic</span>
+<span class="n">hospitalID</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># another non-pythonic style</span>
+<span class="n">Hospital_id</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Sometimes python modules and packages will contain module level scope variables that you wish to treat as <strong>constants</strong> (as python is dynamically typed there is no real constant primitive).  In these cases it is usual to use uppercase with underscores.  For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DEFAULT_N_PATIENTS</span> <span class="o">=</span> <span class="mi">172</span>
+<span class="n">DEFAULT_N_WARDS</span> <span class="o">=</span> <span class="mi">13</span>
+</pre></div>
+</div>
+<section id="give-variables-meaningful-names">
+<h3>Give variables meaningful names<a class="headerlink" href="#give-variables-meaningful-names" title="Permalink to this headline">#</a></h3>
+<p>Variable names should be descriptive, without being too long. For example <code class="docutils literal notranslate"><span class="pre">mc_wheels</span></code> is better than just <code class="docutils literal notranslate"><span class="pre">wheels</span></code>, and <code class="docutils literal notranslate"><span class="pre">number_of_wheels_on_a_motorycle</span></code>.</p>
+<p>That’s a bit abstract.  Let’s take a look at a more practical example below. Scan over the code listing quickly. What is its purpose?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mf">30_000.</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30000 24000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the same code again.  This time with more meaningful variable names</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">salary</span> <span class="o">=</span> <span class="mf">30_000.</span>
+<span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">salary_after_tax</span> <span class="o">=</span> <span class="n">salary</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">tax_rate</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">salary</span><span class="p">,</span> <span class="n">salary_after_tax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30000.0 24000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Which of the two code listings do you think is easier to read and maintain?</p>
+</section>
+</section>
+<section id="line-length">
+<h2>Line length<a class="headerlink" href="#line-length" title="Permalink to this headline">#</a></h2>
+<p>In python we usually keep line length to 79 or 80 characters.  That is a line that exceeds this length breaks PEP8 coding standards.  More concretely - it becomes harder to read the code!  This is partly due to (old) monitor size, but also coders usually have more than one window open at a time.  Long unbroken lines of code can be hard to read.</p>
+<p>There’s no real excuse for having extremely long lines of code.  Python syntax and all major IDEs makes it easy to split lines.  In Jupyter, for example, make sure to head over to advanced settings and add in a ruler for code cells at either 79 or 80 characters. Here is a simple example where the backslash character is used to break up a string over multiple lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># splitting a string over multiple lines with the backslash</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Invalid parameter selections for hospital_id, ward_id and &#39;</span> \
+      <span class="s1">&#39;confidence_int.  Please select values with range provided in the main &#39;</span> \
+      <span class="s1">&#39;manual.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid parameter selections for hospital_id, ward_id and confidence_int.  Please select values with range provided in the main manual.
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the data science libraries of python you will find that functions and classes tend to have a large number of mandatory and optional parameters.  To keep your code readable you will need to split your code over multiple lines.  For example, here is a dummy function that takes four parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rolling_forecast_origin</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">min_train_size</span><span class="p">,</span> <span class="n">horizon</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;dummy function with lots of parameters&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="n">y_train</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">min_train_size</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="n">horizon</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># call the function</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">rolling_forecast_origin</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">min_train_size</span><span class="o">=</span><span class="n">min_train_size</span><span class="p">,</span>
+                             <span class="n">horizon</span><span class="o">=</span><span class="n">horizon</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively you can put each parameter on a seperate line:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># alternative call style</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">rolling_forecast_origin</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> 
+                             <span class="n">min_train_size</span><span class="o">=</span><span class="n">min_train_size</span><span class="p">,</span>
+                             <span class="n">horizon</span><span class="o">=</span><span class="n">horizon</span><span class="p">,</span> 
+                             <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="docstrings">
+<h3>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">#</a></h3>
+<p>If you create a python function, class, or module then you should provide a <strong>docstring</strong> to go with it. You can read more about docstrings in <a class="reference external" href="https://peps.python.org/pep-0257/">PEP 257</a>.  I’ve provided a simple function example below (with the main code ommitted).  Note that use of the triple quotes to open and close the docstring.  In this case my docstring consists of three sections:</p>
+<ol class="simple">
+<li><p>A short description of the singular purpose of the function</p></li>
+<li><p>A description of mandatory and optional parameters (and default values if applicable)</p></li>
+<li><p>Details of the type of variable(s) returned when execution is complete.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiple_replications</span><span class="p">(</span><span class="n">rc_period</span><span class="o">=</span><span class="mi">1440</span><span class="p">,</span> <span class="n">warm_up</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                          <span class="n">n_reps</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Perform multiple replications of a computer simulation model </span>
+<span class="sd">    of a hospital ward.  Returns results of each replication in tabular</span>
+<span class="sd">    format.</span>
+<span class="sd">    </span>
+<span class="sd">    Params:</span>
+<span class="sd">    ------</span>
+<span class="sd">   </span>
+<span class="sd">    rc_period: float, optional (default=1440)</span>
+<span class="sd">        results collection period.  </span>
+<span class="sd">        the number of minutes to run the model beyond warm up</span>
+<span class="sd">        to collect results</span>
+<span class="sd">    </span>
+<span class="sd">    warm_up: float, optional (default=0)</span>
+<span class="sd">        initial transient period.  no results are collected in this period</span>
+
+<span class="sd">    n_reps: int, optional (default=5)</span>
+<span class="sd">        Number of independent replications to run.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Docstrings can vary in length depending on the complexity of the code.  For example, from my <code class="docutils literal notranslate"><span class="pre">forecast_tools</span></code> package I include the following docstring with a function called <code class="docutils literal notranslate"><span class="pre">auto_naive</span></code> . This includes additional sections on:</p>
+<ul class="simple">
+<li><p>Raises - a list of exceptions that can occur when called</p></li>
+<li><p>See also - a list of related classes and functions</p></li>
+<li><p>Examples - pythonic code to test the function</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">auto_naive</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seasonal_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_train_size</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+               <span class="n">method</span><span class="o">=</span><span class="s1">&#39;cv&#39;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;mae&#39;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Automatic selection of the &#39;best&#39; naive benchmark on a &#39;single&#39; series</span>
+<span class="sd">    The selection process uses out-of-sample cv performance.</span>
+<span class="sd">    By default auto_naive uses cross validation to estimate the mean</span>
+<span class="sd">    point forecast peformance of all naive methods.  It selects the method</span>
+<span class="sd">    with the lowest point forecast metric on average.</span>
+<span class="sd">    If there is limited data for training a basic holdout sample could be</span>
+<span class="sd">    used.</span>
+<span class="sd">    Dev note: the plan is to update this to work with multiple series.</span>
+<span class="sd">    It would be best to use MASE for multiple series comparison.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    y_train: array-like</span>
+<span class="sd">        training data.  typically in a pandas.Series, pandas.DataFrame</span>
+<span class="sd">        or numpy.ndarray format.</span>
+<span class="sd">    horizon: int, optional (default=1)</span>
+<span class="sd">        Forecast horizon.</span>
+<span class="sd">    seasonal_period: int, optional (default=1)</span>
+<span class="sd">        Frequency of the data.  E.g. 7 for weekly pattern, 12 for monthly</span>
+<span class="sd">        365 for daily.</span>
+<span class="sd">    min_train_size: int or str, optional (default=&#39;auto&#39;)</span>
+<span class="sd">        The size of the initial training set (if method==&#39;ro&#39; or &#39;sw&#39;).</span>
+<span class="sd">        If &#39;auto&#39; then then min_train_size is set to len(y_train) // 3</span>
+<span class="sd">        If main_train_size=&#39;auto&#39; and method=&#39;holdout&#39; then</span>
+<span class="sd">        min_train_size = len(y_train) - horizon.</span>
+<span class="sd">    method: str, optional (default=&#39;cv&#39;)</span>
+<span class="sd">        out of sample selection method.</span>
+<span class="sd">        &#39;ro&#39; - rolling forecast origin</span>
+<span class="sd">        &#39;sw&#39; - sliding window</span>
+<span class="sd">        &#39;cv&#39; - scores from both ro and sw</span>
+<span class="sd">        &#39;holdout&#39; - single train/test split</span>
+<span class="sd">         Methods&#39;ro&#39; and &#39;sw&#39; are similar, however, sw has a fixed</span>
+<span class="sd">         window_size and drops older data from training.</span>
+<span class="sd">    step: int, optional (default=1)</span>
+<span class="sd">        The stride/step of the cross-validation. I.e. the number</span>
+<span class="sd">        of observations to move forward between folds.</span>
+<span class="sd">    window_size: str or int, optional (default=&#39;auto&#39;)</span>
+<span class="sd">        The window_size if using sliding window cross validation</span>
+<span class="sd">        When &#39;auto&#39; and method=&#39;sw&#39; then</span>
+<span class="sd">        window_size=len(y_train) // 3</span>
+<span class="sd">    metric: str, optional (default=&#39;mae&#39;)</span>
+<span class="sd">        The metric to measure out of sample accuracy.</span>
+<span class="sd">        Options: mase, mae, mape, smape, mse, rmse, me.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    dict</span>
+<span class="sd">        &#39;model&#39;: baseline.Forecast</span>
+<span class="sd">        f&#39;{metric}&#39;: float</span>
+<span class="sd">        Contains the model and its CV performance.</span>
+<span class="sd">        </span>
+<span class="sd">    Raises:</span>
+<span class="sd">    -------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        For invalid method, metric, window_size parameters</span>
+<span class="sd">        </span>
+<span class="sd">    See Also:</span>
+<span class="sd">    --------</span>
+<span class="sd">    forecast_tools.baseline.Naive1</span>
+<span class="sd">    forecast_tools.baseline.SNaive</span>
+<span class="sd">    forecast_tools.baseline.Drift</span>
+<span class="sd">    forecast_tools.baseline.Average</span>
+<span class="sd">    forecast_tools.baseline.EnsembleNaive</span>
+<span class="sd">    forecast_tools.baseline.baseline_estimators</span>
+<span class="sd">    forecast_tools.model_selection.rolling_forecast_origin</span>
+<span class="sd">    forecast_tools.model_selection.sliding_window</span>
+<span class="sd">    forecast_tools.model_selection.mase_cross_validation_score</span>
+<span class="sd">    forecast_tools.metrics.mean_absolute_scaled_error</span>
+<span class="sd">    </span>
+<span class="sd">    Examples:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    Measuring MAE and taking the best method using both</span>
+<span class="sd">    rolling origin and sliding window cross validation</span>
+<span class="sd">    of a 56 day forecast.</span>
+<span class="sd">    </span>
+<span class="sd">    ```</span>
+<span class="sd">    &gt;&gt;&gt; from forecast_tools.datasets import load_emergency_dept</span>
+<span class="sd">    &gt;&gt;&gt; y_train = load_emergency_dept</span>
+<span class="sd">    &gt;&gt;&gt; best = auto_naive(y_train, seasonal_period=7, horizon=56)</span>
+<span class="sd">    &gt;&gt;&gt; best</span>
+<span class="sd">    {&#39;model&#39;: Average(), &#39;mae&#39;: 19.63791579700355}</span>
+<span class="sd">    ```</span>
+<span class="sd">    </span>
+<span class="sd">    Take a step of 7 days between cv folds.</span>
+<span class="sd">    </span>
+<span class="sd">    ```</span>
+<span class="sd">    &gt;&gt;&gt; from forecast_tools.datasets import load_emergency_dept</span>
+<span class="sd">    &gt;&gt;&gt; y_train = load_emergency_dept</span>
+<span class="sd">    &gt;&gt;&gt; best = auto_naive(y_train, seasonal_period=7, horizon=56,</span>
+<span class="sd">        ...               step=7)</span>
+<span class="sd">    &gt;&gt;&gt; best</span>
+<span class="sd">    {&#39;model&#39;: Average(), &#39;mae&#39;: 19.675635558539383}</span>
+<span class="sd">    ```</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="linting-python-code">
+<h2>Linting python code<a class="headerlink" href="#linting-python-code" title="Permalink to this headline">#</a></h2>
+<p>If you are new to coding you might be delighted to know that software exists to help you write cleaner code and keep to standards.  These are called code linters.</p>
+<p>There are a number of linters you can choose from.  Here I direct to <code class="docutils literal notranslate"><span class="pre">flake8</span></code>.  I’ve always found this helpful.</p>
+<p>To use flake8 with a Jupyter notebook requires another package <code class="docutils literal notranslate"><span class="pre">nbqa</span></code>.  This can be installed from <a class="reference external" href="https://pypi.org/project/nbqa/">pip</a>.</p>
+<p>For example to run the linter with this particular notebook I would run the following in the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nbqa flake8 content/001_setup/prereq/05_pep8.ipynb
+</pre></div>
+</div>
+<p>Here’s a short extract of what it returned.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>content/001_setup/prereq/05_pep8.ipynb:cell_3:3:80: E501 line too long <span class="o">(</span><span class="m">80</span> &gt; <span class="m">79</span> characters<span class="o">)</span>
+content/001_setup/prereq/05_pep8.ipynb:cell_4:5:1: E305 expected <span class="m">2</span> blank lines after class or <span class="k">function</span> definition, found <span class="m">1</span>
+content/001_setup/prereq/05_pep8.ipynb:cell_5:2:44: W291 trailing whitespace
+content/001_setup/prereq/05_pep8.ipynb:cell_5:4:46: W291 trailing whitespace
+</pre></div>
+</div>
+<p>As an example, the first line tells me that the third cell breaks is over 79 characters in length.  I can go and fix that, save the file and rerun the linter. (In this case its not too much of a big deal).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/001_setup/prereq"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04_scope.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Variable Scope</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../01_algorithms/01_design.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The importance of design</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Thomas Monks<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

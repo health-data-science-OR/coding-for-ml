@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Basic Python &#8212; Python for health data science.</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,48 +20,64 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Debug challenge 1" href="debug1.html" />
     <link rel="prev" title="Practicals" href="../fp_practicals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -68,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -80,20 +99,23 @@
       <img src="../../../_static/small_logo.png" class="logo" alt="logo">
       
       
+      <h1 class="site-logo" id="site-title">Python for health data science.</h1>
+      
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../front_page.html">
-   Preface
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../front_page.html">
+                    Preface
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -124,8 +146,40 @@
    Docker
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../001_setup/prereq.html">
+   Python Prerequisites
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">
+     List comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../001_setup/prereq/02_dicts.html">
+     Dictionarys
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../001_setup/prereq/04_scope.html">
+     Variable Scope
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../001_setup/prereq/05_pep8.html">
+     Coding Standards
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Algorithms and computational modelling
  </span>
@@ -135,8 +189,8 @@
   <a class="reference internal" href="../../01_algorithms/01_design.html">
    The importance of design
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -167,8 +221,8 @@
   <a class="reference internal" href="../../01_algorithms/02_oop.html">
    Designing using objects
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -199,8 +253,8 @@
     </span>
    </code>
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -266,8 +320,8 @@
   <a class="reference internal" href="../../01_algorithms/04_exercises.html">
    Exercises
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -308,8 +362,8 @@
   <a class="reference internal" href="../../01_algorithms/05_debug.html">
    Debug challenges
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -330,8 +384,8 @@
   <a class="reference internal" href="../../01_algorithms/06_solutions.html">
    Solutions
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -369,7 +423,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistical Programming
  </span>
@@ -379,8 +433,8 @@
   <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
    Data wrangling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -428,8 +482,8 @@
   <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
    Visualising data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -465,8 +519,8 @@
   <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
    Exercises
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -502,8 +556,8 @@
   <a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">
    Solutions
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -536,7 +590,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Managing Data Science Projects
  </span>
@@ -546,8 +600,8 @@
   <a class="reference internal" href="../../03_mgt/03_vc_front_page.html">
    Version control
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -578,8 +632,8 @@
   <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
    Deployment
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -605,8 +659,8 @@
   <a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">
    Exercises
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -637,8 +691,8 @@
   <a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">
    Solutions
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -651,7 +705,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -663,7 +717,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix Basic Python
  </span>
@@ -673,8 +727,8 @@
   <a class="reference internal" href="../fp_lectures.html">
    Lectures
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -695,8 +749,8 @@
   <a class="reference internal" href="../fp_practicals.html">
    Practicals
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -726,115 +780,245 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/appendix/labs/01_basics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/health-data-science-OR/coding-for-ml"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/appendix/labs/01_basics.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/appendix/labs/01_basics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/appendix/labs/01_basics.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/appendix/labs/01_basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/appendix/labs/01_basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/health-data-science-OR/coding-for-ml"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/appendix/labs/01_basics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/content/appendix/labs/01_basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-print-function">
    The print() function
@@ -971,24 +1155,176 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basic Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-print-function">
+   The print() function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-mathematics-in-the-console">
+   Basic mathematics in the console
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-spyder-editor">
+   The Spyder editor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-calculate-a-factorial-in-the-ipython-console-and-editor">
+     Exercise 1: Calculate a factorial in the iPython console and editor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings">
+   Strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-creating-and-using-variables">
+     Exercise 2: Creating and using variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments-in-code">
+   Comments in code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-makes-a-good-comment">
+     What makes a good comment?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-and-import">
+   Functions and import
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-use-a-function-to-calculate-a-factorial">
+     Exercise 3: Use a function to calculate a factorial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-python-functions">
+   Defining Python Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions-example-1-adding-two-numbers-together">
+     Functions. Example 1: adding two numbers together
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions-example-2-implementing-a-formula">
+     Functions: Example 2: Implementing a formula
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4-write-a-function-to-convert-fahrenheit-to-celsius">
+     Exercise 4: Write a function to convert fahrenheit to celsius
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-write-a-function-to-calculate-velocity">
+     Exercise 5: Write a function to calculate velocity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-your-own-python-modules-and-importing-functions">
+     Creating your own Python modules and importing functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-6-marvel-comics">
+     Exercise 6: Marvel Comics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lab-1-self-learning-challenge">
+     Lab 1: Self learning challenge
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#challenge-1">
+       Challenge 1:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#challenge-2">
+       Challenge 2:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#challenge-3">
+       Challenge 3:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-learning-material">
+   Optional Learning Material
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="basic-python">
-<h1>Basic Python<a class="headerlink" href="#basic-python" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-python">
+<h1>Basic Python<a class="headerlink" href="#basic-python" title="Permalink to this headline">#</a></h1>
 <p>This is a pre-requisite lab that can be used to refresh your basic Python skills.</p>
 <blockquote>
 <div><p>This lab work assumes you are using the supplied <code class="docutils literal notranslate"><span class="pre">hds_code</span></code> conda virtual environment.</p>
 </div></blockquote>
 <hr class="docutils" />
-<div class="section" id="the-print-function">
-<h2>The print() function<a class="headerlink" href="#the-print-function" title="Permalink to this headline">¶</a></h2>
+<section id="the-print-function">
+<h2>The print() function<a class="headerlink" href="#the-print-function" title="Permalink to this headline">#</a></h2>
 <p>One of the most useful functions in Python is the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.  It is used to display information to the user.  It can be used to present the result of computations, intermediate calculations, general text and used for debugging.</p>
 <p>Once you have opened <code class="docutils literal notranslate"><span class="pre">spyder</span></code>, we will first look at the <em>console</em> in the bottom right part of the screen. That allows us to type in Python commands and get an <em>immediate</em> response.  Let’s use it to learn how to use <code class="docutils literal notranslate"><span class="pre">print()</span></code></p>
 <p>Let’s use <code class="docutils literal notranslate"><span class="pre">print</span></code> to display a message on the console.  Type in the following to console:</p>
@@ -1056,9 +1392,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="basic-mathematics-in-the-console">
-<h2>Basic mathematics in the console<a class="headerlink" href="#basic-mathematics-in-the-console" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="basic-mathematics-in-the-console">
+<h2>Basic mathematics in the console<a class="headerlink" href="#basic-mathematics-in-the-console" title="Permalink to this headline">#</a></h2>
 <p>We have already seen that python can be used for basic mathematics when learning how to use <code class="docutils literal notranslate"><span class="pre">print()</span></code></p>
 <p>Let’s use the iPython console as a calculator.  Try the following calculations:</p>
 <div class="cell docutils container">
@@ -1136,9 +1472,9 @@ Modulo: 3
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-spyder-editor">
-<h2>The Spyder editor<a class="headerlink" href="#the-spyder-editor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-spyder-editor">
+<h2>The Spyder editor<a class="headerlink" href="#the-spyder-editor" title="Permalink to this headline">#</a></h2>
 <p>Using the console is fine, but has problems. We want to keep our work for future re-use. We want to systematically build up a lot of code. Neither of these is easy within the console. Instead, we can use the <em>editor</em> on the left half of the screen. This acts like a word-processor, allowing us to type in commands that we can then use or run later.</p>
 <p>In the editor, remove any existing text and type in some of the commands you’ve previously used:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1164,13 +1500,13 @@ Modulo: 3
 </div>
 </div>
 <p>Notice that the output only shows the result of the print function.  This shows one key difference between files and the console: only output that is <em>explicitly</em> printed appears on the screen.</p>
-<div class="section" id="exercise-1-calculate-a-factorial-in-the-ipython-console-and-editor">
-<h3>Exercise 1: Calculate a factorial in the iPython console and editor<a class="headerlink" href="#exercise-1-calculate-a-factorial-in-the-ipython-console-and-editor" title="Permalink to this headline">¶</a></h3>
+<section id="exercise-1-calculate-a-factorial-in-the-ipython-console-and-editor">
+<h3>Exercise 1: Calculate a factorial in the iPython console and editor<a class="headerlink" href="#exercise-1-calculate-a-factorial-in-the-ipython-console-and-editor" title="Permalink to this headline">#</a></h3>
 <p>Explicitly compute <span class="math notranslate nohighlight">\(6!\)</span> in the console.  i.e. <span class="math notranslate nohighlight">\(6 \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. Then do the same in the editor, printing it out with explanatory text.</p>
-</div>
-</div>
-<div class="section" id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
 <p>We want to be able to store data and results of calculations in ways we can re-use. For this we define variables names.</p>
 <ul class="simple">
 <li><p>Variables names can only contain letters, numbers, and underscores.
@@ -1294,9 +1630,9 @@ One point two
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="strings">
-<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h2>
 <p>We have already used strings extensively.</p>
 <p>Strings are sets of characters. Strings are easier to understand by looking at some examples.
 Strings are contained by either single, double quotes or triple quotes.</p>
@@ -1338,8 +1674,8 @@ over mulitple lines
 </div>
 </div>
 </div>
-<div class="section" id="exercise-2-creating-and-using-variables">
-<h3>Exercise 2: Creating and using variables<a class="headerlink" href="#exercise-2-creating-and-using-variables" title="Permalink to this headline">¶</a></h3>
+<section id="exercise-2-creating-and-using-variables">
+<h3>Exercise 2: Creating and using variables<a class="headerlink" href="#exercise-2-creating-and-using-variables" title="Permalink to this headline">#</a></h3>
 <p>A rectangular box has width 2, height 3, and depth 2.</p>
 <p>Task:</p>
 <ul class="simple">
@@ -1347,10 +1683,10 @@ over mulitple lines
 <li><p>Compute the volume of the box, assigning that to a fourth variable.</p></li>
 <li><p>Print the result along with formattted explanatory text.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="comments-in-code">
-<h2>Comments in code<a class="headerlink" href="#comments-in-code" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="comments-in-code">
+<h2>Comments in code<a class="headerlink" href="#comments-in-code" title="Permalink to this headline">#</a></h2>
 <p>Comments allow you to write in you native language (e.g. English), within your program. In Python, any line that starts with a hash (#) symbol is ignored by the Python interpreter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1368,18 +1704,18 @@ Python will ignore comments
 </div>
 </div>
 </div>
-<div class="section" id="what-makes-a-good-comment">
-<h3>What makes a good comment?<a class="headerlink" href="#what-makes-a-good-comment" title="Permalink to this headline">¶</a></h3>
+<section id="what-makes-a-good-comment">
+<h3>What makes a good comment?<a class="headerlink" href="#what-makes-a-good-comment" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>It is short and to the point, but a complete thought. Most comments should be written in complete sentences.</p></li>
 <li><p>It explains your thinking, so that when you return to the code later you will understand how you were approaching the problem.</p></li>
 <li><p>It explains your thinking, so that others who work with your code will understand your overall approach to a problem.</p></li>
 <li><p>It explains particularly difficult sections of code in detail.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="functions-and-import">
-<h2>Functions and import<a class="headerlink" href="#functions-and-import" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="functions-and-import">
+<h2>Functions and import<a class="headerlink" href="#functions-and-import" title="Permalink to this headline">#</a></h2>
 <p>We won’t get very far with just basic algebraic operations. We’ll want to perform more complex computations.  For that we need python functions.</p>
 <p>Python has built-in mathematical functions. For example,</p>
 <ul class="simple">
@@ -1442,22 +1778,22 @@ Euler&#39;s Constant: 2.718281828459045
 </div>
 </div>
 </div>
-<div class="section" id="exercise-3-use-a-function-to-calculate-a-factorial">
-<h3>Exercise 3: Use a function to calculate a factorial<a class="headerlink" href="#exercise-3-use-a-function-to-calculate-a-factorial" title="Permalink to this headline">¶</a></h3>
+<section id="exercise-3-use-a-function-to-calculate-a-factorial">
+<h3>Exercise 3: Use a function to calculate a factorial<a class="headerlink" href="#exercise-3-use-a-function-to-calculate-a-factorial" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Import the <code class="docutils literal notranslate"><span class="pre">math</span></code> library.</p></li>
 <li><p>If required use <code class="docutils literal notranslate"><span class="pre">help(math)</span></code>  or <a class="reference external" href="https://docs.python.org/3.8/library/math.html">https://docs.python.org/3.8/library/math.html</a> to explore the math module</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">help(math.factorial)</span></code> to explore how you use the math factorial function.</p></li>
 <li><p>use <code class="docutils literal notranslate"><span class="pre">math.factorial()</span></code> to check your calculation of <span class="math notranslate nohighlight">\(6!\)</span></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="defining-python-functions">
-<h2>Defining Python Functions<a class="headerlink" href="#defining-python-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="defining-python-functions">
+<h2>Defining Python Functions<a class="headerlink" href="#defining-python-functions" title="Permalink to this headline">#</a></h2>
 <p>So far we have used functions built-in to python such as <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">math.cos()</span></code></p>
 <p>You will also need to define your own functions in Python.</p>
-<div class="section" id="functions-example-1-adding-two-numbers-together">
-<h3>Functions. Example 1: adding two numbers together<a class="headerlink" href="#functions-example-1-adding-two-numbers-together" title="Permalink to this headline">¶</a></h3>
+<section id="functions-example-1-adding-two-numbers-together">
+<h3>Functions. Example 1: adding two numbers together<a class="headerlink" href="#functions-example-1-adding-two-numbers-together" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -1526,9 +1862,9 @@ my_add(a, b)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="functions-example-2-implementing-a-formula">
-<h3>Functions: Example 2: Implementing a formula<a class="headerlink" href="#functions-example-2-implementing-a-formula" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="functions-example-2-implementing-a-formula">
+<h3>Functions: Example 2: Implementing a formula<a class="headerlink" href="#functions-example-2-implementing-a-formula" title="Permalink to this headline">#</a></h3>
 <p>Suppose that you are promised a payment of £2000 in 5 years time.</p>
 <p>Assuming a compound interest <em>rate</em> of 3.5% what is the <strong>present value (PV)</strong> of this future value (FV)?</p>
 <ul class="simple">
@@ -1599,9 +1935,9 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercise-4-write-a-function-to-convert-fahrenheit-to-celsius">
-<h3>Exercise 4: Write a function to convert fahrenheit to celsius<a class="headerlink" href="#exercise-4-write-a-function-to-convert-fahrenheit-to-celsius" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4-write-a-function-to-convert-fahrenheit-to-celsius">
+<h3>Exercise 4: Write a function to convert fahrenheit to celsius<a class="headerlink" href="#exercise-4-write-a-function-to-convert-fahrenheit-to-celsius" title="Permalink to this headline">#</a></h3>
 <p>Open Spyder and use the code editor to do the following:</p>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">convert_fahrenheit_to_celsius</span></code> that converts degrees fahrenheit to degrees celsius.  The function should have a keyword argument for  temperature in degrees fahrenheit and <code class="docutils literal notranslate"><span class="pre">return</span></code> a numeric value for temperature in degrees celsius.</p>
 <p>Store the answer in a variable and then print the answer to the user.  Answers should be shown to <strong>2 decimal places</strong>.</p>
@@ -1614,9 +1950,9 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 <li><p>Fahrenheit = 20; Celsius = -6.67</p></li>
 <li><p>Fahrenheit = 100; Celsius = 37.78</p></li>
 </ol>
-</div>
-<div class="section" id="exercise-5-write-a-function-to-calculate-velocity">
-<h3>Exercise 5: Write a function to calculate velocity<a class="headerlink" href="#exercise-5-write-a-function-to-calculate-velocity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5-write-a-function-to-calculate-velocity">
+<h3>Exercise 5: Write a function to calculate velocity<a class="headerlink" href="#exercise-5-write-a-function-to-calculate-velocity" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Define a function that calculates and returns velocity (metres per second).</p></li>
 <li><p>The function should accept two parameters: distance travelled (metres) and time (seconds)</p></li>
@@ -1629,9 +1965,9 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 <li><p>distance travelled = 10m; time taken = 5s.  (Velocity = 2.00 m/s)</p></li>
 <li><p>distance travelled = 100m; time taken = 0.12s.  (Velocity = 833.33m/s 2dp)</p></li>
 </ol>
-</div>
-<div class="section" id="creating-your-own-python-modules-and-importing-functions">
-<h3>Creating your own Python modules and importing functions<a class="headerlink" href="#creating-your-own-python-modules-and-importing-functions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="creating-your-own-python-modules-and-importing-functions">
+<h3>Creating your own Python modules and importing functions<a class="headerlink" href="#creating-your-own-python-modules-and-importing-functions" title="Permalink to this headline">#</a></h3>
 <p>In the same way we imported functions from <code class="docutils literal notranslate"><span class="pre">math</span></code> we can import functions from our own python modules</p>
 <ul class="simple">
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">py_finance.py</span></code> and <code class="docutils literal notranslate"><span class="pre">test_finance.py</span></code></p></li>
@@ -1639,10 +1975,10 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 <li><p>Watch the Youtube video that explains how they work:</p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=l0qE5_01bzw&amp;t=170s">https://www.youtube.com/watch?v=l0qE5_01bzw&amp;t=170s</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="lists">
-<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
 <p>Variables are useful, but in nearly all real programming problems we need to store and manipulate <strong>lots</strong> of data in memory.</p>
 <p>For example, if we were developing a music streaming service we might need to hold the list of song’s on an album or an artists back catalog.</p>
 <p>Or, if we were developing a software to manage the geographic routing of a fleet of delivery vehicles we might need to hold a matrix of travel distances between postcodes.</p>
@@ -1847,8 +2183,8 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 </div>
 </div>
 </div>
-<div class="section" id="exercise-6-marvel-comics">
-<h3>Exercise 6: Marvel Comics<a class="headerlink" href="#exercise-6-marvel-comics" title="Permalink to this headline">¶</a></h3>
+<section id="exercise-6-marvel-comics">
+<h3>Exercise 6: Marvel Comics<a class="headerlink" href="#exercise-6-marvel-comics" title="Permalink to this headline">#</a></h3>
 <p>You are given a list of comics:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">comics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Iron-man&#39;</span><span class="p">,</span> <span class="s1">&#39;Captain America&#39;</span><span class="p">,</span> <span class="s1">&#39;Spider-man&#39;</span><span class="p">,</span> <span class="s1">&#39;Thor&#39;</span><span class="p">,</span> <span class="s1">&#39;Deadpool&#39;</span><span class="p">]</span>
 </pre></div>
@@ -1862,17 +2198,17 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 <li><p>insert “Headpool” before “Deadpool” in the list.  Print the updated list</p></li>
 <li><p>delete “Iron-man”. Print the updated list</p></li>
 </ul>
-</div>
-<div class="section" id="lab-1-self-learning-challenge">
-<h3>Lab 1: Self learning challenge<a class="headerlink" href="#lab-1-self-learning-challenge" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lab-1-self-learning-challenge">
+<h3>Lab 1: Self learning challenge<a class="headerlink" href="#lab-1-self-learning-challenge" title="Permalink to this headline">#</a></h3>
 <p>Each laboratory will challenge you to do something that we haven’t taught you before.</p>
 <p>No course can teach you everything you need for all programming problems.  Being a competent Python programmer means that you need to learn how to find solutions to problems yourself.  These challenges are designed to help you begin to use internet resources in order to solve your problem.</p>
 <p><strong>Before</strong> you try the challenges it it worth watching our video on using StackOverflow:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=9WziNfkTRZ0&amp;index=3&amp;list=PLU2JUjGUsUm7R-3VdQA5S6IIaTK6YN1xE">https://www.youtube.com/watch?v=9WziNfkTRZ0&amp;index=3&amp;list=PLU2JUjGUsUm7R-3VdQA5S6IIaTK6YN1xE</a></p></li>
 </ul>
-<div class="section" id="challenge-1">
-<h4>Challenge 1:<a class="headerlink" href="#challenge-1" title="Permalink to this headline">¶</a></h4>
+<section id="challenge-1">
+<h4>Challenge 1:<a class="headerlink" href="#challenge-1" title="Permalink to this headline">#</a></h4>
 <p>You are given a unsorted <code class="docutils literal notranslate"><span class="pre">List</span></code> of integers.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> 
 </pre></div>
@@ -1898,9 +2234,9 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="challenge-2">
-<h4>Challenge 2:<a class="headerlink" href="#challenge-2" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="challenge-2">
+<h4>Challenge 2:<a class="headerlink" href="#challenge-2" title="Permalink to this headline">#</a></h4>
 <p>Sometimes a Python function needs to accept a variable number of arguments.  For example, the built-in function <code class="docutils literal notranslate"><span class="pre">max()</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
@@ -1915,9 +2251,9 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=ClyHbrkpqJU&amp;index=6&amp;list=PLU2JUjGUsUm7R-3VdQA5S6IIaTK6YN1xE">https://www.youtube.com/watch?v=ClyHbrkpqJU&amp;index=6&amp;list=PLU2JUjGUsUm7R-3VdQA5S6IIaTK6YN1xE</a></p></li>
 </ul>
-</div>
-<div class="section" id="challenge-3">
-<h4>Challenge 3:<a class="headerlink" href="#challenge-3" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="challenge-3">
+<h4>Challenge 3:<a class="headerlink" href="#challenge-3" title="Permalink to this headline">#</a></h4>
 <p>We have seen multiple Python functions that have required parameters.</p>
 <p>For example, the function <code class="docutils literal notranslate"><span class="pre">add_two(a,</span> <span class="pre">b)</span></code> <strong>required</strong> the user to provide two parameters <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code></p>
 <p>It is also possible in Python to have <strong>default values</strong> for the parameters.</p>
@@ -1959,17 +2295,17 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="optional-learning-material">
-<h2>Optional Learning Material<a class="headerlink" href="#optional-learning-material" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="optional-learning-material">
+<h2>Optional Learning Material<a class="headerlink" href="#optional-learning-material" title="Permalink to this headline">#</a></h2>
 <p>Download and open:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">string_manipulation.py</span></code> for detailed examples of how to manipulate and format Python strings.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1993,54 +2329,48 @@ Using an interest rate of 0.01, a payment of £350.00 in 10 years time is worth 
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../fp_practicals.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Practicals</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../fp_practicals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Practicals</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="debug1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Debug challenge 1</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="debug1.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Debug challenge 1</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Thomas Monks<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Thomas Monks<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>
