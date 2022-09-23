@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - jupyterlab=3.4.6
+  - jupyterlab-spellchecker=0.7.2
   - matplotlib=3.5.3
   - nodejs=18.8.0
   - numpy=1.23.2
