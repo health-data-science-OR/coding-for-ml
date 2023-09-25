@@ -10,7 +10,7 @@ https://www.anaconda.com/download/
 
 ```{admonition} See also
 :class: tip
-Anaconda includes 'conda' (a package manager).  An optional step is to follow our notes to use [conda](conda.md) to create a virtual environment that includes python 3.8.8 and Jupyter-Lab 3.x
+Anaconda includes 'conda' (a package manager).  An optional step is to follow our notes to use [conda](conda.md) to create a virtual environment that includes python 3.8.12 and Jupyter-Lab 3.x
 ```
 
 ```{admonition} My personal preferences
