@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7107920.svg)](https://doi.org/10.5281/zenodo.7107920)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8377497.svg)](https://doi.org/10.5281/zenodo.8377497)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/HEAD)
 
@@ -28,15 +28,17 @@ Details of a conda virtual environment is available in `binder/environment.yml`
 Please cite using the zenodo link.  LaTex is:
 
 ```
-@software{monks_thomas_2022_7107920,
+@software{monks_thomas_2023_8377497,
   author       = {Monks, Thomas},
   title        = {{Python for health data science: a hands-on 
-                   introduction v2.0.0}},
+                   introduction}},
   month        = sep,
-  year         = 2022,
+  year         = 2023,
+  note         = {{If you use this software, please cite it using the 
+                   metadata from this file.}},
   publisher    = {Zenodo},
-  version      = {v2.0.0},
-  doi          = {10.5281/zenodo.7107920},
-  url          = {https://doi.org/10.5281/zenodo.7107920}
+  version      = {v2.0.1},
+  doi          = {10.5281/zenodo.8377497},
+  url          = {https://doi.org/10.5281/zenodo.8377497}
 }
 ```
