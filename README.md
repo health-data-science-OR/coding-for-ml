@@ -2,7 +2,7 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/HEAD)
 
-# coding-for-ml
+# Python for health data science: a hands-on introduction
 
 Learning materials for Coding for Machine Learning and Data Science
 
