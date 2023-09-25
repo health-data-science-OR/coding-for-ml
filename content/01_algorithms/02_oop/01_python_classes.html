@@ -1,48 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>A world of objects &#8212; Python for health data science.</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,61 +62,102 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/01_algorithms/02_oop/01_python_classes';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Case study: ABS" href="02_oop_sim.html" />
     <link rel="prev" title="Designing using objects" href="../02_oop.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../front_page.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../_static/small_logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python for health data science.</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../_static/small_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/small_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,1223 +166,458 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../001_setup/contributing.html">
-   Contributing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../001_setup/install.html">
-   Install python and an IDE
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../001_setup/git.html">
-   GitHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../001_setup/conda.html">
-   Conda virtual environment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../001_setup/docker.html">
-   Docker
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../001_setup/prereq.html">
-   Python Prerequisites
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">
-     List comprehensions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../001_setup/prereq/02_dicts.html">
-     Dictionarys
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../001_setup/prereq/04_scope.html">
-     Variable Scope
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../001_setup/prereq/05_pep8.html">
-     Coding Standards
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/docker.html">Docker</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/04_scope.html">Variable Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/05_pep8.html">Coding Standards</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Algorithms and computational modelling
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms and computational modelling</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01_design.html">
-   The importance of design
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_design/01_primes.html">
-     Computing prime numbers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_design/02_better_design.html">
-     Improving the prime sieve code
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_design/03_micro_opt.html">
-     Do micro-optimisations matter?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01_design/04_summing_up.html">
-     Summing up
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../02_oop.html">
-   Designing using objects
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     A world of objects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_oop_sim.html">
-     Case study: ABS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_oop_cv.html">
-     Case study: Cross-validation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03_numpy.html">
-   Scientific coding in
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     numpy
-    </span>
-   </code>
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/01_performance.html">
-     Arrays versus lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/02_vectors.html">
-     Vectors and matricies
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/03_slicing.html">
-     Array slicing and indexing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/04_algebra.html">
-     Array algebra
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/05_statistics.html">
-     Statistical procedures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/05a_regression.html">
-     Regression using arrays
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/06_sampling.html">
-     Random variables and simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/07_advanced_iter.html">
-     Advanced Array Iteration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/08_cs1.html">
-     Case study 1: a bootstrap routine
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/09_cs2.html">
-     Case study 2: prime sieve
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_numpy/10_cs3.html">
-     Case study 3: online statistics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04_exercises.html">
-   Exercises
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_exercises/01_science_funcs.html">
-     Coding scientific functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_exercises/02_basic_oop.html">
-     Basic Object Orientated Methods
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_exercises/02_array.html">
-     Working with an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       np.ndarray
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04_exercises/04_numpy_stats.html">
-     Statistical procedures in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05_debug.html">
-   Debug challenges
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05_debug/01_debug_numpy.html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-     debug
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06_solutions.html">
-   Solutions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_solutions/01_science_funcs.html">
-     Coding scientific functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_solutions/02_basic_oop.html">
-     Basic Object Orientated Methods
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_solutions/02_array.html">
-     Working with an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       np.ndarray
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06_solutions/04_numpy_stats.html">
-     Statistical procedures in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_design.html">The importance of design</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_design/01_primes.html">Computing prime numbers</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../01_design/02_better_design.html">Improving the prime sieve code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_design/03_micro_opt.html">Do micro-optimisations matter?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_design/04_summing_up.html">Summing up</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Statistical Programming
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">
-   Data wrangling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">
-     Introduction to
-     <strong>
-      <code class="docutils literal notranslate">
-       <span class="pre">
-        pandas
-       </span>
-      </code>
-     </strong>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">
-     Working with files
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">
-     Case study: a large remote dataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/01_pandas/04_datetimes.html">
-     Managing time series
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/01_pandas/05_analysing.html">
-     Analysing real data sets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/01_pandas/06_cs_combining.html">
-     Case study: Combining multiple sources
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">
-   Visualising data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">
-     Introduction to
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Matplotlib
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_matplotlib2.html">
-     Multiple subplots
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/03_cs_hm.html">
-     Case study: heat map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">
-     Case Study: ED Time Series
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">
-   Exercises
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">
-     Working with a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pandas.Dataframe
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_matplotlib.html">
-     ED data wrangling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/03_exercises/02_stroke_data_wrangling.html">
-     Stroke data wrangling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">
-     Visualising time series data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">
-   Solutions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">
-     Working with a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pandas.Dataframe
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions.html">
-     ED Data Wrangling Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions.html">
-     Stroke data wrangling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS.html">
-     Visualising time series data
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_oop.html">Designing using objects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">A world of objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_oop_sim.html">Case study: ABS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_oop_cv.html">Case study: Cross-validation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Managing Data Science Projects
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../03_mgt/03_vc_front_page.html">
-   Version control
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/01_git/02_git.html">
-     Introducing Git
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/01_git/03_cs_1.html">
-     Case study: Basic use of Git
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/01_git/04_cs_2.html">
-     Case study: roll back and bug fix
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/01_git/05_cs_3.html">
-     Case study: Branching and merging
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">
-   Deployment
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/02_packaging/01_python_packages.html">
-     Local python packages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">
-     PyPi
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/04_binder/01_binder.html">
-     BinderHub
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">
-   Exercises
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/04_exercises/01_python_packages.html">
-     Python package exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/04_exercises/02_conda.html">
-     Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       conda
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/04_exercises/03_binder.html">
-     Binderhub exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">
-   Solutions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_mgt/05_solutions/01_python_packages_solutions.html">
-     Python package exercise
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_numpy.html">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/01_performance.html">Arrays versus lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/02_vectors.html">Vectors and matricies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/03_slicing.html">Array slicing and indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/04_algebra.html">Array algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/05_statistics.html">Statistical procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/05a_regression.html">Regression using arrays</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/06_sampling.html">Random variables and simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/07_advanced_iter.html">Advanced Array Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/08_cs1.html">Case study 1: a bootstrap routine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/09_cs2.html">Case study 2: prime sieve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_numpy/10_cs3.html">Case study 3: online statistics</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../appendix/acknowledge.html">
-   Acknowledgements
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_exercises.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_exercises/01_science_funcs.html">Coding scientific functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_exercises/02_basic_oop.html">Basic Object Orientated Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_exercises/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_exercises/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix Basic Python
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05_debug.html">Debug challenges</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05_debug/01_debug_numpy.html"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> debug</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_solutions.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_solutions/01_science_funcs.html">Coding scientific functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_solutions/02_basic_oop.html">Basic Object Orientated Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_solutions/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_solutions/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Programming</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../appendix/fp_lectures.html">
-   Lectures
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/lectures/Lecture1.html">
-     Python Basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/lectures/Lecture2.html">
-     Conditionals and Loops
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../appendix/fp_practicals.html">
-   Practicals
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/labs/01_basics.html">
-     Basic Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/labs/debug1.html">
-     Debug challenge 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/labs/02_basics.html">
-     Conditionals and Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/labs/debug2.html">
-     Debug challenge 2
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">Data wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">Introduction to <strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">Case study: a large remote dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/04_datetimes.html">Managing time series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/05_analysing.html">Analysing real data sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/06_cs_combining.html">Case study: Combining multiple sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">Visualising data</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_matplotlib2.html">Multiple subplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/03_cs_hm.html">Case study: heat map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">Case Study: ED Time Series</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_matplotlib.html">ED data wrangling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/02_stroke_data_wrangling.html">Stroke data wrangling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">Visualising time series data</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions.html">ED Data Wrangling Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions.html">Stroke data wrangling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS.html">Visualising time series data</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Managing Data Science Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_vc_front_page.html">Version control</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/02_git.html">Introducing Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/03_cs_1.html">Case study: Basic use of Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/04_cs_2.html">Case study: roll back and bug fix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/05_cs_3.html">Case study: Branching and merging</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/02_packaging/01_python_packages.html">Local python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">PyPi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_binder/01_binder.html">BinderHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/01_python_packages.html">Python package exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/02_conda.html">Using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/03_binder.html">Binderhub exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/05_solutions/01_python_packages_solutions.html">Python package exercise</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/acknowledge.html">Acknowledgements</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix Basic Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_lectures.html">Lectures</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture1.html">Python Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture2.html">Conditionals and Loops</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_practicals.html">Practicals</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/01_basics.html">Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug1.html">Debug challenge 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/02_basics.html">Conditionals and Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug2.html">Debug challenge 2</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/01_algorithms/02_oop/01_python_classes.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/01_algorithms/02_oop/01_python_classes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/01_algorithms/02_oop/01_python_classes.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/01_algorithms/02_oop/01_python_classes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/health-data-science-OR/coding-for-ml" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/01_algorithms/02_oop/01_python_classes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/01_algorithms/02_oop/01_python_classes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/health-data-science-OR/coding-for-ml"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/01_algorithms/02_oop/01_python_classes.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/content/01_algorithms/02_oop/01_python_classes.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-object-orientated-text-adventure-game">
-   An object orientated text adventure game
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-text-hospital-adventure">
-   A text hospital adventure
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#imports">
-     Imports
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-function-to-play-the-game">
-     A function to play the game
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#text-hospital-let-s-build-it-using-room-objects">
-   Text Hospital - let’s build it using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Room
-    </span>
-   </code>
-   objects
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-and-getting-attributes-and-methods">
-   Setting and getting attributes and methods
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-build-a-class-in-python">
-   How to build a class in python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-world-s-most-simple-python-class">
-     The world’s most simple python class
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#most-classes-have-a-constructor-init-method">
-     Most classes have a constructor
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       __init__()
-      </span>
-     </code>
-     method
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#including-parameters-in-the-constructor-method">
-     including parameters in the constructor method
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-room-class-from-the-hospital-basic-text-adventure">
-   The
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Room
-    </span>
-   </code>
-   class from the Hospital Basic Text Adventure
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-textworld-class">
-   The
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     TextWorld
-    </span>
-   </code>
-   class
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-complex-oo-frameworks">
-   More complex OO frameworks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classes-are-customised-by-inheritance">
-     Classes are customised by Inheritance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#has-a-an-alternative-oo-design">
-   <strong>
-    Has-a
-   </strong>
-   : An alternative OO design.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-inheritance-to-allow-a-room-and-a-game-player-to-hold-inventory">
-   Using inheritance to allow a
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Room
-    </span>
-   </code>
-   and a game player to hold inventory
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#oop-implementation">
-     OOP Implementation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end">
-   End
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>A world of objects</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-object-orientated-text-adventure-game">
-   An object orientated text adventure game
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-text-hospital-adventure">
-   A text hospital adventure
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#imports">
-     Imports
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-function-to-play-the-game">
-     A function to play the game
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#text-hospital-let-s-build-it-using-room-objects">
-   Text Hospital - let’s build it using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Room
-    </span>
-   </code>
-   objects
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-and-getting-attributes-and-methods">
-   Setting and getting attributes and methods
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-build-a-class-in-python">
-   How to build a class in python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-world-s-most-simple-python-class">
-     The world’s most simple python class
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#most-classes-have-a-constructor-init-method">
-     Most classes have a constructor
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       __init__()
-      </span>
-     </code>
-     method
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#including-parameters-in-the-constructor-method">
-     including parameters in the constructor method
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-room-class-from-the-hospital-basic-text-adventure">
-   The
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Room
-    </span>
-   </code>
-   class from the Hospital Basic Text Adventure
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-textworld-class">
-   The
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     TextWorld
-    </span>
-   </code>
-   class
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-complex-oo-frameworks">
-   More complex OO frameworks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classes-are-customised-by-inheritance">
-     Classes are customised by Inheritance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#has-a-an-alternative-oo-design">
-   <strong>
-    Has-a
-   </strong>
-   : An alternative OO design.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-inheritance-to-allow-a-room-and-a-game-player-to-hold-inventory">
-   Using inheritance to allow a
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Room
-    </span>
-   </code>
-   and a game player to hold inventory
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#oop-implementation">
-     OOP Implementation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end">
-   End
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A world of objects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-object-orientated-text-adventure-game">An object orientated text adventure game</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-text-hospital-adventure">A text hospital adventure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-to-play-the-game">A function to play the game</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-hospital-let-s-build-it-using-room-objects">Text Hospital - let’s build it using <code class="docutils literal notranslate"><span class="pre">Room</span></code> objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-and-getting-attributes-and-methods">Setting and getting attributes and methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-build-a-class-in-python">How to build a class in python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-world-s-most-simple-python-class">The world’s most simple python class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-classes-have-a-constructor-init-method">Most classes have a constructor <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-parameters-in-the-constructor-method">including parameters in the constructor method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-room-class-from-the-hospital-basic-text-adventure">The <code class="docutils literal notranslate"><span class="pre">Room</span></code> class from the Hospital Basic Text Adventure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-textworld-class">The <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-oo-frameworks">More complex OO frameworks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-are-customised-by-inheritance">Classes are customised by Inheritance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#has-a-an-alternative-oo-design"><strong>Has-a</strong>: An alternative OO design.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-inheritance-to-allow-a-room-and-a-game-player-to-hold-inventory">Using inheritance to allow a <code class="docutils literal notranslate"><span class="pre">Room</span></code> and a game player to hold inventory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-implementation">OOP Implementation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end">End</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="a-world-of-objects">
-<h1>A world of objects<a class="headerlink" href="#a-world-of-objects" title="Permalink to this headline">#</a></h1>
+<h1>A world of objects<a class="headerlink" href="#a-world-of-objects" title="Permalink to this heading">#</a></h1>
 <section id="an-object-orientated-text-adventure-game">
-<h2>An object orientated text adventure game<a class="headerlink" href="#an-object-orientated-text-adventure-game" title="Permalink to this headline">#</a></h2>
+<h2>An object orientated text adventure game<a class="headerlink" href="#an-object-orientated-text-adventure-game" title="Permalink to this heading">#</a></h2>
 <p>Back in the late 80s and early 90s a popular type of game on micro-computers, such as the <strong>Commodore 64</strong> and <strong>ZX Spectrum</strong>, was the <strong>text adventure</strong>. These were games where a player had to navigate and solve puzzles in a game world with only text descriptions of locations as their guide!</p>
 <p>These types of games lend themselves nicely to abstraction offered in object orientated methods of design (and python command line interfaces).  For example, in a very simple implementation we could have a class of type <code class="docutils literal notranslate"><span class="pre">Game</span></code> that accepts a limited number of commands (for example, “n” to represent ‘go north’ or “look” to represent ‘look and describe the room’.).  The <code class="docutils literal notranslate"><span class="pre">Game</span></code> would encapsulate one or more <code class="docutils literal notranslate"><span class="pre">Room</span></code> objects that describes a location and contain exits to other <code class="docutils literal notranslate"><span class="pre">Room</span></code> objects.</p>
 </section>
 <section id="a-text-hospital-adventure">
-<h2>A text hospital adventure<a class="headerlink" href="#a-text-hospital-adventure" title="Permalink to this headline">#</a></h2>
+<h2>A text hospital adventure<a class="headerlink" href="#a-text-hospital-adventure" title="Permalink to this heading">#</a></h2>
 <p>Before we look at creating instances of objects, let’s first take a look at a basic game.  In this game we are limited to just exploring.  We can move around a small hospital setting by issuing commands to move.</p>
 <section id="imports">
-<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h3>
+<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h3>
 <p>The function get_hospital_textworld returns a <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> object.  It is setup for the hospital text adventure we can play.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1356,11 +644,11 @@ title="Print to PDF"
 </div>
 </section>
 <section id="a-function-to-play-the-game">
-<h3>A function to play the game<a class="headerlink" href="#a-function-to-play-the-game" title="Permalink to this headline">#</a></h3>
+<h3>A function to play the game<a class="headerlink" href="#a-function-to-play-the-game" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">play_text_adventure</span><span class="p">(</span><span class="n">adventure</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Play your text adventure!</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;********************************************&#39;</span><span class="p">)</span>
@@ -1387,11 +675,11 @@ title="Print to PDF"
 </section>
 </section>
 <section id="text-hospital-let-s-build-it-using-room-objects">
-<h2>Text Hospital - let’s build it using <code class="docutils literal notranslate"><span class="pre">Room</span></code> objects<a class="headerlink" href="#text-hospital-let-s-build-it-using-room-objects" title="Permalink to this headline">#</a></h2>
+<h2>Text Hospital - let’s build it using <code class="docutils literal notranslate"><span class="pre">Room</span></code> objects<a class="headerlink" href="#text-hospital-let-s-build-it-using-room-objects" title="Permalink to this heading">#</a></h2>
 <p>We will start by creating a text based hospital world.  The game will be comprised by network of four <code class="docutils literal notranslate"><span class="pre">Room</span></code> objects: a reception, a corridor, a ward and the operating theatre.</p>
 </section>
 <section id="id1">
-<h2>Imports<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>Imports<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">text_adventure.basic_game</span> <span class="kn">import</span> <span class="n">TextWorld</span><span class="p">,</span> <span class="n">Room</span>
@@ -1401,7 +689,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="setting-and-getting-attributes-and-methods">
-<h2>Setting and getting attributes and methods<a class="headerlink" href="#setting-and-getting-attributes-and-methods" title="Permalink to this headline">#</a></h2>
+<h2>Setting and getting attributes and methods<a class="headerlink" href="#setting-and-getting-attributes-and-methods" title="Permalink to this heading">#</a></h2>
 <p>Each object we will instantiate has its own attribute and methods.  You have come across these before in a different context.</p>
 <p>An attribute represents a <strong>variable</strong> that is local to the object.  For example, each <code class="docutils literal notranslate"><span class="pre">Room</span></code> has a <code class="docutils literal notranslate"><span class="pre">description</span></code> attribute. You can access the attribute by following the object name with a <strong>‘.’</strong> and then name of the attribute.</p>
 <p>A method is the same as a <strong>function</strong>, but it is again attached to the object.  For example, objects of type <code class="docutils literal notranslate"><span class="pre">Room</span></code> have a <code class="docutils literal notranslate"><span class="pre">add_exit(room,</span> <span class="pre">direction)</span></code> method that allows you to pass in another Room object and a direction of travel from the current room (these are stored in the attribute exit - a dict).</p>
@@ -1556,11 +844,11 @@ To the north is a corridor.
 </div>
 </section>
 <section id="how-to-build-a-class-in-python">
-<h2>How to build a class in python<a class="headerlink" href="#how-to-build-a-class-in-python" title="Permalink to this headline">#</a></h2>
+<h2>How to build a class in python<a class="headerlink" href="#how-to-build-a-class-in-python" title="Permalink to this heading">#</a></h2>
 <p>Now that we have learnt how to instantiate objects and use frameworks of python classes we need to learn how to code a class.</p>
 <p>We will start with a very simple example and then take a look at the <code class="docutils literal notranslate"><span class="pre">Room</span></code> class from our text adventure framework.</p>
 <section id="the-world-s-most-simple-python-class">
-<h3>The world’s most simple python class<a class="headerlink" href="#the-world-s-most-simple-python-class" title="Permalink to this headline">#</a></h3>
+<h3>The world’s most simple python class<a class="headerlink" href="#the-world-s-most-simple-python-class" title="Permalink to this heading">#</a></h3>
 <p>We declare a class in python using the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1592,7 +880,7 @@ To the north is a corridor.
 </div>
 </section>
 <section id="most-classes-have-a-constructor-init-method">
-<h3>Most classes have a constructor <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method<a class="headerlink" href="#most-classes-have-a-constructor-init-method" title="Permalink to this headline">#</a></h3>
+<h3>Most classes have a constructor <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method<a class="headerlink" href="#most-classes-have-a-constructor-init-method" title="Permalink to this heading">#</a></h3>
 <p>In most classes I code, I include an <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method.  It is the method called when you create an instance of the class. This is sometimes called a <strong>contructor method</strong>, as it is used when an object is constructed.  A simple example is below.</p>
 <p>Note the use of the argument <code class="docutils literal notranslate"><span class="pre">self</span></code>.  This is a special method parameter that must be included as the first parameter in <strong>all</strong> methods in your class.  <code class="docutils literal notranslate"><span class="pre">self</span></code> is the way an object internally references itself.  If you need your class to have an attribute called <code class="docutils literal notranslate"><span class="pre">name</span></code> then you refer to it as <code class="docutils literal notranslate"><span class="pre">self.name</span></code>.  This means that any method in the class can access the attribute.</p>
 <div class="cell docutils container">
@@ -1622,7 +910,7 @@ coder
 </div>
 </section>
 <section id="including-parameters-in-the-constructor-method">
-<h3>including parameters in the constructor method<a class="headerlink" href="#including-parameters-in-the-constructor-method" title="Permalink to this headline">#</a></h3>
+<h3>including parameters in the constructor method<a class="headerlink" href="#including-parameters-in-the-constructor-method" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Patient</span><span class="p">:</span>
@@ -1660,11 +948,11 @@ None
 </section>
 </section>
 <section id="the-room-class-from-the-hospital-basic-text-adventure">
-<h2>The <code class="docutils literal notranslate"><span class="pre">Room</span></code> class from the Hospital Basic Text Adventure<a class="headerlink" href="#the-room-class-from-the-hospital-basic-text-adventure" title="Permalink to this headline">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">Room</span></code> class from the Hospital Basic Text Adventure<a class="headerlink" href="#the-room-class-from-the-hospital-basic-text-adventure" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Room</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Encapsulates a location/room within a TextWorld.</span>
 
 <span class="sd">    A `Room` has a number of exits to other `Room` objects</span>
@@ -1675,7 +963,7 @@ None
         <span class="bp">self</span><span class="o">.</span><span class="n">exits</span> <span class="o">=</span> <span class="p">{}</span>             
 
     <span class="k">def</span> <span class="nf">add_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">room</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add an exit to the room</span>
 
 <span class="sd">        Params:</span>
@@ -1689,7 +977,7 @@ None
         <span class="bp">self</span><span class="o">.</span><span class="n">exits</span><span class="p">[</span><span class="n">direction</span><span class="p">]</span> <span class="o">=</span> <span class="n">room</span>
 
     <span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Exit the room in the specified direction</span>
 
 <span class="sd">        Params:</span>
@@ -1703,7 +991,7 @@ None
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Describe the room to a player</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span>
@@ -1713,15 +1001,15 @@ None
 </div>
 </section>
 <section id="the-textworld-class">
-<h2>The <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> class<a class="headerlink" href="#the-textworld-class" title="Permalink to this headline">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> class<a class="headerlink" href="#the-textworld-class" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextWorld</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    A TextWorld encapsulate the logic and Room objects that comprise the game.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rooms</span><span class="p">,</span> <span class="n">start_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_moves</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Constructor method for World</span>
 
 <span class="sd">        Parameters:</span>
@@ -1747,7 +1035,7 @@ None
         <span class="bp">self</span><span class="o">.</span><span class="n">max_moves</span> <span class="o">=</span> <span class="n">max_moves</span>
 
     <span class="k">def</span> <span class="nf">take_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Take an action in the TextWorld</span>
 
 <span class="sd">        Parameters:</span>
@@ -1796,9 +1084,9 @@ None
 </div>
 </section>
 <section id="more-complex-oo-frameworks">
-<h2>More complex OO frameworks<a class="headerlink" href="#more-complex-oo-frameworks" title="Permalink to this headline">#</a></h2>
+<h2>More complex OO frameworks<a class="headerlink" href="#more-complex-oo-frameworks" title="Permalink to this heading">#</a></h2>
 <section id="classes-are-customised-by-inheritance">
-<h3>Classes are customised by Inheritance<a class="headerlink" href="#classes-are-customised-by-inheritance" title="Permalink to this headline">#</a></h3>
+<h3>Classes are customised by Inheritance<a class="headerlink" href="#classes-are-customised-by-inheritance" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p><strong>A note of caution</strong>: Over time I’ve learnt to be somewhat wary of complex multiple inheritance structures <strong>in any programming language</strong>.  Inheritance brings huge benefits in terms of code reuse, but you also need to learn good OO design principals in order to avoid unexpected dependencies in your code and avoid major rework due to small changes in a projects requirements.</p>
 </div></blockquote>
@@ -1816,7 +1104,7 @@ None
         <span class="bp">self</span><span class="o">.</span><span class="n">triage_band</span> <span class="o">=</span> <span class="kc">None</span>
         
     <span class="k">def</span> <span class="nf">set_random_triage_band</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;set a random triage band 1 - 5&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;set a random triage band 1 - 5&#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">triage_band</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1857,7 +1145,7 @@ None
 </section>
 </section>
 <section id="has-a-an-alternative-oo-design">
-<h2><strong>Has-a</strong>: An alternative OO design.<a class="headerlink" href="#has-a-an-alternative-oo-design" title="Permalink to this headline">#</a></h2>
+<h2><strong>Has-a</strong>: An alternative OO design.<a class="headerlink" href="#has-a-an-alternative-oo-design" title="Permalink to this heading">#</a></h2>
 <p>In the previous example <code class="docutils literal notranslate"><span class="pre">StrokePatient</span></code> <strong>is-a</strong> specialisation of <code class="docutils literal notranslate"><span class="pre">Patient</span></code>.  An alternative way to frame this design problem as one of <strong>object composition</strong> where a <code class="docutils literal notranslate"><span class="pre">StrokeCase</span></code> <strong>has-a</strong> <code class="docutils literal notranslate"><span class="pre">Patient</span></code>.</p>
 <p>This approach provides slightly more flexibility than direct inheritance. For example you can pass in a different type of object as long as it implements the same interface.  It does, however, require a bit more code to setup.</p>
 <blockquote>
@@ -1899,7 +1187,7 @@ None
 </div>
 </section>
 <section id="using-inheritance-to-allow-a-room-and-a-game-player-to-hold-inventory">
-<h2>Using inheritance to allow a <code class="docutils literal notranslate"><span class="pre">Room</span></code> and a game player to hold inventory<a class="headerlink" href="#using-inheritance-to-allow-a-room-and-a-game-player-to-hold-inventory" title="Permalink to this headline">#</a></h2>
+<h2>Using inheritance to allow a <code class="docutils literal notranslate"><span class="pre">Room</span></code> and a game player to hold inventory<a class="headerlink" href="#using-inheritance-to-allow-a-room-and-a-game-player-to-hold-inventory" title="Permalink to this heading">#</a></h2>
 <p>Now that we understand inheritance and object composition let’s take look at a modified text adventure hospital.  In this version of the code we introduce the concept of <strong>inventory</strong>.  Have a go at playing the game.  You will find items of inventory scattered around the rooms in the game.  You can interact with these items by issuing the <code class="docutils literal notranslate"><span class="pre">get</span></code>, <code class="docutils literal notranslate"><span class="pre">drop</span></code>, and <code class="docutils literal notranslate"><span class="pre">ex</span></code> (examine) commands.  To view what inventory you are holding issue the <code class="docutils literal notranslate"><span class="pre">inv</span></code> command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1937,7 +1225,7 @@ None
 </div>
 </div>
 <section id="oop-implementation">
-<h3>OOP Implementation<a class="headerlink" href="#oop-implementation" title="Permalink to this headline">#</a></h3>
+<h3>OOP Implementation<a class="headerlink" href="#oop-implementation" title="Permalink to this heading">#</a></h3>
 <p>The game is now a little bit more fun than before (although that isn’t saying much).  Let’s take a look at how the code is implemented.</p>
 <ul class="simple">
 <li><p>An item of inventory is represented by a class called <code class="docutils literal notranslate"><span class="pre">InventoryItem</span></code>.</p></li>
@@ -1948,7 +1236,7 @@ None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    An item found in a text adventure world that can be picked up</span>
 <span class="sd">    or dropped.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1959,7 +1247,7 @@ None
 
 
     <span class="k">def</span> <span class="nf">add_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_alias</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add an alias (alternative name) to the InventoryItem.</span>
 <span class="sd">        For example if an inventory item has the short description</span>
 <span class="sd">        &#39;credit card&#39; then a useful alias is &#39;card&#39;.</span>
@@ -1978,7 +1266,7 @@ None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InventoryHolder</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Encapsulates the logic for adding and removing an InventoryItem</span>
 <span class="sd">    This simulates &quot;picking up&quot; and &quot;dropping&quot; items in a TextWorld </span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -1987,7 +1275,7 @@ None
         <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">def</span> <span class="nf">list_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Return a string representation of InventoryItems held.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -1997,13 +1285,13 @@ None
         <span class="k">return</span> <span class="n">msg</span>
 
     <span class="k">def</span> <span class="nf">add_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add an InventoryItem</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Returns an InventoryItem from Room.</span>
 <span class="sd">        Removes the item from the Room&#39;s inventory</span>
 
@@ -2024,7 +1312,7 @@ None
         <span class="k">return</span> <span class="n">selected_item</span>
 
     <span class="k">def</span> <span class="nf">find_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Find an inventory item and return it and its index </span>
 <span class="sd">        in the collection.</span>
 <span class="sd">        </span>
@@ -2059,7 +1347,7 @@ None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Room</span><span class="p">(</span><span class="n">InventoryHolder</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Encapsulates a location/room within a TextWorld.</span>
 
 <span class="sd">    A `Room` has a number of exits to other `Room` objects</span>
@@ -2067,7 +1355,7 @@ None
 <span class="sd">    A `Room` is-a type of `InventoryHolder`</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Room constructor</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -2078,7 +1366,7 @@ None
                 
 
     <span class="k">def</span> <span class="nf">add_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">room</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add an exit to the room</span>
 
 <span class="sd">        Params:</span>
@@ -2093,7 +1381,7 @@ None
 
     
     <span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Exit the room in the specified direction</span>
 
 <span class="sd">        Params:</span>
@@ -2120,7 +1408,7 @@ None
 </section>
 </section>
 <section id="end">
-<h2>End<a class="headerlink" href="#end" title="Permalink to this headline">#</a></h2>
+<h2>End<a class="headerlink" href="#end" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -2136,7 +1424,7 @@ None
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content/01_algorithms/02_oop"
         },
         predefinedOutput: true
@@ -2144,50 +1432,127 @@ None
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../02_oop.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Designing using objects</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../02_oop.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Designing using objects</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="02_oop_sim.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="02_oop_sim.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Case study: ABS</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-object-orientated-text-adventure-game">An object orientated text adventure game</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-text-hospital-adventure">A text hospital adventure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-function-to-play-the-game">A function to play the game</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-hospital-let-s-build-it-using-room-objects">Text Hospital - let’s build it using <code class="docutils literal notranslate"><span class="pre">Room</span></code> objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-and-getting-attributes-and-methods">Setting and getting attributes and methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-build-a-class-in-python">How to build a class in python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-world-s-most-simple-python-class">The world’s most simple python class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-classes-have-a-constructor-init-method">Most classes have a constructor <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-parameters-in-the-constructor-method">including parameters in the constructor method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-room-class-from-the-hospital-basic-text-adventure">The <code class="docutils literal notranslate"><span class="pre">Room</span></code> class from the Hospital Basic Text Adventure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-textworld-class">The <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-oo-frameworks">More complex OO frameworks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-are-customised-by-inheritance">Classes are customised by Inheritance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#has-a-an-alternative-oo-design"><strong>Has-a</strong>: An alternative OO design.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-inheritance-to-allow-a-room-and-a-game-player-to-hold-inventory">Using inheritance to allow a <code class="docutils literal notranslate"><span class="pre">Room</span></code> and a game player to hold inventory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oop-implementation">OOP Implementation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end">End</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Thomas Monks<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Thomas Monks
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
