@@ -632,9 +632,6 @@ document.write(`
 <section id="benchmark-standard-python-implementation">
 <h2>Benchmark: Standard python implementation<a class="headerlink" href="#benchmark-standard-python-implementation" title="Permalink to this heading">#</a></h2>
 <p>Before we get into the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> code here is some standard python code.  We will benchmark its performance at generating 1000 boostrap datasets of the mean using the <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>.</p>
-<blockquote>
-<div><p>Note that before <code class="docutils literal notranslate"><span class="pre">numpy</span></code> came along I had a more efficient way of coding this in standard python. I’ve not included it here because it might look a bit odd to your eyes and besides we can beat its performance using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. The below is what I would consider a vanillia python implementation.</p>
-</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bootstrap_python</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">boots</span><span class="p">):</span>
@@ -653,11 +650,18 @@ document.write(`
 <span class="sd">    -------</span>
 <span class="sd">    list</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
     <span class="n">to_return</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># outer loop - create bootstrap datasets</span>
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">boots</span><span class="p">):</span>
         <span class="c1"># resample with replacement and sum sample values</span>
-        <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">boots</span><span class="p">)])</span>
+        
+        <span class="c1"># inner loop sample with replacement and calculate mean</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+            
+            <span class="c1"># resample with replacement and increment running total. </span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
         
         <span class="c1"># mean of the bootstrap dataset</span>
         <span class="n">to_return</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
@@ -674,16 +678,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>542 ms ± 16.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.24 ms ± 26.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-<p>The exact performance might vary a bit on your machine, but you should get performance in milliseconds (ms).  On my machine this was around 500ms on average.</p>
+<p>The exact performance might vary a bit on your machine, but you should get performance in milliseconds (ms).  On my machine this was around 6.2 to 6.5ms on average.</p>
 </section>
 <section id="converting-to-numpy">
 <h2>Converting to <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#converting-to-numpy" title="Permalink to this heading">#</a></h2>
-<p>Execution of loops in python is slow relative to a low level language like C.  To speed up our code we need to eliminate them.  This can sometimes be simple to do and sometimes require you to be much more creative!</p>
+<p>In theory, execution of loops in python is slow relative to a low level language like C.  To speed up our code we need to eliminate them.  This can sometimes be simple to do and sometimes require you to be much more creative!</p>
+<p>Our first attempt will eliminate the inner loop (a list comprehension) in python</p>
 <section id="attempt-1-the-inner-loop">
 <h3>Attempt 1: the inner loop<a class="headerlink" href="#attempt-1-the-inner-loop" title="Permalink to this heading">#</a></h3>
 <p>The function <code class="docutils literal notranslate"><span class="pre">bootstrap_numpy</span></code> below eliminates one of the python for loops - the inner list comprehension.  Instead of iterating in python we make use <code class="docutils literal notranslate"><span class="pre">numpy</span></code>’s random number generator function <code class="docutils literal notranslate"><span class="pre">integers</span></code>.  This has a <code class="docutils literal notranslate"><span class="pre">size</span></code> parameter that allows us to specify the number of loops that will occur ‘closer to the metal’.</p>
@@ -705,14 +710,14 @@ document.write(`
     
     <span class="c1"># numpy random number generator</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
-    
-    <span class="c1"># vector to return len=boots</span>
+        
+    <span class="c1"># empty vector to return to caller. Its len=boots</span>
     <span class="n">to_return</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">boots</span><span class="p">)</span>
               
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">boots</span><span class="p">):</span>
         
         <span class="c1"># we get numpy&#39;s randint function to do the iteration work for us.</span>
-        <span class="n">total</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+        <span class="n">total</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
 
         <span class="n">to_return</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -728,13 +733,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.29 ms ± 135 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.98 ms ± 89.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-<p>You see a substantial improvement in performance.  On my machine I saw a reduction from 500ms to 9ms.  That’s substantial!</p>
-<p><strong>But there is still one python loop in our code.  Can we do better?</strong></p>
+<p>An unexpected result!  Again the exact results will vary, but on my machine the numpy implementation is actually marginally slower than the pure python implementation.  Coming in a around 8ms per loop¬ There must be some overhead (hidden runtime cost) that we are missing.  A hypothesis is that there may be some overhead in calling the <code class="docutils literal notranslate"><span class="pre">rng.integers</span></code> method from python.  We do that <code class="docutils literal notranslate"><span class="pre">boot</span></code> times during the run.</p>
+<p><strong>We know that there is still one python loop in our code.  Can we do better than the pure python code if we eliminate it and only call a numpy method once?</strong></p>
 </section>
 </section>
 <section id="attempt-2-eliminating-the-nested-loops">
@@ -786,11 +791,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95.9 µs ± 922 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>108 µs ± 538 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
+<p>That’s improvement! We are now seeing an order of magnitude speed up in the code. On my machine the average runtime of the function is less than the variation between runs of the pure python code.</p>
 <section id="step-by-step-breakdown">
 <h3>Step by step breakdown<a class="headerlink" href="#step-by-step-breakdown" title="Permalink to this heading">#</a></h3>
 <p>Our new <code class="docutils literal notranslate"><span class="pre">numpy</span></code> implementation executes a lot quicker.  But it is harder to understand how it works.  Let’s break it down step by step.</p>
@@ -807,7 +813,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9, 6, 0, 2, 2])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 3, 9, 9, 8])
 </pre></div>
 </div>
 </div>
@@ -852,13 +858,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 6 10  1 ...  5  3  1]
- [10  1  1 ...  3  9  5]
- [ 8  4  4 ...  1  4  3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 7  8  3 ...  3  5  3]
+ [ 6  9  9 ...  9  8  2]
+ [10  3  5 ...  3  9  2]
  ...
- [10  8  5 ...  2  6  9]
- [ 5  6  3 ...  1  5  4]
- [10 10  4 ...  5  8  8]]
+ [ 5  5  6 ...  5  7  7]
+ [ 8  4  7 ...  4  6  7]
+ [ 8  1  8 ...  3  8  4]]
 </pre></div>
 </div>
 </div>
@@ -869,7 +875,7 @@ document.write(`
 </section>
 <section id="summing-up">
 <h2>Summing up.<a class="headerlink" href="#summing-up" title="Permalink to this heading">#</a></h2>
-<p>We saw a dramatic performance boost from numpy here. However, to get there is not always intuitive (and to be frank not as easy as this example). The result is also not as readable as the original code.  The trade-off is that this may be the only way to make an algorithm feasible to execute.</p>
+<p>We saw a dramatic performance boost from numpy here. However, to get there is not always intuitive (and to be frank not as easy as this example). The result is also not as readable as the original code.  The trade-off is that this may be the only way to make an algorithm feasible to execute in python.</p>
 </section>
 </section>
 

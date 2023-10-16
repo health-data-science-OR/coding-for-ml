@@ -655,7 +655,7 @@ Scientific computing in Python nearly always makes use of <code class="docutils 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create intervention variables</span>
 <span class="n">intervention_month</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="n">intervention</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">lysis</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">intervention</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">lysis</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">intervention</span><span class="p">[</span><span class="n">intervention_month</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="c1"># add a constant term - exog is a matrix.</span>
@@ -693,13 +693,13 @@ Scientific computing in Python nearly always makes use of <code class="docutils 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an instance of the OLS class</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">endog</span><span class="o">=</span><span class="n">lysis</span><span class="p">,</span> <span class="n">exog</span><span class="o">=</span><span class="n">dummy</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">endog</span><span class="o">=</span><span class="n">lysis</span><span class="p">,</span> <span class="n">exog</span><span class="o">=</span><span class="n">exog</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;statsmodels.regression.linear_model.OLS object at 0x7fe0540771c0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;statsmodels.regression.linear_model.OLS object at 0x7fa39c8f27f0&gt;
 </pre></div>
 </div>
 </div>
@@ -720,8 +720,8 @@ Scientific computing in Python nearly always makes use of <code class="docutils 
 Dep. Variable:                      y   R-squared:                       0.538
 Model:                            OLS   Adj. R-squared:                  0.529
 Method:                 Least Squares   F-statistic:                     60.63
-Date:                Wed, 27 Oct 2021   Prob (F-statistic):           2.77e-10
-Time:                        16:57:04   Log-Likelihood:                 106.92
+Date:                Mon, 16 Oct 2023   Prob (F-statistic):           2.77e-10
+Time:                        14:47:23   Log-Likelihood:                 106.92
 No. Observations:                  54   AIC:                            -209.8
 Df Residuals:                      52   BIC:                            -205.9
 Df Model:                           1                                         
