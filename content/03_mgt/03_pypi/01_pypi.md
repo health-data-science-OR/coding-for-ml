@@ -1,10 +1,10 @@
-# PyPi
+# Installable Python packages
 
-If you want to deploy a python package professionally, sustainably, and easily to colleagues, clients or just everyone in general then a great way to do it is using the Python Package Index (PyPi) and `pip`.  In this chapter we will learn how to setup a python package so that it is ready to be uploaded to PyPi and also how to use `setup-tools` and `twine`.
+If you want to deploy a python package professionally, sustainably, and easily to colleagues, clients or just everyone in general then a great way to do it is using a combination of GitHub, and/or the Python Package Index (PyPI) and `pip`.  In this chapter we will learn how to setup a python package so that it is ready to be installed from GitHub or PyPI and also how to use `hatch`. 
 
 ## What is pip?
 
-A package management system for installing **local packages and python packages from the Python package index (PyPi - pronounced Pie Pie)**.  Example usage:
+A package management system for installing **local packages, packages from GitHub and python packages from the Python package index**.  Example usage:
 
 `$ pip install numpy`
 
@@ -12,15 +12,41 @@ or
 
 `$ pip install numpy==1.18.0`
 
-I recommend exploring what packages are available on [PiPy](https://pypi.org/).  The chances are when you get stuck in data science project there will be a package on pypi to help you.  For example, if you need to solve some really complex multi-objective optimisation problems you could pip install [DEAP](https://pypi.org/project/deap/).  Obviously you need to have an up-to-date version of `pip` before you can install anything.  If you are using an Anaconda distribution or conda environment  (for example, `hds_code` provided with this book) you should already have it. If you are stuck there are some instructions [here](https://packaging.python.org/tutorials/installing-packages/)
+I recommend exploring what packages are available on [PyPI](https://pypi.org/).  The chances are when you get stuck in data science project there will be a package on pypi to help you.  For example, if you need to solve some really complex multi-objective optimisation problems you could pip install [DEAP](https://pypi.org/project/deap/).  Obviously you need to have an up-to-date version of `pip` before you can install anything.  If you are using an Anaconda distribution or conda environment (for example, `hds_code` provided with this book) you should already have `pip` installed. If you are stuck there are some instructions [here](https://packaging.python.org/tutorials/installing-packages/)
 
-## Why use PyPi for your own projects?
+```{admonition} Pronouncing PyPI
+:class: tip, dropdown
+For a long time I prounounced PyPI as "Pie Pie", but its correct prounciation is "Pie Pea Eye". This makes more sense as "Pie Pie" should be reserved for the high performance implementation of Python in [PyPy](https://pypy.org/).
+```
 
-In summary, it is useful if you want to use a package in multiple projects without asking the user to manage the source code (or binaries) themselves. This can, of course, be managed in various ways, but I've found that people I work with have had an easier time when the software is managed by pip.  For example, we haven't manually managed the source for `pandas`, `matplotlib` or `numpy` in this book.  That's dar too complicated `pip` (and other package managers) make the packages accessible to others.  That's a great thing for **open science** and health data science.
+## Why create and deploy an installable package for your own projects?
 
-So the obvious use case for pip in health data science is if you want others to be able to easily install and use your software/project in their own work.  I use it a lot for educational software for students.  I like the idea that students can use course learning software after they leave a University and access updated versions of it if they want to refresh their skills.  
+In summary, it is useful if you want to use a package in multiple projects without asking the user to manage the source code or dependencies themselves. This can, of course, be managed in various ways, but I've found that people I work with have had an easier time when the software is managed by `pip`.  For example, we haven't manually managed the source for `pandas`, `matplotlib` or `numpy` in this book.  That's far too complicated. Package managers in general including `pip`  make packages accessible to others.  That's a great thing for **open science** and health data science.
 
->  I also recommend making your source code open via a cloud based version control system such as GitHub.  In fact, you can link to this from your PyPi project page.
+So the obvious use case for `pip` in health data science is if you want others to be able to easily install and use your software/project in their own work.  I use it a lot for educational software for students.  I like the idea that students can use course learning software after they leave a University and access updated versions of it if they want to refresh their skills.  In recent years I've also been using the package structure to make computer simulation models from my research open and reusable by others.
+
+>  At a minimum I recommend making your package open via a cloud based version control system such as GitHub. If it is structured correctly it can be installed by `pip`.  
+
+
+## The difference between packages and projects
+
+Let's assume you are working on a data science project that aims to predict a patient's risk of a certain type of cancer given data collected in a series of GP consultations.  You have the data and now need to set up Python software environment on your computer to do the analysis and modelling. This is relatively simple - you already have Python version 3.10 installed and you decide you also need `numpy`, `pandas` and `keras`.  You `pip` install these packages and end up with versions 1.26, 2.2.2 and 2.15 respectively.   You can think of this software environment as a **reproducible software environment** for your project. This is the general process you follow for every data science project you will conduct. You'll choose a Python version (maybe the latest, maybe just the version you normally use) and install **compatible** packages. Its important because it means that if you wanted to repeat the analysis you could do so using the same version of Python and packages.
+
+When you are developing a package you need to think differently.  Put yourself in the position of someone trying to support others conduct data science projects in Python. Firstly, you will need to be clear about what versions of Python your package will support. For example, you might want users of Python 3.8, 3.9, 3.10 and 3.11 to all be able to install and use the package. Note that the more versions of python you want to support the less likely it is you can make use of new features introduced in the updates so think carefully before you try to support all of version Python 3 as prior to version 3.6 they were very different. Secondly, you will need to declare what software dependencies your package requires (e.g. `numpy`, `pandas`, `keras`). For dependencies you need to select the minimum version that will run your code.  Over time these dependencies will release their own new versions and, for example, `numpy`  may deprecate old functions/constants that you rely on (especially on a major release e.g. `numpy>=2.0`). In these instances you could either modify your package and release your own new version or specify a maximum version of the `numpy` that is compatible (e.g. `numpy<2.0`)
+
+```{admonition} What versions of Python should I support!?
+:class: tip, dropdown
+For my own packages (as of 2024) I no longer support Python prior to version 3.8. And I plan to drop support for 3.8 in the next few years. Before you use this as a hard and fast rule make sure you talk to your potential users. For example, if they have a Python 3.7 environment and that's unlikely to change you will want to support it.
+```
+
+The difference is illustrated in the Figure below. Here **your-package v1.0.0** is your analysis package. There are three projects using your package with different (supported) version of Python and dependencies. There is also a project that is currently using Python 3.6 that is not compatible with your package.
+
+```{image} ../../imgs/package_versus_project.png
+:alt: package_vs_project
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
 
 ## Setting up a git repo for a PyPi project.
 
@@ -28,16 +54,15 @@ I don't want to be too prescriptive here.  It really is up to you and your colla
 
 ```
 pypi_template
-├── LICENSE
-├── test_package
+├── analysis_package
 │   ├── __init__.py
-│   ├── test.py
+│   ├── model.py
 │   ├── data
-│   |   ├── test_data.csv
-├── README.md
+│   |   ├── model_data.csv
+├── LICENSE
 ├── environment.yml
-├── requirements.txt
-└── setup.py
+├── README.md
+└── pyproject.toml
 ```
 
 ### `environment.yml`
