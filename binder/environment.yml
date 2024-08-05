@@ -2,18 +2,20 @@ name: hds_code
 channels:
   - conda-forge
 dependencies:
-  - jupyterlab=3.4.6
-  - jupyterlab-spellchecker=0.7.2
-  - matplotlib=3.5.3
-  - nodejs=18.8.0
-  - numpy=1.23.2
-  - pandas=1.4.4
-  - pip=22.2.2
-  - python=3.8.12
-  - scipy==1.9.1
-  - statsmodels=0.13.2
-  - pip:   
-    - rich==12.5.1
-    - scikit-learn==1.1.2
-    - py7zr==0.20.0
-    
+  - black
+  - flake8
+  - hatch
+  - jupyterlab=4.2.4
+  - jupyterlab-spellchecker=0.8.4
+  - matplotlib=3.9.1
+  - nbqa
+  - nodejs=22.5.1
+  - numpy=2.0.1
+  - pandas=2.2.2
+  - pip=24.0
+  - python=3.11
+  - py7zr=0.21.1
+  - rich=13.7.1
+  - scikit-learn=1.5.1
+  - scipy==1.14.0
+  - statsmodels=0.14.2    
