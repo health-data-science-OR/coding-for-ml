@@ -48,7 +48,7 @@ The difference is illustrated in the Figure below. Here **your-package v1.0.0** 
 :align: center
 ```
 
-## Setting up a git repo for a PyPi project.
+## Setting up a git repo
 
 I don't want to be too prescriptive here.  It really is up to you and your collaborators how you organise your own code.  There are many suggestions online as well. The structure I am going to introduce here is a simple one I use in my own projects.  You will see variations of it online.  Here's the template repo.  We will then take a look at the elements individually.   You can view the template repository and the code it contains on [GitHub](https://github.com/health-data-science-OR/pypi-template)
 
@@ -59,6 +59,8 @@ pypi_template
 │   ├── model.py
 │   ├── data
 │   |   ├── model_data.csv
+├── tests
+│   ├── test_model.py
 ├── LICENSE
 ├── environment.yml
 ├── README.md
@@ -67,23 +69,41 @@ pypi_template
 
 ### `environment.yml`
 
-One thing I have learnt from the Open Source community is it is useful to include a virtual conda environment for yourself and developers who contribute to the library.  That is what is in `environment.yml`. One omission in the template repo is that it is useful to **install the latest version of your own package into the dev environment!**  This means you can create example Jupyter notebooks where other data scientists can learn how to use your package.  See for example:  https://github.com/TomMonks/forecast-tools 
+One thing I have learnt from the Open Source community is it is useful to include a virtual conda environment for yourself and developers who contribute to the library.  That is what is in `environment.yml`. For example the `pypi_package` template includes the following:
 
 ```yaml
 name: pypi_package_dev
 channels:
-  - defaults
+  - conda-forge
 dependencies:
-  - jupyterlab=1.2.6
-  - matplotlib=3.1.3
-  - numpy=1.18.1
-  - pandas=1.0.1
-  - pip=20.0.2
-  - pytest=5.3.5
-  - python=3.8.1
+  - black
+  - flake8
+  - hatch
+  - jupyterlab=4.2.4
+  - jupyterlab-spellchecker=0.8.4
+  - matplotlib=3.9.1
+  - nbqa
+  - numpy=2.0.1
+  - pandas=2.2.2
+  - pip=24.0
+  - python=3.11
+  - pytest=8.3.2
 ```
 
-### `setup.py`
+It is entirely up to you what you include in the development environment, but I find it useful to include
+
+* An notebook type IDE like `jupyterlab` for creating notebooks that contain examples of the package in use.
+* The latest update of linting tools such as `black`, `flake8` and `nbqa` 
+* A build tool such as `hatch` (we will see how this works shortly)
+* Testing tools such as `pytest` (we will see how hatch can be used as well).
+
+### `pyproject.toml`
+
+```{admonition} Where is setup.py?
+:class: information, dropdown
+In prior versions of this book I included material that built an installable python package using `setuptools` and `setup.py` (plus several other files).  
+```
+
 
 This is the important file for `pip`.  `setup.py `controls the installation of your package.  I've included a template in the repo.  We need to use the `setuptools` PyPI package to do the installation.  I've included `setuptools` in the dev environment, but you can install it manually:
 
