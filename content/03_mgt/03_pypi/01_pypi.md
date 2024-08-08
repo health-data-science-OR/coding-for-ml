@@ -30,7 +30,7 @@ So the obvious use case for `pip` in health data science is if you want others t
 
 ## The difference between packages and projects
 
-Let's assume you are working on a data science project that aims to predict a patient's risk of a certain type of cancer given data collected in a series of GP consultations.  You have the data and now need to set up Python software environment on your computer to do the analysis and modelling. This is relatively simple - you already have Python version 3.10 installed and you decide you also need `numpy`, `pandas` and `keras`.  You `pip` install these packages and end up with versions 1.26, 2.2.2 and 2.15 respectively.   You can think of this software environment as a **reproducible software environment** for your project. This is the general process you follow for every data science project you will conduct. You'll choose a Python version (maybe the latest, maybe just the version you normally use) and install **compatible** packages. Its important because it means that if you wanted to repeat the analysis you could do so using the same version of Python and packages.
+Let's assume you are working on a data science project that aims to predict a patient's risk of a certain type of cancer given data collected in a series of GP consultations.  You have the data and now need to set up Python software environment on your computer to do the analysis and modelling. This is relatively simple - you already have Python version 3.10 installed and you decide you also need `numpy`, `pandas` and `keras`.  You `pip install` these packages and end up with versions 1.26, 2.2.2 and 2.15 respectively.   You can think of this software environment as a **reproducible software environment** for your project. This is the general process you follow for every data science project you will conduct. You'll choose a Python version (maybe the latest, maybe just the version you normally use) and install **compatible** packages. Its important because it means that if you wanted to repeat the analysis you could do so using the same version of Python and packages.
 
 When you are developing a package you need to think differently.  Put yourself in the position of someone trying to support others conduct data science projects in Python. Firstly, you will need to be clear about what versions of Python your package will support. For example, you might want users of Python 3.8, 3.9, 3.10 and 3.11 to all be able to install and use the package. Note that the more versions of python you want to support the less likely it is you can make use of new features introduced in the updates so think carefully before you try to support all of version Python 3 as prior to version 3.6 they were very different. Secondly, you will need to declare what software dependencies your package requires (e.g. `numpy`, `pandas`, `keras`). For dependencies you need to select the minimum version that will run your code.  Over time these dependencies will release their own new versions and, for example, `numpy`  may deprecate old functions/constants that you rely on (especially on a major release e.g. `numpy>=2.0`). In these instances you could either modify your package and release your own new version or specify a maximum version of the `numpy` that is compatible (e.g. `numpy<2.0`)
 
@@ -99,73 +99,86 @@ It is entirely up to you what you include in the development environment, but I 
 
 ### `pyproject.toml`
 
-```{admonition} Where is setup.py?
+```{admonition} Where has setup.py gone?
 :class: information, dropdown
-In prior versions of this book I included material that built an installable python package using `setuptools` and `setup.py` (plus several other files).  The `setuptools` approach still works and is employed by many major data science packages. However, I have found that a `hatch` + `pyproject.toml` is a cleaner and simpler solution overall.  You can still access my `setuptools` materials in the archived [version 2.0.2 of the book.](https://zenodo.org/records/10016866)
+In prior versions of this book I included material that built an installable python package using `setuptools` + `build` and the script `setup.py` (plus several other files!).  That approach still works and is employed by many major data science packages. However, I have found that a `hatch` + `pyproject.toml` is a cleaner and simpler solution overall.  You can still access my `setuptools` materials in the archived [version 2.0.2 of the book.](https://zenodo.org/records/10016866)
 ```
 
+This is the important file for `pip` and controls the installation of your package.  TOML standards for [Tom's Obvious Minimal Language](https://toml.io/en/). In simple terms `pyproject.toml` is readable way to write down the configuration of of your package. It includes information about how what building the package and all the package "meta-data" e.g. name, version, description. I've included a reusable template in the repo that can be used to edit.  Let's take a look at the full file and break it down.
 
-This is the important file for `pip`.  `setup.py `controls the installation of your package.  I've included a template in the repo.  We need to use the `setuptools` PyPI package to do the installation.  I've included `setuptools` in the dev environment, but you can install it manually:
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-`pip install setuptools`
+[project]
+name = "analysis_package"
+dynamic = ["version"]
+description = "A short, but useful description of your package"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [
+    { name = "Thomas Monks", email = "generic@genericemail.com" },
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11", 
+    "Programming Language :: Python :: 3.12",
 
-Here is what I have included in `setup.py`
+]
+dependencies = [
+    "matplotlib>=3.1.3",
+    "numpy>=1.26.1",
+    "pandas>=2.0.1",
+]
 
-```python
-import setuptools
-from test_package import __version__
+[project.urls]
+Homepage = "https://github.com/health-data-science-OR/pypi-template"
+"Bug Tracker" = "https://github.com/health-data-science-OR/pypi-template/issues"
 
-# Read in the requirements.txt file
-with open("requirements.txt") as f:
-    requirements = []
-    for library in f.read().splitlines():
-        requirements.append(library)
+[tool.hatch.version]
+path = "analysis_package/__init__.py"
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
-    name="pypi-template",
-    version=__version__,
-    author="Thomas Monks",
-    # I've created a specific email account before and forwarded to my own.
-    author_email="generic@genericemail.com",
-    license="The MIT License (MIT)",
-    description="A short, but useful description to appear on pypi",
-    # read in from readme.md and will appear on PyPi
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/health-data-science-OR/pypi-template",
-    packages=setuptools.find_packages(),
-    # if true look in MANIFEST.in for data files to include
-    include_package_data=True,
-    # 2nd approach to include data is include_package_data=False
-    package_data={"test_package": ["data/*.csv"]},
-    # these are for documentation 
-    classifiers=[
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
-    python_requires='>=3.6.9',
-    install_requires=requirements,
-)
+[tool.hatch.build.targets.sdist]
+include = [
+    "/analysis_package",
+]
 ```
+
+### The build system
+
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+```
+
 
 ### Managing the versioning your package
 
 All python packages should behave in this way:
 
 ```python
->>> import test_package
->>> print(test_package.__version__)
+>>> import analysis_package
+>>> print(analysis_package.__version__)
 '0.1'
 ```
-So we need an __init__.py file for our package to reference a version number AND we need to include a version number in the setup script.
+We need an `__init__.py` file for our package to reference a version number AND we need to include a version number in the TOML file.
 
-> There is no ideal way to set this up. See PEP 396 for [discussion](https://www.python.org/dev/peps/pep-0396/#examples)
+We can do this using the `hatch`
+
+```toml
+[project]
+dynamic = ["version"]
+
+[tool.hatch.version]
+path = "analysis_package/__init__.py"
+```
 
 For simpler packages like small scientific ones we are aiming to produce I have opted for the following pattern:
 
