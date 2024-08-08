@@ -101,7 +101,7 @@ It is entirely up to you what you include in the development environment, but I 
 
 ```{admonition} Where is setup.py?
 :class: information, dropdown
-In prior versions of this book I included material that built an installable python package using `setuptools` and `setup.py` (plus several other files).  
+In prior versions of this book I included material that built an installable python package using `setuptools` and `setup.py` (plus several other files).  The `setuptools` approach still works and is employed by many major data science packages. However, I have found that a `hatch` + `pyproject.toml` is a cleaner and simpler solution overall.  You can still access my `setuptools` materials in the archived [version 2.0.2 of the book.](https://zenodo.org/records/10016866)
 ```
 
 
