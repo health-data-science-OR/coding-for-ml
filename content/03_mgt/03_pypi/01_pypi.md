@@ -150,7 +150,7 @@ include = [
 ]
 ```
 
-### The build system
+#### The build system
 
 The package management system we are going to use to for our installable python package is `hatch`. I have found `hatch` to be intuitive (with easy to remember commands!), fast and useful for building a package and testing the code in multiple Python versions. It can also optionally be used to upload your package to PyPI. I'll cover the essentials here, but there [hatch documentation](https://hatch.pypa.io/latest/) can also be consulted for more advanced use.
 
@@ -168,10 +168,33 @@ build-backend = "hatchling.build"
 
 ```{admonition} Are there alternative tools available?
 :class: information, dropdown
-An alternative popular tool for Python package management (that has been recommended to me, but I do not have experience of using) is [Poetry](https://python-poetry.org/). Poetry does a bit more than hatch for example, it also manages and resolves dependencies for a project. But that is the tip of the iceburg. For a very clear overview of the options avilable to you you can read this [excellent blog post by Anna-Lena Popkes](https://alpopkes.com/posts/python/packaging_tools/).
+An alternative and popular tool for Python package management (that has been recommended to me, but I do not have experience of using) is [Poetry](https://python-poetry.org/). Poetry does a bit more than hatch for example, it also manages and resolves dependencies for a project. But that is the tip of the iceburg. For a very clear overview of the options avilable to you you can read this [excellent blog post by Anna-Lena Popkes](https://alpopkes.com/posts/python/packaging_tools/).
 ```
 
-### Managing the versioning your package
+#### Project meta data
+
+Project *meta-data* stored in the `[project]` table are data that describe the Python package. This includes the package name, version number, a brief description, authors(s), the minimum supported version of Python and dependencies. 
+
+You can also include a **classifier** for each individual version of Python supported (note: you should have tested your package in each version included). If you publish your package via PyPI this meta-data is displayed alongside your package.
+
+A simple way to setup the meta-data is to use the template provided and edit the strings for each variable to match your needs.  However, there are two caveats to cover in more details. The first is dependencies and the second is the package version. 
+
+### Specifying package dependencies
+
+For dependencies, you need to include the Python packages (that available to be installed from PyPI) that your analysis package uses in its code. For example, a module in your code might make use of `numpy` arrays. To run that code your package needs `numpy` installed. If `numpy` is not installed a runtime error will occur when you try to import the package. 
+
+Package dependencies are added to a list called **dependencies** as follows:
+
+```toml
+dependencies = [
+    "matplotlib>=3.1.3",
+    "numpy>=1.26.1",
+    "pandas>=2.0.1",
+]
+```
+For our example installable package, we are using `matplotlib`, `numpy` and `pandas`. Note that we have specified the minimum version of the software that our package supports.  This means, for example, that we the package is only supported (and will only work) if a user attempts to install this into an environment with at least `numpy=1.26.1`. 
+
+#### Managing the versioning your package
 
 All python packages should behave in this way:
 
@@ -193,7 +216,7 @@ path = "analysis_package/__init__.py"
 ```
 
 ```{admonition} How do I hard code the version in TOML?
-:class: information, dropdown
+:class: tip, dropdown
 If you did want to hard code the version of your package you just need to replace the `dynamic=['version']` line with `version="0.1.0"` as shown in the snippet below. Note that this should match the version in `__init__.py`. Personally I have found that the dynamic method is preferable - it avoids me forgetting to update it in two places.   
 
 ```toml
@@ -201,55 +224,42 @@ If you did want to hard code the version of your package you just need to replac
 version = "0.1.0"
 ```
 
-### Including data in your package
+### Licence
 
-For a data science project you may want to include some example or test data within your package. 
+Published packages should also be accompanied by an open licence. A licence details how others may use or adapt the package as well as re-share any adaptations and credit authors. At a minimum a licence specifies the terms of use for a package, and waives the authors of any liability if the package is reused. There are many types of standard licence relevenat for health data science. For example, you might choose between a permissive-type licence (e.g., the MIT; or BSD 2-Clause) or a copyleft type licence (e.g., GNU General Public Licence v3).
 
-As an example, the package in the template repo includes a subdirectory `test_package/data` containing a single (dummy) CSV.
+You should consider the package you publish as Free and Open Source Software (FOSS). Note that FOSS here is more than open source code. It grants the freedom for users to reuse, adapt, and distribute copies however they choose. Examples include `numpy` and `pandas` (BSD License), Tensorflow (Apache), and `matplotlib` (Python software foundation license). For a more detailed overview of licensing and license compatibility see the [Turing Way](https://book.the-turing-way.org/reproducible-research/licensing).
 
-One thing I learnt **the hard and annoying way** is that data is not included in your python package by default!  
+The good news is that `hatch` will include your License file in your package by default. There are no settings that need to be modified.
 
-To make sure data is included you can take two steps:
+### Package data
 
-#### Tell `setup()` that it is expecting data
+For a data science project you may want to ship example data that can be used to demonstrate or learn of how to use your package. As an example, the package in the template repo includes a subdirectory `analysis_package/data` containing a single (dummy) CSV called `model_data.csv`.  
 
-There are a couple of options here.  Here's the firs:
+As with licenses `hatch` will automatically include your data in the package.  See my own package `sim-tools` [for an extra example.](https://github.com/TomMonks/sim-tools)
 
-```python
-    # Tells setup to look in MANIFEST.in
-    include_package_data=True,
+## Local installation and uninstallation of your package
+
+Now that we have a `pyproject.toml` we can install our package locally!  First navigate to the repo on your local machine and open a terminal or command prompt.  Activate the environment where you would like to install the package e.g. `conda activate hds_code`
+
+For now, I recommend installing your package in **editable mode**.  This is the best thing to do while building or updating your package.  Any changes to the package code in `analysis_package` are automatically reflected in the environment (in Jupyter notebooks, you will need reset the kernel).
+
+```bash
+pip install -e .`
 ```
 
-The above snippet tells the `setup()` function to look in a top level file called `MANIFEST.in`.  This contains a list of files to include in the package:
+If you wish to install the local package without anyway to dynamically edit and update the code use:
 
+```bash
+pip install .
 ```
-include *.txt
-recursive-include test_package/data *.csv
-```
-
-As an alternative you can use:
-
-```python
-    # use instead of MANIFEST.in
-    package_data={"test_package": ["data/*.csv"]},
-```
-
-Note that the second way I've described requires you to set `include_package_data=False`
-
-* Some extra help can be found here in the setup tools manual: https://setuptools.readthedocs.io/en/latest/userguide/datafiles.html 
-
-### Local installation and uninstallation of your package
-
-Now that we have a `setup.py` and have installed `setuptools` we can use them to install our package locally!  Navigate to the repo on your local machine and run the command below.
-
-`pip install .`
 
 **Exercise**: Test out your install by launching the python interpreter.
 
 ```python
 # this should work!
-import test_package
-print(test_package.__version__)
+import analysis_package
+print(analysis_package.__version__)
 ```
 
 If you have used the default package settings then you will have installed a package called `pypi-template` (version = 0.1).  To uninstall use the package name:
