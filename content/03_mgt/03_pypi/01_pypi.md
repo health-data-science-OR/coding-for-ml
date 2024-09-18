@@ -104,7 +104,7 @@ It is entirely up to you what you include in the development environment, but I 
 In prior versions of this book I included material that built an installable python package using `setuptools` + `build` and the script `setup.py` (plus several other files!).  That approach still works and is employed by many major data science packages. However, I have found that a `hatch` + `pyproject.toml` is a cleaner and simpler solution overall.  You can still access my `setuptools` materials in the archived [version 2.0.2 of the book.](https://zenodo.org/records/10016866)
 ```
 
-This is the important file for `pip` and controls the installation of your package.  TOML standards for [Tom's Obvious Minimal Language](https://toml.io/en/). In simple terms `pyproject.toml` is readable way to write down the configuration of of your package. It includes information about how what building the package and all the package "meta-data" e.g. name, version, description. I've included a reusable template in the repo that can be used to edit.  Let's take a look at the full file and break it down.
+This is the important file for `pip` and controls the installation of your package.  TOML standards for [Tom's Obvious Minimal Language](https://toml.io/en/). In simple terms `pyproject.toml` is readable way to write down the configuration of of your package. It includes information about what software is used to build the package and all the package "meta-data" e.g. name, version, description. I've included a reusable template in the repo that can be used to edit.  Let's take a look at the full file and break it down.
 
 ```toml
 [build-system]
@@ -152,12 +152,24 @@ include = [
 
 ### The build system
 
+The package management system we are going to use to for our installable python package is `hatch`. I have found `hatch` to be intuitive (with easy to remember commands!), fast and useful for building a package and testing the code in multiple Python versions. It can also optionally be used to upload your package to PyPI. I'll cover the essentials here, but there [hatch documentation](https://hatch.pypa.io/latest/) can also be consulted for more advanced use.
+
+To specify the build system in `pyproject.toml` we use the `build-backend`.  Notice that we specify `hatchling` here and not `hatch`. The **back-end** is is the tool `hatch` will call when you ask it to perform the build - `hatchling` is the work horse so to speak.  
+
+The package `hatch` is a **front-end** build tool. Its purpose is to provide a simple to use command line interface for common package management actions (that may use different back ends). This includes running the back-end to build the Python package (more on what the build process outputs shortly).  
+
+If this the first time building an installable python package the difference between build front and back ends may be confusing.  The good news is that while you are learning you can just use include the TOML below in your `pyproject.toml` and `hatch` will work as expected.
+
 ```toml
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
+```{admonition} Are there alternative tools available?
+:class: information, dropdown
+An alternative popular tool for Python package management (that has been recommended to me, but I do not have experience of using) is [Poetry](https://python-poetry.org/). Poetry does a bit more than hatch for example, it also manages and resolves dependencies for a project. But that is the tip of the iceburg. For a very clear overview of the options avilable to you you can read this [excellent blog post by Anna-Lena Popkes](https://alpopkes.com/posts/python/packaging_tools/).
+```
 
 ### Managing the versioning your package
 
@@ -170,7 +182,7 @@ All python packages should behave in this way:
 ```
 We need an `__init__.py` file for our package to reference a version number AND we need to include a version number in the TOML file.
 
-We can do this using the `hatch`
+Rather than hard coding the version in two places, we can set the package version attribute to *dynamic* and use `hatch` to read it from the `__init__.py` file.
 
 ```toml
 [project]
@@ -180,17 +192,14 @@ dynamic = ["version"]
 path = "analysis_package/__init__.py"
 ```
 
-For simpler packages like small scientific ones we are aiming to produce I have opted for the following pattern:
+```{admonition} How do I hard code the version in TOML?
+:class: information, dropdown
+If you did want to hard code the version of your package you just need to replace the `dynamic=['version']` line with `version="0.1.0"` as shown in the snippet below. Note that this should match the version in `__init__.py`. Personally I have found that the dynamic method is preferable - it avoids me forgetting to update it in two places.   
 
-1. Keep the version numbering external to the setup script.
-2. In the package __init__.py include a `__version__` string attribute and set that to the version number
-3. In setup.py I include the following code
-
-```python
-# import the version
-from test_package import __version__
+```toml
+[project]
+version = "0.1.0"
 ```
-Note that you need to be careful about version numbering here: It has to be managed manually.  One way to handle that is via some testing before updating a package on pypi.
 
 ### Including data in your package
 
