@@ -1,6 +1,6 @@
 # Installable Python packages
 
-If you want to deploy a python package professionally, sustainably, and easily to colleagues, clients or just everyone in general then a great way to do it is using a combination of GitHub, and/or the Python Package Index (PyPI) and `pip`.  In this chapter we will learn how to setup a python package so that it is ready to be installed from GitHub or PyPI and also how to use `hatch`. 
+If you want to deploy a python package professionally, sustainably, and easily to colleagues, clients or just everyone in general then a great way to do it is using a combination of GitHub, and/or the Python Package Index (PyPI) and `pip`.  In the following sections we will learn how to setup a python package so that it is ready to be installed from GitHub or PyPI and also how to use `hatch`. 
 
 ## What is pip?
 
@@ -53,7 +53,7 @@ The difference is illustrated in the Figure below. Here **your-package v1.0.0** 
 I don't want to be too prescriptive here.  It really is up to you and your collaborators how you organise your own code.  There are many suggestions online as well. The structure I am going to introduce here is a simple one I use in my own projects.  You will see variations of it online.  Here's the template repo.  We will then take a look at the elements individually.   You can view the template repository and the code it contains on [GitHub](https://github.com/health-data-science-OR/pypi-template)
 
 ```
-pypi_template
+package_template
 ├── analysis_package
 │   ├── __init__.py
 │   ├── model.py
@@ -242,7 +242,7 @@ As with licenses `hatch` will automatically include your data in the package.  S
 
 Now that we have a `pyproject.toml` we can install our package locally!  First navigate to the repo on your local machine and open a terminal or command prompt.  Activate the environment where you would like to install the package e.g. `conda activate hds_code`
 
-For now, I recommend installing your package in **editable mode**.  This is the best thing to do while building or updating your package.  Any changes to the package code in `analysis_package` are automatically reflected in the environment (in Jupyter notebooks, you will need reset the kernel).
+For now, I recommend installing your package in **editable mode**.  This is the best thing to do while building (or extending/patching) your package.  Any changes to the package code in `analysis_package` are automatically reflected in the environment (in Jupyter notebooks, you will need reset the kernel).  This means you do not have to reinstall the package multiple times.  To install in editable mode issue the following command:
 
 ```bash
 pip install -e .`
@@ -264,7 +264,9 @@ print(analysis_package.__version__)
 
 If you have used the default package settings then you will have installed a package called `pypi-template` (version = 0.1).  To uninstall use the package name:
 
-`pip uninstall pypi-template`
+```bash
+pip uninstall analysis_package
+```
 
 ## Publishing your package on PyPI
 
