@@ -13,6 +13,8 @@ Consistent identifier (represents all versions, resolves to latest): [![DOI](htt
 
 * ENV: updated to python 3.11 and added linting packages and `hatch` for packaging.
 * Coding Scientific functions exercises: Added new exercise 3 that implements $W_q$ and $P_n$ from a M/M/1 queue.
+* Updated python packaging section.  Retired `setuptools` approach in favour of `hatch`. Split sections on installable packages, github install, PyPI install and automation.
+
 ###
 
 ## 2.0.1 (2023-09-25) 
