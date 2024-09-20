@@ -8,3 +8,4 @@ I'd like to extend my thanks to the following people for their contributions to 
 * [reevesglobal](https://github.com/reevesglobal)
 * [trptaylor](https://github.com/trptaylor)
 * [kaungmyatwaiyan](https://github.com/kaungmyatwaiyan) MSc Health Data Science 2021/22.
+* [JeffAkkerman](https://github.com/JeffAkkerman) 
