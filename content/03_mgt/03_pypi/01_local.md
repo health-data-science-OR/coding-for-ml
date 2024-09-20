@@ -6,11 +6,23 @@ If you want to deploy a python package professionally, sustainably, and easily t
 
 A package management system for installing **local packages, packages from GitHub and python packages from the Python package index**.  Example usage:
 
-`$ pip install numpy`
+```bash
+# install the latest compatible version of numpy from PyPI
+pip install numpy`
+```
+or
+
+```bash
+# install the numpy version 1.18.0 from PyPI
+pip install numpy==1.18.0`
+```
 
 or
 
-`$ pip install numpy==1.18.0`
+```bash
+# install a package from github
+pip install git+https://github.com/health-data-science-OR/package-template@main
+```
 
 I recommend exploring what packages are available on [PyPI](https://pypi.org/).  The chances are when you get stuck in data science project there will be a package on pypi to help you.  For example, if you need to solve some really complex multi-objective optimisation problems you could pip install [DEAP](https://pypi.org/project/deap/).  Obviously you need to have an up-to-date version of `pip` before you can install anything.  If you are using an Anaconda distribution or conda environment (for example, `hds_code` provided with this book) you should already have `pip` installed. If you are stuck there are some instructions [here](https://packaging.python.org/tutorials/installing-packages/)
 
@@ -36,7 +48,7 @@ When you are developing a package you need to think differently.  Put yourself i
 
 ```{admonition} What versions of Python should I support!?
 :class: tip, dropdown
-For my own packages (as of 2024) I no longer support Python prior to version 3.8. And I plan to drop support for 3.8 in the next few years. Before you use this as a hard and fast rule make sure you talk to your potential users. For example, if they have a Python 3.7 environment and that's unlikely to change you will want to support it.
+For my own packages (as of 2024) I no longer plan to support Python prior to version 3.9. And I plan to drop support for 3.9 in the next few years. This is in line with the latest versions of popular packages like `numpy` (>=3.10) and `matplotlib`(>=3/9). But before you use this as a hard and fast rule please make sure you talk to your potential users. For example, if you are working with the NHS and they have a Python 3.7 environment and that's unlikely to change you will want to support it.
 ```
 
 The difference is illustrated in the Figure below. Here **your-package v1.0.0** is your analysis package. There are three projects using your package with different (supported) version of Python and dependencies. There is also a project that is currently using Python 3.6 that is not compatible with your package.
@@ -50,10 +62,10 @@ The difference is illustrated in the Figure below. Here **your-package v1.0.0** 
 
 ## Setting up a git repo
 
-I don't want to be too prescriptive here.  It really is up to you and your collaborators how you organise your own code.  There are many suggestions online as well. The structure I am going to introduce here is a simple one I use in my own projects.  You will see variations of it online.  Here's the template repo.  We will then take a look at the elements individually.   You can view the template repository and the code it contains on [GitHub](https://github.com/health-data-science-OR/pypi-template)
+I don't want to be too prescriptive here.  It really is up to you and your collaborators how you organise your own code.  There are many suggestions online as well. The structure I am going to introduce here is a simple one I use in my own projects.  You will see variations of it online.  Here's the template repo.  We will then take a look at the elements individually.   You can view the template repository and the code it contains on [GitHub](https://github.com/health-data-science-OR/analysis-package)
 
 ```
-package_template
+analysis-package
 ├── analysis_package
 │   ├── __init__.py
 │   ├── model.py
@@ -69,7 +81,7 @@ package_template
 
 ### `environment.yml`
 
-One thing I have learnt from the Open Source community is it is useful to include a virtual conda environment for yourself and developers who contribute to the library.  That is what is in `environment.yml`. For example the `pypi_package` template includes the following:
+One thing I have learnt from the Open Source community is it is useful to include a virtual conda environment for yourself and developers who contribute to the library.  That is what is in `environment.yml`. For example the `package-template` repo includes the following:
 
 ```yaml
 name: pypi_package_dev
@@ -95,7 +107,7 @@ It is entirely up to you what you include in the development environment, but I 
 * An notebook type IDE like `jupyterlab` for creating notebooks that contain examples of the package in use.
 * The latest update of linting tools such as `black`, `flake8` and `nbqa` 
 * A build tool such as `hatch` (we will see how this works shortly)
-* Testing tools such as `pytest` (we will see how hatch can be used as well).
+* Testing tools such as `pytest`.
 
 ### `pyproject.toml`
 
@@ -117,14 +129,13 @@ dynamic = ["version"]
 description = "A short, but useful description of your package"
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 authors = [
     { name = "Thomas Monks", email = "generic@genericemail.com" },
 ]
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11", 
@@ -268,6 +279,47 @@ If you have used the default package settings then you will have installed a pac
 pip uninstall analysis_package
 ```
 
+### Building source and wheel distributions
+
+If you head over to the download section for [my package `treat-sim` on PyPI](https://pypi.org/project/treat-sim/#files) you can see that two files are available to download. The first is a tarball (a compressed file .tar/gz) and the second has a unusual extension **.whl**. These are package **source** and **wheel** distributions that are used by `pip` during the installation.  Wheels are an advanced topic and it took me a while to get my head around what a wheel distribution actually is and why it is useful!  A nice phrase I came across is that '*wheels make things go faster*'
+
+* A source is just what you think it is.  It is your source code!
+
+* A wheel (.whl) is a ready-to-install python package i.e. no build stage is required. This is very useful for example if you have written custom C or Rust extensions for python. The wheel contains your extensions compiled and hence skips the build step.  Wheel's therefore make installation more efficient.  They are important for complex data science packages such as `numpy` that would be complex and time consuming to build from source.
+
+> You can create universal wheel's i.e. applicable to both python 2 and 3 or pure python wheels i.e. applicable to only python 3 or python 2, but not both.
+
+You might have noticed that when we installed `analysis_package` via `pip install -e .` we didn't need to build these files.  However, if you look carefully at this exert from the output of that pip command you might notice that that was some hidden work building that wheel.
+
+```bash
+Building wheels for collected packages: analysis_package
+  Building editable for analysis_package (pyproject.toml) ... done
+  Created wheel for analysis_package: filename=analysis_package-0.1.0-py3-none-any.whl
+```
+
+In our case the build wasn't time consuming as the package is simple, but if we had to do this fall all packages and their dependencies the process would become painfully slow. Hence we use tools like `hatch` to build the source and wheel files for us in advance of uploading to a platform like PyPI.
+
+```bash
+hatch build
+```
+
+This will create a new directory `dist/` containing the source and wheel files.
+
+```bash
+├── dist
+│   ├── analysis_package-0.1.0-py3-none-any.whl
+│   └── analysis_package-0.1.0.tar.gz
+```
+
+
+```{admonition} Wheel file naming
+:class: information, dropdown
+A .whl file is named as follows: `{dist}-{version}-{build}-{python}-{abi}-{platform}.whl`
+
+For additional information on wheels I recommend checking out [https://realpython.com/python-wheels/](https://realpython.com/python-wheels/)
+```
+
+When we know run a pip install locally we don't need to build the wheel. There's little advantage in our case, but we'll need these files when we look at uploading to PyPI shortly.
 
 
 

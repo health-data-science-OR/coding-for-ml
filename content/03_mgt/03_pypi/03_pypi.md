@@ -41,81 +41,57 @@ To create a token head to account settings and select **Create API token**.  You
 
 You will then be shown the generated token. **IMPORTANT** - you need to save this token to a very safe place. You won't be shown it again and you don't want to share it with others as it can access all projects in your account.  The token will take the following form: `pypi-[random string]`
 
-### Including source and wheel distributions
+### Using hatch to publish to and TestPyPI
 
-It is recommended that you include both a **source** and **wheel** distribution in your python package on pypi. Wheels are an advanced topic and it took me a while to get my head around what a wheel distribution actually is and why it is useful!  A nice phrase I came across is that '*wheels make things go faster*'
-
-* A source is just what you think it is.  It is your source code!
-
-* A wheel (.whl) is a ready-to-install python package i.e. no build stage is required. This is very useful for example if you have written custom C or Rust extensions for python. The wheel contains your extensions compiled and hence skips the build step.  Wheel's therefore make installation more efficient.  
-
-> You can create universal wheel's i.e. applicable to both python 2 and 3 or pure python wheels i.e. applicable to only python 3 or python 2, but not both.
-
-To install wheel use
+To publish on PyPI you need to upload a source tarball and wheel distribution. If you need a reminder of what a wheel is head over to the [introduction to installable packages](./01_local.md). To generate these files issue the following command in the top level of repo directory:
 
 ```bash
-$ pip install wheel
+hatch build
 ```
 
-To produce the source and the wheel run 
+This will create a new directory `dist/` containing the source and wheel files.
 
 ```bash
-$ python setup.py sdist bdist_wheel
+├── dist
+│   ├── analysis_package-0.1.0-py3-none-any.whl
+│   └── analysis_package-0.1.0.tar.gz
 ```
 
-* Now take a look in ./dist.  You should see both a zip file containing the source code and a .whl file containing the wheel.
-
-A .whl file is named as follows:
-
-```
-{dist}-{version}-{build}-{python}-{abi}-{platform}.whl
-```
-
-For additional information on wheels I recommend checking out [https://realpython.com/python-wheels/](https://realpython.com/python-wheels/)
-
-### Using twine and testpypi
-
-To publish on pypi and testpypi we need to install an simple to use piece of software called `twine`
+You are not ready to upload! Have your account wide API token to hand. To publish to `TestPyPI` we simply run 
 
 ```bash
-$ pip install twine
+hatch publish -r test
 ```
 
-It is sensible to check for any errors before publishing!  To do this run the code below
+* You will be prompted for a username enter `__token__`
+* You will then be prompted for the API token. Paste in your API token (this won't be displayed).
+
+The package will then be uploaded to TestPyPI and `hatch` will inform you if this has been successful.  If it has you will be prompted with a URL to the TestPyPI page for your new package. For example, https://test.pypi.org/project/analysis_package/0.1.0/. Go take a look at your page!
+
+### Install your package from TestPyPI
+
+On your web page will be a special TestPyPI link to install your package. This looks a bit different from production PyPI, but has the same result. For example, for `analysis_package` we install it as follows:
 
 ```bash
-$ twine check dist/*
-```
-This will check your source and wheel distributions for errors and report any issues.
+# let's intall into the hds_code env
+conda activate hds_code
 
-> Before you push to testpypi you need to have a unique name for your package!  I recommend making up your own name, but if you are feeling particularly unimaginative then use `pypi_template_{random_number}`. Set this in `setup.py`. **Check if it has been created and exists on testpypi first!**
-
-To publish on testpypi is simple.  The code below will prompt you for your username and password.
-
-```bash 
-$ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+# pip install analysis_package from TestPyPI
+pip install -i https://test.pypi.org/simple/analysis_package==0.1.0
 ```
 
-If this uploads successfully you can then `pip` install from testpypi as follows.  The URL for your package is available on the project page for testpypi.
+### Recommended: create a package specific API token.
+
+Now that you have created your package, I recommend logging back into your TestPyPI account and creating a package specific API token. It is more secure to work with API tokens that are specific to packages (especially if working in a team or group when developing the work). This avoids accidental uploads to different packages.  To do this select **projects**, your project (e.g. `analysis_package`) and then **settings**.
+
+![testpypi](../../../images/test_pypi3.png)
+
+### Publish on PyPI production
+
+First I just want to say that you should not publish on the main production PyPI platform unless it is needed.  Use PyPI when necessary to help your own research, work or colleagues, but not for testing purposes: use TestPyPI instead.  **You will need a separate account for PyPI.**.  If you intend to publish to PyPI then you need to follow all of the same steps we used for setting up TestPyPI.  
+
+When you are ready to upload there is a different `hatch` command to publish:
 
 ```bash
-$ pip install -i https://test.pypi.org/simple/{your_package_name}==0.1.0
+hatch publish
 ```
-
-### Publish on pypi production
-
-First I just want to say that you shouldn't really publish on the main production pypi site for unless you need to.  Use it when necessary to help your own research, work or colleagues, but not for testing purposes: use testpypi instead.  **You will need a separate account for PyPI.**.  If you intend to publish to pypi I recommend searching the index first in order to identify any potential name clashes.  
-
-When you are ready you can upload use `twine`
-
-```bash
-$ twine upload dist/*
-```
-
-## Building publishing into your workflow with GitHub Actions
-
-The manual steps I've outlined here are somewhat historical.  Most modern projects make use of version control in the cloud such as GitLab or GitHub.  These include ways to automatically publish updates to pypi.  One such way is with GitHub actions.  For example, I use **the publish to pypi action** when code is merge into the 'main' branch.
-
-To set this up you will need to supply GitHub with a username and password for pypi.  Its stored securely, but you may rightly have concerns about privacy and security. My approach has been to create a secondary maintainer account for pypi rather than storing my main PyPI credentials to GitHub. I will leave it up to you to make a decision about if you feel this is necessary.  It can always be updated at a later date.
-
-You can read more about Github actions [here](https://docs.github.com/en/actions)

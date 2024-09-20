@@ -97,6 +97,7 @@ parts:
     - file: content/03_mgt/03_pypi/01_local
     - file: content/03_mgt/03_pypi/02_github
     - file: content/03_mgt/03_pypi/03_pypi
+    - file: content/03_mgt/03_pypi/04_automation
     - file: content/03_mgt/04_binder/01_binder
   - file: content/03_mgt/04_exercises_front_page
     sections:
