@@ -12,8 +12,10 @@ Consistent identifier (represents all versions, resolves to latest): [![DOI](htt
 ### Changed
 
 * ENV: updated to python 3.11 and added linting packages and `hatch` for packaging.
+* ENV: upgraded packages to latest as of Jul 2024 including numpy > 2.0. Tested all numpy notebooks for compatibility.
 * Coding Scientific functions exercises: Added new exercise 3 that implements $W_q$ and $P_n$ from a M/M/1 queue.
 * Updated python packaging section.  Retired `setuptools` approach in favour of `hatch`. Split sections on installable packages, github install, PyPI install and automation.
+* Removed redundant numpy notebooks from old intro python course.
 * Removed `seaborn` dependency from visualise time series exercise.
 * Minor typo and sentence fixes.
 
