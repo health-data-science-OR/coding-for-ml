@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Case study: Cross-validation &#8212; Python for health data science.</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/01_algorithms/02_oop/03_oop_cv';</script>
@@ -78,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -141,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../front_page.html">
+  
   
   
   
@@ -153,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../_static/small_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/small_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../../_static/small_logo.png" class="logo__image only-light" alt="Python for health data science. - Home"/>
+    <script>document.write(`<img src="../../../_static/small_logo.png" class="logo__image only-dark" alt="Python for health data science. - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -174,32 +187,31 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/docker.html">Docker</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/04_scope.html">Variable Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/05_pep8.html">Coding Standards</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms and computational modelling</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01_design.html">The importance of design</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_design.html">The importance of design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01_design/01_primes.html">Computing prime numbers</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../01_design/02_better_design.html">Improving the prime sieve code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_design/03_micro_opt.html">Do micro-optimisations matter?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_design/04_summing_up.html">Summing up</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_oop.html">Designing using objects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_oop.html">Designing using objects</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_python_classes.html">A world of objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_oop_sim.html">Case study: ABS</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Case study: Cross-validation</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_numpy.html">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_numpy.html">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_numpy/01_performance.html">Arrays versus lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_numpy/02_vectors.html">Vectors and matricies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_numpy/03_slicing.html">Array slicing and indexing</a></li>
@@ -213,29 +225,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03_numpy/09_cs2.html">Case study 2: prime sieve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_numpy/10_cs3.html">Case study 3: online statistics</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_exercises.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_exercises.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04_exercises/01_science_funcs.html">Coding scientific functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_exercises/02_basic_oop.html">Basic Object Orientated Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_exercises/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_exercises/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05_debug.html">Debug challenges</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05_debug.html">Debug challenges</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../05_debug/01_debug_numpy.html"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> debug</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06_solutions.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_solutions.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06_solutions/01_science_funcs.html">Coding scientific functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06_solutions/02_basic_oop.html">Basic Object Orientated Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06_solutions/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06_solutions/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Programming</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">Data wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">Data wrangling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">Introduction to <strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">Working with files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">Case study: a large remote dataset</a></li>
@@ -243,54 +255,57 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/05_analysing.html">Analysing real data sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/06_cs_combining.html">Case study: Combining multiple sources</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">Visualising data</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">Visualising data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_matplotlib2.html">Multiple subplots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/03_cs_hm.html">Case study: heat map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">Case Study: ED Time Series</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_matplotlib.html">ED data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/02_stroke_data_wrangling.html">Stroke data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">Visualising time series data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions.html">ED Data Wrangling Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions.html">Stroke data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS.html">Visualising time series data</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Managing Data Science Projects</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_vc_front_page.html">Version control</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_vc_front_page.html">Version control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/02_git.html">Introducing Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/03_cs_1.html">Case study: Basic use of Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/04_cs_2.html">Case study: roll back and bug fix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/05_cs_3.html">Case study: Branching and merging</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">Deployment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/02_packaging/01_python_packages.html">Local python packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">PyPi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/01_local.html">Installable Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/02_github.html">Install from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/03_pypi.html">Publish a package on PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/04_automation.html">Automation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_binder/01_binder.html">BinderHub</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/01_python_packages.html">Python package exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/02_conda.html">Using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/03_binder.html">Binderhub exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/05_solutions/01_python_packages_solutions.html">Python package exercise</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -298,18 +313,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix Basic Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_lectures.html">Lectures</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_lectures.html">Lectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture1.html">Python Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture2.html">Conditionals and Loops</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_practicals.html">Practicals</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_practicals.html">Practicals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/01_basics.html">Basic Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug1.html">Debug challenge 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/02_basics.html">Conditionals and Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug2.html">Debug challenge 2</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -325,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -334,14 +349,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -366,14 +381,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/01_algorithms/02_oop/03_oop_cv.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -384,14 +399,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/01_algorithms/02_oop/03_oop_cv.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -530,26 +545,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -588,10 +605,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="case-study-cross-validation">
-<h1>Case study: Cross-validation<a class="headerlink" href="#case-study-cross-validation" title="Permalink to this heading">#</a></h1>
+<h1>Case study: Cross-validation<a class="headerlink" href="#case-study-cross-validation" title="Link to this heading">#</a></h1>
 <p>In supervised learning studies we distinguish between the training and test error rates. The test error rate refers to the average performance of a model when predicting a new observation (data that was not used in the training of the model).  A useful model is one that can accurately predict new observations!</p>
 <p>An issue in real ML studies is that data are expensive to collect and often a health data scientist doesn’t have as much validation data as they would ideally like for estimating the test error rate.  Cross-validation is a general term to describe a set of statistical methods for efficiently splitting a dataset in order to estimating the test error of a model.</p>
 <p>Cross validation methods are a nice example of where python classes can be used to design a framework for your ML. In the case study we will explore creating two classes for cross validation in machine learning: <strong>Leave-One-Out Cross-Validation</strong> and <strong>K-Fold Cross Validation.</strong></p>
@@ -613,7 +630,7 @@ document.write(`
 </div>
 </div>
 <section id="synthetic-data">
-<h2>Synthetic data<a class="headerlink" href="#synthetic-data" title="Permalink to this heading">#</a></h2>
+<h2>Synthetic data<a class="headerlink" href="#synthetic-data" title="Link to this heading">#</a></h2>
 <p>The function below generates synthetic data that can be used to test the classes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -712,7 +729,7 @@ document.write(`
 </div>
 </section>
 <section id="leave-one-out-cross-validation">
-<h2>Leave one out cross validation<a class="headerlink" href="#leave-one-out-cross-validation" title="Permalink to this heading">#</a></h2>
+<h2>Leave one out cross validation<a class="headerlink" href="#leave-one-out-cross-validation" title="Link to this heading">#</a></h2>
 <p>As it’s name suggests <strong>Leave on out cross validation (LOOCV)</strong> incrementally leaves one data point out of the training of a model.  It then predicts the single holdout sample.  This is repeated for every sample in the dataset.</p>
 <blockquote>
 <div><p>I’ve rarely seen this approach used in practice and its not a method I would consider using myself.  The reason is that it requires a lot of training cycles.  Combine LOOCV with parameter optimisation, a moderate sized dataset and a computationally intensive training routine and you’ll need to leave your code running overnight!  But its a nice simple example that we can use in our learning.</p>
@@ -839,7 +856,7 @@ cv score: 0.90
 </div>
 </section>
 <section id="what-about-if-we-wanted-to-use-a-different-cross-validation-method">
-<h2>What about if we wanted to use a different cross validation method?<a class="headerlink" href="#what-about-if-we-wanted-to-use-a-different-cross-validation-method" title="Permalink to this heading">#</a></h2>
+<h2>What about if we wanted to use a different cross validation method?<a class="headerlink" href="#what-about-if-we-wanted-to-use-a-different-cross-validation-method" title="Link to this heading">#</a></h2>
 <p>The second cross validation method on the menu is <strong>k-fold</strong> cross validation where <span class="math notranslate nohighlight">\(k\)</span> is typically set to 5 or 10. K-fold cross validation is therefore less computationally demanding than LOOCV. Here we will shuffle the dataset and then split it into k segments.  In each loop of our cross validation a model is trained on <span class="math notranslate nohighlight">\(k-1\)</span> segments while the final one is held out for testing.</p>
 <p>We will implement <code class="docutils literal notranslate"><span class="pre">KFold</span></code> so that it has the same <strong>interface</strong> as <code class="docutils literal notranslate"><span class="pre">LeaveOneOut</span></code>.  This means it has the a set of method signatures and properties in common with <code class="docutils literal notranslate"><span class="pre">LeaveOneOut</span></code>.  It will have the following method signatures in common:</p>
 <ul class="simple">
@@ -847,7 +864,7 @@ cv score: 0.90
 <li><p><code class="docutils literal notranslate"><span class="pre">split(self,</span> <span class="pre">X,</span> <span class="pre">y)</span></code> - returns an int</p></li>
 </ul>
 <section id="implementing-a-kfold-class">
-<h3>Implementing a <code class="docutils literal notranslate"><span class="pre">KFold</span></code> class<a class="headerlink" href="#implementing-a-kfold-class" title="Permalink to this heading">#</a></h3>
+<h3>Implementing a <code class="docutils literal notranslate"><span class="pre">KFold</span></code> class<a class="headerlink" href="#implementing-a-kfold-class" title="Link to this heading">#</a></h3>
 <p>The implementation of <code class="docutils literal notranslate"><span class="pre">KFold</span></code> is slightly more involved than LOOCV, but it is perfectly possible in standard python using either <code class="docutils literal notranslate"><span class="pre">for</span></code> loops or list comprehensions. I’ve opted for the latter as it allows a proportion of the logic to be expressed in a single (I would argue readable) line of python.</p>
 <p>First take a look at the class and then I’ll spend a bit of time explaining how it works.</p>
 <div class="cell docutils container">
@@ -933,7 +950,7 @@ cv score: 0.90
 </div>
 </section>
 <section id="kfold-split">
-<h3><code class="docutils literal notranslate"><span class="pre">KFold.split()</span></code><a class="headerlink" href="#kfold-split" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">KFold.split()</span></code><a class="headerlink" href="#kfold-split" title="Link to this heading">#</a></h3>
 <p>In the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method you should note that I do not directly randomise the <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> list parameters (containing the training data). I do not directly modify these lists because it will also modify the variables pointing to the same data outside of the class (its the same data because of the way python passes a list to a function).</p>
 <p>Here’s a simple function <code class="docutils literal notranslate"><span class="pre">modify_list</span></code> that illustrates what happens when you modify a list passed as a parameter.</p>
 <div class="cell docutils container">
@@ -977,7 +994,7 @@ Outside function AFTER call lst=[&#39;knights&#39;, &#39;who&#39;, &#39;say&#39;
 </div></blockquote>
 </section>
 <section id="using-kfold">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">KFold</span></code><a class="headerlink" href="#using-kfold" title="Permalink to this heading">#</a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">KFold</span></code><a class="headerlink" href="#using-kfold" title="Link to this heading">#</a></h3>
 <p>As KFold implements the same interface as <code class="docutils literal notranslate"><span class="pre">LeaveOneOut</span></code> we can reuse <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -999,7 +1016,7 @@ cv score: 0.85
 </section>
 </section>
 <section id="abstract-classes">
-<h2>Abstract classes<a class="headerlink" href="#abstract-classes" title="Permalink to this heading">#</a></h2>
+<h2>Abstract classes<a class="headerlink" href="#abstract-classes" title="Link to this heading">#</a></h2>
 <p>The two classes we have put together is the start of a small framework for cross validation. Its important to recognise that the moment you develop a framework of classes you hit problems - understanding, maintenance, and extension!  Here’s a few scenarios where you might hit problems:</p>
 <ul class="simple">
 <li><p>When you have a large number of classes to generate splits for cross validation it becomes difficult to keep these all in your head!  A far simpler concept is the idea of a <code class="docutils literal notranslate"><span class="pre">SplitGenerator</span></code>.</p></li>
@@ -1041,7 +1058,7 @@ cv score: 0.85
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_433104</span><span class="o">/</span><span class="mf">2482074630.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cv</span> <span class="o">=</span> <span class="n">AbstractSplitGenerator</span><span class="p">()</span>
 
 <span class="ne">TypeError</span>: Can&#39;t instantiate abstract class AbstractSplitGenerator with abstract methods get_n_splits, split
@@ -1214,8 +1231,8 @@ cv score: 0.90
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="02_oop_sim.html"
@@ -1243,6 +1260,7 @@ cv score: 0.90
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1280,9 +1298,10 @@ By Thomas Monks
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1306,8 +1325,8 @@ By Thomas Monks
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

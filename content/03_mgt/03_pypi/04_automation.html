@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Automation &#8212; Python for health data science.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/03_mgt/03_pypi/04_automation';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="BinderHub" href="../04_binder/01_binder.html" />
+    <link rel="prev" title="Publish a package on PyPI" href="03_pypi.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../front_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/small_logo.png" class="logo__image only-light" alt="Python for health data science. - Home"/>
+    <script>document.write(`<img src="../../../_static/small_logo.png" class="logo__image only-dark" alt="Python for health data science. - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../front_page.html">
+                    Preface
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/04_scope.html">Variable Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/05_pep8.html">Coding Standards</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms and computational modelling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/01_design.html">The importance of design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">Computing prime numbers</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">Improving the prime sieve code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">Do micro-optimisations matter?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">Summing up</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/02_oop.html">Designing using objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">A world of objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">Case study: ABS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/03_oop_cv.html">Case study: Cross-validation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/03_numpy.html">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">Arrays versus lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">Vectors and matricies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">Array slicing and indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/04_algebra.html">Array algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/05_statistics.html">Statistical procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/05a_regression.html">Regression using arrays</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/06_sampling.html">Random variables and simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/07_advanced_iter.html">Advanced Array Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/08_cs1.html">Case study 1: a bootstrap routine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">Case study 2: prime sieve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">Case study 3: online statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/04_exercises.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">Coding scientific functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/02_basic_oop.html">Basic Object Orientated Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/05_debug.html">Debug challenges</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> debug</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/06_solutions.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/01_science_funcs.html">Coding scientific functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/02_basic_oop.html">Basic Object Orientated Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Programming</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/01_pandas_front_page.html">Data wrangling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/01_intro_pandas.html">Introduction to <strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/02_files.html">Working with files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/03_non_standard_download.html">Case study: a large remote dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/04_datetimes.html">Managing time series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/05_analysing.html">Analysing real data sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/01_pandas/06_cs_combining.html">Case study: Combining multiple sources</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/02_visual_front_page.html">Visualising data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/01_matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_matplotlib2.html">Multiple subplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/03_cs_hm.html">Case study: heat map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/02_matplotlib/02_plotting_time_series.html">Case Study: ED Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/03_exercises_front_page.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/01_data_wrangling_matplotlib.html">ED data wrangling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/02_stroke_data_wrangling.html">Stroke data wrangling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/03_exercises/03_visualise_ts.html">Visualising time series data</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_stat_prog/04_solutions_front_page.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/01_data_wrangling_matplotlib_solutions.html">ED Data Wrangling Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/02_stroke_data_wrangling_solutions.html">Stroke data wrangling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_stat_prog/04_solutions/03_visualise_ts_SOLUTIONS.html">Visualising time series data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Managing Data Science Projects</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_vc_front_page.html">Version control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_git/02_git.html">Introducing Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_git/03_cs_1.html">Case study: Basic use of Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_git/04_cs_2.html">Case study: roll back and bug fix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_git/05_cs_3.html">Case study: Branching and merging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../03_mgt_front_page.html">Deployment</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../02_packaging/01_python_packages.html">Local python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_local.html">Installable Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_github.html">Install from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_pypi.html">Publish a package on PyPI</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Automation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_binder/01_binder.html">BinderHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_exercises_front_page.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_exercises/01_python_packages.html">Python package exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_exercises/02_conda.html">Using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_exercises/03_binder.html">Binderhub exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05_solutions_front_page.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05_solutions/01_python_packages_solutions.html">Python package exercise</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/acknowledge.html">Acknowledgements</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix Basic Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_lectures.html">Lectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture1.html">Python Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture2.html">Conditionals and Loops</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_practicals.html">Practicals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/01_basics.html">Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug1.html">Debug challenge 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/02_basics.html">Conditionals and Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug2.html">Debug challenge 2</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/health-data-science-OR/coding-for-ml" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/health-data-science-OR/coding-for-ml/issues/new?title=Issue%20on%20page%20%2Fcontent/03_mgt/03_pypi/04_automation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/03_mgt/03_pypi/04_automation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Automation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">GitHub Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-package-publication-to-pypi">Automating package publication to PyPI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-are-actions-stored">Where are actions stored?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="automation">
+<h1>Automation<a class="headerlink" href="#automation" title="Link to this heading">#</a></h1>
+<p>The manual upload steps I’ve outlined in the <a class="reference internal" href="03_pypi.html"><span class="std std-doc">PyPI section</span></a> are somewhat historical.  We know that most modern projects make use of version control in the cloud such as GitLab or GitHub.  These tools include ways to automatically publish updates to PyPI.</p>
+<section id="github-actions">
+<h2>GitHub Actions<a class="headerlink" href="#github-actions" title="Link to this heading">#</a></h2>
+<p>One option to automate publication of updates to a PyPI package is a GitHub action. An action can be described as a job or a workflow that runs when certain events are triggered. For example, when code is pushed to a remote repository or when a new release is created.  To be clear
+actions aren’t part of the package - they are instead a tools for continuous integration of code. They help the package managers do repetitive tasks needed for maintenance and publishing efficiently and consistently.</p>
+<p>Actions are specified in YAML (Yet Another Markup Language). And are actually quite straightforward to read.  GitHub has a large number of templates available you can use and adapt.</p>
+<p>You can read more about GitHub actions <a class="reference external" href="https://docs.github.com/en/actions">here</a></p>
+</section>
+<section id="automating-package-publication-to-pypi">
+<h2>Automating package publication to PyPI<a class="headerlink" href="#automating-package-publication-to-pypi" title="Link to this heading">#</a></h2>
+<p>The YAML below is an action that is used to automate the updating of a package on PyPI. It is triggered when a new <strong>release</strong> of the code is made on the main branch.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload Python Package</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">release</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">published</span><span class="p p-Indicator">]</span>
+
+<span class="nt">permissions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
+
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v3</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.x&#39;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">python -m pip install --upgrade pip</span>
+<span class="w">        </span><span class="no">pip install hatch</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build package</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hatch build</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish package</span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">__token__</span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span>
+</pre></div>
+</div>
+<p>To set this up you will need to supply GitHub with the API token for your package.  Its stored securely in GitHub in what is called a <strong>Secret</strong>.  In the YAML above you see the final line uses <code class="docutils literal notranslate"><span class="pre">${{</span> <span class="pre">secrets.PYPI_TOKEN</span> <span class="pre">}}</span></code>. This means I have named my secret that stores the API project token as <code class="docutils literal notranslate"><span class="pre">PYPI_TOKEN</span></code>. It is essential to create and use a package specific API token for PyPI (or TestPyPI). Do not use an account wide token.</p>
+<p>This action runs on a new release of the code.  A release is version of the package that follows the {major}.{minor}.{patch} (e.g. v1.1.2) naming convention we introduced when first learning how to <a class="reference internal" href="01_local.html"><span class="std std-doc">structure a local python package</span></a>. For simplicity I recommend ensuring release numbering matching the package version you have in <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. For any package on GitHub you can see the current version on the landing page. For example, for a package I am developing called <code class="docutils literal notranslate"><span class="pre">sim-tools</span></code> you can see the current version highlighted in the screenshot below.</p>
+<p><img alt="release" src="../../../_images/release.png" /></p>
+<p>To create a new release is simple. Click on the <strong>Releases</strong> link highlighted above followed by <strong>Draft new release</strong>.  You can read more about releases <a class="reference external" href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository">here</a></p>
+</section>
+<section id="where-are-actions-stored">
+<h2>Where are actions stored?<a class="headerlink" href="#where-are-actions-stored" title="Link to this heading">#</a></h2>
+<p>When we have added added an action to GitHub our repo looks slightly different.  We now have a new directory called <code class="docutils literal notranslate"><span class="pre">.github</span></code> that contains the YAML file describing the action.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analysis-package
+├── .github
+│   ├── workflows
+│   |   ├── publish_package.yml
+├── analysis_package
+│   ├── __init__.py
+│   ├── model.py
+│   ├── data
+│   |   ├── model_data.csv
+├── tests
+│   ├── test_model.py
+├── LICENSE
+├── environment.yml
+├── README.md
+└── pyproject.toml
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "health-data-science-OR/coding-for-ml",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/03_mgt/03_pypi"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_pypi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Publish a package on PyPI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../04_binder/01_binder.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">BinderHub</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">GitHub Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-package-publication-to-pypi">Automating package publication to PyPI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-are-actions-stored">Where are actions stored?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Thomas Monks
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

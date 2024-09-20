@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Case study: Combining multiple sources &#8212; Python for health data science.</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/02_stat_prog/01_pandas/06_cs_combining';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,9 +137,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../front_page.html">
+  
   
   
   
@@ -151,12 +153,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../_static/small_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/small_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../../_static/small_logo.png" class="logo__image only-light" alt="Python for health data science. - Home"/>
+    <script>document.write(`<img src="../../../_static/small_logo.png" class="logo__image only-dark" alt="Python for health data science. - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -172,32 +185,31 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/docker.html">Docker</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/04_scope.html">Variable Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/05_pep8.html">Coding Standards</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms and computational modelling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/01_design.html">The importance of design</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/01_design.html">The importance of design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">Computing prime numbers</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">Improving the prime sieve code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">Do micro-optimisations matter?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">Summing up</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/02_oop.html">Designing using objects</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/02_oop.html">Designing using objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">A world of objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">Case study: ABS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/03_oop_cv.html">Case study: Cross-validation</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/03_numpy.html">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/03_numpy.html">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">Arrays versus lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">Vectors and matricies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">Array slicing and indexing</a></li>
@@ -211,29 +223,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">Case study 2: prime sieve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">Case study 3: online statistics</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/04_exercises.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/04_exercises.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">Coding scientific functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/02_basic_oop.html">Basic Object Orientated Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/05_debug.html">Debug challenges</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/05_debug.html">Debug challenges</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> debug</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/06_solutions.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/06_solutions.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/01_science_funcs.html">Coding scientific functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/02_basic_oop.html">Basic Object Orientated Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Programming</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_pandas_front_page.html">Data wrangling</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../01_pandas_front_page.html">Data wrangling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_intro_pandas.html">Introduction to <strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_files.html">Working with files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_non_standard_download.html">Case study: a large remote dataset</a></li>
@@ -241,54 +253,57 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05_analysing.html">Analysing real data sets</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Case study: Combining multiple sources</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_visual_front_page.html">Visualising data</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_visual_front_page.html">Visualising data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02_matplotlib/01_matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_matplotlib/02_matplotlib2.html">Multiple subplots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_matplotlib/03_cs_hm.html">Case study: heat map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_matplotlib/02_plotting_time_series.html">Case Study: ED Time Series</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_exercises_front_page.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_exercises_front_page.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_exercises/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_exercises/01_data_wrangling_matplotlib.html">ED data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_exercises/02_stroke_data_wrangling.html">Stroke data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_exercises/03_visualise_ts.html">Visualising time series data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_solutions_front_page.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_solutions_front_page.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04_solutions/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_solutions/01_data_wrangling_matplotlib_solutions.html">ED Data Wrangling Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_solutions/02_stroke_data_wrangling_solutions.html">Stroke data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_solutions/03_visualise_ts_SOLUTIONS.html">Visualising time series data</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Managing Data Science Projects</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_vc_front_page.html">Version control</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_vc_front_page.html">Version control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/02_git.html">Introducing Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/03_cs_1.html">Case study: Basic use of Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/04_cs_2.html">Case study: roll back and bug fix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/05_cs_3.html">Case study: Branching and merging</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">Deployment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/02_packaging/01_python_packages.html">Local python packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">PyPi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/01_local.html">Installable Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/02_github.html">Install from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/03_pypi.html">Publish a package on PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/04_automation.html">Automation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_binder/01_binder.html">BinderHub</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/01_python_packages.html">Python package exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/02_conda.html">Using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/03_binder.html">Binderhub exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/05_solutions/01_python_packages_solutions.html">Python package exercise</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -296,18 +311,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix Basic Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_lectures.html">Lectures</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_lectures.html">Lectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture1.html">Python Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture2.html">Conditionals and Loops</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_practicals.html">Practicals</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_practicals.html">Practicals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/01_basics.html">Basic Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug1.html">Debug challenge 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/02_basics.html">Conditionals and Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug2.html">Debug challenge 2</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -323,7 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -332,14 +347,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -364,14 +379,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/01_pandas/06_cs_combining.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -382,14 +397,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/01_pandas/06_cs_combining.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -528,26 +543,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -589,10 +606,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="case-study-combining-multiple-sources">
-<h1>Case study: Combining multiple sources<a class="headerlink" href="#case-study-combining-multiple-sources" title="Permalink to this heading">#</a></h1>
+<h1>Case study: Combining multiple sources<a class="headerlink" href="#case-study-combining-multiple-sources" title="Link to this heading">#</a></h1>
 <p>This case study will work with data taken from <a class="reference external" href="https://www.england.nhs.uk/statistics/statistical-work-areas/diagnostic-imaging-dataset/">NHS England’s open diagnostic imaging dataset from 2019/20.</a></p>
 <p><strong>We will use three datasets</strong></p>
 <ul class="simple">
@@ -607,7 +624,7 @@ document.write(`
 <div><p>One area we can exploit here is that the datasets are ordered the same.  So the same provider and diagnostic imaging type appears in the same row across the datasets.  So the task is one of preprocessing and then <strong>concatenation</strong> by row.</p>
 </div></blockquote>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -618,7 +635,7 @@ document.write(`
 </div>
 </section>
 <section id="helper-functions">
-<h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this heading">#</a></h2>
+<h2>Helper functions<a class="headerlink" href="#helper-functions" title="Link to this heading">#</a></h2>
 <p>As method chaining will be used and also that we need to limit the data extracted from each dataframe two helper functions will be created.  These accept a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as a parameter and returns a subset of columns.</p>
 <blockquote>
 <div><p>In method chaining we will use these with the method <code class="docutils literal notranslate"><span class="pre">.pipe()</span></code>.  Don’t worry all should become clear when you see the code.</p>
@@ -636,7 +653,7 @@ document.write(`
 </div>
 </section>
 <section id="data-urls">
-<h2>Data URLS<a class="headerlink" href="#data-urls" title="Permalink to this heading">#</a></h2>
+<h2>Data URLS<a class="headerlink" href="#data-urls" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NREFS_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR&#39;</span> \
@@ -651,7 +668,7 @@ document.write(`
 </div>
 </section>
 <section id="a-look-at-the-individual-datasets">
-<h2>A look at the individual datasets<a class="headerlink" href="#a-look-at-the-individual-datasets" title="Permalink to this heading">#</a></h2>
+<h2>A look at the individual datasets<a class="headerlink" href="#a-look-at-the-individual-datasets" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_refs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NREFS_URL</span><span class="p">)</span>
@@ -804,9 +821,9 @@ document.write(`
 </div>
 </section>
 <section id="download-and-pre-processing-code">
-<h2>Download and pre-processing code.<a class="headerlink" href="#download-and-pre-processing-code" title="Permalink to this heading">#</a></h2>
+<h2>Download and pre-processing code.<a class="headerlink" href="#download-and-pre-processing-code" title="Link to this heading">#</a></h2>
 <section id="number-of-referrals">
-<h3>Number of referrals.<a class="headerlink" href="#number-of-referrals" title="Permalink to this heading">#</a></h3>
+<h3>Number of referrals.<a class="headerlink" href="#number-of-referrals" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># organisation info and num referrals</span>
@@ -831,6 +848,52 @@ document.write(`
             <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">})</span>
             <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Int32Dtype</span><span class="p">()})</span>
          <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">20</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># organisation info and num referrals</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">n_refs</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NREFS_URL</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>             <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39; Year &#39;</span><span class="p">:</span> <span class="s1">&#39;n_referrals&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                              <span class="s1">&#39;Region&#39;</span><span class="p">:</span> <span class="s1">&#39;region&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                              <span class="s1">&#39;Org Code&#39;</span><span class="p">:</span> <span class="s1">&#39;org_code&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                              <span class="s1">&#39;Provider name&#39;</span><span class="p">:</span> <span class="s1">&#39;provider&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                              <span class="s1">&#39;Modality&#39;</span><span class="p">:</span> <span class="s1">&#39;imaging_type&#39;</span><span class="p">})</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>             <span class="c1"># strip out white space</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>             <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">org_code</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;org_code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                     <span class="n">imaging_type</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;imaging_type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                     <span class="n">provider</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;provider&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>                     <span class="n">region</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>             <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">extract_index_plus_annual_column</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>             <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39; Year &#39;</span><span class="p">:</span> <span class="s1">&#39;n_referrals&#39;</span><span class="p">})</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>             <span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39; * &#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>             <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n_referrals</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>             <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n_referrals</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>             <span class="c1"># deal with NaN -&gt; to float and then nullable int (or keep float)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>             <span class="c1"># NaN is a float.  Nullable int use pd.Int64Dtype()</span>
+<span class="ne">---&gt; </span><span class="mi">20</span>             <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">})</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;n_referrals&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Int32Dtype</span><span class="p">()})</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>          <span class="p">)</span>
+
+<span class="nn">File ~/miniforge3/envs/hds_code/lib/python3.11/site-packages/numpy/__init__.py:394,</span> in <span class="ni">__getattr__</span><span class="nt">(attr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span>         <span class="sa">f</span><span class="s2">&quot;In the future `np.</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">` will be defined as the &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>         <span class="s2">&quot;corresponding NumPy scalar.&quot;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="k">if</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">__former_attrs__</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">394</span>     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">__former_attrs__</span><span class="p">[</span><span class="n">attr</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">396</span> <span class="k">if</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">__expired_attributes__</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">397</span>     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">398</span>         <span class="sa">f</span><span class="s2">&quot;`np.</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">` was removed in the NumPy 2.0 release. &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">399</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">__expired_attributes__</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">400</span>     <span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;numpy&#39; has no attribute &#39;float&#39;.
+<span class="err">`</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="err">`</span> <span class="n">was</span> <span class="n">a</span> <span class="n">deprecated</span> <span class="n">alias</span> <span class="k">for</span> <span class="n">the</span> <span class="n">builtin</span> <span class="err">`</span><span class="nb">float</span><span class="err">`</span><span class="o">.</span> <span class="n">To</span> <span class="n">avoid</span> <span class="n">this</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">existing</span> <span class="n">code</span><span class="p">,</span> <span class="n">use</span> <span class="err">`</span><span class="nb">float</span><span class="err">`</span> <span class="n">by</span> <span class="n">itself</span><span class="o">.</span> <span class="n">Doing</span> <span class="n">this</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">modify</span> <span class="nb">any</span> <span class="n">behavior</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">safe</span><span class="o">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">specifically</span> <span class="n">wanted</span> <span class="n">the</span> <span class="n">numpy</span> <span class="n">scalar</span> <span class="nb">type</span><span class="p">,</span> <span class="n">use</span> <span class="err">`</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="err">`</span> <span class="n">here</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">aliases</span> <span class="n">was</span> <span class="n">originally</span> <span class="n">deprecated</span> <span class="ow">in</span> <span class="n">NumPy</span> <span class="mf">1.20</span><span class="p">;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">details</span> <span class="ow">and</span> <span class="n">guidance</span> <span class="n">see</span> <span class="n">the</span> <span class="n">original</span> <span class="n">release</span> <span class="n">note</span> <span class="n">at</span><span class="p">:</span>
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">numpy</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">devdocs</span><span class="o">/</span><span class="n">release</span><span class="o">/</span><span class="mf">1.20.0</span><span class="o">-</span><span class="n">notes</span><span class="o">.</span><span class="n">html</span><span class="c1">#deprecations</span>
 </pre></div>
 </div>
 </div>
@@ -890,7 +953,7 @@ document.write(`
 </div>
 </section>
 <section id="request-to-diagnostic-imaging">
-<h3>Request to diagnostic imaging.<a class="headerlink" href="#request-to-diagnostic-imaging" title="Permalink to this heading">#</a></h3>
+<h3>Request to diagnostic imaging.<a class="headerlink" href="#request-to-diagnostic-imaging" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># days from request to imaging</span>
@@ -947,7 +1010,7 @@ document.write(`
 </div>
 </section>
 <section id="imaging-to-reporting-of-results">
-<h3>Imaging to reporting of results<a class="headerlink" href="#imaging-to-reporting-of-results" title="Permalink to this heading">#</a></h3>
+<h3>Imaging to reporting of results<a class="headerlink" href="#imaging-to-reporting-of-results" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># days from imaging to report</span>
@@ -1005,7 +1068,7 @@ document.write(`
 </section>
 </section>
 <section id="combine-the-three-sources">
-<h2>Combine the three sources<a class="headerlink" href="#combine-the-three-sources" title="Permalink to this heading">#</a></h2>
+<h2>Combine the three sources<a class="headerlink" href="#combine-the-three-sources" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># combined dataset</span>
@@ -1136,7 +1199,7 @@ memory usage: 68.7+ KB
 </div>
 </section>
 <section id="create-south-west-dataset">
-<h2>Create South West dataset<a class="headerlink" href="#create-south-west-dataset" title="Permalink to this heading">#</a></h2>
+<h2>Create South West dataset<a class="headerlink" href="#create-south-west-dataset" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">south_west</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;RB2&#39;</span><span class="p">,</span> <span class="s1">&#39;RK9&#39;</span><span class="p">,</span> <span class="s1">&#39;RA9&#39;</span><span class="p">,</span> <span class="s1">&#39;REF&#39;</span><span class="p">,</span> <span class="s1">&#39;RH8&#39;</span><span class="p">]</span>
@@ -1257,8 +1320,8 @@ memory usage: 68.7+ KB
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="05_analysing.html"
@@ -1286,6 +1349,7 @@ memory usage: 68.7+ KB
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1326,9 +1390,10 @@ By Thomas Monks
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1352,8 +1417,8 @@ By Thomas Monks
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

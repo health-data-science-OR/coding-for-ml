@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Multiple subplots &#8212; Python for health data science.</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/02_stat_prog/02_matplotlib/02_matplotlib2';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,9 +137,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../front_page.html">
+  
   
   
   
@@ -151,12 +153,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../_static/small_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/small_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../../_static/small_logo.png" class="logo__image only-light" alt="Python for health data science. - Home"/>
+    <script>document.write(`<img src="../../../_static/small_logo.png" class="logo__image only-dark" alt="Python for health data science. - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -172,32 +185,31 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/docker.html">Docker</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/04_scope.html">Variable Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/05_pep8.html">Coding Standards</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms and computational modelling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/01_design.html">The importance of design</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/01_design.html">The importance of design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/01_primes.html">Computing prime numbers</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/02_better_design.html">Improving the prime sieve code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/03_micro_opt.html">Do micro-optimisations matter?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/01_design/04_summing_up.html">Summing up</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/02_oop.html">Designing using objects</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/02_oop.html">Designing using objects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/01_python_classes.html">A world of objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/02_oop_sim.html">Case study: ABS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/02_oop/03_oop_cv.html">Case study: Cross-validation</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/03_numpy.html">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/03_numpy.html">Scientific coding in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/01_performance.html">Arrays versus lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/02_vectors.html">Vectors and matricies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/03_slicing.html">Array slicing and indexing</a></li>
@@ -211,29 +223,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/09_cs2.html">Case study 2: prime sieve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/03_numpy/10_cs3.html">Case study 3: online statistics</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/04_exercises.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/04_exercises.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/01_science_funcs.html">Coding scientific functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/02_basic_oop.html">Basic Object Orientated Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/04_exercises/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/05_debug.html">Debug challenges</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/05_debug.html">Debug challenges</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/05_debug/01_debug_numpy.html"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> debug</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/06_solutions.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_algorithms/06_solutions.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/01_science_funcs.html">Coding scientific functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/02_basic_oop.html">Basic Object Orientated Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/02_array.html">Working with an <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../01_algorithms/06_solutions/04_numpy_stats.html">Statistical procedures in <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Programming</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01_pandas_front_page.html">Data wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_pandas_front_page.html">Data wrangling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01_pandas/01_intro_pandas.html">Introduction to <strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_pandas/02_files.html">Working with files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_pandas/03_non_standard_download.html">Case study: a large remote dataset</a></li>
@@ -241,54 +253,57 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../01_pandas/05_analysing.html">Analysing real data sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_pandas/06_cs_combining.html">Case study: Combining multiple sources</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_visual_front_page.html">Visualising data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../02_visual_front_page.html">Visualising data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_matplotlib.html">Introduction to <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Multiple subplots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_cs_hm.html">Case study: heat map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_plotting_time_series.html">Case Study: ED Time Series</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03_exercises_front_page.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_exercises_front_page.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03_exercises/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_exercises/01_data_wrangling_matplotlib.html">ED data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_exercises/02_stroke_data_wrangling.html">Stroke data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03_exercises/03_visualise_ts.html">Visualising time series data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_solutions_front_page.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_solutions_front_page.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04_solutions/00_dataframes.html">Working with a <code class="docutils literal notranslate"><span class="pre">pandas.Dataframe</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_solutions/01_data_wrangling_matplotlib_solutions.html">ED Data Wrangling Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_solutions/02_stroke_data_wrangling_solutions.html">Stroke data wrangling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_solutions/03_visualise_ts_SOLUTIONS.html">Visualising time series data</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Managing Data Science Projects</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_vc_front_page.html">Version control</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_vc_front_page.html">Version control</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/02_git.html">Introducing Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/03_cs_1.html">Case study: Basic use of Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/04_cs_2.html">Case study: roll back and bug fix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/01_git/05_cs_3.html">Case study: Branching and merging</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/03_mgt_front_page.html">Deployment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/02_packaging/01_python_packages.html">Local python packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/01_pypi.html">PyPi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/01_local.html">Installable Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/02_github.html">Install from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/03_pypi.html">Publish a package on PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_mgt/03_pypi/04_automation.html">Automation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_binder/01_binder.html">BinderHub</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/04_exercises_front_page.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/01_python_packages.html">Python package exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/02_conda.html">Using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/04_exercises/03_binder.html">Binderhub exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_mgt/05_solutions_front_page.html">Solutions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../03_mgt/05_solutions/01_python_packages_solutions.html">Python package exercise</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -296,18 +311,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix Basic Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_lectures.html">Lectures</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_lectures.html">Lectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture1.html">Python Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/lectures/Lecture2.html">Conditionals and Loops</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_practicals.html">Practicals</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/fp_practicals.html">Practicals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/01_basics.html">Basic Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug1.html">Debug challenge 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/02_basics.html">Conditionals and Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/labs/debug2.html">Debug challenge 2</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -323,7 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -332,14 +347,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -364,14 +379,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/health-data-science-OR/coding-for-ml/main?urlpath=lab/tree/content/02_stat_prog/02_matplotlib/02_matplotlib2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -382,14 +397,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/health-data-science-OR/coding-for-ml/blob/main/content/02_stat_prog/02_matplotlib/02_matplotlib2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -528,26 +543,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -586,10 +603,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="multiple-subplots">
-<h1>Multiple subplots<a class="headerlink" href="#multiple-subplots" title="Permalink to this heading">#</a></h1>
+<h1>Multiple subplots<a class="headerlink" href="#multiple-subplots" title="Link to this heading">#</a></h1>
 <p>So far we have looked at relatively simple <code class="docutils literal notranslate"><span class="pre">maplotlib</span></code> plots.  You might argue, what is the advantage of this over charts produced by my favourite spreadsheet program?  I forgive you for thinking this, but I’d like to point out that even in the simple plots we have generated there are a couple of subtle, but important differences.  The first is that <strong><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> code is python code</strong> so its reproducible and verifiable.  Python is easy to share with other people regardless of their budget, location, career stage or software skills. The open workflow is excellent for finding mistakes and refactoring.  Constrast that to spreadsheets that are notoriously opaque.  Secondly, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> allows you to <strong>produce high resolution images for publication</strong>.  I can’t tell you how frustrating it is to review scientific papers that include [<em>insert you favourite software vendor</em>] spreadsheet generated low resolution charts that are blurred and unclear.</p>
 <p>The even better news is that there is far more that <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> has too offer.  We will look at one such feature here: figures that consist of two or more subplots.</p>
 <blockquote>
@@ -605,7 +622,7 @@ document.write(`
 </div>
 </div>
 <section id="adding-a-second-subplot">
-<h2>Adding a second subplot<a class="headerlink" href="#adding-a-second-subplot" title="Permalink to this heading">#</a></h2>
+<h2>Adding a second subplot<a class="headerlink" href="#adding-a-second-subplot" title="Link to this heading">#</a></h2>
 <p>Initially let’s have a look at a simple example: a figure that includes two subplots above and below that share an x-axis.  For most purposes I would recommend <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>.  This is a function is a bit like a <strong>factory</strong> that does all of the work for you based on a number of optional parameters you provide.  For example to create two plots above and below that have their own independent x-axes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -614,7 +631,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/9895e1b20d0597f2175a02d84805f22a4c2ddfc43d4027ec7d36ab3f43cb5de8.png" src="../../../_images/9895e1b20d0597f2175a02d84805f22a4c2ddfc43d4027ec7d36ab3f43cb5de8.png" />
+<img alt="../../../_images/6467a8a22a96bf39b5590e4fe731061049da524df9bc602f9b5fe0f0038ebd7a.png" src="../../../_images/6467a8a22a96bf39b5590e4fe731061049da524df9bc602f9b5fe0f0038ebd7a.png" />
 </div>
 </div>
 <p>Here we simply set the <code class="docutils literal notranslate"><span class="pre">nrows</span></code> optional parameter to 2 (default=1). Note that <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> returns <code class="docutils literal notranslate"><span class="pre">fig</span></code> and we unpack the second return value to <code class="docutils literal notranslate"><span class="pre">ax1</span></code> and <code class="docutils literal notranslate"><span class="pre">ax2</span></code>.  If we do not unpack (in cases where there are many subplots) the notation <code class="docutils literal notranslate"><span class="pre">axs</span></code> is the convention.  <code class="docutils literal notranslate"><span class="pre">axs</span></code> is a <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></p>
@@ -629,7 +646,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/9895e1b20d0597f2175a02d84805f22a4c2ddfc43d4027ec7d36ab3f43cb5de8.png" src="../../../_images/9895e1b20d0597f2175a02d84805f22a4c2ddfc43d4027ec7d36ab3f43cb5de8.png" />
+<img alt="../../../_images/6467a8a22a96bf39b5590e4fe731061049da524df9bc602f9b5fe0f0038ebd7a.png" src="../../../_images/6467a8a22a96bf39b5590e4fe731061049da524df9bc602f9b5fe0f0038ebd7a.png" />
 </div>
 </div>
 <p>To force the subplots to share the x-axis we simply pass in the <code class="docutils literal notranslate"><span class="pre">sharex</span></code> bool.`</p>
@@ -642,7 +659,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7eb3cd7b2fb604311ff84ab463a5918504f005d59ff7b88b2b34480ae9429be7.png" src="../../../_images/7eb3cd7b2fb604311ff84ab463a5918504f005d59ff7b88b2b34480ae9429be7.png" />
+<img alt="../../../_images/5a73338cbb40c555c1103b17f2d5d168691c2d4491f2db844a9891f58b724947.png" src="../../../_images/5a73338cbb40c555c1103b17f2d5d168691c2d4491f2db844a9891f58b724947.png" />
 </div>
 </div>
 <p>To switch to columns instead of rows we can use the <code class="docutils literal notranslate"><span class="pre">ncols</span></code> optional parameter.  If we want each subplot to share the y axes use <code class="docutils literal notranslate"><span class="pre">sharey=True</span></code></p>
@@ -653,12 +670,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/6b82ac95cad0883a29146ce1f0642af0fec3fc0c3d579e7ef51fa103840b1044.png" src="../../../_images/6b82ac95cad0883a29146ce1f0642af0fec3fc0c3d579e7ef51fa103840b1044.png" />
+<img alt="../../../_images/3f8f81e4637fecd6501769003389df610e8dbc3c4ca235445e660541fe108e2d.png" src="../../../_images/3f8f81e4637fecd6501769003389df610e8dbc3c4ca235445e660541fe108e2d.png" />
 </div>
 </div>
 </section>
 <section id="or-more-subplots">
-<h2>3 or more subplots<a class="headerlink" href="#or-more-subplots" title="Permalink to this heading">#</a></h2>
+<h2>3 or more subplots<a class="headerlink" href="#or-more-subplots" title="Link to this heading">#</a></h2>
 <p>The optional parameters <code class="docutils literal notranslate"><span class="pre">nrows</span></code> and <code class="docutils literal notranslate"><span class="pre">ncols</span></code> make it easy to create a grid of subplots within a figure. At this stage I would also recommend setting a layout argument.  Two useful ones are <code class="docutils literal notranslate"><span class="pre">constrained_layout</span></code> and <code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>.  These are both bool arguments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,7 +691,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8f7b80c01637549a4f4d5649e9a0f1a89030717b20c443906f51b494d5e07646.png" src="../../../_images/8f7b80c01637549a4f4d5649e9a0f1a89030717b20c443906f51b494d5e07646.png" />
+<img alt="../../../_images/a0409e6561a32ade2d427705a5475ae37205dcf745d333b561d55fa773f917cf.png" src="../../../_images/a0409e6561a32ade2d427705a5475ae37205dcf745d333b561d55fa773f917cf.png" />
 </div>
 </div>
 <p>There may also be use cases where you need the subplots to be sized differently.  For example two rows of subplots where the top row is a quarter of the size of the bottom row.  The <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> function accepts a <code class="docutils literal notranslate"><span class="pre">gridspec_kw</span></code> dict that allows you to control the height (and width) ratios of plots.</p>
@@ -687,15 +704,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/adef98f6c50f12d408cc05456b94980cbe2352d0b4ad36c4bb13f4fae0836247.png" src="../../../_images/adef98f6c50f12d408cc05456b94980cbe2352d0b4ad36c4bb13f4fae0836247.png" />
+<img alt="../../../_images/78e7f978ced4b53f09165df021530c741dd98c318d4fc1ff14206fce2c629302.png" src="../../../_images/78e7f978ced4b53f09165df021530c741dd98c318d4fc1ff14206fce2c629302.png" />
 </div>
 </div>
 </section>
 <section id="understanding-the-parameters-of-add-subplot">
-<h2>Understanding the parameters of <code class="docutils literal notranslate"><span class="pre">add_subplot</span></code><a class="headerlink" href="#understanding-the-parameters-of-add-subplot" title="Permalink to this heading">#</a></h2>
+<h2>Understanding the parameters of <code class="docutils literal notranslate"><span class="pre">add_subplot</span></code><a class="headerlink" href="#understanding-the-parameters-of-add-subplot" title="Link to this heading">#</a></h2>
 <p>In some scenarios the <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> factory function might not offer quite enough control.  Or you might prefer a more explicit fine grained way to create the different components of your plot. The good news is that <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> offers incredible control over subplots.  My view is that for newcomers to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> this can sometimes be intimidating or (as was my case) may result in you using the controls without fully understanding them!  Let’s try to get it right at the beginning.</p>
 <section id="sizing-the-subplot">
-<h3>Sizing the subplot<a class="headerlink" href="#sizing-the-subplot" title="Permalink to this heading">#</a></h3>
+<h3>Sizing the subplot<a class="headerlink" href="#sizing-the-subplot" title="Link to this heading">#</a></h3>
 <p>We have already seen that to add a subplot we can use:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
@@ -716,7 +733,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/4832ba3fa5b4bbff3a50cf44ba5dacba418df7ddaf5e6a8da3855ec07f12454a.png" src="../../../_images/4832ba3fa5b4bbff3a50cf44ba5dacba418df7ddaf5e6a8da3855ec07f12454a.png" />
+<img alt="../../../_images/64b6c819479d78341a71317dc1519cab5c8c0c2598b05adb19a0c31ca56e8c0f.png" src="../../../_images/64b6c819479d78341a71317dc1519cab5c8c0c2598b05adb19a0c31ca56e8c0f.png" />
 </div>
 </div>
 <p>When we use the parameters <code class="docutils literal notranslate"><span class="pre">(1,1,1)</span></code> the subplot fills the full figure.  If we want the subplot to occupy the top third of the figure only, we need to break the figure into three rows by setting <code class="docutils literal notranslate"><span class="pre">nrows=3</span></code></p>
@@ -728,7 +745,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/bce04b76e0c961bd8c01585810a6f0e5d6da176b928a4a12bd5978bed641ec0d.png" src="../../../_images/bce04b76e0c961bd8c01585810a6f0e5d6da176b928a4a12bd5978bed641ec0d.png" />
+<img alt="../../../_images/cf947310963de7881af85a362324020ce3e1580f03fecbfe1b15f1b9bc4a3c47.png" src="../../../_images/cf947310963de7881af85a362324020ce3e1580f03fecbfe1b15f1b9bc4a3c47.png" />
 </div>
 </div>
 <p>For half we would use <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">1</span></code></p>
@@ -740,7 +757,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d1dc538006178e0b656dc4bf2cf1aee8485d319dbfda8e3cdf2ad7d76b323e44.png" src="../../../_images/d1dc538006178e0b656dc4bf2cf1aee8485d319dbfda8e3cdf2ad7d76b323e44.png" />
+<img alt="../../../_images/15f26651258b73a056552852c9d56e46207976cebb8d92cda0592b0e01301b57.png" src="../../../_images/15f26651258b73a056552852c9d56e46207976cebb8d92cda0592b0e01301b57.png" />
 </div>
 </div>
 <p>Alternatively if we want the plot to occupy the first vertical third use three columns and set <code class="docutils literal notranslate"><span class="pre">ncols=3</span></code></p>
@@ -752,7 +769,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8d39641aea71409d12579975785c50686a2d564daa6a7fd60a39002a4eeb38f9.png" src="../../../_images/8d39641aea71409d12579975785c50686a2d564daa6a7fd60a39002a4eeb38f9.png" />
+<img alt="../../../_images/add5df0e03765f71e8297f66ce2b094963b221ea75a5bf5fa123dbed4e3e1a48.png" src="../../../_images/add5df0e03765f71e8297f66ce2b094963b221ea75a5bf5fa123dbed4e3e1a48.png" />
 </div>
 </div>
 <p>We use also <code class="docutils literal notranslate"><span class="pre">nrows</span></code> and <code class="docutils literal notranslate"><span class="pre">ncols</span></code> simultaneously to limit the width and height of the subplot.  For example, one third of the figure height and one half of the width using <code class="docutils literal notranslate"><span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">1</span></code>:</p>
@@ -764,7 +781,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/f5fc67a39c141a2d8e70a8d6ef668ed7ab899ad98a729b0a2c70406dcc034a3e.png" src="../../../_images/f5fc67a39c141a2d8e70a8d6ef668ed7ab899ad98a729b0a2c70406dcc034a3e.png" />
+<img alt="../../../_images/9c094903244beb9bdd09d401017730a2404b2d076fd9e768a42f5da40c39feb3.png" src="../../../_images/9c094903244beb9bdd09d401017730a2404b2d076fd9e768a42f5da40c39feb3.png" />
 </div>
 </div>
 <p>Note that in many <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> examples you see on line the <code class="docutils literal notranslate"><span class="pre">,</span></code> will be ommitted from the parameters i.e. a shorthand for</p>
@@ -780,7 +797,7 @@ document.write(`
 <p>Stylistically I prefer the first approach as its much more explicit that there are three parameters as opposed to one three digit integer.  The ‘short hand’ approach - although seen frequently online - is an approach I try to avoid.=(</p>
 </section>
 <section id="adding-a-second-subplot-using-add-subplot">
-<h3>Adding a second subplot using <code class="docutils literal notranslate"><span class="pre">.add_subplot()</span></code><a class="headerlink" href="#adding-a-second-subplot-using-add-subplot" title="Permalink to this heading">#</a></h3>
+<h3>Adding a second subplot using <code class="docutils literal notranslate"><span class="pre">.add_subplot()</span></code><a class="headerlink" href="#adding-a-second-subplot-using-add-subplot" title="Link to this heading">#</a></h3>
 <p>Let’s have a look at a simple example: a figure that includes two subplots above and below that share an x-axis. We will also learn how to understand the <code class="docutils literal notranslate"><span class="pre">index</span></code> parameter.</p>
 <p>The first thing we will do is divide our figure into 2 rows and place subplot into the first row by setting <code class="docutils literal notranslate"><span class="pre">index=1</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -807,7 +824,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/6ebff7321c81274f70d9e2c653cc6b63b51e8bbb25a2887855917a7c4880cd28.png" src="../../../_images/6ebff7321c81274f70d9e2c653cc6b63b51e8bbb25a2887855917a7c4880cd28.png" />
+<img alt="../../../_images/520a27f0e75a90a3843519786f8245aaea318aa85e43230c68ec7f25bbbd64cf.png" src="../../../_images/520a27f0e75a90a3843519786f8245aaea318aa85e43230c68ec7f25bbbd64cf.png" />
 </div>
 </div>
 <p>Note the different x-axes scales. To share the x axis we need to add in <code class="docutils literal notranslate"><span class="pre">sharex=ax1</span></code> to the second <code class="docutils literal notranslate"><span class="pre">fig.add_subplot</span></code> call.</p>
@@ -824,7 +841,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/c89311e587f6a8202d6869fa4a86249c68d771e0f4b8ad9057e74ec0536f8da5.png" src="../../../_images/c89311e587f6a8202d6869fa4a86249c68d771e0f4b8ad9057e74ec0536f8da5.png" />
+<img alt="../../../_images/ea2410e77a30b7d5ee4b856582b9adc9f50b93cfe65d205b9aa20a929cff9d3a.png" src="../../../_images/ea2410e77a30b7d5ee4b856582b9adc9f50b93cfe65d205b9aa20a929cff9d3a.png" />
 </div>
 </div>
 <p>Although the subplots are sharing an x-axis they both show it by default.  We can turn an x-axis off by using the command:</p>
@@ -846,7 +863,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7867a808a7cf3d24bca1e765b91e4c658cdcfb97908743ae1acc6aef85d26e8a.png" src="../../../_images/7867a808a7cf3d24bca1e765b91e4c658cdcfb97908743ae1acc6aef85d26e8a.png" />
+<img alt="../../../_images/45b463261253fc4497e521b6c06833074485ed1d5c88f79ab42f8e8533125b19.png" src="../../../_images/45b463261253fc4497e521b6c06833074485ed1d5c88f79ab42f8e8533125b19.png" />
 </div>
 </div>
 <p>Great!  Now let’s create a figure with a 2x2 grid of subplots.  We will also share the x and y axis across them.</p>
@@ -876,12 +893,12 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/0317d0c344d01bb78def2018e30bfb193a5dcdb05d65211defbb5117c600e862.png" src="../../../_images/0317d0c344d01bb78def2018e30bfb193a5dcdb05d65211defbb5117c600e862.png" />
+<img alt="../../../_images/260b8c5835699676d4f2dafd5b3069a72a17306514bac515a9388a488a2fb954.png" src="../../../_images/260b8c5835699676d4f2dafd5b3069a72a17306514bac515a9388a488a2fb954.png" />
 </div>
 </div>
 </section>
 <section id="using-a-gridspec-object">
-<h3>Using a gridspec object<a class="headerlink" href="#using-a-gridspec-object" title="Permalink to this heading">#</a></h3>
+<h3>Using a gridspec object<a class="headerlink" href="#using-a-gridspec-object" title="Link to this heading">#</a></h3>
 <p>We can also create a <code class="docutils literal notranslate"><span class="pre">gridspec</span></code> object and use it to make our subplots vary in size.   This can get quite detailed and I recommend exploring this in detail in <code class="docutils literal notranslate"><span class="pre">matplotlib.gridspec</span></code> <a class="reference external" href="https://matplotlib.org/stable/tutorials/intermediate/gridspec.html">docs</a>.</p>
 <p>Unlike our <strong>factory</strong> method we don’t have ratio commands, but it is still easy to implement.  For example to recreate our factory example with <code class="docutils literal notranslate"><span class="pre">gridspec_kw</span></code> we need to create a grid with 3 rows and 1 column.  We then add a subplot the row at index 0 and a subplot to span rows 1 and 2.</p>
 <p>We add a grid spec of 3 rows and 1 column with this command</p>
@@ -899,7 +916,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/59309d7ddb95e27f0d7a5b5d3376d589b8d4820ee0c20266d56770099172f3f2.png" src="../../../_images/59309d7ddb95e27f0d7a5b5d3376d589b8d4820ee0c20266d56770099172f3f2.png" />
+<img alt="../../../_images/983239794acc868725f502741272c857723dee409e72c98fa491e76d89937a37.png" src="../../../_images/983239794acc868725f502741272c857723dee409e72c98fa491e76d89937a37.png" />
 </div>
 </div>
 <p>Here is a more complicated use of a gridspec.  We have divided the grid up into 3 rows and 2 columns.  In the first column we have two plots. Lets call them plot a and plot b. In the second column we have a single plot c. Plot a spans a single row and a single column. We add that to the figure using the numpy list slicing notation:</p>
@@ -931,13 +948,13 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/4ef6faeeb4ac0c0ec1404defe1c37f9f26726fb5fada81545556ca99b6a45371.png" src="../../../_images/4ef6faeeb4ac0c0ec1404defe1c37f9f26726fb5fada81545556ca99b6a45371.png" />
+<img alt="../../../_images/d7ae59c61eedb3e92d4a2d824711135eb7b5e8bc47a1d22238e5749ebba35170.png" src="../../../_images/d7ae59c61eedb3e92d4a2d824711135eb7b5e8bc47a1d22238e5749ebba35170.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="summing-up">
-<h2>Summing up<a class="headerlink" href="#summing-up" title="Permalink to this heading">#</a></h2>
+<h2>Summing up<a class="headerlink" href="#summing-up" title="Link to this heading">#</a></h2>
 <p>By now you should be able to see the advantages of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> for generating your plots.  It is powerful and once you have seen some examples, simple to use.  There’s also a few ways you can use it depending on the level of control needed (or preferences).</p>
 </section>
 </section>
@@ -969,8 +986,8 @@ subplot into the second row.</p>
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="01_matplotlib.html"
@@ -998,6 +1015,7 @@ subplot into the second row.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1035,9 +1053,10 @@ By Thomas Monks
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1061,8 +1080,8 @@ By Thomas Monks
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
