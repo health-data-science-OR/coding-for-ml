@@ -34,9 +34,9 @@ The book will evolve over time. I'd greatly welcome feedback, via Github issues,
 For new content requests please
 
 * Detail the requested content including description and lists of any relevant packages
-* Provide a case why this content relevant to health data scientist
+* Explain why this content is relevant to health data scientists
 * Optional: provide an example 
-* Label the issue an an `enhancement`
+* Label the issue as an `enhancement`
 
 ### General feedback
 

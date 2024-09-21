@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" modified="2024-08-05T15:37:18.865Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" etag="Zh93oByyKxorJyitLcNe" version="24.5.4" type="device">
+  <diagram name="Page-1" id="_NGZ6Zvq45jVciO4eiLn">
+    <mxGraphModel dx="1434" dy="2341" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="i-MEir7v6SuMnobHPEUq-23" value="&#xa;&#xa;&#xa;&#xa;&#xa;python=3.8.19&#xa;numpy==1.24&#xa;pandas==1.53&#xa;your-package==1.0.0 &#xa;" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-19" value="Project 1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fontStyle=1;shadow=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="135" y="90" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-24" value="&#xa;&#xa;&#xa;&#xa;&#xa;python=3.7&#xa;numpy==1.18&#xa;pandas==1.21&#xa;your-package==1.0.0 &#xa;" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="310" y="80" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-25" value="Project 2" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fontStyle=1;shadow=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="340" y="90" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-26" value="&#xa;&#xa;&#xa;&#xa;&#xa;python=3.10&#xa;numpy==1.26&#xa;pandas==2.2.2&#xa;your-package==1.0.0 &#xa;" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="520" y="80" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-27" value="Project 3" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fontStyle=1;shadow=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="555" y="90" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" edge="1" parent="1" source="i-MEir7v6SuMnobHPEUq-28" target="i-MEir7v6SuMnobHPEUq-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;" edge="1" parent="1" source="i-MEir7v6SuMnobHPEUq-28" target="i-MEir7v6SuMnobHPEUq-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;" edge="1" parent="1" source="i-MEir7v6SuMnobHPEUq-28" target="i-MEir7v6SuMnobHPEUq-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-28" value="&#xa;&#xa;&#xa;&#xa;Requires:&#xa;Python &gt;= 3.7  &lt;= 3.11&#xa;numpy &gt;= 1.18 &lt; 2.0&#xa;pandas &gt; 1.2" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="310" y="-170" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-29" value="your-package&#xa;v1.0.0&#xa;" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fontStyle=1;shadow=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="340" y="-160" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-34" value="&#xa;&#xa;&#xa;&#xa;&#xa;python=3.6&#xa;" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="730" y="80" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="i-MEir7v6SuMnobHPEUq-35" value="Incompatible project" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fontStyle=1;shadow=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="765" y="90" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
