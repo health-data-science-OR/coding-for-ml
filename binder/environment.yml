@@ -5,18 +5,18 @@ dependencies:
   - black
   - flake8
   - hatch
-  - jupyterlab=4.2.4
+  - jupyterlab=4.4.6
   - jupyterlab-spellchecker=0.8.4
-  - matplotlib=3.9.1
+  - matplotlib=3.10.6
   - nbqa
-  - nodejs=22.5.1
-  - numpy=2.0.1
-  - pandas=2.2.2
-  - pip=24.0
-  - python=3.11
-  - pytest=8.3.2
-  - py7zr=0.21.1
-  - rich=13.7.1
-  - scikit-learn=1.5.1
-  - scipy==1.14.0
-  - statsmodels=0.14.2    
+  - nodejs=24.4.1
+  - numpy=2.3.2
+  - pandas=2.3.2
+  - pip=25.2
+  - python=3.12
+  - pytest=8.4.1
+  - py7zr=1.0.0
+  - rich=14.1.0
+  - scikit-learn=1.7.1
+  - scipy==1.16.1
+  - statsmodels=0.14.5    
