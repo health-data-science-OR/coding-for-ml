@@ -10,7 +10,7 @@ An open-source, interactive textbook for learning practical Python skills in hea
 👉 **[Read the Book](https://www.pythonhealthdatascience.com)**
 
 
-## Who This Is For
+## 👥 Who This Is For
 
 - Healthcare researchers and practitioners new to programming
 - Data scientists looking to specialize in health applications  
@@ -19,13 +19,12 @@ An open-source, interactive textbook for learning practical Python skills in hea
 - NHS or healthcare data scientists
 
 
-## About
+## 👨‍💻 About
 
 Created and maintained by [Thomas Monks](https://github.com/TomMonks) and contributors.
 
 
-
-## Features
+## ✨ Features
 
 - **Interactive Jupyter Book**: Step-by-step guides, hands-on code examples, and exercises
 - **Health Data Focus**: Real health data scenarios and healthcare-specific best practices  
@@ -35,14 +34,14 @@ Created and maintained by [Thomas Monks](https://github.com/TomMonks) and contri
 
 
 
-## Prerequisites
+## 📋 Prerequisites
 
 - Basic familiarity with Python (helpful but not required)
 - Interest in health data and healthcare applications
 - Access to a computer with internet connection
 
 
-## Quick Start
+## 🚀 Quick Start
 
 ### 1. Read Online
 
@@ -75,7 +74,7 @@ All required packages and dependencies are specified in `binder/environment.yml`
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents
 
 - [Introduction and prerequisites](https://www.pythonhealthdatascience.com/content/001_setup/contributing.html)
 - [Algorithms and computational modelling](https://www.pythonhealthdatascience.com/content/01_algorithms/01_design.html)
@@ -84,7 +83,7 @@ All required packages and dependencies are specified in `binder/environment.yml`
 
 
 
-## Citation
+## 📝 Citation
 
 If this book or its code helps your work, please cite the Zenodo record:
 
@@ -105,12 +104,12 @@ If this book or its code helps your work, please cite the Zenodo record:
 ```
 
 
-## Contributing
+## 🤝 Contributing
 
 Contributions, suggestions, and feedback are welcomed! Please open an issue or fork and issue a pull request on the GitHub repository.
 
 
-## License
+## 📄  License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
