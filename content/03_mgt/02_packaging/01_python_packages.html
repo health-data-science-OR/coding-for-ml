@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -668,12 +667,12 @@ document.write(`
 <section id="sub-modules">
 <h3>Sub-modules<a class="headerlink" href="#sub-modules" title="Link to this heading">#</a></h3>
 <p>The two modules included in the skeleton example contain related python variables (constants), classes, and functions. In other words they contain the code that does all the work in your package. For example we might have a module <code class="docutils literal notranslate"><span class="pre">datasets</span></code> used for loading one or more example data sets included in the package and <code class="docutils literal notranslate"><span class="pre">plotting</span></code> that provides high level factory type functions for specialised <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> charts (e.g. regression diagnostics).  We import these namespaces as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_package_name.plotting</span>
-<span class="kn">import</span> <span class="nn">my_package_name.datasets</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">my_package_name.plotting</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">my_package_name.datasets</span>
 </pre></div>
 </div>
 <p>If we assume <code class="docutils literal notranslate"><span class="pre">plotting</span></code> contains a function called <code class="docutils literal notranslate"><span class="pre">plt_diagnostics()</span></code> we import it as follows</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">my_package_name.plotting</span> <span class="kn">import</span> <span class="n">plt_diagostics</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">my_package_name.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plt_diagostics</span>
 </pre></div>
 </div>
 </section>
@@ -695,7 +694,7 @@ document.write(`
 <p>where <code class="docutils literal notranslate"><span class="pre">datasets</span></code> contains the functions needed to load the dataset from file and return it in a suitable format.  It’s worth noting that major data science packages opt for this approach.  For example <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
 
 <span class="c1"># note that if provides a __version__</span>
 <span class="n">sm</span><span class="o">.</span><span class="n">__version__</span>
@@ -703,7 +702,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.14.2&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.12.2&#39;
 </pre></div>
 </div>
 </div>
@@ -794,7 +793,7 @@ my_package_name
 <p>One option is to import the whole package and - optionally - provide it an alias (as you would do for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ts_emergency</span> <span class="k">as</span> <span class="nn">tse</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ts_emergency</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tse</span>
 </pre></div>
 </div>
 </div>
@@ -802,8 +801,8 @@ my_package_name
 <p>Alternatively you can use the <strong>from</strong> statement to import a package.  This is a stylistic choice, but one benefit of using from is that you don’t need to retype the full path each time you use a function. That may or may not be important for your application.  Another more subtle benefit I’ve found is that when first designing a package I tend to rename modules and sometimes change package structure.  Importing using <code class="docutils literal notranslate"><span class="pre">from</span></code> statement means I only need to update the import section of my code - as opposed to all individual calls to a function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ts_emergency.datasets</span> <span class="kn">import</span> <span class="n">load_ed_ts</span>
-<span class="kn">from</span> <span class="nn">ts_emergency.plotting</span> <span class="kn">import</span> <span class="p">(</span><span class="n">plot_single_ed</span><span class="p">,</span> <span class="n">plot_eds</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_ed_ts</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">plot_single_ed</span><span class="p">,</span> <span class="n">plot_eds</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1005,7 +1004,7 @@ FILE
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/f2e75bc163eb36bb77fb5f6e99ef289efc424411b25fc16c4c1db640b1dead04.png" src="../../../_images/f2e75bc163eb36bb77fb5f6e99ef289efc424411b25fc16c4c1db640b1dead04.png" />
+<img alt="../../../_images/4efcfdda5694f9def71fcb52a7d415c20aaba5f6c13dcba6e2f2a70745d8105c.png" src="../../../_images/4efcfdda5694f9def71fcb52a7d415c20aaba5f6c13dcba6e2f2a70745d8105c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1015,7 +1014,7 @@ FILE
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/00e9d06e5e04a405dc605e0ec295245e5438ac631bd9982c448e9d7866a6b2cc.png" src="../../../_images/00e9d06e5e04a405dc605e0ec295245e5438ac631bd9982c448e9d7866a6b2cc.png" />
+<img alt="../../../_images/032b767753e2e410929d6f36cc8a8f8670c0385c753f9d61b6e015404751c155.png" src="../../../_images/032b767753e2e410929d6f36cc8a8f8670c0385c753f9d61b6e015404751c155.png" />
 </div>
 </div>
 </section>

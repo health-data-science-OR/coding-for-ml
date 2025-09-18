@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -594,7 +593,8 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 <p>For my own packages (as of 2024) I no longer plan to support Python prior to version 3.9. And I plan to drop support for 3.9 in the next few years. This is in line with the latest versions of popular packages like <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (&gt;=3.10) and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>(&gt;=3/9). But before you use this as a hard and fast rule please make sure you talk to your potential users. For example, if you are working with the NHS and they have a Python 3.7 environment and that’s unlikely to change you will want to support it.</p>
 </div>
 <p>The difference is illustrated in the Figure below. Here <strong>your-package v1.0.0</strong> is your analysis package. There are three projects using your package with different (supported) version of Python and dependencies. There is also a project that is currently using Python 3.6 that is not compatible with your package.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../../../_images/package_versus_project.png"><img alt="package_vs_project" class="bg-primary mb-1 align-center" src="../../../_images/package_versus_project.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../../_images/package_versus_project.png"><img alt="package_vs_project" class="bg-primary mb-1 align-center" src="../../../_images/package_versus_project.png" style="width: 800px;" />
+</a>
 </section>
 <section id="setting-up-a-git-repo">
 <h2>Setting up a git repo<a class="headerlink" href="#setting-up-a-git-repo" title="Link to this heading">#</a></h2>
@@ -729,7 +729,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 <section id="managing-the-versioning-your-package">
 <h4>Managing the versioning your package<a class="headerlink" href="#managing-the-versioning-your-package" title="Link to this heading">#</a></h4>
 <p>All python packages should behave in this way:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">analysis_package</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">analysis_package</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">analysis_package</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="go">&#39;0.1&#39;</span>
 </pre></div>
@@ -778,7 +778,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 </div>
 <p><strong>Exercise</strong>: Test out your install by launching the python interpreter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this should work!</span>
-<span class="kn">import</span> <span class="nn">analysis_package</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">analysis_package</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">analysis_package</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>

@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="prereq/02_dicts.html">Dictionarys</a></li>
@@ -518,7 +517,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-installation">Local installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-installation">Local installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-dependencies">Install the dependencies</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-our-code-via-binderhub-or-google-colab">Run our code via Binderhub or Google Colab</a></li>
 </ul>
             </nav>
@@ -533,19 +535,65 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="install-python-and-an-ide">
 <h1>Install python and an IDE<a class="headerlink" href="#install-python-and-an-ide" title="Link to this heading">#</a></h1>
-<p>The code in this book is written in using python 3.8.8 and a list of dependencies.</p>
+<p>The code in this book is tested using python 3.12 and a list of dependencies.  These can be found in the main repository in <code class="docutils literal notranslate"><span class="pre">binder/environment.</span></code></p>
 <section id="local-installation">
 <h2>Local installation<a class="headerlink" href="#local-installation" title="Link to this heading">#</a></h2>
-<p>For beginners it is is recommended that users first install ‘Anaconda’. This bundles python along with data science centric IDEs called <code class="docutils literal notranslate"><span class="pre">Spyder</span></code> and <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> (I recommend the more modern Jupyter-Lab over basic notebook, but there is no requirement to use it.)</p>
-<p><a class="reference external" href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a></p>
+<p>For beginners it is is recommended that users first install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> and install the packages you need using the provided conda environment. The environment bundles Python 3.12 along with a data science centric IDEs called <code class="docutils literal notranslate"><span class="pre">Jupyter-Lab</span></code>.</p>
 <div class="tip admonition">
 <p class="admonition-title">See also</p>
-<p>Anaconda includes ‘conda’ (a package manager).  An optional step is to follow our notes to use <a class="reference internal" href="conda.html"><span class="std std-doc">conda</span></a> to create a virtual environment that includes python 3.8.12 and Jupyter-Lab 3.x</p>
+<p>Miniconda includes ‘conda’ (a package manager).  Its good practice to have an environment per data science project. It allows you to create a “reproducible software box” on your computer that contains the version of Python you used along with the right versions of the other software (e.g. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code>).Instructions to setup the virtual environment are provided below, and we will cover reproducible environments in more detail later in the book.</p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">My personal preferences</p>
-<p>Alternatively (and my preference) you can install substantially smaller <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> and install the packages you need using the provided conda environment or by selecting them yourself.  I tend to use packages installed from <a class="reference external" href="https://conda-forge.org/">conda-forge</a>, but the packages in the Anaconda channel (defaults) are equally good.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">An alternative to conda</p>
+<p>Alternatively you can install substantially faster and more Open Source friendly <a class="reference external" href="https://github.com/conda-forge/miniforge">Mamba via miniforge</a> and install the packages you need using the provided conda environment or by selecting them yourself.  By default <code class="docutils literal notranslate"><span class="pre">mamba</span></code> will install packages from conda-forge community channel. It is a slot in replacement for <code class="docutils literal notranslate"><span class="pre">conda</span></code> so simply replace all text that says <code class="docutils literal notranslate"><span class="pre">conda</span></code> with <code class="docutils literal notranslate"><span class="pre">mamba</span></code> below.  Its my personal perference and what I use in all my contemporary research.</p>
 </div>
+<section id="install-the-dependencies">
+<h3>Install the dependencies<a class="headerlink" href="#install-the-dependencies" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Clone this repository</strong>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/health-data-science-OR/coding-for-ml.git
+<span class="nb">cd</span><span class="w"> </span>coding-for-ml
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install the virtual environment</strong>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>binder/environment.yml
+conda<span class="w"> </span>activate<span class="w"> </span>hds_code
+</pre></div>
+</div>
+</li>
+<li><p><strong>Launch JupyterLab</strong>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-lab
+</pre></div>
+</div>
+</li>
+</ol>
+<p>For reference the latest version of the book uses these packages:</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>name: hds_code
+channels:
+  - conda-forge
+dependencies:
+  - black
+  - flake8
+  - hatch
+  - jupyterlab=4.4.6
+  - jupyterlab-spellchecker=0.8.4
+  - matplotlib=3.10.6
+  - nbqa
+  - nodejs=24.4.1
+  - numpy=2.3.2
+  - pandas=2.3.2
+  - pip=25.2
+  - python=3.12
+  - pytest=8.4.1
+  - py7zr=1.0.0
+  - rich=14.1.0
+  - scikit-learn=1.7.1
+  - scipy==1.16.1
+  - statsmodels=0.14.5    
+</pre></div>
+</div>
+</section>
 </section>
 <section id="run-our-code-via-binderhub-or-google-colab">
 <h2>Run our code via Binderhub or Google Colab<a class="headerlink" href="#run-our-code-via-binderhub-or-google-colab" title="Link to this heading">#</a></h2>
@@ -621,7 +669,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-installation">Local installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-installation">Local installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-dependencies">Install the dependencies</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-our-code-via-binderhub-or-google-colab">Run our code via Binderhub or Google Colab</a></li>
 </ul>
   </nav></div>

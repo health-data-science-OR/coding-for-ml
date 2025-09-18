@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -638,7 +637,7 @@ document.write(`
 <p>The function get_hospital_textworld returns a <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> object.  It is setup for the hospital text adventure we can play.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">text_adventure.basic_game</span> <span class="kn">import</span> <span class="n">get_hospital_textworld</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">text_adventure.basic_game</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_hospital_textworld</span>
 </pre></div>
 </div>
 </div>
@@ -664,7 +663,7 @@ document.write(`
 <h3>A function to play the game<a class="headerlink" href="#a-function-to-play-the-game" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">play_text_adventure</span><span class="p">(</span><span class="n">adventure</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">play_text_adventure</span><span class="p">(</span><span class="n">adventure</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Play your text adventure!</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -699,7 +698,7 @@ document.write(`
 <h2>Imports<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">text_adventure.basic_game</span> <span class="kn">import</span> <span class="n">TextWorld</span><span class="p">,</span> <span class="n">Room</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">text_adventure.basic_game</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextWorld</span><span class="p">,</span> <span class="n">Room</span>
 </pre></div>
 </div>
 </div>
@@ -870,7 +869,7 @@ To the north is a corridor.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#the world&#39;s most simple `Patient` class!</span>
-<span class="k">class</span> <span class="nc">Patient</span><span class="p">:</span> 
+<span class="k">class</span><span class="w"> </span><span class="nc">Patient</span><span class="p">:</span> 
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -902,8 +901,8 @@ To the north is a corridor.
 <p>Note the use of the argument <code class="docutils literal notranslate"><span class="pre">self</span></code>.  This is a special method parameter that must be included as the first parameter in <strong>all</strong> methods in your class.  <code class="docutils literal notranslate"><span class="pre">self</span></code> is the way an object internally references itself.  If you need your class to have an attribute called <code class="docutils literal notranslate"><span class="pre">name</span></code> then you refer to it as <code class="docutils literal notranslate"><span class="pre">self.name</span></code>.  This means that any method in the class can access the attribute.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Patient</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Patient</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;joe bloggs&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">occupation</span> <span class="o">=</span> <span class="s1">&#39;coder&#39;</span>
 </pre></div>
@@ -930,8 +929,8 @@ coder
 <h3>including parameters in the constructor method<a class="headerlink" href="#including-parameters-in-the-constructor-method" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Patient</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">occupation</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Patient</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">occupation</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">occupation</span> <span class="o">=</span> <span class="n">occupation</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span> 
@@ -968,18 +967,18 @@ None
 <h2>The <code class="docutils literal notranslate"><span class="pre">Room</span></code> class from the Hospital Basic Text Adventure<a class="headerlink" href="#the-room-class-from-the-hospital-basic-text-adventure" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Room</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Room</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Encapsulates a location/room within a TextWorld.</span>
 
 <span class="sd">    A `Room` has a number of exits to other `Room` objects</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exits</span> <span class="o">=</span> <span class="p">{}</span>             
 
-    <span class="k">def</span> <span class="nf">add_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">room</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">room</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add an exit to the room</span>
 
@@ -993,7 +992,7 @@ None
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exits</span><span class="p">[</span><span class="n">direction</span><span class="p">]</span> <span class="o">=</span> <span class="n">room</span>
 
-    <span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Exit the room in the specified direction</span>
 
@@ -1007,7 +1006,7 @@ None
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Describe the room to a player</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -1021,11 +1020,11 @@ None
 <h2>The <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> class<a class="headerlink" href="#the-textworld-class" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TextWorld</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">TextWorld</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    A TextWorld encapsulate the logic and Room objects that comprise the game.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rooms</span><span class="p">,</span> <span class="n">start_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_moves</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rooms</span><span class="p">,</span> <span class="n">start_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_moves</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Constructor method for World</span>
 
@@ -1051,7 +1050,7 @@ None
         <span class="c1">#limit the number of move before the game ends.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_moves</span> <span class="o">=</span> <span class="n">max_moves</span>
 
-    <span class="k">def</span> <span class="nf">take_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">take_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Take an action in the TextWorld</span>
 
@@ -1110,17 +1109,17 @@ None
 <p>Let’s work with a simple patient based example first.  In the code below we create a class called <code class="docutils literal notranslate"><span class="pre">Patient</span></code>.  The class <code class="docutils literal notranslate"><span class="pre">StrokePatient</span></code> <strong>inherits</strong> from <code class="docutils literal notranslate"><span class="pre">Patient</span></code>.  In python’s OO terminology we called <code class="docutils literal notranslate"><span class="pre">Patient</span></code> a super class and <code class="docutils literal notranslate"><span class="pre">StrokePatient</span></code> a subclass.  <code class="docutils literal notranslate"><span class="pre">StrokePatient</span></code> inherits all of the super class methods and attributes.  In effect <code class="docutils literal notranslate"><span class="pre">StrokePatient</span></code> <strong>is-a</strong> specialisation of <code class="docutils literal notranslate"><span class="pre">Patient</span></code>.  The code below illustrates how this works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="c1">#`Patient` is refered to as a &#39;super class&#39;</span>
-<span class="k">class</span> <span class="nc">Patient</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">occupation</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Patient</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">occupation</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">occupation</span> <span class="o">=</span> <span class="n">occupation</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">triage_band</span> <span class="o">=</span> <span class="kc">None</span>
         
-    <span class="k">def</span> <span class="nf">set_random_triage_band</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_random_triage_band</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;set a random triage band 1 - 5&#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">triage_band</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
@@ -1130,8 +1129,8 @@ None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#subclass `StrokePatient`</span>
-<span class="k">class</span> <span class="nc">StrokePatient</span><span class="p">(</span><span class="n">Patient</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">occupation</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">stroke_type</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StrokePatient</span><span class="p">(</span><span class="n">Patient</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">occupation</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">stroke_type</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="c1">#call the constructor of the superclass</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">occupation</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stroke_type</span> <span class="o">=</span> <span class="n">stroke_type</span>
@@ -1171,16 +1170,16 @@ None
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#this time patient is a parameter instead of a superclass</span>
-<span class="k">class</span> <span class="nc">StrokeCase</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient</span><span class="p">,</span> <span class="n">stroke_type</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StrokeCase</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient</span><span class="p">,</span> <span class="n">stroke_type</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">patient</span> <span class="o">=</span> <span class="n">patient</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stroke_type</span> <span class="o">=</span> <span class="n">stroke_type</span>
         
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">triage_band</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">triage_band</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">patient</span><span class="o">.</span><span class="n">triage_band</span>
         
-    <span class="k">def</span> <span class="nf">set_random_triage_band</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_random_triage_band</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">patient</span><span class="o">.</span><span class="n">set_random_triage_band</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1208,7 +1207,7 @@ None
 <p>Now that we understand inheritance and object composition let’s take look at a modified text adventure hospital.  In this version of the code we introduce the concept of <strong>inventory</strong>.  Have a go at playing the game.  You will find items of inventory scattered around the rooms in the game.  You can interact with these items by issuing the <code class="docutils literal notranslate"><span class="pre">get</span></code>, <code class="docutils literal notranslate"><span class="pre">drop</span></code>, and <code class="docutils literal notranslate"><span class="pre">ex</span></code> (examine) commands.  To view what inventory you are holding issue the <code class="docutils literal notranslate"><span class="pre">inv</span></code> command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">text_adventure.advanced_game</span> <span class="kn">import</span> <span class="n">hospital_with_inventory</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">text_adventure.advanced_game</span><span class="w"> </span><span class="kn">import</span> <span class="n">hospital_with_inventory</span>
 </pre></div>
 </div>
 </div>
@@ -1252,18 +1251,18 @@ None
 <p>In other words we have used inheritance to add some abilities to <code class="docutils literal notranslate"><span class="pre">Room</span></code> and <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> to hold multiple instances of <code class="docutils literal notranslate"><span class="pre">InventoryItem</span></code>.  First we define two new classes:  <code class="docutils literal notranslate"><span class="pre">InventoryItem</span></code> and <code class="docutils literal notranslate"><span class="pre">InventoryItemHolder</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">InventoryItem</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    An item found in a text adventure world that can be picked up</span>
 <span class="sd">    or dropped.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">short_description</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">short_description</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">short_description</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">long_description</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">aliases</span> <span class="o">=</span> <span class="p">[]</span>
 
 
-    <span class="k">def</span> <span class="nf">add_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_alias</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_alias</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add an alias (alternative name) to the InventoryItem.</span>
 <span class="sd">        For example if an inventory item has the short description</span>
@@ -1282,16 +1281,16 @@ None
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InventoryHolder</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">InventoryHolder</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Encapsulates the logic for adding and removing an InventoryItem</span>
 <span class="sd">    This simulates &quot;picking up&quot; and &quot;dropping&quot; items in a TextWorld </span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1">#inventory just held in a list interally</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="nf">list_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">list_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Return a string representation of InventoryItems held.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -1301,13 +1300,13 @@ None
 
         <span class="k">return</span> <span class="n">msg</span>
 
-    <span class="k">def</span> <span class="nf">add_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add an InventoryItem</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Returns an InventoryItem from Room.</span>
 <span class="sd">        Removes the item from the Room&#39;s inventory</span>
@@ -1328,7 +1327,7 @@ None
         <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="n">selected_index</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">selected_item</span>
 
-    <span class="k">def</span> <span class="nf">find_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">find_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Find an inventory item and return it and its index </span>
 <span class="sd">        in the collection.</span>
@@ -1363,7 +1362,7 @@ None
 <p>Any class that inherits from <code class="docutils literal notranslate"><span class="pre">InventoryHolder</span></code> can now manage a collection of items that they ‘own’.  Neat!  In our enhanced game both <code class="docutils literal notranslate"><span class="pre">Room</span></code> and <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code>  inherit this functionality.  The <code class="docutils literal notranslate"><span class="pre">TextWorld</span></code> object here used as a surrogate for a player.  The modified code listing for <code class="docutils literal notranslate"><span class="pre">Room</span></code> is provided below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Room</span><span class="p">(</span><span class="n">InventoryHolder</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Room</span><span class="p">(</span><span class="n">InventoryHolder</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Encapsulates a location/room within a TextWorld.</span>
 
@@ -1371,7 +1370,7 @@ None
 
 <span class="sd">    A `Room` is-a type of `InventoryHolder`</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Room constructor</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -1382,7 +1381,7 @@ None
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
                 
 
-    <span class="k">def</span> <span class="nf">add_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">room</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">room</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add an exit to the room</span>
 
@@ -1397,7 +1396,7 @@ None
         <span class="bp">self</span><span class="o">.</span><span class="n">exits</span><span class="p">[</span><span class="n">direction</span><span class="p">]</span> <span class="o">=</span> <span class="n">room</span>
 
     
-    <span class="k">def</span> <span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Exit the room in the specified direction</span>
 
@@ -1411,7 +1410,7 @@ None
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span>
         <span class="c1">### MODIFICATION</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inventory</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>

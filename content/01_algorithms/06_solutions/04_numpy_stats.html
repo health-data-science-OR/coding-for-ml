@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -186,7 +186,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -613,11 +612,11 @@ document.write(`
 <h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># you will need requests and io to download the data and load into a numpy array</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
 </pre></div>
 </div>
 </div>
@@ -668,7 +667,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">basic_descriptives</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">basic_descriptives</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns mean, stdev, and 1st and 99th percentile of a 1D numpy.ndarray</span>
 <span class="sd">    </span>
@@ -697,7 +696,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(-0.01024987541401165), np.float64(1.006285768537041), np.float64(-2.3738111979173713), np.float64(2.3558409670159173))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.01024987541401165, 1.006285768537041, -2.3738111979173713, 2.3558409670159173)
 </pre></div>
 </div>
 </div>
@@ -759,14 +758,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(257)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>257
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prob_great_than_or_equal_to</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">prob_great_than_or_equal_to</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Return the proportion of the dataset that is greater than or equal to x</span>
 <span class="sd">    </span>
@@ -784,7 +783,7 @@ document.write(`
     <span class="k">return</span> <span class="p">(</span><span class="n">data</span> <span class="o">&gt;=</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">prob_less_than_or_equal_to</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">prob_less_than_or_equal_to</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Return the proportion of the dataset that is less than or equal to x</span>
 <span class="sd">    </span>
@@ -864,7 +863,7 @@ document.write(`
 <span class="c1"># =============================================================================</span>
 
 
-<span class="k">def</span> <span class="nf">winsorize_loop</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">winsorize_loop</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
     <span class="n">low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cut_off</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
     
@@ -896,7 +895,7 @@ document.write(`
 <span class="c1"># Solution 2: Using a vectorized functioon</span>
 <span class="c1"># =============================================================================</span>
 
-<span class="k">def</span> <span class="nf">winsorize_to_vectorize</span><span class="p">(</span><span class="n">to_test</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">winsorize_to_vectorize</span><span class="p">(</span><span class="n">to_test</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
 
     <span class="k">if</span> <span class="n">to_test</span> <span class="o">&gt;</span> <span class="n">high</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">high</span>
@@ -905,7 +904,7 @@ document.write(`
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">to_test</span>
     
-<span class="k">def</span> <span class="nf">winsorize_limits</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">winsorize_limits</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span><span class="p">):</span>
     <span class="n">low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cut_off</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
     
@@ -935,7 +934,7 @@ document.write(`
 <span class="c1"># Solution 3: Using np.where()</span>
 <span class="c1"># =============================================================================</span>
 
-<span class="k">def</span> <span class="nf">winsorize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">winsorize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
     <span class="n">low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cut_off</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cut_off</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
        
@@ -974,7 +973,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>124 μs ± 1.48 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>147 µs ± 1.78 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -989,7 +988,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%timeit</span>
 
 <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="n">winsorize_limits</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="n">w_data</span> <span class="o">=</span> <span class="n">v_winsorise</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
@@ -997,7 +996,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>157 μs ± 17.5 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>151 µs ± 3.86 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1016,7 +1015,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130 μs ± 4.7 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>131 µs ± 2.22 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1049,7 +1048,7 @@ You will use the class <code class="docutils literal notranslate"><span class="p
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># statsmodels contains the OLS class you will use</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
 
 <span class="n">RESPONSE_SUCCESS</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">DTOC_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
@@ -1057,7 +1056,7 @@ You will use the class <code class="docutils literal notranslate"><span class="p
 <span class="n">BREACH_URL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/health-data-science-OR/&#39;</span> \
                 <span class="o">+</span> <span class="s1">&#39;hpdm139-datasets/main/breach.csv&#39;</span>
 
-<span class="k">def</span> <span class="nf">download_datasets</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">download_datasets</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Downloads the dtoc and breaches datasets to your local machine</span>
 <span class="sd">    </span>
@@ -1106,9 +1105,9 @@ success: breach.csv downloaded.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#OLS functionality is in statsmodels</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>  
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>  
 
-<span class="k">def</span> <span class="nf">load_dtoc_dataset</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_dtoc_dataset</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Loads the breach and dtoc data sets into memory</span>
 <span class="sd">    Returns a tuple of numpy.ndarrays representing</span>
@@ -1138,8 +1137,8 @@ success: breach.csv downloaded.
 Dep. Variable:                      y   R-squared:                       0.714
 Model:                            OLS   Adj. R-squared:                  0.710
 Method:                 Least Squares   F-statistic:                     194.6
-Date:                Fri, 20 Sep 2024   Prob (F-statistic):           6.80e-23
-Time:                        15:55:50   Log-Likelihood:                -945.02
+Date:                Thu, 14 Oct 2021   Prob (F-statistic):           6.80e-23
+Time:                        17:21:39   Log-Likelihood:                -945.02
 No. Observations:                  80   AIC:                             1894.
 Df Residuals:                      78   BIC:                             1899.
 Df Model:                           1                                         
@@ -1192,7 +1191,7 @@ strong multicollinearity or other numerical problems.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example solution: Use numpy built-in function np.diff()</span>
 
-<span class="k">def</span> <span class="nf">load_dtoc_dataset</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_dtoc_dataset</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Loads the breach and dtoc data sets into memory</span>
 <span class="sd">    Returns a tuple of numpy.ndarrays representing</span>
@@ -1204,7 +1203,7 @@ strong multicollinearity or other numerical problems.
     <span class="k">return</span> <span class="n">breach</span><span class="p">,</span> <span class="n">dtoc</span>
 
 
-<span class="k">def</span> <span class="nf">dtoc_regression</span><span class="p">(</span><span class="n">breach</span><span class="p">,</span> <span class="n">dtoc</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dtoc_regression</span><span class="p">(</span><span class="n">breach</span><span class="p">,</span> <span class="n">dtoc</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Regression analysis for dtocs</span>
 <span class="sd">    and breaches</span>
@@ -1235,8 +1234,8 @@ strong multicollinearity or other numerical problems.
 Dep. Variable:                      y   R-squared:                       0.035
 Model:                            OLS   Adj. R-squared:                  0.022
 Method:                 Least Squares   F-statistic:                     2.775
-Date:                Fri, 20 Sep 2024   Prob (F-statistic):             0.0998
-Time:                        15:55:50   Log-Likelihood:                -901.09
+Date:                Thu, 14 Oct 2021   Prob (F-statistic):             0.0998
+Time:                        17:21:39   Log-Likelihood:                -901.09
 No. Observations:                  79   AIC:                             1806.
 Df Residuals:                      77   BIC:                             1811.
 Df Model:                           1                                         

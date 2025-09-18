@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../prereq.html">Python Prerequisites</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_dicts.html">Dictionarys</a></li>
@@ -650,7 +649,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30000.0 24000.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30000 24000.0
 </pre></div>
 </div>
 </div>
@@ -698,7 +697,7 @@ document.write(`
 <p>In the data science libraries of python you will find that functions and classes tend to have a large number of mandatory and optional parameters.  To keep your code readable you will need to split your code over multiple lines.  For example, here is a dummy function that takes four parameters:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rolling_forecast_origin</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">min_train_size</span><span class="p">,</span> <span class="n">horizon</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rolling_forecast_origin</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">min_train_size</span><span class="p">,</span> <span class="n">horizon</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;dummy function with lots of parameters&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="kc">None</span>
 
@@ -736,7 +735,7 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiple_replications</span><span class="p">(</span><span class="n">rc_period</span><span class="o">=</span><span class="mi">1440</span><span class="p">,</span> <span class="n">warm_up</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiple_replications</span><span class="p">(</span><span class="n">rc_period</span><span class="o">=</span><span class="mi">1440</span><span class="p">,</span> <span class="n">warm_up</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
                           <span class="n">n_reps</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Perform multiple replications of a computer simulation model </span>
@@ -774,7 +773,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">auto_naive</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seasonal_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_train_size</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">auto_naive</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">horizon</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seasonal_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_train_size</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
                <span class="n">method</span><span class="o">=</span><span class="s1">&#39;cv&#39;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;mae&#39;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;Automatic selection of the &#39;best&#39; naive benchmark on a &#39;single&#39; series</span>
 <span class="sd">    The selection process uses out-of-sample cv performance.</span>

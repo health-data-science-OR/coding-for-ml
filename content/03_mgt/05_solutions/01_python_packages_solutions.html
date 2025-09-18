@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -186,7 +186,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -662,7 +661,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution</span>
 
-<span class="kn">import</span> <span class="nn">ts_emergency</span> <span class="k">as</span> <span class="nn">tse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ts_emergency</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tse</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tse</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tse</span><span class="o">.</span><span class="n">__author__</span><span class="p">)</span>
 </pre></div>
@@ -704,11 +703,11 @@ Tom Monks
 <ul class="simple">
 <li><p>A skeleton function might look like the following:</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">skeleton_example</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">skeleton_example</span><span class="p">():</span>
     <span class="k">pass</span>
 
 
-<span class="k">def</span> <span class="nf">skeleton_example</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">skeleton_example</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you called skeleton_example()&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
@@ -716,8 +715,8 @@ Tom Monks
 <ul class="simple">
 <li><p>importing should look like:</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ts_emergency.plotting</span> <span class="kn">import</span> <span class="n">plot_single_ed</span><span class="p">,</span> <span class="n">plot_eds</span>
-<span class="kn">from</span> <span class="nn">ts_emergency.datasets</span> <span class="kn">import</span> <span class="n">load_ed_ts</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_single_ed</span><span class="p">,</span> <span class="n">plot_eds</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_ed_ts</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -800,7 +799,7 @@ Tom Monks
 <p><img alt="diag" src="../../../_images/diag.jpg" /></p>
 <p>The figure consists of three axis objects.  The first plots the detrended series.  The second plot is the <strong>autocorrelation function (ACF)</strong>: a measure of correlation of a variable with previous observations of itself.  The third is the <strong>partial autocorrelation function (PACF)</strong>: a measure of correlation of a variable with early observations of itself while controlling (regressing) for shorter lags.  The good news is you can create ACF and PACF using two functions from <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#  import the functions</span>
-<span class="kn">from</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.graphics.tsaplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
 </pre></div>
 </div>
 <p><strong>Task</strong>:</p>
@@ -825,9 +824,9 @@ Tom Monks
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution testing package.</span>
-<span class="kn">from</span> <span class="nn">ts_emergency.plotting.view</span> <span class="kn">import</span> <span class="n">plot_single_ed</span>
-<span class="kn">from</span> <span class="nn">ts_emergency.plotting.tsa</span> <span class="kn">import</span> <span class="n">plot_detrended</span><span class="p">,</span> <span class="n">diagnostic_plot</span>
-<span class="kn">from</span> <span class="nn">ts_emergency.datasets</span> <span class="kn">import</span> <span class="n">load_ed_ts</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.plotting.view</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_single_ed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.plotting.tsa</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_detrended</span><span class="p">,</span> <span class="n">diagnostic_plot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_ed_ts</span>
 </pre></div>
 </div>
 </div>
@@ -847,7 +846,7 @@ Tom Monks
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/b726b395237b1385b1c9dde9967297678fcc86702c1ae300d547656a6a194bf7.png" src="../../../_images/b726b395237b1385b1c9dde9967297678fcc86702c1ae300d547656a6a194bf7.png" />
+<img alt="../../../_images/d4c2e3fb1ccf03c172ed56f9bd255b8bfa81875b10aa1fb3135b84fe20ec6524.png" src="../../../_images/d4c2e3fb1ccf03c172ed56f9bd255b8bfa81875b10aa1fb3135b84fe20ec6524.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -858,7 +857,7 @@ Tom Monks
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/089771735994437dbe92bd15da1fdabe5ec23330ed0c2ac65902ac572d9128bf.png" src="../../../_images/089771735994437dbe92bd15da1fdabe5ec23330ed0c2ac65902ac572d9128bf.png" />
+<img alt="../../../_images/ac04508ec1db11a90ce63957de45979391e35daaced97ffa3d5e6a7276d5e0d0.png" src="../../../_images/ac04508ec1db11a90ce63957de45979391e35daaced97ffa3d5e6a7276d5e0d0.png" />
 </div>
 </div>
 <section id="example-code-for-the-tsa-module">
@@ -872,14 +871,14 @@ Tom Monks
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="c1"># standard imports</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.graphics.tsaplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
 
 <span class="c1"># cross package imports</span>
-<span class="kn">from</span> <span class="nn">ts_emergency.plotting.view</span> <span class="kn">import</span> <span class="n">plot_single_ed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.plotting.view</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_single_ed</span>
 
-<span class="k">def</span> <span class="nf">plot_detrended</span><span class="p">(</span><span class="n">wide_df</span><span class="p">,</span> <span class="n">hosp_id</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_detrended</span><span class="p">(</span><span class="n">wide_df</span><span class="p">,</span> <span class="n">hosp_id</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Plot the first difference of the ED time series</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -893,7 +892,7 @@ Tom Monks
     <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
     
 
-<span class="k">def</span> <span class="nf">diagnostic_plot</span><span class="p">(</span><span class="n">wide_df</span><span class="p">,</span> <span class="n">hosp_id</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">maxlags</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span> 
+<span class="k">def</span><span class="w"> </span><span class="nf">diagnostic_plot</span><span class="p">(</span><span class="n">wide_df</span><span class="p">,</span> <span class="n">hosp_id</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">maxlags</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span> 
                     <span class="n">include_zero</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Basic plot of diagnostics for ED time series.</span>

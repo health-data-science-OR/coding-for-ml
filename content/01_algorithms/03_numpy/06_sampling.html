@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -606,8 +605,8 @@ document.write(`
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -617,7 +616,7 @@ document.write(`
 <p>If you are working in computational modelling its highly likely that you will need to make use of the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> namespace.  This provides a variety of distributions that you can use for efficient sampling.  Let’s take a look at a few example distributions. For example generating 100,000 samples from the uniform, exponential distributions and normal distributions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distribution_plot</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">distribution_plot</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    helper function to visualise the distributions</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -641,7 +640,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/1f10ee5e7ff2a268b1998acc29effe90abcd958416c5c6f8a9e1a63a806a7155.png" src="../../../_images/1f10ee5e7ff2a268b1998acc29effe90abcd958416c5c6f8a9e1a63a806a7155.png" />
+<img alt="../../../_images/d27ffc2a134f476500a6b084cf15c606bfe12c6407d0b75734c9c0b129cbff6c.png" src="../../../_images/d27ffc2a134f476500a6b084cf15c606bfe12c6407d0b75734c9c0b129cbff6c.png" />
 </div>
 </div>
 </section>
@@ -656,7 +655,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8a5abd546b1535c7a6bee79d57e0e2ca155e869c65b16633ad598d34be65df25.png" src="../../../_images/8a5abd546b1535c7a6bee79d57e0e2ca155e869c65b16633ad598d34be65df25.png" />
+<img alt="../../../_images/d3f1a40b3d6516aca55cf6edfac6bcf926340624eb33d16cc2bad800a81bd715.png" src="../../../_images/d3f1a40b3d6516aca55cf6edfac6bcf926340624eb33d16cc2bad800a81bd715.png" />
 </div>
 </div>
 </section>
@@ -671,7 +670,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/18277a8fa4d327fade4fc9fa2965b4822e7c8fb5b88df294672d409843c2af82.png" src="../../../_images/18277a8fa4d327fade4fc9fa2965b4822e7c8fb5b88df294672d409843c2af82.png" />
+<img alt="../../../_images/7a59c551d3009a027c8228d0058f265ce6b2e8406bf539390748caf4a1d070ac.png" src="../../../_images/7a59c551d3009a027c8228d0058f265ce6b2e8406bf539390748caf4a1d070ac.png" />
 </div>
 </div>
 </section>
@@ -704,7 +703,7 @@ document.write(`
 <p>The first problem will encounter is repeatability.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_patient_details</span><span class="p">(</span><span class="n">acute</span><span class="p">,</span> <span class="n">home</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_patient_details</span><span class="p">(</span><span class="n">acute</span><span class="p">,</span> <span class="n">home</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Helper function.</span>
 <span class="sd">    Formats length of stay in data frame</span>
@@ -736,11 +735,11 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>patient	acute	home
 --------------------
-0	2.48	7.55 
-1	2.24	10.7 
-2	0.09	7.02 
-3	0.06	3.16 
-4	0.02	0.11 
+0	1.51	6.19 
+1	5.34	3.48 
+2	5.41	4.26 
+3	0.54	2.11 
+4	1.56	2.0 
 </pre></div>
 </div>
 </div>
@@ -784,7 +783,7 @@ document.write(`
 <p>Streaming psuedo random numbers presents itself in a much more subtle manner.  To see its effect we will test out the simple model. We will use a random number seed and run two scenarios.  In the first scenario we will test sample 5 patients.  In the second we will sample 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">sample_acute</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_patients</span><span class="p">)</span>
     <span class="n">sample_home</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_patients</span><span class="p">)</span>
@@ -830,7 +829,7 @@ document.write(`
 <p>We get this result because both distributions are using the same single stream of pseudo random numbers.  One way to solve this problem is therefore to give each distribution its <strong>own stream</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">updated_scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="p">,</span> <span class="n">seeds</span><span class="o">=</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">101</span><span class="p">)):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">updated_scenario</span><span class="p">(</span><span class="n">n_patients</span><span class="p">,</span> <span class="n">seeds</span><span class="o">=</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">101</span><span class="p">)):</span>
     <span class="n">rng_acute</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seeds</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">rng_home</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seeds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">sample_acute</span> <span class="o">=</span> <span class="n">rng_acute</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_patients</span><span class="p">)</span>

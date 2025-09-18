@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -618,8 +617,8 @@ document.write(`
 <p>The first actions we will take are importing <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, read in the dataset and have a look at the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> information.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -1273,7 +1272,7 @@ memory usage: 484.6+ KB
 <p>In summary, we have put together a simple dataset cleaning process in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.  Let’s tidy up our code and put it all in a single function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_covid_dataset</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">clean_covid_dataset</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Helper function to clean the netherlands covid dataset.</span>
 <span class="sd">    </span>
@@ -1361,7 +1360,7 @@ memory usage: 333.3+ KB
 <p>If we used method chaining our <code class="docutils literal notranslate"><span class="pre">clean_covid_dataset</span></code> function becomes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_covid_dataset</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">clean_covid_dataset</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Helper function to clean the netherlands covid dataset.</span>
 <span class="sd">    </span>
@@ -1502,12 +1501,6 @@ memory usage: 333.3+ KB
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_597988/1719524877.py:2: FutureWarning: The default value of observed=False is deprecated and will change to observed=True in a future version of pandas. Specify observed=False to silence this warning and retain the current behavior
-  wf_covid = neth_covid.pivot_table(columns=[&#39;metric&#39;],
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1571,48 +1564,48 @@ memory usage: 333.3+ KB
       <th rowspan="5" valign="top">Drenthe</th>
       <th rowspan="5" valign="top">22</th>
       <th>2020-02-27</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-02-28</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-02-29</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-03-01</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2020-03-02</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -1627,18 +1620,18 @@ memory usage: 333.3+ KB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-MultiIndex: 3445 entries, (&#39;Drenthe&#39;, np.int64(22), Timestamp(&#39;2020-02-27 00:00:00&#39;)) to (&#39;overall&#39;, np.int64(-1), Timestamp(&#39;2020-11-17 00:00:00&#39;))
+MultiIndex: 3445 entries, (&#39;Drenthe&#39;, 22, Timestamp(&#39;2020-02-27 00:00:00&#39;)) to (&#39;overall&#39;, -1, Timestamp(&#39;2020-11-17 00:00:00&#39;))
 Data columns (total 6 columns):
- #   Column                Non-Null Count  Dtype  
----  ------                --------------  -----  
- 0   (n, deaths)           3445 non-null   float64
- 1   (n, hosp_admit)       3445 non-null   float64
- 2   (n, total_cases)      3445 non-null   float64
- 3   (n_cum, deaths)       3445 non-null   float64
- 4   (n_cum, hosp_admit)   3445 non-null   float64
- 5   (n_cum, total_cases)  3445 non-null   float64
-dtypes: float64(6)
-memory usage: 186.6+ KB
+ #   Column                Non-Null Count  Dtype
+---  ------                --------------  -----
+ 0   (n, deaths)           3445 non-null   int32
+ 1   (n, hosp_admit)       3445 non-null   int32
+ 2   (n, total_cases)      3445 non-null   int32
+ 3   (n_cum, deaths)       3445 non-null   int32
+ 4   (n_cum, hosp_admit)   3445 non-null   int32
+ 5   (n_cum, total_cases)  3445 non-null   int32
+dtypes: int32(6)
+memory usage: 105.8+ KB
 </pre></div>
 </div>
 </div>
@@ -1703,48 +1696,48 @@ memory usage: 186.6+ KB
     <tr>
       <th rowspan="5" valign="top">20</th>
       <th>2020-02-27</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-02-28</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-02-29</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-03-01</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-03-02</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1806,48 +1799,48 @@ memory usage: 186.6+ KB
   <tbody>
     <tr>
       <th>2020-02-27</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-02-28</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-02-29</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-03-01</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-03-02</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1912,33 +1905,33 @@ memory usage: 186.6+ KB
   <tbody>
     <tr>
       <th>2020-02-27</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-02-28</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-02-29</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-03-01</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2020-03-02</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1957,10 +1950,10 @@ memory usage: 186.6+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;date&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;date&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/2c0c0c21674205eef3b28121979e95e2e20b212bd5667278615aa712ffc7d697.png" src="../../../_images/2c0c0c21674205eef3b28121979e95e2e20b212bd5667278615aa712ffc7d697.png" />
+<img alt="../../../_images/cbce6865038d66f9fa072e43fbaca1cd5f4c01170650ba68ceae9229057df68c.png" src="../../../_images/cbce6865038d66f9fa072e43fbaca1cd5f4c01170650ba68ceae9229057df68c.png" />
 </div>
 </div>
 <p>With default settings in Jupyter you should see the following above the chart:</p>
@@ -1976,7 +1969,7 @@ memory usage: 186.6+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2c0c0c21674205eef3b28121979e95e2e20b212bd5667278615aa712ffc7d697.png" src="../../../_images/2c0c0c21674205eef3b28121979e95e2e20b212bd5667278615aa712ffc7d697.png" />
+<img alt="../../../_images/cbce6865038d66f9fa072e43fbaca1cd5f4c01170650ba68ceae9229057df68c.png" src="../../../_images/cbce6865038d66f9fa072e43fbaca1cd5f4c01170650ba68ceae9229057df68c.png" />
 </div>
 </div>
 <p>The second approach is to use a semi-colon after the python statement.  I see this used a lot online.  I’m always a bit suspicious this is because the author doesn’t really understand what is really happening.</p>
@@ -1987,7 +1980,7 @@ memory usage: 186.6+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2c0c0c21674205eef3b28121979e95e2e20b212bd5667278615aa712ffc7d697.png" src="../../../_images/2c0c0c21674205eef3b28121979e95e2e20b212bd5667278615aa712ffc7d697.png" />
+<img alt="../../../_images/cbce6865038d66f9fa072e43fbaca1cd5f4c01170650ba68ceae9229057df68c.png" src="../../../_images/cbce6865038d66f9fa072e43fbaca1cd5f4c01170650ba68ceae9229057df68c.png" />
 </div>
 </div>
 </section>

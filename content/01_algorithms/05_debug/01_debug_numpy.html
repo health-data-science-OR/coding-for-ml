@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -557,19 +556,19 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
 <section id="code">
 <h2>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
-<span class="k">class</span> <span class="nc">MonteCarloParameters</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MonteCarloParameters</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Class to holds the parameters for the</span>
 <span class="sd">    monte-carlo simulation model </span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
 
-<span class="k">def</span> <span class="nf">normal_moments_from_lognormal</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">normal_moments_from_lognormal</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns mu and sigma of normal distribution</span>
 <span class="sd">    underlying a lognormal with mean m and variance v</span>
@@ -596,7 +595,7 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
     <span class="k">return</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span>
 
 
-<span class="k">def</span> <span class="nf">gamma_parameters</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">gamma_parameters</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns tuple with scale and shape of gamma distribution</span>
 <span class="sd">    based on a mean and variance.</span>
@@ -614,7 +613,7 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
     
 
 
-<span class="k">def</span> <span class="nf">results_summary</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">results_summary</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Display results</span>
 <span class="sd">    </span>
@@ -632,7 +631,7 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
     
 
 
-<span class="k">def</span> <span class="nf">sample_patients</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sample_patients</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Sample weekly no. of stroke patients</span>
 <span class="sd">    Returns integer no. of patients </span>
@@ -648,7 +647,7 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">mean_strokes</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">sample_ota</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">patients</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sample_ota</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">patients</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Sample onset to arrival time </span>
 <span class="sd">    Return np.ndarray of samples (size = patients)</span>
@@ -670,7 +669,7 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
                            <span class="n">scale</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">onset_scale</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">patients</span><span class="p">)</span>
     
 
-<span class="k">def</span> <span class="nf">sample_ed_delay</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">patients</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sample_ed_delay</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">patients</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Sample delay a patient experiences in the ED </span>
 <span class="sd">    Return np.ndarray of samples (size = patients)</span>
@@ -692,7 +691,7 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
                                <span class="n">sigma</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">sigma_ed</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">patients</span><span class="p">)</span>
     
 
-<span class="k">def</span> <span class="nf">sample_ct_scan</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">patients</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sample_ct_scan</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">patients</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Sample time it takes to undergo a CT scan and report results</span>
 <span class="sd">    Return np.ndarray of samples (size = patients)</span>
@@ -715,7 +714,7 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
                                 <span class="n">right</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">max_scan_time</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">patients</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">sample_assess_duration</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">patients</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sample_assess_duration</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">patients</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Sample the duration of clinical assessment</span>
 <span class="sd">    Return np.ndarray of samples (size = patients)</span>
@@ -738,13 +737,13 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
   
 
 
-<span class="k">def</span> <span class="nf">eligible</span><span class="p">(</span><span class="n">patients</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">eligible</span><span class="p">(</span><span class="n">patients</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">patients</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">samples</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">params</span><span class="o">.</span><span class="n">p_contra_indication</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
             
             
 
-<span class="k">def</span> <span class="nf">run_model</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">no_replications</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_model</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">no_replications</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Run the monte-carlo simulation</span>
 <span class="sd">    </span>
@@ -800,7 +799,7 @@ from <code class="docutils literal notranslate"><span class="pre">numpy.random</
 
         
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">params</span> <span class="o">=</span> <span class="n">MonteCarloParameters</span><span class="p">()</span> 
     
     <span class="c1">#patients can only be treated if they are ready within 180 minutes</span>

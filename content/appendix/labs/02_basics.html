@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -695,7 +694,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">animal_call</span><span class="p">(</span><span class="n">animal</span><span class="o">=</span><span class="s1">&#39;mouse&#39;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">animal_call</span><span class="p">(</span><span class="n">animal</span><span class="o">=</span><span class="s1">&#39;mouse&#39;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Print out a animal noise dependent on the parameter passed in.</span>
 <span class="sd">    </span>
@@ -806,7 +805,7 @@ Sorry, I don&#39;t know what noise this animal makes.
 <p>Example code and test cases are given below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vend</span><span class="p">(</span><span class="n">stock_list</span><span class="p">,</span> <span class="n">inv_remaining</span><span class="p">,</span> <span class="n">choice</span><span class="o">=</span><span class="s1">&#39;mars&#39;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vend</span><span class="p">(</span><span class="n">stock_list</span><span class="p">,</span> <span class="n">inv_remaining</span><span class="p">,</span> <span class="n">choice</span><span class="o">=</span><span class="s1">&#39;mars&#39;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A simplified vending machine.</span>
 <span class="sd">    </span>
@@ -881,7 +880,7 @@ If premium seating is requested an books cost extra £1.50 per person regardless
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tickets</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">premium_seating</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">tickets</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">premium_seating</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The cost of the cinema ticket.</span>
 <span class="sd">    Normal ticket cost is $10.99</span>
@@ -907,7 +906,7 @@ If premium seating is requested an books cost extra £1.50 per person regardless
     <span class="k">return</span> <span class="mf">0.0</span>
     
 
-<span class="k">def</span> <span class="nf">refreshment</span><span class="p">(</span><span class="n">choice</span> <span class="o">=</span><span class="s1">&#39;popcorn&#39;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">refreshment</span><span class="p">(</span><span class="n">choice</span> <span class="o">=</span><span class="s1">&#39;popcorn&#39;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    The cost of refrehments.  Choices are popcorn or fizzy pop </span>
 <span class="sd">    </span>
@@ -924,7 +923,7 @@ If premium seating is requested an books cost extra £1.50 per person regardless
     <span class="k">return</span> <span class="mf">0.0</span>
 
 
-<span class="k">def</span> <span class="nf">cinema_trip</span><span class="p">(</span><span class="n">persons</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">premium_seating</span><span class="p">,</span> <span class="n">treat</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cinema_trip</span><span class="p">(</span><span class="n">persons</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">premium_seating</span><span class="p">,</span> <span class="n">treat</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    The total cost of going to the cinema </span>
 <span class="sd">    </span>
@@ -1003,7 +1002,7 @@ today a trip to the cineman will cost you £0.00
 <li><p>A function definition might look like the below:</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">def</span> <span class="nf">fizzbuzz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fizzbuzz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="o">...</span>
 
 </pre></div>
@@ -1072,7 +1071,7 @@ today a trip to the cineman will cost you £0.00
 <p>The code below uses a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate across a <code class="docutils literal notranslate"><span class="pre">List</span></code> of integers.  It appends the square of the list item to a new list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_list_items</span><span class="p">(</span><span class="n">to_square</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_list_items</span><span class="p">(</span><span class="n">to_square</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of numeric value that are </span>
 <span class="sd">    the square on an input list</span>
@@ -1107,7 +1106,7 @@ today a trip to the cineman will cost you £0.00
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_list_items</span><span class="p">(</span><span class="n">to_square</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square_list_items</span><span class="p">(</span><span class="n">to_square</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a list of numeric value that are </span>
 <span class="sd">    the square on an input list</span>
@@ -1157,7 +1156,7 @@ today a trip to the cineman will cost you £0.00
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">guessed_correctly</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">correct_answer</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">guessed_correctly</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">correct_answer</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Returns True or False to indicate if user has guessed correctly.</span>
 <span class="sd">    </span>
@@ -1168,7 +1167,7 @@ today a trip to the cineman will cost you £0.00
     <span class="k">return</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">correct_answer</span>
     
 
-<span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="n">correct_answer</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">play_game</span><span class="p">(</span><span class="n">correct_answer</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    A game to guess a integer number (between 1 and 10).</span>
 <span class="sd">    Re-prompts user for guess until correct one is supplied.</span>
@@ -1237,7 +1236,7 @@ True
 <p>The latter part demonstrates that while loops can have an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement.  This code will <strong>not be excuted</strong> if a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is called.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="n">correct_answer</span><span class="p">,</span> <span class="n">lives</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">play_game</span><span class="p">(</span><span class="n">correct_answer</span><span class="p">,</span> <span class="n">lives</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    A game to guess a integer number (between 1 and 10).</span>
 <span class="sd">    Re-prompts user for guess until correct one is supplied.</span>
@@ -1298,7 +1297,7 @@ True
 <ul class="simple">
 <li><p>Write a function with the name <code class="docutils literal notranslate"><span class="pre">find_max</span></code> that requires a <code class="docutils literal notranslate"><span class="pre">list</span></code> as a parameter e.g.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_max</span><span class="p">(</span><span class="n">to_search</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_max</span><span class="p">(</span><span class="n">to_search</span><span class="p">):</span>
     <span class="o">...</span> 
 </pre></div>
 </div>
@@ -1365,7 +1364,7 @@ True
 <ul class="simple">
 <li><p>There are two variables in this problem - the cashflows and the interest rate.  A function definition might look like:</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">npv</span><span class="p">(</span><span class="n">cashflows</span><span class="p">,</span> <span class="n">rate</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">npv</span><span class="p">(</span><span class="n">cashflows</span><span class="p">,</span> <span class="n">rate</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
 </div>

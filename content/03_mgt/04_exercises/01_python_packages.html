@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -186,7 +186,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -684,11 +683,11 @@ document.write(`
 <ul class="simple">
 <li><p>A skeleton function might look like the following:</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">skeleton_example</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">skeleton_example</span><span class="p">():</span>
     <span class="k">pass</span>
 
 
-<span class="k">def</span> <span class="nf">skeleton_example</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">skeleton_example</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you called skeleton_example()&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
@@ -696,8 +695,8 @@ document.write(`
 <ul class="simple">
 <li><p>importing should look like:</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ts_emergency.plotting</span> <span class="kn">import</span> <span class="n">plot_single_ed</span><span class="p">,</span> <span class="n">plot_eds</span>
-<span class="kn">from</span> <span class="nn">ts_emergency.datasets</span> <span class="kn">import</span> <span class="n">load_ed_ts</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_single_ed</span><span class="p">,</span> <span class="n">plot_eds</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ts_emergency.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_ed_ts</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -780,7 +779,7 @@ document.write(`
 <p><img alt="diag" src="../../../_images/diag.jpg" /></p>
 <p>The figure consists of three axis objects.  The first plots the detrended series.  The second plot is the <strong>autocorrelation function (ACF)</strong>: a measure of correlation of a variable with previous observations of itself.  The third is the <strong>partial autocorrelation function (PACF)</strong>: a measure of correlation of a variable with early observations of itself while controlling (regressing) for shorter lags.  The good news is you can create ACF and PACF using two functions from <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#  import the functions</span>
-<span class="kn">from</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.graphics.tsaplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
 </pre></div>
 </div>
 <p><strong>Task</strong>:</p>

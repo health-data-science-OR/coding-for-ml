@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -625,9 +624,9 @@ document.write(`
 <p>We’ll need both <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> for our examples here. We also need to import <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. The standard way to import <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -651,7 +650,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_covid_dataset</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">clean_covid_dataset</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Helper function to clean the netherlands covid dataset</span>
 <span class="sd">    </span>
@@ -701,12 +700,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_598056/2090393643.py:36: FutureWarning: The default value of observed=False is deprecated and will change to observed=True in a future version of pandas. Specify observed=False to silence this warning and retain the current behavior
-  .pivot_table(columns=[&#39;metric&#39;],
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="a-simple-plotting-example">
@@ -730,7 +723,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/61efac424a8977c6eaefbd82abcc7ce8ec634e9dd6e9675e97ad27c99b1f5e20.png" src="../../../_images/61efac424a8977c6eaefbd82abcc7ce8ec634e9dd6e9675e97ad27c99b1f5e20.png" />
+<img alt="../../../_images/3756bd80137d2a2a7a679a91e45052f9f0f3abde381b01c3bcfa79aa745b3039.png" src="../../../_images/3756bd80137d2a2a7a679a91e45052f9f0f3abde381b01c3bcfa79aa745b3039.png" />
 </div>
 </div>
 <p>Let’s assume we have the following dataset:</p>
@@ -750,7 +743,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/02086cb586b0b7b2762620dd3626c83b0c2ac3e0b0674e66fdee0d20986d2513.png" src="../../../_images/02086cb586b0b7b2762620dd3626c83b0c2ac3e0b0674e66fdee0d20986d2513.png" />
+<img alt="../../../_images/bb9c47f23b09a485e72fde618d27fb253bdb75c10d64b4503b911c71a8631534.png" src="../../../_images/bb9c47f23b09a485e72fde618d27fb253bdb75c10d64b4503b911c71a8631534.png" />
 </div>
 </div>
 <p>The good news is that there is no real difference between plotting our simple data and a proper health data set.  For example to plot positive cases in <code class="docutils literal notranslate"><span class="pre">Groningen</span></code>:</p>
@@ -765,7 +758,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/54eb459ba50cd4191eb081439f392b36a965755dcb47834bb2bd989c2838e401.png" src="../../../_images/54eb459ba50cd4191eb081439f392b36a965755dcb47834bb2bd989c2838e401.png" />
+<img alt="../../../_images/1f4f4079cae1c1915cbf73598f7fe390ff43597ac75ac1ac6b1865564e00d282.png" src="../../../_images/1f4f4079cae1c1915cbf73598f7fe390ff43597ac75ac1ac6b1865564e00d282.png" />
 </div>
 </div>
 <p>It is bad practice to exclude axis labels.  In true pythonic style setting the x and y labels is a simple operation.  We simply add the following code to our listing:</p>
@@ -787,7 +780,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7538b3b10d62771fb31adaf760da27f8af2fe6fa2cb35edf47263eaaacd07236.png" src="../../../_images/7538b3b10d62771fb31adaf760da27f8af2fe6fa2cb35edf47263eaaacd07236.png" />
+<img alt="../../../_images/1105f97a1ca8c2d49cf17c049c97cd259b09a54b73f39bf96fd0c8b50c624e8f.png" src="../../../_images/1105f97a1ca8c2d49cf17c049c97cd259b09a54b73f39bf96fd0c8b50c624e8f.png" />
 </div>
 </div>
 <section id="helping-the-reader">
@@ -845,7 +838,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/1b0ddc8539aba9b932549358b3fc5ee81f5e6e6d74d3e9ab8b33b82937eea9b4.png" src="../../../_images/1b0ddc8539aba9b932549358b3fc5ee81f5e6e6d74d3e9ab8b33b82937eea9b4.png" />
+<img alt="../../../_images/e3e5e1557fb8f33bacfbf1ba50b80302cb836ef146b0cb46b5210814425d1725.png" src="../../../_images/e3e5e1557fb8f33bacfbf1ba50b80302cb836ef146b0cb46b5210814425d1725.png" />
 </div>
 </div>
 </section>
@@ -867,7 +860,7 @@ document.write(`
 <p>By default <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> chooses the so called best position for the legends location. Let’s test that out to see how it looks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
     
@@ -902,7 +895,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7b53c3f4965c2b511704cfb3b94241daf508c8bc8a94e97aeecb5b55ed6468ab.png" src="../../../_images/7b53c3f4965c2b511704cfb3b94241daf508c8bc8a94e97aeecb5b55ed6468ab.png" />
+<img alt="../../../_images/8721bde8dd3b08e5826c1262f7238e27c882741703e2bcbf42c958d8dd34064d.png" src="../../../_images/8721bde8dd3b08e5826c1262f7238e27c882741703e2bcbf42c958d8dd34064d.png" />
 </div>
 </div>
 <p>For simple plots you should hopefully find ‘best’ works well, but in our case, with four series, its end ups not being ideally positioned.  The first thing we can tweak is its position using the <code class="docutils literal notranslate"><span class="pre">loc</span></code> parameter</p>
@@ -967,7 +960,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7b53c3f4965c2b511704cfb3b94241daf508c8bc8a94e97aeecb5b55ed6468ab.png" src="../../../_images/7b53c3f4965c2b511704cfb3b94241daf508c8bc8a94e97aeecb5b55ed6468ab.png" />
+<img alt="../../../_images/3a88b0a22aaa4830dc5cb2364ede46f4058a8037b8bc65edcaab81ff0fe8fdd8.png" src="../../../_images/3a88b0a22aaa4830dc5cb2364ede46f4058a8037b8bc65edcaab81ff0fe8fdd8.png" />
 </div>
 </div>
 <p>By default the legend is presented as a single column.  We can increase the number of columns by setting the <code class="docutils literal notranslate"><span class="pre">ncol</span></code> parameter.  For example to set this to 4 and locate the legend upper centre:</p>
@@ -986,7 +979,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8b0f79d4079fb6989dd0ef3086fd8ef87fd0ee7e14ab0bfa8395f60bff1e181e.png" src="../../../_images/8b0f79d4079fb6989dd0ef3086fd8ef87fd0ee7e14ab0bfa8395f60bff1e181e.png" />
+<img alt="../../../_images/34f99a094c5abc568f8ba28b75dead486ede6cf966c7e29e991c091dd5c6d337.png" src="../../../_images/34f99a094c5abc568f8ba28b75dead486ede6cf966c7e29e991c091dd5c6d337.png" />
 </div>
 </div>
 <p>Note that we have called the legend method of the <code class="docutils literal notranslate"><span class="pre">ax</span></code> object.  I’ve found this to be the simplest approachin practice, but sometimes I need to position the legend outside of the central plotting area.  To do this you can call the the method from the <code class="docutils literal notranslate"><span class="pre">fig</span></code> object.</p>
@@ -1010,13 +1003,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/a7702f3babde251384c92cfd7326e16c00585955675c5fbebbd5f559280b1454.png" src="../../../_images/a7702f3babde251384c92cfd7326e16c00585955675c5fbebbd5f559280b1454.png" />
+<img alt="../../../_images/ba6b0f4f8bcc53f456ebdb42d1a4a7f4f889408f0c1ced2a88bdf0dc87bd2799.png" src="../../../_images/ba6b0f4f8bcc53f456ebdb42d1a4a7f4f889408f0c1ced2a88bdf0dc87bd2799.png" />
 </div>
 </div>
 <p>That works okay, but its not ideal that the central plotting area contains a very large legend.  Now let’s modify <code class="docutils literal notranslate"><span class="pre">plot_stacked_cases</span></code> to call <code class="docutils literal notranslate"><span class="pre">fig.legend()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
     
@@ -1055,7 +1048,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/c37b24ad41615fa74a8ff4ad9f87b363c0b0f794782a5cd55cb0d3e2aa7a6d25.png" src="../../../_images/c37b24ad41615fa74a8ff4ad9f87b363c0b0f794782a5cd55cb0d3e2aa7a6d25.png" />
+<img alt="../../../_images/b5a007764b8354fc33c4a7abcf691012a94ee636014385ef929fd7e2e94323f4.png" src="../../../_images/b5a007764b8354fc33c4a7abcf691012a94ee636014385ef929fd7e2e94323f4.png" />
 </div>
 </div>
 <p>Using the code above, try a few different location parameters.  In most cases the legend ends up overlapping part of an axis or the plot line.  <strong>That is quite frustrating!</strong>  A further level of fine tuning is needed.  To do this we can employ the <code class="docutils literal notranslate"><span class="pre">bbox_to_anchor</span></code> parameter.  This takes a tuple of the form <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> or <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">width,</span> <span class="pre">height)</span></code>.  To begin with I’d recommend just using the <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> approach; when calling from <code class="docutils literal notranslate"><span class="pre">fig</span></code> <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are figure coordinate positions.  The value <code class="docutils literal notranslate"><span class="pre">(0.5,</span> <span class="pre">0.5)</span></code> <strong>places the corner specified by <code class="docutils literal notranslate"><span class="pre">loc</span></code></strong> of in the centre of the plot.  For example,</p>
@@ -1075,7 +1068,7 @@ document.write(`
 <p>Here’s a final version of <code class="docutils literal notranslate"><span class="pre">plot_stacked_cases</span></code> that let’s you control <code class="docutils literal notranslate"><span class="pre">bbox_to_anchor</span></code> and some code that places a legend outside the main plotting area.  Try a few parameter combinations to build an understanding of how it works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_stacked_cases</span><span class="p">(</span><span class="n">sub_groups</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">leg_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">n_cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                        <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)):</span>
     
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -1110,7 +1103,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/6751dc6ef17b0b96662265c3e68acd4de722d20c706ba47c30612bcf8263850a.png" src="../../../_images/6751dc6ef17b0b96662265c3e68acd4de722d20c706ba47c30612bcf8263850a.png" />
+<img alt="../../../_images/946beb42b7d97df1a137542c6ff12ddac802db33dc18e51996e55c78ef15d818.png" src="../../../_images/946beb42b7d97df1a137542c6ff12ddac802db33dc18e51996e55c78ef15d818.png" />
 </div>
 </div>
 </section>
@@ -1128,7 +1121,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/6751dc6ef17b0b96662265c3e68acd4de722d20c706ba47c30612bcf8263850a.png" src="../../../_images/6751dc6ef17b0b96662265c3e68acd4de722d20c706ba47c30612bcf8263850a.png" />
+<img alt="../../../_images/946beb42b7d97df1a137542c6ff12ddac802db33dc18e51996e55c78ef15d818.png" src="../../../_images/946beb42b7d97df1a137542c6ff12ddac802db33dc18e51996e55c78ef15d818.png" />
 </div>
 </div>
 </section>

@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -631,8 +630,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution</span>
-<span class="k">class</span> <span class="nc">Patient</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient_id</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Patient</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient_id</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">patient_id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
 </pre></div>
@@ -660,16 +659,16 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ward</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ward_id</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Ward</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ward_id</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ward_id</span> <span class="o">=</span> <span class="n">ward_id</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">patients</span> <span class="o">=</span> <span class="p">[]</span>
         
-    <span class="k">def</span> <span class="nf">add_patient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient</span><span class="p">):</span> 
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_patient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient</span><span class="p">):</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">patients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>
     
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">n_patients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">n_patients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Number of the patients...</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -692,7 +691,7 @@ document.write(`
 <ul class="simple">
 <li><p>You will need to design the function so that it allocates a patient an age.  One option is to randomly generate an age in a given range.  You could achieve this using the <code class="docutils literal notranslate"><span class="pre">random.randint()</span></code> function.  E.g.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
 <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">95</span>
 <span class="n">age</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
 
@@ -708,9 +707,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
 
-<span class="k">def</span> <span class="nf">new_ward</span><span class="p">(</span><span class="n">ward_id</span><span class="p">,</span> <span class="n">n_patients</span><span class="p">,</span> <span class="n">age_range</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">95</span><span class="p">)):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">new_ward</span><span class="p">(</span><span class="n">ward_id</span><span class="p">,</span> <span class="n">n_patients</span><span class="p">,</span> <span class="n">age_range</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">95</span><span class="p">)):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Create a new ward with an id.</span>
 <span class="sd">    The ward will contain n_patients with random</span>
@@ -759,7 +758,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 4
-72
+87
 </pre></div>
 </div>
 </div>
@@ -783,27 +782,27 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hospital</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Hospital</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Encapsulates a hosptial made up of wards...</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_patients</span><span class="p">,</span> <span class="n">age_ranges</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_patients</span><span class="p">,</span> <span class="n">age_ranges</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wards</span> <span class="o">=</span> <span class="p">[</span><span class="n">new_ward</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n_patients</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">age_ranges</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
                                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_patients</span><span class="p">))]</span>
     
-    <span class="k">def</span> <span class="nf">add_patient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ward_id</span><span class="p">,</span> <span class="n">patient</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_patient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ward_id</span><span class="p">,</span> <span class="n">patient</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wards</span><span class="p">[</span><span class="n">ward_id</span><span class="p">]</span><span class="o">.</span><span class="n">add_patient</span><span class="p">(</span><span class="n">patient</span><span class="p">)</span>
         
-    <span class="k">def</span> <span class="nf">add_ward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_patients</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">age_range</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">95</span><span class="p">)):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_ward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_patients</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">age_range</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">95</span><span class="p">)):</span>
         <span class="n">to_add</span> <span class="o">=</span> <span class="n">new_ward</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wards</span><span class="p">),</span> <span class="n">n_patients</span><span class="p">,</span> <span class="n">age_range</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">to_add</span><span class="p">)</span>
     
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">n_patients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">n_patients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">ward</span><span class="o">.</span><span class="n">n_patients</span> <span class="k">for</span> <span class="n">ward</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">wards</span><span class="p">])</span>
     
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">n_wards</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">n_wards</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wards</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -850,8 +849,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution via inheritance</span>
-<span class="k">class</span> <span class="nc">RespiratoryPatient</span><span class="p">(</span><span class="n">Patient</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient_id</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">pack_yrs</span><span class="p">,</span> <span class="n">fev1</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RespiratoryPatient</span><span class="p">(</span><span class="n">Patient</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient_id</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">pack_yrs</span><span class="p">,</span> <span class="n">fev1</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">patient_id</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pack_yrs</span> <span class="o">=</span> <span class="n">pack_yrs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fev1</span> <span class="o">=</span> <span class="n">fev1</span>
@@ -881,18 +880,18 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example solution via object composition</span>
 
-<span class="k">class</span> <span class="nc">RespiratoryPatient</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient</span><span class="p">,</span> <span class="n">pack_yrs</span><span class="p">,</span> <span class="n">fev1</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RespiratoryPatient</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patient</span><span class="p">,</span> <span class="n">pack_yrs</span><span class="p">,</span> <span class="n">fev1</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">patient</span> <span class="o">=</span> <span class="n">patient</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pack_yrs</span> <span class="o">=</span> <span class="n">pack_yrs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fev1</span> <span class="o">=</span> <span class="n">fev1</span>
     
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">patient</span><span class="o">.</span><span class="n">id</span>
     
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">patient</span><span class="o">.</span><span class="n">age</span>
 </pre></div>
 </div>

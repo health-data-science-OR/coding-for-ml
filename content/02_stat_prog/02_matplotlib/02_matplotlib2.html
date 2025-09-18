@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/install.html">Install python and an IDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../001_setup/git.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../001_setup/conda.html">Conda virtual environment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../001_setup/prereq.html">Python Prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/01_list_comp.html">List comprehensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../001_setup/prereq/02_dicts.html">Dictionarys</a></li>
@@ -614,9 +613,9 @@ document.write(`
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -631,7 +630,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/6467a8a22a96bf39b5590e4fe731061049da524df9bc602f9b5fe0f0038ebd7a.png" src="../../../_images/6467a8a22a96bf39b5590e4fe731061049da524df9bc602f9b5fe0f0038ebd7a.png" />
+<img alt="../../../_images/9895e1b20d0597f2175a02d84805f22a4c2ddfc43d4027ec7d36ab3f43cb5de8.png" src="../../../_images/9895e1b20d0597f2175a02d84805f22a4c2ddfc43d4027ec7d36ab3f43cb5de8.png" />
 </div>
 </div>
 <p>Here we simply set the <code class="docutils literal notranslate"><span class="pre">nrows</span></code> optional parameter to 2 (default=1). Note that <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> returns <code class="docutils literal notranslate"><span class="pre">fig</span></code> and we unpack the second return value to <code class="docutils literal notranslate"><span class="pre">ax1</span></code> and <code class="docutils literal notranslate"><span class="pre">ax2</span></code>.  If we do not unpack (in cases where there are many subplots) the notation <code class="docutils literal notranslate"><span class="pre">axs</span></code> is the convention.  <code class="docutils literal notranslate"><span class="pre">axs</span></code> is a <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></p>
@@ -646,7 +645,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/6467a8a22a96bf39b5590e4fe731061049da524df9bc602f9b5fe0f0038ebd7a.png" src="../../../_images/6467a8a22a96bf39b5590e4fe731061049da524df9bc602f9b5fe0f0038ebd7a.png" />
+<img alt="../../../_images/9895e1b20d0597f2175a02d84805f22a4c2ddfc43d4027ec7d36ab3f43cb5de8.png" src="../../../_images/9895e1b20d0597f2175a02d84805f22a4c2ddfc43d4027ec7d36ab3f43cb5de8.png" />
 </div>
 </div>
 <p>To force the subplots to share the x-axis we simply pass in the <code class="docutils literal notranslate"><span class="pre">sharex</span></code> bool.`</p>
@@ -659,7 +658,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/5a73338cbb40c555c1103b17f2d5d168691c2d4491f2db844a9891f58b724947.png" src="../../../_images/5a73338cbb40c555c1103b17f2d5d168691c2d4491f2db844a9891f58b724947.png" />
+<img alt="../../../_images/7eb3cd7b2fb604311ff84ab463a5918504f005d59ff7b88b2b34480ae9429be7.png" src="../../../_images/7eb3cd7b2fb604311ff84ab463a5918504f005d59ff7b88b2b34480ae9429be7.png" />
 </div>
 </div>
 <p>To switch to columns instead of rows we can use the <code class="docutils literal notranslate"><span class="pre">ncols</span></code> optional parameter.  If we want each subplot to share the y axes use <code class="docutils literal notranslate"><span class="pre">sharey=True</span></code></p>
@@ -670,7 +669,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3f8f81e4637fecd6501769003389df610e8dbc3c4ca235445e660541fe108e2d.png" src="../../../_images/3f8f81e4637fecd6501769003389df610e8dbc3c4ca235445e660541fe108e2d.png" />
+<img alt="../../../_images/6b82ac95cad0883a29146ce1f0642af0fec3fc0c3d579e7ef51fa103840b1044.png" src="../../../_images/6b82ac95cad0883a29146ce1f0642af0fec3fc0c3d579e7ef51fa103840b1044.png" />
 </div>
 </div>
 </section>
@@ -691,7 +690,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/a0409e6561a32ade2d427705a5475ae37205dcf745d333b561d55fa773f917cf.png" src="../../../_images/a0409e6561a32ade2d427705a5475ae37205dcf745d333b561d55fa773f917cf.png" />
+<img alt="../../../_images/8f7b80c01637549a4f4d5649e9a0f1a89030717b20c443906f51b494d5e07646.png" src="../../../_images/8f7b80c01637549a4f4d5649e9a0f1a89030717b20c443906f51b494d5e07646.png" />
 </div>
 </div>
 <p>There may also be use cases where you need the subplots to be sized differently.  For example two rows of subplots where the top row is a quarter of the size of the bottom row.  The <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> function accepts a <code class="docutils literal notranslate"><span class="pre">gridspec_kw</span></code> dict that allows you to control the height (and width) ratios of plots.</p>
@@ -704,7 +703,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/78e7f978ced4b53f09165df021530c741dd98c318d4fc1ff14206fce2c629302.png" src="../../../_images/78e7f978ced4b53f09165df021530c741dd98c318d4fc1ff14206fce2c629302.png" />
+<img alt="../../../_images/adef98f6c50f12d408cc05456b94980cbe2352d0b4ad36c4bb13f4fae0836247.png" src="../../../_images/adef98f6c50f12d408cc05456b94980cbe2352d0b4ad36c4bb13f4fae0836247.png" />
 </div>
 </div>
 </section>
@@ -733,7 +732,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/64b6c819479d78341a71317dc1519cab5c8c0c2598b05adb19a0c31ca56e8c0f.png" src="../../../_images/64b6c819479d78341a71317dc1519cab5c8c0c2598b05adb19a0c31ca56e8c0f.png" />
+<img alt="../../../_images/4832ba3fa5b4bbff3a50cf44ba5dacba418df7ddaf5e6a8da3855ec07f12454a.png" src="../../../_images/4832ba3fa5b4bbff3a50cf44ba5dacba418df7ddaf5e6a8da3855ec07f12454a.png" />
 </div>
 </div>
 <p>When we use the parameters <code class="docutils literal notranslate"><span class="pre">(1,1,1)</span></code> the subplot fills the full figure.  If we want the subplot to occupy the top third of the figure only, we need to break the figure into three rows by setting <code class="docutils literal notranslate"><span class="pre">nrows=3</span></code></p>
@@ -745,7 +744,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/cf947310963de7881af85a362324020ce3e1580f03fecbfe1b15f1b9bc4a3c47.png" src="../../../_images/cf947310963de7881af85a362324020ce3e1580f03fecbfe1b15f1b9bc4a3c47.png" />
+<img alt="../../../_images/bce04b76e0c961bd8c01585810a6f0e5d6da176b928a4a12bd5978bed641ec0d.png" src="../../../_images/bce04b76e0c961bd8c01585810a6f0e5d6da176b928a4a12bd5978bed641ec0d.png" />
 </div>
 </div>
 <p>For half we would use <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">1</span></code></p>
@@ -757,7 +756,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/15f26651258b73a056552852c9d56e46207976cebb8d92cda0592b0e01301b57.png" src="../../../_images/15f26651258b73a056552852c9d56e46207976cebb8d92cda0592b0e01301b57.png" />
+<img alt="../../../_images/d1dc538006178e0b656dc4bf2cf1aee8485d319dbfda8e3cdf2ad7d76b323e44.png" src="../../../_images/d1dc538006178e0b656dc4bf2cf1aee8485d319dbfda8e3cdf2ad7d76b323e44.png" />
 </div>
 </div>
 <p>Alternatively if we want the plot to occupy the first vertical third use three columns and set <code class="docutils literal notranslate"><span class="pre">ncols=3</span></code></p>
@@ -769,7 +768,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/add5df0e03765f71e8297f66ce2b094963b221ea75a5bf5fa123dbed4e3e1a48.png" src="../../../_images/add5df0e03765f71e8297f66ce2b094963b221ea75a5bf5fa123dbed4e3e1a48.png" />
+<img alt="../../../_images/8d39641aea71409d12579975785c50686a2d564daa6a7fd60a39002a4eeb38f9.png" src="../../../_images/8d39641aea71409d12579975785c50686a2d564daa6a7fd60a39002a4eeb38f9.png" />
 </div>
 </div>
 <p>We use also <code class="docutils literal notranslate"><span class="pre">nrows</span></code> and <code class="docutils literal notranslate"><span class="pre">ncols</span></code> simultaneously to limit the width and height of the subplot.  For example, one third of the figure height and one half of the width using <code class="docutils literal notranslate"><span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">1</span></code>:</p>
@@ -781,7 +780,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/9c094903244beb9bdd09d401017730a2404b2d076fd9e768a42f5da40c39feb3.png" src="../../../_images/9c094903244beb9bdd09d401017730a2404b2d076fd9e768a42f5da40c39feb3.png" />
+<img alt="../../../_images/f5fc67a39c141a2d8e70a8d6ef668ed7ab899ad98a729b0a2c70406dcc034a3e.png" src="../../../_images/f5fc67a39c141a2d8e70a8d6ef668ed7ab899ad98a729b0a2c70406dcc034a3e.png" />
 </div>
 </div>
 <p>Note that in many <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> examples you see on line the <code class="docutils literal notranslate"><span class="pre">,</span></code> will be ommitted from the parameters i.e. a shorthand for</p>
@@ -824,7 +823,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/520a27f0e75a90a3843519786f8245aaea318aa85e43230c68ec7f25bbbd64cf.png" src="../../../_images/520a27f0e75a90a3843519786f8245aaea318aa85e43230c68ec7f25bbbd64cf.png" />
+<img alt="../../../_images/6ebff7321c81274f70d9e2c653cc6b63b51e8bbb25a2887855917a7c4880cd28.png" src="../../../_images/6ebff7321c81274f70d9e2c653cc6b63b51e8bbb25a2887855917a7c4880cd28.png" />
 </div>
 </div>
 <p>Note the different x-axes scales. To share the x axis we need to add in <code class="docutils literal notranslate"><span class="pre">sharex=ax1</span></code> to the second <code class="docutils literal notranslate"><span class="pre">fig.add_subplot</span></code> call.</p>
@@ -841,7 +840,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/ea2410e77a30b7d5ee4b856582b9adc9f50b93cfe65d205b9aa20a929cff9d3a.png" src="../../../_images/ea2410e77a30b7d5ee4b856582b9adc9f50b93cfe65d205b9aa20a929cff9d3a.png" />
+<img alt="../../../_images/c89311e587f6a8202d6869fa4a86249c68d771e0f4b8ad9057e74ec0536f8da5.png" src="../../../_images/c89311e587f6a8202d6869fa4a86249c68d771e0f4b8ad9057e74ec0536f8da5.png" />
 </div>
 </div>
 <p>Although the subplots are sharing an x-axis they both show it by default.  We can turn an x-axis off by using the command:</p>
@@ -863,7 +862,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/45b463261253fc4497e521b6c06833074485ed1d5c88f79ab42f8e8533125b19.png" src="../../../_images/45b463261253fc4497e521b6c06833074485ed1d5c88f79ab42f8e8533125b19.png" />
+<img alt="../../../_images/7867a808a7cf3d24bca1e765b91e4c658cdcfb97908743ae1acc6aef85d26e8a.png" src="../../../_images/7867a808a7cf3d24bca1e765b91e4c658cdcfb97908743ae1acc6aef85d26e8a.png" />
 </div>
 </div>
 <p>Great!  Now let’s create a figure with a 2x2 grid of subplots.  We will also share the x and y axis across them.</p>
@@ -893,7 +892,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/260b8c5835699676d4f2dafd5b3069a72a17306514bac515a9388a488a2fb954.png" src="../../../_images/260b8c5835699676d4f2dafd5b3069a72a17306514bac515a9388a488a2fb954.png" />
+<img alt="../../../_images/0317d0c344d01bb78def2018e30bfb193a5dcdb05d65211defbb5117c600e862.png" src="../../../_images/0317d0c344d01bb78def2018e30bfb193a5dcdb05d65211defbb5117c600e862.png" />
 </div>
 </div>
 </section>
@@ -916,7 +915,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/983239794acc868725f502741272c857723dee409e72c98fa491e76d89937a37.png" src="../../../_images/983239794acc868725f502741272c857723dee409e72c98fa491e76d89937a37.png" />
+<img alt="../../../_images/59309d7ddb95e27f0d7a5b5d3376d589b8d4820ee0c20266d56770099172f3f2.png" src="../../../_images/59309d7ddb95e27f0d7a5b5d3376d589b8d4820ee0c20266d56770099172f3f2.png" />
 </div>
 </div>
 <p>Here is a more complicated use of a gridspec.  We have divided the grid up into 3 rows and 2 columns.  In the first column we have two plots. Lets call them plot a and plot b. In the second column we have a single plot c. Plot a spans a single row and a single column. We add that to the figure using the numpy list slicing notation:</p>
@@ -948,7 +947,7 @@ subplot into the second row.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d7ae59c61eedb3e92d4a2d824711135eb7b5e8bc47a1d22238e5749ebba35170.png" src="../../../_images/d7ae59c61eedb3e92d4a2d824711135eb7b5e8bc47a1d22238e5749ebba35170.png" />
+<img alt="../../../_images/4ef6faeeb4ac0c0ec1404defe1c37f9f26726fb5fada81545556ca99b6a45371.png" src="../../../_images/4ef6faeeb4ac0c0ec1404defe1c37f9f26726fb5fada81545556ca99b6a45371.png" />
 </div>
 </div>
 </section>
