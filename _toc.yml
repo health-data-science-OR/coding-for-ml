@@ -3,16 +3,16 @@ root: content/front_page
 parts:
 - caption: Introduction
   chapters:
-  - file: content/001_setup/contributing
-  - file: content/001_setup/install
-  - file: content/001_setup/git
+  - file: content/00_setup/contributing
+  - file: content/00_setup/install
+  - file: content/00_setup/git
   #- file: content/001_setup/conda
-  - file: content/001_setup/prereq
+  - file: content/00_setup/prereq
     sections:
-    - file: content/001_setup/prereq/01_list_comp
-    - file: content/001_setup/prereq/02_dicts
-    - file: content/001_setup/prereq/04_scope
-    - file: content/001_setup/prereq/05_pep8
+    - file: content/00_setup/prereq/01_list_comp
+    - file: content/00_setup/prereq/02_dicts
+    - file: content/00_setup/prereq/04_scope
+    - file: content/00_setup/prereq/05_pep8
 - caption: Algorithms and computational modelling
   chapters:
   - file: content/01_algorithms/01_design
